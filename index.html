@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Day Fluency Sprint | Master V22</title>
+    <title>Day Fluency Sprint | Master V23 (Ultimate Stability)</title>
     <style>
-        /* === Premium UI - Ultimate Stability Engine (V22) === */
+        /* === Premium UI - Absolute Proportion Engine (V23) === */
         
         /* DESKTOP MAGIC: Shrinks the UI natively to fit beautifully at 100% zoom */
         html { font-size: 11.5px; }
@@ -136,178 +136,171 @@
 
         .visual-col { display: flex; align-items: stretch; justify-content: center; min-height: 200px;}
 
-        /* === MASTER CSS ART ENGINE (Perfect Centering) === */
-        .art-inner-container { width: 100%; height: 100%; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; border-radius: 2vh; border: 1px solid rgba(255,255,255,0.08); box-shadow: inset 0 0 3vh rgba(0,0,0,0.8), 0 1vh 2vh rgba(0,0,0,0.4);}
-        /* Central Absolute Fix: All core elements use left/right 0 + margin auto to NEVER drift on resize */
-        .art-emoji-hero { 
-            font-size: clamp(60px, 12vh, 150px); 
-            z-index: 20; 
-            position: absolute; 
-            left: 0; right: 0; margin: 0 auto; 
-            text-align: center;
-            display: flex; justify-content: center; align-items: center;
-            filter: drop-shadow(0 1vh 1.5vh rgba(0,0,0,0.6));
+        /* ==================================================================== */
+        /* === MASTER CSS ART ENGINE (V23) - STABLE IN <HEAD> WITH ABSOLUTE CENTERING === */
+        /* ==================================================================== */
+        
+        .art-inner-container { 
+            width: 100%; height: 100%; position: relative; overflow: hidden; 
+            display: flex; align-items: center; justify-content: center; 
+            border-radius: 2vh; border: 1px solid rgba(255,255,255,0.08); 
+            box-shadow: inset 0 0 3vh rgba(0,0,0,0.8), 0 1vh 2vh rgba(0,0,0,0.4);
         }
         
-        /* General Elements */
-        .center-x { position: absolute; left: 0; right: 0; margin: 0 auto; }
-        .center-xy { position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; }
+        .art-emoji-hero { 
+            font-size: clamp(60px, 12vh, 150px); z-index: 10; 
+            filter: drop-shadow(0 1vh 2vh rgba(0,0,0,0.6)); position: absolute;
+            left: 0; right: 0; margin: 0 auto; text-align: center;
+        }
 
-        /* Specific Overrides using centered logic */
-        .gift-box { position:absolute; bottom: 10%; width: 15vh; height: 10vh; background: #be123c; border-radius: 1vh; } 
-        .gift-lid { position:absolute; bottom:calc(10% + 10vh); width: 16vh; height: 3vh; background: #e11d48; border-radius: 0.5vh; animation: openLid 3s infinite alternate ease-in-out; } 
-        @keyframes openLid { 0%, 50% { transform: translateY(0) rotate(0); } 100% { transform: translateY(-5vh) rotate(15deg); } }
+        /* --- Special Word Overrides --- */
+        .gift-box { position:absolute; bottom: 10%; left: 0; right: 0; margin: auto; width: 15vh; height: 10vh; background: #be123c; border-radius: 1vh; } 
+        .gift-lid { position:absolute; bottom:calc(10% + 10vh); left: 0; right: 0; margin: auto; width: 16vh; height: 3vh; background: #e11d48; border-radius: 0.5vh; animation: openLid 3s infinite alternate ease-in-out; } 
+        
+        .poison-bubble { position: absolute; bottom: -10%; left: 0; right: 0; margin: auto; width: 3vh; height: 3vh; background: rgba(34, 197, 94, 0.6); border-radius: 50%; box-shadow: 0 0 2vh #22c55e; animation: bubbleUpPoison 4s infinite linear; } 
         
         .gold-dust { position: absolute; background: #fde047; border-radius: 50%; width: 0.4vh; height: 0.4vh; box-shadow: 0 0 1vh #fde047; animation: twinkle 2s infinite alternate;} 
-        .spotlight-gold { position: absolute; top: -10%; width: 50%; height: 120%; background: linear-gradient(to bottom, rgba(253, 224, 71, 0.15), transparent); transform: perspective(30vh) rotateX(15deg); filter: blur(2vh); }
+        .spotlight-gold { position: absolute; top: -10%; left: 0; right: 0; margin: auto; width: 50%; height: 120%; background: linear-gradient(to bottom, rgba(253, 224, 71, 0.15), transparent); transform: perspective(30vh) rotateX(15deg); filter: blur(2vh); }
         
-        .kiln-fire { position: absolute; bottom: 0; width: 60%; height: 30%; background: linear-gradient(to top, #ea580c, #fef08a, transparent); filter: blur(2vh); animation: flicker 0.5s infinite alternate; border-radius: 50% 50% 0 0;} 
-        .kiln-brick { position: absolute; bottom: 30%; width: 70%; height: 10%; background: #7f1d1d; border-radius: 1vh; border-bottom: 1vh solid #450a0a;}
+        .kiln-fire { position: absolute; bottom: 0; left: 0; right: 0; margin: auto; width: 60%; height: 30%; background: linear-gradient(to top, #ea580c, #fef08a, transparent); filter: blur(2vh); animation: flicker 0.5s infinite alternate; border-radius: 50% 50% 0 0;} 
+        .kiln-brick { position: absolute; bottom: 30%; left: 0; right: 0; margin: auto; width: 70%; height: 10%; background: #7f1d1d; border-radius: 1vh; border-bottom: 1vh solid #450a0a;}
         
         .measure-grid { position: absolute; width: 100%; height: 100%; left: 0; background-image: linear-gradient(rgba(34, 211, 238, 0.2) 0.2vh, transparent 0.2vh), linear-gradient(90deg, rgba(34, 211, 238, 0.2) 0.2vh, transparent 0.2vh); background-size: 4vh 4vh; } 
         .measure-line { position:absolute; width: 100%; left: 0; height: 0.4vh; background: #22d3ee; top: 50%; box-shadow: 0 0 1vh #22d3ee; } 
         .measure-cross { position:absolute; width: 0.4vh; height: 100%; background: #22d3ee; left: 0; right: 0; margin: 0 auto; box-shadow: 0 0 1vh #22d3ee; }
 
-        .fetch-stick { position: absolute; width: 8vh; height: 1.5vh; background: #78350f; border-radius: 1vh; z-index: 5; animation: throwStick 2s infinite ease-in-out alternate; }
-        @keyframes throwStick { 0% { transform: translate(-10vh, 10vh) rotate(0deg); } 100% { transform: translate(10vh, -5vh) rotate(360deg); } }
+        .fetch-stick { position: absolute; width: 8vh; height: 1.5vh; background: #78350f; border-radius: 1vh; z-index: 5; animation: throwStick 2s infinite ease-in-out alternate; left: 0; right: 0; margin: auto;}
         
-        .scratch-mark { position: absolute; width: 12vh; height: 0.8vh; background: #ef4444; border-radius: 50%; opacity: 0; animation: scratchAnim 2s infinite; transform: rotate(-45deg); box-shadow: 0 0 1vh #ef4444;}
+        .scratch-mark { position: absolute; width: 12vh; height: 0.8vh; background: #ef4444; border-radius: 50%; opacity: 0; animation: scratchAnim 2s infinite; transform: rotate(-45deg); box-shadow: 0 0 1vh #ef4444; left: 0; right: 0; margin: auto;}
         .scratch-mark:nth-child(2) { margin-top: 3vh; margin-left: -3vh; animation-delay: 0.2s; }
         .scratch-mark:nth-child(3) { margin-top: 6vh; margin-left: -6vh; animation-delay: 0.4s; }
-        @keyframes scratchAnim { 0% { width: 0; opacity: 1; } 50% { width: 18vh; opacity: 0.8; } 100% { width: 18vh; opacity: 0; } }
 
-        .coin { position: absolute; width: 3.5vh; height: 3.5vh; background: #fde047; border-radius: 50%; border: 0.4vh solid #eab308; box-shadow: 0 0 1.5vh #facc15; animation: rainCoins 2.5s infinite linear; }
-        @keyframes rainCoins { 0% { transform: translateY(-20vh) rotateY(0deg); opacity: 1;} 100% { transform: translateY(20vh) rotateY(360deg); opacity: 0;} }
+        .coin { position: absolute; width: 3.5vh; height: 3.5vh; background: #fde047; border-radius: 50%; border: 0.4vh solid #eab308; box-shadow: 0 0 1.5vh #facc15; animation: rainCoins 2.5s infinite linear; left: 0; right: 0; margin: auto;}
         
-        .chain { position: absolute; width: 2.5vh; height: 10vh; border: 0.6vh solid #94a3b8; border-radius: 1.5vh; }
-        .chain-break-left { animation: breakLeft 2s infinite ease-in; }
-        .chain-break-right { animation: breakRight 2s infinite ease-in; }
-        @keyframes breakLeft { 0% { transform: translate(-2vh, 0) rotate(20deg); opacity: 1; } 100% { transform: translate(-10vh, 20vh) rotate(90deg); opacity: 0; } }
-        @keyframes breakRight { 0% { transform: translate(2vh, 0) rotate(-20deg); opacity: 1; } 100% { transform: translate(10vh, 20vh) rotate(-90deg); opacity: 0; } }
+        .chain { position: absolute; width: 2.5vh; height: 10vh; border: 0.6vh solid #94a3b8; border-radius: 1.5vh; left: 0; right: 0; margin: auto;}
+        .chain-break-left { animation: breakLeft 2s infinite ease-in; margin-left: -5vh;}
+        .chain-break-right { animation: breakRight 2s infinite ease-in; margin-left: 5vh;}
 
-        .gear { position: absolute; width: 18vh; height: 18vh; border: 1.5vh dashed #94a3b8; border-radius: 50%; animation: spin 6s infinite linear; opacity: 0.5;}
-        .gear-small { width: 10vh; height: 10vh; border: 1vh dashed #cbd5e1; animation: spin 3s infinite linear reverse; }
+        .gear { position: absolute; width: 18vh; height: 18vh; border: 1.5vh dashed #94a3b8; border-radius: 50%; animation: spin 6s infinite linear; opacity: 0.5; left: 0; right: 0; margin: auto;}
+        .gear-small { width: 10vh; height: 10vh; border: 1vh dashed #cbd5e1; animation: spin 3s infinite linear reverse; margin-top: 5vh; margin-left: 8vh;}
 
-        .key-glow { position: absolute; width: 25vh; height: 25vh; background: radial-gradient(circle, rgba(253, 224, 71, 0.4) 0%, transparent 70%); animation: pulseSize 2s infinite alternate; }
-        .house-silhouette { position: absolute; bottom: 0; width: 80%; height: 40%; background: #0f172a; clip-path: polygon(50% 0%, 100% 40%, 100% 100%, 0 100%, 0 40%); border-bottom: 1vh solid #1e293b;}
+        .key-glow { position: absolute; width: 25vh; height: 25vh; background: radial-gradient(circle, rgba(253, 224, 71, 0.4) 0%, transparent 70%); animation: pulseSize 2s infinite alternate; left: 0; right: 0; margin: auto;}
+        .house-silhouette { position: absolute; bottom: 0; left: 0; right: 0; margin: auto; width: 80%; height: 40%; background: #0f172a; clip-path: polygon(50% 0%, 100% 40%, 100% 100%, 0 100%, 0 40%); border-bottom: 1vh solid #1e293b;}
 
-        .glass-crack { position: absolute; width: 0.4vh; height: 25vh; background: rgba(255,255,255,0.8); transform-origin: center; animation: crackReveal 0.5s forwards ease-out; box-shadow: 0 0 1vh #fff;}
+        .glass-crack { position: absolute; width: 0.4vh; height: 25vh; background: rgba(255,255,255,0.8); transform-origin: center; animation: crackReveal 0.5s forwards ease-out; box-shadow: 0 0 1vh #fff; left: 0; right: 0; margin: auto;}
         .glass-crack:nth-child(1) { transform: rotate(25deg); }
         .glass-crack:nth-child(2) { transform: rotate(75deg); }
         .glass-crack:nth-child(3) { transform: rotate(145deg); }
-        @keyframes crackReveal { 0% { height: 0; opacity: 1; } 100% { height: 25vh; opacity: 0.6; } }
 
-        /* Base Category Styles */
+        /* --- Base Category Styles --- */
         .art-ocean { background: linear-gradient(180deg, #0ea5e9 0%, #0369a1 20%, #1e3a8a 50%, #020617 100%); }
         .art-ocean .wave-line { position: absolute; top: 25%; left: 0; width: 100%; height: 0.3vh; background: rgba(255,255,255,0.4); box-shadow: 0 0 2vh #fff;}
         .art-ocean .ruler { position: absolute; left: 10%; top: 25%; bottom: 5%; width: 0.3vh; background: rgba(255,255,255,0.2); }
         .art-ocean .tick { position: absolute; left: 0; width: 3vh; height: 0.3vh; background: rgba(255,255,255,0.5); }
         
         .art-auction { background: radial-gradient(circle at center, #78350f 0%, #2e1001 100%); }
-        .art-auction .desk { position: absolute; bottom: 5%; width: 70%; height: 20%; background: #5c2606; border-top: 0.8vh solid #8b3c06; border-radius: 1vh; transform: perspective(40vh) rotateX(25deg); box-shadow: 0 3vh 3vh rgba(0,0,0,0.8);}
-        .art-auction .hammer-anim { transform-origin: bottom right; animation: slam 1s infinite alternate ease-in;}
+        .art-auction .desk { position: absolute; bottom: 5%; left: 0; right: 0; margin: auto; width: 70%; height: 20%; background: #5c2606; border-top: 0.8vh solid #8b3c06; border-radius: 1vh; transform: perspective(40vh) rotateX(25deg); box-shadow: 0 3vh 3vh rgba(0,0,0,0.8);}
+        .art-auction .hammer-anim { transform-origin: bottom right; margin-right: -10vh; animation: slam 1s infinite alternate ease-in;}
         
         .art-build { background-color: #7f1d1d; background-image: linear-gradient(rgba(255,255,255,0.15) 0.3vh, transparent 0.3vh), linear-gradient(90deg, rgba(255,255,255,0.15) 0.3vh, transparent 0.3vh); background-size: 8vh 4vh; background-position: 0 0, 4vh 2vh;}
         .art-build .fire-glow { position: absolute; bottom: -3vh; left: 0; width: 100%; height: 50%; background: linear-gradient(to top, #ea580c, transparent); opacity: 0.6; filter: blur(2vh); animation: flicker 2s infinite alternate;}
         
         .art-market { background: radial-gradient(circle at center, #1e293b, #020617); }
-        .art-market .shelf { position: absolute; bottom: 20%; width: 80%; height: 1.5vh; background: #cbd5e1; border-radius: 1vh; box-shadow: 0 1.5vh 2vh rgba(0,0,0,0.5);}
-        .art-market .laser-scanner { position: absolute; top: 0; left: 50%; width: 0.4vh; height: 100%; background: rgba(34,211,238,0.5); box-shadow: 0 0 2vh var(--cyan-light); animation: scanLeftRight 3s ease-in-out infinite alternate;}
+        .art-market .shelf { position: absolute; bottom: 20%; left: 0; right: 0; margin: auto; width: 80%; height: 1.5vh; background: #cbd5e1; border-radius: 1vh; box-shadow: 0 1.5vh 2vh rgba(0,0,0,0.5);}
+        .art-market .laser-scanner { position: absolute; top: 0; left: 0; right: 0; margin: auto; width: 0.4vh; height: 100%; background: rgba(34,211,238,0.5); box-shadow: 0 0 2vh var(--cyan-light); animation: scanLeftRight 3s ease-in-out infinite alternate;}
         
         .art-pie-chart { background: radial-gradient(circle at center, #1e293b, #020617); }
-        .art-pie-chart .pie-bg { position: absolute; width: 25vh; height: 25vh; border-radius: 50%; background: conic-gradient(var(--cyan-main) 0deg, var(--cyan-main) 120deg, #334155 120deg, #334155 360deg); box-shadow: 0 1.5vh 4vh rgba(0,0,0,0.6); border: 0.3vh solid rgba(255,255,255,0.1); transform: rotate(-45deg);}
+        .art-pie-chart .pie-bg { position: absolute; left: 0; right: 0; margin: auto; width: 25vh; height: 25vh; border-radius: 50%; background: conic-gradient(var(--cyan-main) 0deg, var(--cyan-main) 120deg, #334155 120deg, #334155 360deg); box-shadow: 0 1.5vh 4vh rgba(0,0,0,0.6); border: 0.3vh solid rgba(255,255,255,0.1); transform: rotate(-45deg);}
         
         .art-chart-down { background: radial-gradient(circle at bottom right, #7f1d1d, #020617); }
-        .art-chart-down .chart-axis-down { position: absolute; top: 15%; width: 70%; height: 70%; border-bottom: 0.5vh solid #ef4444; border-left: 0.5vh solid #ef4444; }
-        .art-chart-down .trend-line-down { position: absolute; top: 20%; width: 70%; height: 65%; border-top: 0.6vh solid #fca5a5; transform-origin: top left; transform: rotate(35deg); box-shadow: inset -1.5vh 1.5vh 3vh rgba(239,68,68,0.3);}
+        .art-chart-down .chart-axis-down { position: absolute; top: 15%; left: 0; right: 0; margin: auto; width: 70%; height: 70%; border-bottom: 0.5vh solid #ef4444; border-left: 0.5vh solid #ef4444; }
+        .art-chart-down .trend-line-down { position: absolute; top: 20%; left: 0; right: 0; margin: auto; width: 70%; height: 65%; border-top: 0.6vh solid #fca5a5; transform-origin: top left; transform: rotate(35deg); box-shadow: inset -1.5vh 1.5vh 3vh rgba(239,68,68,0.3);}
         
         .art-doorway { background: #020617; }
-        .art-doorway .door-frame { position: absolute; width: 18vh; height: 28vh; border: 0.5vh solid #fef08a; border-bottom: none; box-shadow: 0 0 6vh #fef08a; background: linear-gradient(to top, rgba(253, 224, 71, 0.3), transparent); display: flex; align-items: center; justify-content: center;}
+        .art-doorway .door-frame { position: absolute; left: 0; right: 0; margin: auto; width: 18vh; height: 28vh; border: 0.5vh solid #fef08a; border-bottom: none; box-shadow: 0 0 6vh #fef08a; background: linear-gradient(to top, rgba(253, 224, 71, 0.3), transparent); display: flex; align-items: center; justify-content: center;}
         
         .art-mind { background: radial-gradient(circle at center, #4c1d95, #020617); }
-        .art-mind .pulse-ring { position: absolute; width: 20vh; height: 20vh; border: 0.4vh solid #d946ef; border-radius: 50%; animation: expandPulse 2s infinite; }
+        .art-mind .pulse-ring { position: absolute; left: 0; right: 0; margin: auto; width: 20vh; height: 20vh; border: 0.4vh solid #d946ef; border-radius: 50%; animation: expandPulse 2s infinite; }
         
         .art-museum { background: linear-gradient(to bottom, #1e293b 40%, #0f172a 100%); }
-        .art-museum .spotlight { position: absolute; top: -10%; width: 50%; height: 120%; background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent); transform: perspective(30vh) rotateX(15deg); filter: blur(2vh);}
-        .art-museum .pedestal { position: absolute; bottom: 15%; width: 25vh; height: 6vh; background: #334155; border-radius: 50%; border: 0.4vh solid #cbd5e1; box-shadow: 0 1.5vh 3vh rgba(0,0,0,0.8); }
+        .art-museum .spotlight { position: absolute; top: -10%; left: 0; right: 0; margin: auto; width: 50%; height: 120%; background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent); transform: perspective(30vh) rotateX(15deg); filter: blur(2vh);}
+        .art-museum .pedestal { position: absolute; bottom: 15%; left: 0; right: 0; margin: auto; width: 25vh; height: 6vh; background: #334155; border-radius: 50%; border: 0.4vh solid #cbd5e1; box-shadow: 0 1.5vh 3vh rgba(0,0,0,0.8); }
         
         .art-nature { background: linear-gradient(135deg, #14532d, #020617); }
-        .art-nature .sun-beam { position: absolute; top: -50%; width: 50%; height: 200%; background: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent); transform: rotate(30deg); }
+        .art-nature .sun-beam { position: absolute; top: -50%; left: 0; right: 0; margin: auto; width: 50%; height: 200%; background: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent); transform: rotate(30deg); }
         
         .art-law { background: #020617; }
         .art-law .laser-grid { position: absolute; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(0deg, transparent, transparent 4vh, rgba(239,68,68,0.8) 4vh, rgba(239,68,68,0.8) 4.5vh); animation: scanVert 4s linear infinite; box-shadow: 0 0 3vh rgba(239,68,68,0.5);}
         .art-law .vignette { position: absolute; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, transparent, #020617 80%); z-index: 5;}
         
         .art-time { background: radial-gradient(circle at center, #0f766e, #020617); }
-        .art-time .clock-face { position: absolute; width: 22vh; height: 22vh; border: 0.8vh solid #5eead4; border-radius: 50%; box-shadow: 0 0 3vh #5eead4;}
-        .art-time .hand { position: absolute; width: 0.6vh; height: 9vh; background: #fff; transform-origin: bottom center; top: calc(50% - 9vh); animation: tick 10s linear infinite;}
+        .art-time .clock-face { position: absolute; left: 0; right: 0; margin: auto; width: 22vh; height: 22vh; border: 0.8vh solid #5eead4; border-radius: 50%; box-shadow: 0 0 3vh #5eead4;}
+        .art-time .hand { position: absolute; left: 0; right: 0; margin: auto; width: 0.6vh; height: 9vh; background: #fff; transform-origin: bottom center; top: calc(50% - 9vh); animation: tick 10s linear infinite;}
         
         .art-sound { background: radial-gradient(circle at center, #1e1b4b, #020617); }
-        .art-sound .sound-bars { position: absolute; display: flex; gap: 1.5vh; align-items: center; height: 15vh; opacity: 0.5; justify-content: center; width: 100%;}
+        .art-sound .sound-bars { position: absolute; left: 0; right: 0; margin: auto; display: flex; gap: 1.5vh; align-items: center; justify-content: center; height: 15vh; opacity: 0.5;}
         .art-sound .bar { width: 2vh; background: #a855f7; border-radius: 1vh; box-shadow: 0 0 2vh #a855f7; animation: waveAnim 1s ease-in-out infinite alternate; }
         
         .art-electricity { background: #0f172a; }
         .art-electricity .circuit-grid { position: absolute; left: 0; width: 200%; height: 200%; background-image: linear-gradient(#38bdf8 0.2vh, transparent 0.2vh), linear-gradient(90deg, #38bdf8 0.2vh, transparent 0.2vh); background-size: 6vh 6vh; opacity: 0.15; transform: perspective(60vh) rotateX(60deg) translateY(-15vh); animation: gridScroll 10s linear infinite;}
         
         .art-space { background: radial-gradient(circle at bottom, #1e1b4b, #000); }
-        .art-space .planet { position:absolute; bottom:-40%; width: 120%; aspect-ratio:1/1; border-radius: 50%; background: radial-gradient(circle at top, #4c1d95, #000); box-shadow: 0 -1vh 4vh rgba(124, 58, 237, 0.4);}
+        .art-space .planet { position:absolute; bottom:-40%; left: 0; right: 0; margin: auto; width: 120%; aspect-ratio:1/1; border-radius: 50%; background: radial-gradient(circle at top, #4c1d95, #000); box-shadow: 0 -1vh 4vh rgba(124, 58, 237, 0.4);}
         
-        /* Medical / Heart */
         .art-medical { background: linear-gradient(135deg, #9f1239, #020617); }
-        .art-medical .med-cross-v { position: absolute; background: rgba(255,255,255,0.1); width: 2.5vh; height: 12vh; box-shadow: 0 0 2vh #fda4af; border-radius:0.5vh;}
-        .art-medical .med-cross-h { position: absolute; background: rgba(255,255,255,0.1); height: 2.5vh; width: 12vh; box-shadow: 0 0 2vh #fda4af; border-radius:0.5vh;}
+        .art-medical .med-cross-v { position: absolute; background: rgba(255,255,255,0.1); width: 2.5vh; height: 12vh; left: 0; right: 0; margin: auto; box-shadow: 0 0 2vh #fda4af; border-radius:0.5vh;}
+        .art-medical .med-cross-h { position: absolute; background: rgba(255,255,255,0.1); height: 2.5vh; width: 12vh; left: 0; right: 0; margin: auto; box-shadow: 0 0 2vh #fda4af; border-radius:0.5vh;}
         
-        /* Magic / Sparkle */
         .art-magic { background: radial-gradient(circle at center, #86198f, #020617); }
         .art-magic .magic-sparkle { position: absolute; font-size: 3vh; color: #fde047; animation: twinkle 1s infinite alternate; }
 
-        /* Theater / Stage */
         .art-theater { background: radial-gradient(circle at bottom, #7f1d1d, #020617); }
         .art-theater .curtain-left { position: absolute; left: 0; top: 0; width: 20%; height: 100%; background: #9f1239; border-right: 0.5vh solid #be123c; border-radius: 0 0 5vh 0; box-shadow: 2vh 0 3vh rgba(0,0,0,0.5);}
         .art-theater .curtain-right { position: absolute; right: 0; top: 0; width: 20%; height: 100%; background: #9f1239; border-left: 0.5vh solid #be123c; border-radius: 0 0 0 5vh; box-shadow: -2vh 0 3vh rgba(0,0,0,0.5);}
         .art-theater .stage-floor { position: absolute; bottom: 0; left: 0; width: 100%; height: 20%; background: #451a03; border-top: 0.5vh solid #78350f;}
 
-        /* City / Buildings */
         .art-city { background: linear-gradient(to bottom, #1e1b4b, #0f172a); }
         .art-city .building-1 { position: absolute; bottom: 0; left: 10%; width: 20%; height: 60%; background: #020617; border-top: 0.2vh solid #334155; border-right: 0.2vh solid #334155; }
-        .art-city .building-2 { position: absolute; bottom: 0; width: 30%; height: 80%; background: #020617; border-top: 0.2vh solid #475569; }
+        .art-city .building-2 { position: absolute; bottom: 0; left: 0; right: 0; margin: auto; width: 30%; height: 80%; background: #020617; border-top: 0.2vh solid #475569; }
         .art-city .building-3 { position: absolute; bottom: 0; right: 10%; width: 25%; height: 50%; background: #020617; border-top: 0.2vh solid #334155; border-left: 0.2vh solid #334155; }
         .art-city .window { position: absolute; width: 1.5vh; height: 1.5vh; background: #fde047; box-shadow: 0 0 1vh #fef08a; animation: flicker 3s infinite alternate;}
 
-        /* Animations Keyframes */
+        /* ALL KEYFRAMES */
         .float-anim { animation: floatSub 4s ease-in-out infinite; }
         .anim-drop { animation: dropAnim 1.5s forwards ease-in; bottom: 20%;}
         .anim-rise { animation: riseAnim 1.5s forwards ease-out; top: 20%;}
         .anim-glow { animation: emojiPulse 2s infinite alternate; }
 
-        @keyframes floatAnim { 0%, 100% { transform: translateY(1.5vh); } 50% { transform: translateY(-1.5vh); } }
-        @keyframes slam { 0% { transform: rotate(0deg); } 100% { transform: rotate(-45deg); } }
-        @keyframes dropAnim { 0% { transform: translateY(-10vh); opacity: 0;} 100% { transform: translateY(0); opacity: 1;} }
-        @keyframes riseAnim { 0% { transform: translateY(10vh); opacity: 0;} 100% { transform: translateY(0); opacity: 1;} }
-        @keyframes emojiPulse { 0% { transform: scale(1); filter: drop-shadow(0 0 1vh var(--cyan-light));} 100% { transform: scale(1.1); filter: drop-shadow(0 0 3vh var(--cyan-light));} }
-        @keyframes itemMove { 0% { left: -20%; opacity:0;} 10% {opacity:1;} 90% {opacity:1;} 100% { left: 120%; opacity:0; } }
-        @keyframes bubbleUp { 0% { bottom: -10%; opacity:0;} 50% {opacity:1;} 100% { bottom: 100%; opacity:0;} }
-        @keyframes bubbleUpPoison { 0% { transform: translateY(0) scale(1); opacity:1;} 100% { transform: translateY(-40vh) scale(2); opacity:0;} }
+        @keyframes floatSub { 0%, 100% { transform: translateY(2vh); } 50% { transform: translateY(-1vh); } }
         @keyframes openLid { 0%, 50% { transform: translateY(0) rotate(0); } 100% { transform: translateY(-5vh) rotate(15deg); } }
-        @keyframes gridScroll { 100% { background-position: 0 5vh; } }
-        @keyframes spinPie { 100% { transform: rotateX(45deg) rotateZ(360deg); } }
-        @keyframes ripple { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(3); opacity: 0; } }
-        @keyframes scanVert { 0% { top: 0; } 100% { top: 100%; } }
-        @keyframes rainFall { 0% { top: -10%; } 100% { top: 110%; } }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-        @keyframes eq { 0% { height: 2vh; } 100% { height: 15vh; } }
+        @keyframes bubbleUpPoison { 0% { transform: translateY(0) scale(1); opacity:1;} 100% { transform: translateY(-40vh) scale(2); opacity:0;} }
         @keyframes twinkle { 0% {opacity:0.2;} 100% {opacity:1;} }
         @keyframes flicker { 0% { opacity: 0.4; } 100% { opacity: 0.9; } }
-        @keyframes scanLeftRight { 0% { transform: translateX(-10vw); } 100% { transform: translateX(10vw); } }
-        @keyframes flyPage { 0% { transform: translate(-5vw, 10vh) rotate(-10deg); opacity:0;} 50% {opacity:1;} 100% { transform: translate(15vw, -15vh) rotate(20deg); opacity:0;} }
         @keyframes throwStick { 0% { transform: translate(-10vh, 10vh) rotate(0deg); } 100% { transform: translate(10vh, -5vh) rotate(360deg); } }
         @keyframes scratchAnim { 0% { width: 0; opacity: 1; } 50% { width: 18vh; opacity: 0.8; } 100% { width: 18vh; opacity: 0; } }
         @keyframes rainCoins { 0% { transform: translateY(-20vh) rotateY(0deg); opacity: 1;} 100% { transform: translateY(20vh) rotateY(360deg); opacity: 0;} }
         @keyframes breakLeft { 0% { transform: translate(-2vh, 0) rotate(20deg); opacity: 1; } 100% { transform: translate(-10vh, 20vh) rotate(90deg); opacity: 0; } }
         @keyframes breakRight { 0% { transform: translate(2vh, 0) rotate(-20deg); opacity: 1; } 100% { transform: translate(10vh, 20vh) rotate(-90deg); opacity: 0; } }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes pulseSize { 0% { transform: scale(0.8); opacity: 0.5;} 100% { transform: scale(1.2); opacity: 1;} }
         @keyframes crackReveal { 0% { height: 0; opacity: 1; } 100% { height: 25vh; opacity: 0.6; } }
-
-        /* === MOBILE OVERRIDES (100% App-like shell) === */
+        @keyframes slam { 0% { transform: rotate(0deg); } 100% { transform: rotate(-45deg); } }
+        @keyframes scanLeftRight { 0% { transform: translateX(-10vw); } 100% { transform: translateX(10vw); } }
+        @keyframes spinPie { 100% { transform: rotateX(45deg) rotateZ(360deg); } }
+        @keyframes dropAnim { 0% { transform: translateY(-10vh); opacity: 0;} 100% { transform: translateY(0); opacity: 1;} }
+        @keyframes riseAnim { 0% { transform: translateY(10vh); opacity: 0;} 100% { transform: translateY(0); opacity: 1;} }
+        @keyframes expandPulse { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(2.5); opacity: 0; } }
+        @keyframes scanVert { 0% { top: 0; } 100% { top: 100%; } }
+        @keyframes tick { 100% { transform: rotate(360deg); } }
+        @keyframes waveAnim { 0% { height: 3vh; } 100% { height: 15vh; } }
+        @keyframes gridScroll { 100% { background-position: 0 6vh; } }
+        @keyframes emojiPulse { 0% { transform: scale(1); filter: drop-shadow(0 0 1.5vh var(--cyan-light));} 100% { transform: scale(1.1); filter: drop-shadow(0 0 4vh var(--cyan-light));} }
+        @keyframes floatOcean { 0%, 100% { transform: translateY(2vh); } 50% { transform: translateY(-1vh); } }
+        @keyframes pulseSonar { 0% { transform: scale(0.2); opacity:1;} 100% { transform: scale(1.5); opacity:0;} }
+    </style>
+    
+    <style>
+        /* === MOBILE OVERRIDES === */
         @media (max-width: 768px) {
             html { font-size: 14px; } 
             body { 
@@ -343,7 +336,6 @@
             .dot { height: 3px !important; }
             .dot.active { width: 12px !important; }
             
-            /* The Flashcard itself is the ONLY scrollable area */
             .flashcard { 
                 padding: 12px !important; 
                 gap: 12px !important; 
@@ -372,32 +364,30 @@
             .audio-small { width: 28px !important; height: 28px !important; border-width: 1px !important; }
             .audio-small svg { width: 14px !important; height: 14px !important; }
 
-            .visual-col { min-height: 110px !important; height: 110px !important; margin-top: 0 !important; padding: 0 !important; }
+            .visual-col { min-height: 160px !important; height: 160px !important; margin-top: 0 !important; padding: 0 !important; }
             .art-inner-container { border-radius: 10px !important; }
             .art-emoji-hero { font-size: 3.5rem !important; }
             
-            /* Controls remain stuck at bottom */
             .controls-container { 
-                padding: 0 !important; 
-                margin-top: 5px !important; 
-                gap: 10px !important;
+                padding: 3px 0 5px 0 !important; 
+                margin-top: 0 !important; 
+                gap: 8px !important;
                 flex-direction: row-reverse !important;
                 height: auto !important;
             }
             .control-btn { flex: 1 !important; justify-content: center !important; padding: 8px 5px !important; font-size: 14px !important; border-radius: 8px !important;}
             .control-btn svg { width: 16px !important; height: 16px !important; }
 
-            /* Matrix overrides */
             .matrix-wrapper { padding: 10px !important; border-radius: 12px !important; }
-            .summary-toggles { flex-direction: row !important; gap: 10px !important; margin-bottom: 10px !important; }
-            .sum-toggle { font-size: 12px !important; padding: 6px 10px !important; flex: 1 !important; }
+            .summary-toggles { flex-direction: column !important; gap: 6px !important; margin-bottom: 6px !important; }
+            .sum-toggle { font-size: 12px !important; padding: 8px !important; }
             .weeks-scroll { gap: 15px !important; }
-            .week-title { font-size: 1.5rem !important; margin-bottom: 8px !important; }
+            .week-title { font-size: 1.6rem !important; margin-bottom: 8px !important; }
             .days-grid { grid-template-columns: 1fr !important; gap: 10px !important;}
             .matrix-card { padding: 10px !important; border-radius: 10px !important;}
             .matrix-header { font-size: 1.1rem !important; margin-bottom: 6px !important; }
-            .matrix-item { font-size: 0.9rem !important; flex-direction: column !important; align-items: flex-start !important; gap: 3px !important; padding: 6px 0 !important;}
-            .matrix-item-he { margin-right: 0 !important; width: 100% !important; border-right: 2px solid var(--emerald-main) !important; padding-right: 6px !important; margin-top: 2px !important;}
+            .matrix-item { font-size: 0.9rem !important; flex-direction: column !important; align-items: flex-start !important; gap: 4px !important; padding: 6px 0 !important;}
+            .matrix-item-he { margin-right: 0 !important; width: 100% !important; border-right: 2px solid var(--emerald-main) !important; padding-right: 6px !important; margin-top: 4px !important;}
             .compact-grid { grid-template-columns: repeat(2, 1fr) !important; padding: 8px !important; gap: 6px !important;}
             .compact-item { padding: 6px !important; }
             .compact-en { font-size: 1rem !important; }
@@ -426,9 +416,12 @@
         .summary-toggles { display: flex; justify-content: center; gap: 1.5vw; margin-bottom: 2vh; flex-shrink: 0;}
         .sum-toggle { background: rgba(30, 41, 59, 0.8); color: var(--cyan-light); border: 1px solid var(--cyan-main); padding: 1vh 2vw; border-radius: 1vh; font-size: clamp(12px, 1.8vh, 20px); font-weight: bold; cursor: pointer; transition: 0.3s;}
         .sum-toggle.active { background: var(--cyan-main); color: #fff; box-shadow: 0 0 2vh rgba(34,211,238,0.5);}
+        
+        /* Fixed overlapping weeks using flex: 0 0 auto */
         .weeks-scroll { flex-grow: 1; width: 100%; overflow-y: auto; padding-right: 1vw; display: flex; flex-direction: column; gap: 4vh;}
-        .week-section { display: flex; flex-direction: column; gap: 1.5vh;}
-        .week-title { color: #fde047; text-shadow: 0 0 2vh rgba(253, 224, 71, 0.8); font-size: clamp(24px, 3.5vh, 40px); font-weight: 900; text-align: center; margin-bottom: 1vh; letter-spacing: 2px;}
+        .week-section { flex: 0 0 auto; display: flex; flex-direction: column; padding-bottom: 2vh;}
+        
+        .week-title { color: #fde047; text-shadow: 0 0 2vh rgba(253, 224, 71, 0.8); font-size: clamp(24px, 3.5vh, 40px); font-weight: 900; text-align: center; margin-bottom: 1.5vh; letter-spacing: 2px;}
         .days-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5vh; }
         .compact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 1vh; width: 100%; overflow-y: auto; flex-grow: 1; background: rgba(15,23,42,0.8); padding: 2vh; border-radius: 2vh; border: 1px solid var(--border);}
         .compact-item { background: rgba(30,41,59,0.9); padding: 1vh; border-radius: 1vh; border: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; align-items: center; text-align: center; cursor: pointer; transition: 0.2s;}
@@ -454,7 +447,7 @@
     <div class="header-section w-full">
         <h1>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-            Day Fluency Sprint | Master V22
+            Day Fluency Sprint | Master V23 (Ultimate Stability)
         </h1>
         
         <div class="nav-tier">
@@ -733,7 +726,6 @@ window.prevWord = function() {
     window.render();
 };
 
-// === ART CATEGORY MAPPING ===
 window.getArtClass = function(word) {
     const categories = {
         'ocean': ['Deep', 'Mud'],
@@ -764,7 +756,6 @@ window.getArtClass = function(word) {
         'city': ['Dormitories', 'Institutions', 'Organization', 'Owners']
     };
 
-    // Check specific custom styles first
     if (['Receive', 'Runs It'].includes(word)) {
         return 'art-bespoke';
     }
@@ -778,203 +769,33 @@ window.getArtClass = function(word) {
 window.getCustomArtHTML = function(word, visual) {
     const artClass = window.getArtClass(word);
 
-    let artStyles = `
-        <style>
-            .art-inner-container { width: 100%; height: 100%; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; border-radius: 2vh;}
-            .art-emoji-hero { font-size: clamp(60px, 12vh, 150px); z-index: 10; filter: drop-shadow(0 1vh 2vh rgba(0,0,0,0.6)); position: absolute;}
-
-            /* --- Special Word Overrides --- */
-            .gift-box { position:absolute; bottom: 10%; left: 50%; margin-left: -7.5vh; width: 15vh; height: 10vh; background: #be123c; border-radius: 1vh; }
-            .gift-lid { position:absolute; bottom:calc(10% + 10vh); left: 50%; margin-left: -8vh; width: 16vh; height: 3vh; background: #e11d48; border-radius: 0.5vh; animation: openLid 3s infinite alternate ease-in-out; }
-
-            .poison-bubble { position: absolute; bottom: -10%; left: 50%; margin-left: -1.5vh; width: 3vh; height: 3vh; background: rgba(34, 197, 94, 0.6); border-radius: 50%; box-shadow: 0 0 2vh #22c55e; animation: bubbleUpPoison 4s infinite linear; }
-            @keyframes bubbleUpPoison { 0% { transform: translateY(0) scale(1); opacity:1;} 100% { transform: translateY(-40vh) scale(2); opacity:0;} }
-
-            .gold-dust { position: absolute; background: #fde047; border-radius: 50%; width: 0.4vh; height: 0.4vh; box-shadow: 0 0 1vh #fde047; animation: twinkle 2s infinite alternate;}
-            .spotlight-gold { position: absolute; top: -10%; left: 50%; margin-left: -25%; width: 50%; height: 120%; background: linear-gradient(to bottom, rgba(253, 224, 71, 0.15), transparent); transform: perspective(30vh) rotateX(15deg); filter: blur(2vh); }
-
-            .kiln-fire { position: absolute; bottom: 0; left: 50%; margin-left: -30%; width: 60%; height: 30%; background: linear-gradient(to top, #ea580c, #fef08a, transparent); filter: blur(2vh); animation: flicker 0.5s infinite alternate; border-radius: 50% 50% 0 0;}
-            .kiln-brick { position: absolute; bottom: 30%; left: 50%; margin-left: -35%; width: 70%; height: 10%; background: #7f1d1d; border-radius: 1vh; border-bottom: 1vh solid #450a0a;}
-
-            .measure-grid { position: absolute; width: 100%; height: 100%; left: 0; background-image: linear-gradient(rgba(34, 211, 238, 0.2) 0.2vh, transparent 0.2vh), linear-gradient(90deg, rgba(34, 211, 238, 0.2) 0.2vh, transparent 0.2vh); background-size: 4vh 4vh; }
-            .measure-line { position:absolute; width: 100%; left: 0; height: 0.4vh; background: #22d3ee; top: 50%; box-shadow: 0 0 1vh #22d3ee; }
-            .measure-cross { position:absolute; width: 0.4vh; height: 100%; background: #22d3ee; left: 50%; margin-left: -0.2vh; box-shadow: 0 0 1vh #22d3ee; }
-
-            .fetch-stick { position: absolute; width: 8vh; height: 1.5vh; background: #78350f; border-radius: 1vh; z-index: 5; animation: throwStick 2s infinite ease-in-out alternate; }
-            @keyframes throwStick { 0% { transform: translate(-10vh, 10vh) rotate(0deg); } 100% { transform: translate(10vh, -5vh) rotate(360deg); } }
-
-            .scratch-mark { position: absolute; width: 12vh; height: 0.8vh; background: #ef4444; border-radius: 50%; opacity: 0; animation: scratchAnim 2s infinite; transform: rotate(-45deg); box-shadow: 0 0 1vh #ef4444;}
-            .scratch-mark:nth-child(2) { margin-top: 3vh; margin-left: -3vh; animation-delay: 0.2s; }
-            .scratch-mark:nth-child(3) { margin-top: 6vh; margin-left: -6vh; animation-delay: 0.4s; }
-            @keyframes scratchAnim { 0% { width: 0; opacity: 1; } 50% { width: 18vh; opacity: 0.8; } 100% { width: 18vh; opacity: 0; } }
-
-            .coin { position: absolute; width: 3.5vh; height: 3.5vh; background: #fde047; border-radius: 50%; border: 0.4vh solid #eab308; box-shadow: 0 0 1.5vh #facc15; animation: rainCoins 2.5s infinite linear; }
-            @keyframes rainCoins { 0% { transform: translateY(-20vh) rotateY(0deg); opacity: 1;} 100% { transform: translateY(20vh) rotateY(360deg); opacity: 0;} }
-
-            .chain { position: absolute; width: 2.5vh; height: 10vh; border: 0.6vh solid #94a3b8; border-radius: 1.5vh; }
-            .chain-break-left { animation: breakLeft 2s infinite ease-in; }
-            .chain-break-right { animation: breakRight 2s infinite ease-in; }
-            @keyframes breakLeft { 0% { transform: translate(-2vh, 0) rotate(20deg); opacity: 1; } 100% { transform: translate(-10vh, 20vh) rotate(90deg); opacity: 0; } }
-            @keyframes breakRight { 0% { transform: translate(2vh, 0) rotate(-20deg); opacity: 1; } 100% { transform: translate(10vh, 20vh) rotate(-90deg); opacity: 0; } }
-
-            .gear { position: absolute; width: 18vh; height: 18vh; border: 1.5vh dashed #94a3b8; border-radius: 50%; animation: spin 6s infinite linear; opacity: 0.5;}
-            .gear-small { width: 10vh; height: 10vh; border: 1vh dashed #cbd5e1; animation: spin 3s infinite linear reverse; }
-
-            .key-glow { position: absolute; width: 25vh; height: 25vh; background: radial-gradient(circle, rgba(253, 224, 71, 0.4) 0%, transparent 70%); animation: pulseSize 2s infinite alternate; }
-            .house-silhouette { position: absolute; bottom: 0; left: 50%; margin-left:-40%; width: 80%; height: 40%; background: #0f172a; clip-path: polygon(50% 0%, 100% 40%, 100% 100%, 0 100%, 0 40%); border-bottom: 1vh solid #1e293b;}
-
-            .glass-crack { position: absolute; width: 0.4vh; height: 25vh; background: rgba(255,255,255,0.8); transform-origin: center; animation: crackReveal 0.5s forwards ease-out; box-shadow: 0 0 1vh #fff;}
-            .glass-crack:nth-child(1) { transform: rotate(25deg); }
-            .glass-crack:nth-child(2) { transform: rotate(75deg); }
-            .glass-crack:nth-child(3) { transform: rotate(145deg); }
-            @keyframes crackReveal { 0% { height: 0; opacity: 1; } 100% { height: 25vh; opacity: 0.6; } }
-
-            /* --- Base Styles --- */
-            .art-ocean { background: linear-gradient(180deg, #0ea5e9 0%, #0369a1 20%, #1e3a8a 50%, #020617 100%); }
-            .art-ocean .wave-line { position: absolute; top: 25%; left: 0; width: 100%; height: 0.3vh; background: rgba(255,255,255,0.4); box-shadow: 0 0 2vh #fff;}
-            .art-ocean .ruler { position: absolute; left: 10%; top: 25%; bottom: 5%; width: 0.3vh; background: rgba(255,255,255,0.2); }
-            .art-ocean .tick { position: absolute; left: 0; width: 3vh; height: 0.3vh; background: rgba(255,255,255,0.5); }
-
-            .art-auction { background: radial-gradient(circle at center, #78350f 0%, #2e1001 100%); }
-            .art-auction .desk { position: absolute; bottom: 5%; left: 50%; margin-left: -35%; width: 70%; height: 20%; background: #5c2606; border-top: 0.8vh solid #8b3c06; border-radius: 1vh; transform: perspective(40vh) rotateX(25deg); box-shadow: 0 3vh 3vh rgba(0,0,0,0.8);}
-            .art-auction .hammer-anim { transform-origin: bottom right; bottom: 25%; margin-right: -10%; animation: slam 1s infinite alternate ease-in;}
-
-            .art-build { background-color: #7f1d1d; background-image: linear-gradient(rgba(255,255,255,0.15) 0.3vh, transparent 0.3vh), linear-gradient(90deg, rgba(255,255,255,0.15) 0.3vh, transparent 0.3vh); background-size: 8vh 4vh; background-position: 0 0, 4vh 2vh;}
-            .art-build .fire-glow { position: absolute; bottom: -3vh; left: 0; width: 100%; height: 50%; background: linear-gradient(to top, #ea580c, transparent); opacity: 0.6; filter: blur(2vh); animation: flicker 2s infinite alternate;}
-
-            .art-market { background: radial-gradient(circle at center, #1e293b, #020617); }
-            .art-market .shelf { position: absolute; bottom: 20%; left: 50%; margin-left: -40%; width: 80%; height: 1.5vh; background: #cbd5e1; border-radius: 1vh; box-shadow: 0 1.5vh 2vh rgba(0,0,0,0.5);}
-            .art-market .laser-scanner { position: absolute; top: 0; left: 50%; margin-left: -0.2vh; width: 0.4vh; height: 100%; background: rgba(34,211,238,0.5); box-shadow: 0 0 2vh var(--cyan-light); animation: scanLeftRight 3s ease-in-out infinite alternate;}
-
-            .art-pie-chart { background: radial-gradient(circle at center, #1e293b, #020617); }
-            .art-pie-chart .pie-bg { position: absolute; left: 50%; top: 50%; margin-left: -12.5vh; margin-top: -12.5vh; width: 25vh; height: 25vh; border-radius: 50%; background: conic-gradient(var(--cyan-main) 0deg, var(--cyan-main) 120deg, #334155 120deg, #334155 360deg); box-shadow: 0 1.5vh 4vh rgba(0,0,0,0.6); border: 0.3vh solid rgba(255,255,255,0.1); transform: rotate(-45deg);}
-
-            .art-chart-down { background: radial-gradient(circle at bottom right, #7f1d1d, #020617); }
-            .art-chart-down .chart-axis-down { position: absolute; top: 15%; left: 50%; margin-left: -35%; width: 70%; height: 70%; border-bottom: 0.5vh solid #ef4444; border-left: 0.5vh solid #ef4444; }
-            .art-chart-down .trend-line-down { position: absolute; top: 20%; left: 50%; margin-left: -35%; width: 70%; height: 65%; border-top: 0.6vh solid #fca5a5; transform-origin: top left; transform: rotate(35deg); box-shadow: inset -1.5vh 1.5vh 3vh rgba(239,68,68,0.3);}
-
-            .art-doorway { background: #020617; }
-            .art-doorway .door-frame { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 18vh; height: 28vh; border: 0.5vh solid #fef08a; border-bottom: none; box-shadow: 0 0 6vh #fef08a; background: linear-gradient(to top, rgba(253, 224, 71, 0.3), transparent); display: flex; align-items: center; justify-content: center;}
-
-            .art-mind { background: radial-gradient(circle at center, #4c1d95, #020617); }
-            .art-mind .pulse-ring { position: absolute; left: 50%; top: 50%; margin-left: -10vh; margin-top: -10vh; width: 20vh; height: 20vh; border: 0.4vh solid #d946ef; border-radius: 50%; animation: expandPulse 2s infinite; }
-
-            .art-museum { background: linear-gradient(to bottom, #1e293b 40%, #0f172a 100%); }
-            .art-museum .spotlight { position: absolute; top: -10%; left: 50%; margin-left: -25%; width: 50%; height: 120%; background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent); transform: perspective(30vh) rotateX(15deg); filter: blur(2vh);}
-            .art-museum .pedestal { position: absolute; bottom: 15%; left: 50%; margin-left: -12.5vh; width: 25vh; height: 6vh; background: #334155; border-radius: 50%; border: 0.4vh solid #cbd5e1; box-shadow: 0 1.5vh 3vh rgba(0,0,0,0.8); }
-
-            .art-nature { background: linear-gradient(135deg, #14532d, #020617); }
-            .art-nature .sun-beam { position: absolute; top: -50%; left: 50%; margin-left: -25%; width: 50%; height: 200%; background: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent); transform: rotate(30deg); }
-
-            .art-law { background: #020617; }
-            .art-law .laser-grid { position: absolute; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(0deg, transparent, transparent 4vh, rgba(239,68,68,0.8) 4vh, rgba(239,68,68,0.8) 4.5vh); animation: scanVert 4s linear infinite; box-shadow: 0 0 3vh rgba(239,68,68,0.5);}
-            .art-law .vignette { position: absolute; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, transparent, #020617 80%); z-index: 5;}
-
-            .art-time { background: radial-gradient(circle at center, #0f766e, #020617); }
-            .art-time .clock-face { position: absolute; left: 50%; top: 50%; margin-left: -11vh; margin-top: -11vh; width: 22vh; height: 22vh; border: 0.8vh solid #5eead4; border-radius: 50%; box-shadow: 0 0 3vh #5eead4;}
-            .art-time .hand { position: absolute; left: 50%; margin-left: -0.3vh; width: 0.6vh; height: 9vh; background: #fff; transform-origin: bottom center; top: calc(50% - 9vh); animation: tick 10s linear infinite;}
-
-            .art-sound { background: radial-gradient(circle at center, #1e1b4b, #020617); }
-            .art-sound .sound-bars { position: absolute; left: 50%; transform: translateX(-50%); display: flex; gap: 1.5vh; align-items: center; height: 15vh; opacity: 0.5;}
-            .art-sound .bar { width: 2vh; background: #a855f7; border-radius: 1vh; box-shadow: 0 0 2vh #a855f7; animation: waveAnim 1s ease-in-out infinite alternate; }
-
-            .art-electricity { background: #0f172a; }
-            .art-electricity .circuit-grid { position: absolute; left: 0; width: 200%; height: 200%; background-image: linear-gradient(#38bdf8 0.2vh, transparent 0.2vh), linear-gradient(90deg, #38bdf8 0.2vh, transparent 0.2vh); background-size: 6vh 6vh; opacity: 0.15; transform: perspective(60vh) rotateX(60deg) translateY(-15vh); animation: gridScroll 10s linear infinite;}
-
-            .art-space { background: radial-gradient(circle at bottom, #1e1b4b, #000); }
-            .art-space .planet { position:absolute; bottom:-40%; left: 50%; margin-left: -60%; width: 120%; aspect-ratio:1/1; border-radius: 50%; background: radial-gradient(circle at top, #4c1d95, #000); box-shadow: 0 -1vh 4vh rgba(124, 58, 237, 0.4);}
-
-            /* Medical / Heart */
-            .art-medical { background: linear-gradient(135deg, #9f1239, #020617); }
-            .art-medical .med-cross-v { position: absolute; background: rgba(255,255,255,0.1); width: 2.5vh; height: 12vh; left: 50%; top: 50%; margin-left: -1.25vh; margin-top: -6vh; box-shadow: 0 0 2vh #fda4af; border-radius:0.5vh;}
-            .art-medical .med-cross-h { position: absolute; background: rgba(255,255,255,0.1); height: 2.5vh; width: 12vh; left: 50%; top: 50%; margin-left: -6vh; margin-top: -1.25vh; box-shadow: 0 0 2vh #fda4af; border-radius:0.5vh;}
-
-            /* Magic / Sparkle */
-            .art-magic { background: radial-gradient(circle at center, #86198f, #020617); }
-            .art-magic .magic-sparkle { position: absolute; font-size: 3vh; color: #fde047; animation: twinkle 1s infinite alternate; }
-
-            /* Theater / Stage */
-            .art-theater { background: radial-gradient(circle at bottom, #7f1d1d, #020617); }
-            .art-theater .curtain-left { position: absolute; left: 0; top: 0; width: 20%; height: 100%; background: #9f1239; border-right: 0.5vh solid #be123c; border-radius: 0 0 5vh 0; box-shadow: 2vh 0 3vh rgba(0,0,0,0.5);}
-            .art-theater .curtain-right { position: absolute; right: 0; top: 0; width: 20%; height: 100%; background: #9f1239; border-left: 0.5vh solid #be123c; border-radius: 0 0 0 5vh; box-shadow: -2vh 0 3vh rgba(0,0,0,0.5);}
-            .art-theater .stage-floor { position: absolute; bottom: 0; left: 0; width: 100%; height: 20%; background: #451a03; border-top: 0.5vh solid #78350f;}
-
-            /* City / Buildings */
-            .art-city { background: linear-gradient(to bottom, #1e1b4b, #0f172a); }
-            .art-city .building-1 { position: absolute; bottom: 0; left: 10%; width: 20%; height: 60%; background: #020617; border-top: 0.2vh solid #334155; border-right: 0.2vh solid #334155; }
-            .art-city .building-2 { position: absolute; bottom: 0; left: 40%; width: 30%; height: 80%; background: #020617; border-top: 0.2vh solid #475569; }
-            .art-city .building-3 { position: absolute; bottom: 0; right: 10%; width: 25%; height: 50%; background: #020617; border-top: 0.2vh solid #334155; border-left: 0.2vh solid #334155; }
-            .art-city .window { position: absolute; width: 1.5vh; height: 1.5vh; background: #fde047; box-shadow: 0 0 1vh #fef08a; animation: flicker 3s infinite alternate;}
-
-            /* Animations Keyframes */
-            .float-anim { animation: floatSub 4s ease-in-out infinite; }
-            .anim-slam { transform-origin: bottom right; animation: slam 1s infinite alternate ease-in; bottom: 25%; margin-right: -10%; }
-            .anim-drop { animation: dropAnim 1.5s forwards ease-in; bottom: 20%; left: 50%; margin-left: 10%;}
-            .anim-rise { animation: riseAnim 1.5s forwards ease-out; top: 20%; left: 50%; margin-left: 10%;}
-            .anim-glow { animation: emojiPulse 2s infinite alternate; }
-            .anim-move { animation: itemMove 4s linear infinite; bottom: 25%; }
-
-            @keyframes floatAnim { 0%, 100% { transform: translateY(1.5vh); } 50% { transform: translateY(-1.5vh); } }
-            @keyframes slam { 0% { transform: rotate(0deg); } 100% { transform: rotate(-45deg); } }
-            @keyframes dropAnim { 0% { transform: translateY(-10vh); opacity: 0;} 100% { transform: translateY(0); opacity: 1;} }
-            @keyframes riseAnim { 0% { transform: translateY(10vh); opacity: 0;} 100% { transform: translateY(0); opacity: 1;} }
-            @keyframes emojiPulse { 0% { transform: scale(1); filter: drop-shadow(0 0 1vh var(--cyan-light));} 100% { transform: scale(1.1); filter: drop-shadow(0 0 3vh var(--cyan-light));} }
-            @keyframes itemMove { 0% { left: -20%; opacity:0;} 10% {opacity:1;} 90% {opacity:1;} 100% { left: 120%; opacity:0; } }
-            @keyframes bubbleUp { 0% { bottom: -10%; opacity:0;} 50% {opacity:1;} 100% { bottom: 100%; opacity:0;} }
-            @keyframes bubbleUpPoison { 0% { transform: translateY(0) scale(1); opacity:1;} 100% { transform: translateY(-40vh) scale(2); opacity:0;} }
-            @keyframes openLid { 0%, 50% { transform: translateY(0) rotate(0); } 100% { transform: translateY(-5vh) rotate(15deg); } }
-            @keyframes gridScroll { 100% { background-position: 0 5vh; } }
-            @keyframes spinPie { 100% { transform: rotateX(45deg) rotateZ(360deg); } }
-            @keyframes ripple { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(3); opacity: 0; } }
-            @keyframes scanVert { 0% { top: 0; } 100% { top: 100%; } }
-            @keyframes rainFall { 0% { top: -10%; } 100% { top: 110%; } }
-            @keyframes spin { 100% { transform: rotate(360deg); } }
-            @keyframes eq { 0% { height: 2vh; } 100% { height: 15vh; } }
-            @keyframes twinkle { 0% {opacity:0.2;} 100% {opacity:1;} }
-            @keyframes flicker { 0% { opacity: 0.4; } 100% { opacity: 0.9; } }
-            @keyframes scanLeftRight { 0% { transform: translateX(-10vw); } 100% { transform: translateX(10vw); } }
-            @keyframes flyPage { 0% { transform: translate(-5vw, 10vh) rotate(-10deg); opacity:0;} 50% {opacity:1;} 100% { transform: translate(15vw, -15vh) rotate(20deg); opacity:0;} }
-            @keyframes throwStick { 0% { transform: translate(-10vh, 10vh) rotate(0deg); } 100% { transform: translate(10vh, -5vh) rotate(360deg); } }
-            @keyframes scratchAnim { 0% { width: 0; opacity: 1; } 50% { width: 18vh; opacity: 0.8; } 100% { width: 18vh; opacity: 0; } }
-            @keyframes rainCoins { 0% { transform: translateY(-20vh) rotateY(0deg); opacity: 1;} 100% { transform: translateY(20vh) rotateY(360deg); opacity: 0;} }
-            @keyframes breakLeft { 0% { transform: translate(-2vh, 0) rotate(20deg); opacity: 1; } 100% { transform: translate(-10vh, 20vh) rotate(90deg); opacity: 0; } }
-            @keyframes breakRight { 0% { transform: translate(2vh, 0) rotate(-20deg); opacity: 1; } 100% { transform: translate(10vh, 20vh) rotate(-90deg); opacity: 0; } }
-            @keyframes crackReveal { 0% { height: 0; opacity: 1; } 100% { height: 25vh; opacity: 0.6; } }
-
-        </style>
-    `;
-
-    // Bespoke overrides for requested words
-    if (word === 'Receive') return `${artStyles}<div class="art-inner-container" style="background: radial-gradient(circle, #4c1d95, #020617);"><div class="gift-box"></div><div class="gift-lid"></div><div class="art-emoji-hero" style="animation: floatSub 3s infinite alternate; z-index: 5;">${visual}</div></div>`;
-    if (word === 'Runs It') return `${artStyles}<div class="art-inner-container art-tech"><div class="gear" style="left: 20%; top: 20%;"></div><div class="gear gear-small" style="left: 45%; top: 45%;"></div><div class="art-emoji-hero" style="z-index: 10; filter: drop-shadow(0 0 2vh #fff);">${visual}</div></div>`;
+    if (word === 'Receive') return `<div class="art-inner-container" style="background: radial-gradient(circle, #4c1d95, #020617);"><div class="gift-box"></div><div class="gift-lid"></div><div class="art-emoji-hero float-anim" style="z-index: 5;">${visual}</div></div>`;
+    if (word === 'Runs It') return `<div class="art-inner-container art-tech"><div class="gear" style="left: 0; right: 20vh; margin: auto;"></div><div class="gear-small" style="position:absolute; left: 20vh; right: 0; margin: auto;"></div><div class="art-emoji-hero" style="z-index: 10; filter: drop-shadow(0 0 2vh #fff);">${visual}</div></div>`;
     
-    // Category fallbacks
-    if (artClass === 'art-ocean') return `${artStyles}<div class="art-inner-container art-ocean"><div class="wave-line"></div><div class="ruler"><div class="tick" style="top: 10%;"></div><div class="tick" style="top: 30%;"></div><div class="tick" style="top: 50%;"></div><div class="tick" style="top: 70%;"></div><div class="tick" style="top: 90%;"></div></div><div class="art-emoji-hero float-anim">${visual}</div></div>`;
-    if (artClass === 'art-auction') return `${artStyles}<div class="art-inner-container art-auction"><div class="desk"></div><div class="art-emoji-hero hammer-anim">${visual}</div></div>`;
-    if (artClass === 'art-build') return `${artStyles}<div class="art-inner-container art-build"><div class="fire-glow"></div><div class="art-emoji-hero">${visual}</div></div>`;
-    if (artClass === 'art-market') return `${artStyles}<div class="art-inner-container art-market"><div class="laser-scanner"></div><div class="shelf"></div><div class="art-emoji-hero float-anim">${visual}</div></div>`;
-    if (artClass === 'art-pie-chart') return `${artStyles}<div class="art-inner-container art-pie-chart"><div class="pie-bg"></div><div class="art-emoji-hero" style="z-index: 20;">${visual}</div></div>`;
-    if (artClass === 'art-chart-down') return `${artStyles}<div class="art-inner-container art-chart-down"><div class="chart-axis-down"></div><div class="trend-line-down"></div><div class="art-emoji-hero drop-anim" style="bottom: 20%; right: 20%; margin-right: -10%;">${visual}</div></div>`;
-    if (artClass === 'art-chart-up' || artClass === 'art-finance-up') return `${artStyles}<div class="art-inner-container art-chart-up" style="background: radial-gradient(circle at bottom right, #064e3b, #020617);"><div class="chart-axis-down" style="border-color:#10b981;"></div><div class="trend-line-down" style="border-color:#6ee7b7; box-shadow: inset -1.5vh 1.5vh 3vh rgba(16,185,129,0.3); transform: skewY(-30deg); bottom:20%; top:auto;"></div><div class="art-emoji-hero float-anim" style="top: 20%; right: 20%; margin-right: -10%;">${visual}</div></div>`;
-    if (artClass === 'art-doorway') return `${artStyles}<div class="art-inner-container art-doorway"><div class="door-frame"></div><div class="art-emoji-hero float-anim" style="filter: drop-shadow(0 0 3vh #fef08a);">${visual}</div></div>`;
-    if (artClass === 'art-mind') return `${artStyles}<div class="art-inner-container art-mind"><div class="pulse-ring"></div><div class="pulse-ring" style="animation-delay: 1.5s;"></div><div class="art-emoji-hero">${visual}</div></div>`;
-    if (artClass === 'art-museum') return `${artStyles}<div class="art-inner-container art-museum"><div class="spotlight"></div><div class="pedestal"></div><div class="art-emoji-hero float-anim" style="bottom: 25%;">${visual}</div></div>`;
-    if (artClass === 'art-nature') return `${artStyles}<div class="art-inner-container art-nature"><div class="sun-beam"></div><div class="art-emoji-hero float-anim">${visual}</div></div>`;
-    if (artClass === 'art-law' || artClass === 'art-danger') return `${artStyles}<div class="art-inner-container art-law"><div class="laser-grid"></div><div class="vignette"></div><div class="art-emoji-hero" style="z-index: 10;">${visual}</div></div>`;
-    if (artClass === 'art-time') return `${artStyles}<div class="art-inner-container art-time"><div class="clock-face"><div class="hand"></div></div><div class="art-emoji-hero" style="z-index: 20;">${visual}</div></div>`;
-    if (artClass === 'art-sound') return `${artStyles}<div class="art-inner-container art-sound"><div class="sound-bars"><div class="bar" style="animation-delay: 0.1s"></div><div class="bar" style="animation-delay: 0.3s; height: 60%;"></div><div class="bar" style="animation-delay: 0.5s; height: 100%;"></div><div class="bar" style="animation-delay: 0.2s; height: 50%;"></div></div><div class="art-emoji-hero">${visual}</div></div>`;
-    if (artClass === 'art-electricity' || artClass === 'art-tech' || artClass === 'art-weather') return `${artStyles}<div class="art-inner-container art-electricity"><div class="circuit-grid"></div><div class="art-emoji-hero pulse-anim">${visual}</div></div>`;
-    if (artClass === 'art-space') return `${artStyles}<div class="art-inner-container art-space"><div class="planet"></div><div class="star" style="top:20%; left:20%;"></div><div class="star" style="top:40%; right:30%;"></div><div class="art-emoji-hero float-anim">${visual}</div></div>`;
-    if (artClass === 'art-medical') return `${artStyles}<div class="art-inner-container art-medical"><div class="med-cross-v"></div><div class="med-cross-h"></div><div class="art-emoji-hero float-anim">${visual}</div></div>`;
-    if (artClass === 'art-magic') return `${artStyles}<div class="art-inner-container art-magic"><div class="magic-sparkle" style="top:20%;left:30%;">✨</div><div class="magic-sparkle" style="top:60%;right:30%;animation-delay:0.5s;">✨</div><div class="art-emoji-hero pulse-anim">${visual}</div></div>`;
-    if (artClass === 'art-theater') return `${artStyles}<div class="art-inner-container art-theater"><div class="stage-floor"></div><div class="curtain-left"></div><div class="curtain-right"></div><div class="spotlight"></div><div class="art-emoji-hero float-anim" style="bottom: 20%;">${visual}</div></div>`;
-    if (artClass === 'art-city') return `${artStyles}<div class="art-inner-container art-city"><div class="building-1"></div><div class="building-2"><div class="window" style="top:10%; left:20%"></div><div class="window" style="top:30%; left:60%"></div></div><div class="building-3"></div><div class="art-emoji-hero float-anim" style="bottom: 30%;">${visual}</div></div>`;
+    if (artClass === 'art-ocean') return `<div class="art-inner-container art-ocean"><div class="wave-line"></div><div class="ruler"><div class="tick" style="top: 10%;"></div><div class="tick" style="top: 30%;"></div><div class="tick" style="top: 50%;"></div><div class="tick" style="top: 70%;"></div><div class="tick" style="top: 90%;"></div></div><div class="art-emoji-hero float-anim">${visual}</div></div>`;
+    if (artClass === 'art-auction') return `<div class="art-inner-container art-auction"><div class="desk"></div><div class="art-emoji-hero anim-slam">${visual}</div></div>`;
+    if (artClass === 'art-build') return `<div class="art-inner-container art-build"><div class="fire-glow"></div><div class="art-emoji-hero">${visual}</div></div>`;
+    if (artClass === 'art-market') return `<div class="art-inner-container art-market"><div class="laser-scanner"></div><div class="shelf"></div><div class="art-emoji-hero float-anim">${visual}</div></div>`;
+    if (artClass === 'art-pie-chart') return `<div class="art-inner-container art-pie-chart"><div class="pie-bg"></div><div class="art-emoji-hero" style="z-index: 20;">${visual}</div></div>`;
+    if (artClass === 'art-chart-down') return `<div class="art-inner-container art-chart-down"><div class="chart-axis-down"></div><div class="trend-line-down"></div><div class="art-emoji-hero anim-drop">${visual}</div></div>`;
+    if (artClass === 'art-chart-up' || artClass === 'art-finance-up') return `<div class="art-inner-container art-chart-up" style="background: radial-gradient(circle at bottom right, #064e3b, #020617);"><div class="chart-axis-down" style="border-color:#10b981;"></div><div class="trend-line-down" style="border-color:#6ee7b7; box-shadow: inset -1.5vh 1.5vh 3vh rgba(16,185,129,0.3); transform: skewY(-30deg); bottom:20%; top:auto;"></div><div class="art-emoji-hero anim-rise">${visual}</div></div>`;
+    if (artClass === 'art-doorway') return `<div class="art-inner-container art-doorway"><div class="door-frame"></div><div class="art-emoji-hero float-anim" style="filter: drop-shadow(0 0 3vh #fef08a);">${visual}</div></div>`;
+    if (artClass === 'art-mind') return `<div class="art-inner-container art-mind"><div class="pulse-ring"></div><div class="pulse-ring" style="animation-delay: 1.5s; width: 40vh; height: 40vh;"></div><div class="art-emoji-hero">${visual}</div></div>`;
+    if (artClass === 'art-museum') return `<div class="art-inner-container art-museum"><div class="spotlight"></div><div class="pedestal"></div><div class="art-emoji-hero float-anim" style="bottom: 25%;">${visual}</div></div>`;
+    if (artClass === 'art-nature') return `<div class="art-inner-container art-nature"><div class="sun-beam"></div><div class="art-emoji-hero float-anim">${visual}</div></div>`;
+    if (artClass === 'art-law' || artClass === 'art-danger') return `<div class="art-inner-container art-law"><div class="laser-grid"></div><div class="vignette"></div><div class="art-emoji-hero" style="z-index: 10;">${visual}</div></div>`;
+    if (artClass === 'art-time') return `<div class="art-inner-container art-time"><div class="clock-face"><div class="hand"></div></div><div class="art-emoji-hero" style="z-index: 20;">${visual}</div></div>`;
+    if (artClass === 'art-sound') return `<div class="art-inner-container art-sound"><div class="sound-bars"><div class="bar" style="animation-delay: 0.1s"></div><div class="bar" style="animation-delay: 0.3s; height: 60%;"></div><div class="bar" style="animation-delay: 0.5s; height: 100%;"></div><div class="bar" style="animation-delay: 0.2s; height: 50%;"></div></div><div class="art-emoji-hero">${visual}</div></div>`;
+    if (artClass === 'art-electricity' || artClass === 'art-tech' || artClass === 'art-weather') return `<div class="art-inner-container art-electricity"><div class="circuit-grid"></div><div class="art-emoji-hero pulse-anim">${visual}</div></div>`;
+    if (artClass === 'art-space') return `<div class="art-inner-container art-space"><div class="planet"></div><div class="star" style="top:20%; left:20%;"></div><div class="star" style="top:40%; right:30%;"></div><div class="art-emoji-hero float-anim">${visual}</div></div>`;
+    if (artClass === 'art-medical') return `<div class="art-inner-container art-medical"><div class="med-cross-v"></div><div class="med-cross-h"></div><div class="art-emoji-hero float-anim">${visual}</div></div>`;
+    if (artClass === 'art-magic') return `<div class="art-inner-container art-magic"><div class="magic-sparkle" style="top:20%;left:30%;">✨</div><div class="magic-sparkle" style="top:60%;right:30%;animation-delay:0.5s;">✨</div><div class="art-emoji-hero pulse-anim">${visual}</div></div>`;
+    if (artClass === 'art-theater') return `<div class="art-inner-container art-theater"><div class="stage-floor"></div><div class="curtain-left"></div><div class="curtain-right"></div><div class="spotlight"></div><div class="art-emoji-hero float-anim" style="bottom: 20%;">${visual}</div></div>`;
+    if (artClass === 'art-city') return `<div class="art-inner-container art-city"><div class="building-1"></div><div class="building-2"><div class="window" style="top:10%; left:20%"></div><div class="window" style="top:30%; left:60%"></div></div><div class="building-3"></div><div class="art-emoji-hero float-anim" style="bottom: 30%;">${visual}</div></div>`;
     
-    // Safety Fallback
-    return `${artStyles}<div class="art-inner-container art-museum"><div class="pedestal"></div><div class="art-emoji-hero float-anim" style="bottom:25%;">${visual}</div></div>`;
+    return `<div class="art-inner-container art-museum"><div class="pedestal"></div><div class="art-emoji-hero float-anim" style="bottom:25%;">${visual}</div></div>`;
 };
 
-// --- RENDER ENGINE ---
 window.render = function() {
     const app = document.getElementById('content-area');
     const subNavContainer = document.getElementById('sub-nav-container');
@@ -1043,7 +864,6 @@ window.render = function() {
             });
             summaryHtml += `</div>`;
         } else {
-            // Compact Mode
             summaryHtml += `<div class="compact-grid">`;
             Object.entries(window.vocabularyData).forEach(([dayKey, words]) => {
                 words.forEach((w, idx) => {
@@ -1159,7 +979,6 @@ window.render = function() {
     }
 };
 
-// Init
 window.render();
 </script>
 
