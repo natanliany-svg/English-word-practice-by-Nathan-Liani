@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Day Fluency Sprint | Master V23 (Ultimate Stability)</title>
+    <title>Day Fluency Sprint | Master V24 (Mobile Fixes)</title>
     <style>
-        /* === Premium UI - Absolute Proportion Engine (V23) === */
+        /* === Premium UI - Perfect Proportion Engine (V24) === */
         
         /* DESKTOP MAGIC: Shrinks the UI natively to fit beautifully at 100% zoom */
         html { font-size: 11.5px; }
@@ -137,7 +137,7 @@
         .visual-col { display: flex; align-items: stretch; justify-content: center; min-height: 200px;}
 
         /* ==================================================================== */
-        /* === MASTER CSS ART ENGINE (V23) - STABLE IN <HEAD> WITH ABSOLUTE CENTERING === */
+        /* === MASTER CSS ART ENGINE (V24) - STABLE IN <HEAD> WITH ABSOLUTE CENTERING === */
         /* ==================================================================== */
         
         .art-inner-container { 
@@ -151,11 +151,13 @@
             font-size: clamp(60px, 12vh, 150px); z-index: 10; 
             filter: drop-shadow(0 1vh 2vh rgba(0,0,0,0.6)); position: absolute;
             left: 0; right: 0; margin: 0 auto; text-align: center;
+            display: flex; justify-content: center; align-items: center;
         }
 
-        /* --- Special Word Overrides --- */
+        /* Specific Word Overrides using centered logic */
         .gift-box { position:absolute; bottom: 10%; left: 0; right: 0; margin: auto; width: 15vh; height: 10vh; background: #be123c; border-radius: 1vh; } 
         .gift-lid { position:absolute; bottom:calc(10% + 10vh); left: 0; right: 0; margin: auto; width: 16vh; height: 3vh; background: #e11d48; border-radius: 0.5vh; animation: openLid 3s infinite alternate ease-in-out; } 
+        @keyframes openLid { 0%, 50% { transform: translateY(0) rotate(0); } 100% { transform: translateY(-5vh) rotate(15deg); } }
         
         .poison-bubble { position: absolute; bottom: -10%; left: 0; right: 0; margin: auto; width: 3vh; height: 3vh; background: rgba(34, 197, 94, 0.6); border-radius: 50%; box-shadow: 0 0 2vh #22c55e; animation: bubbleUpPoison 4s infinite linear; } 
         
@@ -265,7 +267,7 @@
         .art-city .building-3 { position: absolute; bottom: 0; right: 10%; width: 25%; height: 50%; background: #020617; border-top: 0.2vh solid #334155; border-left: 0.2vh solid #334155; }
         .art-city .window { position: absolute; width: 1.5vh; height: 1.5vh; background: #fde047; box-shadow: 0 0 1vh #fef08a; animation: flicker 3s infinite alternate;}
 
-        /* ALL KEYFRAMES */
+        /* Animations Keyframes */
         .float-anim { animation: floatSub 4s ease-in-out infinite; }
         .anim-drop { animation: dropAnim 1.5s forwards ease-in; bottom: 20%;}
         .anim-rise { animation: riseAnim 1.5s forwards ease-out; top: 20%;}
@@ -290,81 +292,85 @@
         @keyframes dropAnim { 0% { transform: translateY(-10vh); opacity: 0;} 100% { transform: translateY(0); opacity: 1;} }
         @keyframes riseAnim { 0% { transform: translateY(10vh); opacity: 0;} 100% { transform: translateY(0); opacity: 1;} }
         @keyframes expandPulse { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(2.5); opacity: 0; } }
-        @keyframes scanVert { 0% { top: 0; } 100% { top: 100%; } }
+        @keyframes scanVert { 0% { background-position: 0 0; } 100% { background-position: 0 15vh; } }
         @keyframes tick { 100% { transform: rotate(360deg); } }
         @keyframes waveAnim { 0% { height: 3vh; } 100% { height: 15vh; } }
         @keyframes gridScroll { 100% { background-position: 0 6vh; } }
         @keyframes emojiPulse { 0% { transform: scale(1); filter: drop-shadow(0 0 1.5vh var(--cyan-light));} 100% { transform: scale(1.1); filter: drop-shadow(0 0 4vh var(--cyan-light));} }
-        @keyframes floatOcean { 0%, 100% { transform: translateY(2vh); } 50% { transform: translateY(-1vh); } }
-        @keyframes pulseSonar { 0% { transform: scale(0.2); opacity:1;} 100% { transform: scale(1.5); opacity:0;} }
     </style>
     
     <style>
-        /* === MOBILE OVERRIDES === */
+        /* === MOBILE OVERRIDES (SAFE ZONE) === */
         @media (max-width: 768px) {
-            html { font-size: 14px; } 
+            html { font-size: 14px !important; } 
             body { 
                 height: 100dvh !important; 
                 min-height: 100dvh !important;
                 overflow: hidden !important; 
-                padding: 1vh 3vw !important; 
+                padding: 0.8vh 3vw !important; 
             }
-            .header-section { margin-bottom: 0.5vh !important; }
+            .header-section { margin-bottom: 0.3vh !important; width: 100% !important;}
             h1 { font-size: 1.1rem !important; margin-bottom: 0.2vh !important; gap: 4px !important; }
             h1 svg { width: 1.1rem !important; height: 1.1rem !important; }
             
+            /* FIXED: Scroll cutting off on RTL */
             .nav-tier, .sub-nav { 
-                padding-bottom: 2px !important; 
+                padding: 4px 10px !important; 
                 margin-bottom: 0.3vh !important;
                 justify-content: flex-start !important;
                 overflow-x: auto !important;
                 flex-wrap: nowrap !important;
                 -webkit-overflow-scrolling: touch !important;
                 border-radius: 8px !important;
+                width: 100% !important;
             }
             .nav-tier::-webkit-scrollbar, .sub-nav::-webkit-scrollbar { display: none !important; }
-            .nav-btn, .sub-btn { flex-shrink: 0 !important; font-size: 13px !important; padding: 6px 10px !important; min-width: auto !important; border-radius: 6px !important;}
-            .sub-btn-title { font-size: 13px !important; margin-bottom: 0 !important; }
+            
+            /* FIXED: Prevent wrapping inside buttons */
+            .nav-btn, .sub-btn { flex-shrink: 0 !important; font-size: 13px !important; padding: 6px 12px !important; min-width: auto !important; border-radius: 6px !important; white-space: nowrap !important;}
+            .sub-btn-title { font-size: 13px !important; margin-bottom: 0 !important; white-space: nowrap !important;}
             .sub-btn-date { display: none !important; }
             
-            .top-bar { flex-direction: row !important; margin-bottom: 0.5vh !important; margin-top: 0 !important; gap: 5px !important; height: auto !important;} 
-            .settings-box { padding: 4px 6px !important; gap: 4px !important; border-radius: 6px !important;}
+            .top-bar { flex-direction: row !important; margin-bottom: 0.4vh !important; margin-top: 0 !important; gap: 5px !important; height: auto !important;} 
+            .settings-box { padding: 3px 5px !important; gap: 4px !important; border-radius: 6px !important;}
             .settings-box span { display: none !important; } 
-            .settings-box select { font-size: 11px !important; padding: 2px !important; }
-            .progress-box { padding: 4px 8px !important; border-radius: 6px !important; font-size: 11px !important; align-items: flex-end !important;}
+            .settings-box select { font-size: 10px !important; padding: 1px !important; }
+            .progress-box { padding: 3px 5px !important; border-radius: 6px !important; font-size: 10px !important; align-items: center !important;}
             .progress-dots { margin-top: 2px !important; gap: 2px !important; }
             .dot { height: 3px !important; }
             .dot.active { width: 12px !important; }
             
             .flashcard { 
-                padding: 12px !important; 
-                gap: 12px !important; 
+                padding: 8px 10px !important; 
+                gap: 0.8vh !important; 
                 border-radius: 12px !important; 
-                margin-bottom: 5px !important; 
+                margin-bottom: 3px !important; 
                 overflow-y: auto !important; 
                 flex-grow: 1 !important;
                 min-height: 0 !important; 
-                box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
             }
             
-            .center-stage { padding: 10px !important; gap: 6px !important; border-radius: 10px !important; margin-bottom: 0px !important;}
-            .word-title { font-size: 1.8rem !important; gap: 6px !important; }
+            .center-stage { padding: 6px !important; gap: 4px !important; border-radius: 8px !important; margin-bottom: 0px !important;}
+            .word-title { font-size: 1.6rem !important; gap: 4px !important; }
             .audio-btn { width: 32px !important; height: 32px !important; border-width: 1px !important; }
-            .audio-btn svg { width: 16px !important; height: 16px !important; }
-            .small-emoji { font-size: 1.4rem !important; margin-top: 0 !important;}
-            .tag-box { font-size: 12px !important; padding: 4px 10px !important; min-width: auto !important; flex: 1 !important; border-radius: 6px !important;}
+            .audio-btn svg { width: 14px !important; height: 14px !important; }
+            .small-emoji { font-size: 1.3rem !important; margin-top: 0 !important;}
             
-            .content-grid { grid-template-columns: 1fr !important; gap: 10px !important;}
-            .text-col { gap: 10px !important; }
-            .explanation-box { font-size: 0.95rem !important; padding: 10px !important; border-radius: 8px !important; margin-bottom: 0px !important;}
-            .example-box { padding: 12px !important; border-radius: 8px !important;}
+            /* FIXED: Prevent phonetic tag breaking */
+            .tags-row { gap: 6px !important; flex-wrap: wrap !important; }
+            .tag-box { font-size: 11px !important; padding: 4px 8px !important; min-width: max-content !important; flex: 0 1 auto !important; border-radius: 5px !important; white-space: nowrap !important;}
+            
+            .content-grid { grid-template-columns: 1fr !important; gap: 6px !important;}
+            .text-col { gap: 6px !important; }
+            .explanation-box { font-size: 0.9rem !important; padding: 6px 8px !important; border-radius: 8px !important; margin-bottom: 0px !important;}
+            .example-box { padding: 8px !important; border-radius: 8px !important;}
             .example-eng-row { margin-bottom: 8px !important; }
-            .example-eng { font-size: 1.05rem !important; }
-            .example-heb { font-size: 0.95rem !important; margin-right: 1.2rem !important; }
+            .example-eng { font-size: 1rem !important; }
+            .example-heb { font-size: 0.9rem !important; margin-right: 1.2rem !important; }
             .audio-small { width: 28px !important; height: 28px !important; border-width: 1px !important; }
-            .audio-small svg { width: 14px !important; height: 14px !important; }
+            .audio-small svg { width: 12px !important; height: 12px !important; }
 
-            .visual-col { min-height: 160px !important; height: 160px !important; margin-top: 0 !important; padding: 0 !important; }
+            .visual-col { min-height: 100px !important; height: 100px !important; margin-top: 0 !important; padding: 0 !important; }
             .art-inner-container { border-radius: 10px !important; }
             .art-emoji-hero { font-size: 3.5rem !important; }
             
@@ -375,20 +381,20 @@
                 flex-direction: row-reverse !important;
                 height: auto !important;
             }
-            .control-btn { flex: 1 !important; justify-content: center !important; padding: 8px 5px !important; font-size: 14px !important; border-radius: 8px !important;}
+            .control-btn { flex: 1 !important; justify-content: center !important; padding: 8px 5px !important; font-size: 13px !important; border-radius: 8px !important;}
             .control-btn svg { width: 16px !important; height: 16px !important; }
 
-            .matrix-wrapper { padding: 10px !important; border-radius: 12px !important; }
+            .matrix-wrapper { padding: 8px !important; }
             .summary-toggles { flex-direction: column !important; gap: 6px !important; margin-bottom: 6px !important; }
             .sum-toggle { font-size: 12px !important; padding: 8px !important; }
             .weeks-scroll { gap: 15px !important; }
-            .week-title { font-size: 1.6rem !important; margin-bottom: 8px !important; }
-            .days-grid { grid-template-columns: 1fr !important; gap: 10px !important;}
-            .matrix-card { padding: 10px !important; border-radius: 10px !important;}
-            .matrix-header { font-size: 1.1rem !important; margin-bottom: 6px !important; }
-            .matrix-item { font-size: 0.9rem !important; flex-direction: column !important; align-items: flex-start !important; gap: 4px !important; padding: 6px 0 !important;}
+            .week-title { font-size: 1.4rem !important; margin-bottom: 6px !important; }
+            .days-grid { grid-template-columns: 1fr !important; gap: 6px !important;}
+            .matrix-card { padding: 8px !important; }
+            .matrix-header { font-size: 1rem !important; margin-bottom: 6px !important; }
+            .matrix-item { font-size: 0.9rem !important; flex-direction: column !important; align-items: flex-start !important; gap: 3px !important; padding: 6px 0 !important;}
             .matrix-item-he { margin-right: 0 !important; width: 100% !important; border-right: 2px solid var(--emerald-main) !important; padding-right: 6px !important; margin-top: 4px !important;}
-            .compact-grid { grid-template-columns: repeat(2, 1fr) !important; padding: 8px !important; gap: 6px !important;}
+            .compact-grid { grid-template-columns: repeat(2, 1fr) !important; padding: 6px !important; gap: 6px !important;}
             .compact-item { padding: 6px !important; }
             .compact-en { font-size: 1rem !important; }
             .compact-he { font-size: 0.85rem !important; }
@@ -417,7 +423,6 @@
         .sum-toggle { background: rgba(30, 41, 59, 0.8); color: var(--cyan-light); border: 1px solid var(--cyan-main); padding: 1vh 2vw; border-radius: 1vh; font-size: clamp(12px, 1.8vh, 20px); font-weight: bold; cursor: pointer; transition: 0.3s;}
         .sum-toggle.active { background: var(--cyan-main); color: #fff; box-shadow: 0 0 2vh rgba(34,211,238,0.5);}
         
-        /* Fixed overlapping weeks using flex: 0 0 auto */
         .weeks-scroll { flex-grow: 1; width: 100%; overflow-y: auto; padding-right: 1vw; display: flex; flex-direction: column; gap: 4vh;}
         .week-section { flex: 0 0 auto; display: flex; flex-direction: column; padding-bottom: 2vh;}
         
@@ -447,7 +452,7 @@
     <div class="header-section w-full">
         <h1>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-            Day Fluency Sprint | Master V23 (Ultimate Stability)
+            Day Fluency Sprint | Master V24
         </h1>
         
         <div class="nav-tier">
@@ -864,6 +869,7 @@ window.render = function() {
             });
             summaryHtml += `</div>`;
         } else {
+            // Compact Mode
             summaryHtml += `<div class="compact-grid">`;
             Object.entries(window.vocabularyData).forEach(([dayKey, words]) => {
                 words.forEach((w, idx) => {
