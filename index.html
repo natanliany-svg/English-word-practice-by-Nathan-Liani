@@ -3,155 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Day Fluency Sprint | Master V32 (Quiz History & Scroll Fix)</title>
+    <title>Day Fluency Sprint | Master V33</title>
     <style>
-        /* === Premium UI - Perfect Proportion Engine (V32) === */
         html { font-size: 11.5px; }
-
-        :root {
-            --bg-main: #040914;
-            --bg-card: rgba(16, 26, 48, 0.85);
-            --border: rgba(34, 211, 238, 0.25);
-            --border-light: rgba(52, 211, 153, 0.35);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --cyan-main: #06b6d4;
-            --cyan-light: #22d3ee;
-            --emerald-main: #10b981;
-            --emerald-light: #34d399;
-        }
-
+        :root { --bg-main: #040914; --bg-card: rgba(16, 26, 48, 0.85); --border: rgba(34, 211, 238, 0.25); --border-light: rgba(52, 211, 153, 0.35); --text-main: #f8fafc; --text-muted: #94a3b8; --cyan-main: #06b6d4; --cyan-light: #22d3ee; --emerald-main: #10b981; --emerald-light: #34d399; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-        
-        body { 
-            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #081024 100%);
-            color: var(--text-main); 
-            height: 100vh; 
-            width: 100vw;
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            padding: 1.5vh 2vw; 
-            overflow: hidden; 
-        }
-        
-        .container { 
-            width: 100%; 
-            max-width: 1400px; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: stretch; 
-            height: 100%; 
-        }
-        
-        /* HEADER */
+        body { background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #081024 100%); color: var(--text-main); height: 100vh; width: 100vw; display: flex; flex-direction: column; align-items: center; padding: 1.5vh 2vw; overflow: hidden; }
+        .container { width: 100%; max-width: 1400px; display: flex; flex-direction: column; align-items: stretch; height: 100%; }
         .header-section { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; margin-bottom: 0.5vh; }
         h1 { font-size: clamp(16px, 2.5vh, 26px); font-weight: 900; letter-spacing: 1px; color: #fff; display: flex; align-items: center; gap: 1vh; margin-bottom: 0.5vh; text-shadow: 0 0 10px rgba(34, 211, 238, 0.6);}
         h1 svg { width: 2.5vh; height: 2.5vh; filter: drop-shadow(0 0 10px rgba(34,211,238,0.8)); }
-        
         .nav-tier { background: rgba(15, 23, 42, 0.85); border-radius: 0.8vh; border: 1px solid rgba(255,255,255,0.1); padding: 0.4vh 1vw; margin-bottom: 0.5vh; display: flex; gap: 0.5vw; justify-content: center;}
         .nav-btn { background: transparent; border: 1px solid transparent; color: #94a3b8; padding: 0.4vh 1.2vw; border-radius: 0.6vh; font-size: clamp(12px, 1.6vh, 18px); font-weight: bold; cursor: pointer; transition: 0.2s; white-space: nowrap;}
         .nav-btn:hover { color: #fff; background: rgba(255,255,255,0.05); }
         .nav-btn.active-cyan { background: rgba(34, 211, 238, 0.15); color: var(--cyan-light); border-color: rgba(34, 211, 238, 0.5); box-shadow: 0 0 10px rgba(34, 211, 238, 0.2); }
         .nav-btn.active-emerald { background: rgba(52, 211, 153, 0.15); color: var(--emerald-light); border-color: rgba(52, 211, 153, 0.5); }
-        
         .sub-nav { display: flex; gap: 0.5vw; justify-content: center; width: 100%; flex-wrap: wrap;}
         .sub-btn { display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.1); border-radius: 0.8vh; padding: 0.4vh 1vw; cursor: pointer; color: #94a3b8; transition: 0.2s; min-width: 8vw;}
         .sub-btn:hover { background: rgba(255,255,255,0.1); color: var(--text-main); }
         .sub-btn.active { background: linear-gradient(145deg, #1e293b, #0f172a); color: #fff; border-color: var(--cyan-main); box-shadow: 0 2px 8px rgba(34, 211, 238, 0.3); transform: translateY(-1px);}
         .sub-btn-title { font-size: clamp(10px, 1.3vh, 16px); font-weight: 900; margin-bottom: 0.2vh;}
         .sub-btn-date { font-size: clamp(9px, 1.1vh, 14px); color: var(--cyan-light); font-family: monospace; }
-
-        /* CONTENT */
         #content-area { display: flex; flex-direction: column; flex-grow: 1; min-height: 0; width: 100%; }
-
         .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1vh; width: 100%; flex-shrink: 0;}
         .settings-box { display: flex; align-items: center; gap: 1vw; background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(255,255,255,0.1); padding: 0.4vh 1vw; border-radius: 0.8vh;}
         .settings-box select { background: #0f172a; color: var(--cyan-light); border: 1px solid rgba(255,255,255,0.2); padding: 0.3vh 0.6vw; border-radius: 0.5vh; font-size: clamp(10px, 1.4vh, 16px); font-weight: bold; outline: none; cursor: pointer;}
-        
         .progress-box { display: flex; flex-direction: column; align-items: flex-end; color: var(--cyan-light); font-size: clamp(11px, 1.4vh, 18px); font-weight: 900; background: rgba(30, 41, 59, 0.9); padding: 0.4vh 1vw; border-radius: 0.8vh; border: 1px solid rgba(255,255,255,0.1);}
         .progress-dots { display: flex; gap: 0.4vw; margin-top: 0.3vh; }
         .dot { height: 0.6vh; border-radius: 0.3vh; transition: 0.3s; }
         .dot.active { width: 3vw; background: var(--cyan-light); box-shadow: 0 0 10px var(--cyan-light); }
         .dot.done { width: 1vw; background: rgba(52, 211, 153, 0.8); }
         .dot.pending { width: 1vw; background: rgba(255,255,255,0.15); }
-
-        .flashcard { 
-            background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.15); border-radius: 2vh; 
-            padding: 2vh 3vw; box-shadow: 0 2vh 4vh rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.05); 
-            display: flex; flex-direction: column; gap: 1.5vh; flex-grow: 1; min-height: 0; overflow-y: auto; margin-bottom: 1vh;
-        }
-        
+        .flashcard { background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.15); border-radius: 2vh; padding: 2vh 3vw; box-shadow: 0 2vh 4vh rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.05); display: flex; flex-direction: column; gap: 1.5vh; flex-grow: 1; min-height: 0; overflow-y: auto; margin-bottom: 1vh;}
         .flashcard::-webkit-scrollbar, .weeks-scroll::-webkit-scrollbar, .compact-grid::-webkit-scrollbar, .story-container::-webkit-scrollbar, .nav-tier::-webkit-scrollbar, .sub-nav::-webkit-scrollbar { width: 8px; height: 8px;}
         .flashcard::-webkit-scrollbar-thumb, .weeks-scroll::-webkit-scrollbar-thumb, .compact-grid::-webkit-scrollbar-thumb, .story-container::-webkit-scrollbar-thumb, .nav-tier::-webkit-scrollbar-thumb, .sub-nav::-webkit-scrollbar-thumb { background: var(--cyan-main); border-radius: 10px; }
-        
         .center-stage { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1vh; background: rgba(255,255,255,0.02); border-radius: 1.5vh; padding: 1.5vh; border-bottom: 1px solid rgba(34, 211, 238, 0.1); flex-shrink: 0; min-height: min-content; }
         .word-main-row { display: flex; align-items: center; justify-content: center; gap: 1.5vw; direction: ltr; }
         .audio-btn { background: rgba(34, 211, 238, 0.1); border: 2px solid var(--cyan-main); color: var(--cyan-light); width: clamp(40px, 5vh, 70px); height: clamp(40px, 5vh, 70px); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.3s; box-shadow: 0 0 15px rgba(34, 211, 238, 0.2); flex-shrink: 0;}
         .audio-btn:hover { background: var(--cyan-main); color: #fff; transform: scale(1.1); box-shadow: 0 0 25px rgba(34, 211, 238, 0.5); }
         .audio-btn svg { width: clamp(20px, 2.5vh, 35px); height: clamp(20px, 2.5vh, 35px); }
-        
         .word-title { font-size: clamp(30px, 5.5vh, 70px); font-weight: 900; color: #fff; text-shadow: 0 4px 10px rgba(0,0,0,0.5); letter-spacing: -1px; display: flex; align-items: center; gap: 1vw; text-align: center;}
         .small-emoji { font-size: clamp(20px, 3.5vh, 45px); filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5)); margin-top: -0.5vh;}
-
         .tags-row { display: flex; align-items: stretch; justify-content: center; gap: 1vw; flex-wrap: wrap;}
         .tag-box { font-size: clamp(14px, 2vh, 24px); font-weight: 900; padding: 0.6vh 2vw; border-radius: 1vh; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; min-width: 12vw; text-align: center; }
         .tag-meaning { background: rgba(16, 185, 129, 0.15); color: var(--emerald-light); border: 1px solid rgba(16, 185, 129, 0.4); }
-        .tag-phonetic { background: rgba(34, 211, 238, 0.15); color: var(--cyan-light); border: 1px solid rgba(34, 211, 238, 0.4); }
-
+        .tag-phonetic { background: rgba(34, 211, 238, 0.15); color: var(--cyan-light); border: 1px solid rgba(34, 211, 238, 0.4); white-space: nowrap !important; }
         .content-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2vw; flex-grow: 1; min-height: min-content; }
         @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; } }
-
         .text-col { display: flex; flex-direction: column; gap: 1.5vh; min-height: min-content; justify-content: center;}
-        
         .section-title { font-size: clamp(12px, 1.6vh, 20px); font-weight: bold; color: var(--cyan-light); text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 0.5vw; margin-bottom: 0.5vh;}
         .section-title svg { width: clamp(14px, 1.8vh, 22px); height: clamp(14px, 1.8vh, 22px); }
         .section-title.emerald { color: var(--emerald-light); }
-
         .explanation-box { background: rgba(2, 6, 23, 0.6); border-right: 0.4vw solid var(--cyan-main); padding: 1.5vh 1.5vw; border-radius: 1vh; font-size: clamp(14px, 2vh, 24px); color: #cbd5e1; line-height: 1.4; box-shadow: inset 0 2px 10px rgba(0,0,0,0.2); flex-shrink: 0; min-height: min-content;}
         .example-box { background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.95)); border: 1px solid var(--border-light); padding: 2vh 2vw; border-radius: 1.5vh; box-shadow: 0 1vh 2vh rgba(0,0,0,0.4); flex-grow: 1; display: flex; flex-direction: column; justify-content: center; min-height: min-content;}
-        
         .example-eng-row { display: flex; align-items: flex-start; gap: 1vw; margin-bottom: 1.5vh; direction: ltr; }
         .audio-small { background: rgba(52, 211, 153, 0.1); color: var(--emerald-light); width: clamp(30px, 4vh, 50px); height: clamp(30px, 4vh, 50px); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 2px solid var(--emerald-main); transition: 0.3s; flex-shrink: 0;}
         .audio-small:hover { background: var(--emerald-main); color: #fff; transform: scale(1.1);}
         .audio-small svg { width: clamp(15px, 2vh, 30px); height: clamp(15px, 2vh, 30px); }
-        
         .example-eng { font-size: clamp(16px, 2.8vh, 36px); color: #fff; font-style: italic; font-family: Georgia, serif; line-height: 1.3; padding-top: 0.5vh; text-shadow: 0 2px 4px rgba(0,0,0,0.5);}
         .example-heb { font-size: clamp(14px, 2.2vh, 28px); color: var(--emerald-light); font-weight: 600; border-right: 0.4vw solid var(--emerald-main); padding-right: 1vw; margin-right: 4vw; line-height: 1.4;}
-
         .visual-col { display: flex; align-items: stretch; justify-content: center; min-height: 200px;}
-
-        /* === STORY TAB STYLES === */
         .story-container { width: 100%; max-width: 1100px; display: flex; flex-direction: column; gap: 1.5vh; overflow-y: auto; padding: 2vh; min-height: 0; flex-grow: 1; align-items: stretch; margin: 0 auto; background: rgba(15, 23, 42, 0.6); border-radius: 2vh; border: 1px solid var(--border); box-shadow: 0 2vh 4vh rgba(0,0,0,0.5);}
         .story-header { text-align: center; margin-bottom: 2vh; flex-shrink: 0;}
         .story-title { font-size: clamp(24px, 4vh, 45px); font-weight: 900; color: var(--cyan-light); text-shadow: 0 0 1.5vh rgba(34,211,238,0.5); }
         .story-subtitle { font-size: clamp(14px, 2vh, 22px); color: var(--text-muted); margin-top: 0.5vh; }
-        
         .story-card { background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); border-radius: 1.5vh; padding: 2.5vh; cursor: pointer; transition: 0.3s; width: 100%; box-shadow: 0 1vh 2vh rgba(0,0,0,0.3); flex-shrink: 0;}
         .story-card:hover { background: rgba(30, 41, 59, 0.95); border-color: var(--cyan-main); transform: translateY(-0.2vh); box-shadow: 0 1.5vh 3vh rgba(34,211,238,0.2);}
         .story-card.expanded { border-color: var(--cyan-main); background: rgba(16, 26, 48, 0.95); box-shadow: 0 0 2vh rgba(34,211,238,0.3);}
-        
         .story-eng-row { display: flex; align-items: flex-start; gap: 1.5vw; direction: ltr; }
         .story-audio-btn { background: rgba(34,211,238,0.1); border: 1px solid var(--cyan-main); color: var(--cyan-light); width: clamp(35px, 4.5vh, 50px); height: clamp(35px, 4.5vh, 50px); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; transition: 0.3s; margin-top: 0.5vh;}
         .story-audio-btn:hover { background: var(--cyan-main); color: #fff; transform: scale(1.1); box-shadow: 0 0 1.5vh rgba(34,211,238,0.4); }
         .story-audio-btn svg { width: clamp(18px, 2.5vh, 25px); height: clamp(18px, 2.5vh, 25px); }
-        
         .story-eng-text { font-size: clamp(16px, 2.5vh, 32px); font-family: Georgia, serif; color: #fff; line-height: 1.5; padding-top: 0.5vh; display: flex; gap: 1vw;}
         .highlight-word { color: var(--cyan-light); font-weight: 900; text-shadow: 0 0 1vh rgba(34,211,238,0.5); border-bottom: 2px dashed rgba(34,211,238,0.4); padding-bottom: 2px;}
-        
         .story-heb-text { margin-top: 2vh; padding-top: 2vh; border-top: 1px dashed rgba(255,255,255,0.2); font-size: clamp(14px, 2.2vh, 28px); color: var(--emerald-light); font-weight: 600; line-height: 1.4; padding-right: clamp(45px, 6vw, 70px); }
-
-        /* === QUIZ STYLES === */
         .quiz-opt-btn { background: rgba(30, 41, 59, 0.9); border: 2px solid rgba(255,255,255,0.1); border-radius: 1.5vh; padding: 2.5vh 2vw; color: var(--text-main); font-size: clamp(14px, 2.2vh, 24px); font-weight: bold; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; text-align: center; }
         .quiz-opt-btn:hover:not(.disabled):not(.correct):not(.wrong) { background: rgba(34, 211, 238, 0.15); border-color: var(--cyan-main); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(34, 211, 238, 0.3); }
         .quiz-opt-btn.correct { background: rgba(16, 185, 129, 0.2) !important; border-color: var(--emerald-main) !important; color: var(--emerald-light) !important; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4) !important; }
         .quiz-opt-btn.wrong { background: rgba(239, 68, 68, 0.2) !important; border-color: #ef4444 !important; color: #fca5a5 !important; }
         .quiz-opt-btn.disabled { opacity: 0.6; cursor: not-allowed; }
-        
         .history-item { display: flex; justify-content: space-between; padding: 1.5vh; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 1.2rem;}
         .history-item:last-child { border-bottom: none; }
-
-        /* === MATRIX SUMMARY STYLES === */
         .matrix-wrapper { flex: 1; overflow-y: auto; display: flex; flex-direction: column; width: 100%; padding: 2vh; background: rgba(15, 23, 42, 0.7); border-radius: 2vh; border: 1px solid var(--border); box-shadow: 0 2vh 4vh rgba(0,0,0,0.5); }
         .summary-toggles { display: flex; justify-content: center; gap: 1.5vw; margin-bottom: 2vh; flex-shrink: 0;}
         .sum-toggle { background: rgba(30, 41, 59, 0.8); color: var(--cyan-light); border: 1px solid var(--cyan-main); padding: 1vh 2vw; border-radius: 1vh; font-size: clamp(12px, 1.8vh, 20px); font-weight: bold; cursor: pointer; transition: 0.3s;}
@@ -178,7 +110,6 @@
         /* CSS ART ENGINE */
         .art-inner-container { width: 100%; height: 100%; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; border-radius: 2vh; border: 1px solid rgba(255,255,255,0.08); box-shadow: inset 0 0 3vh rgba(0,0,0,0.8), 0 1vh 2vh rgba(0,0,0,0.4);}
         .art-emoji-hero { font-size: clamp(60px, 12vh, 150px); z-index: 10; filter: drop-shadow(0 1vh 2vh rgba(0,0,0,0.6)); position: absolute; left: 0; right: 0; margin: 0 auto; text-align: center; display: flex; justify-content: center; align-items: center; }
-        
         .gift-box { position:absolute; bottom: 10%; left: 0; right: 0; margin: auto; width: 15vh; height: 10vh; background: #be123c; border-radius: 1vh; } 
         .gift-lid { position:absolute; bottom:calc(10% + 10vh); left: 0; right: 0; margin: auto; width: 16vh; height: 3vh; background: #e11d48; border-radius: 0.5vh; animation: openLid 3s infinite alternate ease-in-out; } 
         .poison-bubble { position: absolute; bottom: -10%; left: 0; right: 0; margin: auto; width: 3vh; height: 3vh; background: rgba(34, 197, 94, 0.6); border-radius: 50%; box-shadow: 0 0 2vh #22c55e; animation: bubbleUpPoison 4s infinite linear; } 
@@ -297,13 +228,11 @@
             .header-section { margin-bottom: 0.3vh !important; width: 100% !important;}
             h1 { font-size: 1.1rem !important; margin-bottom: 0.2vh !important; gap: 4px !important; }
             h1 svg { width: 1.1rem !important; height: 1.1rem !important; }
-            
             .nav-tier, .sub-nav { padding: 4px 10px !important; margin-bottom: 0.3vh !important; justify-content: flex-start !important; overflow-x: auto !important; flex-wrap: nowrap !important; -webkit-overflow-scrolling: touch !important; border-radius: 8px !important; width: 100% !important;}
             .nav-tier::-webkit-scrollbar, .sub-nav::-webkit-scrollbar { display: none !important; }
             .nav-btn, .sub-btn { flex-shrink: 0 !important; font-size: 13px !important; padding: 6px 12px !important; min-width: auto !important; border-radius: 6px !important; white-space: nowrap !important;}
             .sub-btn-title { font-size: 13px !important; margin-bottom: 0 !important; white-space: nowrap !important;}
             .sub-btn-date { display: none !important; }
-            
             .top-bar { flex-direction: row !important; margin-bottom: 0.4vh !important; margin-top: 0 !important; gap: 5px !important; height: auto !important;} 
             .settings-box { padding: 3px 5px !important; gap: 4px !important; border-radius: 6px !important;}
             .settings-box span { display: none !important; } 
@@ -312,17 +241,14 @@
             .progress-dots { margin-top: 2px !important; gap: 2px !important; }
             .dot { height: 3px !important; }
             .dot.active { width: 12px !important; }
-            
             .flashcard { padding: 8px 10px !important; gap: 0.8vh !important; border-radius: 12px !important; margin-bottom: 3px !important; overflow-y: auto !important; flex-grow: 1 !important; min-height: 0 !important; }
             .center-stage { padding: 6px !important; gap: 4px !important; border-radius: 8px !important; margin-bottom: 0px !important;}
             .word-title { font-size: 1.6rem !important; gap: 4px !important; }
             .audio-btn { width: 32px !important; height: 32px !important; border-width: 1px !important; }
             .audio-btn svg { width: 14px !important; height: 14px !important; }
             .small-emoji { font-size: 1.3rem !important; margin-top: 0 !important;}
-            
             .tags-row { gap: 6px !important; flex-wrap: wrap !important; }
             .tag-box { font-size: 11px !important; padding: 4px 8px !important; min-width: max-content !important; flex: 0 1 auto !important; border-radius: 5px !important; white-space: nowrap !important;}
-            
             .content-grid { grid-template-columns: 1fr !important; gap: 6px !important;}
             .text-col { gap: 6px !important; }
             .explanation-box { font-size: 0.9rem !important; padding: 6px 8px !important; border-radius: 8px !important; margin-bottom: 0px !important;}
@@ -332,15 +258,12 @@
             .example-heb { font-size: 0.9rem !important; margin-right: 1.2rem !important; }
             .audio-small { width: 28px !important; height: 28px !important; border-width: 1px !important; }
             .audio-small svg { width: 12px !important; height: 12px !important; }
-
             .visual-col { min-height: 100px !important; height: 100px !important; margin-top: 0 !important; padding: 0 !important; }
             .art-inner-container { border-radius: 10px !important; }
             .art-emoji-hero { font-size: 3.5rem !important; }
-            
             .controls-container { padding: 3px 0 5px 0 !important; margin-top: 0 !important; gap: 8px !important; flex-direction: row-reverse !important; height: auto !important;}
             .control-btn { flex: 1 !important; justify-content: center !important; padding: 8px 5px !important; font-size: 13px !important; border-radius: 8px !important;}
             .control-btn svg { width: 16px !important; height: 16px !important; }
-
             .matrix-wrapper { padding: 8px !important; border-radius: 12px !important; }
             .summary-toggles { flex-direction: column !important; gap: 6px !important; margin-bottom: 6px !important; }
             .sum-toggle { font-size: 12px !important; padding: 8px !important; }
@@ -355,18 +278,15 @@
             .compact-item { padding: 6px !important; }
             .compact-en { font-size: 1rem !important; }
             .compact-he { font-size: 0.85rem !important; }
-            
             .story-card { padding: 15px !important; border-radius: 12px !important;}
             .story-audio-btn { width: 35px !important; height: 35px !important; margin-top: 0 !important; }
             .story-audio-btn svg { width: 16px !important; height: 16px !important; }
             .story-eng-text { font-size: 1.1rem !important; }
             .story-heb-text { font-size: 1rem !important; padding-right: 45px !important; margin-top: 15px !important; padding-top: 15px !important;}
             .story-title { font-size: 1.8rem !important; }
-
             .quiz-opt-btn { padding: 15px !important; font-size: 16px !important; border-radius: 12px !important; }
         }
 
-        /* === CONTROLS === */
         .controls-container { display: flex; justify-content: space-between; align-items: center; width: 100%; flex-shrink: 0; padding: 0.8vh 0 0 0; margin-top: auto; flex-direction: row-reverse; }
         .control-btn { background: rgba(15, 23, 42, 0.95); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 0.8vh 2.5vw; border-radius: 1vh; font-size: clamp(14px, 2vh, 24px); font-weight: 900; cursor: pointer; display: flex; align-items: center; gap: 0.8vw; transition: 0.3s; box-shadow: 0 1vh 2vh rgba(0,0,0,0.4); }
         .control-btn:hover:not(:disabled) { background: var(--cyan-dark); box-shadow: 0 1vh 2.5vh rgba(34, 211, 238, 0.5); transform: translateY(-0.2vh); border-color: var(--cyan-light);}
@@ -380,7 +300,7 @@
     <div class="header-section w-full">
         <h1>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-            Day Fluency Sprint | Master V32
+            Day Fluency Sprint | Master V33
         </h1>
         
         <div class="nav-tier">
@@ -389,12 +309,11 @@
             <button class="nav-btn" id="btn-week3" onclick="window.setWeek('week3')">שבוע 3</button>
             <button class="nav-btn" id="btn-summary" onclick="window.setWeek('summary')">סיכום (120 מילים)</button>
             <button class="nav-btn" id="btn-story" onclick="window.setWeek('story')">הסיפור השלם</button>
+            <button class="nav-btn" id="btn-article" onclick="window.setWeek('article')">מאמר לבחינה 📄</button>
             <button class="nav-btn" id="btn-quiz" onclick="window.setWeek('quiz')">מבחן חכם 🧠</button>
         </div>
-
         <div class="sub-nav" id="sub-nav-container"></div>
     </div>
-
     <main id="content-area"></main>
 </div>
 
@@ -411,151 +330,18 @@ window.icons = {
 };
 
 window.vocabularyData = {
-  w1d1: [
-    { word: "Deep", phonetic: "דִּיפּ", meaning: "עָמוֹק", visual: "🌊", exp: "מתאר עומק פיזי (כמו מים) או מטאפורי (רעיון או שיחה).", engEx: "The ocean is very deep here, so be careful.", hebEx: "האוקיינוס עמוק מאוד כאן, אז היזהר." },
-    { word: "Auction", phonetic: "אוֹקְשֶׁן", meaning: "מְכִירָה פּוּמְבִּית", visual: "🔨", exp: "אירוע שבו פריטים נמכרים למי שמציע את המחיר הגבוה ביותר.", engEx: "He bought the rare painting at an art auction.", hebEx: "הוא קנה את הציור הנדיר במכירה פומבית של אמנות." },
-    { word: "Purchase", phonetic: "פֶּרְצֶ'ס", meaning: "קְנִיָּה / לִרְכּוֹשׁ", visual: "🛒", exp: "מילה רשמית ומקצועית יותר ל-Buy.", engEx: "She decided to purchase a new laptop for work.", hebEx: "היא החליטה לרכוש מחשב נייד חדש לעבודה." },
-    { word: "Minority", phonetic: "מַיְינוֹרִיטִי", meaning: "מִיעוּט", visual: "📊", exp: "החלק הקטן יותר מתוך קבוצה שלמה (ההפך מרוב - Majority).", engEx: "Only a small minority voted against the new law.", hebEx: "רק מיעוט קטן הצביע נגד החוק החדש." },
-    { word: "Lowest", phonetic: "לוֹאֶסְט", meaning: "הֲנָמוּךְ בְּיוֹתֵר", visual: "📉", exp: "בתחתית הרשימה, המחיר או הסקאלה.", engEx: "This store offers the lowest prices in town.", hebEx: "החנות הזו מציעה את המחירים הנמוכים בעיר." },
-    { word: "Appliances", phonetic: "אַפְּלַאיֶינְסֶס", meaning: "מַכְשִׁירֵי חַשְׁמַל", visual: "🔌", exp: "ציוד חשמלי ביתי כמו מקרר, מיקרוגל, או תנור.", engEx: "We need to buy new kitchen appliances for the house.", hebEx: "אנחנו צריכים לקנות מכשירי מטבח חשמליים חדשים לבית." },
-    { word: "Collectibles", phonetic: "קוֹלֶקְטִיבֶּלְס", meaning: "פְּרִיטֵי אַסְפָנוּת", visual: "🏺", exp: "חפצים שאנשים אוספים בשל ערכם, גילם או נדירותם.", engEx: "His room is full of rare vintage collectibles.", hebEx: "החדר שלו מלא בפריטי אספנות וינטג' נדירים." },
-    { word: "Jewelry", phonetic: "ג'וּלְרִי", meaning: "תַּכְשִׁיטִים", visual: "💎", exp: "פריטי נוי אישיים כמו טבעות, שרשראות וצמידים.", engEx: "She keeps her expensive jewelry in a secure safe.", hebEx: "היא שומרת את התכשיטים היקרים שלה בכספת מאובטחת." },
-    { word: "Earrings and Chains", phonetic: "אִיר-רִינְגְס...", meaning: "עֲגִילִים וְשַׁרְשְׁרָאוֹת", visual: "📿", exp: "סוגים נפוצים של תכשיטים. Earrings = עגילים, Chains = שרשראות.", engEx: "She wore beautiful silver earrings and matching chains.", hebEx: "היא ענדה עגילי כסף יפים ושרשראות תואמות." },
-    { word: "Ridiculously", phonetic: "רִידִיקְיוּלֶסְלִי", meaning: "בְּצוּרָה מְגֻחֶכֶת", visual: "🤡", exp: "תיאור של משהו שהוא מוגזם, לא הגיוני או מצחיק.", engEx: "The designer car was ridiculously expensive.", hebEx: "מכונית המעצבים הייתה יקרה בצורה מגוחכת." }
-  ],
-  w1d2: [
-    { word: "Perhaps", phonetic: "פֶּרְהַאפְּס", meaning: "יִתָּכֵן / אוּלַי", visual: "🤔", exp: "חלופה קצת יותר רשמית או מנומסת למילה Maybe.", engEx: "Perhaps we should leave a bit earlier to avoid traffic.", hebEx: "אולי כדאי שנצא קצת יותר מוקדם כדי להימנע מהפקקים." },
-    { word: "Habits", phonetic: "הַאבִּיטְס", meaning: "הֶרְגֵּלִים", visual: "🔁", exp: "פעולות קבועות שאדם עושה לעיתים קרובות באופן כמעט אוטומטי.", engEx: "Reading before bed is one of my best daily habits.", hebEx: "קריאה לפני השינה היא אחד מההרגלים היומיים הטובים ביותר שלי." },
-    { word: "Obsession", phonetic: "אוֹבְּסֶשֶׁן", meaning: "אוֹבְּסֶסְיָה / קִבָּעוֹן", visual: "🧟‍♂️", exp: "מחשבה, רעיון או פעולה שאי אפשר להפסיק לחשוב עליהם.", engEx: "His hobby slowly turned into a dangerous obsession.", hebEx: "התחביב שלו הפך לאט לאט לאובססיה מסוכנת." },
-    { word: "Addiction", phonetic: "אַדִיקְשֶׁן", meaning: "הִתְמַכְּרוּת", visual: "📱", exp: "צורך פיזי או נפשי חזק במשהו, שקשה מאוד להפסיק.", engEx: "Smartphone addiction is becoming a serious problem today.", hebEx: "התמכרות לסמארטפונים הופכת לבעיה רצינית כיום." },
-    { word: "Resist", phonetic: "רֶזִיסְט", meaning: "לְהִתְנַגֵּד", visual: "🛑", exp: "היכולת לסרב או לא להיכנע למשהו מושך.", engEx: "I just couldn't resist buying that chocolate cake.", hebEx: "פשוטו כמשמעו לא יכולתי להתנגד ולקנות את עוגת השוקולד ההיא." },
-    { word: "Opportunity", phonetic: "אוֹפֶּרְטְיוּנִיטִי", meaning: "הִזְדַּמְּנוּת", visual: "🚪", exp: "מצב מאפשר או חלון זמן נוח לביצוע פעולה כדאית.", engEx: "This job is a great opportunity for your career.", hebEx: "העבודה הזו היא הזדמנות מצוינת לקריירה שלך." },
-    { word: "Brand", phonetic: "בְּרַאנְד", meaning: "מוּתָג", visual: "🏷️", exp: "שם, עיצוב או סמל המזהים חברה מסחרית.", engEx: "She only buys clothes from her favorite luxury brand.", hebEx: "היא קונה בגדים רק ממותג היוקרה האהוב עליה." },
-    { word: "Wonder", phonetic: "וּוַאנְדֶר", meaning: "לִתְהוֹת / פֶּלֶא", visual: "🌌", exp: "לחשוב על משהו מתוך סקרנות, או לתאר דבר מדהים (כמו פלא תבל).", engEx: "I wonder what the weather will be like tomorrow.", hebEx: "אני תוהה איך יהיה מזג האוויר מחר." },
-    { word: "Faithful", phonetic: "פֵיְיתְ'פוּל", meaning: "נֶאֱמָן", visual: "🐕", exp: "אדם או בעל חיים שאפשר לסמוך עליו, שנשאר מסור לאורך זמן.", engEx: "The dog has been a faithful companion to him for years.", hebEx: "הכלב היה בן לוויה נאמן עבורו במשך שנים." },
-    { word: "Attendees", phonetic: "אַטֶנְדִיז", meaning: "מִשְׁתַּתְּפִים", visual: "👥", exp: "אנשים שנוכחים באופן פעיל באירוע, פגישה או כנס.", engEx: "The tech conference had over five hundred attendees.", hebEx: "בכנס הטכנולוגיה היו מעל חמש מאות משתתפים." }
-  ],
-  w1d3: [
-    { word: "Bulging", phonetic: "בּוֹלְגִ'ינְג", meaning: "בּוֹלֵט / תָּפוּחַ", visual: "👁️", exp: "מתאר משהו שמתנפח כלפי חוץ, כמו שרירים או תיק מלא.", engEx: "His pockets were bulging with the stolen money.", hebEx: "הכיסים שלו היו תפוחים מהכסף הגנוב." },
-    { word: "Antique", phonetic: "אַנְטִיק", meaning: "עַתִּיק", visual: "🕰️", exp: "חפץ או פריט ריהוט ישן מאוד, לרוב בעל ערך רב בשל גילו.", engEx: "They bought a beautiful antique clock for their living room.", hebEx: "הם קנו שעון עתיק ויפה לסלון שלהם." },
-    { word: "Furniture", phonetic: "פֶרְנִיצֶ'ר", meaning: "רָהִיטִים", visual: "🛋️", exp: "ציוד ביתי כמו ספות ושולחנות. חשוב: מילה זו לא מקבלת S ברבים!", engEx: "The new apartment comes with all the furniture included.", hebEx: "הדירה החדשה מגיעה עם כל הרהיטים כלולים." },
-    { word: "Odds and ends", phonetic: "אוֹדְז אֶנְד אֶנְדְס", meaning: "שְׁאֵרִיּוֹת", visual: "🗃️", exp: "אוסף של פריטים קטנים ושונים ללא קטגוריה ברורה.", engEx: "I just need to pack a few odds and ends before we leave.", hebEx: "אני רק צריך לארוז כמה פיצ'יפקס לפני שנצא." },
-    { word: "Nowadays", phonetic: "נַאוּ-אַ-דֵיְיז", meaning: "כַּיּוֹם", visual: "📅", exp: "מתייחס לתקופה הנוכחית בהשוואה למה שהיה נהוג בעבר.", engEx: "Nowadays, almost everyone has a smartphone in their pocket.", hebEx: "כיום, לכמעט כולם יש סמארטפון בכיס." },
-    { word: "Bid", phonetic: "בִּיד", meaning: "הַצָּעַת מְחִיר", visual: "🙋‍♂️", exp: "הסכום שמציעים לשלם על פריט במכרז או מכירה פומבית.", engEx: "He placed the highest bid and finally won the painting.", hebEx: "הוא הגיש את הצעת המחיר הגבוהה ביותר ולבסוף זכה בציור." },
-    { word: "Literally", phonetic: "לִיטֶרֶלִי", meaning: "פְּשׁוּטוֹ כְּמַשְׁמָעוֹ", visual: "💯", exp: "משמש לציון שהדבר נאמר במדויק, ללא הגזמה מטאפורית.", engEx: "I was literally freezing while waiting for the bus in the snow.", hebEx: "אני פשוטו כמשמעו קפאתי מקור כשחיכיתי לאוטובוס בשלג." },
-    { word: "Items", phonetic: "אַיְיטֶמְס", meaning: "פְּרִיטִים", visual: "📋", exp: "אובייקטים בודדים בתוך קבוצה, רשימה או אוסף.", engEx: "Please remember to bring all the required items to the test.", hebEx: "אנא זכור להביא את כל הפריטים הנדרשים למבחן." },
-    { word: "Barrier", phonetic: "בֶּרִי-אֶר", meaning: "מַחְסוֹם", visual: "🚧", exp: "מכשול פיזי (כמו גדר) או מנטלי (כמו מחסום שפה) שמונע מעבר.", engEx: "The language barrier made it very hard for them to communicate.", hebEx: "מחסום השפה הקשה עליהם מאוד לתקשר." },
-    { word: "Exists", phonetic: "אֶגְזִיסְטְס", meaning: "קַיָּם", visual: "🌍", exp: "מתאר משהו שיש לו מציאות או נוכחות ממשית בעולם.", engEx: "Nobody knows for sure if life exists on other planets.", hebEx: "אף אחד לא יודע בוודאות אם קיימים חיים בכוכבי לכת אחרים." }
-  ],
-  w1d4: [
-    { word: "Unfortunate", phonetic: "אַנְפוֹרְצְ'יוּנֵט", meaning: "מְצַעֵר", visual: "🌧️", exp: "מתאר אירוע שקרה באופן לא רצוי או אדם שאין לו מזל.", engEx: "It was an unfortunate mistake that cost us the game.", hebEx: "זו הייתה טעות מצערת שעלתה לנו במשחק." },
-    { word: "Receive", phonetic: "רִיסִיב", meaning: "לְקַבֵּל", visual: "📥", exp: "פעולת קבלת דבר מה. זו מילה רשמית ופורמלית יותר מ-Get.", engEx: "You will receive an email confirming your hotel reservation.", hebEx: "אתה תקבל אימייל המאשר את הזמנת המלון שלך." },
-    { word: "Unscrupulous", phonetic: "אַנְסְקְרוּפִּילוֹס", meaning: "חֲסַר מַצְפּוּן", visual: "😈", exp: "אדם או התנהגות שאינם מוסריים ולא בוחלים באמצעים.", engEx: "The unscrupulous salesman tricked her into signing the contract.", hebEx: "איש המכירות חסר המצפון הערים עליה לחתום על החוזה." },
-    { word: "Customer", phonetic: "קַסְטוֹמֶר", meaning: "לָקוֹחַ", visual: "🛍️", exp: "אדם שקונה מוצר או שירות מחברה או חנות.", engEx: "We try to give every customer the best service possible.", hebEx: "אנחנו משתדלים לתת לכל לקוח את השירות הטוב ביותר שאפשר." },
-    { word: "Consequently", phonetic: "קוֹנְסֶקְווֶנְטְלִי", meaning: "כְּתוֹצָאָה מִכָּךְ", visual: "➡️", exp: "מילת קישור גבוהה המציינת שדבר קרה בגלל דבר אחר.", engEx: "He didn't study at all; consequently, he failed the exam.", hebEx: "הוא לא למד כלל; כתוצאה מכך, הוא נכשל במבחן." },
-    { word: "Proceed", phonetic: "פְּרוֹסִיד", meaning: "לְהַמְשִׁיךְ", visual: "🚶‍♂️", exp: "להתקדם בפעולה או להמשיך הלאה (לדוגמה לאחר הפסקה).", engEx: "Please proceed to the boarding gate immediately.", hebEx: "אנא התקדם לשער העלייה למטוס באופן מיידי." },
-    { word: "Due", phonetic: "דְיוּ", meaning: "רָאוּי / נָאוֹת", visual: "⏳", exp: "מתאר כבוד ראוי, או זמן/תאריך שבו משהו אמור להתרחש או להיות מוגש.", engEx: "The project assignment is due next Monday.", hebEx: "מטלת הפרויקט צריכה להיות מוגשת ביום שני הבא." },
-    { word: "Arise", phonetic: "אֶרַאיְיז", meaning: "לָצוּץ / לְהִתְעוֹרֵר", visual: "⚠️", exp: "מתייחס בדרך כלל לבעיה, קושי או הזדמנות שמופיעים לפתע.", engEx: "Should any problems arise, please contact technical support.", hebEx: "במידה ויצוצו בעיות כלשהן, אנא פנה לתמיכה טכנית." },
-    { word: "Instructed", phonetic: "אִינְסְטְרַקְטֶד", meaning: "מֻנְחֶה", visual: "👨‍🏫", exp: "אדם שקיבל הכוונה, הדרכה או פקודה לבצע משהו.", engEx: "He did exactly as he was instructed by the manager.", hebEx: "הוא עשה בדיוק כפי שהונחה על ידי המנהל." },
-    { word: "Sum up", phonetic: "סַאם אַפּ", meaning: "לְסַכֵּם", visual: "📝", exp: "פעולת הקיצור והסיכום של דברים שנאמרו או קרו.", engEx: "Let me sum up the main points of our discussion.", hebEx: "תן לי לסכם את הנקודות העיקריות של הדיון שלנו." }
-  ],
-  w2d1: [
-    { word: "Kneading", phonetic: "נִי-דִינְג", meaning: "לִישָׁה", visual: "👐", exp: "משמש לתיאור פעולת עיבוד פיזית, לרוב של בצק, חימר או בוץ. האות K שותקת.", engEx: "The worker spent hours kneading the wet mud to shape the bricks.", hebEx: "העובד בילה שעות בלישת הבוץ הרטוב כדי לעצב את הלבנים." },
-    { word: "Mud", phonetic: "מַאד", meaning: "בּוֹץ / רֶפֶשׁ", visual: "🟤", exp: "אדמה רטובה ודביקה.", engEx: "The heavy rain turned the dirt road into thick mud.", hebEx: "הגשם הכבד הפך את דרך העפר לבוץ סמיך." },
-    { word: "Tiny", phonetic: "טַיְינִי", meaning: "זָעִיר", visual: "🔬", exp: "תיאור למשהו קטן במיוחד, קטן יותר מ-Small.", engEx: "The microscope revealed tiny organisms in the water.", hebEx: "המיקרוסקופ חשף אורגניזמים זעירים במים." },
-    { word: "Shape", phonetic: "שֵׁייפּ", meaning: "צוּרָה / לְעַצֵּב", visual: "🔺", exp: "יכול לשמש כשם עצם (צורה) או כפועל (לעצב משהו).", engEx: "You can shape the clay into a beautiful bowl.", hebEx: "אתה יכול לעצב את החימר לקערה יפה." },
-    { word: "Bricks", phonetic: "בְּרִיקְס", meaning: "לְבֵנִים", visual: "🧱", exp: "חומר בנייה בסיסי העשוי לרוב מחימר שרוף.", engEx: "The old house was built using red bricks.", hebEx: "הבית הישן נבנה באמצעות לבנים אדומות." },
-    { word: "Advance", phonetic: "אַדְבַאנְס", meaning: "לְקַדֵּם / מִקְדָּמָה", visual: "⏩", exp: "לנוע קדימה, או בהקשר כספי: תשלום הניתן לפני המועד.", engEx: "He asked his manager for an advance on his wages.", hebEx: "הוא ביקש ממנהלו מקדמה על משכורתו." },
-    { word: "Wages", phonetic: "וֵוייגֶ'ס", meaning: "מַשְׂכֹּרֶת", visual: "💵", exp: "תשלום הניתן לעובד עבור עבודתו, לרוב מחושב לפי שעות או ימים.", engEx: "The factory workers demanded higher wages.", hebEx: "פועלי המפעל דרשו משכורות גבוהות יותר." },
-    { word: "Kiln", phonetic: "קִילְן", meaning: "כִּבְשָׁן", visual: "🔥", exp: "תנור תעשייתי לוהט לשריפת לבנים או קרמיקה. ה-n כמעט שותקת.", engEx: "The tiny clay bricks were left in the hot kiln overnight to harden.", hebEx: "לבני החימר הזעירות הושארו בכבשן החם למשך הלילה כדי להתקשות." },
-    { word: "Debt", phonetic: "דֶט", meaning: "חוֹב", visual: "💳", exp: "מצב פיננסי בו אדם חייב כסף. האות b שותקת לחלוטין!", engEx: "Taking out another loan will only increase their massive debt.", hebEx: "לקיחת הלוואה נוספת רק תגדיל את החוב העצום שלהם." },
-    { word: "Surveys", phonetic: "סֶרְבֵייז", meaning: "סְקָרִים", visual: "📋", exp: "איסוף נתונים או דעות מקבוצת אנשים.", engEx: "Recent surveys show a change in consumer habits.", hebEx: "סקרים אחרונים מראים שינוי בהרגלי הצרכנים." }
-  ],
-  w2d2: [
-    { word: "Loan", phonetic: "לוֹאוּן", meaning: "הַלְוָאָה", visual: "🏦", exp: "כסף שניתן בהשאלה ולרוב דורש החזר עם ריבית.", engEx: "He applied for a loan to buy a new car.", hebEx: "הוא הגיש בקשה להלוואה כדי לקנות מכונית חדשה." },
-    { word: "Refugees", phonetic: "רֶפְיוּ-ג'ִיז", meaning: "פְּלִיטִים", visual: "⛺", exp: "אנשים שנאלצו לעזוב את ארצם עקב מלחמה או רדיפה.", engEx: "The international committee must provide proper conditions for the war refugees.", hebEx: "על הוועדה הבינלאומית לספק תנאים נאותים לפליטי המלחמה." },
-    { word: "Reduce", phonetic: "רִי-דְיוּס", meaning: "לְצַמְצֵם", visual: "🔽", exp: "הקטנת כמות, גודל או חשיבות של משהו.", engEx: "We need to reduce our daily expenses.", hebEx: "אנחנו צריכים לצמצם את ההוצאות היומיות שלנו." },
-    { word: "Amount", phonetic: "אֶ-מַאוּנְט", meaning: "כַּמּוּת / סְכוּם", visual: "⚖️", exp: "מתייחס לכמות של משהו שאינו ספיר בקלות (כמו מים או כסף).", engEx: "The recipe requires a small amount of sugar.", hebEx: "המתכון דורש כמות קטנה של סוכר." },
-    { word: "Permission", phonetic: "פֶּר-מִי-שֶׁן", meaning: "הַרְשָׁאָה", visual: "🛂", exp: "אישור רשמי לעשות משהו.", engEx: "You need special permission to enter this building.", hebEx: "אתה צריך הרשאה מיוחדת כדי להיכנס לבניין הזה." },
-    { word: "Accusations", phonetic: "אֶקְיוּ-זֵיי-שֶׁנְס", meaning: "הַאֲשָׁמוֹת", visual: "☝️", exp: "טענות רשמיות על כך שאדם ביצע מעשה פסול.", engEx: "The manager faced serious accusations regarding the poor conditions.", hebEx: "המנהל עמד בפני האשמות חמורות בנוגע לתנאים הירודים." },
-    { word: "Reject", phonetic: "רִי-ג'ֶ'קְט", meaning: "לִדְחוֹת", visual: "❌", exp: "סירוב לקבל, לאשר או להסכים למשהו.", engEx: "The bank decided to reject his request for a loan.", hebEx: "הבנק החליט לדחות את בקשתו להלוואה." },
-    { word: "Proper", phonetic: "פְּרוֹ-פֶּר", meaning: "נָאוֹת / רָאוּי", visual: "✔️", exp: "משהו שהוא הולם, נכון או מתאים לסיטואציה.", engEx: "Please ensure you are wearing the proper uniform.", hebEx: "אנא ודא שאתה לובש את המדים הנאותים." },
-    { word: "Conditions", phonetic: "קוֹן-דִי-שֶׁנְס", meaning: "תְּנָאִים", visual: "📝", exp: "מצב סביבתי או דרישות שצריך לעמוד בהן.", engEx: "The workers complained about the terrible working conditions.", hebEx: "העובדים התלוננו על תנאי העבודה הנוראיים." },
-    { word: "Provided", phonetic: "פְּרוֹ-וַויי-דֶד", meaning: "בִּתְנַאי שֶׁ...", visual: "🤝", exp: "מילת מפתח אקדמית! משמשת כמילת תנאי לוגית המחליפה את 'If'.", engEx: "We will accept the agreement, provided that all conditions are met.", hebEx: "אנו נקבל את ההסכם, בתנאי שכל התנאים יתקיימו." }
-  ],
-  w2d3: [
-    { word: "Ceremonies", phonetic: "סֶ-רֶ-מוֹ-נִיז", meaning: "טְקָסִים", visual: "🎊", exp: "אירועים פורמליים, לרוב מסורתיים או ציבוריים.", engEx: "Traditional ceremonies were held in the village.", hebEx: "טקסים מסורתיים נערכו בכפר." },
-    { word: "Treatment", phonetic: "טְרִיט-מֶנְט", meaning: "טִיפּוּל", visual: "🩺", exp: "האופן בו מתנהגים או מטפלים במישהו, רפואית או חברתית.", engEx: "The patient responded well to the new medical treatment.", hebEx: "המטופל הגיב היטב לטיפול הרפואי החדש." },
-    { word: "Requirement", phonetic: "רִי-קְוַוייר-מֶנְט", meaning: "דְּרִישָׁה", visual: "❗", exp: "משהו שהכרחי או נדרש (תנאי קבלה).", engEx: "Passing the test is a strict requirement for the job.", hebEx: "מעבר המבחן הוא דרישה נוקשה לתפקיד." },
-    { word: "Illegal", phonetic: "אִיל-לִי-גַאל", meaning: "לֹא חֻקִּי", visual: "🚫", exp: "מנוגד לחוק או לכללים.", engEx: "Parking in this zone is strictly illegal.", hebEx: "חניה באזור זה היא בלתי חוקית לחלוטין." },
-    { word: "Exaggeration", phonetic: "אֶגְ-זַה-גֶ'רֵיי-שֶׁן", meaning: "הַגְזָמָה", visual: "📈", exp: "תיאור של מצב כגדול או גרוע ממה שהוא באמת.", engEx: "To say that the new requirement is completely illegal is a massive exaggeration.", hebEx: "לומר שהדרישה החדשה היא בלתי חוקית לחלוטין זו הגזמה עצומה." },
-    { word: "Trade-Unions", phonetic: "טְרֵייד יוּנְיוֹנְס", meaning: "אִגּוּדֵי עוֹבְדִים", visual: "✊", exp: "ארגונים המאגדים עובדים להגנה על זכויותיהם.", engEx: "The trade-unions stepped in to solve the crisis.", hebEx: "איגודי העובדים התערבו כדי לפתור את המשבר." },
-    { word: "Trapped", phonetic: "טְרַאפְּט", meaning: "לִלְכּוֹד", visual: "🕸️", exp: "תחושה של אדם התקוע במצב בעייתי ללא יכולת השתחררות.", engEx: "Despite his promises, many workers still felt trapped in the system.", hebEx: "למרות הבטחותיו, עובדים רבים עדיין הרגישו לכודים במערכת." },
-    { word: "Commissioner", phonetic: "קוֹ-מִי-שֶׁ-נֶר", meaning: "נָצִיב", visual: "👮‍♂️", exp: "בעל תפקיד בכיר הממונה על תחום או ועדה (למשל במשטרה).", engEx: "The police commissioner held a press conference.", hebEx: "נציב המשטרה ערך מסיבת עיתונאים." },
-    { word: "Solve", phonetic: "סוֹלְב", meaning: "לִפְתּוֹר", visual: "🧩", exp: "מציאת פתרון לבעיה או תעלומה.", engEx: "The detective managed to solve the complicated mystery.", hebEx: "הבלש הצליח לפתור את התעלומה המסובכת." },
-    { word: "Denies", phonetic: "דִי-נַאייז", meaning: "מַכְחִישׁ", visual: "🙅‍♂️", exp: "לסרב להודות באמת או לדחות טענה.", engEx: "The suspect still denies all the allegations against him.", hebEx: "החשוד עדיין מכחיש את כל ההאשמות נגדו." }
-  ],
-  w2d4: [
-    { word: "Insist", phonetic: "אִין-סִיסְט", meaning: "לְהִתְעַקֵּשׁ", visual: "😤", exp: "לדרוש משהו בתקיפות ולא לוותר.", engEx: "I insist that you stay for dinner.", hebEx: "אני מתעקש שתישאר לארוחת ערב." },
-    { word: "Poisonous", phonetic: "פּוֹיְ-זְ-נַס", meaning: "רָעִיל", visual: "☠️", exp: "חומר או אורגניזם שיכול לגרום למוות או נזק.", engEx: "Be careful, some of these mushrooms are poisonous.", hebEx: "היזהר, חלק מהפטריות האלה רעילות." },
-    { word: "Barefoot", phonetic: "בֶּר-פוּט", meaning: "יָחֵף", visual: "🦶", exp: "הליכה ללא נעליים או גרביים.", engEx: "The children loved running barefoot on the grass.", hebEx: "הילדים אהבו לרוץ יחפים על הדשא." },
-    { word: "Convince", phonetic: "קוֹן-בִינְס", meaning: "לְשַׁכְנֵעַ", visual: "🗣️", exp: "לגרום למישהו לאמץ דעה באמצעות טיעונים.", engEx: "In some instances, it is difficult to convince people to change their harsh tone.", hebEx: "בחלק מהמקרים, קשה לשכנע אנשים לשנות את הטון הנוקשה שלהם." },
-    { word: "Waive", phonetic: "וֵוייב", meaning: "לְוַתֵּר עַל", visual: "🗑️", exp: "ויתור רשמי על זכות, דרישה או תשלום.", engEx: "The company decided to waive the cancellation fee.", hebEx: "החברה החליטה לוותר על דמי הביטול." },
-    { word: "Instances", phonetic: "אִין-סְטַנְסֶס", meaning: "מִקְרִים", visual: "📁", exp: "דוגמאות או אירועים ספציפיים.", engEx: "There were several instances of fraud reported.", hebEx: "דווחו מספר מקרים של הונאה." },
-    { word: "Mentioned", phonetic: "מֶנ-שֶׁנְד", meaning: "מוּזְכָּר", visual: "💬", exp: "משהו שהתייחסו אליו בשיחה או בכתב.", engEx: "She mentioned your name during the meeting.", hebEx: "היא הזכירה את שמך במהלך הפגישה." },
-    { word: "Tone", phonetic: "טוֹן", meaning: "טוֹן / צְלִיל", visual: "🎵", exp: "אופי הצליל או נימת הקול (שיכולה להעיד על מצב רוח).", engEx: "His aggressive tone made everyone uncomfortable.", hebEx: "הטון האגרסיבי שלו גרם לכולם להרגיש לא בנוח." },
-    { word: "Biased", phonetic: "בַּאיְ-יֶסְט", meaning: "מְשֻׁחָד", visual: "⚖️", exp: "חוסר אובייקטיביות, נטייה לא הוגנת לטובת צד מסוים.", engEx: "The investigation proved that the reporter was highly biased.", hebEx: "החקירה הוכיחה שהכתב היה משוחד מאוד." },
-    { word: "Exposed", phonetic: "אֶקְס-פּוֹזְד", meaning: "חָשׂוּף", visual: "🔦", exp: "גילוי או הוצאה לאור של משהו שהיה נסתר.", engEx: "The scandal exposed the corruption in the organization.", hebEx: "השערורייה חשפה את השחיתות בארגון." }
-  ],
-  // === WEEK 3 ===
-  w3d1: [
-    { word: "Perform", phonetic: "פֶּרְפוֹרְם", meaning: "לְבַצֵּעַ", visual: "🎭", exp: "לבצע משימה, פעולה או הופעה.", engEx: "The surgeon will perform the operation tomorrow.", hebEx: "המנתח יבצע את הניתוח מחר." },
-    { word: "Paralyzed", phonetic: "פַּרָלַיְזְד", meaning: "מְשֻׁתָּק", visual: "🦽", exp: "אדם שאינו מסוגל להזיז חלק מגופו, או מצב של חוסר יכולת לפעול.", engEx: "The accident left him paralyzed from the waist down.", hebEx: "התאונה הותירה אותו משותק מהמותניים ומטה." },
-    { word: "Arm(s)", phonetic: "אָרְם/ס", meaning: "זְרוֹעַ / זְרוֹעוֹת", visual: "💪", exp: "גפה עליונה של גוף האדם, או זרוע של מכונה.", engEx: "He carried the heavy box in his arms.", hebEx: "הוא נשא את הקופסה הכבדה בזרועותיו." },
-    { word: "Fetch", phonetic: "פֶצ'", meaning: "לְהָבִיא", visual: "🐕", exp: "ללכת להביא משהו ולחזור איתו.", engEx: "Please fetch me a glass of water.", hebEx: "אנא הבא לי כוס מים." },
-    { word: "Scratch Itches", phonetic: "סְקְרַאצ' אִיצֶ'ס", meaning: "לְגָרֵד", visual: "💅", exp: "להעביר ציפורניים על העור כדי להקל על תחושת גירוד.", engEx: "The dog used its back leg to scratch itches.", hebEx: "הכלב השתמש ברגלו האחורית כדי לגרד." },
-    { word: "Plenty", phonetic: "פְּלֶנְטִי", meaning: "שֶׁפַע", visual: "🧺", exp: "כמות גדולה ומספקת של משהו.", engEx: "We have plenty of time before the train leaves.", hebEx: "יש לנו שפע של זמן לפני שהרכבת עוזבת." },
-    { word: "Comb", phonetic: "קוֹם", meaning: "לְסָרֵק", visual: "🪮", exp: "סידור השיער באמצעות מסרק. האות b שותקת.", engEx: "She needs to comb her hair before the meeting.", hebEx: "היא צריכה לסרק את שערה לפני הפגישה." },
-    { word: "Hair", phonetic: "הֶר", meaning: "שֵׂעָר", visual: "💇‍♀️", exp: "צומח מקרקפת הראש.", engEx: "Her hair is naturally curly and very long.", hebEx: "השיער שלה מתולתל באופן טבעי וארוך מאוד." },
-    { word: "Independent", phonetic: "אִינְדִיפֶּנְדֶנְט", meaning: "עַצְמָאִי", visual: "🦅", exp: "אדם או גוף שאינו תלוי באחרים ופועל בכוחות עצמו.", engEx: "After college, he became financially independent.", hebEx: "לאחר המכללה, הוא הפך לעצמאי כלכלית." },
-    { word: "Forced", phonetic: "פוֹרְסְד", meaning: "כָּפוּי / הוּכְרַח", visual: "⛓️", exp: "פעולה שנעשתה בניגוד לרצון החופשי, תחת לחץ.", engEx: "They were forced to leave their homes due to the storm.", hebEx: "הם הוכרחו לעזוב את בתיהם עקב הסופה." }
-  ],
-  w3d2: [
-    { word: "Nursing", phonetic: "נֶרְסִינְג", meaning: "טִיפּוּל / סִיעוּד", visual: "🧑‍⚕️", exp: "מקצוע או פעולת הטיפול בחולים ופצועים.", engEx: "She chose a career in nursing to help people.", hebEx: "היא בחרה בקריירה בסיעוד כדי לעזור לאנשים." },
-    { word: "Despair", phonetic: "דִיסְפֶּר", meaning: "יֵאוּשׁ", visual: "🥀", exp: "אובדן מוחלט של תקווה.", engEx: "Don't give up in moments of despair.", hebEx: "אל תרים ידיים ברגעי ייאוש." },
-    { word: "Helplessness", phonetic: "הֶלְפְּלֶסְנֶס", meaning: "חוֹסֶר אוֹנִים", visual: "🪫", exp: "תחושה שאין ביכולתך לעשות דבר כדי לשנות את המצב.", engEx: "He felt a deep sense of helplessness when he lost his job.", hebEx: "הוא חש תחושה עמוקה של חוסר אונים כשאיבד את עבודתו." },
-    { word: "Dormitories", phonetic: "דּוֹרְמִיטוֹרִיז", meaning: "מְעוֹנוֹת", visual: "🏢", exp: "מגורי סטודנטים במוסד חינוכי.", engEx: "Many first-year students live in the college dormitories.", hebEx: "הרבה סטודנטים שנה ראשונה גרים במעונות המכללה." },
-    { word: "Raising", phonetic: "רֵיְיזִינְג", meaning: "הֲרָמָה / לְגַדֵּל", visual: "🏗️", exp: "פעולה של הגבהת משהו, או גידול ילדים ובעלי חיים.", engEx: "They are raising funds for the new hospital.", hebEx: "הם מגייסים כספים לבית החולים החדש." },
-    { word: "Laser beam", phonetic: "לֵיְזֶר בִּים", meaning: "קֶרֶן לֵיְיזֶר", visual: "🔦", exp: "אלומת אור ממוקדת וחזקה.", engEx: "The security system uses an invisible laser beam.", hebEx: "מערכת האבטחה משתמשת בקרן לייזר בלתי נראית." },
-    { word: "Respond", phonetic: "רִיסְפּוֹנְד", meaning: "תְּגוּבָה / לְהָגִיב", visual: "💬", exp: "מתן מענה לשאלה, מצב או פעולה.", engEx: "It took him a few minutes to respond to the message.", hebEx: "לקח לו כמה דקות להגיב להודעה." },
-    { word: "Institutions", phonetic: "אִינְסְטִיטְיוּשֶׁנְס", meaning: "מוֹסָדוֹת", visual: "🏛️", exp: "ארגונים רשמיים, כמו מוסדות חינוך, ממשלה או פיננסים.", engEx: "Banks are important financial institutions.", hebEx: "בנקים הם מוסדות פיננסיים חשובים." },
-    { word: "Applications", phonetic: "אַפְּלִיקֵיְישֶׁנְס", meaning: "יִישּׂוּמִים / בַּקָּשׁוֹת", visual: "📱", exp: "שימושים מעשיים לטכנולוגיה, או טפסי הרשמה.", engEx: "This software has many practical applications.", hebEx: "לתוכנה זו יש יישומים מעשיים רבים." },
-    { word: "Significance", phonetic: "סִיגְנִיפִיקֶנְס", meaning: "מַשְׁמָעוּת", visual: "🌟", exp: "החשיבות או המשמעות העמוקה של דבר מה.", engEx: "Do you understand the significance of this decision?", hebEx: "האם אתה מבין את המשמעות של ההחלטה הזו?" }
-  ],
-  w3d3: [
-    { word: "Graduating", phonetic: "גְרַאגְ'יוּאֵיְטִינְג", meaning: "סִיּוּם לִימּוּדִים", visual: "🎓", exp: "קבלת תואר אקדמי או סיום שלב חינוכי.", engEx: "She is graduating from university with top honors.", hebEx: "היא מסיימת את לימודיה באוניברסיטה בהצטיינות יתרה." },
-    { word: "Immense", phonetic: "אִימֶנְס", meaning: "עָצוּם", visual: "🐘", exp: "משהו גדול מאוד בגודלו או בהיקפו.", engEx: "The new project requires an immense amount of money.", hebEx: "הפרויקט החדש דורש כמות עצומה של כסף." },
-    { word: "Amusing", phonetic: "אֶמְיוּזִינְג", meaning: "מְשַׁעֲשֵׁעַ", visual: "🤣", exp: "משהו שגורם לצחוק, חיוך או בידור קל.", engEx: "I found his story highly amusing.", hebEx: "מצאתי את הסיפור שלו מאוד משעשע." },
-    { word: "Contributors", phonetic: "קוֹנְטְרִיבְּיוּטוֹרְס", meaning: "תּוֹרְמִים", visual: "🤝", exp: "אנשים שמעניקים זמן, כסף או מאמץ למען מטרה משותפת.", engEx: "We thank all the contributors for their generous donations.", hebEx: "אנו מודים לכל התורמים על תרומותיהם הנדיבות." },
-    { word: "Approximately", phonetic: "אַפְּרוֹקְסִימֶטְלִי", meaning: "בְּעֵרֶךְ", visual: "⚖️", exp: "הערכה קרובה למדד מסוים, לא מדוייק במאת האחוזים.", engEx: "The journey will take approximately two hours.", hebEx: "המסע ייקח בערך שעתיים." },
-    { word: "Companion", phonetic: "קוֹמְפֶּנְיוֹן", meaning: "בֶּן לִוְיָה", visual: "🚶‍♂️", exp: "מישהו שמבלה זמן רב איתך או מלווה אותך במסע.", engEx: "His dog is his most loyal companion.", hebEx: "הכלב שלו הוא בן הלוויה הנאמן ביותר שלו." },
-    { word: "Pair", phonetic: "פֶּר", meaning: "זוּג", visual: "🧦", exp: "שני פריטים מאותו סוג שמשמשים יחד.", engEx: "I need to buy a new pair of shoes.", hebEx: "אני צריך לקנות זוג נעליים חדש." },
-    { word: "Capable", phonetic: "קֵיְיפָּבֶּל", meaning: "מְסוּגָּל", visual: "🦸‍♂️", exp: "אדם שיש לו את הכישורים הנדרשים לבצע משימה.", engEx: "She is a highly capable manager.", hebEx: "היא מנהלת בעלת יכולות גבוהות." },
-    { word: "Runs It", phonetic: "רַאנְס אִיט", meaning: "מְנַהֵל אֶת זֶה", visual: "🏃‍♂️", exp: "מנהל או מתפעל עסק או מערכת (ולא רק 'לרוץ').", engEx: "My father owns the shop and runs it himself.", hebEx: "אבא שלי הוא הבעלים של החנות ומנהל אותה בעצמו." },
-    { word: "Phrases", phonetic: "פְרֵיְיזֶס", meaning: "בִּיטּוּיִים", visual: "🗣️", exp: "קבוצת מילים המהווה יחידה בעלת משמעות בתוך משפט.", engEx: "You need to learn some useful English phrases for the trip.", hebEx: "אתה צריך ללמוד כמה ביטויים שימושיים באנגלית לקראת הטיול." }
-  ],
-  w3d4: [
-    { word: "Spent", phonetic: "סְפֶּנְט", meaning: "לְבַזְבֵּז / הוֹצִיא", visual: "💸", exp: "צורת העבר של Spend, להוציא כסף או להעביר זמן.", engEx: "I spent all my money on a new computer.", hebEx: "בזבזתי את כל כספי על מחשב חדש." },
-    { word: "Organization", phonetic: "אוֹרְגַּנִיזֵיְישֶׁן", meaning: "אִרְגּוּן", visual: "🏢", exp: "קבוצת אנשים הפועלת יחד למטרה מוגדרת.", engEx: "The charity is a non-profit organization.", hebEx: "עמותת החסד היא ארגון ללא מטרות רווח." },
-    { word: "Owners", phonetic: "אוֹנֶרְס", meaning: "בְּעָלִים", visual: "🔑", exp: "האנשים להם שייך רכוש, עסק או חיה.", engEx: "The restaurant owners decided to renovate the place.", hebEx: "בעלי המסעדה החליטו לשפץ את המקום." },
-    { word: "Task", phonetic: "טַאסְק", meaning: "מְלָאכָה / מְשִׂימָה", visual: "✅", exp: "עבודה מוגדרת שצריך לבצע.", engEx: "Writing this report is a difficult task.", hebEx: "כתיבת הדוח הזה היא משימה קשה." },
-    { word: "Idea", phonetic: "אַיְידִיָּה", meaning: "רַעְיוֹן", visual: "💡", exp: "מחשבה, תוכנית או הצעה הנוצרת בראש.", engEx: "That's a brilliant idea for the new project!", hebEx: "זה רעיון גאוני לפרויקט החדש!" },
-    { word: "College", phonetic: "קוֹלֶג'", meaning: "מִכְלָלָה", visual: "🏫", exp: "מוסד להשכלה גבוהה.", engEx: "He is studying engineering at the local college.", hebEx: "הוא לומד הנדסה במכללה המקומית." },
-    { word: "Program", phonetic: "פְּרוֹגְרַם", meaning: "תָּכְנִית", visual: "📅", exp: "מערך פעולות מתוכנן, או תוכנית מחשב/טלוויזיה.", engEx: "We are launching a new training program for employees.", hebEx: "אנו משיקים תוכנית הכשרה חדשה לעובדים." },
-    { word: "Human", phonetic: "הְיוּמֶן", meaning: "אָדָם", visual: "🧍‍♂️", exp: "יצור אנושי, בניגוד לחיה או מכונה.", engEx: "To err is human; everyone makes mistakes.", hebEx: "לטעות זה אנושי; כולם עושים טעויות." },
-    { word: "Accident", phonetic: "אַקְסִידֶנְט", meaning: "תְּאוּנָה", visual: "💥", exp: "אירוע בלתי צפוי שנגרם לרוב עם נזק או פציעה.", engEx: "Luckily, no one was hurt in the car accident.", hebEx: "למרבה המזל, איש לא נפגע בתאונת הדרכים." },
-    { word: "Objects", phonetic: "אוֹבְּגֶ'קְטְס", meaning: "חֲפָצִים", visual: "🎲", exp: "דברים מוחשיים שניתן לראות ולגעת בהם.", engEx: "The room was filled with strange metallic objects.", hebEx: "החדר היה מלא בחפצי מתכת מוזרים." }
-  ]
+  w1d1:[{word:"Deep",phonetic:"דִּיפּ",meaning:"עָמוֹק",visual:"🌊",exp:"מתאר עומק פיזי (כמו מים) או מטאפורי (רעיון או שיחה).",engEx:"The ocean is very deep here, so be careful.",hebEx:"האוקיינוס עמוק מאוד כאן, אז היזהר."},{word:"Auction",phonetic:"אוֹקְשֶׁן",meaning:"מְכִירָה פּוּמְבִּית",visual:"🔨",exp:"אירוע שבו פריטים נמכרים למי שמציע את המחיר הגבוה ביותר.",engEx:"He bought the rare painting at an art auction.",hebEx:"הוא קנה את הציור הנדיר במכירה פומבית של אמנות."},{word:"Purchase",phonetic:"פֶּרְצֶ'ס",meaning:"קְנִיָּה / לִרְכּוֹשׁ",visual:"🛒",exp:"מילה רשמית ומקצועית יותר ל-Buy.",engEx:"She decided to purchase a new laptop for work.",hebEx:"היא החליטה לרכוש מחשב נייד חדש לעבודה."},{word:"Minority",phonetic:"מַיְינוֹרִיטִי",meaning:"מִיעוּט",visual:"📊",exp:"החלק הקטן יותר מתוך קבוצה שלמה (ההפך מרוב - Majority).",engEx:"Only a small minority voted against the new law.",hebEx:"רק מיעוט קטן הצביע נגד החוק החדש."},{word:"Lowest",phonetic:"לוֹאֶסְט",meaning:"הֲנָמוּךְ בְּיוֹתֵר",visual:"📉",exp:"בתחתית הרשימה, המחיר או הסקאלה.",engEx:"This store offers the lowest prices in town.",hebEx:"החנות הזו מציעה את המחירים הנמוכים בעיר."},{word:"Appliances",phonetic:"אַפְּלַאיֶינְסֶס",meaning:"מַכְשִׁירֵי חַשְׁמַל",visual:"🔌",exp:"ציוד חשמלי ביתי כמו מקרר, מיקרוגל, או תנור.",engEx:"We need to buy new kitchen appliances for the house.",hebEx:"אנחנו צריכים לקנות מכשירי מטבח חשמליים חדשים לבית."},{word:"Collectibles",phonetic:"קוֹלֶקְטִיבֶּלְס",meaning:"פְּרִיטֵי אַסְפָנוּת",visual:"🏺",exp:"חפצים שאנשים אוספים בשל ערכם, גילם או נדירותם.",engEx:"His room is full of rare vintage collectibles.",hebEx:"החדר שלו מלא בפריטי אספנות וינטג' נדירים."},{word:"Jewelry",phonetic:"ג'וּלְרִי",meaning:"תַּכְשִׁיטִים",visual:"💎",exp:"פריטי נוי אישיים כמו טבעות, שרשראות וצמידים.",engEx:"She keeps her expensive jewelry in a secure safe.",hebEx:"היא שומרת את התכשיטים היקרים שלה בכספת מאובטחת."},{word:"Earrings and Chains",phonetic:"אִיר-רִינְגְס...",meaning:"עֲגִילִים וְשַׁרְשְׁרָאוֹת",visual:"📿",exp:"סוגים נפוצים של תכשיטים. Earrings = עגילים, Chains = שרשראות.",engEx:"She wore beautiful silver earrings and matching chains.",hebEx:"היא ענדה עגילי כסף יפים ושרשראות תואמות."},{word:"Ridiculously",phonetic:"רִידִיקְיוּלֶסְלִי",meaning:"בְּצוּרָה מְגֻחֶכֶת",visual:"🤡",exp:"תיאור של משהו שהוא מוגזם, לא הגיוני או מצחיק.",engEx:"The designer car was ridiculously expensive.",hebEx:"מכונית המעצבים הייתה יקרה בצורה מגוחכת."}],
+  w1d2:[{word:"Perhaps",phonetic:"פֶּרְהַאפְּס",meaning:"יִתָּכֵן / אוּלַי",visual:"🤔",exp:"חלופה קצת יותר רשמית או מנומסת למילה Maybe.",engEx:"Perhaps we should leave a bit earlier to avoid traffic.",hebEx:"אולי כדאי שנצא קצת יותר מוקדם כדי להימנע מהפקקים."},{word:"Habits",phonetic:"הַאבִּיטְס",meaning:"הֶרְגֵּלִים",visual:"🔁",exp:"פעולות קבועות שאדם עושה לעיתים קרובות באופן כמעט אוטומטי.",engEx:"Reading before bed is one of my best daily habits.",hebEx:"קריאה לפני השינה היא אחד מההרגלים היומיים הטובים ביותר שלי."},{word:"Obsession",phonetic:"אוֹבְּסֶשֶׁן",meaning:"אוֹבְּסֶסְיָה / קִבָּעוֹן",visual:"🧟‍♂️",exp:"מחשבה, רעיון או פעולה שאי אפשר להפסיק לחשוב עליהם.",engEx:"His hobby slowly turned into a dangerous obsession.",hebEx:"התחביב שלו הפך לאט לאט לאובססיה מסוכנת."},{word:"Addiction",phonetic:"אַדִיקְשֶׁן",meaning:"הִתְמַכְּרוּת",visual:"📱",exp:"צורך פיזי או נפשי חזק במשהו, שקשה מאוד להפסיק.",engEx:"Smartphone addiction is becoming a serious problem today.",hebEx:"התמכרות לסמארטפונים הופכת לבעיה רצינית כיום."},{word:"Resist",phonetic:"רֶזִיסְט",meaning:"לְהִתְנַגֵּד",visual:"🛑",exp:"היכולת לסרב או לא להיכנע למשהו מושך.",engEx:"I just couldn't resist buying that chocolate cake.",hebEx:"פשוט לא יכולתי להתנגד ולקנות את עוגת השוקולד ההיא."},{word:"Opportunity",phonetic:"אוֹפֶּרְטְיוּנִיטִי",meaning:"הִזְדַּמְּנוּת",visual:"🚪",exp:"מצב מאפשר או חלון זמן נוח לביצוע פעולה כדאית.",engEx:"This job is a great opportunity for your career.",hebEx:"העבודה הזו היא הזדמנות מצוינת לקריירה שלך."},{word:"Brand",phonetic:"בְּרַאנְד",meaning:"מוּתָג",visual:"🏷️",exp:"שם, עיצוב או סמל המזהים חברה מסחרית.",engEx:"She only buys clothes from her favorite luxury brand.",hebEx:"היא קונה בגדים רק ממותג היוקרה האהוב עליה."},{word:"Wonder",phonetic:"וּוַאנְדֶר",meaning:"לִתְהוֹת / פֶּלֶא",visual:"🌌",exp:"לחשוב על משהו מתוך סקרנות, או לתאר דבר מדהים (כמו פלא תבל).",engEx:"I wonder what the weather will be like tomorrow.",hebEx:"אני תוהה איך יהיה מזג האוויר מחר."},{word:"Faithful",phonetic:"פֵיְיתְ'פוּל",meaning:"נֶאֱמָן",visual:"🐕",exp:"אדם או בעל חיים שאפשר לסמוך עליו, שנשאר מסור לאורך זמן.",engEx:"The dog has been a faithful companion to him for years.",hebEx:"הכלב היה בן לוויה נאמן עבורו במשך שנים."},{word:"Attendees",phonetic:"אַטֶנְדִיז",meaning:"מִשְׁתַּתְּפִים",visual:"👥",exp:"אנשים שנוכחים באופן פעיל באירוע, פגישה או כנס.",engEx:"The tech conference had over five hundred attendees.",hebEx:"בכנס הטכנולוגיה היו מעל חמש מאות משתתפים."}],
+  w1d3:[{word:"Bulging",phonetic:"בּוֹלְגִ'ינְג",meaning:"בּוֹלֵט / תָּפוּחַ",visual:"👁️",exp:"מתאר משהו שמתנפח כלפי חוץ, כמו שרירים או תיק מלא.",engEx:"His pockets were bulging with the stolen money.",hebEx:"הכיסים שלו היו תפוחים מהכסף הגנוב."},{word:"Antique",phonetic:"אַנְטִיק",meaning:"עַתִּיק",visual:"🕰️",exp:"חפץ או פריט ריהוט ישן מאוד, לרוב בעל ערך רב בשל גילו.",engEx:"They bought a beautiful antique clock for their living room.",hebEx:"הם קנו שעון עתיק ויפה לסלון שלהם."},{word:"Furniture",phonetic:"פֶרְנִיצֶ'ר",meaning:"רָהִיטִים",visual:"🛋️",exp:"ציוד ביתי כמו ספות ושולחנות. חשוב: מילה זו לא מקבלת S ברבים!",engEx:"The new apartment comes with all the furniture included.",hebEx:"הדירה החדשה מגיעה עם כל הרהיטים כלולים."},{word:"Odds and ends",phonetic:"אוֹדְז אֶנְד אֶנְדְס",meaning:"שְׁאֵרִיּוֹת",visual:"🗃️",exp:"אוסף של פריטים קטנים ושונים ללא קטגוריה ברורה.",engEx:"I just need to pack a few odds and ends before we leave.",hebEx:"אני רק צריך לארוז כמה פיצ'יפקס לפני שנצא."},{word:"Nowadays",phonetic:"נַאוּ-אַ-דֵיְיז",meaning:"כַּיּוֹם",visual:"📅",exp:"מתייחס לתקופה הנוכחית בהשוואה למה שהיה נהוג בעבר.",engEx:"Nowadays, almost everyone has a smartphone in their pocket.",hebEx:"כיום, לכמעט כולם יש סמארטפון בכיס."},{word:"Bid",phonetic:"בִּיד",meaning:"הַצָּעַת מְחִיר",visual:"🙋‍♂️",exp:"הסכום שמציעים לשלם על פריט במכרז או מכירה פומבית.",engEx:"He placed the highest bid and finally won the painting.",hebEx:"הוא הגיש את הצעת המחיר הגבוהה ביותר ולבסוף זכה בציור."},{word:"Literally",phonetic:"לִיטֶרֶלִי",meaning:"פְּשׁוּטוֹ כְּמַשְׁמָעוֹ",visual:"💯",exp:"משמש לציון שהדבר נאמר במדויק, ללא הגזמה מטאפורית.",engEx:"I was literally freezing while waiting for the bus in the snow.",hebEx:"אני פשוטו כמשמעו קפאתי מקור כשחיכיתי לאוטובוס בשלג."},{word:"Items",phonetic:"אַיְיטֶמְס",meaning:"פְּרִיטִים",visual:"📋",exp:"אובייקטים בודדים בתוך קבוצה, רשימה או אוסף.",engEx:"Please remember to bring all the required items to the test.",hebEx:"אנא זכור להביא את כל הפריטים הנדרשים למבחן."},{word:"Barrier",phonetic:"בֶּרִי-אֶר",meaning:"מַחְסוֹם",visual:"🚧",exp:"מכשול פיזי (כמו גדר) או מנטלי (כמו מחסום שפה) שמונע מעבר.",engEx:"The language barrier made it very hard for them to communicate.",hebEx:"מחסום השפה הקשה עליהם מאוד לתקשר."},{word:"Exists",phonetic:"אֶגְזִיסְטְס",meaning:"קַיָּם",visual:"🌍",exp:"מתאר משהו שיש לו מציאות או נוכחות ממשית בעולם.",engEx:"Nobody knows for sure if life exists on other planets.",hebEx:"אף אחד לא יודע בוודאות אם קיימים חיים בכוכבי לכת אחרים."}],
+  w1d4:[{word:"Unfortunate",phonetic:"אַנְפוֹרְצְ'יוּנֵט",meaning:"מְצַעֵר",visual:"🌧️",exp:"מתאר אירוע שקרה באופן לא רצוי או אדם שאין לו מזל.",engEx:"It was an unfortunate mistake that cost us the game.",hebEx:"זו הייתה טעות מצערת שעלתה לנו במשחק."},{word:"Receive",phonetic:"רִיסִיב",meaning:"לְקַבֵּל",visual:"📥",exp:"פעולת קבלת דבר מה. זו מילה רשמית ופורמלית יותר מ-Get.",engEx:"You will receive an email confirming your hotel reservation.",hebEx:"אתה תקבל אימייל המאשר את הזמנת המלון שלך."},{word:"Unscrupulous",phonetic:"אַנְסְקְרוּפִּילוֹס",meaning:"חֲסַר מַצְפּוּן",visual:"😈",exp:"אדם או התנהגות שאינם מוסריים ולא בוחלים באמצעים.",engEx:"The unscrupulous salesman tricked her into signing the contract.",hebEx:"איש המכירות חסר המצפון הערים עליה לחתום על החוזה."},{word:"Customer",phonetic:"קַסְטוֹמֶר",meaning:"לָקוֹחַ",visual:"🛍️",exp:"אדם שקונה מוצר או שירות מחברה או חנות.",engEx:"We try to give every customer the best service possible.",hebEx:"אנחנו משתדלים לתת לכל לקוח את השירות הטוב ביותר שאפשר."},{word:"Consequently",phonetic:"קוֹנְסֶקְווֶנְטְלִי",meaning:"כְּתוֹצָאָה מִכָּךְ",visual:"➡️",exp:"מילת קישור גבוהה המציינת שדבר קרה בגלל דבר אחר.",engEx:"He didn't study at all; consequently, he failed the exam.",hebEx:"הוא לא למד כלל; כתוצאה מכך, הוא נכשל במבחן."},{word:"Proceed",phonetic:"פְּרוֹסִיד",meaning:"לְהַמְשִׁיךְ",visual:"🚶‍♂️",exp:"להתקדם בפעולה או להמשיך הלאה (לדוגמה לאחר הפסקה).",engEx:"Please proceed to the boarding gate immediately.",hebEx:"אנא התקדם לשער העלייה למטוס באופן מיידי."},{word:"Due",phonetic:"דְיוּ",meaning:"רָאוּי / נָאוֹת",visual:"⏳",exp:"מתאר כבוד ראוי, או זמן/תאריך שבו משהו אמור להתרחש או להיות מוגש.",engEx:"The project assignment is due next Monday.",hebEx:"מטלת הפרויקט צריכה להיות מוגשת ביום שני הבא."},{word:"Arise",phonetic:"אֶרַאיְיז",meaning:"לָצוּץ / לְהִתְעוֹרֵר",visual:"⚠️",exp:"מתייחס בדרך כלל לבעיה, קושי או הזדמנות שמופיעים לפתע.",engEx:"Should any problems arise, please contact technical support.",hebEx:"במידה ויצוצו בעיות כלשהן, אנא פנה לתמיכה טכנית."},{word:"Instructed",phonetic:"אִינְסְטְרַקְטֶד",meaning:"מֻנְחֶה",visual:"👨‍🏫",exp:"אדם שקיבל הכוונה, הדרכה או פקודה לבצע משהו.",engEx:"He did exactly as he was instructed by the manager.",hebEx:"הוא עשה בדיוק כפי שהונחה על ידי המנהל."},{word:"Sum up",phonetic:"סַאם אַפּ",meaning:"לְסַכֵּם",visual:"📝",exp:"פעולת הקיצור והסיכום של דברים שנאמרו או קרו.",engEx:"Let me sum up the main points of our discussion.",hebEx:"תן לי לסכם את הנקודות העיקריות של הדיון שלנו."}],
+  w2d1:[{word:"Kneading",phonetic:"נִי-דִינְג",meaning:"לִישָׁה",visual:"👐",exp:"משמש לתיאור פעולת עיבוד פיזית, לרוב של בצק, חימר או בוץ. האות K שותקת.",engEx:"The worker spent hours kneading the wet mud to shape the bricks.",hebEx:"העובד בילה שעות בלישת הבוץ הרטוב כדי לעצב את הלבנים."},{word:"Mud",phonetic:"מַאד",meaning:"בּוֹץ / רֶפֶשׁ",visual:"🟤",exp:"אדמה רטובה ודביקה.",engEx:"The heavy rain turned the dirt road into thick mud.",hebEx:"הגשם הכבד הפך את דרך העפר לבוץ סמיך."},{word:"Tiny",phonetic:"טַיְינִי",meaning:"זָעִיר",visual:"🔬",exp:"תיאור למשהו קטן במיוחד, קטן יותר מ-Small.",engEx:"The microscope revealed tiny organisms in the water.",hebEx:"המיקרוסקופ חשף אורגניזמים זעירים במים."},{word:"Shape",phonetic:"שֵׁייפּ",meaning:"צוּרָה / לְעַצֵּב",visual:"🔺",exp:"יכול לשמש כשם עצם (צורה) או כפועל (לעצב משהו).",engEx:"You can shape the clay into a beautiful bowl.",hebEx:"אתה יכול לעצב את החימר לקערה יפה."},{word:"Bricks",phonetic:"בְּרִיקְס",meaning:"לְבֵנִים",visual:"🧱",exp:"חומר בנייה בסיסי העשוי לרוב מחימר שרוף.",engEx:"The old house was built using red bricks.",hebEx:"הבית הישן נבנה באמצעות לבנים אדומות."},{word:"Advance",phonetic:"אַדְבַאנְס",meaning:"לְקַדֵּם / מִקְדָּמָה",visual:"⏩",exp:"לנוע קדימה, או בהקשר כספי: תשלום הניתן לפני המועד.",engEx:"He asked his manager for an advance on his wages.",hebEx:"הוא ביקש ממנהלו מקדמה על משכורתו."},{word:"Wages",phonetic:"וֵוייגֶ'ס",meaning:"מַשְׂכֹּרֶת",visual:"💵",exp:"תשלום הניתן לעובד עבור עבודתו, לרוב מחושב לפי שעות או ימים.",engEx:"The factory workers demanded higher wages.",hebEx:"פועלי המפעל דרשו משכורות גבוהות יותר."},{word:"Kiln",phonetic:"קִילְן",meaning:"כִּבְשָׁן",visual:"🔥",exp:"תנור תעשייתי לוהט לשריפת לבנים או קרמיקה. ה-n כמעט שותקת.",engEx:"The tiny clay bricks were left in the hot kiln overnight to harden.",hebEx:"לבני החימר הזעירות הושארו בכבשן החם למשך הלילה כדי להתקשות."},{word:"Debt",phonetic:"דֶט",meaning:"חוֹב",visual:"💳",exp:"מצב פיננסי בו אדם חייב כסף. האות b שותקת לחלוטין!",engEx:"Taking out another loan will only increase their massive debt.",hebEx:"לקיחת הלוואה נוספת רק תגדיל את החוב העצום שלהם."},{word:"Surveys",phonetic:"סֶרְבֵייז",meaning:"סְקָרִים",visual:"📋",exp:"איסוף נתונים או דעות מקבוצת אנשים.",engEx:"Recent surveys show a change in consumer habits.",hebEx:"סקרים אחרונים מראים שינוי בהרגלי הצרכנים."}],
+  w2d2:[{word:"Loan",phonetic:"לוֹאוּן",meaning:"הַלְוָאָה",visual:"🏦",exp:"כסף שניתן בהשאלה ולרוב דורש החזר עם ריבית.",engEx:"He applied for a loan to buy a new car.",hebEx:"הוא הגיש בקשה להלוואה כדי לקנות מכונית חדשה."},{word:"Refugees",phonetic:"רֶפְיוּ-ג'ִיז",meaning:"פְּלִיטִים",visual:"⛺",exp:"אנשים שנאלצו לעזוב את ארצם עקב מלחמה או רדיפה.",engEx:"The international committee must provide proper conditions for the war refugees.",hebEx:"על הוועדה הבינלאומית לספק תנאים נאותים לפליטי המלחמה."},{word:"Reduce",phonetic:"רִי-דְיוּס",meaning:"לְצַמְצֵם",visual:"🔽",exp:"הקטנת כמות, גודל או חשיבות של משהו.",engEx:"We need to reduce our daily expenses.",hebEx:"אנחנו צריכים לצמצם את ההוצאות היומיות שלנו."},{word:"Amount",phonetic:"אֶ-מַאוּנְט",meaning:"כַּמּוּת / סְכוּם",visual:"⚖️",exp:"מתייחס לכמות של משהו שאינו ספיר בקלות (כמו מים או כסף).",engEx:"The recipe requires a small amount of sugar.",hebEx:"המתכון דורש כמות קטנה של סוכר."},{word:"Permission",phonetic:"פֶּר-מִי-שֶׁן",meaning:"הַרְשָׁאָה",visual:"🛂",exp:"אישור רשמי לעשות משהו.",engEx:"You need special permission to enter this building.",hebEx:"אתה צריך הרשאה מיוחדת כדי להיכנס לבניין הזה."},{word:"Accusations",phonetic:"אֶקְיוּ-זֵיי-שֶׁנְס",meaning:"הַאֲשָׁמוֹת",visual:"☝️",exp:"טענות רשמיות על כך שאדם ביצע מעשה פסול.",engEx:"The manager faced serious accusations regarding the poor conditions.",hebEx:"המנהל עמד בפני האשמות חמורות בנוגע לתנאים הירודים."},{word:"Reject",phonetic:"רִי-ג'ֶ'קְט",meaning:"לִדְחוֹת",visual:"❌",exp:"סירוב לקבל, לאשר או להסכים למשהו.",engEx:"The bank decided to reject his request for a loan.",hebEx:"הבנק החליט לדחות את בקשתו להלוואה."},{word:"Proper",phonetic:"פְּרוֹ-פֶּר",meaning:"נָאוֹת / רָאוּי",visual:"✔️",exp:"משהו שהוא הולם, נכון או מתאים לסיטואציה.",engEx:"Please ensure you are wearing the proper uniform.",hebEx:"אנא ודא שאתה לובש את המדים הנאותים."},{word:"Conditions",phonetic:"קוֹן-דִי-שֶׁנְס",meaning:"תְּנָאִים",visual:"📝",exp:"מצב סביבתי או דרישות שצריך לעמוד בהן.",engEx:"The workers complained about the terrible working conditions.",hebEx:"העובדים התלוננו על תנאי העבודה הנוראיים."},{word:"Provided",phonetic:"פְּרוֹ-וַויי-דֶד",meaning:"בִּתְנַאי שֶׁ...",visual:"🤝",exp:"מילת מפתח אקדמית! משמשת כמילת תנאי לוגית המחליפה את 'If'.",engEx:"We will accept the agreement, provided that all conditions are met.",hebEx:"אנו נקבל את ההסכם, בתנאי שכל התנאים יתקיימו."}],
+  w2d3:[{word:"Ceremonies",phonetic:"סֶ-רֶ-מוֹ-נִיז",meaning:"טְקָסִים",visual:"🎊",exp:"אירועים פורמליים, לרוב מסורתיים או ציבוריים.",engEx:"Traditional ceremonies were held in the village.",hebEx:"טקסים מסורתיים נערכו בכפר."},{word:"Treatment",phonetic:"טְרִיט-מֶנְט",meaning:"טִיפּוּל",visual:"🩺",exp:"האופן בו מתנהגים או מטפלים במישהו, רפואית או חברתית.",engEx:"The patient responded well to the new medical treatment.",hebEx:"המטופל הגיב היטב לטיפול הרפואי החדש."},{word:"Requirement",phonetic:"רִי-קְוַוייר-מֶנְט",meaning:"דְּרִישָׁה",visual:"❗",exp:"משהו שהכרחי או נדרש (תנאי קבלה).",engEx:"Passing the test is a strict requirement for the job.",hebEx:"מעבר המבחן הוא דרישה נוקשה לתפקיד."},{word:"Illegal",phonetic:"אִיל-לִי-גַאל",meaning:"לֹא חֻקִּי",visual:"🚫",exp:"מנוגד לחוק או לכללים.",engEx:"Parking in this zone is strictly illegal.",hebEx:"חניה באזור זה היא בלתי חוקית לחלוטין."},{word:"Exaggeration",phonetic:"אֶגְ-זַה-גֶ'רֵיי-שֶׁן",meaning:"הַגְזָמָה",visual:"📈",exp:"תיאור של מצב כגדול או גרוע ממה שהוא באמת.",engEx:"To say that the new requirement is completely illegal is a massive exaggeration.",hebEx:"לומר שהדרישה החדשה היא בלתי חוקית לחלוטין זו הגזמה עצומה."},{word:"Trade-Unions",phonetic:"טְרֵייד יוּנְיוֹנְס",meaning:"אִגּוּדֵי עוֹבְדִים",visual:"✊",exp:"ארגונים המאגדים עובדים להגנה על זכויותיהם.",engEx:"The trade-unions stepped in to solve the crisis.",hebEx:"איגודי העובדים התערבו כדי לפתור את המשבר."},{word:"Trapped",phonetic:"טְרַאפְּט",meaning:"לִלְכּוֹד",visual:"🕸️",exp:"תחושה של אדם התקוע במצב בעייתי ללא יכולת השתחררות.",engEx:"Despite his promises, many workers still felt trapped in the system.",hebEx:"למרות הבטחותיו, עובדים רבים עדיין הרגישו לכודים במערכת."},{word:"Commissioner",phonetic:"קוֹ-מִי-שֶׁ-נֶר",meaning:"נָצִיב",visual:"👮‍♂️",exp:"בעל תפקיד בכיר הממונה על תחום או ועדה (למשל במשטרה).",engEx:"The police commissioner held a press conference.",hebEx:"נציב המשטרה ערך מסיבת עיתונאים."},{word:"Solve",phonetic:"סוֹלְב",meaning:"לִפְתּוֹר",visual:"🧩",exp:"מציאת פתרון לבעיה או תעלומה.",engEx:"The detective managed to solve the complicated mystery.",hebEx:"הבלש הצליח לפתור את התעלומה המסובכת."},{word:"Denies",phonetic:"דִי-נַאייז",meaning:"מַכְחִישׁ",visual:"🙅‍♂️",exp:"לסרב להודות באמת או לדחות טענה.",engEx:"The suspect still denies all the allegations against him.",hebEx:"החשוד עדיין מכחיש את כל ההאשמות נגדו."}],
+  w2d4:[{word:"Insist",phonetic:"אִין-סִיסְט",meaning:"לְהִתְעַקֵּשׁ",visual:"😤",exp:"לדרוש משהו בתקיפות ולא לוותר.",engEx:"I insist that you stay for dinner.",hebEx:"אני מתעקש שתישאר לארוחת ערב."},{word:"Poisonous",phonetic:"פּוֹיְ-זְ-נַס",meaning:"רָעִיל",visual:"☠️",exp:"חומר או אורגניזם שיכול לגרום למוות או נזק.",engEx:"Be careful, some of these mushrooms are poisonous.",hebEx:"היזהר, חלק מהפטריות האלה רעילות."},{word:"Barefoot",phonetic:"בֶּר-פוּט",meaning:"יָחֵף",visual:"🦶",exp:"הליכה ללא נעליים או גרביים.",engEx:"The children loved running barefoot on the grass.",hebEx:"הילדים אהבו לרוץ יחפים על הדשא."},{word:"Convince",phonetic:"קוֹן-בִינְס",meaning:"לְשַׁכְנֵעַ",visual:"🗣️",exp:"לגרום למישהו לאמץ דעה באמצעות טיעונים.",engEx:"In some instances, it is difficult to convince people to change their harsh tone.",hebEx:"בחלק מהמקרים, קשה לשכנע אנשים לשנות את הטון הנוקשה שלהם."},{word:"Waive",phonetic:"וֵוייב",meaning:"לְוַתֵּר עַל",visual:"🗑️",exp:"ויתור רשמי על זכות, דרישה או תשלום.",engEx:"The company decided to waive the cancellation fee.",hebEx:"החברה החליטה לוותר על דמי הביטול."},{word:"Instances",phonetic:"אִין-סְטַנְסֶס",meaning:"מִקְרִים",visual:"📁",exp:"דוגמאות או אירועים ספציפיים.",engEx:"There were several instances of fraud reported.",hebEx:"דווחו מספר מקרים של הונאה."},{word:"Mentioned",phonetic:"מֶנ-שֶׁנְד",meaning:"מוּזְכָּר",visual:"💬",exp:"משהו שהתייחסו אליו בשיחה או בכתב.",engEx:"She mentioned your name during the meeting.",hebEx:"היא הזכירה את שמך במהלך הפגישה."},{word:"Tone",phonetic:"טוֹן",meaning:"טוֹן / צְלִיל",visual:"🎵",exp:"אופי הצליל או נימת הקול (שיכולה להעיד על מצב רוח).",engEx:"His aggressive tone made everyone uncomfortable.",hebEx:"הטון האגרסיבי שלו גרם לכולם להרגיש לא בנוח."},{word:"Biased",phonetic:"בַּאיְ-יֶסְט",meaning:"מְשֻׁחָד",visual:"⚖️",exp:"חוסר אובייקטיביות, נטייה לא הוגנת לטובת צד מסוים.",engEx:"The investigation proved that the reporter was highly biased.",hebEx:"החקירה הוכיחה שהכתב היה משוחד מאוד."},{word:"Exposed",phonetic:"אֶקְס-פּוֹזְד",meaning:"חָשׂוּף",visual:"🔦",exp:"גילוי או הוצאה לאור של משהו שהיה נסתר.",engEx:"The scandal exposed the corruption in the organization.",hebEx:"השערורייה חשפה את השחיתות בארגון."}],
+  w3d1:[{word:"Perform",phonetic:"פֶּרְפוֹרְם",meaning:"לְבַצֵּעַ",visual:"🎭",exp:"לבצע משימה, פעולה או הופעה.",engEx:"The surgeon will perform the operation tomorrow.",hebEx:"המנתח יבצע את הניתוח מחר."},{word:"Paralyzed",phonetic:"פַּרָלַיְזְד",meaning:"מְשֻׁתָּק",visual:"🦽",exp:"אדם שאינו מסוגל להזיז חלק מגופו, או מצב של חוסר יכולת לפעול.",engEx:"The accident left him paralyzed from the waist down.",hebEx:"התאונה הותירה אותו משותק מהמותניים ומטה."},{word:"Arm(s)",phonetic:"אָרְם/ס",meaning:"זְרוֹעַ / זְרוֹעוֹת",visual:"💪",exp:"גפה עליונה של גוף האדם, או זרוע של מכונה.",engEx:"He carried the heavy box in his arms.",hebEx:"הוא נשא את הקופסה הכבדה בזרועותיו."},{word:"Fetch",phonetic:"פֶצ'",meaning:"לְהָבִיא",visual:"🐕",exp:"ללכת להביא משהו ולחזור איתו.",engEx:"Please fetch me a glass of water.",hebEx:"אנא הבא לי כוס מים."},{word:"Scratch Itches",phonetic:"סְקְרַאצ' אִיצֶ'ס",meaning:"לְגָרֵד",visual:"💅",exp:"להעביר ציפורניים על העור כדי להקל על תחושת גירוד.",engEx:"The dog used its back leg to scratch itches.",hebEx:"הכלב השתמש ברגלו האחורית כדי לגרד."},{word:"Plenty",phonetic:"פְּלֶנְטִי",meaning:"שֶׁפַע",visual:"🧺",exp:"כמות גדולה ומספקת של משהו.",engEx:"We have plenty of time before the train leaves.",hebEx:"יש לנו שפע של זמן לפני שהרכבת עוזבת."},{word:"Comb",phonetic:"קוֹם",meaning:"לְסָרֵק",visual:"🪮",exp:"סידור השיער באמצעות מסרק. האות b שותקת.",engEx:"She needs to comb her hair before the meeting.",hebEx:"היא צריכה לסרק את שערה לפני הפגישה."},{word:"Hair",phonetic:"הֶר",meaning:"שֵׂעָר",visual:"💇‍♀️",exp:"צומח מקרקפת הראש.",engEx:"Her hair is naturally curly and very long.",hebEx:"השיער שלה מתולתל באופן טבעי וארוך מאוד."},{word:"Independent",phonetic:"אִינְדִיפֶּנְדֶנְט",meaning:"עַצְמָאִי",visual:"🦅",exp:"אדם או גוף שאינו תלוי באחרים ופועל בכוחות עצמו.",engEx:"After college, he became financially independent.",hebEx:"לאחר המכללה, הוא הפך לעצמאי כלכלית."},{word:"Forced",phonetic:"פוֹרְסְד",meaning:"כָּפוּי / הוּכְרַח",visual:"⛓️",exp:"פעולה שנעשתה בניגוד לרצון החופשי, תחת לחץ.",engEx:"They were forced to leave their homes due to the storm.",hebEx:"הם הוכרחו לעזוב את בתיהם עקב הסופה."}],
+  w3d2:[{word:"Nursing",phonetic:"נֶרְסִינְג",meaning:"טִיפּוּל / סִיעוּד",visual:"🧑‍⚕️",exp:"מקצוע או פעולת הטיפול בחולים ופצועים.",engEx:"She chose a career in nursing to help people.",hebEx:"היא בחרה בקריירה בסיעוד כדי לעזור לאנשים."},{word:"Despair",phonetic:"דִיסְפֶּר",meaning:"יֵאוּשׁ",visual:"🥀",exp:"אובדן מוחלט של תקווה.",engEx:"Don't give up in moments of despair.",hebEx:"אל תרים ידיים ברגעי ייאוש."},{word:"Helplessness",phonetic:"הֶלְפְּלֶסְנֶס",meaning:"חוֹסֶר אוֹנִים",visual:"🪫",exp:"תחושה שאין ביכולתך לעשות דבר כדי לשנות את המצב.",engEx:"He felt a deep sense of helplessness when he lost his job.",hebEx:"הוא חש תחושה עמוקה של חוסר אונים כשאיבד את עבודתו."},{word:"Dormitories",phonetic:"דּוֹרְמִיטוֹרִיז",meaning:"מְעוֹנוֹת",visual:"🏢",exp:"מגורי סטודנטים במוסד חינוכי.",engEx:"Many first-year students live in the college dormitories.",hebEx:"הרבה סטודנטים שנה ראשונה גרים במעונות המכללה."},{word:"Raising",phonetic:"רֵיְיזִינְג",meaning:"הֲרָמָה / לְגַדֵּל",visual:"🏗️",exp:"פעולה של הגבהת משהו, או גידול ילדים ובעלי חיים.",engEx:"They are raising funds for the new hospital.",hebEx:"הם מגייסים כספים לבית החולים החדש."},{word:"Laser beam",phonetic:"לֵיְזֶר בִּים",meaning:"קֶרֶן לֵיְיזֶר",visual:"🔦",exp:"אלומת אור ממוקדת וחזקה.",engEx:"The security system uses an invisible laser beam.",hebEx:"מערכת האבטחה משתמשת בקרן לייזר בלתי נראית."},{word:"Respond",phonetic:"רִיסְפּוֹנְד",meaning:"תְּגוּבָה / לְהָגִיב",visual:"💬",exp:"מתן מענה לשאלה, מצב או פעולה.",engEx:"It took him a few minutes to respond to the message.",hebEx:"לקח לו כמה דקות להגיב להודעה."},{word:"Institutions",phonetic:"אִינְסְטִיטְיוּשֶׁנְס",meaning:"מוֹסָדוֹת",visual:"🏛️",exp:"ארגונים רשמיים, כמו מוסדות חינוך, ממשלה או פיננסים.",engEx:"Banks are important financial institutions.",hebEx:"בנקים הם מוסדות פיננסיים חשובים."},{word:"Applications",phonetic:"אַפְּלִיקֵיְישֶׁנְס",meaning:"יִישּׂוּמִים / בַּקָּשׁוֹת",visual:"📱",exp:"שימושים מעשיים לטכנולוגיה, או טפסי הרשמה.",engEx:"This software has many practical applications.",hebEx:"לתוכנה זו יש יישומים מעשיים רבים."},{word:"Significance",phonetic:"סִיגְנִיפִיקֶנְס",meaning:"מַשְׁמָעוּת",visual:"🌟",exp:"החשיבות או המשמעות העמוקה של דבר מה.",engEx:"Do you understand the significance of this decision?",hebEx:"האם אתה מבין את המשמעות של ההחלטה הזו?"}],
+  w3d3:[{word:"Graduating",phonetic:"גְרַאגְ'יוּאֵיְטִינְג",meaning:"סִיּוּם לִימּוּדִים",visual:"🎓",exp:"קבלת תואר אקדמי או סיום שלב חינוכי.",engEx:"She is graduating from university with top honors.",hebEx:"היא מסיימת את לימודיה באוניברסיטה בהצטיינות יתרה."},{word:"Immense",phonetic:"אִימֶנְס",meaning:"עָצוּם",visual:"🐘",exp:"משהו גדול מאוד בגודלו או בהיקפו.",engEx:"The new project requires an immense amount of money.",hebEx:"הפרויקט החדש דורש כמות עצומה של כסף."},{word:"Amusing",phonetic:"אֶמְיוּזִינְג",meaning:"מְשַׁעֲשֵׁעַ",visual:"🤣",exp:"משהו שגורם לצחוק, חיוך או בידור קל.",engEx:"I found his story highly amusing.",hebEx:"מצאתי את הסיפור שלו מאוד משעשע."},{word:"Contributors",phonetic:"קוֹנְטְרִיבְּיוּטוֹרְס",meaning:"תּוֹרְמִים",visual:"🤝",exp:"אנשים שמעניקים זמן, כסף או מאמץ למען מטרה משותפת.",engEx:"We thank all the contributors for their generous donations.",hebEx:"אנו מודים לכל התורמים על תרומותיהם הנדיבות."},{word:"Approximately",phonetic:"אַפְּרוֹקְסִימֶטְלִי",meaning:"בְּעֵרֶךְ",visual:"⚖️",exp:"הערכה קרובה למדד מסוים, לא מדוייק במאת האחוזים.",engEx:"The journey will take approximately two hours.",hebEx:"המסע ייקח בערך שעתיים."},{word:"Companion",phonetic:"קוֹמְפֶּנְיוֹן",meaning:"בֶּן לִוְיָה",visual:"🚶‍♂️",exp:"מישהו שמבלה זמן רב איתך או מלווה אותך במסע.",engEx:"His dog is his most loyal companion.",hebEx:"הכלב שלו הוא בן הלוויה הנאמן ביותר שלו."},{word:"Pair",phonetic:"פֶּר",meaning:"זוּג",visual:"🧦",exp:"שני פריטים מאותו סוג שמשמשים יחד.",engEx:"I need to buy a new pair of shoes.",hebEx:"אני צריך לקנות זוג נעליים חדש."},{word:"Capable",phonetic:"קֵיְיפָּבֶּל",meaning:"מְסוּגָּל",visual:"🦸‍♂️",exp:"אדם שיש לו את הכישורים הנדרשים לבצע משימה.",engEx:"She is a highly capable manager.",hebEx:"היא מנהלת בעלת יכולות גבוהות."},{word:"Runs It",phonetic:"רַאנְס אִיט",meaning:"מְנַהֵל אֶת זֶה",visual:"🏃‍♂️",exp:"מנהל או מתפעל עסק או מערכת (ולא רק 'לרוץ').",engEx:"My father owns the shop and runs it himself.",hebEx:"אבא שלי הוא הבעלים של החנות ומנהל אותה בעצמו."},{word:"Phrases",phonetic:"פְרֵיְיזֶס",meaning:"בִּיטּוּיִים",visual:"🗣️",exp:"קבוצת מילים המהווה יחידה בעלת משמעות בתוך משפט.",engEx:"You need to learn some useful English phrases for the trip.",hebEx:"אתה צריך ללמוד כמה ביטויים שימושיים באנגלית לקראת הטיול."}],
+  w3d4:[{word:"Spent",phonetic:"סְפֶּנְט",meaning:"לְבַזְבֵּז / הוֹצִיא",visual:"💸",exp:"צורת העבר של Spend, להוציא כסף או להעביר זמן.",engEx:"I spent all my money on a new computer.",hebEx:"בזבזתי את כל כספי על מחשב חדש."},{word:"Organization",phonetic:"אוֹרְגַּנִיזֵיְישֶׁן",meaning:"אִרְגּוּן",visual:"🏢",exp:"קבוצת אנשים הפועלת יחד למטרה מוגדרת.",engEx:"The charity is a non-profit organization.",hebEx:"עמותת החסד היא ארגון ללא מטרות רווח."},{word:"Owners",phonetic:"אוֹנֶרְס",meaning:"בְּעָלִים",visual:"🔑",exp:"האנשים להם שייך רכוש, עסק או חיה.",engEx:"The restaurant owners decided to renovate the place.",hebEx:"בעלי המסעדה החליטו לשפץ את המקום."},{word:"Task",phonetic:"טַאסְק",meaning:"מְלָאכָה / מְשִׂימָה",visual:"✅",exp:"עבודה מוגדרת שצריך לבצע.",engEx:"Writing this report is a difficult task.",hebEx:"כתיבת הדוח הזה היא משימה קשה."},{word:"Idea",phonetic:"אַיְידִיָּה",meaning:"רַעְיוֹן",visual:"💡",exp:"מחשבה, תוכנית או הצעה הנוצרת בראש.",engEx:"That's a brilliant idea for the new project!",hebEx:"זה רעיון גאוני לפרויקט החדש!"},{word:"College",phonetic:"קוֹלֶג'",meaning:"מִכְלָלָה",visual:"🏫",exp:"מוסד להשכלה גבוהה.",engEx:"He is studying engineering at the local college.",hebEx:"הוא לומד הנדסה במכללה המקומית."},{word:"Program",phonetic:"פְּרוֹגְרַם",meaning:"תָּכְנִית",visual:"📅",exp:"מערך פעולות מתוכנן, או תוכנית מחשב/טלוויזיה.",engEx:"We are launching a new training program for employees.",hebEx:"אנו משיקים תוכנית הכשרה חדשה לעובדים."},{word:"Human",phonetic:"הְיוּמֶן",meaning:"אָדָם",visual:"🧍‍♂️",exp:"יצור אנושי, בניגוד לחיה או מכונה.",engEx:"To err is human; everyone makes mistakes.",hebEx:"לטעות זה אנושי; כולם עושים טעויות."},{word:"Accident",phonetic:"אַקְסִידֶנְט",meaning:"תְּאוּנָה",visual:"💥",exp:"אירוע בלתי צפוי שנגרם לרוב עם נזק או פציעה.",engEx:"Luckily, no one was hurt in the car accident.",hebEx:"למרבה המזל, איש לא נפגע בתאונת הדרכים."},{word:"Objects",phonetic:"אוֹבְּגֶ'קְטְס",meaning:"חֲפָצִים",visual:"🎲",exp:"דברים מוחשיים שניתן לראות ולגעת בהם.",engEx:"The room was filled with strange metallic objects.",hebEx:"החדר היה מלא בחפצי מתכת מוזרים."}]
 };
 
 window.storyData = [
@@ -586,6 +372,77 @@ window.storyData = [
     { emoji: "📱🌟", eng: "...their applications gain true significance, and no one will ever reject their success!", heb: "...היישומים שלהם זוכים למשמעות אמיתית, ואף אחד לעולם לא ידחה את הצלחתם!" }
 ];
 
+window.articleData = [
+    {j:"🔨",e:"Deep within the old building on Herzl Street, an auction was about to begin.",h:"עמוק בתוך הבניין הישן ברחוב הרצל, מכירה פומבית עמדה להתחיל."},
+    {j:"🏛️",e:"The grand hall, with its immense arched ceilings and faded brick walls, had hosted countless ceremonies over the decades.",h:"האולם הגדול, עם התקרות המקושתות העצומות וקירות הלבנים הדהויים, אירח אינספור טקסים לאורך העשורים."},
+    {j:"🍀",e:"Perhaps it was luck, or an opportunity waiting to happen, but Sara decided to attend that Saturday morning in mid-March.",h:"אולי זה היה מזל, או הזדמנות שרק חיכתה לקרות, אבל שרה החליטה להשתתף באותו בוקר שבת באמצע מרץ."},
+    {j:"⛺",e:"She was a refugee who had arrived in the city in 2015, fleeing political unrest in her homeland.",h:"היא הייתה פליטה שהגיעה לעיר בשנת 2015, נמלטת מתסיסה פוליטית במולדתה."},
+    {j:"📅",e:"Four years later—by 2019—she had built a modest life for herself.",h:"ארבע שנים לאחר מכן - עד 2019 - היא בנתה לעצמה חיים צנועים."},
+    {j:"🔥",e:"Now she ran a tiny kiln in her backyard, spending her days kneading clay and shaping pottery with her own hands.",h:"כעת היא ניהלה כבשן זעיר בחצר האחורית שלה, מבלה את ימיה בלישת חימר ועיצוב כלי חרס במו ידיה."},
+    {j:"🏚️",e:"Her obsession with pottery had consumed her life throughout 2018 and early 2019, yet ironically, her appliances and furniture were falling apart from neglect.",h:"האובססיה שלה לקדרות שאבה את חייה לאורך 2018 ותחילת 2019, אך באופן אירוני, מכשירי החשמל והרהיטים שלה התפרקו מהזנחה."},
+    {j:"🕰️",e:"She had spent more time in her studio than maintaining her home.",h:"היא בילתה יותר זמן בסטודיו שלה מאשר בתחזוקת הבית שלה."},
+    {j:"🏫",e:"Back in 2016, at the local college, Sara had learned about trade-unions, workers' rights, and organization.",h:"עוד בשנת 2016, במכללה המקומית, שרה למדה על איגודי עובדים, זכויות עובדים וארגון."},
+    {j:"⚖️",e:"Those lessons taught her to proceed in a proper and legal way, to resist exploitation, and to insist on fair treatment.",h:"השיעורים האלה לימדו אותה להמשיך בדרך נאותה וחוקית, להתנגד לניצול ולהתעקש על טיפול הוגן."},
+    {j:"🎓",e:"She was a model student, graduating with honors in 2017.",h:"היא הייתה סטודנטית למופת, וסיימה את הלימודים בהצטיינות בשנת 2017."},
+    {j:"💬",e:"Her professors had mentioned her potential, and her contributors to the program believed she had a bright future ahead.",h:"המרצים שלה הזכירו את הפוטנציאל שלה, והתורמים שלה לתוכנית האמינו שיש לה עתיד מזהיר לפניה."},
+    {j:"🏦",e:"But by late 2018, everything changed. When she received a substantial loan from the bank to expand her pottery business, an addiction to spending took over her mind.",h:"אך עד סוף 2018, הכל השתנה. כשהיא קיבלה הלוואה משמעותית מהבנק להרחבת עסק הקדרות שלה, התמכרות לבזבוזים השתלטה על דעתה."},
+    {j:"🧠",e:"It wasn't rational—she knew better. Yet an irresistible obsession gripped her.",h:"זה לא היה רציונלי - היא ידעה טוב יותר. ובכל זאת אובססיה שאי אפשר לעמוד בפניה אחזה בה."},
+    {j:"💎",e:"Every penny went to purchase antique collectibles and jewelry she didn't need.",h:"כל אגורה הלכה לרכישת פריטי אספנות עתיקים ותכשיטים שהיא לא הייתה צריכה."},
+    {j:"🤡",e:"Ridiculously expensive items filled her apartment throughout the winter months.",h:"פריטים יקרים בצורה מגוחכת מילאו את דירתה לאורך חודשי החורף."},
+    {j:"🛋️",e:"She bought furniture she had no room for, earrings and chains she never wore, and brand name appliances that replaced perfectly good ones.",h:"היא קנתה רהיטים שלא היה לה מקום עבורם, עגילים ושרשראות שמעולם לא ענדה, ומכשירי חשמל ממותגים שהחליפו מכשירים תקינים לחלוטין."},
+    {j:"🌪️",e:"Her habits spiraled. By February 2019, the odds and ends she'd accumulated had become truly immense.",h:"ההרגלים שלה יצאו מכלל שליטה. עד פברואר 2019, הפיצ'יפקס שהצטברו הפכו לעצומים באמת."},
+    {j:"📦",e:"The amount was ridiculous—stacks of boxes, piles of objects, shelves groaning under the weight of her compulsive purchases.",h:"הכמות הייתה מגוחכת - ערימות של קופסאות, ערימות של חפצים, מדפים גונחים תחת משקל הרכישות הכפייתיות שלה."},
+    {j:"😈",e:"An unscrupulous antique dealer named Viktor had become her regular customer, and he deliberately encouraged her spending, knowing she was trapped in her own addiction.",h:"סוחר עתיקות חסר מצפון בשם ויקטור הפך ללקוח הקבוע שלה, והוא עודד בכוונה את הבזבוז שלה, בידיעה שהיא לכודה בהתמכרות של עצמה."},
+    {j:"➡️",e:"Consequently, by March 2019, Sara found herself in despair and helplessness.",h:"כתוצאה מכך, עד מרץ 2019, שרה מצאה את עצמה בייאוש וחוסר אונים."},
+    {j:"💳",e:"Her debt had accumulated to an immense figure that seemed impossible to repay.",h:"החוב שלה הצטבר לסכום עצום שנראה בלתי אפשרי להחזר."},
+    {j:"☝️",e:"The bank sent accusations of illegal financial mismanagement—though the mismanagement was entirely her own doing.",h:"הבנק שלח האשמות על ניהול פיננסי כושל ולא חוקי - למרות שהניהול הכושל היה לגמרי מעשה ידיה."},
+    {j:"📝",e:"The conditions imposed by her lenders were harsh and unforgiving. They insisted on payment or forced sale of her property.",h:"התנאים שהוטלו על ידי המלווים שלה היו נוקשים וחסרי רחמים. הם התעקשו על תשלום או מכירה כפויה של רכושה."},
+    {j:"🗑️",e:"In late February, that same unscrupulous customer, Viktor, had tried to convince her to waive her remaining wages in a crooked trade deal.",h:"בסוף פברואר, אותו לקוח חסר מצפון, ויקטור, ניסה לשכנע אותה לוותר על יתרת משכורתה בעסקת סחר מושחתת."},
+    {j:"💵",e:"He wanted her to trade her pottery business to him at a fraction of its worth, with the promise of wages that would reduce her debt.",h:"הוא רצה שהיא תסחור איתו בעסק הקדרות שלה בשבריר משוויו, עם הבטחה לשכר שיצמצם את החוב שלה."},
+    {j:"❌",e:"She rejected his offer outright, but the proposal filled her with dread.",h:"היא דחתה את הצעתו על הסף, אך ההצעה מילאה אותה באימה."},
+    {j:"🚶‍♂️",e:"Her companion, David, a faithful friend from college who had become a commissioner with the city's labor department, had warned her repeatedly about her spending.",h:"בן הלוויה שלה, דוד, חבר נאמן מהמכללה שהפך לנציב במחלקת העבודה של העיר, הזהיר אותה שוב ושוב לגבי הבזבוזים שלה."},
+    {j:"🛑",e:"\"Resist this habit,\" he would say, watching as boxes arrived at her tiny apartment. By March, David was exasperated.",h:"\"תתנגדי להרגל הזה\", היה אומר, מתבונן בקופסאות מגיעות לדירתה הקטנטנה. עד מרץ, דוד היה מיואש."},
+    {j:"🗃️",e:"He pointed at the immense amount of clutter filling every room.",h:"הוא הצביע על הכמות העצומה של העומס שמילא כל חדר."},
+    {j:"🧩",e:"\"Sara, you need to solve this before it destroys you.\"",h:"\"שרה, את צריכה לפתור את זה לפני שזה יהרוס אותך.\""},
+    {j:"💡",e:"That's when Sara made her decision. On March 10th, she attended the auction to observe.",h:"אז שרה קיבלה את ההחלטה שלה. ב-10 במרץ, היא השתתפה במכירה הפומבית כדי לצפות."},
+    {j:"🙋‍♂️",e:"She watched as bidders competed for lots of merchandise. She saw how quickly old items could be sold, how customers were willing to pay for quality objects if they were presented properly.",h:"היא צפתה כיצד מציעים מתחרים על המון סחורה. היא ראתה באיזו מהירות ניתן למכור פריטים ישנים, כיצד לקוחות מוכנים לשלם עבור חפצים איכותיים אם הם מוצגים כראוי."},
+    {j:"📞",e:"By March 15th, she had made contact with the auction organizers.",h:"עד ה-15 במרץ היא יצרה קשר עם מארגני המכירה הפומבית."},
+    {j:"📊",e:"She performed a risky calculation: if she could purchase lots of old odds and ends at the auction—items that were ridiculously underpriced—she could clean them, restore them, and resell them at a profit.",h:"היא ביצעה חישוב מסוכן: אם היא תוכל לרכוש המון שאריות ישנות במכירה הפומבית - פריטים שתומחרו במחיר נמוך להחריד - היא תוכל לנקות אותם, לשחזר אותם, ולמכור אותם מחדש ברווח."},
+    {j:"🤷‍♂️",e:"\"It's impossible,\" David said when she mentioned her plan. \"You'll just acquire more junk.\"",h:"\"זה בלתי אפשרי,\" אמר דוד כשהיא הזכירה את התוכנית שלה. \"את רק תרכשי עוד זבל.\""},
+    {j:"🚪",e:"\"I have to try,\" Sara insisted. \"I have no other opportunity.\"",h:"\"אני חייבת לנסות,\" התעקשה שרה. \"אין לי שום הזדמנות אחרת.\""},
+    {j:"✅",e:"The task was daunting. Approximately 200 objects arrived at her door over the next three weeks—earrings and chains, old collectibles, broken appliances, furniture in poor condition, jewelry that needed polishing.",h:"המשימה הייתה מרתיעה. בערך 200 חפצים הגיעו לדלתה במהלך שלושת השבועות הבאים - עגילים ושרשראות, פריטי אספנות ישנים, מכשירי חשמל שבורים, רהיטים במצב גרוע, תכשיטים שהיו זקוקים לפוליש."},
+    {j:"🛂",e:"The amount was staggering. She had to receive permission from her landlord to store everything in the building's basement.",h:"הכמות הייתה מדהימה. היא נאלצה לקבל הרשאה מבעל הבית שלה לאחסן הכל במרתף הבניין."},
+    {j:"🦶",e:"David came by on March 20th, barefoot from working in his garden, tracking mud through her apartment.",h:"דוד קפץ לבקר ב-20 במרץ, יחף מעבודה בגינה שלו, משאיר עקבות בוץ דרך הדירה שלה."},
+    {j:"😩",e:"He stared at the piles in despair. \"This is worse than before,\" he groaned.",h:"הוא בהה בערימות בייאוש. \"זה יותר גרוע מקודם,\" הוא נאנח."},
+    {j:"🎵",e:"\"Trust me,\" Sara said, her tone more confident than she felt.",h:"\"סמוך עליי,\" אמרה שרה, הטון שלה בטוח יותר ממה שהרגישה."},
+    {j:"🏢",e:"\"I have a plan. I've already started reaching out to owners of nearby dormitories. Students need affordable furniture and appliances.\"",h:"\"יש לי תוכנית. כבר התחלתי לפנות לבעלים של מעונות סמוכים. סטודנטים צריכים רהיטים ומכשירי חשמל במחירים סבירים.\""},
+    {j:"📝",e:"She was right. By late March, she had convinced the administrators of three dormitories to bid on her merchandise.",h:"היא צדקה. עד סוף מרץ, היא שכנעה את מנהלי שלושת המעונות להציע הצעות מחיר על הסחורה שלה."},
+    {j:"📷",e:"She created an advance listing of her items, complete with photographs and descriptions.",h:"היא יצרה רשימה מראש של הפריטים שלה, עם תמונות ותיאורים."},
+    {j:"🤝",e:"She even offered loans to students who couldn't pay upfront. Surprisingly, the response was overwhelming.",h:"היא אפילו הציעה הלוואות לסטודנטים שלא יכלו לשלם מראש. באופן מפתיע, התגובה הייתה מוחצת."},
+    {j:"🔽",e:"Within the first week, she had sold enough to reduce her debt by 30%.",h:"בתוך השבוע הראשון, היא מכרה מספיק כדי לצמצם את החוב שלה ב-30%."},
+    {j:"⚖️",e:"Within three weeks, she had sold approximately 150 items. By late April—just six weeks after the auction—she had solved her financial crisis.",h:"תוך שלושה שבועות, היא מכרה בערך 150 פריטים. עד סוף אפריל - רק שישה שבועות לאחר המכירה הפומבית - היא פתרה את המשבר הפיננסי שלה."},
+    {j:"✔️",e:"The bank received full payment. The conditions of her loan were satisfied.",h:"הבנק קיבל תשלום מלא. תנאי ההלוואה שלה סופקו במלואם."},
+    {j:"🌟",e:"More importantly, Sara received permission from the city to expand her kiln operation.",h:"חשוב מכך, שרה קיבלה הרשאה מהעירייה להרחיב את פעילות הכבשן שלה."},
+    {j:"👩‍🌾",e:"She hired two assistants—both refugees from the same region she came from—and began raising production.",h:"היא שכרה שתי עוזרות - שתיהן פליטות מאותו אזור ממנו הגיעה - והחלה להגדיל את הייצור."},
+    {j:"✊",e:"She applied for grants through various organizations and received support from trade unions that recognized her struggle.",h:"היא הגישה בקשות למענקים דרך ארגונים שונים וקיבלה תמיכה מאיגודי עובדים שהכירו במאבק שלה."},
+    {j:"📈",e:"By June 2019, her pottery business was thriving. But Sara didn't forget her experience or the lessons it taught her.",h:"עד יוני 2019, עסק הקדרות שלה שגשג. אך שרה לא שכחה את החוויה שלה או את השיעורים שהיא לימדה אותה."},
+    {j:"👮‍♂️",e:"By December 2019, nearly a year after the auction, Sara had become a commissioner of a new program called \"Second Chances,\" designed to help refugees and minorities in the community start their own businesses.",h:"עד דצמבר 2019, כמעט שנה לאחר המכירה הפומבית, שרה הפכה לנציבה של תוכנית חדשה שנקראת \"הזדמנות שנייה\", שנועדה לעזור לפליטים ומיעוטים בקהילה להקים עסקים משלהם."},
+    {j:"🎓",e:"She worked with the college to develop curriculum that taught financial literacy and warned against the addiction of consumerism.",h:"היא עבדה עם המכללה לפיתוח תוכנית לימודים שלימדה אוריינות פיננסית והזהירה מפני ההתמכרות של תרבות הצריכה."},
+    {j:"🎭",e:"She performed workshops in community centers and dormitories, sharing her story without exaggeration.",h:"היא ביצעה סדנאות במרכזים קהילתיים ומעונות, וחולקת את הסיפור שלה ללא הגזמה."},
+    {j:"🤝",e:"David became one of her key contributors, helping to organize the program and establish its framework.",h:"דוד הפך לאחד התורמים המרכזיים שלה, ועזר לארגן את התוכנית ולבסס את המסגרת שלה."},
+    {j:"🕸️",e:"Together, they created opportunities for dozens of people who had found themselves trapped in cycles of debt and despair.",h:"יחד, הם יצרו הזדמנויות לעשרות אנשים שמצאו את עצמם לכודים במעגלים של חובות וייאוש."},
+    {j:"📰",e:"The significance of Sara's story spread throughout the city. News outlets covered her program, mentioning how she had turned her personal crisis into a tool for community change.",h:"המשמעות של הסיפור של שרה התפשטה ברחבי העיר. כלי חדשות סיקרו את התוכנית שלה, והזכירו כיצד היא הפכה את המשבר האישי שלה לכלי לשינוי קהילתי."},
+    {j:"📋",e:"Surveys showed that participants in her program had a 78% success rate in starting sustainable businesses.",h:"סקרים הראו שלמשתתפים בתוכנית שלה היה אחוז הצלחה של 78% בהקמת עסקים ברי קיימא."},
+    {j:"🤔",e:"Looking back, Sara often thought about that auction on March 15th, 2019. It could have been just another day.",h:"במבט לאחור, שרה חשבה לעיתים קרובות על אותה מכירה פומבית ב-15 במרץ 2019. זה יכול היה להיות סתם עוד יום."},
+    {j:"🗑️",e:"But her decision to bid on discarded objects, to see value where others saw only junk, had changed everything.",h:"אך החלטתה להציע מחיר על חפצים שנזרקו, לראות ערך במקום שאחרים ראו רק זבל, שינתה הכל."},
+    {j:"👁️",e:"She had learned that sometimes the way out of being trapped is through embracing what you thought you didn't need, and that the most precious items are often those we overlook.",h:"היא למדה שלעיתים הדרך לצאת ממצב של להרגיש לכוד, היא על ידי אימוץ של מה שחשבת שאתה לא צריך, ושהפריטים היקרים ביותר הם לרוב אלה שאנו מתעלמים מהם."},
+    {j:"🎨",e:"By 2020, Sara's pottery studio had become a recognized art space, her kiln producing beautiful work that was exhibited in galleries.",h:"עד 2020, סטודיו הקדרות של שרה הפך לחלל אמנות מוכר, הכבשן שלה ייצר עבודות יפהפיות שהוצגו בגלריות."},
+    {j:"🕯️",e:"But more than that, she had become a beacon of hope for others facing similar struggles.",h:"אך יותר מכך, היא הפכה למגדלור של תקווה עבור אחרים המתמודדים עם מאבקים דומים."},
+    {j:"🌟",e:"The immense debt and despair of 2019 had transformed into plenty of opportunity and success.",h:"החוב והייאוש העצומים של 2019 הפכו לשפע של הזדמנויות והצלחה."},
+    {j:"🧍‍♀️",e:"The girl who arrived as a refugee had become a leader, an organization builder, and a teacher.",h:"הילדה שהגיעה כפליטה הפכה למנהיגה, בונת ארגונים ומורה."},
+    {j:"🚶‍♀️",e:"And it all started with a single decision to proceed forward, armed with nothing but determination and a willingness to transform her mistakes into meaning.",h:"והכל התחיל מהחלטה אחת להמשיך קדימה, חמושה בשום דבר מלבד נחישות ונכונות להפוך את הטעויות שלה למשמעות."}
+];
+
 window.daysList = [
   { id: 'w1d1', week: 'week1', title: 'יום ראשון', date: '26/04/2026' },
   { id: 'w1d2', week: 'week1', title: 'יום שני', date: '27/04/2026' },
@@ -607,24 +464,18 @@ window.wordIndex = 0;
 window.speechRate = 0.85;
 window.summaryMode = 'weeks';
 window.expandedStoryIndices = new Set();
+window.expandedArticleIndices = new Set();
 
-/* QUIZ STATE */
 window.quizState = 'start';
 window.quizScore = 0;
 window.quizQuestions = [];
 window.currentQuizIndex = 0;
-
-/* HISTORY STATE */
 window.quizHistory = [];
 try { 
     window.highScore = localStorage.getItem('fluencySprintHighScore') || 0; 
     const storedHistory = localStorage.getItem('fluencySprintHistory');
-    if (storedHistory) {
-        window.quizHistory = JSON.parse(storedHistory);
-    }
-} catch(e) { 
-    window.highScore = 0; 
-}
+    if (storedHistory) window.quizHistory = JSON.parse(storedHistory);
+} catch(e) { window.highScore = 0; }
 
 window.setWeek = function(week) {
     window.currentWeek = week;
@@ -633,10 +484,7 @@ window.setWeek = function(week) {
     else if (week === 'week3') window.currentDay = 'w3d1';
     else window.currentDay = week; 
     window.wordIndex = 0;
-    
-    // Reset quiz state when leaving quiz tab
     if (week !== 'quiz') window.quizState = 'start';
-    
     window.render();
 };
 
@@ -686,13 +534,23 @@ window.prevWord = function() {
 };
 
 window.toggleStory = function(index) {
-    if (window.expandedStoryIndices.has(index)) { 
-        window.expandedStoryIndices.delete(index); 
-    } else { 
+    if (window.expandedStoryIndices.has(index)) { window.expandedStoryIndices.delete(index); } 
+    else { 
         window.expandedStoryIndices.add(index); 
-        // Smooth scroll to the newly opened card so it doesn't jump out of view
         setTimeout(() => {
             const card = document.getElementById(`story-card-${index}`);
+            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 50);
+    }
+    window.render();
+};
+
+window.toggleArticle = function(index) {
+    if (window.expandedArticleIndices.has(index)) { window.expandedArticleIndices.delete(index); } 
+    else { 
+        window.expandedArticleIndices.add(index); 
+        setTimeout(() => {
+            const card = document.getElementById(`article-card-${index}`);
             if (card) card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }, 50);
     }
@@ -718,13 +576,11 @@ window.highlightText = function(text) {
     return highlighted;
 };
 
-/* QUIZ LOGIC */
 window.startQuiz = function() {
     let allWords = [];
     Object.values(window.vocabularyData).forEach(day => allWords.push(...day));
     let shuffled = [...allWords].sort(() => 0.5 - Math.random());
     let selectedWords = shuffled.slice(0, 10);
-
     window.quizQuestions = selectedWords.map(target => {
         let options = [target.meaning];
         let distractors = [...allWords].filter(w => w.word !== target.word).sort(() => 0.5 - Math.random()).slice(0, 3);
@@ -733,7 +589,6 @@ window.startQuiz = function() {
         let correctIndex = options.indexOf(target.meaning);
         return { word: target.word, engEx: target.engEx, options: options, correctIndex: correctIndex, answered: false, selectedOption: null };
     });
-
     window.quizState = 'playing';
     window.currentQuizIndex = 0;
     window.quizScore = 0;
@@ -753,17 +608,11 @@ window.nextQuizQuestion = function() {
     if (window.currentQuizIndex < 9) { window.currentQuizIndex++; } 
     else {
         window.quizState = 'end';
-        
-        // Save to History
         const now = new Date();
         const dateStr = now.toLocaleDateString('he-IL') + ' ' + now.toLocaleTimeString('he-IL', {hour: '2-digit', minute:'2-digit'});
         window.quizHistory.unshift({ score: window.quizScore, date: dateStr });
-        if (window.quizHistory.length > 10) window.quizHistory.pop(); // Keep only last 10
-        
-        if (window.quizScore > window.highScore) {
-            window.highScore = window.quizScore;
-        }
-        
+        if (window.quizHistory.length > 10) window.quizHistory.pop();
+        if (window.quizScore > window.highScore) window.highScore = window.quizScore;
         try { 
             localStorage.setItem('fluencySprintHighScore', window.highScore); 
             localStorage.setItem('fluencySprintHistory', JSON.stringify(window.quizHistory));
@@ -772,19 +621,13 @@ window.nextQuizQuestion = function() {
     window.render();
 };
 
-window.showQuizHistory = function() {
-    window.quizState = 'history';
-    window.render();
-}
+window.showQuizHistory = function() { window.quizState = 'history'; window.render(); }
 
 window.clearQuizHistory = function() {
     if(confirm("האם אתה בטוח שברצונך למחוק את היסטוריית המבחנים?")) {
         window.quizHistory = [];
         window.highScore = 0;
-        try {
-            localStorage.removeItem('fluencySprintHighScore');
-            localStorage.removeItem('fluencySprintHistory');
-        } catch(e) {}
+        try { localStorage.removeItem('fluencySprintHighScore'); localStorage.removeItem('fluencySprintHistory'); } catch(e) {}
         window.quizState = 'start';
         window.render();
     }
@@ -811,7 +654,6 @@ window.getArtClass = function(word) {
 
 window.getCustomArtHTML = function(word, visual) {
     const artClass = window.getArtClass(word);
-    
     let inner = '';
     if (word === 'Receive') inner = `<div class="gift-box"></div><div class="gift-lid"></div><div class="art-emoji-hero float-anim" style="z-index: 5;">${visual}</div>`;
     else if (word === 'Runs It') inner = `<div class="gear" style="left: 0; right: 20vh; margin: auto;"></div><div class="gear-small" style="position:absolute; left: 20vh; right: 0; margin: auto;"></div><div class="art-emoji-hero" style="z-index: 10; filter: drop-shadow(0 0 2vh #fff);">${visual}</div>`;
@@ -870,9 +712,10 @@ window.render = function() {
     document.getElementById('btn-week3').className = `nav-btn ${window.currentWeek === 'week3' ? 'active-cyan' : ''}`;
     document.getElementById('btn-summary').className = `nav-btn ${window.currentWeek === 'summary' ? 'active-emerald' : ''}`;
     document.getElementById('btn-story').className = `nav-btn ${window.currentWeek === 'story' ? 'active-emerald' : ''}`;
+    document.getElementById('btn-article').className = `nav-btn ${window.currentWeek === 'article' ? 'active-emerald' : ''}`;
     document.getElementById('btn-quiz').className = `nav-btn ${window.currentWeek === 'quiz' ? 'active-emerald' : ''}`;
 
-    if (window.currentWeek !== 'summary' && window.currentWeek !== 'story' && window.currentWeek !== 'quiz') {
+    if (window.currentWeek !== 'summary' && window.currentWeek !== 'story' && window.currentWeek !== 'article' && window.currentWeek !== 'quiz') {
         subNavContainer.style.display = 'flex';
         const weekDays = window.daysList.filter(d => d.week === window.currentWeek);
         let subNavHtml = '';
@@ -886,12 +729,16 @@ window.render = function() {
         subNavContainer.innerHTML = '';
     }
 
-    if (window.currentWeek === 'story') {
-        let storyHTML = `
+    if (window.currentWeek === 'story' || window.currentWeek === 'article') {
+        let isArticle = window.currentWeek === 'article';
+        let dataToMap = isArticle ? window.articleData : window.storyData;
+        let indicesSet = isArticle ? window.expandedArticleIndices : window.expandedStoryIndices;
+        let toggleFunc = isArticle ? 'window.toggleArticle' : 'window.toggleStory';
+        
+        let htmlBlock = `
             <div class="top-bar" style="max-width: 1100px; margin: 0 auto 1vh auto; justify-content: center;">
                 <div class="settings-box">
                     ${window.icons.settings}
-                    <span style="font-size: clamp(10px, 1.4vh, 16px); color: var(--text-main); display: none;">מהירות:</span>
                     <select onchange="window.changeRate(this.value)">
                         <option value="0.3" ${window.speechRate === 0.3 ? 'selected' : ''}>סופר איטי (0.3x)</option>
                         <option value="0.4" ${window.speechRate === 0.4 ? 'selected' : ''}>איטי מאוד (0.4x)</option>
@@ -903,31 +750,33 @@ window.render = function() {
             </div>
             <div class="story-container">
                 <div class="story-header">
-                    <h2 class="story-title">The Python Startup Journey</h2>
-                    <p class="story-subtitle">סיפור המשלב את כל 120 מילות הקורס. לחץ על משפט כדי לראות תרגום.</p>
+                    <h2 class="story-title">${isArticle ? 'The Great Auction' : 'The Python Startup Journey'}</h2>
+                    <p class="story-subtitle">${isArticle ? 'מאמר המבחן הרשמי. לחץ על משפט כדי לראות תרגום.' : 'סיפור המשלב את כל 120 מילות הקורס. לחץ על משפט כדי לראות תרגום.'}</p>
                 </div>
-                ${window.storyData.map((item, index) => {
-                    const isExpanded = window.expandedStoryIndices.has(index);
-                    const highlightedEng = window.highlightText(item.eng);
-                    const safeText = item.eng.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                ${dataToMap.map((item, index) => {
+                    const isExpanded = indicesSet.has(index);
+                    const highlightedEng = window.highlightText(item.e ? item.e : item.eng);
+                    const safeText = (item.e ? item.e : item.eng).replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                    const emoji = item.j ? item.j : item.emoji;
+                    const hebText = item.h ? item.h : item.heb;
                     return `
-                        <div id="story-card-${index}" class="story-card ${isExpanded ? 'expanded' : ''}" onclick="window.toggleStory(${index})">
+                        <div id="${isArticle ? 'article' : 'story'}-card-${index}" class="story-card ${isExpanded ? 'expanded' : ''}" onclick="${toggleFunc}(${index})">
                             <div class="story-eng-row">
                                 <button class="story-audio-btn" onclick="event.stopPropagation(); window.playAudio('${safeText}')" title="השמע משפט">
                                     ${window.icons.volume}
                                 </button>
                                 <div class="story-eng-text">
-                                    <span style="font-size: 1.2em; margin-right: 0.5vw;">${item.emoji}</span>
+                                    <span style="font-size: 1.2em; margin-right: 0.5vw;">${emoji}</span>
                                     <span>${highlightedEng}</span>
                                 </div>
                             </div>
-                            ${isExpanded ? `<div class="story-heb-text" dir="rtl">${item.heb}</div>` : ''}
+                            ${isExpanded ? `<div class="story-heb-text" dir="rtl">${hebText}</div>` : ''}
                         </div>
                     `;
                 }).join('')}
             </div>
         `;
-        app.innerHTML = storyHTML;
+        app.innerHTML = htmlBlock;
     } else if (window.currentWeek === 'quiz') {
         let quizHTML = '';
         if (window.quizState === 'start') {
@@ -973,7 +822,6 @@ window.render = function() {
             `;
         } else if (window.quizState === 'playing') {
             let q = window.quizQuestions[window.currentQuizIndex];
-            
             let buttonsHTML = q.options.map((opt, i) => {
                 let btnClass = "quiz-opt-btn";
                 if (q.answered) {
@@ -998,11 +846,9 @@ window.render = function() {
                         <p style="color: var(--text-muted); font-size: clamp(14px, 2vh, 22px); font-style: italic; direction: ltr; background: rgba(255,255,255,0.05); padding: 1.5vh; border-radius: 1vh; border-left: 3px solid var(--cyan-main);">
                             "${q.engEx.replace(new RegExp('\\\\b' + q.word.replace(/[-\\/\\\\^$*+?.()|[\\]{}]/g, '\\\\$&') + '(s|es|ed|d|ing|ly)?\\\\b', 'gi'), '_____')}"
                         </p>
-                        
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5vh; width: 100%; margin-top: 2vh;">
                             ${buttonsHTML}
                         </div>
-                        
                         <div style="min-height: 6vh; width: 100%; margin-top: 2vh; display: flex; justify-content: center; align-items: center;">
                             ${q.answered ? `
                                 <button onclick="window.nextQuizQuestion()" class="control-btn" style="width: 100%; max-width: 300px; justify-content: center; background: var(--cyan-main); border-color: var(--cyan-light);">
@@ -1020,17 +866,13 @@ window.render = function() {
                     <div style="font-size: 5rem; margin-bottom: 2vh;">${window.quizScore >= 80 ? '🏆' : window.quizScore >= 50 ? '👍' : '💪'}</div>
                     <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 1vh;">סיום המבחן!</h2>
                     <p style="font-size: 1.8rem; color: var(--cyan-light); font-weight: bold; margin-bottom: 2vh;">הציון שלך: ${window.quizScore} / 100</p>
-                    
                     ${isNewHigh ? `
                         <div style="background: rgba(253, 224, 71, 0.15); border: 1px solid #fde047; padding: 1.5vh; border-radius: 1vh; margin-bottom: 3vh;">
                             <span style="color: #fde047; font-size: 1.4rem; font-weight: bold;">🎉 שיא חדש!</span>
                         </div>
-                    ` : `
-                        <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 3vh;">שיא אישי נוכחי: ${window.highScore}</p>
-                    `}
-                    
-                    <button onclick="window.quizState = 'start'; window.render();" class="control-btn" style="justify-content: center; width: 100%;">
-                        חזור לתפריט 🔙
+                    ` : `<p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 3vh;">שיא אישי נוכחי: ${window.highScore}</p>`}
+                    <button onclick="window.startQuiz()" class="control-btn" style="justify-content: center; width: 100%;">
+                        נסה שוב 🔄
                     </button>
                 </div>
             `;
@@ -1044,33 +886,14 @@ window.render = function() {
                 <button onclick="window.setSummaryMode('compact')" class="sum-toggle ${window.summaryMode === 'compact' ? 'active' : ''}">ריכוז כלל המילים</button>
             </div>
         `;
-
         if (window.summaryMode === 'weeks') {
             summaryHtml += `<div class="weeks-scroll">`;
             ['week1', 'week2', 'week3'].forEach((week, wIndex) => {
-                summaryHtml += `
-                    <div class="week-section">
-                        <div class="week-title">שבוע - ${wIndex + 1}</div>
-                        <div class="days-grid">
-                `;
+                summaryHtml += `<div class="week-section"><div class="week-title">שבוע - ${wIndex + 1}</div><div class="days-grid">`;
                 Object.entries(window.vocabularyData).filter(([dayKey]) => window.daysList.find(d => d.id === dayKey).week === week).forEach(([dayKey, words]) => {
                     const dayInfo = window.daysList.find(d => d.id === dayKey);
-                    summaryHtml += `
-                        <div class="matrix-card">
-                            <div class="matrix-header">
-                                <span>${dayInfo.title}</span>
-                                <span>${dayInfo.date}</span>
-                            </div>
-                            <ul class="matrix-list">
-                    `;
-                    words.forEach((w, idx) => {
-                        summaryHtml += `
-                                <li class="matrix-item" onclick="window.goToWord('${dayInfo.id}', ${idx})">
-                                    <span class="matrix-item-en">${w.word}</span>
-                                    <span class="matrix-item-he">${w.meaning}</span>
-                                </li>
-                        `;
-                    });
+                    summaryHtml += `<div class="matrix-card"><div class="matrix-header"><span>${dayInfo.title}</span><span>${dayInfo.date}</span></div><ul class="matrix-list">`;
+                    words.forEach((w, idx) => { summaryHtml += `<li class="matrix-item" onclick="window.goToWord('${dayInfo.id}', ${idx})"><span class="matrix-item-en">${w.word}</span><span class="matrix-item-he">${w.meaning}</span></li>`; });
                     summaryHtml += `</ul></div>`;
                 });
                 summaryHtml += `</div></div>`;
@@ -1079,24 +902,15 @@ window.render = function() {
         } else {
             summaryHtml += `<div class="compact-grid">`;
             Object.entries(window.vocabularyData).forEach(([dayKey, words]) => {
-                words.forEach((w, idx) => {
-                    summaryHtml += `
-                        <div class="compact-item" onclick="window.goToWord('${dayKey}', ${idx})">
-                            <span class="compact-en">${w.word}</span>
-                            <span class="compact-he">${w.meaning}</span>
-                        </div>
-                    `;
-                });
+                words.forEach((w, idx) => { summaryHtml += `<div class="compact-item" onclick="window.goToWord('${dayKey}', ${idx})"><span class="compact-en">${w.word}</span><span class="compact-he">${w.meaning}</span></div>`; });
             });
             summaryHtml += `</div>`;
         }
-
         app.innerHTML = `<div class="matrix-wrapper">${summaryHtml}</div>`;
 
     } else {
         const currentWords = window.vocabularyData[window.currentDay];
         const wordData = currentWords[window.wordIndex];
-
         const isFirstWord = window.currentDay === window.daysList[0].id && window.wordIndex === 0;
         const isLastWord = window.currentDay === window.daysList[window.daysList.length - 1].id && window.wordIndex === currentWords.length - 1;
 
@@ -1118,7 +932,6 @@ window.render = function() {
                         <option value="1" ${window.speechRate === 1 ? 'selected' : ''}>רגיל (1.0x)</option>
                     </select>
                 </div>
-
                 <div class="progress-box">
                     <span style="margin-bottom: 0.2vh;">מילה ${window.wordIndex + 1} מתוך ${currentWords.length}</span>
                     <div class="progress-dots">${dotsHtml}</div>
@@ -1177,7 +990,6 @@ window.render = function() {
                 <button class="control-btn" onclick="window.nextWord()" ${isLastWord ? 'disabled' : ''}>
                     ${window.icons.left_arrow} הבא
                 </button>
-
                 <button class="control-btn" onclick="window.prevWord()" ${isFirstWord ? 'disabled' : ''}>
                     הקודם ${window.icons.right_arrow}
                 </button>
