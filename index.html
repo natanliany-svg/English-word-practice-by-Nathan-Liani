@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Day Fluency Sprint | Master V24 (Mobile Fixes)</title>
+    <title>Day Fluency Sprint | Master V27 (Summary Fixed)</title>
     <style>
-        /* === Premium UI - Perfect Proportion Engine (V24) === */
+        /* === Premium UI - Perfect Proportion Engine (V27) === */
         
         /* DESKTOP MAGIC: Shrinks the UI natively to fit beautifully at 100% zoom */
         html { font-size: 11.5px; }
@@ -97,8 +97,8 @@
             margin-bottom: 1vh;
         }
         
-        .flashcard::-webkit-scrollbar, .weeks-scroll::-webkit-scrollbar, .compact-grid::-webkit-scrollbar, .nav-tier::-webkit-scrollbar, .sub-nav::-webkit-scrollbar { width: 8px; height: 8px;}
-        .flashcard::-webkit-scrollbar-thumb, .weeks-scroll::-webkit-scrollbar-thumb, .compact-grid::-webkit-scrollbar-thumb, .nav-tier::-webkit-scrollbar-thumb, .sub-nav::-webkit-scrollbar-thumb { background: var(--cyan-main); border-radius: 10px; }
+        .flashcard::-webkit-scrollbar, .weeks-scroll::-webkit-scrollbar, .compact-grid::-webkit-scrollbar, .story-container::-webkit-scrollbar, .nav-tier::-webkit-scrollbar, .sub-nav::-webkit-scrollbar { width: 8px; height: 8px;}
+        .flashcard::-webkit-scrollbar-thumb, .weeks-scroll::-webkit-scrollbar-thumb, .compact-grid::-webkit-scrollbar-thumb, .story-container::-webkit-scrollbar-thumb, .nav-tier::-webkit-scrollbar-thumb, .sub-nav::-webkit-scrollbar-thumb { background: var(--cyan-main); border-radius: 10px; }
         
         .center-stage { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1vh; background: rgba(255,255,255,0.02); border-radius: 1.5vh; padding: 1.5vh; border-bottom: 1px solid rgba(34, 211, 238, 0.1); flex-shrink: 0; min-height: min-content; }
         .word-main-row { display: flex; align-items: center; justify-content: center; gap: 1.5vw; direction: ltr; }
@@ -136,138 +136,139 @@
 
         .visual-col { display: flex; align-items: stretch; justify-content: center; min-height: 200px;}
 
-        /* ==================================================================== */
-        /* === MASTER CSS ART ENGINE (V24) - STABLE IN <HEAD> WITH ABSOLUTE CENTERING === */
-        /* ==================================================================== */
+        /* === STORY TAB STYLES === */
+        .story-container { width: 100%; max-width: 1100px; display: flex; flex-direction: column; gap: 1.5vh; overflow-y: auto; padding: 2vh; min-height: 0; flex-grow: 1; align-items: stretch; margin: 0 auto; background: rgba(15, 23, 42, 0.6); border-radius: 2vh; border: 1px solid var(--border); box-shadow: 0 2vh 4vh rgba(0,0,0,0.5);}
+        .story-header { text-align: center; margin-bottom: 2vh; flex-shrink: 0;}
+        .story-title { font-size: clamp(24px, 4vh, 45px); font-weight: 900; color: var(--cyan-light); text-shadow: 0 0 1.5vh rgba(34,211,238,0.5); }
+        .story-subtitle { font-size: clamp(12px, 1.8vh, 18px); color: var(--text-muted); margin-top: 0.5vh; }
         
-        .art-inner-container { 
-            width: 100%; height: 100%; position: relative; overflow: hidden; 
-            display: flex; align-items: center; justify-content: center; 
-            border-radius: 2vh; border: 1px solid rgba(255,255,255,0.08); 
-            box-shadow: inset 0 0 3vh rgba(0,0,0,0.8), 0 1vh 2vh rgba(0,0,0,0.4);
-        }
+        .story-card { background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.1); border-radius: 1.5vh; padding: 2.5vh; cursor: pointer; transition: 0.3s; width: 100%; box-shadow: 0 1vh 2vh rgba(0,0,0,0.3); flex-shrink: 0;}
+        .story-card:hover { background: rgba(30, 41, 59, 0.95); border-color: var(--cyan-main); transform: translateY(-0.2vh); box-shadow: 0 1.5vh 3vh rgba(34,211,238,0.2);}
+        .story-card.expanded { border-color: var(--cyan-main); background: rgba(16, 26, 48, 0.95); box-shadow: 0 0 2vh rgba(34,211,238,0.3);}
         
-        .art-emoji-hero { 
-            font-size: clamp(60px, 12vh, 150px); z-index: 10; 
-            filter: drop-shadow(0 1vh 2vh rgba(0,0,0,0.6)); position: absolute;
-            left: 0; right: 0; margin: 0 auto; text-align: center;
-            display: flex; justify-content: center; align-items: center;
-        }
+        .story-eng-row { display: flex; align-items: flex-start; gap: 1.5vw; direction: ltr; }
+        .story-audio-btn { background: rgba(34,211,238,0.1); border: 1px solid var(--cyan-main); color: var(--cyan-light); width: clamp(35px, 4.5vh, 50px); height: clamp(35px, 4.5vh, 50px); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; transition: 0.3s; margin-top: 0.5vh;}
+        .story-audio-btn:hover { background: var(--cyan-main); color: #fff; transform: scale(1.1); }
+        .story-audio-btn svg { width: clamp(18px, 2.5vh, 25px); height: clamp(18px, 2.5vh, 25px); }
+        
+        .story-eng-text { font-size: clamp(16px, 2.5vh, 32px); font-family: Georgia, serif; color: #fff; line-height: 1.5; padding-top: 0.5vh; display: flex; gap: 1vw;}
+        .highlight-word { color: var(--cyan-light); font-weight: 900; text-shadow: 0 0 1vh rgba(34,211,238,0.5); border-bottom: 2px dashed rgba(34,211,238,0.4); padding-bottom: 2px;}
+        
+        .story-heb-text { margin-top: 2vh; padding-top: 2vh; border-top: 1px dashed rgba(255,255,255,0.2); font-size: clamp(14px, 2.2vh, 28px); color: var(--emerald-light); font-weight: 600; line-height: 1.4; padding-right: clamp(45px, 6vw, 70px); }
 
-        /* Specific Word Overrides using centered logic */
+        /* === MATRIX SUMMARY STYLES (RESTORED & FIXED) === */
+        .matrix-wrapper { flex: 1; overflow-y: auto; display: flex; flex-direction: column; width: 100%; padding: 2vh; background: rgba(15, 23, 42, 0.7); border-radius: 2vh; border: 1px solid var(--border); box-shadow: 0 2vh 4vh rgba(0,0,0,0.5); }
+        .summary-toggles { display: flex; justify-content: center; gap: 1.5vw; margin-bottom: 2vh; flex-shrink: 0;}
+        .sum-toggle { background: rgba(30, 41, 59, 0.8); color: var(--cyan-light); border: 1px solid var(--cyan-main); padding: 1vh 2vw; border-radius: 1vh; font-size: clamp(12px, 1.8vh, 20px); font-weight: bold; cursor: pointer; transition: 0.3s;}
+        .sum-toggle.active { background: var(--cyan-main); color: #fff; box-shadow: 0 0 2vh rgba(34,211,238,0.5);}
+        
+        .weeks-scroll { flex-grow: 1; width: 100%; overflow-y: auto; padding-right: 1vw; display: flex; flex-direction: column; gap: 4vh;}
+        .week-section { flex: 0 0 auto; display: flex; flex-direction: column; padding-bottom: 2vh;} /* flex: 0 0 auto prevents overlapping! */
+        
+        .week-title { color: #fde047; text-shadow: 0 0 2vh rgba(253, 224, 71, 0.8); font-size: clamp(24px, 3.5vh, 40px); font-weight: 900; text-align: center; margin-bottom: 1.5vh; letter-spacing: 2px;}
+        .days-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5vh; }
+        
+        .compact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 1vh; width: 100%; overflow-y: auto; flex-grow: 1; background: rgba(15,23,42,0.8); padding: 2vh; border-radius: 2vh; border: 1px solid var(--border);}
+        .compact-item { background: rgba(30,41,59,0.9); padding: 1vh; border-radius: 1vh; border: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; align-items: center; text-align: center; cursor: pointer; transition: 0.2s;}
+        .compact-item:hover { background: rgba(34,211,238,0.2); border-color: var(--cyan-main); transform: scale(1.05); box-shadow: 0 0.5vh 1.5vh rgba(34,211,238,0.3);}
+        .compact-en { font-weight: bold; color: #fff; font-size: clamp(12px, 1.6vh, 18px); margin-bottom: 0.3vh;}
+        .compact-he { color: var(--emerald-light); font-size: clamp(10px, 1.4vh, 16px);}
+        
+        .matrix-card { background: rgba(30, 41, 59, 0.8); border-radius: 1.5vh; border: 1px solid rgba(255,255,255,0.15); padding: 1.5vh; box-shadow: 0 1vh 2vh rgba(0,0,0,0.3);}
+        .matrix-header { color: var(--emerald-light); font-weight: 900; border-bottom: 0.2vh solid rgba(255,255,255,0.2); padding-bottom: 0.8vh; margin-bottom: 1.2vh; text-align: center; display: flex; flex-direction: column; font-size: clamp(14px, 2vh, 22px);}
+        .matrix-header span:last-child { font-size: clamp(10px, 1.4vh, 16px); color: var(--cyan-light); font-family: monospace; margin-top: 0.4vh; }
+        .matrix-list { list-style: none; padding: 0; margin: 0; } /* Reset list styles */
+        .matrix-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6vh; font-size: clamp(12px, 1.6vh, 20px); border-bottom: 1px dashed rgba(255, 255, 255, 0.1); padding-bottom: 0.6vh; cursor: pointer; transition: 0.2s;}
+        .matrix-item:last-child { border-bottom: none; }
+        .matrix-item:hover { background: rgba(34, 211, 238, 0.15); padding: 0.6vh; border-radius: 0.8vh;}
+        .matrix-item-en { font-weight: bold; color: #fff; direction: ltr;}
+        .matrix-item-he { color: var(--text-muted); font-size: clamp(11px, 1.5vh, 18px); margin-right: 1vw; font-weight: 600;}
+
+        /* === MASTER CSS ART ENGINE === */
+        .art-inner-container { width: 100%; height: 100%; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; border-radius: 2vh; border: 1px solid rgba(255,255,255,0.08); box-shadow: inset 0 0 3vh rgba(0,0,0,0.8), 0 1vh 2vh rgba(0,0,0,0.4);}
+        .art-emoji-hero { font-size: clamp(60px, 12vh, 150px); z-index: 10; filter: drop-shadow(0 1vh 2vh rgba(0,0,0,0.6)); position: absolute; left: 0; right: 0; margin: 0 auto; text-align: center; display: flex; justify-content: center; align-items: center; }
+        
         .gift-box { position:absolute; bottom: 10%; left: 0; right: 0; margin: auto; width: 15vh; height: 10vh; background: #be123c; border-radius: 1vh; } 
         .gift-lid { position:absolute; bottom:calc(10% + 10vh); left: 0; right: 0; margin: auto; width: 16vh; height: 3vh; background: #e11d48; border-radius: 0.5vh; animation: openLid 3s infinite alternate ease-in-out; } 
-        @keyframes openLid { 0%, 50% { transform: translateY(0) rotate(0); } 100% { transform: translateY(-5vh) rotate(15deg); } }
-        
         .poison-bubble { position: absolute; bottom: -10%; left: 0; right: 0; margin: auto; width: 3vh; height: 3vh; background: rgba(34, 197, 94, 0.6); border-radius: 50%; box-shadow: 0 0 2vh #22c55e; animation: bubbleUpPoison 4s infinite linear; } 
-        
         .gold-dust { position: absolute; background: #fde047; border-radius: 50%; width: 0.4vh; height: 0.4vh; box-shadow: 0 0 1vh #fde047; animation: twinkle 2s infinite alternate;} 
         .spotlight-gold { position: absolute; top: -10%; left: 0; right: 0; margin: auto; width: 50%; height: 120%; background: linear-gradient(to bottom, rgba(253, 224, 71, 0.15), transparent); transform: perspective(30vh) rotateX(15deg); filter: blur(2vh); }
-        
         .kiln-fire { position: absolute; bottom: 0; left: 0; right: 0; margin: auto; width: 60%; height: 30%; background: linear-gradient(to top, #ea580c, #fef08a, transparent); filter: blur(2vh); animation: flicker 0.5s infinite alternate; border-radius: 50% 50% 0 0;} 
         .kiln-brick { position: absolute; bottom: 30%; left: 0; right: 0; margin: auto; width: 70%; height: 10%; background: #7f1d1d; border-radius: 1vh; border-bottom: 1vh solid #450a0a;}
-        
         .measure-grid { position: absolute; width: 100%; height: 100%; left: 0; background-image: linear-gradient(rgba(34, 211, 238, 0.2) 0.2vh, transparent 0.2vh), linear-gradient(90deg, rgba(34, 211, 238, 0.2) 0.2vh, transparent 0.2vh); background-size: 4vh 4vh; } 
         .measure-line { position:absolute; width: 100%; left: 0; height: 0.4vh; background: #22d3ee; top: 50%; box-shadow: 0 0 1vh #22d3ee; } 
         .measure-cross { position:absolute; width: 0.4vh; height: 100%; background: #22d3ee; left: 0; right: 0; margin: 0 auto; box-shadow: 0 0 1vh #22d3ee; }
-
         .fetch-stick { position: absolute; width: 8vh; height: 1.5vh; background: #78350f; border-radius: 1vh; z-index: 5; animation: throwStick 2s infinite ease-in-out alternate; left: 0; right: 0; margin: auto;}
-        
         .scratch-mark { position: absolute; width: 12vh; height: 0.8vh; background: #ef4444; border-radius: 50%; opacity: 0; animation: scratchAnim 2s infinite; transform: rotate(-45deg); box-shadow: 0 0 1vh #ef4444; left: 0; right: 0; margin: auto;}
         .scratch-mark:nth-child(2) { margin-top: 3vh; margin-left: -3vh; animation-delay: 0.2s; }
         .scratch-mark:nth-child(3) { margin-top: 6vh; margin-left: -6vh; animation-delay: 0.4s; }
-
         .coin { position: absolute; width: 3.5vh; height: 3.5vh; background: #fde047; border-radius: 50%; border: 0.4vh solid #eab308; box-shadow: 0 0 1.5vh #facc15; animation: rainCoins 2.5s infinite linear; left: 0; right: 0; margin: auto;}
-        
         .chain { position: absolute; width: 2.5vh; height: 10vh; border: 0.6vh solid #94a3b8; border-radius: 1.5vh; left: 0; right: 0; margin: auto;}
         .chain-break-left { animation: breakLeft 2s infinite ease-in; margin-left: -5vh;}
         .chain-break-right { animation: breakRight 2s infinite ease-in; margin-left: 5vh;}
-
         .gear { position: absolute; width: 18vh; height: 18vh; border: 1.5vh dashed #94a3b8; border-radius: 50%; animation: spin 6s infinite linear; opacity: 0.5; left: 0; right: 0; margin: auto;}
         .gear-small { width: 10vh; height: 10vh; border: 1vh dashed #cbd5e1; animation: spin 3s infinite linear reverse; margin-top: 5vh; margin-left: 8vh;}
-
         .key-glow { position: absolute; width: 25vh; height: 25vh; background: radial-gradient(circle, rgba(253, 224, 71, 0.4) 0%, transparent 70%); animation: pulseSize 2s infinite alternate; left: 0; right: 0; margin: auto;}
         .house-silhouette { position: absolute; bottom: 0; left: 0; right: 0; margin: auto; width: 80%; height: 40%; background: #0f172a; clip-path: polygon(50% 0%, 100% 40%, 100% 100%, 0 100%, 0 40%); border-bottom: 1vh solid #1e293b;}
-
         .glass-crack { position: absolute; width: 0.4vh; height: 25vh; background: rgba(255,255,255,0.8); transform-origin: center; animation: crackReveal 0.5s forwards ease-out; box-shadow: 0 0 1vh #fff; left: 0; right: 0; margin: auto;}
         .glass-crack:nth-child(1) { transform: rotate(25deg); }
         .glass-crack:nth-child(2) { transform: rotate(75deg); }
         .glass-crack:nth-child(3) { transform: rotate(145deg); }
 
-        /* --- Base Category Styles --- */
         .art-ocean { background: linear-gradient(180deg, #0ea5e9 0%, #0369a1 20%, #1e3a8a 50%, #020617 100%); }
         .art-ocean .wave-line { position: absolute; top: 25%; left: 0; width: 100%; height: 0.3vh; background: rgba(255,255,255,0.4); box-shadow: 0 0 2vh #fff;}
         .art-ocean .ruler { position: absolute; left: 10%; top: 25%; bottom: 5%; width: 0.3vh; background: rgba(255,255,255,0.2); }
         .art-ocean .tick { position: absolute; left: 0; width: 3vh; height: 0.3vh; background: rgba(255,255,255,0.5); }
-        
         .art-auction { background: radial-gradient(circle at center, #78350f 0%, #2e1001 100%); }
         .art-auction .desk { position: absolute; bottom: 5%; left: 0; right: 0; margin: auto; width: 70%; height: 20%; background: #5c2606; border-top: 0.8vh solid #8b3c06; border-radius: 1vh; transform: perspective(40vh) rotateX(25deg); box-shadow: 0 3vh 3vh rgba(0,0,0,0.8);}
         .art-auction .hammer-anim { transform-origin: bottom right; margin-right: -10vh; animation: slam 1s infinite alternate ease-in;}
-        
         .art-build { background-color: #7f1d1d; background-image: linear-gradient(rgba(255,255,255,0.15) 0.3vh, transparent 0.3vh), linear-gradient(90deg, rgba(255,255,255,0.15) 0.3vh, transparent 0.3vh); background-size: 8vh 4vh; background-position: 0 0, 4vh 2vh;}
         .art-build .fire-glow { position: absolute; bottom: -3vh; left: 0; width: 100%; height: 50%; background: linear-gradient(to top, #ea580c, transparent); opacity: 0.6; filter: blur(2vh); animation: flicker 2s infinite alternate;}
-        
         .art-market { background: radial-gradient(circle at center, #1e293b, #020617); }
         .art-market .shelf { position: absolute; bottom: 20%; left: 0; right: 0; margin: auto; width: 80%; height: 1.5vh; background: #cbd5e1; border-radius: 1vh; box-shadow: 0 1.5vh 2vh rgba(0,0,0,0.5);}
         .art-market .laser-scanner { position: absolute; top: 0; left: 0; right: 0; margin: auto; width: 0.4vh; height: 100%; background: rgba(34,211,238,0.5); box-shadow: 0 0 2vh var(--cyan-light); animation: scanLeftRight 3s ease-in-out infinite alternate;}
-        
         .art-pie-chart { background: radial-gradient(circle at center, #1e293b, #020617); }
         .art-pie-chart .pie-bg { position: absolute; left: 0; right: 0; margin: auto; width: 25vh; height: 25vh; border-radius: 50%; background: conic-gradient(var(--cyan-main) 0deg, var(--cyan-main) 120deg, #334155 120deg, #334155 360deg); box-shadow: 0 1.5vh 4vh rgba(0,0,0,0.6); border: 0.3vh solid rgba(255,255,255,0.1); transform: rotate(-45deg);}
-        
         .art-chart-down { background: radial-gradient(circle at bottom right, #7f1d1d, #020617); }
         .art-chart-down .chart-axis-down { position: absolute; top: 15%; left: 0; right: 0; margin: auto; width: 70%; height: 70%; border-bottom: 0.5vh solid #ef4444; border-left: 0.5vh solid #ef4444; }
         .art-chart-down .trend-line-down { position: absolute; top: 20%; left: 0; right: 0; margin: auto; width: 70%; height: 65%; border-top: 0.6vh solid #fca5a5; transform-origin: top left; transform: rotate(35deg); box-shadow: inset -1.5vh 1.5vh 3vh rgba(239,68,68,0.3);}
-        
         .art-doorway { background: #020617; }
         .art-doorway .door-frame { position: absolute; left: 0; right: 0; margin: auto; width: 18vh; height: 28vh; border: 0.5vh solid #fef08a; border-bottom: none; box-shadow: 0 0 6vh #fef08a; background: linear-gradient(to top, rgba(253, 224, 71, 0.3), transparent); display: flex; align-items: center; justify-content: center;}
-        
         .art-mind { background: radial-gradient(circle at center, #4c1d95, #020617); }
         .art-mind .pulse-ring { position: absolute; left: 0; right: 0; margin: auto; width: 20vh; height: 20vh; border: 0.4vh solid #d946ef; border-radius: 50%; animation: expandPulse 2s infinite; }
-        
         .art-museum { background: linear-gradient(to bottom, #1e293b 40%, #0f172a 100%); }
         .art-museum .spotlight { position: absolute; top: -10%; left: 0; right: 0; margin: auto; width: 50%; height: 120%; background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent); transform: perspective(30vh) rotateX(15deg); filter: blur(2vh);}
         .art-museum .pedestal { position: absolute; bottom: 15%; left: 0; right: 0; margin: auto; width: 25vh; height: 6vh; background: #334155; border-radius: 50%; border: 0.4vh solid #cbd5e1; box-shadow: 0 1.5vh 3vh rgba(0,0,0,0.8); }
-        
         .art-nature { background: linear-gradient(135deg, #14532d, #020617); }
         .art-nature .sun-beam { position: absolute; top: -50%; left: 0; right: 0; margin: auto; width: 50%; height: 200%; background: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent); transform: rotate(30deg); }
-        
         .art-law { background: #020617; }
         .art-law .laser-grid { position: absolute; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(0deg, transparent, transparent 4vh, rgba(239,68,68,0.8) 4vh, rgba(239,68,68,0.8) 4.5vh); animation: scanVert 4s linear infinite; box-shadow: 0 0 3vh rgba(239,68,68,0.5);}
         .art-law .vignette { position: absolute; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, transparent, #020617 80%); z-index: 5;}
-        
         .art-time { background: radial-gradient(circle at center, #0f766e, #020617); }
         .art-time .clock-face { position: absolute; left: 0; right: 0; margin: auto; width: 22vh; height: 22vh; border: 0.8vh solid #5eead4; border-radius: 50%; box-shadow: 0 0 3vh #5eead4;}
         .art-time .hand { position: absolute; left: 0; right: 0; margin: auto; width: 0.6vh; height: 9vh; background: #fff; transform-origin: bottom center; top: calc(50% - 9vh); animation: tick 10s linear infinite;}
-        
         .art-sound { background: radial-gradient(circle at center, #1e1b4b, #020617); }
         .art-sound .sound-bars { position: absolute; left: 0; right: 0; margin: auto; display: flex; gap: 1.5vh; align-items: center; justify-content: center; height: 15vh; opacity: 0.5;}
         .art-sound .bar { width: 2vh; background: #a855f7; border-radius: 1vh; box-shadow: 0 0 2vh #a855f7; animation: waveAnim 1s ease-in-out infinite alternate; }
-        
         .art-electricity { background: #0f172a; }
         .art-electricity .circuit-grid { position: absolute; left: 0; width: 200%; height: 200%; background-image: linear-gradient(#38bdf8 0.2vh, transparent 0.2vh), linear-gradient(90deg, #38bdf8 0.2vh, transparent 0.2vh); background-size: 6vh 6vh; opacity: 0.15; transform: perspective(60vh) rotateX(60deg) translateY(-15vh); animation: gridScroll 10s linear infinite;}
-        
         .art-space { background: radial-gradient(circle at bottom, #1e1b4b, #000); }
         .art-space .planet { position:absolute; bottom:-40%; left: 0; right: 0; margin: auto; width: 120%; aspect-ratio:1/1; border-radius: 50%; background: radial-gradient(circle at top, #4c1d95, #000); box-shadow: 0 -1vh 4vh rgba(124, 58, 237, 0.4);}
-        
         .art-medical { background: linear-gradient(135deg, #9f1239, #020617); }
         .art-medical .med-cross-v { position: absolute; background: rgba(255,255,255,0.1); width: 2.5vh; height: 12vh; left: 0; right: 0; margin: auto; box-shadow: 0 0 2vh #fda4af; border-radius:0.5vh;}
         .art-medical .med-cross-h { position: absolute; background: rgba(255,255,255,0.1); height: 2.5vh; width: 12vh; left: 0; right: 0; margin: auto; box-shadow: 0 0 2vh #fda4af; border-radius:0.5vh;}
-        
         .art-magic { background: radial-gradient(circle at center, #86198f, #020617); }
         .art-magic .magic-sparkle { position: absolute; font-size: 3vh; color: #fde047; animation: twinkle 1s infinite alternate; }
-
         .art-theater { background: radial-gradient(circle at bottom, #7f1d1d, #020617); }
         .art-theater .curtain-left { position: absolute; left: 0; top: 0; width: 20%; height: 100%; background: #9f1239; border-right: 0.5vh solid #be123c; border-radius: 0 0 5vh 0; box-shadow: 2vh 0 3vh rgba(0,0,0,0.5);}
         .art-theater .curtain-right { position: absolute; right: 0; top: 0; width: 20%; height: 100%; background: #9f1239; border-left: 0.5vh solid #be123c; border-radius: 0 0 0 5vh; box-shadow: -2vh 0 3vh rgba(0,0,0,0.5);}
         .art-theater .stage-floor { position: absolute; bottom: 0; left: 0; width: 100%; height: 20%; background: #451a03; border-top: 0.5vh solid #78350f;}
-
         .art-city { background: linear-gradient(to bottom, #1e1b4b, #0f172a); }
         .art-city .building-1 { position: absolute; bottom: 0; left: 10%; width: 20%; height: 60%; background: #020617; border-top: 0.2vh solid #334155; border-right: 0.2vh solid #334155; }
         .art-city .building-2 { position: absolute; bottom: 0; left: 0; right: 0; margin: auto; width: 30%; height: 80%; background: #020617; border-top: 0.2vh solid #475569; }
         .art-city .building-3 { position: absolute; bottom: 0; right: 10%; width: 25%; height: 50%; background: #020617; border-top: 0.2vh solid #334155; border-left: 0.2vh solid #334155; }
         .art-city .window { position: absolute; width: 1.5vh; height: 1.5vh; background: #fde047; box-shadow: 0 0 1vh #fef08a; animation: flicker 3s infinite alternate;}
 
-        /* Animations Keyframes */
         .float-anim { animation: floatSub 4s ease-in-out infinite; }
         .anim-drop { animation: dropAnim 1.5s forwards ease-in; bottom: 20%;}
         .anim-rise { animation: riseAnim 1.5s forwards ease-out; top: 20%;}
@@ -297,10 +298,8 @@
         @keyframes waveAnim { 0% { height: 3vh; } 100% { height: 15vh; } }
         @keyframes gridScroll { 100% { background-position: 0 6vh; } }
         @keyframes emojiPulse { 0% { transform: scale(1); filter: drop-shadow(0 0 1.5vh var(--cyan-light));} 100% { transform: scale(1.1); filter: drop-shadow(0 0 4vh var(--cyan-light));} }
-    </style>
-    
-    <style>
-        /* === MOBILE OVERRIDES (SAFE ZONE) === */
+
+        /* === MOBILE OVERRIDES === */
         @media (max-width: 768px) {
             html { font-size: 14px !important; } 
             body { 
@@ -313,7 +312,6 @@
             h1 { font-size: 1.1rem !important; margin-bottom: 0.2vh !important; gap: 4px !important; }
             h1 svg { width: 1.1rem !important; height: 1.1rem !important; }
             
-            /* FIXED: Scroll cutting off on RTL */
             .nav-tier, .sub-nav { 
                 padding: 4px 10px !important; 
                 margin-bottom: 0.3vh !important;
@@ -326,7 +324,6 @@
             }
             .nav-tier::-webkit-scrollbar, .sub-nav::-webkit-scrollbar { display: none !important; }
             
-            /* FIXED: Prevent wrapping inside buttons */
             .nav-btn, .sub-btn { flex-shrink: 0 !important; font-size: 13px !important; padding: 6px 12px !important; min-width: auto !important; border-radius: 6px !important; white-space: nowrap !important;}
             .sub-btn-title { font-size: 13px !important; margin-bottom: 0 !important; white-space: nowrap !important;}
             .sub-btn-date { display: none !important; }
@@ -356,7 +353,6 @@
             .audio-btn svg { width: 14px !important; height: 14px !important; }
             .small-emoji { font-size: 1.3rem !important; margin-top: 0 !important;}
             
-            /* FIXED: Prevent phonetic tag breaking */
             .tags-row { gap: 6px !important; flex-wrap: wrap !important; }
             .tag-box { font-size: 11px !important; padding: 4px 8px !important; min-width: max-content !important; flex: 0 1 auto !important; border-radius: 5px !important; white-space: nowrap !important;}
             
@@ -384,13 +380,14 @@
             .control-btn { flex: 1 !important; justify-content: center !important; padding: 8px 5px !important; font-size: 13px !important; border-radius: 8px !important;}
             .control-btn svg { width: 16px !important; height: 16px !important; }
 
-            .matrix-wrapper { padding: 8px !important; }
+            /* Matrix overrides Mobile */
+            .matrix-wrapper { padding: 8px !important; border-radius: 12px !important; }
             .summary-toggles { flex-direction: column !important; gap: 6px !important; margin-bottom: 6px !important; }
             .sum-toggle { font-size: 12px !important; padding: 8px !important; }
             .weeks-scroll { gap: 15px !important; }
             .week-title { font-size: 1.4rem !important; margin-bottom: 6px !important; }
             .days-grid { grid-template-columns: 1fr !important; gap: 6px !important;}
-            .matrix-card { padding: 8px !important; }
+            .matrix-card { padding: 8px !important; border-radius: 8px !important;}
             .matrix-header { font-size: 1rem !important; margin-bottom: 6px !important; }
             .matrix-item { font-size: 0.9rem !important; flex-direction: column !important; align-items: flex-start !important; gap: 3px !important; padding: 6px 0 !important;}
             .matrix-item-he { margin-right: 0 !important; width: 100% !important; border-right: 2px solid var(--emerald-main) !important; padding-right: 6px !important; margin-top: 4px !important;}
@@ -398,6 +395,14 @@
             .compact-item { padding: 6px !important; }
             .compact-en { font-size: 1rem !important; }
             .compact-he { font-size: 0.85rem !important; }
+            
+            /* Story Overrides Mobile */
+            .story-card { padding: 15px !important; border-radius: 12px !important;}
+            .story-audio-btn { width: 35px !important; height: 35px !important; margin-top: 0 !important; }
+            .story-audio-btn svg { width: 16px !important; height: 16px !important; }
+            .story-eng-text { font-size: 1.1rem !important; }
+            .story-heb-text { font-size: 1rem !important; padding-right: 45px !important; margin-top: 15px !important; padding-top: 15px !important;}
+            .story-title { font-size: 1.8rem !important; }
         }
 
         /* === CONTROLS (Desktop Fixed Bottom Block) === */
@@ -417,33 +422,6 @@
         .control-btn:disabled { opacity: 0.3; cursor: not-allowed; box-shadow: none; transform: none; }
         .control-btn svg { width: clamp(18px, 2.5vh, 30px); height: clamp(18px, 2.5vh, 30px); }
 
-        /* === MATRIX SUMMARY === */
-        .matrix-wrapper { flex: 1; overflow-y: auto; display: flex; flex-direction: column; width: 100%; padding: 2vh; background: rgba(15, 23, 42, 0.7); border-radius: 2vh; border: 1px solid var(--border); box-shadow: 0 2vh 4vh rgba(0,0,0,0.5); }
-        .summary-toggles { display: flex; justify-content: center; gap: 1.5vw; margin-bottom: 2vh; flex-shrink: 0;}
-        .sum-toggle { background: rgba(30, 41, 59, 0.8); color: var(--cyan-light); border: 1px solid var(--cyan-main); padding: 1vh 2vw; border-radius: 1vh; font-size: clamp(12px, 1.8vh, 20px); font-weight: bold; cursor: pointer; transition: 0.3s;}
-        .sum-toggle.active { background: var(--cyan-main); color: #fff; box-shadow: 0 0 2vh rgba(34,211,238,0.5);}
-        
-        .weeks-scroll { flex-grow: 1; width: 100%; overflow-y: auto; padding-right: 1vw; display: flex; flex-direction: column; gap: 4vh;}
-        .week-section { flex: 0 0 auto; display: flex; flex-direction: column; padding-bottom: 2vh;}
-        
-        .week-title { color: #fde047; text-shadow: 0 0 2vh rgba(253, 224, 71, 0.8); font-size: clamp(24px, 3.5vh, 40px); font-weight: 900; text-align: center; margin-bottom: 1.5vh; letter-spacing: 2px;}
-        .days-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5vh; }
-        .compact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 1vh; width: 100%; overflow-y: auto; flex-grow: 1; background: rgba(15,23,42,0.8); padding: 2vh; border-radius: 2vh; border: 1px solid var(--border);}
-        .compact-item { background: rgba(30,41,59,0.9); padding: 1vh; border-radius: 1vh; border: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; align-items: center; text-align: center; cursor: pointer; transition: 0.2s;}
-        .compact-item:hover { background: rgba(34,211,238,0.2); border-color: var(--cyan-main); transform: scale(1.05); box-shadow: 0 0.5vh 1.5vh rgba(34,211,238,0.3);}
-        .compact-en { font-weight: bold; color: #fff; font-size: clamp(12px, 1.6vh, 18px); margin-bottom: 0.3vh;}
-        .compact-he { color: var(--emerald-light); font-size: clamp(10px, 1.4vh, 16px);}
-        .matrix-card { background: rgba(30, 41, 59, 0.8); border-radius: 1.5vh; border: 1px solid rgba(255,255,255,0.15); padding: 1.5vh; box-shadow: 0 1vh 2vh rgba(0,0,0,0.3);}
-        .matrix-header { color: var(--emerald-light); font-weight: 900; border-bottom: 0.2vh solid rgba(255,255,255,0.2); padding-bottom: 0.8vh; margin-bottom: 1.2vh; text-align: center; display: flex; flex-direction: column; font-size: clamp(14px, 2vh, 22px);}
-        .matrix-header span:last-child { font-size: clamp(10px, 1.4vh, 16px); color: var(--cyan-light); font-family: monospace; margin-top: 0.4vh; }
-        .matrix-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6vh; font-size: clamp(12px, 1.6vh, 20px); border-bottom: 1px dashed rgba(255, 255, 255, 0.1); padding-bottom: 0.6vh; cursor: pointer; transition: 0.2s;}
-        .matrix-item:last-child { border-bottom: none; }
-        .matrix-item:hover { background: rgba(34, 211, 238, 0.15); padding: 0.6vh; border-radius: 0.8vh;}
-        .matrix-item-en { font-weight: bold; color: #fff; direction: ltr;}
-        .matrix-item-he { color: var(--text-muted); font-size: clamp(11px, 1.5vh, 18px); margin-right: 1vw; font-weight: 600;}
-
-        ::-webkit-scrollbar { width: 0.6vw; }
-        ::-webkit-scrollbar-thumb { background: var(--cyan-main); border-radius: 1vh; }
     </style>
 </head>
 <body>
@@ -452,14 +430,15 @@
     <div class="header-section w-full">
         <h1>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-            Day Fluency Sprint | Master V24
+            Day Fluency Sprint | Master V27
         </h1>
         
         <div class="nav-tier">
             <button class="nav-btn" id="btn-week1" onclick="window.setWeek('week1')">שבוע 1</button>
             <button class="nav-btn" id="btn-week2" onclick="window.setWeek('week2')">שבוע 2</button>
             <button class="nav-btn" id="btn-week3" onclick="window.setWeek('week3')">שבוע 3</button>
-            <button class="nav-btn" id="btn-summary" onclick="window.setWeek('summary')">סיכום (120 מילים)</button>
+            <button class="nav-btn" id="btn-summary" onclick="window.setWeek('summary')">סיכום (120)</button>
+            <button class="nav-btn" id="btn-story" onclick="window.setWeek('story')">הסיפור השלם</button>
         </div>
 
         <div class="sub-nav" id="sub-nav-container">
@@ -631,6 +610,134 @@ window.vocabularyData = {
   ]
 };
 
+window.storyData = [
+    {
+        emoji: "💻👨‍💻",
+        eng: "Nowadays, building a Python program is a ridiculously deep obsession for many young human developers.",
+        heb: "כיום, בניית תוכנית פייתון היא אובססיה עמוקה ומגוחכת עבור מפתחים אנושיים צעירים רבים."
+    },
+    {
+        emoji: "🏫🛏️",
+        eng: "Perhaps it begins in tiny college dormitories.",
+        heb: "אולי זה מתחיל במעונות מכללה קטנטנים."
+    },
+    {
+        emoji: "👐🟤",
+        eng: "There, a capable developer spent plenty of time kneading code like mud into a beautiful shape.",
+        heb: "שם, מפתח מסוגל בילה שפע של זמן בלישת קוד כמו בוץ לכדי צורה יפה."
+    },
+    {
+        emoji: "🤖🐕",
+        eng: "A faithful companion—literally an AI assistant—fetches useful phrases, items, and objects from an antique database that exists online.",
+        heb: "בן לוויה נאמן - פשוטו כמשמעו עוזר בינה מלאכותית - מביא ביטויים, פריטים וחפצים שימושיים ממאגר נתונים עתיק שקיים ברשת."
+    },
+    {
+        emoji: "🛒🔨",
+        eng: "To advance their task, they purchase a pair of server appliances at the lowest bid during an online auction.",
+        heb: "כדי לקדם את המשימה שלהם, הם רוכשים זוג מכשירי שרת בהצעת המחיר הנמוכה ביותר במהלך מכירה פומבית ברשת."
+    },
+    {
+        emoji: "🚧⚠️",
+        eng: "But a barrier can arise.",
+        heb: "אך מחסום יכול לצוץ."
+    },
+    {
+        emoji: "☠️💥",
+        eng: "Unfortunate instances of poisonous bugs or a severe accident in the logic can leave the system completely paralyzed.",
+        heb: "מקרים מצערים של באגים רעילים או תאונה חמורה בלוגיקה עלולים להשאיר את המערכת משותקת לחלוטין."
+    },
+    {
+        emoji: "🥀🪫",
+        eng: "The developer feels despair and helplessness, trapped by conditions that forced them to scratch itches of frustration and comb their hair nervously.",
+        heb: "המפתח מרגיש ייאוש וחוסר אונים, מלוכד על ידי תנאים שכפו עליו לגרד גירודים של תסכול ולסרק את שיערו בעצבנות."
+    },
+    {
+        emoji: "🛑💪",
+        eng: "However, they resist the addiction to give up.",
+        heb: "למרות זאת, הם מתנגדים להתמכרות לוותר."
+    },
+    {
+        emoji: "🧑‍⚕️🩺",
+        eng: "They treat the code like raising a child, with proper nursing and treatment.",
+        heb: "הם מתייחסים לקוד כמו לגידול ילד, עם סיעוד וטיפול נאותים."
+    },
+    {
+        emoji: "🦅🏢",
+        eng: "Finally, they solve the issue, proving they are independent owners of a brand new organization.",
+        heb: "לבסוף, הם פותרים את הבעיה, ומוכיחים שהם בעלים עצמאיים של ארגון ומותג חדש."
+    },
+    {
+        emoji: "👐🤗",
+        eng: "They welcome new users with open arms.",
+        heb: "הם מקבלים משתמשים חדשים בזרועות פתוחות."
+    },
+    {
+        emoji: "🏦💸",
+        eng: "The launch is due soon, so they take a loan, accepting an immense amount of debt to pay wages to their contributors.",
+        heb: "ההשקה צפויה בקרוב, אז הם לוקחים הלוואה, ולוקחים על עצמם סכום חוב עצום כדי לשלם שכר לתורמים שלהם."
+    },
+    {
+        emoji: "😈🚫",
+        eng: "Suddenly, an unscrupulous commissioner denies their permission to launch.",
+        heb: "לפתע, נציב חסר מצפון שולל את הרשות שלהם להשיק."
+    },
+    {
+        emoji: "☝️📈",
+        eng: "He is making false accusations and threatening an illegal exaggeration of their taxes.",
+        heb: "הוא ממציא האשמות שווא ומאיים בהגזמה בלתי חוקית של המיסים שלהם."
+    },
+    {
+        emoji: "⚖️💎",
+        eng: "The biased official, with bulging pockets, demands collectibles, jewelry, earrings and chains as a bribe.",
+        heb: "הפקיד המשוחד, עם כיסים תפוחים, דורש פריטי אספנות, תכשיטים, עגילים ושרשראות כשוחד."
+    },
+    {
+        emoji: "😤🔦",
+        eng: "But they insist on fighting back. They ensure the corruption is exposed, analyzing the official's tone using a secret script that runs it automatically.",
+        heb: "אך הם מתעקשים להשיב מלחמה. הם מוודאים שהשחיתות תהיה חשופה, ומנתחים את הטון של הפקיד באמצעות סקריפט סודי שמריץ את זה אוטומטית."
+    },
+    {
+        emoji: "➡️🏛️",
+        eng: "Consequently, the corrupt official is fired, and they proceed to receive full support from institutions and trade-unions.",
+        heb: "כתוצאה מכך, הפקיד המושחת מפוטר, והם ממשיכים לקבל תמיכה מלאה ממוסדות ואיגודי עובדים."
+    },
+    {
+        emoji: "🎓🎊",
+        eng: "After graduating from this crisis, they perform a grand ceremony for approximately five hundred attendees.",
+        heb: "לאחר סיום הלימודים מהמשבר הזה, הם עורכים טקס מפואר לכחמש מאות משתתפים בערך."
+    },
+    {
+        emoji: "🚪🛍️",
+        eng: "This provides a massive opportunity for every customer.",
+        heb: "זה מספק הזדמנות עצומה לכל לקוח."
+    },
+    {
+        emoji: "🔦🧱",
+        eng: "Moving into a new HQ, they use a laser beam to cut bricks in a kiln, building custom furniture and odds and ends for their office.",
+        heb: "במעבר למטה חדש, הם משתמשים בקרן לייזר כדי לחתוך לבנים בכבשן, ובונים רהיטים מותאמים אישית ופיצ'יפקס למשרד שלהם."
+    },
+    {
+        emoji: "🗑️🔽",
+        eng: "They waive the initial requirement and reduce the costs to convince a minority of refugees to join the team.",
+        heb: "הם מוותרים על הדרישה הראשונית ומצמצמים את העלויות כדי לשכנע מיעוט של פליטים להצטרף לצוות."
+    },
+    {
+        emoji: "🌌🦶",
+        eng: "I wonder if it is amusing to walk barefoot in the office, but it becomes one of their favorite daily habits.",
+        heb: "אני תוהה אם זה משעשע ללכת יחף במשרד, אבל זה הופך לאחד מההרגלים היומיומיים האהובים עליהם."
+    },
+    {
+        emoji: "📝📊",
+        eng: "To sum up, as mentioned before, provided they respond quickly and are instructed by user surveys...",
+        heb: "לסיכום, כפי שהוזכר קודם, בתנאי שהם מגיבים מהר ומונחים על ידי סקרים של משתמשים..."
+    },
+    {
+        emoji: "📱🌟",
+        eng: "...their applications gain true significance, and no one will ever reject their success!",
+        heb: "...היישומים שלהם זוכים למשמעות אמיתית, ואף אחד לעולם לא ידחה את הצלחתם!"
+    }
+];
+
 window.daysList = [
   { id: 'w1d1', week: 'week1', title: 'יום ראשון', date: '26/04/2026' },
   { id: 'w1d2', week: 'week1', title: 'יום שני', date: '27/04/2026' },
@@ -651,13 +758,14 @@ window.currentWeek = 'week1';
 window.wordIndex = 0;
 window.speechRate = 0.85;
 window.summaryMode = 'weeks';
+window.expandedStoryIndices = new Set();
 
 window.setWeek = function(week) {
     window.currentWeek = week;
     if (week === 'week1') window.currentDay = 'w1d1';
     else if (week === 'week2') window.currentDay = 'w2d1';
     else if (week === 'week3') window.currentDay = 'w3d1';
-    else window.currentDay = 'summary';
+    else window.currentDay = week; 
     window.wordIndex = 0;
     window.render();
 };
@@ -729,6 +837,43 @@ window.prevWord = function() {
         }
     }
     window.render();
+};
+
+window.toggleStory = function(index) {
+    if (window.expandedStoryIndices.has(index)) {
+        window.expandedStoryIndices.delete(index);
+    } else {
+        window.expandedStoryIndices.add(index);
+    }
+    window.render();
+};
+
+window.highlightText = function(text) {
+    if (!window.allVocabWords) {
+        window.allVocabWords = [];
+        Object.values(window.vocabularyData).forEach(day => {
+            day.forEach(item => {
+                let cleanWord = item.word.replace(/\(s\)/g, 's').replace(/[()]/g, '');
+                window.allVocabWords.push(cleanWord);
+            });
+        });
+        window.allVocabWords.sort((a,b) => b.length - a.length);
+    }
+    
+    let highlighted = text;
+    window.allVocabWords.forEach(w => {
+        let escapedWord = w.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        let regex = new RegExp('\\b(' + escapedWord + ')(s|es|ed|d|ing|ly)?\\b', 'gi');
+        
+        highlighted = highlighted.replace(regex, function(match, p1, p2, offset, string) {
+            const before = string.substring(0, offset);
+            if ((before.match(/<span/g) || []).length > (before.match(/<\/span>/g) || []).length) {
+                return match; 
+            }
+            return '<span class="highlight-word">' + match + '</span>';
+        });
+    });
+    return highlighted;
 };
 
 window.getArtClass = function(word) {
@@ -809,8 +954,9 @@ window.render = function() {
     document.getElementById('btn-week2').className = `nav-btn ${window.currentWeek === 'week2' ? 'active-cyan' : ''}`;
     document.getElementById('btn-week3').className = `nav-btn ${window.currentWeek === 'week3' ? 'active-cyan' : ''}`;
     document.getElementById('btn-summary').className = `nav-btn ${window.currentWeek === 'summary' ? 'active-emerald' : ''}`;
+    document.getElementById('btn-story').className = `nav-btn ${window.currentWeek === 'story' ? 'active-emerald' : ''}`;
 
-    if (window.currentWeek !== 'summary') {
+    if (window.currentWeek !== 'summary' && window.currentWeek !== 'story') {
         subNavContainer.style.display = 'flex';
         const weekDays = window.daysList.filter(d => d.week === window.currentWeek);
         let subNavHtml = '';
@@ -829,7 +975,53 @@ window.render = function() {
         subNavContainer.innerHTML = '';
     }
 
-    if (window.currentWeek === 'summary') {
+    if (window.currentWeek === 'story') {
+        let storyHTML = `
+            <div class="top-bar" style="max-width: 1100px; margin: 0 auto 1vh auto; justify-content: center;">
+                <div class="settings-box">
+                    ${window.icons.settings}
+                    <span style="font-size: clamp(10px, 1.4vh, 16px); color: var(--text-main); display: none;">מהירות:</span>
+                    <select onchange="window.changeRate(this.value)">
+                        <option value="0.3" ${window.speechRate === 0.3 ? 'selected' : ''}>סופר איטי (0.3x)</option>
+                        <option value="0.4" ${window.speechRate === 0.4 ? 'selected' : ''}>איטי מאוד (0.4x)</option>
+                        <option value="0.6" ${window.speechRate === 0.6 ? 'selected' : ''}>איטי (0.6x)</option>
+                        <option value="0.85" ${window.speechRate === 0.85 ? 'selected' : ''}>רגיל-איטי (0.85x)</option>
+                        <option value="1" ${window.speechRate === 1 ? 'selected' : ''}>רגיל (1.0x)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="story-container">
+                <div class="story-header">
+                    <h2 class="story-title">The Python Startup Journey</h2>
+                    <p class="story-subtitle">סיפור המשלב את כל 120 מילות הקורס. לחץ על משפט כדי לראות תרגום.</p>
+                </div>
+                ${window.storyData.map((item, index) => {
+                    const isExpanded = window.expandedStoryIndices.has(index);
+                    const highlightedEng = window.highlightText(item.eng);
+                    const safeText = item.eng.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                    return `
+                        <div class="story-card ${isExpanded ? 'expanded' : ''}" onclick="window.toggleStory(${index})">
+                            <div class="story-eng-row">
+                                <button class="story-audio-btn" onclick="event.stopPropagation(); window.playAudio('${safeText}')" title="השמע משפט">
+                                    ${window.icons.volume}
+                                </button>
+                                <div class="story-eng-text">
+                                    <span style="font-size: 1.2em; margin-right: 0.5vw;">${item.emoji}</span>
+                                    <span>${highlightedEng}</span>
+                                </div>
+                            </div>
+                            ${isExpanded ? `
+                                <div class="story-heb-text" dir="rtl">
+                                    ${item.heb}
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                }).join('')}
+            </div>
+        `;
+        app.innerHTML = storyHTML;
+    } else if (window.currentWeek === 'summary') {
         let summaryHtml = `
             <div class="summary-toggles">
                 <button onclick="window.setSummaryMode('weeks')" class="sum-toggle ${window.summaryMode === 'weeks' ? 'active' : ''}">תצוגת שבועות</button>
@@ -869,7 +1061,6 @@ window.render = function() {
             });
             summaryHtml += `</div>`;
         } else {
-            // Compact Mode
             summaryHtml += `<div class="compact-grid">`;
             Object.entries(window.vocabularyData).forEach(([dayKey, words]) => {
                 words.forEach((w, idx) => {
@@ -933,7 +1124,7 @@ window.render = function() {
                     </div>
                     <div class="tags-row">
                         <span class="tag-box tag-meaning">${wordData.meaning}</span>
-                        <span class="tag-box tag-phonetic">[ ${wordData.phonetic} ]</span>
+                        <span class="tag-box tag-phonetic" style="white-space: nowrap !important;">[ ${wordData.phonetic} ]</span>
                     </div>
                 </div>
 
