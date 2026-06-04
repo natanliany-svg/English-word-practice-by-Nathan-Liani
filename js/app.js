@@ -260,7 +260,7 @@ window.highlightText = function(text) {
         "file management", "directories", "folders", "file system",
         "device management", "hardware components", "device drivers", "drivers",
         "Security", "user authentication", "access control", "encryption", "cyberattacks", "malicious software",
-        "smartphones", "Android", "iOS", "cloud servers"
+        "smartphones", "Android", "iOS", "cloud servers", "Confidentiality", "Integrity", "Availability", "CIA Triad", "cybersecurity", "phishing", "ransomware", "encryption", "access controls", "digital signatures", "audit logs", "hash functions", "DataSafe"
     ];
     let highlighted = text;
     keyTerms.sort((a,b) => b.length - a.length).forEach(w => {
@@ -455,6 +455,7 @@ window.render = function() {
         <button class="nav-btn ${window.currentWeek === 'week3' ? 'active-cyan' : ''}" onclick="window.setWeek('week3')">שבוע 6 (3)</button>
         <button class="nav-btn ${window.currentWeek === 'week7' ? 'active-cyan' : ''}" onclick="window.setWeek('week7')">שבוע 7 (4)</button>
         <button class="nav-btn ${window.currentWeek === 'article' ? 'active-cyan' : ''}" onclick="window.setWeek('article')">שבוע 8 (5) 📄</button>
+        <button class="nav-btn ${window.currentWeek === 'week9' ? 'active-cyan' : ''}" onclick="window.setWeek('week9')">שבוע 9 (6) 🔐</button>
         <button class="nav-btn ${window.currentWeek === 'quiz' ? 'active-cyan' : ''}" onclick="window.setWeek('quiz')">מבחן חכם 🧠</button>
         <button class="nav-btn ${window.currentWeek === 'summary' ? 'active-cyan' : ''}" onclick="window.setWeek('summary')">סיכום (160 מילים)</button>
     `;
@@ -518,6 +519,13 @@ window.render = function() {
                         <div class="home-card-content">
                             <div class="home-card-title">שבוע 8 (5)</div>
                             <div class="home-card-desc">מאמר קריאה - Unseen בהקראה קולית.</div>
+                        </div>
+                    </button>
+                    <button class="home-card" onclick="window.setWeek('week9')">
+                        <div class="home-card-icon">🔐</div>
+                        <div class="home-card-content">
+                            <div class="home-card-title">שבוע 9 (6)</div>
+                            <div class="home-card-desc">מאמר קריאה - CIA Triad אבטחת מידע.</div>
                         </div>
                     </button>
                 </div>
