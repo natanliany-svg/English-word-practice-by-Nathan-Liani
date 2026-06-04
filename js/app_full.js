@@ -1,0 +1,880 @@
+window.icons = {
+    volume: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>',
+    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>',
+    book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>',
+    settings: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>',
+    left_arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>',
+    right_arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>',
+    trash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>',
+    history: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>',
+    pause: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>',
+    play: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>'
+};
+
+window.vocabularyData = {
+  w1d1:[{word:"Deep",phonetic:"דִּיפּ",meaning:"עָמוֹק",visual:"🌊",exp:"מתאר עומק פיזי (כמו מים) או מטאפורי (רעיון או שיחה).",engEx:"The ocean is very deep here, so be careful.",hebEx:"האוקיינוס עמוק מאוד כאן, אז היזהר."},{word:"Auction",phonetic:"אוֹקְשֶׁן",meaning:"מְכִירָה פּוּמְבִּית",visual:"🔨",exp:"אירוע שבו פריטים נמכרים למי שמציע את המחיר הגבוה ביותר.",engEx:"He bought the rare painting at an art auction.",hebEx:"הוא קנה את הציור הנדיר במכירה פומבית של אמנות."},{word:"Purchase",phonetic:"פֶּרְצֶ'ס",meaning:"קְנִיָּה / לִרְכּוֹשׁ",visual:"🛒",exp:"מילה רשמית ומקצועית יותר ל-Buy.",engEx:"She decided to purchase a new laptop for work.",hebEx:"היא החליטה לרכוש מחשב נייד חדש לעבודה."},{word:"Minority",phonetic:"מַיְינוֹרִיטִי",meaning:"מִיעוּט",visual:"📊",exp:"החלק הקטן יותר מתוך קבוצה שלמה (ההפך מרוב - Majority).",engEx:"Only a small minority voted against the new law.",hebEx:"רק מיעוט קטן הצביע נגד החוק החדש."},{word:"Lowest",phonetic:"לוֹאֶסְט",meaning:"הֲנָמוּךְ בְּיוֹתֵר",visual:"📉",exp:"בתחתית הרשימה, המחיר או הסקאלה.",engEx:"This store offers the lowest prices in town.",hebEx:"החנות הזו מציעה את המחירים הנמוכים בעיר."},{word:"Appliances",phonetic:"אַפְּלַאיֶינְסֶס",meaning:"מַכְשִׁירֵי חַשְׁמַל",visual:"🔌",exp:"ציוד חשמלי ביתי כמו מקרר, מיקרוגל, או תנור.",engEx:"We need to buy new kitchen appliances for the house.",hebEx:"אנחנו צריכים לקנות מכשירי מטבח חשמליים חדשים לבית."},{word:"Collectibles",phonetic:"קוֹלֶקְטִיבֶּלְס",meaning:"פְּרִיטֵי אַסְפָנוּת",visual:"🏺",exp:"חפצים שאנשים אוספים בשל ערכם, גילם או נדירותם.",engEx:"His room is full of rare vintage collectibles.",hebEx:"החדר שלו מלא בפריטי אספנות וינטג' נדירים."},{word:"Jewelry",phonetic:"ג'וּלְרִי",meaning:"תַּכְשִׁיטִים",visual:"💎",exp:"פריטי נוי אישיים כמו טבעות, שרשראות וצמידים.",engEx:"She keeps her expensive jewelry in a secure safe.",hebEx:"היא שומרת את התכשיטים היקרים שלה בכספת מאובטחת."},{word:"Earrings and Chains",phonetic:"אִיר-רִינְגְס...",meaning:"עֲגִילִים וְשַׁרְשְׁרָאוֹת",visual:"📿",exp:"סוגים נפוצים של תכשיטים. Earrings = עגילים, Chains = שרשראות.",engEx:"She wore beautiful silver earrings and matching chains.",hebEx:"היא ענדה עגילי כסף יפים ושרשראות תואמות."},{word:"Ridiculously",phonetic:"רִידִיקְיוּלֶסְלִי",meaning:"בְּצוּרָה מְגֻחֶכֶת",visual:"🤡",exp:"תיאור של משהו שהוא מוגזם, לא הגיוני או מצחיק.",engEx:"The designer car was ridiculously expensive.",hebEx:"מכונית המעצבים הייתה יקרה בצורה מגוחכת."}],
+  w1d2:[{word:"Perhaps",phonetic:"פֶּרְהַאפְּס",meaning:"יִתָּכֵן / אוּלַי",visual:"🤔",exp:"חלופה קצת יותר רשמית או מנומסת למילה Maybe.",engEx:"Perhaps we should leave a bit earlier to avoid traffic.",hebEx:"אולי כדאי שנצא קצת יותר מוקדם כדי להימנע מהפקקים."},{word:"Habits",phonetic:"הַאבִּיטְס",meaning:"הֶרְגֵּלִים",visual:"🔁",exp:"פעולות קבועות שאדם עושה לעיתים קרובות באופן כמעט אוטומטי.",engEx:"Reading before bed is one of my best daily habits.",hebEx:"קריאה לפני השינה היא אחד מההרגלים היומיים הטובים ביותר שלי."},{word:"Obsession",phonetic:"אוֹבְּסֶשֶׁן",meaning:"אוֹבְּסֶסְיָה / קִבָּעוֹן",visual:"🧟‍♂️",exp:"מחשבה, רעיון או פעולה שאי אפשר להפסיק לחשוב עליהם.",engEx:"His hobby slowly turned into a dangerous obsession.",hebEx:"התחביב שלו הפך לאט לאט לאובססיה מסוכנת."},{word:"Addiction",phonetic:"אַדִיקְשֶׁן",meaning:"הִתְמַכְּרוּת",visual:"📱",exp:"צורך פיזי או נפשי חזק במשהו, שקשה מאוד להפסיק.",engEx:"Smartphone addiction is becoming a serious problem today.",hebEx:"התמכרות לסמארטפונים הופכת לבעיה רצינית כיום."},{word:"Resist",phonetic:"רֶזִיסְט",meaning:"לְהִתְנַגֵּד",visual:"🛑",exp:"היכולת לסרב או לא להיכנע למשהו מושך.",engEx:"I just couldn't resist buying that chocolate cake.",hebEx:"פשוט לא יכולתי להתנגד ולקנות את עוגת השוקולד ההיא."},{word:"Opportunity",phonetic:"אוֹפֶּרְטְיוּנִיטִי",meaning:"הִזְדַּמְּנוּת",visual:"🚪",exp:"מצב מאפשר או חלון זמן נוח לביצוע פעולה כדאית.",engEx:"This job is a great opportunity for your career.",hebEx:"העבודה הזו היא הזדמנות מצוינת לקריירה שלך."},{word:"Brand",phonetic:"בְּרַאנְד",meaning:"מוּתָג",visual:"🏷️",exp:"שם, עיצוב או סמל המזהים חברה מסחרית.",engEx:"She only buys clothes from her favorite luxury brand.",hebEx:"היא קונה בגדים רק ממותג היוקרה האהוב עליה."},{word:"Wonder",phonetic:"וּוַאנְדֶר",meaning:"לִתְהוֹת / פֶּלֶא",visual:"🌌",exp:"לחשוב על משהו מתוך סקרנות, או לתאר דבר מדהים (כמו פלא תבל).",engEx:"I wonder what the weather will be like tomorrow.",hebEx:"אני תוהה איך יהיה מזג האוויר מחר."},{word:"Faithful",phonetic:"פֵיְיתְ'פוּל",meaning:"נֶאֱמָן",visual:"🐕",exp:"אדם או בעל חיים שאפשר לסמוך עליו, שנשאר מסור לאורך זמן.",engEx:"The dog has been a faithful companion to him for years.",hebEx:"הכלב היה בן לוויה נאמן עבורו במשך שנים."},{word:"Attendees",phonetic:"אַטֶנְדִיז",meaning:"מִשְׁתַּתְּפִים",visual:"👥",exp:"אנשים שנוכחים באופן פעיל באירוע, פגישה או כנס.",engEx:"The tech conference had over five hundred attendees.",hebEx:"בכנס הטכנולוגיה היו מעל חמש מאות משתתפים."}],
+  w1d3:[{word:"Bulging",phonetic:"בּוֹלְגִ'ינְג",meaning:"בּוֹלֵט / תָּפוּחַ",visual:"👁️",exp:"מתאר משהו שמתנפח כלפי חוץ, כמו שרירים או תיק מלא.",engEx:"His pockets were bulging with the stolen money.",hebEx:"הכיסים שלו היו תפוחים מהכסף הגנוב."},{word:"Antique",phonetic:"אַנְטִיק",meaning:"עַתִּיק",visual:"🕰️",exp:"חפץ או פריט ריהוט ישן מאוד, לרוב בעל ערך רב בשל גילו.",engEx:"They bought a beautiful antique clock for their living room.",hebEx:"הם קנו שעון עתיק ויפה לסלון שלהם."},{word:"Furniture",phonetic:"פֶרְנִיצֶ'ר",meaning:"רָהִיטִים",visual:"🛋️",exp:"ציוד ביתי כמו ספות ושולחנות. חשוב: מילה זו לא מקבלת S ברבים!",engEx:"The new apartment comes with all the furniture included.",hebEx:"הדירה החדשה מגיעה עם כל הרהיטים כלולים."},{word:"Odds and ends",phonetic:"אוֹדְז אֶנְד אֶנְדְס",meaning:"שְׁאֵרִיּוֹת",visual:"🗃️",exp:"אוסף של פריטים קטנים ושונים ללא קטגוריה ברורה.",engEx:"I just need to pack a few odds and ends before we leave.",hebEx:"אני רק צריך לארוז כמה פיצ'יפקס לפני שנצא."},{word:"Nowadays",phonetic:"נַאוּ-אַ-דֵיְיז",meaning:"כַּיּוֹם",visual:"📅",exp:"מתייחס לתקופה הנוכחית בהשוואה למה שהיה נהוג בעבר.",engEx:"Nowadays, almost everyone has a smartphone in their pocket.",hebEx:"כיום, לכמעט כולם יש סמארטפון בכיס."},{word:"Bid",phonetic:"בִּיד",meaning:"הַצָּעַת מְחִיר",visual:"🙋‍♂️",exp:"הסכום שמציעים לשלם על פריט במכרז או מכירה פומבית.",engEx:"He placed the highest bid and finally won the painting.",hebEx:"הוא הגיש את הצעת המחיר הגבוהה ביותר ולבסוף זכה בציור."},{word:"Literally",phonetic:"לִיטֶרֶלִי",meaning:"פְּשׁוּטוֹ כְּמַשְׁמָעוֹ",visual:"💯",exp:"משמש לציון שהדבר נאמר במדויק, ללא הגזמה מטאפורית.",engEx:"I was literally freezing while waiting for the bus in the snow.",hebEx:"אני פשוטו כמשמעו קפאתי מקור כשחיכיתי לאוטובוס בשלג."},{word:"Items",phonetic:"אַיְיטֶמְס",meaning:"פְּרִיטִים",visual:"📋",exp:"אובייקטים בודדים בתוך קבוצה, רשימה או אוסף.",engEx:"Please remember to bring all the required items to the test.",hebEx:"אנא זכור להביא את כל הפריטים הנדרשים למבחן."},{word:"Barrier",phonetic:"בֶּרִי-אֶר",meaning:"מַחְסוֹם",visual:"🚧",exp:"מכשול פיזי (כמו גדר) או מנטלי (כמו מחסום שפה) שמונע מעבר.",engEx:"The language barrier made it very hard for them to communicate.",hebEx:"מחסום השפה הקשה עליהם מאוד לתקשר."},{word:"Exists",phonetic:"אֶגְזִיסְטְס",meaning:"קַיָּם",visual:"🌍",exp:"מתאר משהו שיש לו מציאות או נוכחות ממשית בעולם.",engEx:"Nobody knows for sure if life exists on other planets.",hebEx:"אף אחד לא יודע בוודאות אם קיימים חיים בכוכבי לכת אחרים."}],
+  w1d4:[{word:"Unfortunate",phonetic:"אַנְפוֹרְצְ'יוּנֵט",meaning:"מְצַעֵר",visual:"🌧️",exp:"מתאר אירוע שקרה באופן לא רצוי או אדם שאין לו מזל.",engEx:"It was an unfortunate mistake that cost us the game.",hebEx:"זו הייתה טעות מצערת שעלתה לנו במשחק."},{word:"Receive",phonetic:"רִיסִיב",meaning:"לְקַבֵּל",visual:"📥",exp:"פעולת קבלת דבר מה. זו מילה רשמית ופורמלית יותר מ-Get.",engEx:"You will receive an email confirming your hotel reservation.",hebEx:"אתה תקבל אימייל המאשר את הזמנת המלון שלך."},{word:"Unscrupulous",phonetic:"אַנְסְקְרוּפִּילוֹס",meaning:"חֲסַר מַצְפּוּן",visual:"😈",exp:"אדם או התנהגות שאינם מוסריים ולא בוחלים באמצעים.",engEx:"The unscrupulous salesman tricked her into signing the contract.",hebEx:"איש המכירות חסר המצפון הערים עליה לחתום על החוזה."},{word:"Customer",phonetic:"קַסְטוֹמֶר",meaning:"לָקוֹחַ",visual:"🛍️",exp:"אדם שקונה מוצר או שירות מחברה או חנות.",engEx:"We try to give every customer the best service possible.",hebEx:"אנחנו משתדלים לתת לכל לקוח את השירות הטוב ביותר שאפשר."},{word:"Consequently",phonetic:"קוֹנְסֶקְווֶנְטְלִי",meaning:"כְּתוֹצָאָה מִכָּךְ",visual:"➡️",exp:"מילת קישור גבוהה המציינת שדבר קרה בגלל דבר אחר.",engEx:"He didn't study at all; consequently, he failed the exam.",hebEx:"הוא לא למד כלל; כתוצאה מכך, הוא נכשל במבחן."},{word:"Proceed",phonetic:"פְּרוֹסִיד",meaning:"לְהַמְשִׁיךְ",visual:"🚶‍♂️",exp:"להתקדם בפעולה או להמשיך הלאה (לדוגמה לאחר הפסקה).",engEx:"Please proceed to the boarding gate immediately.",hebEx:"אנא התקדם לשער העלייה למטוס באופן מיידי."},{word:"Due",phonetic:"דְיוּ",meaning:"רָאוּי / נָאוֹת",visual:"⏳",exp:"מתאר כבוד ראוי, או זמן/תאריך שבו משהו אמור להתרחש או להיות מוגש.",engEx:"The project assignment is due next Monday.",hebEx:"מטלת הפרויקט צריכה להיות מוגשת ביום שני הבא."},{word:"Arise",phonetic:"אֶרַאיְיז",meaning:"לָצוּץ / לְהִתְעוֹרֵר",visual:"⚠️",exp:"מתייחס בדרך כלל לבעיה, קושי או הזדמנות שמופיעים לפתע.",engEx:"Should any problems arise, please contact technical support.",hebEx:"במידה ויצוצו בעיות כלשהן, אנא פנה לתמיכה טכנית."},{word:"Instructed",phonetic:"אִינְסְטְרַקְטֶד",meaning:"מֻנְחֶה",visual:"👨‍🏫",exp:"אדם שקיבל הכוונה, הדרכה או פקודה לבצע משהו.",engEx:"He did exactly as he was instructed by the manager.",hebEx:"הוא עשה בדיוק כפי שהונחה על ידי המנהל."},{word:"Sum up",phonetic:"סַאם אַפּ",meaning:"לְסַכֵּם",visual:"📝",exp:"פעולת הקיצור והסיכום של דברים שנאמרו או קרו.",engEx:"Let me sum up the main points of our discussion.",hebEx:"תן לי לסכם את הנקודות העיקריות של הדיון שלנו."}],
+  w2d1:[{word:"Kneading",phonetic:"נִי-דִינְג",meaning:"לִישָׁה",visual:"👐",exp:"משמש לתיאור פעולת עיבוד פיזית, לרוב של בצק, חימר או בוץ. האות K שותקת.",engEx:"The worker spent hours kneading the wet mud to shape the bricks.",hebEx:"העובד בילה שעות בלישת הבוץ הרטוב כדי לעצב את הלבנים."},{word:"Mud",phonetic:"מַאד",meaning:"בּוֹץ / רֶפֶשׁ",visual:"🟤",exp:"אדמה רטובה ודביקה.",engEx:"The heavy rain turned the dirt road into thick mud.",hebEx:"הגשם הכבד הפך את דרך העפר לבוץ סמיך."},{word:"Tiny",phonetic:"טַיְינִי",meaning:"זָעִיר",visual:"🔬",exp:"תיאור למשהו קטן במיוחד, קטן יותר מ-Small.",engEx:"The microscope revealed tiny organisms in the water.",hebEx:"המיקרוסקופ חשף אורגניזמים זעירים במים."},{word:"Shape",phonetic:"שֵׁייפּ",meaning:"צוּרָה / לְעַצֵּב",visual:"🔺",exp:"יכול לשמש כשם עצם (צורה) או כפועל (לעצב משהו).",engEx:"You can shape the clay into a beautiful bowl.",hebEx:"אתה יכול לעצב את החימר לקערה יפה."},{word:"Bricks",phonetic:"בְּרִיקְס",meaning:"לְבֵנִים",visual:"🧱",exp:"חומר בנייה בסיסי העשוי לרוב מחימר שרוף.",engEx:"The old house was built using red bricks.",hebEx:"הבית הישן נבנה באמצעות לבנים אדומות."},{word:"Advance",phonetic:"אַדְבַאנְס",meaning:"לְקַדֵּם / מִקְדָּמָה",visual:"⏩",exp:"לנוע קדימה, או בהקשר כספי: תשלום הניתן לפני המועד.",engEx:"He asked his manager for an advance on his wages.",hebEx:"הוא ביקש ממנהלו מקדמה על משכורתו."},{word:"Wages",phonetic:"וֵוייגֶ'ס",meaning:"מַשְׂכֹּרֶת",visual:"💵",exp:"תשלום הניתן לעובד עבור עבודתו, לרוב מחושב לפי שעות או ימים.",engEx:"The factory workers demanded higher wages.",hebEx:"פועלי המפעל דרשו משכורות גבוהות יותר."},{word:"Kiln",phonetic:"קִילְן",meaning:"כִּבְשָׁן",visual:"🔥",exp:"תנור תעשייתי לוהט לשריפת לבנים או קרמיקה. ה-n כמעט שותקת.",engEx:"The tiny clay bricks were left in the hot kiln overnight to harden.",hebEx:"לבני החימר הזעירות הושארו בכבשן החם למשך הלילה כדי להתקשות."},{word:"Debt",phonetic:"דֶט",meaning:"חוֹב",visual:"💳",exp:"מצב פיננסי בו אדם חייב כסף. האות b שותקת לחלוטין!",engEx:"Taking out another loan will only increase their massive debt.",hebEx:"לקיחת הלוואה נוספת רק תגדיל את החוב העצום שלהם."},{word:"Surveys",phonetic:"סֶרְבֵייז",meaning:"סְקָרִים",visual:"📋",exp:"איסוף נתונים או דעות מקבוצת אנשים.",engEx:"Recent surveys show a change in consumer habits.",hebEx:"סקרים אחרונים מראים שינוי בהרגלי הצרכנים."}],
+  w2d2:[{word:"Loan",phonetic:"לוֹאוּן",meaning:"הַלְוָאָה",visual:"🏦",exp:"כסף שניתן בהשאלה ולרוב דורש החזר עם ריבית.",engEx:"He applied for a loan to buy a new car.",hebEx:"הוא הגיש בקשה להלוואה כדי לקנות מכונית חדשה."},{word:"Refugees",phonetic:"רֶפְיוּ-ג'ִיז",meaning:"פְּלִיטִים",visual:"⛺",exp:"אנשים שנאלצו לעזוב את ארצם עקב מלחמה או רדיפה.",engEx:"The international committee must provide proper conditions for the war refugees.",hebEx:"על הוועדה הבינלאומית לספק תנאים נאותים לפליטי המלחמה."},{word:"Reduce",phonetic:"רִי-דְיוּס",meaning:"לְצַמְצֵם",visual:"🔽",exp:"הקטנת כמות, גודל או חשיבות של משהו.",engEx:"We need to reduce our daily expenses.",hebEx:"אנחנו צריכים לצמצם את ההוצאות היומיות שלנו."},{word:"Amount",phonetic:"אֶ-מַאוּנְט",meaning:"כַּמּוּת / סְכוּם",visual:"⚖️",exp:"מתייחס לכמות של משהו שאינו ספיר בקלות (כמו מים או כסף).",engEx:"The recipe requires a small amount of sugar.",hebEx:"המתכון דורש כמות קטנה של סוכר."},{word:"Permission",phonetic:"פֶּר-מִי-שֶׁן",meaning:"הַרְשָׁאָה",visual:"🛂",exp:"אישור רשמי לעשות משהו.",engEx:"You need special permission to enter this building.",hebEx:"אתה צריך הרשאה מיוחדת כדי להיכנס לבניין הזה."},{word:"Accusations",phonetic:"אֶקְיוּ-זֵיי-שֶׁנְס",meaning:"הַאֲשָׁמוֹת",visual:"☝️",exp:"טענות רשמיות על כך שאדם ביצע מעשה פסול.",engEx:"The manager faced serious accusations regarding the poor conditions.",hebEx:"המנהל עמד בפני האשמות חמורות בנוגע לתנאים הירודים."},{word:"Reject",phonetic:"רִי-ג'ֶ'קְט",meaning:"לִדְחוֹת",visual:"❌",exp:"סירוב לקבל, לאשר או להסכים למשהו.",engEx:"The bank decided to reject his request for a loan.",hebEx:"הבנק החליט לדחות את בקשתו להלוואה."},{word:"Proper",phonetic:"פְּרוֹ-פֶּר",meaning:"נָאוֹת / רָאוּי",visual:"✔️",exp:"משהו שהוא הולם, נכון או מתאים לסיטואציה.",engEx:"Please ensure you are wearing the proper uniform.",hebEx:"אנא ודא שאתה לובש את המדים הנאותים."},{word:"Conditions",phonetic:"קוֹן-דִי-שֶׁנְס",meaning:"תְּנָאִים",visual:"📝",exp:"מצב סביבתי או דרישות שצריך לעמוד בהן.",engEx:"The workers complained about the terrible working conditions.",hebEx:"העובדים התלוננו על תנאי העבודה הנוראיים."},{word:"Provided",phonetic:"פְּרוֹ-וַויי-דֶד",meaning:"בִּתְנַאי שֶׁ...",visual:"🤝",exp:"מילת מפתח אקדמית! משמשת כמילת תנאי לוגית המחליפה את 'If'.",engEx:"We will accept the agreement, provided that all conditions are met.",hebEx:"אנו נקבל את ההסכם, בתנאי שכל התנאים יתקיימו."}],
+  w2d3:[{word:"Ceremonies",phonetic:"סֶ-רֶ-מוֹ-נִיז",meaning:"טְקָסִים",visual:"🎊",exp:"אירועים פורמליים, לרוב מסורתיים או ציבוריים.",engEx:"Traditional ceremonies were held in the village.",hebEx:"טקסים מסורתיים נערכו בכפר."},{word:"Treatment",phonetic:"טְרִיט-מֶנְט",meaning:"טִיפּוּל",visual:"🩺",exp:"האופן בו מתנהגים או מטפלים במישהו, רפואית או חברתית.",engEx:"The patient responded well to the new medical treatment.",hebEx:"המטופל הגיב היטב לטיפול הרפואי החדש."},{word:"Requirement",phonetic:"רִי-קְוַוייר-מֶנְט",meaning:"דְּרִישָׁה",visual:"❗",exp:"משהו שהכרחי או נדרש (תנאי קבלה).",engEx:"Passing the test is a strict requirement for the job.",hebEx:"מעבר המבחן הוא דרישה נוקשה לתפקיד."},{word:"Illegal",phonetic:"אִיל-לִי-גַאל",meaning:"לֹא חֻקִּי",visual:"🚫",exp:"מנוגד לחוק או לכללים.",engEx:"Parking in this zone is strictly illegal.",hebEx:"חניה באזור זה היא בלתי חוקית לחלוטין."},{word:"Exaggeration",phonetic:"אֶגְ-זַה-גֶ'רֵיי-שֶׁן",meaning:"הַגְזָמָה",visual:"📈",exp:"תיאור של מצב כגדול או גרוע ממה שהוא באמת.",engEx:"To say that the new requirement is completely illegal is a massive exaggeration.",hebEx:"לומר שהדרישה החדשה היא בלתי חוקית לחלוטין זו הגזמה עצומה."},{word:"Trade-Unions",phonetic:"טְרֵייד יוּנְיוֹנְס",meaning:"אִגּוּדֵי עוֹבְדִים",visual:"✊",exp:"ארגונים המאגדים עובדים להגנה על זכויותיהם.",engEx:"The trade-unions stepped in to solve the crisis.",hebEx:"איגודי העובדים התערבו כדי לפתור את המשבר."},{word:"Trapped",phonetic:"טְרַאפְּט",meaning:"לִלְכּוֹד",visual:"🕸️",exp:"תחושה של אדם התקוע במצב בעייתי ללא יכולת השתחררות.",engEx:"Despite his promises, many workers still felt trapped in the system.",hebEx:"למרות הבטחותיו, עובדים רבים עדיין הרגישו לכודים במערכת."},{word:"Commissioner",phonetic:"קוֹ-מִי-שֶׁ-נֶר",meaning:"נָצִיב",visual:"👮‍♂️",exp:"בעל תפקיד בכיר הממונה על תחום או ועדה (למשל במשטרה).",engEx:"The police commissioner held a press conference.",hebEx:"נציב המשטרה ערך מסיבת עיתונאים."},{word:"Solve",phonetic:"סוֹלְב",meaning:"לִפְתּוֹר",visual:"🧩",exp:"מציאת פתרון לבעיה או תעלומה.",engEx:"The detective managed to solve the complicated mystery.",hebEx:"הבלש הצליח לפתור את התעלומה המסובכת."},{word:"Denies",phonetic:"דִי-נַאייז",meaning:"מַכְחִישׁ",visual:"🙅‍♂️",exp:"לסרב להודות באמת או לדחות טענה.",engEx:"The suspect still denies all the allegations against him.",hebEx:"החשוד עדיין מכחיש את כל ההאשמות נגדו."}],
+  w2d4:[{word:"Insist",phonetic:"אִין-סִיסְט",meaning:"לְהִתְעַקֵּשׁ",visual:"😤",exp:"לדרוש משהו בתקיפות ולא לוותר.",engEx:"I insist that you stay for dinner.",hebEx:"אני מתעקש שתישאר לארוחת ערב."},{word:"Poisonous",phonetic:"פּוֹיְ-זְ-נַס",meaning:"רָעִיל",visual:"☠️",exp:"חומר או אורגניזם שיכול לגרום למוות או נזק.",engEx:"Be careful, some of these mushrooms are poisonous.",hebEx:"היזהר, חלק מהפטריות האלה רעילות."},{word:"Barefoot",phonetic:"בֶּר-פוּט",meaning:"יָחֵף",visual:"🦶",exp:"הליכה ללא נעליים או גרביים.",engEx:"The children loved running barefoot on the grass.",hebEx:"הילדים אהבו לרוץ יחפים על הדשא."},{word:"Convince",phonetic:"קוֹן-בִינְס",meaning:"לְשַׁכְנֵעַ",visual:"🗣️",exp:"לגרום למישהו לאמץ דעה באמצעות טיעונים.",engEx:"In some instances, it is difficult to convince people to change their harsh tone.",hebEx:"בחלק מהמקרים, קשה לשכנע אנשים לשנות את הטון הנוקשה שלהם."},{word:"Waive",phonetic:"וֵוייב",meaning:"לְוַתֵּר עַל",visual:"🗑️",exp:"ויתור רשמי על זכות, דרישה או תשלום.",engEx:"The company decided to waive the cancellation fee.",hebEx:"החברה החליטה לוותר על דמי הביטול."},{word:"Instances",phonetic:"אִין-סְטַנְסֶס",meaning:"מִקְרִים",visual:"📁",exp:"דוגמאות או אירועים ספציפיים.",engEx:"There were several instances of fraud reported.",hebEx:"דווחו מספר מקרים של הונאה."},{word:"Mentioned",phonetic:"מֶנ-שֶׁנְד",meaning:"מוּזְכָּר",visual:"💬",exp:"משהו שהתייחסו אליו בשיחה או בכתב.",engEx:"She mentioned your name during the meeting.",hebEx:"היא הזכירה את שמך במהלך הפגישה."},{word:"Tone",phonetic:"טוֹן",meaning:"טוֹן / צְלִיל",visual:"🎵",exp:"אופי הצליל או נימת הקול (שיכולה להעיד על מצב רוח).",engEx:"His aggressive tone made everyone uncomfortable.",hebEx:"הטון האגרסיבי שלו גרם לכולם להרגיש לא בנוח."},{word:"Biased",phonetic:"בַּאיְ-יֶסְט",meaning:"מְשֻׁחָד",visual:"⚖️",exp:"חוסר אובייקטיביות, נטייה לא הוגנת לטובת צד מסוים.",engEx:"The investigation proved that the reporter was highly biased.",hebEx:"החקירה הוכיחה שהכתב היה משוחד מאוד."},{word:"Exposed",phonetic:"אֶקְס-פּוֹזְד",meaning:"חָשׂוּף",visual:"🔦",exp:"גילוי או הוצאה לאור של משהו שהיה נסתר.",engEx:"The scandal exposed the corruption in the organization.",hebEx:"השערורייה חשפה את השחיתות בארגון."}],
+  w3d1:[{word:"Perform",phonetic:"פֶּרְפוֹרְם",meaning:"לְבַצֵּעַ",visual:"🎭",exp:"לבצע משימה, פעולה או הופעה.",engEx:"The surgeon will perform the operation tomorrow.",hebEx:"המנתח יבצע את הניתוח מחר."},{word:"Paralyzed",phonetic:"פַּרָלַיְזְד",meaning:"מְשֻׁתָּק",visual:"🦽",exp:"אדם שאינו מסוגל להזיז חלק מגופו, או מצב של חוסר יכולת לפעול.",engEx:"The accident left him paralyzed from the waist down.",hebEx:"התאונה הותירה אותו משותק מהמותניים ומטה."},{word:"Arm(s)",phonetic:"אָרְם/ס",meaning:"זְרוֹעַ / זְרוֹעוֹת",visual:"💪",exp:"גפה עליונה של גוף האדם, או זרוע של מכונה.",engEx:"He carried the heavy box in his arms.",hebEx:"הוא נשא את הקופסה הכבדה בזרועותיו."},{word:"Fetch",phonetic:"פֶצ'",meaning:"לְהָבִיא",visual:"🐕",exp:"ללכת להביא משהו ולחזור איתו.",engEx:"Please fetch me a glass of water.",hebEx:"אנא הבא לי כוס מים."},{word:"Scratch Itches",phonetic:"סְקְרַאצ' אִיצֶ'ס",meaning:"לְגָרֵד",visual:"💅",exp:"להעביר ציפורניים על העור כדי להקל על תחושת גירוד.",engEx:"The dog used its back leg to scratch itches.",hebEx:"הכלב השתמש ברגלו האחורית כדי לגרד."},{word:"Plenty",phonetic:"פְּלֶנְטִי",meaning:"שֶׁפַע",visual:"🧺",exp:"כמות גדולה ומספקת של משהו.",engEx:"We have plenty of time before the train leaves.",hebEx:"יש לנו שפע של זמן לפני שהרכבת עוזבת."},{word:"Comb",phonetic:"קוֹם",meaning:"לְסָרֵק",visual:"🪮",exp:"סידור השיער באמצעות מסרק. האות b שותקת.",engEx:"She needs to comb her hair before the meeting.",hebEx:"היא צריכה לסרק את שערה לפני הפגישה."},{word:"Hair",phonetic:"הֶר",meaning:"שֵׂעָר",visual:"💇‍♀️",exp:"צומח מקרקפת הראש.",engEx:"Her hair is naturally curly and very long.",hebEx:"השיער שלה מתולתל באופן טבעי וארוך מאוד."},{word:"Independent",phonetic:"אִינְדִיפֶּנְדֶנְט",meaning:"עַצְמָאִי",visual:"🦅",exp:"אדם או גוף שאינו תלוי באחרים ופועל בכוחות עצמו.",engEx:"After college, he became financially independent.",hebEx:"לאחר המכללה, הוא הפך לעצמאי כלכלית."},{word:"Forced",phonetic:"פוֹרְסְד",meaning:"כָּפוּי / הוּכְרַח",visual:"⛓️",exp:"פעולה שנעשתה בניגוד לרצון החופשי, תחת לחץ.",engEx:"They were forced to leave their homes due to the storm.",hebEx:"הם הוכרחו לעזוב את בתיהם עקב הסופה."}],
+  w3d2:[{word:"Nursing",phonetic:"נֶרְסִינְג",meaning:"טִיפּוּל / סִיעוּד",visual:"🧑‍⚕️",exp:"מקצוע או פעולת הטיפול בחולים ופצועים.",engEx:"She chose a career in nursing to help people.",hebEx:"היא בחרה בקריירה בסיעוד כדי לעזור לאנשים."},{word:"Despair",phonetic:"דִיסְפֶּר",meaning:"יֵאוּשׁ",visual:"🥀",exp:"אובדן מוחלט של תקווה.",engEx:"Don't give up in moments of despair.",hebEx:"אל תרים ידיים ברגעי ייאוש."},{word:"Helplessness",phonetic:"הֶלְפְּלֶסְנֶס",meaning:"חוֹסֶר אוֹנִים",visual:"🪫",exp:"תחושה שאין ביכולתך לעשות דבר כדי לשנות את המצב.",engEx:"He felt a deep sense of helplessness when he lost his job.",hebEx:"הוא חש תחושה עמוקה של חוסר אונים כשאיבד את עבודתו."},{word:"Dormitories",phonetic:"דּוֹרְמִיטוֹרִיז",meaning:"מְעוֹנוֹת",visual:"🏢",exp:"מגורי סטודנטים במוסד חינוכי.",engEx:"Many first-year students live in the college dormitories.",hebEx:"הרבה סטודנטים שנה ראשונה גרים במעונות המכללה."},{word:"Raising",phonetic:"רֵיְיזִינְג",meaning:"הֲרָמָה / לְגַדֵּל",visual:"🏗️",exp:"פעולה של הגבהת משהו, או גידול ילדים ובעלי חיים.",engEx:"They are raising funds for the new hospital.",hebEx:"הם מגייסים כספים לבית החולים החדש."},{word:"Laser beam",phonetic:"לֵיְזֶר בִּים",meaning:"קֶרֶן לֵיְיזֶר",visual:"🔦",exp:"אלומת אור ממוקדת וחזקה.",engEx:"The security system uses an invisible laser beam.",hebEx:"מערכת האבטחה משתמשת בקרן לייזר בלתי נראית."},{word:"Respond",phonetic:"רִיסְפּוֹנְד",meaning:"תְּגוּבָה / לְהָגִיב",visual:"💬",exp:"מתן מענה לשאלה, מצב או פעולה.",engEx:"It took him a few minutes to respond to the message.",hebEx:"לקח לו כמה דקות להגיב להודעה."},{word:"Institutions",phonetic:"אִינְסְטִיטְיוּשֶׁנְס",meaning:"מוֹסָדוֹת",visual:"🏛️",exp:"ארגונים רשמיים, כמו מוסדות חינוך, ממשלה או פיננסים.",engEx:"Banks are important financial institutions.",hebEx:"בנקים הם מוסדות פיננסיים חשובים."},{word:"Applications",phonetic:"אַפְּלִיקֵיְישֶׁנְס",meaning:"יִישּׂוּמִים / בַּקָּשׁוֹת",visual:"📱",exp:"שימושים מעשיים לטכנולוגיה, או טפסי הרשמה.",engEx:"This software has many practical applications.",hebEx:"לתוכנה זו יש יישומים מעשיים רבים."},{word:"Significance",phonetic:"סִיגְנִיפִיקֶנְס",meaning:"מַשְׁמָעוּת",visual:"🌟",exp:"החשיבות או המשמעות העמוקה של דבר מה.",engEx:"Do you understand the significance of this decision?",hebEx:"האם אתה מבין את המשמעות של ההחלטה הזו?"}],
+  w3d3:[{word:"Graduating",phonetic:"גְרַאגְ'יוּאֵיְטִינְג",meaning:"סִיּוּם לִימּוּדִים",visual:"🎓",exp:"קבלת תואר אקדמי או סיום שלב חינוכי.",engEx:"She is graduating from university with top honors.",hebEx:"היא מסיימת את לימודיה באוניברסיטה בהצטיינות יתרה."},{word:"Immense",phonetic:"אִימֶנְס",meaning:"עָצוּם",visual:"🐘",exp:"משהו גדול מאוד בגודלו או בהיקפו.",engEx:"The new project requires an immense amount of money.",hebEx:"הפרויקט החדש דורש כמות עצומה של כסף."},{word:"Amusing",phonetic:"אֶמְיוּזִינְג",meaning:"מְשַׁעֲשֵׁעַ",visual:"🤣",exp:"משהו שגורם לצחוק, חיוך או בידור קל.",engEx:"I found his story highly amusing.",hebEx:"מצאתי את הסיפור שלו מאוד משעשע."},{word:"Contributors",phonetic:"קוֹנְטְרִיבְּיוּטוֹרְס",meaning:"תּוֹרְמִים",visual:"🤝",exp:"אנשים שמעניקים זמן, כסף או מאמץ למען מטרה משותפת.",engEx:"We thank all the contributors for their generous donations.",hebEx:"אנו מודים לכל התורמים על תרומותיהם הנדיבות."},{word:"Approximately",phonetic:"אַפְּרוֹקְסִימֶטְלִי",meaning:"בְּעֵרֶךְ",visual:"⚖️",exp:"הערכה קרובה למדד מסוים, לא מדוייק במאת האחוזים.",engEx:"The journey will take approximately two hours.",hebEx:"המסע ייקח בערך שעתיים."},{word:"Companion",phonetic:"קוֹמְפֶּנְיוֹן",meaning:"בֶּן לִוְיָה",visual:"🚶‍♂️",exp:"מישהו שמבלה זמן רב איתך או מלווה אותך במסע.",engEx:"His dog is his most loyal companion.",hebEx:"הכלב שלו הוא בן הלוויה הנאמן ביותר שלו."},{word:"Pair",phonetic:"פֶּר",meaning:"זוּג",visual:"🧦",exp:"שני פריטים מאותו סוג שמשמשים יחד.",engEx:"I need to buy a new pair of shoes.",hebEx:"אני צריך לקנות זוג נעליים חדש."},{word:"Capable",phonetic:"קֵיְיפָּבֶּל",meaning:"מְסוּגָּל",visual:"🦸‍♂️",exp:"אדם שיש לו את הכישורים הנדרשים לבצע משימה.",engEx:"She is a highly capable manager.",hebEx:"היא מנהלת בעלת יכולות גבוהות."},{word:"Runs It",phonetic:"רַאנְס אִיט",meaning:"מְנַהֵל אֶת זֶה",visual:"🏃‍♂️",exp:"מנהל או מתפעל עסק או מערכת (ולא רק 'לרוץ').",engEx:"My father owns the shop and runs it himself.",hebEx:"אבא שלי הוא הבעלים של החנות ומנהל אותה בעצמו."},{word:"Phrases",phonetic:"פְרֵיְיזֶס",meaning:"בִּיטּוּיִים",visual:"🗣️",exp:"קבוצת מילים המהווה יחידה בעלת משמעות בתוך משפט.",engEx:"You need to learn some useful English phrases for the trip.",hebEx:"אתה צריך ללמוד כמה ביטויים שימושיים באנגלית לקראת הטיול."}],
+  w3d4:[{word:"Spent",phonetic:"סְפֶּנְט",meaning:"לְבַזְבֵּז / הוֹצִיא",visual:"💸",exp:"צורת העבר של Spend, להוציא כסף או להעביר זמן.",engEx:"I spent all my money on a new computer.",hebEx:"בזבזתי את כל כספי על מחשב חדש."},{word:"Organization",phonetic:"אוֹרְגַּנִיזֵיְישֶׁן",meaning:"אִרְגּוּן",visual:"🏢",exp:"קבוצת אנשים הפועלת יחד למטרה מוגדרת.",engEx:"The charity is a non-profit organization.",hebEx:"עמותת החסד היא ארגון ללא מטרות רווח."},{word:"Owners",phonetic:"אוֹנֶרְס",meaning:"בְּעָלִים",visual:"🔑",exp:"האנשים להם שייך רכוש, עסק או חיה.",engEx:"The restaurant owners decided to renovate the place.",hebEx:"בעלי המסעדה החליטו לשפץ את המקום."},{word:"Task",phonetic:"טַאסְק",meaning:"מְלָאכָה / מְשִׂימָה",visual:"✅",exp:"עבודה מוגדרת שצריך לבצע.",engEx:"Writing this report is a difficult task.",hebEx:"כתיבת הדוח הזה היא משימה קשה."},{word:"Idea",phonetic:"אַיְידִיָּה",meaning:"רַעְיוֹן",visual:"💡",exp:"מחשבה, תוכנית או הצעה הנוצרת בראש.",engEx:"That's a brilliant idea for the new project!",hebEx:"זה רעיון גאוני לפרויקט החדש."},{word:"College",phonetic:"קוֹלֶג'",meaning:"מִכְלָלָה",visual:"🏫",exp:"מוסד להשכלה גבוהה.",engEx:"He is studying engineering at the local college.",hebEx:"הוא לומד הנדסה במכללה המקומית."},{word:"Program",phonetic:"פְּרוֹגְרַם",meaning:"תָּכְנִית",visual:"📅",exp:"מערך פעולות מתוכנן, או תוכנית מחשב/טלוויזיה.",engEx:"We are launching a new training program for employees.",hebEx:"אנו משיקים תוכנית הכשרה חדשה לעובדים."},{word:"Human",phonetic:"הְיוּמֶן",meaning:"אָדָם",visual:"🧍‍♂️",exp:"יצור אנושי, בניגוד לחיה או מכונה.",engEx:"To err is human; everyone makes mistakes.",hebEx:"לטעות זה אנושי; כולם עושים טעויות."},{word:"Accident",phonetic:"אַקְסִידֶנְט",meaning:"תְּאוּנָה",visual:"💥",exp:"אירוע בלתי צפוי שנגרם לרוב עם נזק או פציעה.",engEx:"Luckily, no one was hurt in the car accident.",hebEx:"למרבה המזל, איש לא נפגע בתאונת הדרכים."},{word:"Objects",phonetic:"אוֹבְּגֶ'קְטְס",meaning:"חֲפָצִים",visual:"🎲",exp:"דברים מוחשיים שניתן לראות ולגעת בהם.",engEx:"The room was filled with strange metallic objects.",hebEx:"החדר היה מלא בחפצי מתכת מוזרים."}],
+  w7d1:[{word:"Thirds",phonetic:"תֶ'רְדְס",meaning:"שליש / שלישים",visual:"🍕",exp:"חלוקה ל-3 חלקים שווים.",engEx:"Two thirds of the class passed the exam.",hebEx:"שני שלישים מהכיתה עברו את המבחן."},{word:"Ranging",phonetic:"רֵיְינְגִ'ינְג",meaning:"נע בין / טווח",visual:"📏",exp:"מתאר גבולות של סקאלה כלשהי.",engEx:"Prices are ranging from 10 to 50 dollars.",hebEx:"המחירים נעים בין 10 ל-50 דולר."},{word:"Purely",phonetic:"פְּיוּרְלִי",meaning:"באופן טהור / בלבד",visual:"🕊️",exp:"באופן מוחלט וללא תוספות.",engEx:"Her decision was purely based on logic.",hebEx:"ההחלטה שלה התבססה אך ורק על היגיון."},{word:"View",phonetic:"וְיוּ",meaning:"נוף / מבט / השקפה",visual:"🖼️",exp:"צורת הסתכלות על דברים או נוף פיזי.",engEx:"We have a beautiful sea view from the window.",hebEx:"יש לנו נוף יפה לים מהחלון."},{word:"Certainly",phonetic:"סֶרְטֶנְלִי",meaning:"מסוים / בוודאי",visual:"👍",exp:"ביטוי של ביטחון והסכמה.",engEx:"I will certainly attend the meeting tomorrow.",hebEx:"אני בהחלט אשתתף בפגישה מחר."},{word:"Sense",phonetic:"סֶנְס",meaning:"חוש / מובן",visual:"🧠",exp:"היגיון של דבר, או חוש פיזי.",engEx:"This explanation makes perfect sense.",hebEx:"ההסבר הזה הגיוני לחלוטין."},{word:"Extremely",phonetic:"אֶקְסְטְרִימְלִי",meaning:"מאוד / באופן קיצוני",visual:"🌶️",exp:"באופן קיצוני או ברמה גבוהה מאוד.",engEx:"The weather is extremely hot today.",hebEx:"מזג האוויר חם בצורה קיצונית היום."},{word:"Opposed",phonetic:"אוֹפּוֹזְד",meaning:"התנגד / מנוגד",visual:"⚔️",exp:"שני דברים העומדים בניגוד אחד לשני.",engEx:"He was completely opposed to the new plan.",hebEx:"הוא היה מנוגד לחלוטין לתוכנית החדשה."},{word:"Confusion",phonetic:"קוֹנְפְיוּזֶ'ן",meaning:"בלבול",visual:"😵‍💫",exp:"מצב של חוסר ודאות או חוסר הבנה.",engEx:"There was a lot of confusion regarding the new rules.",hebEx:"היה הרבה בלבול בנוגע לכללים החדשים."},{word:"Proven",phonetic:"פְּרוּבֶן",meaning:"מוכח / הוכח",visual:"🔬",exp:"דבר שהוכיחו את האמיתות שלו.",engEx:"It is a proven fact that smoking is bad for you.",hebEx:"זו עובדה מוכחת שעישון מזיק לך."}],
+  w7d2:[{word:"Convinced",phonetic:"קוֹנְוִוינְסְט",meaning:"משוכנע / שוכנע",visual:"🤝",exp:"מישהו שגרמו לו להאמין במשהו.",engEx:"I am completely convinced that we will win.",hebEx:"אני משוכנע לחלוטין שאנחנו ננצח."},{word:"Badly",phonetic:"בַּאדְלִי",meaning:"באופן גרוע / קשות",visual:"👎",exp:"באופן שלילי או באופן עז.",engEx:"The car was badly damaged in the crash.",hebEx:"המכונית ניזוקה קשות בתאונה."},{word:"Designed",phonetic:"דִיזַאיְנְד",meaning:"מעוצב / מתוכנן",visual:"📐",exp:"נבנה תוכנן ועוצב מראש למטרה כלשהי.",engEx:"The app is designed for young children.",hebEx:"האפליקציה מעוצבת ומתוכננת לילדים צעירים."},{word:"Pre-prejudiced",phonetic:"פְּרִי-פְּרֶג'וּדִיסְט",meaning:"דעות קדומות",visual:"🙈",exp:"לשפוט מראש לפני שיודעים את העובדות.",engEx:"She had pre-prejudiced views about the country.",hebEx:"היו לה דעות קדומות לגבי המדינה."},{word:"Split",phonetic:"סְפְּלִיט",meaning:"לפצל / לחלק",visual:"✂️",exp:"לחתוך או להפריד דבר לחלקים.",engEx:"Let's split the bill between us.",hebEx:"בואו נפצל את החשבון בינינו."},{word:"Weak",phonetic:"וִויק",meaning:"חלש",visual:"🥀",exp:"חסר כוח פיזי או רעוע.",engEx:"He felt too weak to walk after the illness.",hebEx:"הוא הרגיש חלש מדי ללכת אחרי המחלה."},{word:"Fluently",phonetic:"פְלוּאֶנְטְלִי",meaning:"ברהיטות / באופן שוטף",visual:"🗣️",exp:"לדבר שפה באופן רציף וטבעי.",engEx:"She speaks three languages fluently.",hebEx:"היא מדברת שלוש שפות ברהיטות."},{word:"Rather than",phonetic:"רַאדֶ'ר דֶ'ן",meaning:"מאשר / במקום",visual:"🔄",exp:"העדפה של דבר אחד על פני אחר.",engEx:"I would like tea rather than coffee.",hebEx:"הייתי רוצה תה במקום קפה."},{word:"Resist",phonetic:"רֶזִיסְט",meaning:"להתנגד",visual:"🛡️",exp:"להתנגד באופן פעיל למשהו או למישהו.",engEx:"The soldiers will resist the enemy attack.",hebEx:"החיילים יתנגדו למתקפת האויב."},{word:"Instance",phonetic:"אִינְסְטַנְס",meaning:"דוגמה / מופע",visual:"🔍",exp:"מקרה בודד או דוגמה למשהו.",engEx:"Give me one instance where I was wrong.",hebEx:"תן לי דוגמה אחת שבה טעיתי."}],
+  w7d3:[{word:"Flexibility",phonetic:"פְלֶקְסִיבִּילִיטִי",meaning:"גמישות",visual:"🤸",exp:"היכולת להשתנות ולהתאים למצבים חדשים.",engEx:"Yoga improves your physical flexibility.",hebEx:"יוגה משפרת את הגמישות הפיזית שלך."},{word:"Processes",phonetic:"פְּרוֹסֶסֶס",meaning:"תהליכים",visual:"⚙️",exp:"סדרה של פעולות המובילות לתוצאה מסוימת.",engEx:"We need to improve our working processes.",hebEx:"אנחנו צריכים לשפר את תהליכי העבודה שלנו."},{word:"Addition",phonetic:"אֶדִישֶׁן",meaning:"תוספת / בנוסף",visual:"➕",exp:"דבר שנוסף, או פעולת החיבור בחשבון.",engEx:"The new baby is a wonderful addition to the family.",hebEx:"התינוק החדש הוא תוספת נפלאה למשפחה."},{word:"Rushing",phonetic:"רַאשִׁינְג",meaning:"ממהר / למהר",visual:"🏃",exp:"תנועה במהירות רבה, לרוב מתוך לחץ.",engEx:"He was rushing to catch the morning train.",hebEx:"הוא מיהר כדי לתפוס את רכבת הבוקר."},{word:"Rightfully",phonetic:"רַאיְיטְפוּלִי",meaning:"בצדק",visual:"⚖️",exp:"פעולה שנעשית בזכות או על פי הצדק.",engEx:"He rightfully earned the first place prize.",hebEx:"הוא הרוויח בצדק את פרס המקום הראשון."},{word:"Acquire",phonetic:"אֶקְוַואיֶיר",meaning:"לרכוש / להשיג",visual:"🛍️",exp:"השגה או קבלה של ידע, נכס או מיומנות.",engEx:"It takes years to acquire this level of skill.",hebEx:"לוקח שנים לרכוש רמה כזו של מיומנות."},{word:"Attitude",phonetic:"אַטִיטְיוּד",meaning:"גישה / יחס",visual:"✨",exp:"צורת חשיבה והתנהגות כלפי אנשים או מצבים.",engEx:"She has a very positive attitude toward life.",hebEx:"יש לה גישה מאוד חיובית לחיים."},{word:"Somewhat",phonetic:"סַאמְוַואט",meaning:"במידת מה / כלשהו",visual:"🤏",exp:"במידה מסוימת, לא לחלוטין.",engEx:"The test was somewhat difficult, but I passed.",hebEx:"המבחן היה קשה במידת מה, אבל עברתי."},{word:"Apply",phonetic:"אַפְּלַאי",meaning:"להגיש (בקשה) / ליישם",visual:"📝",exp:"שימוש בידע לפעולה, או הגשת מועמדות.",engEx:"You should apply for that job opening.",hebEx:"אתה צריך להגיש מועמדות למשרה הפנויה ההיא."},{word:"Languages",phonetic:"לַנְגְוִויגֶ'ס",meaning:"שפות",visual:"🌐",exp:"מערכות תקשורת של מילים וצלילים.",engEx:"Learning new languages opens many doors.",hebEx:"לימוד שפות חדשות פותח דלתות רבות."}],
+  w7d4:[{word:"Population",phonetic:"פופְּיוּלֵיְישֶׁן",meaning:"אוכלוסיה",visual:"👨‍👩‍👧‍👦",exp:"כלל האנשים החיים באזור או במדינה.",engEx:"The population of the city is growing fast.",hebEx:"אוכלוסיית העיר גדלה במהירות."},{word:"Adulthood",phonetic:"אַדוּלְטְהוּד",meaning:"בגרות",visual:"🧑‍💼",exp:"התקופה בחיים שבה אדם נחשב בוגר.",engEx:"Moving out of home is a step into adulthood.",hebEx:"עזיבת הבית היא צעד לתוך הבגרות."},{word:"Studies",phonetic:"סְטַאדִיז",meaning:"מחקרים / לימודים",visual:"📚",exp:"תהליך של למידה או קבוצת מחקרים מדעיים.",engEx:"Recent studies show the importance of good sleep.",hebEx:"מחקרים אחרונים מראים את החשיבות של שינה טובה."},{word:"Actually",phonetic:"אַקְשׁוּאֶלִי",meaning:"למעשה",visual:"🎯",exp:"מילה המשמשת להדגשת האמת או סתירת טעות.",engEx:"I didn't forget; I actually bought you a gift!",hebEx:"לא שכחתי; למעשה קניתי לך מתנה!"},{word:"Fade",phonetic:"פֵיְיד",meaning:"לדהות / להתפוגג",visual:"🌫️",exp:"לאבד צבע, עוצמה או בהירות בהדרגה.",engEx:"The colors of the painting started to fade in the sun.",hebEx:"צבעי הציור התחילו לדהות בשמש."},{word:"Suggest",phonetic:"סַגְ'זֶ'סְט",meaning:"להציע",visual:"🙋",exp:"הבעת רעיון או תוכנית פעולה להתחשבות.",engEx:"I suggest we take a short break now.",hebEx:"אני מציע שניקח הפסקה קצרה עכשיו."},{word:"Influences",phonetic:"אִינְפְלוּאֶנְסֶס",meaning:"השפעות / משפיע",visual:"📡",exp:"כוחות או גורמים המשנים התנהגות או תוצאה.",engEx:"Social media powerfully influences modern society.",hebEx:"המדיה החברתית משפיעה בעוצמה על החברה המודרנית."},{word:"Participants",phonetic:"פַּרְטִיסִיפֶּנְטְס",meaning:"משתתפים",visual:"🙋‍♂️",exp:"אנשים שלוקחים חלק בפעילות, ניסוי או אירוע.",engEx:"All participants will receive a certificate.",hebEx:"כל המשתתפים יקבלו תעודה."},{word:"Bilingualism",phonetic:"בַּיי-לִינְגְוָולִיזֶם",meaning:"דו-לשוניות",visual:"💬",exp:"היכולת לדבר שתי שפות ברמת שפת אם.",engEx:"Bilingualism gives children a cognitive advantage.",hebEx:"דו-לשוניות נותנת לילדים יתרון קוגניטיבי."},{word:"Protect",phonetic:"פְּרוֹטֶקְט",meaning:"להגן",visual:"🛡️",exp:"שמירה על מישהו או משהו מפני פגיעה.",engEx:"Sunscreen will protect your skin from the sun.",hebEx:"קרם הגנה יגן על עורך מהשמש."}]
+};
+
+window.unseenArticleData = [
+    {j:"🖥️",e:"Most people use computers, smartphones, and tablets every day without thinking about the software that makes them work.",h:"רוב האנשים משתמשים במחשבים, סמארטפונים וטאבלטים מדי יום מבלי לחשוב על התוכנה שגורמת להם לעבוד."},
+    {j:"🌐",e:"Whether someone is browsing the internet, playing a game, or writing a document, there is a complex system working behind the scenes to coordinate all of these activities.",h:"בין אם מישהו גולש באינטרנט, משחק משחק או כותב מסמך, ישנה מערכת מורכבת שפועלת מאחורי הקלעים כדי לתאם את כל הפעילויות הללו."},
+    {j:"⚙️",e:"This system is called the Operating System (OS), and it serves as the bridge between the user, the applications, and the computer's hardware.",h:"מערכת זו נקראת מערכת הפעלה (OS), והיא משמשת כגשר בין המשתמש, היישומים והחומרה של המחשב."},
+    {j:"📜",e:"A famous story in the history of operating systems involves the development of Unix in the late 1960s and early 1970s.",h:"סיפור מפורסם בתולדות מערכות ההפעלה כולל את הפיתוח של Unix בסוף שנות ה-60 ותחילת שנות ה-70."},
+    {j:"⏳",e:"At the time, computers were extremely expensive and difficult to use.",h:"באותה תקופה, מחשבים היו יקרים במיוחד וקשים לשימוש."},
+    {j:"👨‍🔬",e:"Researchers at Bell Labs, including Ken Thompson and Dennis Ritchie, wanted to create an operating system that would be simple, efficient, and portable.",h:"חוקרים במעבדות בל, כולל קן תומפסון ודניס ריצ'י, רצו ליצור מערכת הפעלה שתהיה פשוטה, יעילה וניידת."},
+    {j:"💡",e:"Their work led to the creation of Unix, which later became one of the most influential operating systems in computing history.",h:"עבודתם הובילה ליצירת יוניקס, שלימים הפכה לאחת ממערכות ההפעלה המשפיעות ביותר בהיסטוריית המחשוב."},
+    {j:"💻",e:"Many modern systems, including Linux and macOS, are based on ideas that originated in Unix.",h:"מערכות מודרניות רבות, כולל לינוקס ו-macOS, מבוססות על רעיונות שמקורם ביוניקס."},
+    {j:"🔄",e:"One of the primary responsibilities of an operating system is process management.",h:"אחת מתחומי האחריות העיקריים של מערכת הפעלה היא ניהול תהליכים."},
+    {j:"▶️",e:"A process is a program that is currently being executed.",h:"תהליך הוא תוכנית שמתבצעת כעת."},
+    {j:"📈",e:"Modern computers often run dozens or even hundreds of processes simultaneously.",h:"מחשבים מודרניים מריצים לרוב עשרות או אפילו מאות תהליכים בו-זמנית."},
+    {j:"🎧",e:"For example, while a user is listening to music, browsing the web, and downloading a file, the operating system must decide how much processor time each process receives.",h:"לדוגמה, בזמן שמשתמש מאזין למוזיקה, גולש באינטרנט ומוריד קובץ, מערכת ההפעלה חייבת להחליט כמה זמן מעבד מקבל כל תהליך."},
+    {j:"📅",e:"This activity is known as scheduling.",h:"פעילות זו ידועה כתזמון."},
+    {j:"⚖️",e:"The scheduler ensures that all programs run smoothly and that no single process monopolizes the CPU.",h:"המתזמן מבטיח שכל התוכניות יפעלו בצורה חלקה וששום תהליך בודד לא יעשה מונופול על המעבד."},
+    {j:"🧠",e:"Another important function is memory management.",h:"פונקציה חשובה נוספת היא ניהול זיכרון."},
+    {j:"💾",e:"Computers have a limited amount of RAM (Random Access Memory), and the operating system must allocate this memory efficiently.",h:"למחשבים יש כמות מוגבלת של RAM (זיכרון גישה אקראית), ומערכת ההפעלה חייבת להקצות את הזיכרון הזה ביעילות."},
+    {j:"📊",e:"When several applications are running at the same time, the OS keeps track of which parts of memory belong to which process.",h:"כאשר מספר יישומים פועלים בו זמנית, מערכת ההפעלה עוקבת אילו חלקי זיכרון שייכים לאיזה תהליך."},
+    {j:"☁️",e:"Modern operating systems also use virtual memory, a technique that allows programs to use more memory than is physically available by temporarily storing data on a storage device.",h:"מערכות הפעלה מודרניות משתמשות גם בזיכרון וירטואלי, טכניקה המאפשרת לתוכניות להשתמש ביותר זיכרון ממה שזמין פיזית על ידי אחסון זמני של נתונים במכשיר אחסון."},
+    {j:"📁",e:"The operating system is also responsible for file management.",h:"מערכת ההפעלה אחראית גם על ניהול הקבצים."},
+    {j:"📄",e:"Every document, image, video, and application is stored as a file.",h:"כל מסמך, תמונה, וידאו ואפליקציה נשמרים כקובץ."},
+    {j:"🗂️",e:"The OS organizes these files into directories or folders and provides users with tools to create, delete, move, and modify them.",h:"מערכת ההפעלה מארגנת קבצים אלו לספריות או תיקיות ומספקת למשתמשים כלים ליצור, למחוק, להזיז ולשנות אותם."},
+    {j:"🛑",e:"Without a file system, managing information on a computer would be nearly impossible.",h:"ללא מערכת קבצים, ניהול מידע על מחשב יהיה כמעט בלתי אפשרי."},
+    {j:"🖨️",e:"Another key concept is device management. Computers contain many hardware components such as keyboards, printers, monitors, and storage devices.",h:"מושג מפתח נוסף הוא ניהול התקנים. מחשבים מכילים רכיבי חומרה רבים כגון מקלדות, מדפסות, צגים ומכשירי אחסון."},
+    {j:"🔌",e:"The operating system communicates with these devices through special software called device drivers.",h:"מערכת ההפעלה מתקשרת עם מכשירים אלו באמצעות תוכנה מיוחדת הנקראת מנהלי התקנים (דרייברים)."},
+    {j:"📡",e:"Drivers allow the operating system to send instructions to hardware and receive information from it.",h:"דרייברים מאפשרים למערכת ההפעלה לשלוח הוראות לחומרה ולקבל ממנה מידע."},
+    {j:"🤝",e:"Thanks to drivers, users can connect new devices and begin using them without understanding their internal design.",h:"הודות לדרייברים, משתמשים יכולים לחבר מכשירים חדשים ולהתחיל להשתמש בהם מבלי להבין את העיצוב הפנימי שלהם."},
+    {j:"🛡️",e:"Security has become one of the most important aspects of modern operating systems.",h:"אבטחה הפכה לאחד ההיבטים החשובים ביותר של מערכות הפעלה מודרניות."},
+    {j:"🔑",e:"Features such as user authentication, access control, and encryption help protect sensitive information from unauthorized access.",h:"תכונות כגון אימות משתמש, בקרת גישה והצפנה עוזרות להגן על מידע רגיש מפני גישה לא מורשית."},
+    {j:"⚔️",e:"As cyberattacks become more sophisticated, operating systems continuously evolve to provide stronger security mechanisms and better protection against malicious software.",h:"ככל שהתקפות סייבר הופכות למתוחכמות יותר, מערכות ההפעלה מתפתחות ללא הרף כדי לספק מנגנוני אבטחה חזקים יותר והגנה טובה יותר מפני תוכנות זדוניות."},
+    {j:"📱",e:"The rise of smartphones introduced another chapter in the story of operating systems.",h:"עלייתם של הסמארטפונים הציגה פרק נוסף בסיפורן של מערכות ההפעלה."},
+    {j:"🔋",e:"Mobile operating systems such as Android and iOS were designed to operate on devices with limited power consumption while supporting touch-screen interfaces.",h:"מערכות הפעלה ניידות כגון אנדרואיד ו-iOS נועדו לפעול במכשירים בעלי צריכת חשמל מוגבלת תוך תמיכה בממשקי מסך מגע."},
+    {j:"🌍",e:"Today, billions of people interact with these systems daily, making operating systems more important than ever before.",h:"כיום, מיליארדי אנשים מקיימים אינטראקציה עם המערכות הללו מדי יום, מה שהופך את מערכות ההפעלה לחשובות מאי פעם."},
+    {j:"🏗️",e:"In conclusion, operating systems are the foundation of modern computing.",h:"לסיכום, מערכות הפעלה הן הבסיס למחשוב מודרני."},
+    {j:"🧩",e:"They manage processes, memory, files, devices, and security while allowing users to interact with hardware in a simple and efficient way.",h:"הם מנהלים תהליכים, זיכרון, קבצים, התקנים ואבטחה תוך שהם מאפשרים למשתמשים לקיים אינטראקציה עם החומרה בצורה פשוטה ויעילה."},
+    {j:"🚀",e:"From the creation of Unix to the operating systems running today's smartphones and cloud servers, the evolution of operating systems has played a crucial role in shaping the digital world we know today.",h:"מיצירת יוניקס ועד למערכות ההפעלה המריצות את הסמארטפונים ושרתי הענן של היום, לאבולוציה של מערכות ההפעלה היה תפקיד מכריע בעיצוב העולם הדיגיטלי שאנו מכירים כיום."}
+];
+
+window.daysList = [
+  { id: 'w1d1', week: 'week1', title: 'יום ראשון', date: '26/04/2026' },
+  { id: 'w1d2', week: 'week1', title: 'יום שני', date: '27/04/2026' },
+  { id: 'w1d3', week: 'week1', title: 'יום שלישי', date: '28/04/2026' },
+  { id: 'w1d4', week: 'week1', title: 'יום רביעי', date: '29/04/2026' },
+  { id: 'w2d1', week: 'week2', title: 'יום ראשון', date: '03/05/2026' },
+  { id: 'w2d2', week: 'week2', title: 'יום שני', date: '04/05/2026' },
+  { id: 'w2d3', week: 'week2', title: 'יום שלישי', date: '05/05/2026' },
+  { id: 'w2d4', week: 'week2', title: 'יום רביעי', date: '06/05/2026' },
+  { id: 'w3d1', week: 'week3', title: 'יום ראשון', date: '10/05/2026' },
+  { id: 'w3d2', week: 'week3', title: 'יום שני', date: '11/05/2026' },
+  { id: 'w3d3', week: 'week3', title: 'יום שלישי', date: '12/05/2026' },
+  { id: 'w3d4', week: 'week3', title: 'יום רביעי', date: '13/05/2026' },
+  { id: 'w7d1', week: 'week7', title: 'יום ראשון', date: '24/05/2026' },
+  { id: 'w7d2', week: 'week7', title: 'יום שני', date: '25/05/2026' },
+  { id: 'w7d3', week: 'week7', title: 'יום שלישי', date: '26/05/2026' },
+  { id: 'w7d4', week: 'week7', title: 'יום רביעי', date: '27/05/2026' }
+];
+
+window.currentDay = 'home';
+window.currentWeek = 'home';
+window.wordIndex = 0;
+window.speechRate = 0.85;
+window.summaryMode = 'weeks';
+
+window.audioState = window.audioState || {
+    fullText: "",
+    btnElement: null,
+    estimatedDuration: 0,
+    elapsed: 0,
+    interval: null,
+    isPaused: false,
+    isDragging: false
+};
+window.audioPlaying = false;
+
+window.quizState = 'start';
+window.quizDifficulty = 'medium';
+window.quizScore = 0;
+window.quizQuestions = [];
+window.currentQuizIndex = 0;
+window.quizHistory = [];
+try { 
+    window.highScore = localStorage.getItem('fluencyUnseenHighScore') || 0; 
+    const storedHistory = localStorage.getItem('fluencyUnseenHistory');
+    if (storedHistory) window.quizHistory = JSON.parse(storedHistory);
+} catch(e) { window.highScore = 0; }
+
+window.setWeek = function(week) {
+    window.stopAudio();
+    window.currentWeek = week;
+    if (week === 'week1') window.currentDay = 'w1d1';
+    else if (week === 'week2') window.currentDay = 'w2d1';
+    else if (week === 'week3') window.currentDay = 'w3d1';
+    else if (week === 'week7') window.currentDay = 'w7d1';
+    else window.currentDay = week; 
+    window.wordIndex = 0;
+    if (week !== 'quiz') window.quizState = 'start';
+    window.render();
+};
+
+window.setDay = function(dayId) { window.stopAudio(); window.currentDay = dayId; window.wordIndex = 0; window.render(); };
+window.setSummaryMode = function(mode) { window.summaryMode = mode; window.render(); };
+window.goToWord = function(dayId, index) { window.stopAudio(); window.currentDay = dayId; window.currentWeek = window.daysList.find(d => d.id === dayId).week; window.wordIndex = index; window.render(); };
+window.changeRate = function(val) { window.speechRate = parseFloat(val); window.render(); };
+
+window.formatTime = function(seconds) {
+    if(isNaN(seconds) || seconds < 0) seconds = 0;
+    let m = Math.floor(seconds / 60);
+    let s = Math.floor(seconds % 60);
+    return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+};
+
+window.playAudio = function(text, btnElement) {
+    window.stopAudio();
+    
+    if (!window.audioState) window.audioState = {};
+    
+    window.audioState.fullText = text;
+    window.audioState.btnElement = btnElement;
+    window.audioState.elapsed = 0;
+    window.audioState.isPaused = false;
+    window.audioState.isDragging = false;
+    
+    let wordCount = text.split(' ').length;
+    let wps = (130 / 60) * window.speechRate;
+    window.audioState.estimatedDuration = wordCount / wps;
+    if(window.audioState.estimatedDuration < 2) window.audioState.estimatedDuration = 2; 
+    
+    if(document.getElementById('audio-time-total')) {
+        document.getElementById('audio-time-total').innerText = window.formatTime(window.audioState.estimatedDuration);
+        document.getElementById('audio-time-current').innerText = "00:00";
+        document.getElementById('audio-slider').value = 0;
+    }
+
+    window.playAudioChunk(text);
+};
+
+window.playAudioChunk = function(textChunk) {
+    if (!window.speechSynthesis) return;
+    const utterance = new SpeechSynthesisUtterance(textChunk);
+    utterance.lang = 'en-US';
+    utterance.rate = window.speechRate;
+    const voices = window.speechSynthesis.getVoices();
+    const preferredVoice = voices.find(v => v.name.includes('Google US English')) || voices.find(v => v.lang === 'en-US' && v.localService === true) || voices.find(v => v.lang.startsWith('en'));
+    if (preferredVoice) utterance.voice = preferredVoice;
+    
+    utterance.onstart = function() {
+        window.audioPlaying = true;
+        if(document.getElementById('audio-player')) document.getElementById('audio-player').classList.add('visible');
+        if(document.getElementById('play-pause-btn')) document.getElementById('play-pause-btn').innerHTML = window.icons.pause;
+        
+        if (!window.audioState) window.audioState = {};
+        
+        if(window.audioState.btnElement) window.audioState.btnElement.classList.add('active');
+        
+        if (window.audioState.interval) clearInterval(window.audioState.interval);
+        
+        window.audioState.interval = setInterval(() => {
+            if(!window.audioState.isPaused && !window.audioState.isDragging) {
+                window.audioState.elapsed += 0.1;
+                if(window.audioState.elapsed >= window.audioState.estimatedDuration) {
+                    window.audioState.elapsed = window.audioState.estimatedDuration;
+                }
+                let pct = (window.audioState.elapsed / window.audioState.estimatedDuration) * 100;
+                if(document.getElementById('audio-slider')) {
+                    document.getElementById('audio-slider').value = pct;
+                    if(document.getElementById('audio-time-current')) {
+                        document.getElementById('audio-time-current').innerText = window.formatTime(window.audioState.elapsed);
+                    }
+                }
+            }
+        }, 100);
+    };
+    
+    utterance.onend = function() {
+        if(window.audioState && window.audioState.elapsed + 1 >= window.audioState.estimatedDuration) {
+            window.stopAudio();
+        }
+    };
+    
+    window.currentUtterance = utterance;
+    window.speechSynthesis.speak(utterance);
+};
+
+window.togglePlayPause = function() {
+    if(!window.audioState) return;
+    if('speechSynthesis' in window && window.speechSynthesis.speaking) {
+        if(window.speechSynthesis.paused) {
+            window.speechSynthesis.resume();
+            window.audioState.isPaused = false;
+            if(document.getElementById('play-pause-btn')) document.getElementById('play-pause-btn').innerHTML = window.icons.pause;
+        } else {
+            window.speechSynthesis.pause();
+            window.audioState.isPaused = true;
+            if(document.getElementById('play-pause-btn')) document.getElementById('play-pause-btn').innerHTML = window.icons.play;
+        }
+    }
+};
+
+window.stopAudio = function() {
+    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    if (typeof window.audioState !== 'undefined' && window.audioState !== null) {
+        if (window.audioState.interval) {
+            clearInterval(window.audioState.interval);
+        }
+        window.audioState.interval = null;
+    } else {
+        window.audioState = {}; 
+    }
+    window.audioPlaying = false;
+    window.currentUtterance = null;
+    const player = document.getElementById('audio-player');
+    if(player) player.classList.remove('visible');
+    const activeBtns = document.querySelectorAll('.story-audio-btn.active');
+    activeBtns.forEach(btn => btn.classList.remove('active'));
+};
+
+window.startAudioDrag = function() {
+    if (window.audioState) window.audioState.isDragging = true;
+};
+
+window.stopAudioDrag = function(val) {
+    if (window.audioState) window.audioState.isDragging = false;
+    window.seekToPercent(val / 100);
+};
+
+window.handleSliderInput = function(val) {
+    if (!window.audioState) return;
+    let seconds = (val / 100) * window.audioState.estimatedDuration;
+    if(document.getElementById('audio-time-current')) {
+        document.getElementById('audio-time-current').innerText = window.formatTime(seconds);
+    }
+};
+
+window.seekRelative = function(secondsOffset) {
+    if(!window.audioPlaying || !window.audioState) return;
+    let newElapsed = window.audioState.elapsed + secondsOffset;
+    if(newElapsed < 0) newElapsed = 0;
+    if(newElapsed > window.audioState.estimatedDuration) newElapsed = window.audioState.estimatedDuration;
+    window.seekToPercent(newElapsed / window.audioState.estimatedDuration);
+};
+
+window.seekToPercent = function(pct) {
+    if(!window.audioState || !window.audioState.fullText) return;
+    
+    if (window.audioState.interval) {
+        clearInterval(window.audioState.interval);
+        window.audioState.interval = null;
+    }
+    
+    if ('speechSynthesis' in window) window.speechSynthesis.cancel(); 
+    
+    window.audioState.elapsed = window.audioState.estimatedDuration * pct;
+    let words = window.audioState.fullText.split(' ');
+    let wordIndex = Math.floor(words.length * pct);
+    
+    let remainingText = words.slice(wordIndex).join(' ').trim();
+    if(remainingText.length > 0) {
+        setTimeout(() => {
+            window.playAudioChunk(remainingText);
+        }, 50);
+    } else {
+        window.stopAudio();
+    }
+};
+
+window.nextWord = function() {
+    window.stopAudio();
+    const currentWords = window.vocabularyData[window.currentDay];
+    if (window.wordIndex < currentWords.length - 1) { window.wordIndex++; } 
+    else {
+        const currentIndex = window.daysList.findIndex(d => d.id === window.currentDay);
+        if (currentIndex >= 0 && currentIndex < window.daysList.length - 1) {
+            window.currentDay = window.daysList[currentIndex + 1].id;
+            window.currentWeek = window.daysList[currentIndex + 1].week;
+            window.wordIndex = 0;
+        }
+    }
+    window.render();
+};
+
+window.prevWord = function() {
+    window.stopAudio();
+    if (window.wordIndex > 0) { window.wordIndex--; } 
+    else {
+        const currentIndex = window.daysList.findIndex(d => d.id === window.currentDay);
+        if (currentIndex > 0) {
+            window.currentDay = window.daysList[currentIndex - 1].id;
+            window.currentWeek = window.daysList[currentIndex - 1].week;
+            window.wordIndex = window.vocabularyData[window.currentDay].length - 1;
+        }
+    }
+    window.render();
+};
+
+window.toggleArticle = function(index) {
+    let card = document.getElementById('article-card-' + index);
+    if(card.classList.contains('expanded')) {
+        card.classList.remove('expanded');
+    } else {
+        document.querySelectorAll('.story-card').forEach(c => c.classList.remove('expanded'));
+        card.classList.add('expanded');
+    }
+};
+
+window.highlightText = function(text) {
+    const keyTerms = [
+        "Operating System", "OS", "Unix", "Bell Labs", "Ken Thompson", "Dennis Ritchie", "Linux", "macOS",
+        "process management", "process", "scheduling", "scheduler", "CPU", 
+        "memory management", "RAM", "virtual memory", "storage device", 
+        "file management", "directories", "folders", "file system",
+        "device management", "hardware components", "device drivers", "drivers",
+        "Security", "user authentication", "access control", "encryption", "cyberattacks", "malicious software",
+        "smartphones", "Android", "iOS", "cloud servers"
+    ];
+    let highlighted = text;
+    keyTerms.sort((a,b) => b.length - a.length).forEach(w => {
+        let escapedWord = w.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        let regex = new RegExp('\\b(' + escapedWord + ')(s|es|ed|d|ing|ly)?\\b', 'gi');
+        highlighted = highlighted.replace(regex, function(match, p1, p2, offset, string) {
+            const before = string.substring(0, offset);
+            if ((before.match(/<span/g) || []).length > (before.match(/<\/span>/g) || []).length) return match; 
+            return '<span class="highlight-word">' + match + '</span>';
+        });
+    });
+    return highlighted;
+};
+
+window.setDifficulty = function(diff) { window.quizDifficulty = diff; window.render(); }
+
+window.startQuiz = function() {
+    const unseenDB = [
+        { q: "What is the primary function of an Operating System according to the text?", options: ["To serve as a bridge between the user, applications, and hardware.", "To browse the internet and play games faster.", "To manufacture new hardware components.", "To write documents and edit videos automatically."], ans: 0, diff: "easy" },
+        { q: "Who were the researchers involved in the creation of Unix?", options: ["Ken Thompson and Dennis Ritchie", "Steve Jobs and Bill Gates", "Linux Torvalds and Tim Berners-Lee", "Alan Turing and Ada Lovelace"], ans: 0, diff: "medium" },
+        { q: "Which operating systems are mentioned as being based on ideas that originated in Unix?", options: ["Linux and macOS", "Windows and MS-DOS", "Android and Symbian", "ChromeOS and Ubuntu"], ans: 0, diff: "easy" },
+        { q: "What does the OS 'scheduler' do in process management?", options: ["It decides how much processor time each process receives.", "It permanently deletes inactive files to clear the CPU.", "It schedules meetings and calendar events for the user.", "It shuts down the computer when it gets too hot."], ans: 0, diff: "hard" },
+        { q: "What is 'virtual memory' as described in the text?", options: ["A technique allowing programs to use more memory by temporarily storing data on a storage device.", "A cloud-based memory that users have to buy separately.", "Memory that exists only in the user's imagination.", "A physical chip that replaces RAM."], ans: 0, diff: "medium" },
+        { q: "Why are 'device drivers' important?", options: ["They allow the OS to send instructions to and receive information from hardware.", "They physically drive the computer to different locations.", "They protect the computer from malicious software.", "They organize files into folders."], ans: 0, diff: "easy" },
+        { q: "Which of the following is NOT mentioned as a security feature of modern operating systems?", options: ["Physical lock-and-key mechanisms", "User authentication", "Access control", "Encryption"], ans: 0, diff: "hard" },
+        { q: "What specific challenge did mobile operating systems like Android and iOS have to solve?", options: ["Operating on devices with limited power consumption while supporting touch-screens.", "Operating without any internet connection at all.", "Running Unix directly on a wristwatch.", "Providing physical keyboards for all users."], ans: 0, diff: "medium" },
+        { q: "Without a file system, what would be nearly impossible?", options: ["Managing information on a computer.", "Turning the computer on.", "Typing on a keyboard.", "Connecting to a wall outlet."], ans: 0, diff: "easy" },
+        { q: "According to the conclusion, what role has the evolution of operating systems played?", options: ["A crucial role in shaping the digital world we know today.", "A minor role compared to hardware development.", "A role strictly limited to desktop computers.", "It only affected the development of video games."], ans: 0, diff: "medium" },
+        { q: "In what decades was Unix developed?", options: ["Late 1960s and early 1970s", "Late 1980s and early 1990s", "Late 1950s and early 1960s", "In the early 2000s"], ans: 0, diff: "easy" },
+        { q: "At the time Unix was developed, what were computers like?", options: ["Extremely expensive and difficult to use.", "Small, portable, and cheap.", "Exclusively used for gaming.", "Integrated into mobile phones."], ans: 0, diff: "medium" },
+        { q: "What organization did the Unix researchers work for?", options: ["Bell Labs", "Microsoft", "Apple", "Google"], ans: 0, diff: "hard" },
+        { q: "What was the main goal of creating Unix?", options: ["To be simple, efficient, and portable.", "To play advanced video games.", "To create the first internet browser.", "To replace physical keyboards."], ans: 0, diff: "medium" },
+        { q: "According to the text, what is a 'process'?", options: ["A program that is currently being executed.", "A broken piece of hardware.", "The final stage of downloading a file.", "The physical CPU chip."], ans: 0, diff: "easy" },
+        { q: "How many processes can modern computers run simultaneously?", options: ["Dozens or even hundreds.", "Exactly two.", "Only one at a time.", "None, they rely on cloud servers entirely."], ans: 0, diff: "medium" },
+        { q: "Why is memory management a necessary function of the OS?", options: ["Because computers have a limited amount of RAM.", "Because RAM is too slow without it.", "To stop hackers from stealing the RAM.", "To keep the hardware from overheating."], ans: 0, diff: "hard" },
+        { q: "How does the OS manage memory when several applications run at once?", options: ["It keeps track of which parts of memory belong to which process.", "It deletes old apps to make room for new ones.", "It pauses all applications until one is closed.", "It asks the user to physically add more RAM."], ans: 0, diff: "medium" },
+        { q: "How are documents, images, and videos stored on a computer?", options: ["As files.", "As processes.", "As virtual memories.", "As physical drivers."], ans: 0, diff: "easy" },
+        { q: "How does the OS organize files?", options: ["Into directories or folders.", "Into encrypted hardware chips.", "By deleting them every night.", "By sending them to Bell Labs."], ans: 0, diff: "medium" },
+        { q: "Which of these is considered a hardware component?", options: ["Keyboards, printers, monitors, and storage devices.", "Unix, Linux, and macOS.", "Authentication and encryption.", "Directories and folders."], ans: 0, diff: "easy" },
+        { q: "Why do operating systems continuously evolve in terms of security?", options: ["Because cyberattacks become more sophisticated.", "Because users get bored of the old designs.", "Because encryption naturally fades over time.", "To make the system run slower."], ans: 0, diff: "hard" },
+        { q: "How many people interact with mobile operating systems daily?", options: ["Billions of people.", "A few thousand developers.", "Only researchers at Bell Labs.", "Millions of computers."], ans: 0, diff: "easy" }
+    ];
+
+    let availableQuestions = unseenDB.filter(q => q.diff === window.quizDifficulty || window.quizDifficulty === 'medium');
+    if (window.quizDifficulty === 'hard') availableQuestions = unseenDB; 
+    let shuffled = [...availableQuestions].sort(() => 0.5 - Math.random());
+    let selectedQs = shuffled.slice(0, 23);
+
+    window.quizQuestions = selectedQs.map(target => {
+        let correctText = target.options[target.ans];
+        let mixedOptions = [...target.options].sort(() => 0.5 - Math.random());
+        let correctIndex = mixedOptions.indexOf(correctText);
+        return { question: target.q, options: mixedOptions, correctIndex: correctIndex, answered: false, selectedOption: null };
+    });
+
+    window.quizState = 'playing';
+    window.currentQuizIndex = 0;
+    window.quizScore = 0;
+    window.render();
+};
+
+window.handleAnswer = function(index) {
+    let q = window.quizQuestions[window.currentQuizIndex];
+    if (q.answered) return;
+    q.answered = true;
+    q.selectedOption = index;
+    if (index === q.correctIndex) { window.quizScore += 10; }
+    window.render();
+};
+
+window.nextQuizQuestion = function() {
+    if (window.currentQuizIndex < window.quizQuestions.length - 1) { 
+        window.currentQuizIndex++; 
+    } else {
+        window.quizState = 'end';
+        const now = new Date();
+        const dateStr = now.toLocaleDateString('he-IL') + ' ' + now.toLocaleTimeString('he-IL', {hour: '2-digit', minute:'2-digit'});
+        window.quizHistory.unshift({ score: window.quizScore, date: dateStr, diff: window.quizDifficulty });
+        if (window.quizHistory.length > 10) window.quizHistory.pop();
+        if (window.quizScore > window.highScore) window.highScore = window.quizScore;
+        try { 
+            localStorage.setItem('fluencyUnseenHighScore', window.highScore); 
+            localStorage.setItem('fluencyUnseenHistory', JSON.stringify(window.quizHistory));
+        } catch(e) {}
+    }
+    window.render();
+};
+
+window.showQuizHistory = function() { window.quizState = 'history'; window.render(); }
+
+window.clearQuizHistory = function() {
+    if(confirm("האם אתה בטוח שברצונך למחוק את היסטוריית הבחנים?")) {
+        window.quizHistory = [];
+        window.highScore = 0;
+        try { localStorage.removeItem('fluencyUnseenHighScore'); localStorage.removeItem('fluencyUnseenHistory'); } catch(e) {}
+        window.quizState = 'start';
+        window.render();
+    }
+}
+
+window.getArtClass = function(word) {
+    const categories = {
+        'ocean': ['Deep', 'Mud'], 'auction': ['Auction', 'Bid'], 'market': ['Purchase', 'Customer', 'Items', 'Pair', 'Objects', 'Comb'],
+        'finance-up': ['Advance', 'Wages', 'Amount', 'Provided', 'Raising', 'Capable', 'Contributors', 'Addition'], 'finance-down': ['Lowest', 'Reduce', 'Debt', 'Waive', 'Spent', 'Weak', 'Badly'],
+        'chart-pie': ['Minority', 'Surveys', 'Plenty', 'Approximately', 'Thirds', 'Population', 'Studies', 'Proven'], 'tech': ['Appliances', 'Tone', 'Exists', 'Applications', 'Program', 'Processes'],
+        'book': ['Instructed', 'Sum up', 'Treatment', 'Requirement', 'Solve', 'Faithful', 'Arise', 'Perhaps', 'Phrases', 'Task', 'College', 'Graduating', 'Fluently', 'Adulthood'],
+        'mind': ['Obsession', 'Habits', 'Addiction', 'Wonder', 'Exaggeration', 'Convince', 'Ridiculously', 'Biased', 'Scratch Itches', 'Independent', 'Sense', 'Confusion', 'Pre-prejudiced', 'Convinced', 'Attitude', 'Influences'],
+        'doorway': ['Opportunity', 'Permission', 'Proceed', 'Suggest', 'Apply'], 'danger': ['Illegal', 'Trapped', 'Barrier', 'Reject', 'Unscrupulous', 'Unfortunate', 'Forced', 'Accident', 'Opposed'],
+        'weather': ['Literally', 'Consequently', 'Despair', 'Helplessness'], 'time': ['Nowadays', 'Due', 'Rushing'], 'party': ['Ceremonies', 'Attendees', 'Amusing', 'Participants'],
+        'court': ['Commissioner', 'Accusations', 'Proper', 'Rightfully', 'Certainly'], 'sound': ['Insist', 'Denies', 'Mentioned', 'Resist', 'Exposed', 'Respond', 'Actually', 'Somewhat', 'Rather than', 'Instance'],
+        'build': ['Bricks', 'Kiln', 'Kneading', 'Shape', 'Designed'], 'space': ['Trade-Unions', 'Immense', 'Purely', 'View'], 'medical': ['Nursing', 'Paralyzed', 'Arm(s)', 'Hair', 'Human'],
+        'magic': ['Idea', 'Significance'], 'nature': ['Poisonous', 'Barefoot', 'Companion', 'Fetch'], 'laser': ['Laser beam'], 'theater': ['Perform'],
+        'city': ['Dormitories', 'Institutions', 'Organization', 'Owners']
+    };
+    if (['Receive', 'Runs It', 'Split', 'Fade', 'Protect', 'Flexibility', 'Languages'].includes(word)) return 'art-bespoke';
+    for (const [theme, words] of Object.entries(categories)) { if (words.includes(word)) return `art-${theme}`; }
+    return 'art-museum';
+};
+
+window.getCustomArtHTML = function(word, visual) {
+    const artClass = window.getArtClass(word);
+    let inner = '';
+    if (word === 'Receive') inner = `<div class="gift-box"></div><div class="gift-lid"></div><div class="art-emoji-hero float-anim" style="z-index: 5;">${visual}</div>`;
+    else if (word === 'Runs It') inner = `<div class="gear" style="left: 0; right: 20vh; margin: auto;"></div><div class="gear-small" style="position:absolute; left: 20vh; right: 0; margin: auto;"></div><div class="art-emoji-hero" style="z-index: 10; filter: drop-shadow(0 0 2vh #fff);">${visual}</div>`;
+    else if (word === 'Split') inner = `<div class="split-left"></div><div class="split-right"></div><div class="art-emoji-hero">${visual}</div>`;
+    else if (word === 'Fade') inner = `<div class="fade-bg"></div><div class="art-emoji-hero" style="animation: fadeAnim 3s infinite alternate;">${visual}</div>`;
+    else if (word === 'Protect') inner = `<div class="shield-pulse"></div><div class="art-emoji-hero">${visual}</div>`;
+    else if (word === 'Flexibility') inner = `<div class="flex-band"></div><div class="art-emoji-hero float-anim">${visual}</div>`;
+    else if (word === 'Languages') inner = `<div class="lang-symbol" style="top:20%; left:20%; animation-delay:0s;">A</div><div class="lang-symbol" style="top:60%; right:20%; animation-delay:0.5s;">あ</div><div class="lang-symbol" style="top:80%; left:40%; animation-delay:1s;">א</div><div class="art-emoji-hero float-anim">${visual}</div>`;
+    else if (artClass === 'art-ocean') inner = `<div class="wave-line"></div><div class="ruler"><div class="tick" style="top: 10%;"></div><div class="tick" style="top: 30%;"></div><div class="tick" style="top: 50%;"></div><div class="tick" style="top: 70%;"></div><div class="tick" style="top: 90%;"></div></div><div class="art-emoji-hero float-anim">${visual}</div>`;
+    else if (artClass === 'art-auction') inner = `<div class="desk"></div><div class="art-emoji-hero anim-slam">${visual}</div>`;
+    else if (artClass === 'art-build') inner = `<div class="fire-glow"></div><div class="art-emoji-hero">${visual}</div>`;
+    else if (artClass === 'art-market') inner = `<div class="laser-scanner"></div><div class="shelf"></div><div class="art-emoji-hero float-anim">${visual}</div>`;
+    else if (artClass === 'art-pie-chart') inner = `<div class="pie-bg"></div><div class="art-emoji-hero" style="z-index: 20;">${visual}</div>`;
+    else if (artClass === 'art-chart-down') inner = `<div class="chart-axis-down"></div><div class="trend-line-down"></div><div class="art-emoji-hero anim-drop">${visual}</div>`;
+    else if (artClass === 'art-chart-up' || artClass === 'art-finance-up') inner = `<div class="chart-axis-down" style="border-color:#10b981;"></div><div class="trend-line-down" style="border-color:#6ee7b7; box-shadow: inset -1.5vh 1.5vh 3vh rgba(16,185,129,0.3); transform: skewY(-30deg); bottom:20%; top:auto;"></div><div class="art-emoji-hero anim-rise">${visual}</div>`;
+    else if (artClass === 'art-doorway') inner = `<div class="door-frame"></div><div class="art-emoji-hero float-anim" style="filter: drop-shadow(0 0 3vh #fef08a);">${visual}</div>`;
+    else if (artClass === 'art-mind') inner = `<div class="pulse-ring"></div><div class="pulse-ring" style="animation-delay: 1.5s; width: 40vh; height: 40vh;"></div><div class="art-emoji-hero">${visual}</div>`;
+    else if (artClass === 'art-museum') inner = `<div class="spotlight"></div><div class="pedestal"></div><div class="art-emoji-hero float-anim" style="bottom: 25%;">${visual}</div>`;
+    else if (artClass === 'art-nature') inner = `<div class="sun-beam"></div><div class="art-emoji-hero float-anim">${visual}</div>`;
+    else if (artClass === 'art-law' || artClass === 'art-danger') inner = `<div class="laser-grid"></div><div class="vignette"></div><div class="art-emoji-hero" style="z-index: 10;">${visual}</div>`;
+    else if (artClass === 'art-time') inner = `<div class="clock-face"><div class="hand"></div></div><div class="art-emoji-hero" style="z-index: 20;">${visual}</div>`;
+    else if (artClass === 'art-sound') inner = `<div class="sound-bars"><div class="bar" style="animation-delay: 0.1s"></div><div class="bar" style="animation-delay: 0.3s; height: 60%;"></div><div class="bar" style="animation-delay: 0.5s; height: 100%;"></div><div class="bar" style="animation-delay: 0.2s; height: 50%;"></div></div><div class="art-emoji-hero">${visual}</div>`;
+    else if (artClass === 'art-electricity' || artClass === 'art-tech' || artClass === 'art-weather') inner = `<div class="circuit-grid"></div><div class="art-emoji-hero pulse-anim">${visual}</div>`;
+    else if (artClass === 'art-space') inner = `<div class="planet"></div><div class="star" style="top:20%; left:20%;"></div><div class="star" style="top:40%; right:30%;"></div><div class="art-emoji-hero float-anim">${visual}</div>`;
+    else if (artClass === 'art-medical') inner = `<div class="med-cross-v"></div><div class="med-cross-h"></div><div class="art-emoji-hero float-anim">${visual}</div>`;
+    else if (artClass === 'art-magic') inner = `<div class="magic-sparkle" style="top:20%;left:30%;">✨</div><div class="magic-sparkle" style="top:60%;right:30%;animation-delay:0.5s;">✨</div><div class="art-emoji-hero pulse-anim">${visual}</div>`;
+    else if (artClass === 'art-theater') inner = `<div class="stage-floor"></div><div class="curtain-left"></div><div class="curtain-right"></div><div class="spotlight"></div><div class="art-emoji-hero float-anim" style="bottom: 20%;">${visual}</div>`;
+    else if (artClass === 'art-city') inner = `<div class="building-1"></div><div class="building-2"><div class="window" style="top:10%; left:20%"></div><div class="window" style="top:30%; left:60%"></div></div><div class="building-3"></div><div class="art-emoji-hero float-anim" style="bottom: 30%;">${visual}</div>`;
+    else if (word === 'Poisonous') inner = `<div class="poison-bubble" style="left:30%"></div><div class="poison-bubble" style="left:60%; animation-delay:1.5s; width:4vh; height:4vh;"></div><div class="poison-bubble" style="left:45%; animation-delay:0.7s; width:2vh; height:2vh;"></div><div class="art-emoji-hero" style="animation: floatSub 4s infinite alternate; filter: drop-shadow(0 0 3vh #22c55e);">${visual}</div>`;
+    else if (word === 'Antique') inner = `<div class="spotlight-gold"></div><div class="gold-dust" style="top:30%;left:40%;animation-delay:0.2s;"></div><div class="gold-dust" style="top:50%;left:60%;animation-delay:0.7s;"></div><div class="gold-dust" style="top:60%;left:35%;animation-delay:1.1s;"></div><div class="art-emoji-hero float-anim">${visual}</div>`;
+    else if (word === 'Kiln') inner = `<div class="kiln-fire"></div><div class="kiln-brick"></div><div class="art-emoji-hero" style="bottom:45%; animation: floatSub 4s infinite alternate;">${visual}</div>`;
+    else if (word === 'Literally') inner = `<div class="measure-grid"></div><div class="measure-line"></div><div class="measure-cross"></div><div class="art-emoji-hero pulse-anim">${visual}</div>`;
+    else if (word === 'Fetch') inner = `<div class="fetch-stick"></div><div class="art-emoji-hero float-anim">${visual}</div>`;
+    else if (word === 'Scratch Itches') inner = `<div class="scratch-mark"></div><div class="scratch-mark"></div><div class="scratch-mark"></div><div class="art-emoji-hero pulse-anim">${visual}</div>`;
+    else if (word === 'Plenty') inner = `<div class="coin" style="left: 20%; animation-delay: 0s;"></div><div class="coin" style="left: 40%; animation-delay: 0.5s;"></div><div class="coin" style="left: 60%; animation-delay: 0.2s;"></div><div class="coin" style="left: 80%; animation-delay: 0.7s;"></div><div class="art-emoji-hero float-anim">${visual}</div>`;
+    else if (word === 'Independent') inner = `<div class="chain chain-break-left" style="top: 30%; left: 40%;"></div><div class="chain chain-break-right" style="top: 30%; left: 55%;"></div><div class="art-emoji-hero float-anim" style="z-index: 10;">${visual}</div>`;
+    else if (word === 'Owners') inner = `<div class="house-silhouette"></div><div class="key-glow" style="top: 20%; left: 50%; transform: translateX(-50%);"></div><div class="art-emoji-hero float-anim" style="bottom: 30%;">${visual}</div>`;
+    else if (word === 'Accident') inner = `<div class="siren"></div><div style="position: absolute; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; z-index: 15;"><div class="glass-crack"></div><div class="glass-crack"></div><div class="glass-crack"></div></div><div class="art-emoji-hero" style="animation: slam 1s forwards;">${visual}</div>`;
+    else inner = `<div class="pedestal"></div><div class="art-emoji-hero float-anim" style="bottom:25%;">${visual}</div>`;
+    
+    let bgStyle = '';
+    if (word === 'Receive') bgStyle = 'background: radial-gradient(circle, #4c1d95, #020617);';
+    else if (word === 'Poisonous') bgStyle = 'background: linear-gradient(to top, #14532d, #020617);';
+    else if (word === 'Antique') bgStyle = 'background: linear-gradient(to bottom, #1e293b 40%, #0f172a 100%);';
+    else if (word === 'Kiln') bgStyle = 'background: #450a0a;';
+    else if (word === 'Literally') bgStyle = 'background: #0f172a;';
+    else if (word === 'Scratch Itches') bgStyle = 'background: #fcd34d;';
+    else if (word === 'Plenty') bgStyle = 'background: radial-gradient(circle, #0f766e, #020617);';
+    else if (word === 'Independent') bgStyle = 'background: linear-gradient(to bottom, #0284c7, #0ea5e9, #38bdf8);';
+    else if (word === 'Owners') bgStyle = 'background: linear-gradient(to bottom, #1e1b4b, #020617);';
+
+    return `<div class="art-inner-container ${artClass}" style="${bgStyle}">${inner}</div>`;
+};
+
+window.render = function() {
+    const app = document.getElementById('content-area');
+    const subNavContainer = document.getElementById('sub-nav-container');
+
+    const navHTML = `
+        <button class="nav-btn ${window.currentWeek === 'home' ? 'active-cyan' : ''}" onclick="window.setWeek('home')">🏠 ראשי</button>
+        <button class="nav-btn ${window.currentWeek === 'week1' ? 'active-cyan' : ''}" onclick="window.setWeek('week1')">שבוע 4 (1)</button>
+        <button class="nav-btn ${window.currentWeek === 'week2' ? 'active-cyan' : ''}" onclick="window.setWeek('week2')">שבוע 5 (2)</button>
+        <button class="nav-btn ${window.currentWeek === 'week3' ? 'active-cyan' : ''}" onclick="window.setWeek('week3')">שבוע 6 (3)</button>
+        <button class="nav-btn ${window.currentWeek === 'week7' ? 'active-cyan' : ''}" onclick="window.setWeek('week7')">שבוע 7 (4)</button>
+        <button class="nav-btn ${window.currentWeek === 'article' ? 'active-cyan' : ''}" onclick="window.setWeek('article')">שבוע 8 (5) 📄</button>
+        <button class="nav-btn ${window.currentWeek === 'quiz' ? 'active-cyan' : ''}" onclick="window.setWeek('quiz')">מבחן חכם 🧠</button>
+        <button class="nav-btn ${window.currentWeek === 'summary' ? 'active-cyan' : ''}" onclick="window.setWeek('summary')">סיכום (160 מילים)</button>
+    `;
+    
+    const navTier = document.querySelector('.nav-tier');
+    if(navTier) navTier.innerHTML = navHTML;
+
+    if (window.currentWeek !== 'home' && window.currentWeek !== 'summary' && window.currentWeek !== 'quiz' && window.currentWeek !== 'article') {
+        subNavContainer.style.display = 'flex';
+        const weekDays = window.daysList.filter(d => d.week === window.currentWeek);
+        let subNavHtml = '';
+        weekDays.forEach(d => {
+            const isActive = window.currentDay === d.id ? 'active' : '';
+            subNavHtml += `<button class="sub-btn ${isActive}" onclick="window.setDay('${d.id}')"><span class="sub-btn-title">${d.title}</span><span class="sub-btn-date">${d.date}</span></button>`;
+        });
+        subNavContainer.innerHTML = subNavHtml;
+    } else {
+        subNavContainer.style.display = 'none';
+        subNavContainer.innerHTML = '';
+    }
+
+    if (window.currentWeek === 'home') {
+        let homeHtml = `
+            <div class="home-wrapper">
+                <div class="home-section-title" style="border:none; justify-content:center; text-align:center;">
+                    <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--cyan-light), var(--emerald-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">ברוכים הבאים למערכת הלמידה!</span>
+                </div>
+                
+                <h3 class="home-section-title">שלבי הלימוד</h3>
+                <div class="home-list">
+                    <button class="home-card" onclick="window.setWeek('week1')">
+                        <div class="home-card-icon">📖</div>
+                        <div class="home-card-content">
+                            <div class="home-card-title">שבוע 4 (1)</div>
+                            <div class="home-card-desc">אוצר מילים ויסודות. בסיס חזק להמשך הדרך.</div>
+                        </div>
+                    </button>
+                    <button class="home-card" onclick="window.setWeek('week2')">
+                        <div class="home-card-icon">📚</div>
+                        <div class="home-card-content">
+                            <div class="home-card-title">שבוע 5 (2)</div>
+                            <div class="home-card-desc">המשך בניית אוצר מילים ושילוב משפטים.</div>
+                        </div>
+                    </button>
+                    <button class="home-card" onclick="window.setWeek('week3')">
+                        <div class="home-card-icon">🎓</div>
+                        <div class="home-card-content">
+                            <div class="home-card-title">שבוע 6 (3)</div>
+                            <div class="home-card-desc">ביטויים מתקדמים ואוצר מילים מורכב.</div>
+                        </div>
+                    </button>
+                    <button class="home-card" onclick="window.setWeek('week7')">
+                        <div class="home-card-icon">🚀</div>
+                        <div class="home-card-content">
+                            <div class="home-card-title">שבוע 7 (4)</div>
+                            <div class="home-card-desc">השלב הסופי - מילים מתקדמות לבחינה.</div>
+                        </div>
+                    </button>
+                    <button class="home-card" onclick="window.setWeek('article')">
+                        <div class="home-card-icon">📄</div>
+                        <div class="home-card-content">
+                            <div class="home-card-title">שבוע 8 (5)</div>
+                            <div class="home-card-desc">מאמר קריאה - Unseen בהקראה קולית.</div>
+                        </div>
+                    </button>
+                </div>
+
+                <h3 class="home-section-title">תרגול ומבחנים</h3>
+                <div class="home-list">
+                    <button class="home-card" onclick="window.setWeek('quiz')">
+                        <div class="home-card-icon">🧠</div>
+                        <div class="home-card-content">
+                            <div class="home-card-title">מבחן חכם</div>
+                            <div class="home-card-desc">תרגול 23 שאלות הבנה מתוך המאמר שקראת.</div>
+                        </div>
+                    </button>
+                    <button class="home-card" onclick="window.setWeek('summary')">
+                        <div class="home-card-icon">🗂️</div>
+                        <div class="home-card-content">
+                            <div class="home-card-title">סיכום מלא</div>
+                            <div class="home-card-desc">כל 160 המילים במקום אחד, מוכנות לחזרה.</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        `;
+        app.innerHTML = homeHtml;
+    } else if (window.currentWeek === 'article') {
+        let htmlBlock = `
+            <div class="top-bar" style="max-width: 1000px; margin: 0 auto 1vh auto; justify-content: center;">
+                <div class="settings-box">
+                    ${window.icons.settings}
+                    <select onchange="window.changeRate(this.value)">
+                        <option value="0.3" ${window.speechRate === 0.3 ? 'selected' : ''}>סופר איטי (0.3x)</option>
+                        <option value="0.4" ${window.speechRate === 0.4 ? 'selected' : ''}>איטי מאוד (0.4x)</option>
+                        <option value="0.6" ${window.speechRate === 0.6 ? 'selected' : ''}>איטי (0.6x)</option>
+                        <option value="0.85" ${window.speechRate === 0.85 ? 'selected' : ''}>רגיל-איטי (0.85x)</option>
+                        <option value="1" ${window.speechRate === 1 ? 'selected' : ''}>רגיל (1.0x)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="story-container">
+                <div class="story-header">
+                    <h2 class="story-title">Operating Systems: Unseen</h2>
+                    <p class="story-subtitle">מאמר המבחן הרשמי. לחץ על משפט כדי לראות תרגום.</p>
+                </div>
+                ${window.unseenArticleData.map((item, index) => {
+                    const safeText = item.e.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                    return `
+                        <div id="article-card-${index}" class="story-card" onclick="window.toggleArticle(${index})">
+                            <div class="story-eng-row">
+                                <button class="story-audio-btn" onclick="event.stopPropagation(); window.playAudio('${safeText}', this)" title="השמע משפט">
+                                    ${window.icons.volume}
+                                </button>
+                                <div class="story-eng-text">
+                                    <span style="font-size: 1.2em; margin-right: 0.5vw;">${item.j}</span>
+                                    <span>${window.highlightText(item.e)}</span>
+                                </div>
+                            </div>
+                            <div class="story-heb-text" dir="rtl">${item.h}</div>
+                        </div>
+                    `;
+                }).join('')}
+                
+                <div style="display:flex; justify-content:center; margin-top: 3vh;">
+                    <button class="control-btn" style="background: var(--cyan-main); border:none; box-shadow: 0 1vh 2vh rgba(34,211,238,0.4);" onclick="window.setWeek('quiz')">
+                        התחל מבחן Unseen 🧠
+                    </button>
+                </div>
+            </div>
+        `;
+        app.innerHTML = htmlBlock;
+    } else if (window.currentWeek === 'quiz') {
+        let quizHTML = '';
+        if (window.quizState === 'start') {
+            quizHTML = `
+                <div class="center-stage" style="padding: 4vh 2vw; max-width: 600px; margin: auto; text-align: center; margin-top: 5vh;">
+                    <div style="font-size: 4rem; margin-bottom: 2vh;">🧠</div>
+                    <h2 style="font-size: 2.5rem; color: var(--cyan-light); margin-bottom: 1.5vh;">מבחן Unseen חכם</h2>
+                    <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 3vh;">23 שאלות מאתגרות על המאמר שקראת. המבחן יבדוק הבנה אמיתית!</p>
+                    <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid var(--emerald-main); padding: 1.5vh; border-radius: 1vh; margin-bottom: 4vh; display: flex; justify-content: space-around;">
+                        <span style="color: var(--emerald-light); font-size: 1.2rem; font-weight: bold;">שיא אישי: ${window.highScore} 🏆</span>
+                    </div>
+                    <div style="display: flex; gap: 1vw; justify-content: center;">
+                        <button onclick="window.startQuiz()" class="control-btn" style="flex: 2; justify-content: center;">
+                            התחל מבחן עכשיו 🚀
+                        </button>
+                        <button onclick="window.showQuizHistory()" class="control-btn" style="flex: 1; justify-content: center; background: rgba(30, 41, 59, 0.9); border-color: rgba(255,255,255,0.2);" title="היסטוריית מבחנים">
+                            ${window.icons.history}
+                        </button>
+                    </div>
+                </div>
+            `;
+        } else if (window.quizState === 'history') {
+             quizHTML = `
+                <div class="center-stage" style="padding: 4vh 2vw; max-width: 600px; margin: auto; text-align: center; margin-top: 5vh; width: 100%;">
+                    <h2 style="font-size: 2.5rem; color: var(--cyan-light); margin-bottom: 3vh;">היסטוריית מבחנים 📊</h2>
+                    ${window.quizHistory.length === 0 ? '<p style="color: var(--text-muted); font-size: 1.2rem;">אין עדיין מבחנים מוקלטים.</p>' : `
+                        <div style="width: 100%; max-height: 40vh; overflow-y: auto; background: rgba(15,23,42,0.5); border-radius: 1vh; border: 1px solid var(--border); margin-bottom: 3vh;">
+                            ${window.quizHistory.map((h, i) => `
+                                <div class="history-item">
+                                    <span style="color: ${h.score >= 180 ? 'var(--emerald-light)' : h.score >= 100 ? 'var(--cyan-light)' : '#fca5a5'}; font-weight:bold;">ציון: ${h.score}</span>
+                                    <span style="color: var(--text-muted); font-size: 1rem;">${h.date}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <button onclick="window.clearQuizHistory()" class="control-btn" style="width: 100%; justify-content: center; background: rgba(239, 68, 68, 0.2); border-color: #ef4444; color: #fca5a5; margin-bottom: 1.5vh;">
+                            נקה היסטוריה 🗑️
+                        </button>
+                    `}
+                    <button onclick="window.quizState = 'start'; window.render();" class="control-btn" style="width: 100%; justify-content: center;">
+                        חזור למבחן 🔙
+                    </button>
+                </div>
+            `;
+        } else if (window.quizState === 'playing') {
+            let q = window.quizQuestions[window.currentQuizIndex];
+            let buttonsHTML = q.options.map((opt, i) => {
+                let btnClass = "quiz-opt-btn";
+                if (q.answered) {
+                    if (i === q.correctIndex) btnClass += " correct";
+                    else if (i === q.selectedOption) btnClass += " wrong";
+                    else btnClass += " disabled";
+                }
+                return '<button class="' + btnClass + '" onclick="window.handleAnswer(' + i + ')" ' + (q.answered ? 'disabled' : '') + '>' + opt + '</button>';
+            }).join('');
+
+            quizHTML = `
+                <div style="max-width: 800px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; height: 100%;">
+                    <div class="top-bar" style="margin-bottom: 2vh;">
+                        <span style="color: var(--text-muted); font-size: 1.2rem; font-weight: bold;">שאלה ${window.currentQuizIndex + 1} / 23</span>
+                        <span style="color: var(--cyan-light); font-size: 1.2rem; font-weight: bold;">ניקוד: ${window.quizScore}</span>
+                    </div>
+                    <div class="flashcard" style="align-items: center; padding: 4vh 3vw; gap: 3vh; text-align: center;">
+                        <h3 style="font-size: clamp(20px, 3vh, 40px); font-weight: 900; color: #fff; letter-spacing: 1px;" dir="ltr">${q.question}</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5vh; width: 100%; margin-top: 2vh;">
+                            ${buttonsHTML}
+                        </div>
+                        <div style="min-height: 6vh; width: 100%; margin-top: 2vh; display: flex; justify-content: center; align-items: center;">
+                            ${q.answered ? `
+                                <button onclick="window.nextQuizQuestion()" class="control-btn" style="width: 100%; max-width: 300px; justify-content: center; background: var(--cyan-main); border-color: var(--cyan-light);">
+                                    ${window.currentQuizIndex === 22 ? 'לתוצאות המבחן' : 'שאלה הבאה'} ${window.icons.left_arrow}
+                                </button>
+                            ` : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else if (window.quizState === 'end') {
+            let isNewHigh = window.quizScore > window.highScore;
+            quizHTML = `
+                <div class="center-stage" style="padding: 5vh 2vw; max-width: 600px; margin: auto; text-align: center; margin-top: 5vh;">
+                    <div style="font-size: 5rem; margin-bottom: 2vh;">${window.quizScore >= 180 ? '🏆' : window.quizScore >= 100 ? '👍' : '💪'}</div>
+                    <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 1vh;">סיום המבחן!</h2>
+                    <p style="font-size: 1.8rem; color: var(--cyan-light); font-weight: bold; margin-bottom: 2vh;">הציון שלך: ${window.quizScore} / 230</p>
+                    ${isNewHigh ? `
+                        <div style="background: rgba(253, 224, 71, 0.15); border: 1px solid #fde047; padding: 1.5vh; border-radius: 1vh; margin-bottom: 3vh;">
+                            <span style="color: #fde047; font-size: 1.4rem; font-weight: bold;">🎉 שיא חדש!</span>
+                        </div>
+                    ` : `<p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 3vh;">שיא אישי נוכחי: ${window.highScore}</p>`}
+                    <button onclick="window.startQuiz()" class="control-btn" style="justify-content: center; width: 100%;">
+                        נסה שוב 🔄
+                    </button>
+                </div>
+            `;
+        }
+        app.innerHTML = quizHTML;
+
+    } else if (window.currentWeek === 'summary') {
+        let summaryHtml = `
+            <div class="summary-toggles">
+                <button onclick="window.setSummaryMode('weeks')" class="sum-toggle ${window.summaryMode === 'weeks' ? 'active' : ''}">תצוגת שבועות</button>
+                <button onclick="window.setSummaryMode('compact')" class="sum-toggle ${window.summaryMode === 'compact' ? 'active' : ''}">ריכוז כלל המילים</button>
+            </div>
+        `;
+        if (window.summaryMode === 'weeks') {
+            summaryHtml += `<div class="weeks-scroll">`;
+            const weekTitles = {'week1': '4 (1)', 'week2': '5 (2)', 'week3': '6 (3)', 'week7': '7 (4)'};
+            ['week1', 'week2', 'week3', 'week7'].forEach((week) => {
+                summaryHtml += `<div class="week-section"><div class="week-title">שבוע ${weekTitles[week]}</div><div class="days-grid">`;
+                Object.entries(window.vocabularyData).filter(([dayKey]) => window.daysList.find(d => d.id === dayKey).week === week).forEach(([dayKey, words]) => {
+                    const dayInfo = window.daysList.find(d => d.id === dayKey);
+                    summaryHtml += `<div class="matrix-card"><div class="matrix-header"><span>${dayInfo.title}</span><span>${dayInfo.date}</span></div><ul class="matrix-list">`;
+                    words.forEach((w, idx) => { summaryHtml += `<li class="matrix-item" onclick="window.goToWord('${dayInfo.id}', ${idx})"><span class="matrix-item-en">${w.word}</span><span class="matrix-item-he">${w.meaning}</span></li>`; });
+                    summaryHtml += `</ul></div>`;
+                });
+                summaryHtml += `</div></div>`;
+            });
+            summaryHtml += `</div>`;
+        } else {
+            summaryHtml += `<div class="compact-grid">`;
+            Object.entries(window.vocabularyData).forEach(([dayKey, words]) => {
+                words.forEach((w, idx) => { summaryHtml += `<div class="compact-item" onclick="window.goToWord('${dayKey}', ${idx})"><span class="compact-en">${w.word}</span><span class="compact-he">${w.meaning}</span></div>`; });
+            });
+            summaryHtml += `</div>`;
+        }
+        app.innerHTML = `<div class="matrix-wrapper">${summaryHtml}</div>`;
+
+    } else {
+        const currentWords = window.vocabularyData[window.currentDay];
+        const wordData = currentWords[window.wordIndex];
+        const isFirstWord = window.currentDay === window.daysList[0].id && window.wordIndex === 0;
+        const isLastWord = window.currentDay === window.daysList[window.daysList.length - 1].id && window.wordIndex === currentWords.length - 1;
+
+        let dotsHtml = '';
+        for(let i=0; i<currentWords.length; i++) {
+            let stateClass = i === window.wordIndex ? 'active' : (i < window.wordIndex ? 'done' : 'pending');
+            dotsHtml += `<div class="dot ${stateClass}"></div>`;
+        }
+
+        app.innerHTML = `
+            <div class="top-bar">
+                <div class="settings-box">
+                    ${window.icons.settings}
+                    <select onchange="window.changeRate(this.value)">
+                        <option value="0.3" ${window.speechRate === 0.3 ? 'selected' : ''}>סופר איטי (0.3x)</option>
+                        <option value="0.4" ${window.speechRate === 0.4 ? 'selected' : ''}>איטי מאוד (0.4x)</option>
+                        <option value="0.6" ${window.speechRate === 0.6 ? 'selected' : ''}>איטי (0.6x)</option>
+                        <option value="0.85" ${window.speechRate === 0.85 ? 'selected' : ''}>רגיל-איטי (0.85x)</option>
+                        <option value="1" ${window.speechRate === 1 ? 'selected' : ''}>רגיל (1.0x)</option>
+                    </select>
+                </div>
+                <div class="progress-box">
+                    <span style="margin-bottom: 0.2vh;">מילה ${window.wordIndex + 1} מתוך ${currentWords.length}</span>
+                    <div class="progress-dots">${dotsHtml}</div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="center-stage">
+                    <div class="word-main-row">
+                        <button class="audio-btn" onclick="window.playAudio('${wordData.word.replace(/'/g, "\\'")}')" title="השמע מילה">
+                            ${window.icons.volume}
+                        </button>
+                        <div class="word-title">
+                            ${wordData.word}
+                            <span class="small-emoji">${wordData.visual}</span>
+                        </div>
+                    </div>
+                    <div class="tags-row">
+                        <span class="tag-box tag-meaning">${wordData.meaning}</span>
+                        <span class="tag-box tag-phonetic" style="white-space: nowrap !important;">[ ${wordData.phonetic} ]</span>
+                    </div>
+                </div>
+
+                <div class="content-grid">
+                    <div class="text-col">
+                        <div class="explanation-box">
+                            <div class="section-title">
+                                ${window.icons.check} הסבר והקשר
+                            </div>
+                            <div style="margin-top: 0.5vh;">${wordData.exp}</div>
+                        </div>
+
+                        <div class="example-box">
+                            <div class="section-title emerald" style="margin-bottom: 1.5vh;">
+                                ${window.icons.book} דוגמה פרקטית
+                            </div>
+                            <div class="example-eng-row">
+                                <button class="audio-small" onclick="window.playAudio('${wordData.engEx.replace(/'/g, "\\'")}')" title="השמע משפט">
+                                    ${window.icons.volume}
+                                </button>
+                                <div class="example-eng">"${wordData.engEx}"</div>
+                            </div>
+                            <div class="example-heb">
+                                ${wordData.hebEx}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="visual-col">
+                        ${window.getCustomArtHTML(wordData.word, wordData.visual)}
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-container">
+                <button class="control-btn" onclick="window.nextWord()" ${isLastWord ? 'disabled' : ''}>
+                    ${window.icons.left_arrow} הבא
+                </button>
+                <button class="control-btn" onclick="window.prevWord()" ${isFirstWord ? 'disabled' : ''}>
+                    הקודם ${window.icons.right_arrow}
+                </button>
+            </div>
+        `;
+    }
+};
+
+window.render();
