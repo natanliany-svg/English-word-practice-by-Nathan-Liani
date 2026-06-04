@@ -124,7 +124,7 @@ window.ciaTriadArticleData = [
     {j:"⏱️",e:"Within a short time, the company was able to resume normal operations.",h:"תוך זמן קצר, החברה הצליחה לחזור לפעילות רגילה."},
     {j:"🎓",e:"The incident became an important lesson for both management and employees.",h:"התקרית הפכה לשיעור חשוב הן עבור ההנהלה והן עבור העובדים."},
     {j:"🧠",e:"It showed that protecting information is not only about technology but also about human awareness and responsible security practices.",h:"היא הראתה שהגנה על מידע היא לא רק עניין של טכנולוגיה אלא גם של מודעות אנושית ושיטות אבטחה אחראיות."},
-    {j:"📊",e:"The story of DataSafe demonstrates how a single phishing email can affect all three elements of the CIA Triad.",h:"הסיפור של DataSafe מדגים כיצד דוא"ל פישינג יחיד יכול להשפיע על כל שלושת האלמנטים של משולש ה-CIA."},
+    {j:"📊",e:"The story of DataSafe demonstrates how a single phishing email can affect all three elements of the CIA Triad.",h:"הסיפור של DataSafe מדגים כיצד דוא'ל פישינג יחיד יכול להשפיע על כל שלושת האלמנטים של משולש ה-CIA."},
     {j:"💥",e:"Confidential information was exposed, important records were altered, and critical systems became unavailable.",h:"מידע סודי נחשף, רשומות חשובות שונו ומערכות קריטיות הפכו ללא זמינות."},
     {j:"🏆",e:"For this reason, confidentiality, integrity, and availability remain the foundation of information security and continue to guide organizations in protecting their most valuable digital assets.",h:"מסיבה זו, סודיות, שלמות וזמינות נותרו הבסיס לאבטחת מידע וממשיכות להנחות ארגונים בהגנה על הנכסים הדיגיטליים היקרים ביותר שלהם."}
 ];
