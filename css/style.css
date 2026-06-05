@@ -423,3 +423,95 @@
         .highlight-word { color: var(--purple-light); font-weight: 900; text-shadow: 0 0 1vh rgba(168,85,247,0.5); border-bottom: 2px dashed rgba(168,85,247,0.4); padding-bottom: 2px;}
         .story-heb-text { display: none; margin-top: 2vh; padding-top: 2vh; border-top: 1px dashed rgba(255,255,255,0.2); font-size: clamp(14px, 2.2vh, 28px); color: var(--emerald-light); font-weight: 600; line-height: 1.4; padding-right: clamp(45px, 6vw, 70px); }
         .story-card.expanded .story-heb-text { display: block; }
+
+        /* === TEXT SELECTION FIX - Prevents font breaking when selecting text === */
+        ::selection { background: rgba(168, 85, 247, 0.4); color: #fff; }
+        ::-moz-selection { background: rgba(168, 85, 247, 0.4); color: #fff; }
+        .story-eng-text, .story-eng-text *, .story-heb-text, .story-heb-text *,
+        .highlight-word, .story-card, .story-card * {
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+        /* Force paragraph mode to keep font consistent */
+        .story-eng-text span, .story-eng-text .highlight-word {
+            font-family: inherit !important;
+            font-size: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* === ANIMATED EMOJI - Makes emojis alive and breathing === */
+        .emoji-bounce { display: inline-block; animation: emojiBounce 2s ease-in-out infinite; }
+        .emoji-pulse { display: inline-block; animation: emojiPulse 2s ease-in-out infinite; }
+        .emoji-wiggle { display: inline-block; animation: emojiWiggle 1.5s ease-in-out infinite; }
+        .emoji-float { display: inline-block; animation: floatSub 3s ease-in-out infinite; }
+        @keyframes emojiBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        @keyframes emojiPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+        @keyframes emojiWiggle { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-8deg); } 75% { transform: rotate(8deg); } }
+
+        /* === MISSING KEYFRAMES === */
+        @keyframes floatSub { 0% { transform: translateY(0); } 50% { transform: translateY(-2vh); } 100% { transform: translateY(0); } }
+        @keyframes openLid { 0% { transform: translateY(0) rotateX(0); } 100% { transform: translateY(-3vh) rotateX(-30deg); } }
+        @keyframes bubbleUpPoison { 0% { bottom: -10%; opacity: 0; transform: scale(0.5); } 20% { opacity: 1; } 100% { bottom: 110%; opacity: 0; transform: scale(1.5); } }
+        @keyframes throwStick { 0% { transform: translateY(0) rotate(0deg); } 100% { transform: translateY(-10vh) rotate(720deg); } }
+        @keyframes scratchAnim { 0% { opacity: 0; transform: rotate(-45deg) scaleX(0); } 40% { opacity: 1; transform: rotate(-45deg) scaleX(1); } 100% { opacity: 0; transform: rotate(-45deg) scaleX(0); } }
+        @keyframes rainCoins { 0% { top: -10%; opacity: 1; } 100% { top: 110%; opacity: 0; } }
+        @keyframes breakLeft { 0% { transform: translate(0, 0) rotate(0deg); opacity: 1; } 100% { transform: translate(-5vh, 3vh) rotate(-30deg); opacity: 0.3; } }
+        @keyframes breakRight { 0% { transform: translate(0, 0) rotate(0deg); opacity: 1; } 100% { transform: translate(5vh, 3vh) rotate(30deg); opacity: 0.3; } }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes pulseSize { 0% { transform: scale(0.8); opacity: 0.6; } 100% { transform: scale(1.2); opacity: 1; } }
+        @keyframes expandPulse { 0% { transform: scale(0.8); opacity: 1; } 100% { transform: scale(2); opacity: 0; } }
+        @keyframes crackReveal { 0% { opacity: 0; height: 0; } 100% { opacity: 1; height: 25vh; } }
+        @keyframes slam { 0% { transform: rotate(0deg); } 100% { transform: rotate(-20deg); } }
+        @keyframes flicker { 0% { opacity: 0.8; } 100% { opacity: 1; } }
+        @keyframes scanLeftRight { 0% { left: -5%; } 100% { left: 95%; } }
+        @keyframes scanVert { 0% { transform: translateY(-100%); } 100% { transform: translateY(0); } }
+        @keyframes tick { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes waveAnim { 0% { height: 20%; } 100% { height: 100%; } }
+        @keyframes gridScroll { 0% { transform: perspective(60vh) rotateX(60deg) translateY(-15vh); } 100% { transform: perspective(60vh) rotateX(60deg) translateY(15vh); } }
+        @keyframes dropAnim { 0% { transform: translateY(-10vh); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+        @keyframes riseAnim { 0% { transform: translateY(10vh); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+        @keyframes twinkle { 0% { opacity: 0.3; transform: scale(0.8); } 100% { opacity: 1; transform: scale(1.2); } }
+
+        /* === ALIVE BACKGROUND - Subtle animated gradient === */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(34, 211, 238, 0.06), transparent 40%),
+                        radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.06), transparent 40%),
+                        radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.04), transparent 50%);
+            animation: bgPulse 8s ease-in-out infinite alternate;
+            pointer-events: none;
+            z-index: -1;
+        }
+        @keyframes bgPulse {
+            0% { opacity: 0.5; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+
+        /* === HOME CARD EMOJIS ANIMATION === */
+        .home-card-icon { animation: emojiBounce 3s ease-in-out infinite; }
+        .home-card:nth-child(1) .home-card-icon { animation-delay: 0s; }
+        .home-card:nth-child(2) .home-card-icon { animation-delay: 0.3s; }
+        .home-card:nth-child(3) .home-card-icon { animation-delay: 0.6s; }
+        .home-card:nth-child(4) .home-card-icon { animation-delay: 0.9s; }
+        .home-card:nth-child(5) .home-card-icon { animation-delay: 1.2s; }
+        .home-card:nth-child(6) .home-card-icon { animation-delay: 1.5s; }
+
+        /* === SMALL EMOJI ANIMATION IN WORD CARDS === */
+        .small-emoji { animation: emojiPulse 2.5s ease-in-out infinite; }
+
+        /* === NAV BUTTONS GLOW ANIMATION === */
+        .nav-btn.active-cyan { animation: navGlow 3s ease-in-out infinite alternate; }
+        @keyframes navGlow { 0% { box-shadow: 0 0 10px rgba(34, 211, 238, 0.2); } 100% { box-shadow: 0 0 20px rgba(34, 211, 238, 0.5); } }
+
+        /* === HOME CARD HOVER - COLOR GLOW === */
+        .home-card { border-left: 3px solid transparent; transition: all 0.3s ease; }
+        .home-card:nth-child(1) { border-left-color: var(--cyan-main); }
+        .home-card:nth-child(2) { border-left-color: var(--emerald-main); }
+        .home-card:nth-child(3) { border-left-color: var(--purple-main); }
+        .home-card:nth-child(4) { border-left-color: var(--cyan-light); }
+        .home-card:nth-child(5) { border-left-color: #f59e0b; }
+        .home-card:nth-child(6) { border-left-color: #ef4444; }
+        .home-card:hover { border-left-width: 5px; }

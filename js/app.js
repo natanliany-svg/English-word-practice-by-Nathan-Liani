@@ -457,7 +457,7 @@ window.render = function() {
         <button class="nav-btn ${window.currentWeek === 'article' ? 'active-cyan' : ''}" onclick="window.setWeek('article')">שבוע 8 (5) 📄</button>
         <button class="nav-btn ${window.currentWeek === 'week9' ? 'active-cyan' : ''}" onclick="window.setWeek('week9')">שבוע 9 (6) 🔐</button>
         <button class="nav-btn ${window.currentWeek === 'quiz' ? 'active-cyan' : ''}" onclick="window.setWeek('quiz')">מבחן חכם 🧠</button>
-        <button class="nav-btn ${window.currentWeek === 'summary' ? 'active-cyan' : ''}" onclick="window.setWeek('summary')">סיכום (160 מילים)</button>
+        <button class="nav-btn ${window.currentWeek === 'summary' ? 'active-cyan' : ''}" onclick="window.setWeek('summary')">סיכום לפי מילים</button>
     `;
     
     const navTier = document.querySelector('.nav-tier');
@@ -542,8 +542,8 @@ window.render = function() {
                     <button class="home-card" onclick="window.setWeek('summary')">
                         <div class="home-card-icon">🗂️</div>
                         <div class="home-card-content">
-                            <div class="home-card-title">סיכום מלא</div>
-                            <div class="home-card-desc">כל 160 המילים במקום אחד, מוכנות לחזרה.</div>
+                            <div class="home-card-title">סיכום לפי מילים</div>
+                            <div class="home-card-desc">כל 240 המילים במקום אחד, מוכנות לחזרה.</div>
                         </div>
                     </button>
                 </div>
@@ -747,8 +747,8 @@ window.render = function() {
         `;
         if (window.summaryMode === 'weeks') {
             summaryHtml += `<div class="weeks-scroll">`;
-            const weekTitles = {'week1': '4 (1)', 'week2': '5 (2)', 'week3': '6 (3)', 'week7': '7 (4)'};
-            ['week1', 'week2', 'week3', 'week7'].forEach((week) => {
+            const weekTitles = {'week1': '4 (1)', 'week2': '5 (2)', 'week3': '6 (3)', 'week7': '7 (4)', 'week8': '8 (5)', 'week9vocab': '9 (6)'};
+            ['week1', 'week2', 'week3', 'week7', 'week8', 'week9vocab'].forEach((week) => {
                 summaryHtml += `<div class="week-section"><div class="week-title">שבוע ${weekTitles[week]}</div><div class="days-grid">`;
                 Object.entries(window.vocabularyData).filter(([dayKey]) => window.daysList.find(d => d.id === dayKey).week === week).forEach(([dayKey, words]) => {
                     const dayInfo = window.daysList.find(d => d.id === dayKey);
