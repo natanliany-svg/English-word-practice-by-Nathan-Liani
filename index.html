@@ -16,14 +16,15 @@
         </h1>
         
         <div class="nav-tier">
-            <button class="nav-btn" id="btn-home" onclick="window.setWeek('home')">🏠 ראשי</button>
-            <button class="nav-btn" id="btn-week1" onclick="window.setWeek('week1')">שבוע 4 (1)</button>
-            <button class="nav-btn" id="btn-week2" onclick="window.setWeek('week2')">שבוע 5 (2)</button>
-            <button class="nav-btn" id="btn-week3" onclick="window.setWeek('week3')">שבוע 6 (3)</button>
-            <button class="nav-btn" id="btn-week7" onclick="window.setWeek('week7')">שבוע 7 (4)</button>
-            <button class="nav-btn" id="btn-article" onclick="window.setWeek('article')">שבוע 8 (5) 📄</button>
+            <button class="nav-btn" id="btn-home" onclick="window.setWeek('home')">ראשי 🏠</button>
+            <button class="nav-btn" id="btn-week1" onclick="window.setWeek('week1')"><small style="opacity:0.7; margin-left:4px;">1.</small> שבוע 4 📚</button>
+            <button class="nav-btn" id="btn-week2" onclick="window.setWeek('week2')"><small style="opacity:0.7; margin-left:4px;">2.</small> שבוע 5 🚀</button>
+            <button class="nav-btn" id="btn-week3" onclick="window.setWeek('week3')"><small style="opacity:0.7; margin-left:4px;">3.</small> שבוע 6 🎓</button>
+            <button class="nav-btn" id="btn-week7" onclick="window.setWeek('week7')"><small style="opacity:0.7; margin-left:4px;">4.</small> שבוע 7 💎</button>
+            <button class="nav-btn" id="btn-article" onclick="window.setWeek('article')"><small style="opacity:0.7; margin-left:4px;">5.</small> שבוע 8 📄</button>
+            <button class="nav-btn" id="btn-week9" onclick="window.setWeek('week9')"><small style="opacity:0.7; margin-left:4px;">6.</small> שבוע 9 🔐</button>
             <button class="nav-btn" id="btn-quiz" onclick="window.setWeek('quiz')">מבחן חכם 🧠</button>
-            <button class="nav-btn" id="btn-summary" onclick="window.setWeek('summary')">סיכום (160 מילים)</button>
+            <button class="nav-btn" id="btn-summary" onclick="window.setWeek('summary')">סיכום לפי מילים 🗂️</button>
         </div>
 
         <div class="sub-nav" id="sub-nav-container"></div>
@@ -33,7 +34,7 @@
     
     <!-- Audio Player Bar -->
     <div id="audio-player" class="audio-player-bar">
-        <div style="display: flex; gap: 2vw; justify-content: center; width: 100%;">
+        <div class="audio-controls-row">
             <button class="player-btn stop" onclick="window.stopAudio()" title="עצור">
                 <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="6" y="6" width="12" height="12"/></svg>
             </button>

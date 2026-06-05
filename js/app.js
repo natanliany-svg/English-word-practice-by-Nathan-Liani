@@ -449,15 +449,15 @@ window.render = function() {
     const subNavContainer = document.getElementById('sub-nav-container');
 
     const navHTML = `
-        <button class="nav-btn ${window.currentWeek === 'home' ? 'active-cyan' : ''}" onclick="window.setWeek('home')">🏠 ראשי</button>
-        <button class="nav-btn ${window.currentWeek === 'week1' ? 'active-cyan' : ''}" onclick="window.setWeek('week1')">שבוע 4 (1)</button>
-        <button class="nav-btn ${window.currentWeek === 'week2' ? 'active-cyan' : ''}" onclick="window.setWeek('week2')">שבוע 5 (2)</button>
-        <button class="nav-btn ${window.currentWeek === 'week3' ? 'active-cyan' : ''}" onclick="window.setWeek('week3')">שבוע 6 (3)</button>
-        <button class="nav-btn ${window.currentWeek === 'week7' ? 'active-cyan' : ''}" onclick="window.setWeek('week7')">שבוע 7 (4)</button>
-        <button class="nav-btn ${window.currentWeek === 'article' ? 'active-cyan' : ''}" onclick="window.setWeek('article')">שבוע 8 (5) 📄</button>
-        <button class="nav-btn ${window.currentWeek === 'week9' ? 'active-cyan' : ''}" onclick="window.setWeek('week9')">שבוע 9 (6) 🔐</button>
+        <button class="nav-btn ${window.currentWeek === 'home' ? 'active-cyan' : ''}" onclick="window.setWeek('home')">ראשי 🏠</button>
+        <button class="nav-btn ${window.currentWeek === 'week1' ? 'active-cyan' : ''}" onclick="window.setWeek('week1')"><small style="opacity:0.7; margin-left:4px;">1.</small> שבוע 4 📚</button>
+        <button class="nav-btn ${window.currentWeek === 'week2' ? 'active-cyan' : ''}" onclick="window.setWeek('week2')"><small style="opacity:0.7; margin-left:4px;">2.</small> שבוע 5 🚀</button>
+        <button class="nav-btn ${window.currentWeek === 'week3' ? 'active-cyan' : ''}" onclick="window.setWeek('week3')"><small style="opacity:0.7; margin-left:4px;">3.</small> שבוע 6 🎓</button>
+        <button class="nav-btn ${window.currentWeek === 'week7' ? 'active-cyan' : ''}" onclick="window.setWeek('week7')"><small style="opacity:0.7; margin-left:4px;">4.</small> שבוע 7 💎</button>
+        <button class="nav-btn ${window.currentWeek === 'article' ? 'active-cyan' : ''}" onclick="window.setWeek('article')"><small style="opacity:0.7; margin-left:4px;">5.</small> שבוע 8 📄</button>
+        <button class="nav-btn ${window.currentWeek === 'week9' ? 'active-cyan' : ''}" onclick="window.setWeek('week9')"><small style="opacity:0.7; margin-left:4px;">6.</small> שבוע 9 🔐</button>
         <button class="nav-btn ${window.currentWeek === 'quiz' ? 'active-cyan' : ''}" onclick="window.setWeek('quiz')">מבחן חכם 🧠</button>
-        <button class="nav-btn ${window.currentWeek === 'summary' ? 'active-cyan' : ''}" onclick="window.setWeek('summary')">סיכום לפי מילים</button>
+        <button class="nav-btn ${window.currentWeek === 'summary' ? 'active-cyan' : ''}" onclick="window.setWeek('summary')">סיכום לפי מילים 🗂️</button>
     `;
     
     const navTier = document.querySelector('.nav-tier');
@@ -557,7 +557,7 @@ window.render = function() {
         const subtitle = isWeek9 ? "עקרונות אבטחת מידע - לחץ על משפט לתרגום או החלף תצוגה לפסקה מלאה." : "מאמר המבחן הרשמי. לחץ על משפט כדי לראות תרגום.";
         
         let htmlBlock = `
-            <div class="top-bar" style="max-width: 1000px; margin: 0 auto 1vh auto; justify-content: center; flex-wrap: wrap; gap: 1vw;">
+            <div class="top-bar" style="max-width: 1400px; margin: 0 auto 1vh auto; justify-content: center; flex-wrap: wrap; gap: 1vw;">
                 <div class="settings-box">
                     ${window.icons.settings}
                     <select onchange="window.changeRate(this.value)">
@@ -605,16 +605,16 @@ window.render = function() {
             const safeText = fullEnglish.replace(/'/g, "\\\'").replace(/"/g, "&quot;");
             
             htmlBlock += `
-                <div class="story-card expanded" style="cursor: default; padding: 4vh 3vw;">
+                <div class="story-card" style="cursor: pointer; padding: 4vh 3vw;" onclick="this.classList.toggle('expanded')">
                     <div style="display:flex; justify-content:center; margin-bottom: 3vh;">
-                        <button class="story-audio-btn" style="width: 8vh; height: 8vh; transform: scale(1.2);" onclick="window.playAudio('${safeText}', this)" title="השמע הכל">
+                        <button class="story-audio-btn" style="width: 8vh; height: 8vh; transform: scale(1.2);" onclick="event.stopPropagation(); window.playAudio('${safeText}', this)" title="השמע הכל">
                             ${window.icons.volume}
                         </button>
                     </div>
-                    <div class="story-eng-text" style="text-align: justify; margin-bottom: 4vh; font-size: clamp(18px, 2.8vh, 36px);">
+                    <div class="story-eng-text" style="display: block !important; text-align: justify; margin-bottom: 4vh; font-size: clamp(18px, 2.8vh, 36px); line-height: 1.6;">
                         ${window.highlightText(fullEnglish)}
                     </div>
-                    <div class="story-heb-text" dir="rtl" style="display: block; text-align: justify; font-size: clamp(16px, 2.4vh, 30px); border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 3vh;">
+                    <div class="story-heb-text" dir="rtl" style="text-align: justify; font-size: clamp(16px, 2.4vh, 30px); border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 3vh;">
                         ${fullHebrew}
                     </div>
                 </div>
@@ -747,9 +747,9 @@ window.render = function() {
         `;
         if (window.summaryMode === 'weeks') {
             summaryHtml += `<div class="weeks-scroll">`;
-            const weekTitles = {'week1': '4 (1)', 'week2': '5 (2)', 'week3': '6 (3)', 'week7': '7 (4)', 'week8': '8 (5)', 'week9vocab': '9 (6)'};
+            const weekTitles = {'week1': '1. שבוע 4', 'week2': '2. שבוע 5', 'week3': '3. שבוע 6', 'week7': '4. שבוע 7', 'week8': '5. שבוע 8', 'week9vocab': '6. שבוע 9'};
             ['week1', 'week2', 'week3', 'week7', 'week8', 'week9vocab'].forEach((week) => {
-                summaryHtml += `<div class="week-section"><div class="week-title">שבוע ${weekTitles[week]}</div><div class="days-grid">`;
+                summaryHtml += `<div class="week-section"><div class="week-title">${weekTitles[week]}</div><div class="days-grid">`;
                 Object.entries(window.vocabularyData).filter(([dayKey]) => window.daysList.find(d => d.id === dayKey).week === week).forEach(([dayKey, words]) => {
                     const dayInfo = window.daysList.find(d => d.id === dayKey);
                     summaryHtml += `<div class="matrix-card"><div class="matrix-header"><span>${dayInfo.title}</span><span>${dayInfo.date}</span></div><ul class="matrix-list">`;
