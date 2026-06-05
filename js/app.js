@@ -6,6 +6,31 @@ window.summaryMode = 'weeks';
 window.articleViewMode = 'sentence';
 window.quizTargetWeek = 'mix';
 
+window.articleParagraphs = {
+    'week8': [
+        [0, 1, 2],
+        [3, 4, 5, 6, 7],
+        [8, 9, 10, 11, 12, 13],
+        [14, 15, 16, 17],
+        [18, 19, 20, 21],
+        [22, 23, 24, 25],
+        [26, 27, 28],
+        [29, 30, 31],
+        [32, 33, 34]
+    ],
+    'week9': [
+        [0, 1, 2, 3],
+        [4, 5, 6, 7],
+        [8, 9, 10, 11, 12, 13, 14],
+        [15, 16, 17],
+        [18, 19, 20, 21, 22],
+        [23, 24, 25, 26],
+        [27, 28, 29, 30],
+        [31, 32, 33],
+        [34, 35, 36, 37, 38, 39]
+    ]
+};
+
 window.audioState = window.audioState || {
     fullText: "",
     btnElement: null,
@@ -244,11 +269,24 @@ window.toggleArticleView = function(mode) {
 
 window.toggleArticle = function(index) {
     let card = document.getElementById('article-card-' + index);
-    if(card.classList.contains('expanded')) {
-        card.classList.remove('expanded');
-    } else {
-        document.querySelectorAll('.story-card').forEach(c => c.classList.remove('expanded'));
-        card.classList.add('expanded');
+    if (card) {
+        if(card.classList.contains('expanded')) {
+            card.classList.remove('expanded');
+        } else {
+            document.querySelectorAll('.story-card').forEach(c => c.classList.remove('expanded'));
+            card.classList.add('expanded');
+        }
+    }
+};
+
+window.toggleParagraph = function(index) {
+    let card = document.getElementById('article-paragraph-card-' + index);
+    if (card) {
+        if (card.classList.contains('expanded')) {
+            card.classList.remove('expanded');
+        } else {
+            card.classList.add('expanded');
+        }
     }
 };
 
@@ -486,48 +524,66 @@ window.render = function() {
                 
                 <h3 class="home-section-title">שלבי הלימוד</h3>
                 <div class="home-list">
-                    <button class="home-card" onclick="window.setWeek('week1')">
-                        <div class="home-card-icon">📖</div>
-                        <div class="home-card-content">
-                            <div class="home-card-title">שבוע 4 (1)</div>
-                            <div class="home-card-desc">אוצר מילים ויסודות. בסיס חזק להמשך הדרך.</div>
-                        </div>
-                    </button>
-                    <button class="home-card" onclick="window.setWeek('week2')">
-                        <div class="home-card-icon">📚</div>
-                        <div class="home-card-content">
-                            <div class="home-card-title">שבוע 5 (2)</div>
-                            <div class="home-card-desc">המשך בניית אוצר מילים ושילוב משפטים.</div>
-                        </div>
-                    </button>
-                    <button class="home-card" onclick="window.setWeek('week3')">
-                        <div class="home-card-icon">🎓</div>
-                        <div class="home-card-content">
-                            <div class="home-card-title">שבוע 6 (3)</div>
-                            <div class="home-card-desc">ביטויים מתקדמים ואוצר מילים מורכב.</div>
-                        </div>
-                    </button>
-                    <button class="home-card" onclick="window.setWeek('week7')">
-                        <div class="home-card-icon">🚀</div>
-                        <div class="home-card-content">
-                            <div class="home-card-title">שבוע 7 (4)</div>
-                            <div class="home-card-desc">השלב הסופי - מילים מתקדמות לבחינה.</div>
-                        </div>
-                    </button>
-                    <button class="home-card" onclick="window.setWeek('article')">
-                        <div class="home-card-icon">📄</div>
-                        <div class="home-card-content">
-                            <div class="home-card-title">שבוע 8 (5)</div>
-                            <div class="home-card-desc">מאמר קריאה - Unseen בהקראה קולית.</div>
-                        </div>
-                    </button>
-                    <button class="home-card" onclick="window.setWeek('week9')">
-                        <div class="home-card-icon">🔐</div>
-                        <div class="home-card-content">
-                            <div class="home-card-title">שבוע 9 (6)</div>
-                            <div class="home-card-desc">מאמר קריאה - CIA Triad אבטחת מידע.</div>
-                        </div>
-                    </button>
+                    <div class="home-card-row">
+                        <span class="home-card-number">1</span>
+                        <button class="home-card" onclick="window.setWeek('week1')">
+                            <div class="home-card-icon">📖</div>
+                            <div class="home-card-content">
+                                <div class="home-card-title">שבוע 4</div>
+                                <div class="home-card-desc">אוצר מילים ויסודות. בסיס חזק להמשך הדרך.</div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="home-card-row">
+                        <span class="home-card-number">2</span>
+                        <button class="home-card" onclick="window.setWeek('week2')">
+                            <div class="home-card-icon">📚</div>
+                            <div class="home-card-content">
+                                <div class="home-card-title">שבוע 5</div>
+                                <div class="home-card-desc">המשך בניית אוצר מילים ושילוב משפטים.</div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="home-card-row">
+                        <span class="home-card-number">3</span>
+                        <button class="home-card" onclick="window.setWeek('week3')">
+                            <div class="home-card-icon">🎓</div>
+                            <div class="home-card-content">
+                                <div class="home-card-title">שבוע 6</div>
+                                <div class="home-card-desc">ביטויים מתקדמים ואוצר מילים מורכב.</div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="home-card-row">
+                        <span class="home-card-number">4</span>
+                        <button class="home-card" onclick="window.setWeek('week7')">
+                            <div class="home-card-icon">🚀</div>
+                            <div class="home-card-content">
+                                <div class="home-card-title">שבוע 7</div>
+                                <div class="home-card-desc">השלב הסופי - מילים מתקדמות לבחינה.</div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="home-card-row">
+                        <span class="home-card-number">5</span>
+                        <button class="home-card" onclick="window.setWeek('article')">
+                            <div class="home-card-icon">📄</div>
+                            <div class="home-card-content">
+                                <div class="home-card-title">שבוע 8</div>
+                                <div class="home-card-desc">מאמר קריאה - Unseen בהקראה קולית.</div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="home-card-row">
+                        <span class="home-card-number">6</span>
+                        <button class="home-card" onclick="window.setWeek('week9')">
+                            <div class="home-card-icon">🔐</div>
+                            <div class="home-card-content">
+                                <div class="home-card-title">שבוע 9</div>
+                                <div class="home-card-desc">מאמר קריאה - CIA Triad אבטחת מידע.</div>
+                            </div>
+                        </button>
+                    </div>
                 </div>
 
                 <h3 class="home-section-title">תרגול ומבחנים</h3>
@@ -554,10 +610,10 @@ window.render = function() {
         const isWeek9 = window.currentWeek === 'week9';
         const articleData = isWeek9 ? window.ciaTriadArticleData : window.unseenArticleData;
         const title = isWeek9 ? "The CIA Triad in Information Security" : "Operating Systems: Unseen";
-        const subtitle = isWeek9 ? "עקרונות אבטחת מידע - לחץ על משפט לתרגום או החלף תצוגה לפסקה מלאה." : "מאמר המבחן הרשמי. לחץ על משפט כדי לראות תרגום.";
+        const subtitle = isWeek9 ? "עקרונות אבטחת מידע - בחר מצב תצוגה ולחץ על כרטיסייה לתרגום." : "מאמר המבחן הרשמי. בחר מצב תצוגה ולחץ על כרטיסייה לתרגום.";
         
         let htmlBlock = `
-            <div class="top-bar" style="max-width: 1400px; margin: 0 auto 1vh auto; justify-content: center; flex-wrap: wrap; gap: 1vw;">
+            <div class="top-bar" style="max-width: 1400px; margin: 0 auto 15px auto; justify-content: center; flex-wrap: wrap; gap: 1vw;">
                 <div class="settings-box">
                     ${window.icons.settings}
                     <select onchange="window.changeRate(this.value)">
@@ -568,9 +624,10 @@ window.render = function() {
                         <option value="1" ${window.speechRate === 1 ? 'selected' : ''}>רגיל (1.0x)</option>
                     </select>
                 </div>
-                <div class="settings-box" style="background: rgba(16, 185, 129, 0.2); border-color: var(--emerald-main);">
-                    <button class="nav-btn ${window.articleViewMode === 'sentence' ? 'active-emerald' : ''}" onclick="window.toggleArticleView('sentence')" style="border:none; margin:0;">משפטים</button>
-                    <button class="nav-btn ${window.articleViewMode === 'paragraph' ? 'active-emerald' : ''}" onclick="window.toggleArticleView('paragraph')" style="border:none; margin:0;">פסקה שלמה</button>
+                <div class="settings-box" style="background: rgba(16, 185, 129, 0.2); border-color: var(--emerald-main); padding: 5px 10px; border-radius: 8px;">
+                    <button class="nav-btn ${window.articleViewMode === 'sentence' ? 'active-emerald' : ''}" onclick="window.toggleArticleView('sentence')" style="border:none; margin:0; padding: 4px 10px;">משפטים</button>
+                    <button class="nav-btn ${window.articleViewMode === 'paragraph' ? 'active-emerald' : ''}" onclick="window.toggleArticleView('paragraph')" style="border:none; margin:0; padding: 4px 10px;">פסקאות</button>
+                    <button class="nav-btn ${window.articleViewMode === 'article' ? 'active-emerald' : ''}" onclick="window.toggleArticleView('article')" style="border:none; margin:0; padding: 4px 10px;">מאמר שלם</button>
                 </div>
             </div>
             <div class="story-container">
@@ -589,40 +646,74 @@ window.render = function() {
                             <button class="story-audio-btn" onclick="event.stopPropagation(); window.playAudio('${safeText}', this)" title="השמע משפט">
                                 ${window.icons.volume}
                             </button>
-                            <div class="story-eng-text">
+                            <div class="story-eng-text" style="text-align: left; direction: ltr;">
                                 <span style="font-size: 1.2em; margin-right: 0.5vw;">${item.j}</span>
                                 <span>${window.highlightText(item.e)}</span>
                             </div>
                         </div>
-                        <div class="story-heb-text" dir="rtl">${item.h}</div>
+                        <div class="story-heb-text" dir="rtl" style="text-align: right;">${item.h}</div>
+                    </div>
+                `;
+            }).join('');
+        } else if (window.articleViewMode === 'paragraph') {
+            const paragraphs = window.articleParagraphs[isWeek9 ? 'week9' : 'week8'];
+            htmlBlock += paragraphs.map((paraIndices, index) => {
+                const paraEnglish = paraIndices.map(idx => articleData[idx].e).join(" ");
+                const paraHebrew = paraIndices.map(idx => articleData[idx].h).join(" ");
+                const safeText = paraEnglish.replace(/'/g, "\\\'").replace(/"/g, "&quot;");
+                
+                return `
+                    <div id="article-paragraph-card-${index}" class="story-card" onclick="window.toggleParagraph(${index})">
+                        <div style="display:flex; justify-content:center; margin-bottom: 15px;">
+                            <button class="story-audio-btn" style="width: 50px; height: 50px;" onclick="event.stopPropagation(); window.playAudio('${safeText}', this)" title="השמע פסקא">
+                                ${window.icons.volume}
+                            </button>
+                        </div>
+                        <div class="story-eng-text" style="display: block !important; text-align: left; direction: ltr; font-size: clamp(15px, 1.25rem, 22px); line-height: 1.6;">
+                            ${window.highlightText(paraEnglish)}
+                        </div>
+                        <div class="story-heb-text" dir="rtl" style="text-align: right; font-size: clamp(14px, 1.15rem, 20px); line-height: 1.6; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 15px; margin-top: 15px; padding-right: 0 !important;">
+                            ${paraHebrew}
+                        </div>
                     </div>
                 `;
             }).join('');
         } else {
-            // Paragraph mode
+            // Whole Article mode
             const fullEnglish = articleData.map(item => item.e).join(" ");
             const fullHebrew = articleData.map(item => item.h).join(" ");
             const safeText = fullEnglish.replace(/'/g, "\\\'").replace(/"/g, "&quot;");
             
+            const paragraphs = window.articleParagraphs[isWeek9 ? 'week9' : 'week8'];
+            const engParasHtml = paragraphs.map(paraIndices => {
+                const paraText = paraIndices.map(idx => articleData[idx].e).join(" ");
+                return `<p style="margin-bottom: 20px; text-align: left; direction: ltr; font-size: clamp(15px, 1.25rem, 22px); line-height: 1.6; font-family: Georgia, serif;">${window.highlightText(paraText)}</p>`;
+            }).join('');
+
+            const hebParasHtml = paragraphs.map(paraIndices => {
+                const paraText = paraIndices.map(idx => articleData[idx].h).join(" ");
+                return `<p style="margin-bottom: 20px; text-align: right; direction: rtl; font-size: clamp(14px, 1.15rem, 20px); line-height: 1.6;">${paraText}</p>`;
+            }).join('');
+
             htmlBlock += `
-                <div class="story-card" style="cursor: pointer; padding: 4vh 3vw;" onclick="this.classList.toggle('expanded')">
-                    <div style="display:flex; justify-content:center; margin-bottom: 3vh;">
-                        <button class="story-audio-btn" style="width: 8vh; height: 8vh; transform: scale(1.2);" onclick="event.stopPropagation(); window.playAudio('${safeText}', this)" title="השמע הכל">
+                <div class="story-card" style="cursor: pointer; padding: 30px;" onclick="this.classList.toggle('expanded')">
+                    <div style="display:flex; justify-content:center; margin-bottom: 20px;">
+                        <button class="story-audio-btn" style="width: 70px; height: 70px;" onclick="event.stopPropagation(); window.playAudio('${safeText}', this)" title="השמע הכל">
                             ${window.icons.volume}
                         </button>
                     </div>
-                    <div class="story-eng-text" style="display: block !important; text-align: justify; margin-bottom: 4vh; font-size: clamp(18px, 2.8vh, 36px); line-height: 1.6;">
-                        ${window.highlightText(fullEnglish)}
+                    <div class="story-eng-text" style="display: block !important;">
+                        ${engParasHtml}
                     </div>
-                    <div class="story-heb-text" dir="rtl" style="text-align: justify; font-size: clamp(16px, 2.4vh, 30px); border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 3vh;">
-                        ${fullHebrew}
+                    <div class="story-heb-text" dir="rtl" style="border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 20px; margin-top: 20px; padding-right: 0 !important;">
+                        ${hebParasHtml}
                     </div>
                 </div>
             `;
         }
         
         htmlBlock += `
-                <div style="display:flex; justify-content:center; margin-top: 3vh;">
+                <div style="display:flex; justify-content:center; margin-top: 30px;">
                     <button class="control-btn" style="background: var(--cyan-main); border:none; box-shadow: 0 1vh 2vh rgba(34,211,238,0.4);" onclick="window.setWeek('quiz')">
                         התחל מבחן ${isWeek9 ? 'שבוע 9' : 'Unseen'} 🧠
                     </button>
