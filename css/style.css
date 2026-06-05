@@ -369,7 +369,7 @@
             .sub-btn-title { font-size: 13px !important; margin-bottom: 0 !important; white-space: nowrap !important;}
             .sub-btn-date { display: none !important; }
             
-            .top-bar { flex-direction: row !important; margin-bottom: 0.4vh !important; margin-top: 0 !important; gap: 5px !important; height: auto !important;} 
+            .top-bar { flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; margin-bottom: 10px !important; margin-top: 0 !important; gap: 10px !important; height: auto !important; position: relative !important; z-index: 10 !important;} 
             .settings-box { padding: 3px 5px !important; gap: 4px !important; border-radius: 6px !important;}
             .settings-box span { display: none !important; } 
             .settings-box select { font-size: 10px !important; padding: 1px !important; }
@@ -551,3 +551,60 @@
         .home-card:nth-child(5) { border-left-color: #f59e0b; }
         .home-card:nth-child(6) { border-left-color: #ef4444; }
         .home-card:hover { border-left-width: 5px; }
+
+        /* === DESKTOP VOCABULARY VIEW WRAPPER === */
+        .vocab-view-wrapper {
+            max-width: 1000px;
+            width: 100%;
+            margin: 30px auto 0 auto;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        @media (max-width: 768px) {
+            .vocab-view-wrapper {
+                margin: 0;
+            }
+        }
+
+        /* === SUMMARY WEEK TITLE HEADER === */
+        .week-title-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto 15px auto;
+            position: relative;
+        }
+        .week-title-number {
+            position: absolute;
+            right: 0;
+            font-size: clamp(20px, 3vh, 32px);
+            font-weight: 900;
+            color: var(--cyan-light);
+            text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+        }
+        .week-title-text {
+            flex-grow: 1;
+            text-align: center;
+            color: #fde047;
+            text-shadow: 0 0 2vh rgba(253, 224, 71, 0.8);
+            font-size: clamp(24px, 3.5vh, 40px);
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+        @media (max-width: 768px) {
+            .week-title-container {
+                justify-content: center;
+                margin: 10px auto;
+            }
+            .week-title-number {
+                position: static !important;
+                margin-left: 10px;
+                font-size: 1.4rem !important;
+            }
+            .week-title-text {
+                flex-grow: 0 !important;
+                font-size: 1.4rem !important;
+            }
+        }

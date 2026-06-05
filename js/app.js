@@ -658,9 +658,10 @@ window.render = function() {
         } else if (window.articleViewMode === 'paragraph') {
             const paragraphs = window.articleParagraphs[isWeek9 ? 'week9' : 'week8'];
             htmlBlock += paragraphs.map((paraIndices, index) => {
-                const paraEnglish = paraIndices.map(idx => articleData[idx].e).join(" ");
-                const paraHebrew = paraIndices.map(idx => articleData[idx].h).join(" ");
-                const safeText = paraEnglish.replace(/'/g, "\\\'").replace(/"/g, "&quot;");
+                const paraEnglish = paraIndices.map(idx => articleData[idx].e.replace(/, /g, ',<br>')).join("<br><br>");
+                const paraHebrew = paraIndices.map(idx => articleData[idx].h.replace(/, /g, ',<br>')).join("<br><br>");
+                const plainEnglish = paraIndices.map(idx => articleData[idx].e).join(" ");
+                const safeText = plainEnglish.replace(/'/g, "\\\'").replace(/"/g, "&quot;");
                 
                 return `
                     <div id="article-paragraph-card-${index}" class="story-card" onclick="window.toggleParagraph(${index})">
@@ -838,9 +839,17 @@ window.render = function() {
         `;
         if (window.summaryMode === 'weeks') {
             summaryHtml += `<div class="weeks-scroll">`;
-            const weekTitles = {'week1': '1. שבוע 4', 'week2': '2. שבוע 5', 'week3': '3. שבוע 6', 'week7': '4. שבוע 7', 'week8': '5. שבוע 8', 'week9vocab': '6. שבוע 9'};
+            const weekNum = {'week1': '1.', 'week2': '2.', 'week3': '3.', 'week7': '4.', 'week8': '5.', 'week9vocab': '6.'};
+            const weekText = {'week1': 'שבוע 4', 'week2': 'שבוע 5', 'week3': 'שבוע 6', 'week7': 'שבוע 7', 'week8': 'שבוע 8', 'week9vocab': 'שבוע 9'};
             ['week1', 'week2', 'week3', 'week7', 'week8', 'week9vocab'].forEach((week) => {
-                summaryHtml += `<div class="week-section"><div class="week-title">${weekTitles[week]}</div><div class="days-grid">`;
+                summaryHtml += `
+                    <div class="week-section">
+                        <div class="week-title-container">
+                            <span class="week-title-number">${weekNum[week]}</span>
+                            <span class="week-title-text">${weekText[week]}</span>
+                        </div>
+                        <div class="days-grid">
+                `;
                 Object.entries(window.vocabularyData).filter(([dayKey]) => window.daysList.find(d => d.id === dayKey).week === week).forEach(([dayKey, words]) => {
                     const dayInfo = window.daysList.find(d => d.id === dayKey);
                     summaryHtml += `<div class="matrix-card"><div class="matrix-header"><span>${dayInfo.title}</span><span>${dayInfo.date}</span></div><ul class="matrix-list">`;
@@ -872,78 +881,80 @@ window.render = function() {
         }
 
         app.innerHTML = `
-            <div class="top-bar">
-                <div class="settings-box">
-                    ${window.icons.settings}
-                    <select onchange="window.changeRate(this.value)">
-                        <option value="0.3" ${window.speechRate === 0.3 ? 'selected' : ''}>סופר איטי (0.3x)</option>
-                        <option value="0.4" ${window.speechRate === 0.4 ? 'selected' : ''}>איטי מאוד (0.4x)</option>
-                        <option value="0.6" ${window.speechRate === 0.6 ? 'selected' : ''}>איטי (0.6x)</option>
-                        <option value="0.85" ${window.speechRate === 0.85 ? 'selected' : ''}>רגיל-איטי (0.85x)</option>
-                        <option value="1" ${window.speechRate === 1 ? 'selected' : ''}>רגיל (1.0x)</option>
-                    </select>
-                </div>
-                <div class="progress-box">
-                    <span style="margin-bottom: 0.2vh;">מילה ${window.wordIndex + 1} מתוך ${currentWords.length}</span>
-                    <div class="progress-dots">${dotsHtml}</div>
-                </div>
-            </div>
-
-            <div class="flashcard">
-                <div class="center-stage">
-                    <div class="word-main-row">
-                        <button class="audio-btn" onclick="window.playAudio('${wordData.word.replace(/'/g, "\\'")}')" title="השמע מילה">
-                            ${window.icons.volume}
-                        </button>
-                        <div class="word-title">
-                            ${wordData.word}
-                            <span class="small-emoji">${wordData.visual}</span>
-                        </div>
+            <div class="vocab-view-wrapper">
+                <div class="top-bar">
+                    <div class="settings-box">
+                        ${window.icons.settings}
+                        <select onchange="window.changeRate(this.value)">
+                            <option value="0.3" ${window.speechRate === 0.3 ? 'selected' : ''}>סופר איטי (0.3x)</option>
+                            <option value="0.4" ${window.speechRate === 0.4 ? 'selected' : ''}>איטי מאוד (0.4x)</option>
+                            <option value="0.6" ${window.speechRate === 0.6 ? 'selected' : ''}>איטי (0.6x)</option>
+                            <option value="0.85" ${window.speechRate === 0.85 ? 'selected' : ''}>רגיל-איטי (0.85x)</option>
+                            <option value="1" ${window.speechRate === 1 ? 'selected' : ''}>רגיל (1.0x)</option>
+                        </select>
                     </div>
-                    <div class="tags-row">
-                        <span class="tag-box tag-meaning">${wordData.meaning}</span>
-                        <span class="tag-box tag-phonetic" style="white-space: nowrap !important;">[ ${wordData.phonetic} ]</span>
+                    <div class="progress-box">
+                        <span style="margin-bottom: 0.2vh;">מילה ${window.wordIndex + 1} מתוך ${currentWords.length}</span>
+                        <div class="progress-dots">${dotsHtml}</div>
                     </div>
                 </div>
 
-                <div class="content-grid">
-                    <div class="text-col">
-                        <div class="explanation-box">
-                            <div class="section-title">
-                                ${window.icons.check} הסבר והקשר
+                <div class="flashcard">
+                    <div class="center-stage">
+                        <div class="word-main-row">
+                            <button class="audio-btn" onclick="window.playAudio('${wordData.word.replace(/'/g, "\\'")}')" title="השמע מילה">
+                                ${window.icons.volume}
+                            </button>
+                            <div class="word-title">
+                                ${wordData.word}
+                                <span class="small-emoji">${wordData.visual}</span>
                             </div>
-                            <div style="margin-top: 0.5vh;">${wordData.exp}</div>
                         </div>
-
-                        <div class="example-box">
-                            <div class="section-title emerald" style="margin-bottom: 1.5vh;">
-                                ${window.icons.book} דוגמה פרקטית
-                            </div>
-                            <div class="example-eng-row">
-                                <button class="audio-small" onclick="window.playAudio('${wordData.engEx.replace(/'/g, "\\'")}')" title="השמע משפט">
-                                    ${window.icons.volume}
-                                </button>
-                                <div class="example-eng">"${wordData.engEx}"</div>
-                            </div>
-                            <div class="example-heb">
-                                ${wordData.hebEx}
-                            </div>
+                        <div class="tags-row">
+                            <span class="tag-box tag-meaning">${wordData.meaning}</span>
+                            <span class="tag-box tag-phonetic" style="white-space: nowrap !important;">[ ${wordData.phonetic} ]</span>
                         </div>
                     </div>
 
-                    <div class="visual-col">
-                        ${window.getCustomArtHTML(wordData.word, wordData.visual)}
+                    <div class="content-grid">
+                        <div class="text-col">
+                            <div class="explanation-box">
+                                <div class="section-title">
+                                    ${window.icons.check} הסבר והקשר
+                                </div>
+                                <div style="margin-top: 0.5vh;">${wordData.exp}</div>
+                            </div>
+
+                            <div class="example-box">
+                                <div class="section-title emerald" style="margin-bottom: 1.5vh;">
+                                    ${window.icons.book} דוגמה פרקטית
+                                </div>
+                                <div class="example-eng-row">
+                                    <button class="audio-small" onclick="window.playAudio('${wordData.engEx.replace(/'/g, "\\'")}')" title="השמע משפט">
+                                        ${window.icons.volume}
+                                    </button>
+                                    <div class="example-eng">"${wordData.engEx}"</div>
+                                </div>
+                                <div class="example-heb">
+                                    ${wordData.hebEx}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="visual-col">
+                            ${window.getCustomArtHTML(wordData.word, wordData.visual)}
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="controls-container">
-                <button class="control-btn" onclick="window.nextWord()" ${isLastWord ? 'disabled' : ''}>
-                    ${window.icons.left_arrow} הבא
-                </button>
-                <button class="control-btn" onclick="window.prevWord()" ${isFirstWord ? 'disabled' : ''}>
-                    הקודם ${window.icons.right_arrow}
-                </button>
+                <div class="controls-container">
+                    <button class="control-btn" onclick="window.nextWord()" ${isLastWord ? 'disabled' : ''}>
+                        ${window.icons.left_arrow} הבא
+                    </button>
+                    <button class="control-btn" onclick="window.prevWord()" ${isFirstWord ? 'disabled' : ''}>
+                        הקודם ${window.icons.right_arrow}
+                    </button>
+                </div>
             </div>
         `;
     }
