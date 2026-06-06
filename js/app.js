@@ -128,6 +128,19 @@ window.setSummaryMode = function(mode) { window.summaryMode = mode; window.rende
 window.goToWord = function(dayId, index) { window.stopAudio(); window.currentDay = dayId; window.currentWeek = window.daysList.find(d => d.id === dayId).week; window.wordIndex = index; window.render(); };
 window.changeRate = function(val) { window.speechRate = parseFloat(val); window.render(); };
 
+window.getSRSIndicator = function(word) {
+    const wordKey = word.toLowerCase();
+    if (window.srsState[wordKey] && window.srsState[wordKey].known) {
+        const interval = window.srsState[wordKey].interval;
+        if (interval >= 8) {
+            return '<span class="srs-dot mastered" title="שולט" style="color: #10b981; margin-left: 6px; font-size: 14px; cursor: pointer;">●</span>';
+        } else {
+            return '<span class="srs-dot learning" title="בלמידה" style="color: #a855f7; margin-left: 6px; font-size: 14px; cursor: pointer;">●</span>';
+        }
+    }
+    return '<span class="srs-dot new" title="חדש" style="color: #22d3ee; margin-left: 6px; font-size: 14px; cursor: pointer;">●</span>';
+};
+
 window.formatTime = function(seconds) {
     if(isNaN(seconds) || seconds < 0) seconds = 0;
     let m = Math.floor(seconds / 60);
@@ -1098,7 +1111,7 @@ window.render = function() {
                         daySectionHtml += `<div class="matrix-card"><div class="matrix-header"><span>${dayInfo.title}</span><span>${dayInfo.date}</span></div><ul class="matrix-list">`;
                         filteredWords.forEach((w) => {
                             const originalIdx = words.indexOf(w);
-                            daySectionHtml += `<li class="matrix-item" onclick="window.goToWord('${dayInfo.id}', ${originalIdx})"><span class="matrix-item-en">${w.word}</span><span class="matrix-item-he">${w.meaning}</span></li>`;
+                            daySectionHtml += `<li class="matrix-item" onclick="window.goToWord('${dayInfo.id}', ${originalIdx})"><span class="matrix-item-en" style="display: flex; align-items: center; gap: 4px;">${window.getSRSIndicator(w.word)} ${w.word}</span><span class="matrix-item-he">${w.meaning}</span></li>`;
                         });
                         daySectionHtml += `</ul></div>`;
                     }
@@ -1124,7 +1137,7 @@ window.render = function() {
             Object.entries(window.vocabularyData).forEach(([dayKey, words]) => {
                 words.forEach((w, idx) => {
                     if (query === '' || w.word.toLowerCase().includes(query) || w.meaning.toLowerCase().includes(query)) {
-                        summaryHtml += `<div class="compact-item" onclick="window.goToWord('${dayKey}', ${idx})"><span class="compact-en">${w.word}</span><span class="compact-he">${w.meaning}</span></div>`;
+                        summaryHtml += `<div class="compact-item" onclick="window.goToWord('${dayKey}', ${idx})"><span class="compact-en" style="display: flex; align-items: center; justify-content: center; gap: 4px;">${window.getSRSIndicator(w.word)} ${w.word}</span><span class="compact-he">${w.meaning}</span></div>`;
                     }
                 });
             });
@@ -1218,8 +1231,8 @@ window.render = function() {
 
                 <div class="flashcard">
                     <div class="center-stage">
-                        <div class="word-main-row" style="position:relative; width:100%; justify-content:center;">
-                            <div style="display:flex; gap:10px; position:absolute; left:0;">
+                        <div class="word-main-row" style="display: flex; align-items: center; justify-content: space-between; width: 100%; direction: ltr; position: relative;">
+                            <div style="display: flex; gap: 10px; min-width: 90px; justify-content: flex-start; z-index: 10;">
                                 <button class="audio-btn" onclick="window.playAudio('${wordData.word.replace(/'/g, "\\'")}')" title="השמע מילה">
                                     ${window.icons.volume}
                                 </button>
@@ -1227,10 +1240,11 @@ window.render = function() {
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px; height:20px;"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
                                 </button>
                             </div>
-                            <div class="word-title" style="margin:0 auto;">
+                            <div class="word-title" style="margin: 0; justify-content: center; flex-grow: 1; text-align: center; display: flex; align-items: center; gap: 10px; z-index: 1;">
                                 ${wordData.word}
                                 <span class="small-emoji">${wordData.visual}</span>
                             </div>
+                            <div style="min-width: 90px; z-index: 1;"></div> <!-- placeholder to center word -->
                         </div>
                         <div class="tags-row">
                             <span class="tag-box tag-meaning">${wordData.meaning}</span>
