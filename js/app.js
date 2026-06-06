@@ -1,6 +1,10 @@
-
 window.currentDay = 'home';
-
+window.currentWeek = 'home';
+window.wordIndex = 0;
+window.speechRate = 0.85;
+window.summaryMode = 'weeks';
+window.articleViewMode = 'sentence';
+window.quizTargetWeek = 'mix';
 
 // --- Theme State ---
 window.activeTheme = localStorage.getItem('fluencyTheme') || 'cyan';
@@ -117,9 +121,320 @@ window.setWeek = function(week) {
     else if (week === 'week2') window.currentDay = 'w2d1';
     else if (week === 'week3') window.currentDay = 'w3d1';
     else if (week === 'week7') window.currentDay = 'w7d1';
+    else if (week === 'week8') window.currentDay = 'w8d1';
+    else if (week === 'week9vocab') window.currentDay = 'w9d1';
     else window.currentDay = week; 
     window.wordIndex = 0;
     if (week !== 'quiz') window.quizState = 'start';
+    
+    // Stop game loops if leaving
+    if (week !== 'games') {
+        if (window.spellingState) window.spellingState.isPlaying = false;
+        if (window.matchState) {
+            window.matchState.isPlaying = false;
+            if (window.matchState.interval) {
+                clearInterval(window.matchState.interval);
+                window.matchState.interval = null;
+            }
+        }
+    }
+    window.render();
+};
+
+// --- Theme Controller ---
+window.changeTheme = function(theme) {
+    window.activeTheme = theme;
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('fluencyTheme', theme);
+    
+    // Update active theme dot in DOM
+    document.querySelectorAll('.theme-dot').forEach(dot => {
+        if (dot.classList.contains(theme)) {
+            dot.classList.add('active-theme-dot');
+        } else {
+            dot.classList.remove('active-theme-dot');
+        }
+    });
+    
+    window.render();
+};
+
+// --- SRS Controller ---
+window.toggleSRSWord = function(wordKey, isKnown) {
+    if (!window.srsState) window.srsState = {};
+    if (!window.srsState[wordKey]) {
+        window.srsState[wordKey] = { interval: 1, nextReview: 0, known: false };
+    }
+    const item = window.srsState[wordKey];
+    item.known = isKnown;
+    if (isKnown) {
+        item.interval = item.interval * 2;
+        if (item.interval > 64) item.interval = 64;
+    } else {
+        item.interval = 1;
+    }
+    item.nextReview = Date.now() + item.interval * 86400000;
+    localStorage.setItem('fluencySRS', JSON.stringify(window.srsState));
+    window.render();
+};
+
+// --- Pronunciation Checker ---
+window.startPronunciationCheck = function(word, btnElement) {
+    if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+        alert("דפדפן זה אינו תומך בזיהוי דיבור קולי. אנא השתמש ב-Chrome, Edge או Safari.");
+        return;
+    }
+    window.stopAudio();
+    const SpeechClass = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognizer = new SpeechClass();
+    recognizer.lang = 'en-US';
+    recognizer.interimResults = false;
+    recognizer.maxAlternatives = 1;
+    recognizer.continuous = false;
+    
+    btnElement.classList.add('listening');
+    btnElement.title = "מקשיב...";
+    
+    recognizer.onresult = function(event) {
+        const resultText = event.results[0][0].transcript.trim().toLowerCase();
+        const targetText = word.replace(/[^a-zA-Z ]/g, "").trim().toLowerCase();
+        
+        btnElement.classList.remove('listening');
+        btnElement.title = "דבר 🎤";
+        
+        if (resultText === targetText) {
+            alert(`מצוין! 100% התאמה 🎉\nנשמע בדיוק כמו: "${resultText}"`);
+        } else if (targetText.includes(resultText) || resultText.includes(targetText) || resultText.substring(0,3) === resultText.substring(0,3)) {
+            alert(`טוב מאוד! התאמה קרובה 👍\nאמרת: "${resultText}"\nהמילה הנכונה: "${word}"`);
+        } else {
+            alert(`נסה שוב! ❌\nאמרת: "${resultText}"\nהמילה הנכונה: "${word}"`);
+        }
+    };
+    recognizer.onerror = function(event) {
+        btnElement.classList.remove('listening');
+        btnElement.title = "דבר 🎤";
+        console.error("Speech recognition error:", event.error);
+        alert("לא הצלחנו לשמוע בבירור. אנא ודא שיש הרשאות מיקרופון ונסה שוב.");
+    };
+    recognizer.onend = function() {
+        btnElement.classList.remove('listening');
+        btnElement.title = "דבר 🎤";
+    };
+    recognizer.start();
+};
+
+// --- Tooltip Translation Controller ---
+window.getAllVocabWords = function() {
+    const allWords = {};
+    if(window.vocabularyData) {
+        Object.entries(window.vocabularyData).forEach(([dayKey, words]) => {
+            words.forEach(w => {
+                allWords[w.word.toLowerCase()] = w;
+            });
+        });
+    }
+    return allWords;
+};
+
+window.showWordTooltip = function(element, word, meaning, phonetic) {
+    document.querySelectorAll('.word-tooltip').forEach(el => el.remove());
+    
+    const tooltip = document.createElement('div');
+    tooltip.className = 'word-tooltip';
+    tooltip.innerHTML = `
+        <div class="tooltip-header">${word}</div>
+        <div class="tooltip-phonetic">[ ${phonetic} ]</div>
+        <div class="tooltip-meaning">${meaning}</div>
+        <button class="nav-btn" style="padding: 2px 8px; font-size: 11px; margin: 0; background: var(--theme-main); color: #fff; border-radius: 4px;" onclick="event.stopPropagation(); window.playAudio('${word.replace(/'/g, "\\'")}')">השמע 🔊</button>
+    `;
+    
+    element.appendChild(tooltip);
+    
+    setTimeout(() => {
+        const close = () => {
+            tooltip.remove();
+            document.removeEventListener('click', close);
+        };
+        document.addEventListener('click', close);
+    }, 10);
+};
+
+// --- Spelling Game logic ---
+window.startSpellingGame = function() {
+    const allWords = [];
+    Object.values(window.vocabularyData).forEach(dayWords => {
+        dayWords.forEach(w => allWords.push(w));
+    });
+    
+    if (allWords.length < 5) {
+        alert("אין מספיק מילים במאגר!");
+        return;
+    }
+    
+    const shuffled = [...allWords].sort(() => 0.5 - Math.random());
+    window.spellingState.words = shuffled.slice(0, 10);
+    window.spellingState.currentIndex = 0;
+    window.spellingState.score = 0;
+    window.spellingState.cluesUsed = 0;
+    window.spellingState.isPlaying = true;
+    window.spellingState.wrongAttempts = 0;
+    
+    window.render();
+};
+
+window.checkSpelling = function() {
+    const inputEl = document.getElementById('spelling-input-field');
+    if(!inputEl) return;
+    
+    const typed = inputEl.value.trim().toLowerCase();
+    const correctWord = window.spellingState.words[window.spellingState.currentIndex].word.trim().toLowerCase();
+    
+    if (typed === correctWord) {
+        window.spellingState.score += 10;
+        window.spellingState.wrongAttempts = 0;
+        window.playAudio(correctWord);
+        alert("נכון מאוד! 🎉");
+        window.nextSpellingWord();
+    } else {
+        window.spellingState.wrongAttempts++;
+        if (window.spellingState.wrongAttempts >= 3) {
+            alert(`שגוי! 3 ניסיונות כשלו. המילה הנכונה היא: ${window.spellingState.words[window.spellingState.currentIndex].word}`);
+            window.spellingState.wrongAttempts = 0;
+            window.nextSpellingWord();
+        } else {
+            alert(`שגוי! נסה שוב. נותרו עוד ${3 - window.spellingState.wrongAttempts} ניסיונות.`);
+        }
+    }
+};
+
+window.spellingHint = function() {
+    const inputEl = document.getElementById('spelling-input-field');
+    if(!inputEl) return;
+    
+    const correctWord = window.spellingState.words[window.spellingState.currentIndex].word;
+    const currentTyped = inputEl.value;
+    
+    let nextLetterIdx = currentTyped.length;
+    if (nextLetterIdx < correctWord.length) {
+        inputEl.value = correctWord.substring(0, nextLetterIdx + 1);
+        window.spellingState.cluesUsed++;
+        if(window.spellingState.score > 0) window.spellingState.score -= 2;
+    }
+};
+
+window.nextSpellingWord = function() {
+    if (window.spellingState.currentIndex < window.spellingState.words.length - 1) {
+        window.spellingState.currentIndex++;
+        window.spellingState.wrongAttempts = 0;
+        window.render();
+    } else {
+        window.spellingState.isPlaying = false;
+        alert(`סיימת את תרגול האיות! הציון שלך הוא: ${window.spellingState.score} / 100`);
+        window.render();
+    }
+};
+
+// --- Match Game logic ---
+window.startMatchGame = function() {
+    const allWords = [];
+    Object.values(window.vocabularyData).forEach(dayWords => {
+        dayWords.forEach(w => allWords.push(w));
+    });
+    
+    if (allWords.length < 6) {
+        alert("אין מספיק מילים במאגר!");
+        return;
+    }
+    
+    const selected = [...allWords].sort(() => 0.5 - Math.random()).slice(0, 6);
+    
+    const cards = [];
+    selected.forEach((w, i) => {
+        cards.push({ id: `en-${i}`, text: w.word, type: 'en', matchId: i });
+        cards.push({ id: `he-${i}`, text: w.meaning, type: 'he', matchId: i });
+    });
+    
+    window.matchState.cards = cards.sort(() => 0.5 - Math.random());
+    window.matchState.selectedCard = null;
+    window.matchState.timer = 0;
+    window.matchState.isPlaying = true;
+    
+    if (window.matchState.interval) clearInterval(window.matchState.interval);
+    window.matchState.interval = setInterval(() => {
+        if (window.matchState.isPlaying) {
+            window.matchState.timer++;
+            const timerEl = document.getElementById('match-timer-display');
+            if (timerEl) timerEl.innerText = window.matchState.timer + ' שניות';
+        }
+    }, 1000);
+    
+    window.render();
+};
+
+window.handleMatchCardClick = function(cardId) {
+    if (!window.matchState.isPlaying) return;
+    
+    const card = window.matchState.cards.find(c => c.id === cardId);
+    if (!card || card.matched) return;
+    
+    const cardEl = document.getElementById(`match-card-${cardId}`);
+    
+    if (window.matchState.selectedCard === null) {
+        window.matchState.selectedCard = card;
+        cardEl.classList.add('selected');
+    } else {
+        const prevCard = window.matchState.selectedCard;
+        const prevCardEl = document.getElementById(`match-card-${prevCard.id}`);
+        
+        if (prevCard.id === card.id) {
+            cardEl.classList.remove('selected');
+            window.matchState.selectedCard = null;
+            return;
+        }
+        
+        if (prevCard.type !== card.type && prevCard.matchId === card.matchId) {
+            prevCard.matched = true;
+            card.matched = true;
+            
+            prevCardEl.classList.remove('selected');
+            prevCardEl.classList.add('matched');
+            cardEl.classList.add('matched');
+            
+            window.matchState.selectedCard = null;
+            
+            if (window.matchState.cards.every(c => c.matched)) {
+                window.matchState.isPlaying = false;
+                clearInterval(window.matchState.interval);
+                
+                const elapsed = window.matchState.timer;
+                const prevBest = window.matchState.bestTime;
+                if (!prevBest || elapsed < prevBest) {
+                    window.matchState.bestTime = elapsed;
+                    localStorage.setItem('fluencyMatchBest', elapsed);
+                    alert(`שיא חדש! סיימת ב-${elapsed} שניות! 🏆`);
+                } else {
+                    alert(`כל הכבוד! סיימת ב-${elapsed} שניות. שיא אישי: ${prevBest} שניות.`);
+                }
+            }
+            window.render();
+        } else {
+            prevCardEl.classList.remove('selected');
+            prevCardEl.classList.add('wrong-match');
+            cardEl.classList.add('wrong-match');
+            
+            window.matchState.selectedCard = null;
+            
+            setTimeout(() => {
+                prevCardEl.classList.remove('wrong-match');
+                cardEl.classList.remove('wrong-match');
+                window.render();
+            }, 500);
+        }
+    }
+};
+
+window.filterSummary = function(val) {
+    window.summarySearchQuery = val.trim();
     window.render();
 };
 
@@ -162,7 +477,7 @@ window.playAudio = function(text, btnElement) {
     let wordCount = text.split(' ').length;
     let wps = (130 / 60) * window.speechRate;
     window.audioState.estimatedDuration = wordCount / wps;
-    if(window.audioState.estimatedDuration < 2) window.audioState.estimatedDuration = 2; 
+    if(window.audioState.estimatedDuration < 1.0) window.audioState.estimatedDuration = 1.0; 
     
     if(document.getElementById('audio-time-total')) {
         document.getElementById('audio-time-total').innerText = window.formatTime(window.audioState.estimatedDuration);
@@ -196,9 +511,18 @@ window.playAudioChunk = function(textChunk) {
         window.audioState.interval = setInterval(() => {
             if(!window.audioState.isPaused && !window.audioState.isDragging) {
                 window.audioState.elapsed += 0.1;
+                
+                // Fallback: If speech engine finished speaking, or we exceeded the estimated duration, stop audio.
+                if (window.audioState.elapsed > 0.5 && 'speechSynthesis' in window && !window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+                    window.stopAudio();
+                    return;
+                }
                 if(window.audioState.elapsed >= window.audioState.estimatedDuration) {
                     window.audioState.elapsed = window.audioState.estimatedDuration;
+                    window.stopAudio();
+                    return;
                 }
+                
                 let pct = (window.audioState.elapsed / window.audioState.estimatedDuration) * 100;
                 if(document.getElementById('audio-slider')) {
                     document.getElementById('audio-slider').value = pct;
@@ -211,9 +535,7 @@ window.playAudioChunk = function(textChunk) {
     };
     
     utterance.onend = function() {
-        if(window.audioState && window.audioState.elapsed + 1 >= window.audioState.estimatedDuration) {
-            window.stopAudio();
-        }
+        window.stopAudio();
     };
     
     window.currentUtterance = utterance;
@@ -555,24 +877,18 @@ window.render = function() {
     const app = document.getElementById('content-area');
     const subNavContainer = document.getElementById('sub-nav-container');
 
-    const navHTML = `
-        <button class="nav-btn ${window.currentWeek === 'home' ? 'active-cyan' : ''}" onclick="window.setWeek('home')">ראשי 🏠</button>
-        <button class="nav-btn ${window.currentWeek === 'week1' ? 'active-cyan' : ''}" onclick="window.setWeek('week1')"><small style="opacity:0.7; margin-left:4px;">1.</small> שבוע 4 📚</button>
-        <button class="nav-btn ${window.currentWeek === 'week2' ? 'active-cyan' : ''}" onclick="window.setWeek('week2')"><small style="opacity:0.7; margin-left:4px;">2.</small> שבוע 5 🚀</button>
-        <button class="nav-btn ${window.currentWeek === 'week3' ? 'active-cyan' : ''}" onclick="window.setWeek('week3')"><small style="opacity:0.7; margin-left:4px;">3.</small> שבוע 6 🎓</button>
-        <button class="nav-btn ${window.currentWeek === 'week7' ? 'active-cyan' : ''}" onclick="window.setWeek('week7')"><small style="opacity:0.7; margin-left:4px;">4.</small> שבוע 7 💎</button>
-        <button class="nav-btn ${window.currentWeek === 'article' ? 'active-cyan' : ''}" onclick="window.setWeek('article')"><small style="opacity:0.7; margin-left:4px;">5.</small> שבוע 8 📄</button>
-        <button class="nav-btn ${window.currentWeek === 'week9' ? 'active-cyan' : ''}" onclick="window.setWeek('week9')"><small style="opacity:0.7; margin-left:4px;">6.</small> שבוע 9 🔐</button>
-        <button class="nav-btn ${window.currentWeek === 'quiz' ? 'active-cyan' : ''}" onclick="window.setWeek('quiz')">מבחנים 🧠</button>
-        <button class="nav-btn ${window.currentWeek === 'games' ? 'active-cyan' : ''}" onclick="window.setWeek('games')">משחקים 🎮</button>
-        <button class="nav-btn ${window.currentWeek === 'stats' ? 'active-cyan' : ''}" onclick="window.setWeek('stats')">ביצועים 📊</button>
-        <button class="nav-btn ${window.currentWeek === 'summary' ? 'active-cyan' : ''}" onclick="window.setWeek('summary')">סיכום 🗂️</button>
-    `;
+    // Highlight active sidebar button
+    document.querySelectorAll('.side-nav-btn').forEach(btn => {
+        btn.classList.remove('active-theme');
+    });
     
-    const navTier = document.querySelector('.nav-tier');
-    if(navTier) navTier.innerHTML = navHTML;
+    let activeBtnId = 'side-btn-' + window.currentWeek;
+    const activeBtn = document.getElementById(activeBtnId);
+    if (activeBtn) {
+        activeBtn.classList.add('active-theme');
+    }
 
-    if (window.currentWeek !== 'home' && window.currentWeek !== 'summary' && window.currentWeek !== 'quiz' && window.currentWeek !== 'article' && window.currentWeek !== 'week9') {
+    if (window.currentWeek !== 'home' && window.currentWeek !== 'focus' && window.currentWeek !== 'summary' && window.currentWeek !== 'quiz' && window.currentWeek !== 'article' && window.currentWeek !== 'week9') {
         subNavContainer.style.display = 'flex';
         const weekDays = window.daysList.filter(d => d.week === window.currentWeek);
         let subNavHtml = '';
@@ -589,10 +905,36 @@ window.render = function() {
     if (window.currentWeek === 'home') {
         let homeHtml = `
             <div class="home-wrapper">
-                <div class="home-section-title" style="border:none; justify-content:center; text-align:center;">
-                    <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--cyan-light), var(--emerald-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">ברוכים הבאים למערכת הלמידה!</span>
+                <div class="home-section-title" style="border:none; justify-content:center; text-align:center; margin-bottom: 15px;">
+                    <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--emerald-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">ברוכים הבאים למערכת הלמידה!</span>
                 </div>
                 
+                <!-- 🎯 Weekly Focus Card -->
+                <div class="home-card focus-glow" style="background: rgba(15, 23, 42, 0.45); border: 1px solid var(--theme-main); box-shadow: 0 0 15px var(--theme-glow); margin-bottom: 25px; flex-direction: column; align-items: stretch; gap: 15px; border-radius: 15px; padding: 20px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 24px;">🎯</span>
+                            <div style="text-align: right;">
+                                <div style="font-size: 18px; font-weight: 900; color: #fff;">מיקוד שבועי: שבוע 9 (CIA Triad)</div>
+                                <div style="font-size: 13px; color: var(--text-muted); margin-top: 3px;">החומרים הכי רלוונטיים ומעודכנים לתרגול מהיר</div>
+                            </div>
+                        </div>
+                        <span class="srs-badge srs-mastered" style="margin: 0; background: var(--theme-main); color: #fff; animation: pulseGlow 1.5s infinite alternate; font-size: 12px; padding: 4px 8px; border-radius: 4px; box-shadow: 0 0 8px var(--theme-glow);">מיקוד 🎯</span>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%;">
+                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.goToWord('w9d1', 0)">
+                            📚 אוצר מילים
+                        </button>
+                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setWeek('week9')">
+                            🔐 קריאת מאמר
+                        </button>
+                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setQuizTargetWeek('week9'); window.setWeek('quiz'); window.startQuiz();">
+                            🧠 מבחן ממוקד
+                        </button>
+                    </div>
+                </div>
+
                 <h3 class="home-section-title">שלבי הלימוד</h3>
                 <div class="home-list">
                     <div class="home-card-row">
@@ -786,7 +1128,7 @@ window.render = function() {
         
         htmlBlock += `
                 <div style="display:flex; justify-content:center; margin-top: 30px;">
-                    <button class="control-btn" style="background: var(--cyan-main); border:none; box-shadow: 0 1vh 2vh rgba(34,211,238,0.4);" onclick="window.setWeek('quiz')">
+                    <button class="control-btn" style="background: var(--theme-main); border:none; box-shadow: 0 1vh 2vh var(--theme-glow);" onclick="window.setWeek('quiz')">
                         התחל מבחן ${isWeek9 ? 'שבוע 9' : 'Unseen'} 🧠
                     </button>
                 </div>
@@ -827,7 +1169,7 @@ window.render = function() {
                 <div class="center-stage" style="padding: 20px; max-width: 900px; margin: auto; text-align: center; margin-top: 3vh; width:100%;">
                     <h2 style="font-size: 2.3rem; color: var(--theme-light); margin-bottom: 2vh;">משחק התאמה 🧩</h2>
                     <div class="top-bar" style="margin-bottom: 2vh; max-width:800px; margin: 0 auto 15px auto;">
-                        <span id="match-timer-display" style="font-size:18px; font-weight:bold; color:var(--cyan-light);">0 שניות</span>
+                        <span id="match-timer-display" style="font-size:18px; font-weight:bold; color:var(--theme-light);">0 שניות</span>
                         <span style="font-size:16px;">שיא אישי: ${window.matchState.bestTime ? window.matchState.bestTime + ' שניות' : 'אין עדיין'} 🏆</span>
                     </div>
                     
@@ -921,7 +1263,7 @@ window.render = function() {
                 
                 <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; width:100%; text-align:right;">
                     <div class="stat-box" style="text-align:right;">
-                        <h3 style="color:var(--cyan-light); font-size:18px; margin-bottom:15px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:5px;">חלוקת מילים (חזרה מרווחת) 🔁</h3>
+                        <h3 style="color:var(--theme-light); font-size:18px; margin-bottom:15px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:5px;">חלוקת מילים (חזרה מרווחת) 🔁</h3>
                         <div style="display:flex; flex-direction:column; gap:10px; font-size:15px;">
                             <div style="display:flex; justify-content:space-between;">
                                 <span style="color:var(--emerald-light);">● שולט ומאסטר (Mastered)</span>
@@ -943,7 +1285,7 @@ window.render = function() {
                     </div>
                     
                     <div class="stat-box">
-                        <h3 style="color:var(--cyan-light); font-size:18px; margin-bottom:15px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:5px;">ציוני בחנים אחרונים 🧠</h3>
+                        <h3 style="color:var(--theme-light); font-size:18px; margin-bottom:15px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:5px;">ציוני בחנים אחרונים 🧠</h3>
                         ${last5Quizzes.length === 0 ? `
                             <div style="color:var(--text-muted); text-align:center; padding-top:30px;">עדיין לא השלמת בחנים.</div>
                         ` : `
@@ -1183,6 +1525,8 @@ window.render = function() {
         }
         app.innerHTML = `<div class="matrix-wrapper">${summaryHtml}</div>`;
 
+    } else if (window.currentWeek === 'focus') {
+        app.innerHTML = window.renderWeeklyFocusDashboard();
     } else {
         const currentWords = window.vocabularyData[window.currentDay];
         const wordData = currentWords[window.wordIndex];
@@ -1197,13 +1541,14 @@ window.render = function() {
 
         // SRS Word Key & Level Badge
         const wordKey = wordData.word.toLowerCase();
+        const safeWordKey = wordKey.replace(/'/g, "\\'");
         let srsBadgeHtml = '<span class="srs-badge srs-new">🆕 חדש</span>';
         if (window.srsState[wordKey] && window.srsState[wordKey].known) {
             const interval = window.srsState[wordKey].interval;
             if (interval >= 8) {
-                srsBadgeHtml = '<span class="srs-badge srs-mastered">🎓 שולט</span>';
+                srsBadgeHtml = '<span class="srs-badge srs-mastered" style="box-shadow: 0 0 10px rgba(16,185,129,0.3)">🎓 שולט</span>';
             } else {
-                srsBadgeHtml = '<span class="srs-badge srs-learning">📖 בלמידה</span>';
+                srsBadgeHtml = '<span class="srs-badge srs-learning" style="box-shadow: 0 0 10px rgba(168,85,247,0.3)">📖 בלמידה</span>';
             }
         }
 
@@ -1284,10 +1629,10 @@ window.render = function() {
                     
                     <!-- SRS Action Buttons -->
                     <div class="srs-btn-row">
-                        <button onclick="window.toggleSRSWord('${wordKey}', true)" class="srs-action-btn known">
+                        <button onclick="window.toggleSRSWord('${safeWordKey}', true)" class="srs-action-btn known">
                             <span>יודע 👍</span>
                         </button>
-                        <button onclick="window.toggleSRSWord('${wordKey}', false)" class="srs-action-btn unknown">
+                        <button onclick="window.toggleSRSWord('${safeWordKey}', false)" class="srs-action-btn unknown">
                             <span>לא יודע 👎</span>
                         </button>
                     </div>
@@ -1306,4 +1651,127 @@ window.render = function() {
     }
 };
 
+// --- Mobile Menu Drawer Controller ---
+window.toggleMenu = function(isOpen) {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    if (sidebar && overlay) {
+        if (isOpen) {
+            sidebar.classList.add('open');
+            overlay.classList.add('visible');
+        } else {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('visible');
+        }
+    }
+};
+
+// Touch swipe gestures for mobile menu
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+document.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    const swipeDistance = touchEndX - touchStartX;
+    // Swipe from right to left (RTL: open menu)
+    if (swipeDistance < -80) {
+        window.toggleMenu(true);
+    }
+    // Swipe from left to right (RTL: close menu)
+    if (swipeDistance > 80) {
+        window.toggleMenu(false);
+    }
+}, { passive: true });
+
+window.renderWeeklyFocusDashboard = function() {
+    let focusWordsHtml = '';
+    const focusWeek = 'week9vocab'; // Focus on Week 9 Vocabulary
+    const focusDays = window.daysList.filter(d => d.week === focusWeek);
+    
+    let daysGridHtml = '';
+    focusDays.forEach(dayInfo => {
+        const words = window.vocabularyData[dayInfo.id] || [];
+        let wordListHtml = '';
+        words.slice(0, 5).forEach((w, idx) => {
+            wordListHtml += `
+                <li class="matrix-item" onclick="window.goToWord('${dayInfo.id}', ${idx})">
+                    <span class="matrix-item-en" style="display: flex; align-items: center; gap: 4px;">
+                        ${window.getSRSIndicator(w.word)} ${w.word}
+                    </span>
+                    <span class="matrix-item-he">${w.meaning}</span>
+                </li>
+            `;
+        });
+        
+        daysGridHtml += `
+            <div class="matrix-card">
+                <div class="matrix-header">
+                    <span>${dayInfo.title}</span>
+                    <span>${dayInfo.date}</span>
+                </div>
+                <ul class="matrix-list">
+                    ${wordListHtml}
+                    <li class="matrix-item" style="justify-content: center; background: rgba(255,255,255,0.02);" onclick="window.goToWord('${dayInfo.id}', 0)">
+                        <span style="color: var(--theme-light); font-size: 11px; font-weight: bold;">לכל המילים של היום ←</span>
+                    </li>
+                </ul>
+            </div>
+        `;
+    });
+    
+    return `
+        <div class="home-wrapper">
+            <div class="home-section-title" style="border:none; justify-content:center; text-align:center; margin-bottom: 15px;">
+                <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--emerald-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">מיקוד שבועי: שבוע 9 🎯</span>
+            </div>
+            
+            <p style="text-align: center; color: var(--text-muted); font-size: 14px; max-width: 600px; margin: 0 auto 25px auto; line-height: 1.5;">
+                חומר הלימוד הרלוונטי והמעודכן ביותר לשבוע האחרון: עקרונות אבטחת מידע (CIA Triad).
+            </p>
+            
+            <!-- 📚 Week 9 Vocab Section -->
+            <h3 class="home-section-title" style="margin-top: 15px;">📚 אוצר מילים שבועי (40 מילים)</h3>
+            <div class="days-grid" style="margin-bottom: 30px;">
+                ${daysGridHtml}
+            </div>
+            
+            <!-- 📄 Article & 🧠 Quiz Row -->
+            <h3 class="home-section-title">📄 קריאה ומבחנים</h3>
+            <div class="home-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                <button class="home-card focus-glow" onclick="window.setWeek('week9')" style="border-radius: 12px; padding: 20px;">
+                    <div class="home-card-icon" style="font-size: 32px;">🔐</div>
+                    <div class="home-card-content" style="text-align: right;">
+                        <div class="home-card-title" style="font-size: 18px; color: #fff;">מאמר: The CIA Triad</div>
+                        <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">קריאה ותרגום אינטראקטיביים של מאמר אבטחת המידע הרשמי עם הקראה קולית.</div>
+                    </div>
+                </button>
+                
+                <button class="home-card focus-glow" onclick="window.setQuizTargetWeek('week9'); window.setWeek('quiz'); window.startQuiz();" style="border-radius: 12px; padding: 20px;">
+                    <div class="home-card-icon" style="font-size: 32px;">🧠</div>
+                    <div class="home-card-content" style="text-align: right;">
+                        <div class="home-card-title" style="font-size: 18px; color: #fff;">מבחן שבוע 9</div>
+                        <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">מבחן הבנה ממוקד המורכב מ-10 שאלות מורכבות על עקרונות ה-CIA Triad.</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    `;
+};
+
+window.initThemeDots = function() {
+    document.querySelectorAll('.theme-dot').forEach(dot => {
+        if (dot.classList.contains(window.activeTheme)) {
+            dot.classList.add('active-theme-dot');
+        } else {
+            dot.classList.remove('active-theme-dot');
+        }
+    });
+};
+
+// Initialize theme dots and views
+setTimeout(window.initThemeDots, 50);
 window.render();
