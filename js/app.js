@@ -1,10 +1,66 @@
+
 window.currentDay = 'home';
-window.currentWeek = 'home';
-window.wordIndex = 0;
-window.speechRate = 0.85;
-window.summaryMode = 'weeks';
-window.articleViewMode = 'sentence';
-window.quizTargetWeek = 'mix';
+
+
+// --- Theme State ---
+window.activeTheme = localStorage.getItem('fluencyTheme') || 'cyan';
+document.documentElement.setAttribute('data-theme', window.activeTheme);
+
+// --- SRS State ---
+window.srsState = {};
+try {
+    const storedSRS = localStorage.getItem('fluencySRS');
+    if (storedSRS) window.srsState = JSON.parse(storedSRS);
+} catch(e) {}
+
+// --- Streak State ---
+window.userStreak = 0;
+try {
+    const streakInfo = localStorage.getItem('fluencyStreakInfo');
+    if (streakInfo) {
+        const parsed = JSON.parse(streakInfo);
+        const today = new Date().toDateString();
+        const lastVisit = parsed.lastVisit;
+        if (lastVisit === today) {
+            window.userStreak = parsed.streak;
+        } else {
+            const yesterday = new Date(Date.now() - 86400000).toDateString();
+            if (lastVisit === yesterday) {
+                window.userStreak = parsed.streak + 1;
+            } else {
+                window.userStreak = 1;
+            }
+            localStorage.setItem('fluencyStreakInfo', JSON.stringify({ streak: window.userStreak, lastVisit: today }));
+        }
+    } else {
+        window.userStreak = 1;
+        localStorage.setItem('fluencyStreakInfo', JSON.stringify({ streak: 1, lastVisit: new Date().toDateString() }));
+    }
+} catch(e) { window.userStreak = 1; }
+
+// --- Spelling Game State ---
+window.spellingState = {
+    words: [],
+    currentIndex: 0,
+    score: 0,
+    isPlaying: false,
+    cluesUsed: 0
+};
+
+// --- Match Game State ---
+window.matchState = {
+    cards: [],
+    selectedCard: null,
+    timer: 0,
+    interval: null,
+    isPlaying: false,
+    bestTime: localStorage.getItem('fluencyMatchBest') || null
+};
+
+// --- Search Filter State ---
+window.summarySearchQuery = '';
+
+
 
 window.articleParagraphs = {
     'week8': [
@@ -494,8 +550,10 @@ window.render = function() {
         <button class="nav-btn ${window.currentWeek === 'week7' ? 'active-cyan' : ''}" onclick="window.setWeek('week7')"><small style="opacity:0.7; margin-left:4px;">4.</small> שבוע 7 💎</button>
         <button class="nav-btn ${window.currentWeek === 'article' ? 'active-cyan' : ''}" onclick="window.setWeek('article')"><small style="opacity:0.7; margin-left:4px;">5.</small> שבוע 8 📄</button>
         <button class="nav-btn ${window.currentWeek === 'week9' ? 'active-cyan' : ''}" onclick="window.setWeek('week9')"><small style="opacity:0.7; margin-left:4px;">6.</small> שבוע 9 🔐</button>
-        <button class="nav-btn ${window.currentWeek === 'quiz' ? 'active-cyan' : ''}" onclick="window.setWeek('quiz')">מבחן חכם 🧠</button>
-        <button class="nav-btn ${window.currentWeek === 'summary' ? 'active-cyan' : ''}" onclick="window.setWeek('summary')">סיכום לפי מילים 🗂️</button>
+        <button class="nav-btn ${window.currentWeek === 'quiz' ? 'active-cyan' : ''}" onclick="window.setWeek('quiz')">מבחנים 🧠</button>
+        <button class="nav-btn ${window.currentWeek === 'games' ? 'active-cyan' : ''}" onclick="window.setWeek('games')">משחקים 🎮</button>
+        <button class="nav-btn ${window.currentWeek === 'stats' ? 'active-cyan' : ''}" onclick="window.setWeek('stats')">ביצועים 📊</button>
+        <button class="nav-btn ${window.currentWeek === 'summary' ? 'active-cyan' : ''}" onclick="window.setWeek('summary')">סיכום 🗂️</button>
     `;
     
     const navTier = document.querySelector('.nav-tier');
@@ -722,6 +780,181 @@ window.render = function() {
             </div>
         `;
         app.innerHTML = htmlBlock;
+    } else if (window.currentWeek === 'games') {
+        let gamesHtml = '';
+        if (window.spellingState.isPlaying) {
+            // Spelling game screen
+            const currentWordObj = window.spellingState.words[window.spellingState.currentIndex];
+            gamesHtml = `
+                <div class="center-stage" style="padding: 4vh 2vw; max-width: 600px; margin: auto; text-align: center; margin-top: 5vh; width:100%;">
+                    <h2 style="font-size: 2.5rem; color: var(--theme-light); margin-bottom: 3vh;">תרגול איות ✍️</h2>
+                    <div class="top-bar" style="margin-bottom: 2vh;">
+                        <span>מילה ${window.spellingState.currentIndex + 1} מתוך 10</span>
+                        <span>ניקוד: ${window.spellingState.score}</span>
+                    </div>
+                    <div class="flashcard" style="padding: 30px; gap: 20px;">
+                        <button class="audio-btn" style="margin: 0 auto; width: 60px; height: 60px;" onclick="window.playAudio('${currentWordObj.word.replace(/'/g, "\\'")}')" title="שמע שוב">
+                            ${window.icons.volume}
+                        </button>
+                        <div style="font-size: 24px; color: var(--emerald-light); font-weight: bold; margin: 10px 0;">${currentWordObj.meaning}</div>
+                        <div class="spelling-box">
+                            <input type="text" id="spelling-input-field" class="spelling-input" placeholder="הקלד באנגלית כאן..." autofocus autocomplete="off" onkeydown="if(event.key==='Enter') window.checkSpelling()">
+                            <div style="display:flex; gap:10px; width:100%; max-width:400px; margin-top:10px;">
+                                <button onclick="window.checkSpelling()" class="control-btn" style="flex:2; justify-content:center;">בדוק 🔍</button>
+                                <button onclick="window.spellingHint()" class="control-btn" style="flex:1; justify-content:center; background:rgba(253,224,71,0.15); border-color:#fde047; color:#fde047;">רמז 💡</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="window.setWeek('games')" class="control-btn" style="width:100%; justify-content:center; margin-top:15px; background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.2);">עצור תרגול 🔙</button>
+                </div>
+            `;
+        } else if (window.matchState.isPlaying) {
+            // Match game screen
+            gamesHtml = `
+                <div class="center-stage" style="padding: 20px; max-width: 900px; margin: auto; text-align: center; margin-top: 3vh; width:100%;">
+                    <h2 style="font-size: 2.3rem; color: var(--theme-light); margin-bottom: 2vh;">משחק התאמה 🧩</h2>
+                    <div class="top-bar" style="margin-bottom: 2vh; max-width:800px; margin: 0 auto 15px auto;">
+                        <span id="match-timer-display" style="font-size:18px; font-weight:bold; color:var(--cyan-light);">0 שניות</span>
+                        <span style="font-size:16px;">שיא אישי: ${window.matchState.bestTime ? window.matchState.bestTime + ' שניות' : 'אין עדיין'} 🏆</span>
+                    </div>
+                    
+                    <div class="match-grid">
+                        ${window.matchState.cards.map(card => {
+                            let cardClass = 'match-card';
+                            if (card.matched) cardClass += ' matched';
+                            else if (window.matchState.selectedCard && window.matchState.selectedCard.id === card.id) cardClass += ' selected';
+                            
+                            return `
+                                <div id="match-card-${card.id}" class="${cardClass}" onclick="window.handleMatchCardClick('${card.id}')">
+                                    <span style="font-size:18px; line-height:1.2;">${card.text}</span>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                    
+                    <button onclick="window.setWeek('games')" class="control-btn" style="width:100%; max-width:300px; justify-content:center; margin:20px auto 0 auto; background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.2);">סיים משחק 🔙</button>
+                </div>
+            `;
+        } else {
+            // Games dashboard selection
+            gamesHtml = `
+                <div class="center-stage" style="padding: 4vh 2vw; max-width: 600px; margin: auto; text-align: center; margin-top: 5vh; width:100%;">
+                    <div style="font-size: 4rem; margin-bottom: 2vh;">🎮</div>
+                    <h2 style="font-size: 2.5rem; color: var(--theme-light); margin-bottom: 2vh;">משחקי למידה</h2>
+                    <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 4vh;">שפר את איות המילים ואת זיכרון הזיהוי שלך באמצעות משחקים אינטראקטיביים!</p>
+                    
+                    <div class="home-list">
+                        <button class="home-card purple" onclick="window.startSpellingGame()">
+                            <div class="home-card-icon">✍️</div>
+                            <div class="home-card-content">
+                                <div class="home-card-title">איות מילים (Spelling)</div>
+                                <div class="home-card-desc">שמע את המילה, הקלד אותה באנגלית וקבל משוב מיידי וציון!</div>
+                            </div>
+                        </button>
+                        
+                        <button class="home-card cyan" onclick="window.startMatchGame()">
+                            <div class="home-card-icon">🧩</div>
+                            <div class="home-card-content">
+                                <div class="home-card-title">משחק התאמה (Match Game)</div>
+                                <div class="home-card-desc">התאם במהירות מילים באנגלית לפירושן בעברית נגד השעון!</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+        app.innerHTML = gamesHtml;
+        
+    } else if (window.currentWeek === 'stats') {
+        // Stats dashboard screen
+        const allWords = [];
+        Object.values(window.vocabularyData).forEach(dayWords => {
+            dayWords.forEach(w => allWords.push(w));
+        });
+        const totalWordsCount = allWords.length;
+        
+        let masteredCount = 0;
+        let learningCount = 0;
+        Object.values(window.srsState).forEach(item => {
+            if (item.known) {
+                if (item.interval >= 8) masteredCount++;
+                else learningCount++;
+            }
+        });
+        const unlearnedCount = totalWordsCount - (masteredCount + learningCount);
+        const masteryPct = Math.round((masteredCount / totalWordsCount) * 100) || 0;
+        
+        // CSS score columns for last 5 quizzes
+        const last5Quizzes = window.quizHistory.slice(0, 5);
+        
+        let dashboardHtml = `
+            <div class="center-stage" style="padding: 20px; max-width: 900px; margin: auto; text-align: center; margin-top: 3vh; width:100%;">
+                <h2 style="font-size: 2.5rem; color: var(--theme-light); margin-bottom: 3vh;">לוח ביצועים וסטטיסטיקה 📊</h2>
+                
+                <div class="dashboard-grid">
+                    <div class="stat-box">
+                        <div class="stat-num">🔥 ${window.userStreak}</div>
+                        <div class="stat-label">ימי למידה ברצף (Streak)</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num">${masteryPct}%</div>
+                        <div class="stat-label">שליטה כללית במילים (Mastery)</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num">🏆 ${window.highScore}</div>
+                        <div class="stat-label">ציון שיא בבחנים</div>
+                    </div>
+                </div>
+                
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; width:100%; text-align:right;">
+                    <div class="stat-box" style="text-align:right;">
+                        <h3 style="color:var(--cyan-light); font-size:18px; margin-bottom:15px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:5px;">חלוקת מילים (חזרה מרווחת) 🔁</h3>
+                        <div style="display:flex; flex-direction:column; gap:10px; font-size:15px;">
+                            <div style="display:flex; justify-content:space-between;">
+                                <span style="color:var(--emerald-light);">● שולט ומאסטר (Mastered)</span>
+                                <strong>${masteredCount} מילים</strong>
+                            </div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span style="color:var(--purple-light);">● בלמידה וחזרה (Learning)</span>
+                                <strong>${learningCount} מילים</strong>
+                            </div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span style="color:var(--text-muted);">● מילים חדשות / טרם למדת</span>
+                                <strong>${unlearnedCount} מילים</strong>
+                            </div>
+                            <div style="margin-top:10px; height:10px; border-radius:5px; background:rgba(255,255,255,0.1); display:flex; overflow:hidden;">
+                                <div style="background:var(--emerald-main); width:${(masteredCount/totalWordsCount)*100}%;"></div>
+                                <div style="background:var(--purple-main); width:${(learningCount/totalWordsCount)*100}%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-box">
+                        <h3 style="color:var(--cyan-light); font-size:18px; margin-bottom:15px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:5px;">ציוני בחנים אחרונים 🧠</h3>
+                        ${last5Quizzes.length === 0 ? `
+                            <div style="color:var(--text-muted); text-align:center; padding-top:30px;">עדיין לא השלמת בחנים.</div>
+                        ` : `
+                            <div class="chart-container">
+                                <div class="chart-bars">
+                                    ${last5Quizzes.map(item => {
+                                        const pct = (item.score / 230) * 100;
+                                        return `
+                                            <div class="chart-bar-col">
+                                                <span class="chart-bar-score">${item.score}</span>
+                                                <div class="chart-bar-fill" style="height: ${pct}%"></div>
+                                                <span class="chart-bar-label">${item.date.split(' ')[0]}</span>
+                                            </div>
+                                        `;
+                                    }).reverse().join('')}
+                                </div>
+                            </div>
+                        `}
+                    </div>
+                </div>
+            </div>
+        `;
+        app.innerHTML = dashboardHtml;
+        
     } else if (window.currentWeek === 'quiz') {
         let quizHTML = '';
         if (window.quizState === 'start') {
@@ -831,6 +1064,75 @@ window.render = function() {
         app.innerHTML = quizHTML;
 
     } else if (window.currentWeek === 'summary') {
+        const query = (window.summarySearchQuery || '').toLowerCase();
+        
+        let summaryHtml = `
+            <div class="search-wrapper">
+                <input type="text" class="search-input" value="${window.summarySearchQuery}" placeholder="חפש מילים באנגלית או פירוש בעברית..." oninput="window.filterSummary(this.value)">
+            </div>
+            <div class="summary-toggles">
+                <button onclick="window.setSummaryMode('weeks')" class="sum-toggle ${window.summaryMode === 'weeks' ? 'active' : ''}">תצוגת שבועות</button>
+                <button onclick="window.setSummaryMode('compact')" class="sum-toggle ${window.summaryMode === 'compact' ? 'active' : ''}">ריכוז כלל המילים</button>
+            </div>
+        `;
+        if (window.summaryMode === 'weeks') {
+            summaryHtml += `<div class="weeks-scroll">`;
+            const weekNum = {'week1': '1.', 'week2': '2.', 'week3': '3.', 'week7': '4.', 'week8': '5.', 'week9vocab': '6.'};
+            const weekText = {'week1': 'שבוע 4', 'week2': 'שבוע 5', 'week3': 'שבוע 6', 'week7': 'שבוע 7', 'week8': 'שבוע 8', 'week9vocab': 'שבוע 9'};
+            
+            ['week1', 'week2', 'week3', 'week7', 'week8', 'week9vocab'].forEach((week) => {
+                // Filter words for this week
+                let matchedInWeek = 0;
+                let daySectionHtml = '';
+                
+                Object.entries(window.vocabularyData).filter(([dayKey]) => window.daysList.find(d => d.id === dayKey).week === week).forEach(([dayKey, words]) => {
+                    const dayInfo = window.daysList.find(d => d.id === dayKey);
+                    
+                    const filteredWords = words.filter(w => 
+                        w.word.toLowerCase().includes(query) || 
+                        w.meaning.toLowerCase().includes(query)
+                    );
+                    
+                    if (filteredWords.length > 0) {
+                        matchedInWeek += filteredWords.length;
+                        daySectionHtml += `<div class="matrix-card"><div class="matrix-header"><span>${dayInfo.title}</span><span>${dayInfo.date}</span></div><ul class="matrix-list">`;
+                        filteredWords.forEach((w) => {
+                            const originalIdx = words.indexOf(w);
+                            daySectionHtml += `<li class="matrix-item" onclick="window.goToWord('${dayInfo.id}', ${originalIdx})"><span class="matrix-item-en">${w.word}</span><span class="matrix-item-he">${w.meaning}</span></li>`;
+                        });
+                        daySectionHtml += `</ul></div>`;
+                    }
+                });
+                
+                if (matchedInWeek > 0 || query === '') {
+                    summaryHtml += `
+                        <div class="week-section">
+                            <div class="week-title-container">
+                                <span class="week-title-number">${weekNum[week]}</span>
+                                <span class="week-title-text">${weekText[week]}</span>
+                            </div>
+                            <div class="days-grid">
+                                ${daySectionHtml}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+            summaryHtml += `</div>`;
+        } else {
+            summaryHtml += `<div class="compact-grid">`;
+            Object.entries(window.vocabularyData).forEach(([dayKey, words]) => {
+                words.forEach((w, idx) => {
+                    if (query === '' || w.word.toLowerCase().includes(query) || w.meaning.toLowerCase().includes(query)) {
+                        summaryHtml += `<div class="compact-item" onclick="window.goToWord('${dayKey}', ${idx})"><span class="compact-en">${w.word}</span><span class="compact-he">${w.meaning}</span></div>`;
+                    }
+                });
+            });
+            summaryHtml += `</div>`;
+        }
+        app.innerHTML = `<div class="matrix-wrapper">${summaryHtml}</div>`;
+        
+    } else if (window.currentWeek === 'summary_old') {
         let summaryHtml = `
             <div class="summary-toggles">
                 <button onclick="window.setSummaryMode('weeks')" class="sum-toggle ${window.summaryMode === 'weeks' ? 'active' : ''}">תצוגת שבועות</button>
@@ -880,6 +1182,18 @@ window.render = function() {
             dotsHtml += `<div class="dot ${stateClass}"></div>`;
         }
 
+        // SRS Word Key & Level Badge
+        const wordKey = wordData.word.toLowerCase();
+        let srsBadgeHtml = '<span class="srs-badge srs-new">🆕 חדש</span>';
+        if (window.srsState[wordKey] && window.srsState[wordKey].known) {
+            const interval = window.srsState[wordKey].interval;
+            if (interval >= 8) {
+                srsBadgeHtml = '<span class="srs-badge srs-mastered">🎓 שולט</span>';
+            } else {
+                srsBadgeHtml = '<span class="srs-badge srs-learning">📖 בלמידה</span>';
+            }
+        }
+
         app.innerHTML = `
             <div class="vocab-view-wrapper">
                 <div class="top-bar">
@@ -893,19 +1207,27 @@ window.render = function() {
                             <option value="1" ${window.speechRate === 1 ? 'selected' : ''}>רגיל (1.0x)</option>
                         </select>
                     </div>
-                    <div class="progress-box">
-                        <span style="margin-bottom: 0.2vh;">מילה ${window.wordIndex + 1} מתוך ${currentWords.length}</span>
-                        <div class="progress-dots">${dotsHtml}</div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        ${srsBadgeHtml}
+                        <div class="progress-box">
+                            <span style="margin-bottom: 0.2vh;">מילה ${window.wordIndex + 1} מתוך ${currentWords.length}</span>
+                            <div class="progress-dots">${dotsHtml}</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="flashcard">
                     <div class="center-stage">
-                        <div class="word-main-row">
-                            <button class="audio-btn" onclick="window.playAudio('${wordData.word.replace(/'/g, "\\'")}')" title="השמע מילה">
-                                ${window.icons.volume}
-                            </button>
-                            <div class="word-title">
+                        <div class="word-main-row" style="position:relative; width:100%; justify-content:center;">
+                            <div style="display:flex; gap:10px; position:absolute; left:0;">
+                                <button class="audio-btn" onclick="window.playAudio('${wordData.word.replace(/'/g, "\\'")}')" title="השמע מילה">
+                                    ${window.icons.volume}
+                                </button>
+                                <button class="mic-btn" onclick="window.startPronunciationCheck('${wordData.word.replace(/'/g, "\\'")}', this)" title="דבר 🎤">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px; height:20px;"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+                                </button>
+                            </div>
+                            <div class="word-title" style="margin:0 auto;">
                                 ${wordData.word}
                                 <span class="small-emoji">${wordData.visual}</span>
                             </div>
@@ -944,6 +1266,16 @@ window.render = function() {
                         <div class="visual-col">
                             ${window.getCustomArtHTML(wordData.word, wordData.visual)}
                         </div>
+                    </div>
+                    
+                    <!-- SRS Action Buttons -->
+                    <div class="srs-btn-row">
+                        <button onclick="window.toggleSRSWord('${wordKey}', true)" class="srs-action-btn known">
+                            <span>יודע 👍</span>
+                        </button>
+                        <button onclick="window.toggleSRSWord('${wordKey}', false)" class="srs-action-btn unknown">
+                            <span>לא יודע 👎</span>
+                        </button>
                     </div>
                 </div>
 

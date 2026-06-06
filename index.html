@@ -4,28 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Day Fluency Sprint | Master V50 (Stable & Clean)</title>
-    <link rel="stylesheet" href="css/style.css?v=52">
+    <link rel="stylesheet" href="css/style.css?v=53">
 </head>
 <body>
 
 <div class="container">
-    <div class="header-section w-full">
-        <h1>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+    <div class="header-section w-full" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 100%;">
+        <div style="width: 80px;"></div> <!-- placeholder to balance theme selector -->
+        <h1 style="margin: 0 auto; display: flex; align-items: center; gap: 8px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px; height:24px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             Day Fluency Sprint | Master V50
         </h1>
-        
-        <div class="nav-tier">
-            <button class="nav-btn" id="btn-home" onclick="window.setWeek('home')">ראשי 🏠</button>
-            <button class="nav-btn" id="btn-week1" onclick="window.setWeek('week1')"><small style="opacity:0.7; margin-left:4px;">1.</small> שבוע 4 📚</button>
-            <button class="nav-btn" id="btn-week2" onclick="window.setWeek('week2')"><small style="opacity:0.7; margin-left:4px;">2.</small> שבוע 5 🚀</button>
-            <button class="nav-btn" id="btn-week3" onclick="window.setWeek('week3')"><small style="opacity:0.7; margin-left:4px;">3.</small> שבוע 6 🎓</button>
-            <button class="nav-btn" id="btn-week7" onclick="window.setWeek('week7')"><small style="opacity:0.7; margin-left:4px;">4.</small> שבוע 7 💎</button>
-            <button class="nav-btn" id="btn-article" onclick="window.setWeek('article')"><small style="opacity:0.7; margin-left:4px;">5.</small> שבוע 8 📄</button>
-            <button class="nav-btn" id="btn-week9" onclick="window.setWeek('week9')"><small style="opacity:0.7; margin-left:4px;">6.</small> שבוע 9 🔐</button>
-            <button class="nav-btn" id="btn-quiz" onclick="window.setWeek('quiz')">מבחן חכם 🧠</button>
-            <button class="nav-btn" id="btn-summary" onclick="window.setWeek('summary')">סיכום לפי מילים 🗂️</button>
+        <div style="display: flex; gap: 8px;" class="theme-select-box">
+            <span class="theme-dot cyan" onclick="window.changeTheme('cyan')" title="Cyberpunk Cyan"></span>
+            <span class="theme-dot purple" onclick="window.changeTheme('purple')" title="Royal Purple"></span>
+            <span class="theme-dot emerald" onclick="window.changeTheme('emerald')" title="Forest Emerald"></span>
+            <span class="theme-dot orange" onclick="window.changeTheme('orange')" title="Sunset Orange"></span>
         </div>
+    </div>
+
+    <div class="nav-tier" style="margin-top: 15px; width: 100%;">
+        <button class="nav-btn" id="btn-home" onclick="window.setWeek('home')">ראשי 🏠</button>
+        <button class="nav-btn" id="btn-week1" onclick="window.setWeek('week1')"><small style="opacity:0.7; margin-left:4px;">1.</small> שבוע 4 📚</button>
+        <button class="nav-btn" id="btn-week2" onclick="window.setWeek('week2')"><small style="opacity:0.7; margin-left:4px;">2.</small> שבוע 5 🚀</button>
+        <button class="nav-btn" id="btn-week3" onclick="window.setWeek('week3')"><small style="opacity:0.7; margin-left:4px;">3.</small> שבוע 6 🎓</button>
+        <button class="nav-btn" id="btn-week7" onclick="window.setWeek('week7')"><small style="opacity:0.7; margin-left:4px;">4.</small> שבוע 7 💎</button>
+        <button class="nav-btn" id="btn-article" onclick="window.setWeek('article')"><small style="opacity:0.7; margin-left:4px;">5.</small> שבוע 8 📄</button>
+        <button class="nav-btn" id="btn-week9" onclick="window.setWeek('week9')"><small style="opacity:0.7; margin-left:4px;">6.</small> שבוע 9 🔐</button>
+        <button class="nav-btn" id="btn-quiz" onclick="window.setWeek('quiz')">מבחנים 🧠</button>
+        <button class="nav-btn" id="btn-games" onclick="window.setWeek('games')">משחקים 🎮</button>
+        <button class="nav-btn" id="btn-stats" onclick="window.setWeek('stats')">ביצועים 📊</button>
+        <button class="nav-btn" id="btn-summary" onclick="window.setWeek('summary')">סיכום 🗂️</button>
+    </div>
 
         <div class="sub-nav" id="sub-nav-container"></div>
     </div>
@@ -56,8 +66,8 @@
     </div>
 </div>
 
-<script src="js/data.js?v=52"></script>
-    <script src="js/app.js?v=52"></script>
+<script src="js/data.js?v=53"></script>
+    <script src="js/app.js?v=53"></script>
 
 </body>
 </html>
