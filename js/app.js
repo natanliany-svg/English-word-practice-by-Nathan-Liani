@@ -461,7 +461,7 @@ window.filterSummary = function(val) {
 window.setDay = function(dayId) { window.stopAudio(); window.currentDay = dayId; window.wordIndex = 0; window.render(); };
 window.setSummaryMode = function(mode) { window.summaryMode = mode; window.render(); };
 window.goToWord = function(dayId, index) { window.stopAudio(); window.currentDay = dayId; window.currentWeek = window.daysList.find(d => d.id === dayId).week; window.wordIndex = index; window.render(); };
-window.changeRate = function(val) { window.speechRate = parseFloat(val); window.render(); };
+window.changeRate = function(val) { window.speechRate = parseFloat(val); if(window.htmlAudioElement) window.htmlAudioElement.playbackRate = window.speechRate; window.render(); };
 
 window.getSRSIndicator = function(word) {
     const wordKey = word.toLowerCase();
@@ -490,18 +490,26 @@ window.formatTime = function(seconds) {
 
 window.htmlAudioElement = null;
 
+window.normalizeAudioText = function(text) {
+    if(!text) return "";
+    return text.replace(/['"‘`’]/g, "").replace(/\s+/g, " ").trim().toLowerCase();
+};
+
 window.playText = function(text, event) {
     if (event) event.stopPropagation();
     window.stopAudio();
-    let hash = window.audioMap ? (window.audioMap[text] || window.audioMap[text.trim()]) : null;
+    let norm = window.normalizeAudioText(text);
+    let hash = window.audioMap ? window.audioMap[norm] : null;
     if(hash) {
         let audio = new Audio('audio/' + hash + '.mp3');
+        audio.playbackRate = window.speechRate || 1.0;
         window.htmlAudioElement = audio;
         audio.play().catch(e => {
             console.error("Audio playback failed", e);
             fallbackSpeech(text);
         });
     } else {
+        console.warn("Fallback invoked for:", text);
         fallbackSpeech(text);
     }
 };
@@ -564,10 +572,12 @@ window.playAudio = function(text, btnElement) {
     window.audioState.isPaused = false;
     window.audioState.isDragging = false;
     
-    let hash = window.audioMap ? (window.audioMap[text] || window.audioMap[text.trim()]) : null;
+    let norm = window.normalizeAudioText(text);
+    let hash = window.audioMap ? window.audioMap[norm] : null;
     
     if(hash) {
         let audio = new Audio('audio/' + hash + '.mp3');
+        audio.playbackRate = window.speechRate || 1.0;
         window.htmlAudioElement = audio;
         
         audio.addEventListener('loadedmetadata', function() {
@@ -600,9 +610,11 @@ window.playAudio = function(text, btnElement) {
         
         audio.play().catch(e => {
             console.error("Audio playback failed", e);
+            console.warn("Fallback invoked for:", text);
             fallbackSpeechWithBar(text);
         });
     } else {
+        console.warn("Fallback invoked for:", text);
         fallbackSpeechWithBar(text);
     }
 };
