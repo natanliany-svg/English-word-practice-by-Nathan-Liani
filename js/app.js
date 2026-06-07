@@ -493,7 +493,7 @@ window.htmlAudioElement = null;
 window.playText = function(text, event) {
     if (event) event.stopPropagation();
     window.stopAudio();
-    let hash = window.audioMap ? window.audioMap[text] : null;
+    let hash = window.audioMap ? (window.audioMap[text] || window.audioMap[text.trim()]) : null;
     if(hash) {
         let audio = new Audio('audio/' + hash + '.mp3');
         window.htmlAudioElement = audio;
@@ -564,7 +564,7 @@ window.playAudio = function(text, btnElement) {
     window.audioState.isPaused = false;
     window.audioState.isDragging = false;
     
-    let hash = window.audioMap ? window.audioMap[text] : null;
+    let hash = window.audioMap ? (window.audioMap[text] || window.audioMap[text.trim()]) : null;
     
     if(hash) {
         let audio = new Audio('audio/' + hash + '.mp3');
