@@ -734,47 +734,20 @@ window.setDifficulty = function(diff) { window.quizDifficulty = diff; window.ren
 window.setQuizTargetWeek = function(target) { window.quizTargetWeek = target; window.render(); };
 
 window.startQuiz = function() {
-    const unseenDB = [
-        { q: "What is the primary function of an Operating System according to the text?", options: ["To serve as a bridge between the user, applications, and hardware.", "To browse the internet and play games faster.", "To manufacture new hardware components.", "To write documents and edit videos automatically."], ans: 0, diff: "easy", week: "week8" },
-        { q: "Who were the researchers involved in the creation of Unix?", options: ["Ken Thompson and Dennis Ritchie", "Steve Jobs and Bill Gates", "Linux Torvalds and Tim Berners-Lee", "Alan Turing and Ada Lovelace"], ans: 0, diff: "medium", week: "week8" },
-        { q: "Which operating systems are mentioned as being based on ideas that originated in Unix?", options: ["Linux and macOS", "Windows and MS-DOS", "Android and Symbian", "ChromeOS and Ubuntu"], ans: 0, diff: "easy", week: "week8" },
-        { q: "What does the OS 'scheduler' do in process management?", options: ["It decides how much processor time each process receives.", "It permanently deletes inactive files to clear the CPU.", "It schedules meetings and calendar events for the user.", "It shuts down the computer when it gets too hot."], ans: 0, diff: "hard", week: "week8" },
-        { q: "What is 'virtual memory' as described in the text?", options: ["A technique allowing programs to use more memory by temporarily storing data on a storage device.", "A cloud-based memory that users have to buy separately.", "Memory that exists only in the user's imagination.", "A physical chip that replaces RAM."], ans: 0, diff: "medium", week: "week8" },
-        { q: "Why are 'device drivers' important?", options: ["They allow the OS to send instructions to and receive information from hardware.", "They physically drive the computer to different locations.", "They protect the computer from malicious software.", "They organize files into folders."], ans: 0, diff: "easy", week: "week8" },
-        { q: "Which of the following is NOT mentioned as a security feature of modern operating systems?", options: ["Physical lock-and-key mechanisms", "User authentication", "Access control", "Encryption"], ans: 0, diff: "hard", week: "week8" },
-        { q: "What specific challenge did mobile operating systems like Android and iOS have to solve?", options: ["Operating on devices with limited power consumption while supporting touch-screens.", "Operating without any internet connection at all.", "Running Unix directly on a wristwatch.", "Providing physical keyboards for all users."], ans: 0, diff: "medium", week: "week8" },
-        { q: "Without a file system, what would be nearly impossible?", options: ["Managing information on a computer.", "Turning the computer on.", "Typing on a keyboard.", "Connecting to a wall outlet."], ans: 0, diff: "easy", week: "week8" },
-        { q: "According to the conclusion, what role has the evolution of operating systems played?", options: ["A crucial role in shaping the digital world we know today.", "A minor role compared to hardware development.", "A role strictly limited to desktop computers.", "It only affected the development of video games."], ans: 0, diff: "medium", week: "week8" }
-    ];
-    
-    const ciaTriadDB = [
-        { q: "What does the CIA Triad stand for?", options: ["Confidentiality, Integrity, and Availability", "Computer, Internet, and Applications", "Control, Information, and Access", "Cybersecurity, Intelligence, and Authorization"], ans: 0, diff: "easy", week: "week9" },
-        { q: "Which principle ensures information is only accessible to authorized people?", options: ["Confidentiality", "Integrity", "Availability", "Authorization"], ans: 0, diff: "easy", week: "week9" },
-        { q: "What do companies use to prevent unauthorized users from viewing sensitive data?", options: ["Passwords, encryption, and access controls", "Public networks and open servers", "Hard drives and physical keys", "Social media accounts"], ans: 0, diff: "medium", week: "week9" },
-        { q: "What happened when Daniel clicked the link in the phishing email?", options: ["A cybercriminal gained access to his account", "His computer exploded", "The IT department congratulated him", "His files were immediately deleted"], ans: 0, diff: "medium", week: "week9" },
-        { q: "Integrity refers to what aspect of information?", options: ["Accuracy and reliability", "Speed and performance", "Size and storage space", "Privacy and secrecy"], ans: 0, diff: "easy", week: "week9" },
-        { q: "Which technologies are used to ensure data integrity?", options: ["Digital signatures, audit logs, and hash functions", "Antivirus software and firewalls", "Virtual Private Networks (VPNs)", "Bluetooth and Wi-Fi"], ans: 0, diff: "hard", week: "week9" },
-        { q: "Why did the altered customer records in DataSafe illustrate a violation of integrity?", options: ["Because the data was made inaccurate and unreliable", "Because the files were completely deleted", "Because the servers crashed", "Because employees could not log in"], ans: 0, diff: "medium", week: "week9" },
-        { q: "What does Availability ensure?", options: ["Authorized users can access information when they need it", "Data is always public", "No one can ever change the data", "Passwords are never required"], ans: 0, diff: "easy", week: "week9" },
-        { q: "What type of attack did the cybercriminal launch to compromise Availability?", options: ["Ransomware", "DDoS attack", "SQL Injection", "Man-in-the-Middle attack"], ans: 0, diff: "medium", week: "week9" },
-        { q: "How did DataSafe recover its systems after the ransomware attack?", options: ["They used secure backups", "They paid the ransom", "They bought new computers", "They hacked the attacker back"], ans: 0, diff: "medium", week: "week9" },
-        { q: "What did the incident at DataSafe show about protecting information?", options: ["It's about human awareness as well as technology", "Only expensive software can protect data", "IT departments are unnecessary", "Phishing attacks are harmless"], ans: 0, diff: "hard", week: "week9" }
-    ];
-
     let fullDB = [];
     let targetWeek = window.quizTargetWeek;
     if (!targetWeek && window.currentWeek && window.currentWeek !== 'quiz') {
         targetWeek = window.currentWeek;
     }
     
-    if (targetWeek && targetWeek.includes('week8')) fullDB = unseenDB;
-    else if (targetWeek && targetWeek.includes('week9')) fullDB = ciaTriadDB;
-    else fullDB = [...unseenDB, ...ciaTriadDB];
+    if (targetWeek && targetWeek.includes('week8')) fullDB = window.unseenDB;
+    else if (targetWeek && targetWeek.includes('week9')) fullDB = window.ciaTriadDB;
+    else fullDB = [...window.unseenDB, ...window.ciaTriadDB];
 
     let availableQuestions = fullDB.filter(q => q.diff === window.quizDifficulty || window.quizDifficulty === 'medium');
     if (window.quizDifficulty === 'hard') availableQuestions = fullDB; 
     let shuffled = [...availableQuestions].sort(() => 0.5 - Math.random());
-    let selectedQs = shuffled.slice(0, 15);
+    let selectedQs = shuffled.slice(0, 23);
 
     window.quizQuestions = selectedQs.map(target => {
         let correctText = target.options[target.ans];

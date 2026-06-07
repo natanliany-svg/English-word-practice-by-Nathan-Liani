@@ -1,0 +1,569 @@
+{
+  "vocab": {
+    "w9d1": [
+      {
+        "word": "Confidentiality",
+        "phonetic": "קוֹנְפִידֶנְשִׁיאַלִיטִי",
+        "meaning": "סוֹדִיּוּת",
+        "visual": "🤫",
+        "exp": "עיקרון האבטחה שמבטיח שמידע נגיש רק למורשים.",
+        "engEx": "Confidentiality means information should only be accessible to authorized people.",
+        "hebEx": "סודיות פירושה שמידע צריך להיות נגיש רק לאנשים מורשים."
+      },
+      {
+        "word": "Integrity",
+        "phonetic": "אִינְטֶגְרִיטִי",
+        "meaning": "שְׁלֵמוּת",
+        "visual": "✅",
+        "exp": "עיקרון המבטיח שמידע נשאר מדויק ואמין ללא שינוי לא מורשה.",
+        "engEx": "Integrity refers to the accuracy and reliability of information.",
+        "hebEx": "שלמות מתייחסת לדיוק ואמינות המידע."
+      },
+      {
+        "word": "Availability",
+        "phonetic": "אַוֵויְלַבִּילִיטִי",
+        "meaning": "זְמִינוּת",
+        "visual": "🟢",
+        "exp": "עיקרון המבטיח שמידע נגיש למשתמשים מורשים בכל עת.",
+        "engEx": "Information is only useful if authorized users can access it when they need it.",
+        "hebEx": "מידע מועיל רק אם משתמשים מורשים יכולים לגשת אליו כשהם זקוקים לו."
+      },
+      {
+        "word": "Triad",
+        "phonetic": "טְרַאיֶיאַד",
+        "meaning": "שְׁלִישִׁיָּה / מְשׁוּלָּשׁ",
+        "visual": "🔺",
+        "exp": "קבוצה של שלושה דברים הקשורים זה בזה.",
+        "engEx": "The CIA Triad consists of Confidentiality, Integrity, and Availability.",
+        "hebEx": "משולש ה-CIA מורכב מסודיות, שלמות וזמינות."
+      },
+      {
+        "word": "Cybersecurity",
+        "phonetic": "סַייְבֶּרְסֶקְיוּרִיטִי",
+        "meaning": "אַבְטַחַת סַייְבֶּר",
+        "visual": "🛡️",
+        "exp": "התחום העוסק בהגנה על מערכות מחשב ומידע מפני איומים.",
+        "engEx": "Cybersecurity professionals rely on the CIA Triad model.",
+        "hebEx": "אנשי אבטחת סייבר מסתמכים על מודל משולש ה-CIA."
+      },
+      {
+        "word": "Framework",
+        "phonetic": "פְרֵיְימְוּוֶרְק",
+        "meaning": "מִסְגֶּרֶת",
+        "visual": "🏗️",
+        "exp": "מבנה בסיסי שמשמש כתשתית לעבודה או לתכנון.",
+        "engEx": "The CIA Triad is a framework that helps organizations secure their information.",
+        "hebEx": "משולש ה-CIA הוא מסגרת שעוזרת לארגונים לאבטח את המידע שלהם."
+      },
+      {
+        "word": "Sensitive",
+        "phonetic": "סֶנְסִיטִיב",
+        "meaning": "רָגִישׁ",
+        "visual": "⚠️",
+        "exp": "מידע שדורש הגנה מיוחדת בגלל אופיו הפרטי או החשוב.",
+        "engEx": "Encryption helps protect sensitive data from unauthorized access.",
+        "hebEx": "הצפנה עוזרת להגן על נתונים רגישים מפני גישה לא מורשית."
+      },
+      {
+        "word": "Unauthorized",
+        "phonetic": "אַנְאוֹתוֹרַאיְזְד",
+        "meaning": "לֹא מוּרְשֶׁה",
+        "visual": "🚫",
+        "exp": "ללא הרשאה או אישור חוקי לבצע פעולה.",
+        "engEx": "Passwords prevent unauthorized users from viewing data.",
+        "hebEx": "סיסמאות מונעות ממשתמשים לא מורשים לצפות בנתונים."
+      },
+      {
+        "word": "Breach",
+        "phonetic": "בְּרִיצ'",
+        "meaning": "פְּרִיצָה / הֲפָרָה",
+        "visual": "💥",
+        "exp": "חדירה לא מורשית למערכת או הפרת כללי אבטחה.",
+        "engEx": "A security breach can expose confidential customer data.",
+        "hebEx": "פריצת אבטחה יכולה לחשוף נתוני לקוחות סודיים."
+      },
+      {
+        "word": "Phishing",
+        "phonetic": "פִישִׁינְג",
+        "meaning": "דִּיּוּג",
+        "visual": "🎣",
+        "exp": "מתקפת הונאה בה שולחים הודעות מזויפות כדי לגנוב מידע.",
+        "engEx": "The email was actually part of a phishing attack.",
+        "hebEx": "האימייל היה למעשה חלק ממתקפת פישינג (דיוג)."
+      }
+    ],
+    "w9d2": [
+      {
+        "word": "Ransomware",
+        "phonetic": "רַנְסוֹמְוֶוֶר",
+        "meaning": "תּוֹכְנַת כּוֹפֶר",
+        "visual": "💸",
+        "exp": "תוכנה זדונית שנועלת קבצים ודורשת כופר כדי לשחררם.",
+        "engEx": "The attacker launched ransomware that encrypted many files.",
+        "hebEx": "התוקף הפעיל תוכנת כופר שהצפינה קבצים רבים."
+      },
+      {
+        "word": "Encryption",
+        "phonetic": "אֶנְקְרִיפְּשֶׁן",
+        "meaning": "הַצְפָּנָה",
+        "visual": "🔒",
+        "exp": "תהליך המרת מידע לקוד סודי כדי להגן עליו.",
+        "engEx": "Companies use encryption to prevent unauthorized users from viewing data.",
+        "hebEx": "חברות משתמשות בהצפנה כדי למנוע ממשתמשים לא מורשים לצפות בנתונים."
+      },
+      {
+        "word": "Signature",
+        "phonetic": "סִיגְנֶצֶ'ר",
+        "meaning": "חֲתִימָה",
+        "visual": "✍️",
+        "exp": "חתימה דיגיטלית המאמתת את מקור המידע ושלמותו.",
+        "engEx": "Organizations use digital signatures to ensure data integrity.",
+        "hebEx": "ארגונים משתמשים בחתימות דיגיטליות כדי להבטיח את שלמות הנתונים."
+      },
+      {
+        "word": "Audit",
+        "phonetic": "אוֹדִיט",
+        "meaning": "בִּיקוֹרֶת",
+        "visual": "📋",
+        "exp": "בדיקה שיטתית ומקיפה של מערכת, חשבונות או תהליכים.",
+        "engEx": "Audit logs help organizations track changes to important data.",
+        "hebEx": "יומני ביקורת עוזרים לארגונים לעקוב אחר שינויים בנתונים חשובים."
+      },
+      {
+        "word": "Hash",
+        "phonetic": "הַאשׁ",
+        "meaning": "גִּיבּוּב",
+        "visual": "#️⃣",
+        "exp": "פונקציה שממירה מידע לקוד ייחודי קבוע לצורך אימות.",
+        "engEx": "Hash functions are used to verify data integrity.",
+        "hebEx": "פונקציות גיבוב משמשות לאימות שלמות הנתונים."
+      },
+      {
+        "word": "Legitimate",
+        "phonetic": "לְגִיטִימֵייט",
+        "meaning": "לְגִיטִימִי / חוּקִי",
+        "visual": "✔️",
+        "exp": "דבר שהוא חוקי, תקין ומוכר על ידי הרשויות.",
+        "engEx": "Since the email seemed legitimate, Daniel clicked the link.",
+        "hebEx": "מכיוון שהאימייל נראה לגיטימי, דניאל לחץ על הקישור."
+      },
+      {
+        "word": "Employee",
+        "phonetic": "אֶמְפְּלוֹיִי",
+        "meaning": "עוֹבֵד",
+        "visual": "👨‍💼",
+        "exp": "אדם שעובד עבור חברה או ארגון תמורת שכר.",
+        "engEx": "An employee named Daniel received a suspicious email.",
+        "hebEx": "עובד בשם דניאל קיבל אימייל חשוד."
+      },
+      {
+        "word": "Suspicious",
+        "phonetic": "סַסְפִּישֶׁס",
+        "meaning": "חֲשׁוּד",
+        "visual": "🧐",
+        "exp": "דבר שמעורר חשד או תחושה שמשהו לא בסדר.",
+        "engEx": "Employees should report any suspicious emails to the IT department.",
+        "hebEx": "עובדים צריכים לדווח על כל אימייל חשוד למחלקת ה-IT."
+      },
+      {
+        "word": "Compromise",
+        "phonetic": "קוֹמְפְּרוֹמַאיְז",
+        "meaning": "לִפְגּוֹעַ / פְּשָׁרָה",
+        "visual": "⚠️",
+        "exp": "בהקשר אבטחה: פגיעה במערכת או חשיפת מידע. בהקשר כללי: הסכמה הדדית.",
+        "engEx": "If confidentiality has been compromised, sensitive data may be exposed.",
+        "hebEx": "אם הסודיות נפגעה, נתונים רגישים עלולים להיחשף."
+      },
+      {
+        "word": "Altered",
+        "phonetic": "אוֹלְטֶרְד",
+        "meaning": "שׁוּנָּה",
+        "visual": "✏️",
+        "exp": "משהו שעבר שינוי, לעיתים ללא הרשאה.",
+        "engEx": "Several customer records were altered without authorization.",
+        "hebEx": "מספר רשומות לקוחות שונו ללא הרשאה."
+      }
+    ],
+    "w9d3": [
+      {
+        "word": "Reliable",
+        "phonetic": "רִילַאיְיַבֶּל",
+        "meaning": "אָמִין",
+        "visual": "🤝",
+        "exp": "דבר שאפשר לסמוך עליו שיפעל כנדרש.",
+        "engEx": "The data was no longer reliable after it was altered.",
+        "hebEx": "הנתונים כבר לא היו אמינים לאחר שהשתנו."
+      },
+      {
+        "word": "Accurate",
+        "phonetic": "אַקְיוּרֶייט",
+        "meaning": "מְדוּיָק",
+        "visual": "🎯",
+        "exp": "נכון ומדויק, ללא שגיאות.",
+        "engEx": "Integrity ensures that information remains accurate and unchanged.",
+        "hebEx": "שלמות מבטיחה שמידע נשאר מדויק וללא שינוי."
+      },
+      {
+        "word": "Essential",
+        "phonetic": "אֶסֶנְשָׁל",
+        "meaning": "חִיּוּנִי",
+        "visual": "❗",
+        "exp": "דבר שהכרחי ולא ניתן להסתדר בלעדיו.",
+        "engEx": "Backups are essential for maintaining data availability.",
+        "hebEx": "גיבויים הם חיוניים לשמירה על זמינות הנתונים."
+      },
+      {
+        "word": "Backup",
+        "phonetic": "בַּאקְאַפּ",
+        "meaning": "גִּיבּוּי",
+        "visual": "💾",
+        "exp": "עותק שמור של נתונים למקרה של אובדן או תקלה.",
+        "engEx": "DataSafe had recently created secure backups of its data.",
+        "hebEx": "DataSafe יצרה לאחרונה גיבויים מאובטחים של הנתונים שלה."
+      },
+      {
+        "word": "Resume",
+        "phonetic": "רִיזְיוּם",
+        "meaning": "לַחֲדֹשׁ / לְהַמְשִׁיךְ",
+        "visual": "▶️",
+        "exp": "לחזור ולהמשיך פעילות שנעצרה.",
+        "engEx": "The company was able to resume normal operations within a short time.",
+        "hebEx": "החברה הצליחה לחדש פעילות רגילה תוך זמן קצר."
+      },
+      {
+        "word": "Awareness",
+        "phonetic": "אַוֶוֶרְנֶס",
+        "meaning": "מוּדָעוּת",
+        "visual": "👁️",
+        "exp": "ידיעה והבנה של נושא או מצב מסוים.",
+        "engEx": "Protecting information is also about human awareness.",
+        "hebEx": "הגנה על מידע היא גם עניין של מודעות אנושית."
+      },
+      {
+        "word": "Responsible",
+        "phonetic": "רֶסְפּוֹנְסִיבֶּל",
+        "meaning": "אַחְרַאי",
+        "visual": "🧑‍💼",
+        "exp": "אדם שחייב בדין וחשבון ושעליו מוטלת חובה.",
+        "engEx": "Protecting information is about responsible security practices.",
+        "hebEx": "הגנה על מידע נוגעת לשיטות אבטחה אחראיות."
+      },
+      {
+        "word": "Demonstrate",
+        "phonetic": "דֶמוֹנְסְטְרֵייט",
+        "meaning": "לְהַדְגִּים",
+        "visual": "📊",
+        "exp": "להראות או להוכיח משהו בצורה ברורה.",
+        "engEx": "The story demonstrates how a phishing email can affect all three CIA elements.",
+        "hebEx": "הסיפור מדגים כיצד אימייל פישינג יכול להשפיע על שלושת אלמנטי ה-CIA."
+      },
+      {
+        "word": "Affect",
+        "phonetic": "אַפֶקְט",
+        "meaning": "לְהַשְׁפִּיעַ",
+        "visual": "📡",
+        "exp": "לגרום לשינוי או להשפיע על משהו.",
+        "engEx": "A single phishing email can affect all three elements of the CIA Triad.",
+        "hebEx": "אימייל פישינג יחיד יכול להשפיע על כל שלושת אלמנטי משולש ה-CIA."
+      },
+      {
+        "word": "Exposed",
+        "phonetic": "אֶקְסְפּוֹזְד",
+        "meaning": "נֶחְשַׂף",
+        "visual": "🔦",
+        "exp": "מידע שנגלה לציבור או לגורמים לא מורשים.",
+        "engEx": "Confidential information was exposed during the security breach.",
+        "hebEx": "מידע סודי נחשף במהלך פריצת האבטחה."
+      }
+    ],
+    "w9d4": [
+      {
+        "word": "Critical",
+        "phonetic": "קְרִיטִיקַל",
+        "meaning": "קְרִיטִי",
+        "visual": "🚨",
+        "exp": "חשוב ביותר, עד כדי כך שכישלון יגרום לנזק חמור.",
+        "engEx": "Critical systems became unavailable after the ransomware attack.",
+        "hebEx": "מערכות קריטיות הפכו ללא זמינות לאחר מתקפת הכופר."
+      },
+      {
+        "word": "Incident",
+        "phonetic": "אִינְסִידֶנְט",
+        "meaning": "תַּקְרִית",
+        "visual": "📍",
+        "exp": "אירוע חריג, לרוב שלילי, שדורש תגובה.",
+        "engEx": "The incident became an important lesson for both management and employees.",
+        "hebEx": "התקרית הפכה לשיעור חשוב הן להנהלה והן לעובדים."
+      },
+      {
+        "word": "Valuable",
+        "phonetic": "וַאלְיוּאַבֶּל",
+        "meaning": "יָקָר עֵרֶךְ",
+        "visual": "💎",
+        "exp": "בעל ערך רב, כספי או רוחני.",
+        "engEx": "Information is one of the most valuable resources for businesses.",
+        "hebEx": "מידע הוא אחד המשאבים יקרי הערך ביותר עבור עסקים."
+      },
+      {
+        "word": "Asset",
+        "phonetic": "אַסֶט",
+        "meaning": "נֶכֶס",
+        "visual": "🏆",
+        "exp": "משאב בעל ערך השייך לאדם או לארגון.",
+        "engEx": "Organizations must protect their most valuable digital assets.",
+        "hebEx": "ארגונים חייבים להגן על הנכסים הדיגיטליים היקרים ביותר שלהם."
+      },
+      {
+        "word": "Credentials",
+        "phonetic": "קְרֶדֶנְשַׁלְס",
+        "meaning": "פְּרָטֵי הִתְחַבְּרוּת",
+        "visual": "🪪",
+        "exp": "פרטי זיהוי כמו שם משתמש וסיסמה המשמשים להתחברות למערכת.",
+        "engEx": "Daniel entered his login credentials on the fake website.",
+        "hebEx": "דניאל הזין את פרטי ההתחברות שלו באתר המזויף."
+      },
+      {
+        "word": "Restore",
+        "phonetic": "רִיסְטוֹר",
+        "meaning": "לְשַׁחְזֵר",
+        "visual": "🔄",
+        "exp": "להחזיר משהו למצבו הקודם, כמו שחזור קבצים.",
+        "engEx": "The IT team worked to restore the systems and recover the files.",
+        "hebEx": "צוות ה-IT עבד לשחזר את המערכות ולשחזר את הקבצים."
+      },
+      {
+        "word": "Recover",
+        "phonetic": "רִיקַאבֶר",
+        "meaning": "לְהִתְאוֹשֵׁשׁ / לְשַׁחְזֵר",
+        "visual": "🛠️",
+        "exp": "לחזור לתפקוד תקין אחרי אירוע שלילי.",
+        "engEx": "The team worked to recover the affected files.",
+        "hebEx": "הצוות עבד לשחזר את הקבצים שנפגעו."
+      },
+      {
+        "word": "Disruptive",
+        "phonetic": "דִיסְרַפְּטִיב",
+        "meaning": "מַשְׁבִּשׁ",
+        "visual": "💢",
+        "exp": "דבר שגורם להפרעה משמעותית בפעילות רגילה.",
+        "engEx": "Downtime can be expensive and disruptive for businesses.",
+        "hebEx": "זמן השבתה יכול להיות יקר ומשבש עבור עסקים."
+      },
+      {
+        "word": "Measures",
+        "phonetic": "מֶזֶ'רְס",
+        "meaning": "אֶמְצָעִים",
+        "visual": "📏",
+        "exp": "פעולות או כלים שננקטים כדי להשיג מטרה או להגן.",
+        "engEx": "Confidentiality can be lost when security measures are bypassed.",
+        "hebEx": "סודיות יכולה ללכת לאיבוד כאשר עוקפים אמצעי אבטחה."
+      },
+      {
+        "word": "Practice",
+        "phonetic": "פְּרַקְטִיס",
+        "meaning": "תַּרְגוּל / נוֹהָג",
+        "visual": "🔁",
+        "exp": "פעולה חוזרת ללמידה, או שיטה מקובלת.",
+        "engEx": "Responsible security practices protect organizations from attacks.",
+        "hebEx": "נוהלי אבטחה אחראיים מגנים על ארגונים מפני מתקפות."
+      }
+    ]
+  },
+  "article": [
+    {
+      "j": "🌍",
+      "e": "In today's digital world, information is one of the most valuable resources for individuals, businesses, and governments.",
+      "h": "בעולם הדיגיטלי של ימינו, מידע הוא אחד המשאבים יקרי הערך ביותר עבור אנשים, עסקים וממשלות."
+    },
+    {
+      "j": "💾",
+      "e": "Every day, organizations store large amounts of data, including customer details, financial records, medical information, and business plans.",
+      "h": "מדי יום, ארגונים מאחסנים כמויות גדולות של נתונים, כולל פרטי לקוחות, רישומים פיננסיים, מידע רפואי ותוכניות עסקיות."
+    },
+    {
+      "j": "🛡️",
+      "e": "Protecting this information is a major responsibility, and cybersecurity professionals often rely on a model known as the CIA Triad.",
+      "h": "הגנה על מידע זה היא אחריות גדולה, ואנשי אבטחת סייבר מסתמכים לעתים קרובות על מודל הידוע בשם משולש ה-CIA."
+    },
+    {
+      "j": "🔤",
+      "e": "The letters CIA stand for Confidentiality, Integrity, and Availability, three principles that help organizations secure their information and systems.",
+      "h": "האותיות CIA מייצגות סודיות, שלמות וזמינות, שלושה עקרונות שעוזרים לארגונים לאבטח את המידע והמערכות שלהם."
+    },
+    {
+      "j": "🤫",
+      "e": "Confidentiality means that information should only be accessible to people who are authorized to see it.",
+      "h": "סודיות פירושה שמידע צריך להיות נגיש רק לאנשים המורשים לראות אותו."
+    },
+    {
+      "j": "🔐",
+      "e": "Companies use passwords, encryption, and access controls to prevent unauthorized users from viewing sensitive data.",
+      "h": "חברות משתמשות בסיסמאות, הצפנה ובקרות גישה כדי למנוע ממשתמשים לא מורשים לצפות בנתונים רגישים."
+    },
+    {
+      "j": "🏢",
+      "e": "For example, employees in a company may have access to the information necessary for their jobs, while confidential financial reports are restricted to managers and executives.",
+      "h": "לדוגמה, לעובדים בחברה עשויה להיות גישה למידע הדרוש לעבודתם, בעוד שדוחות כספיים סודיים מוגבלים למנהלים ובכירים."
+    },
+    {
+      "j": "🔓",
+      "e": "If an attacker gains access to information that should remain private, confidentiality has been compromised.",
+      "h": "אם תוקף מקבל גישה למידע שאמור להישאר פרטי, הסודיות נפגעה."
+    },
+    {
+      "j": "📖",
+      "e": "A good example of the importance of confidentiality can be seen in the experience of a small company called DataSafe.",
+      "h": "דוגמה טובה לחשיבות הסודיות ניתן לראות בניסיון של חברה קטנה בשם DataSafe."
+    },
+    {
+      "j": "✉️",
+      "e": "One Monday morning, an employee named Daniel received an email that appeared to come from the company's IT department.",
+      "h": "בוקר יום שני אחד, עובד בשם דניאל קיבל אימייל שנראה כאילו הגיע ממחלקת ה-IT של החברה."
+    },
+    {
+      "j": "⚠️",
+      "e": "The message looked professional and warned employees that they needed to update their passwords immediately.",
+      "h": "ההודעה נראתה מקצועית והזהירה את העובדים שהם צריכים לעדכן את הסיסמאות שלהם מיד."
+    },
+    {
+      "j": "🔗",
+      "e": "Since the email seemed legitimate, Daniel clicked the link and entered his login credentials.",
+      "h": "מכיוון שהאימייל נראה לגיטימי, דניאל לחץ על הקישור והזין את פרטי ההתחברות שלו."
+    },
+    {
+      "j": "🎣",
+      "e": "The problem was that the email was actually part of a phishing attack.",
+      "h": "הבעיה הייתה שהאימייל למעשה היה חלק ממתקפת פישינג (דיוג)."
+    },
+    {
+      "j": "⏱️",
+      "e": "Within minutes, a cybercriminal had access to Daniel's account and could view confidential customer documents stored on the company's servers.",
+      "h": "תוך דקות, לפושע סייבר הייתה גישה לחשבון של דניאל והוא יכול היה לראות מסמכי לקוחות סודיים המאוחסנים בשרתי החברה."
+    },
+    {
+      "j": "🚨",
+      "e": "Information that was supposed to remain private was suddenly exposed, demonstrating how easily confidentiality can be lost when security measures are bypassed.",
+      "h": "מידע שהיה אמור להישאר פרטי נחשף לפתע, מה שמוכיח באיזו קלות סודיות יכולה ללכת לאיבוד כאשר עוקפים את אמצעי האבטחה."
+    },
+    {
+      "j": "✅",
+      "e": "Another important principle is Integrity, which refers to the accuracy and reliability of information.",
+      "h": "עיקרון חשוב נוסף הוא שלמות, המתייחס לדיוק ואמינות המידע."
+    },
+    {
+      "j": "🔒",
+      "e": "Data should remain correct and unchanged unless an authorized person makes a legitimate modification.",
+      "h": "הנתונים צריכים להישאר נכונים וללא שינוי אלא אם אדם מורשה מבצע שינוי לגיטימי."
+    },
+    {
+      "j": "⚙️",
+      "e": "Organizations use technologies such as digital signatures, audit logs, and hash functions to help ensure data integrity.",
+      "h": "ארגונים משתמשים בטכנולוגיות כגון חתימות דיגיטליות, יומני ביקורת ופונקציות גיבוב כדי לעזור להבטיח את שלמות הנתונים."
+    },
+    {
+      "j": "🕵️",
+      "e": "After gaining access to DataSafe's systems, the attacker did more than simply read files.",
+      "h": "לאחר שקיבל גישה למערכות של DataSafe, התוקף עשה יותר מסתם קריאת קבצים."
+    },
+    {
+      "j": "✏️",
+      "e": "Several customer records were altered, and important information was changed without authorization.",
+      "h": "מספר רשומות לקוחות שונו, ומידע חשוב שונה ללא הרשאה."
+    },
+    {
+      "j": "🔍",
+      "e": "When employees later reviewed the documents, they discovered incorrect account numbers and modified customer details.",
+      "h": "כאשר העובדים סקרו מאוחר יותר את המסמכים, הם גילו מספרי חשבונות שגויים ופרטי לקוחות שהשתנו."
+    },
+    {
+      "j": "❌",
+      "e": "Although the files were still available, they could no longer be trusted.",
+      "h": "למרות שהקבצים עדיין היו זמינים, כבר לא ניתן היה לסמוך עליהם."
+    },
+    {
+      "j": "📉",
+      "e": "This situation illustrates a violation of integrity because the data had been altered in a way that made it inaccurate and unreliable.",
+      "h": "מצב זה ממחיש פגיעה בשלמות מכיוון שהנתונים שונו באופן שהפך אותם ללא מדויקים ולא אמינים."
+    },
+    {
+      "j": "⚡",
+      "e": "The third component of the CIA Triad is Availability.",
+      "h": "המרכיב השלישי במשולש ה-CIA הוא זמינות."
+    },
+    {
+      "j": "🟢",
+      "e": "Information is only useful if authorized users can access it when they need it.",
+      "h": "מידע מועיל רק אם משתמשים מורשים יכולים לגשת אליו כשהם זקוקים לו."
+    },
+    {
+      "j": "🏢",
+      "e": "Businesses rely on their systems every day, so downtime can be expensive and disruptive.",
+      "h": "עסקים מסתמכים על המערכות שלהם מדי יום, כך שזמן השבתה יכול להיות יקר ומשבש."
+    },
+    {
+      "j": "🔄",
+      "e": "To maintain availability, organizations invest in backups, redundant systems, and disaster recovery plans.",
+      "h": "כדי לשמור על זמינות, ארגונים משקיעים בגיבויים, מערכות יתירות ותוכניות התאוששות מאסון."
+    },
+    {
+      "j": "💸",
+      "e": "Before leaving the compromised network, the attacker launched ransomware that encrypted many of DataSafe's files.",
+      "h": "לפני שעזב את הרשת שנפרצה, התוקף הפעיל תוכנת כופר שהצפינה רבים מהקבצים של DataSafe."
+    },
+    {
+      "j": "🚫",
+      "e": "Employees arriving at work the next morning were unable to open documents or access important systems.",
+      "h": "עובדים שהגיעו לעבודה למחרת בבוקר לא הצליחו לפתוח מסמכים או לגשת למערכות חשובות."
+    },
+    {
+      "j": "🛑",
+      "e": "Customer requests could not be processed, and normal business operations came to a halt.",
+      "h": "לא ניתן היה לעבד בקשות של לקוחות, והפעילות העסקית הרגילה נעצרה."
+    },
+    {
+      "j": "⏸️",
+      "e": "Even though the information still existed, it was temporarily inaccessible, meaning availability had been compromised.",
+      "h": "למרות שהמידע עדיין היה קיים, הוא לא היה נגיש באופן זמני, כלומר הזמינות נפגעה."
+    },
+    {
+      "j": "☁️",
+      "e": "Fortunately, DataSafe had recently created secure backups of its data.",
+      "h": "למרבה המזל, DataSafe יצרה לאחרונה גיבויים מאובטחים לנתונים שלה."
+    },
+    {
+      "j": "🛠️",
+      "e": "The IT team worked throughout the day to restore the systems and recover the affected files.",
+      "h": "צוות ה-IT פעל לאורך כל היום לשחזור המערכות ולשחזור הקבצים שנפגעו."
+    },
+    {
+      "j": "⏱️",
+      "e": "Within a short time, the company was able to resume normal operations.",
+      "h": "תוך זמן קצר, החברה הצליחה לחזור לפעילות רגילה."
+    },
+    {
+      "j": "🎓",
+      "e": "The incident became an important lesson for both management and employees.",
+      "h": "התקרית הפכה לשיעור חשוב הן עבור ההנהלה והן עבור העובדים."
+    },
+    {
+      "j": "🧠",
+      "e": "It showed that protecting information is not only about technology but also about human awareness and responsible security practices.",
+      "h": "היא הראתה שהגנה על מידע היא לא רק עניין של טכנולוגיה אלא גם של מודעות אנושית ושיטות אבטחה אחראיות."
+    },
+    {
+      "j": "📊",
+      "e": "The story of DataSafe demonstrates how a single phishing email can affect all three elements of the CIA Triad.",
+      "h": "הסיפור של DataSafe מדגים כיצד דוא'ל פישינג יחיד יכול להשפיע על כל שלושת האלמנטים של משולש ה-CIA."
+    },
+    {
+      "j": "💥",
+      "e": "Confidential information was exposed, important records were altered, and critical systems became unavailable.",
+      "h": "מידע סודי נחשף, רשומות חשובות שונו ומערכות קריטיות הפכו ללא זמינות."
+    },
+    {
+      "j": "🏆",
+      "e": "For this reason, confidentiality, integrity, and availability remain the foundation of information security and continue to guide organizations in protecting their most valuable digital assets.",
+      "h": "מסיבה זו, סודיות, שלמות וזמינות נותרו הבסיס לאבטחת מידע וממשיכות להנחות ארגונים בהגנה על הנכסים הדיגיטליים היקרים ביותר שלהם."
+    }
+  ]
+}
