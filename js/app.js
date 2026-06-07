@@ -488,88 +488,138 @@ window.formatTime = function(seconds) {
     return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
 };
 
-window.playAudio = function(text, btnElement) {
-    window.stopAudio();
-    
-    if (!window.audioState) window.audioState = {};
-    
-    window.audioState.fullText = text;
-    window.audioState.btnElement = btnElement;
-    window.audioState.elapsed = 0;
-    window.audioState.isPaused = false;
-    window.audioState.isDragging = false;
-    
-    let wordCount = text.split(' ').length;
-    let wps = (130 / 60) * window.speechRate;
-    window.audioState.estimatedDuration = wordCount / wps;
-    if(window.audioState.estimatedDuration < 1.0) window.audioState.estimatedDuration = 1.0; 
-    
-    if(document.getElementById('audio-time-total')) {
-        document.getElementById('audio-time-total').innerText = window.formatTime(window.audioState.estimatedDuration);
-        document.getElementById('audio-time-current').innerText = "00:00";
-        document.getElementById('audio-slider').value = 0;
-    }
+window.htmlAudioElement = null;
 
-    window.playAudioChunk(text);
+window.playText = function(text, event) {
+    if (event) event.stopPropagation();
+    window.stopAudio();
+    let hash = window.audioMap ? window.audioMap[text] : null;
+    if(hash) {
+        let audio = new Audio('audio/' + hash + '.mp3');
+        window.htmlAudioElement = audio;
+        audio.play().catch(e => {
+            console.error("Audio playback failed", e);
+            fallbackSpeech(text);
+        });
+    } else {
+        fallbackSpeech(text);
+    }
 };
 
-window.playAudioChunk = function(textChunk) {
-    if (!window.speechSynthesis) return;
-    const utterance = new SpeechSynthesisUtterance(textChunk);
+function fallbackSpeech(text) {
+    if (!('speechSynthesis' in window)) return;
+    const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'en-US';
-    utterance.rate = window.speechRate;
+    utterance.rate = window.speechRate || 1.0;
     const voices = window.speechSynthesis.getVoices();
     const preferredVoice = voices.find(v => v.name.includes('Google US English')) || voices.find(v => v.lang === 'en-US' && v.localService === true) || voices.find(v => v.lang.startsWith('en'));
     if (preferredVoice) utterance.voice = preferredVoice;
+    window.speechSynthesis.speak(utterance);
+}
+
+function fallbackSpeechWithBar(text) {
+    if (!('speechSynthesis' in window)) return;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    utterance.rate = window.speechRate || 1.0;
+    const voices = window.speechSynthesis.getVoices();
+    const preferredVoice = voices.find(v => v.name.includes('Google US English')) || voices.find(v => v.lang === 'en-US' && v.localService === true) || voices.find(v => v.lang.startsWith('en'));
+    if (preferredVoice) utterance.voice = preferredVoice;
+    
+    let wordCount = text.split(' ').length;
+    let wps = (130 / 60) * (window.speechRate || 1.0);
+    window.audioState.estimatedDuration = wordCount / wps;
+    if(window.audioState.estimatedDuration < 1.0) window.audioState.estimatedDuration = 1.0; 
     
     utterance.onstart = function() {
         window.audioPlaying = true;
         if(document.getElementById('audio-player')) document.getElementById('audio-player').classList.add('visible');
         if(document.getElementById('play-pause-btn')) document.getElementById('play-pause-btn').innerHTML = window.icons.pause;
-        
-        if (!window.audioState) window.audioState = {};
-        
         if(window.audioState.btnElement) window.audioState.btnElement.classList.add('active');
-        
-        if (window.audioState.interval) clearInterval(window.audioState.interval);
         
         window.audioState.interval = setInterval(() => {
             if(!window.audioState.isPaused && !window.audioState.isDragging) {
                 window.audioState.elapsed += 0.1;
-                
-                // Fallback: If speech engine finished speaking, or we exceeded the estimated duration, stop audio.
-                if (window.audioState.elapsed > 0.5 && 'speechSynthesis' in window && !window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
-                    window.stopAudio();
-                    return;
-                }
                 if(window.audioState.elapsed >= window.audioState.estimatedDuration) {
                     window.audioState.elapsed = window.audioState.estimatedDuration;
                     window.stopAudio();
                     return;
                 }
-                
                 let pct = (window.audioState.elapsed / window.audioState.estimatedDuration) * 100;
-                if(document.getElementById('audio-slider')) {
-                    document.getElementById('audio-slider').value = pct;
-                    if(document.getElementById('audio-time-current')) {
-                        document.getElementById('audio-time-current').innerText = window.formatTime(window.audioState.elapsed);
-                    }
-                }
+                if(document.getElementById('audio-slider')) document.getElementById('audio-slider').value = pct;
+                if(document.getElementById('audio-time-current')) document.getElementById('audio-time-current').innerText = window.formatTime(window.audioState.elapsed);
             }
         }, 100);
     };
-    
-    utterance.onend = function() {
-        window.stopAudio();
-    };
-    
+    utterance.onend = function() { window.stopAudio(); };
     window.currentUtterance = utterance;
     window.speechSynthesis.speak(utterance);
+}
+
+window.playAudio = function(text, btnElement) {
+    window.stopAudio();
+    if (!window.audioState) window.audioState = {};
+    window.audioState.fullText = text;
+    window.audioState.btnElement = btnElement;
+    window.audioState.isPaused = false;
+    window.audioState.isDragging = false;
+    
+    let hash = window.audioMap ? window.audioMap[text] : null;
+    
+    if(hash) {
+        let audio = new Audio('audio/' + hash + '.mp3');
+        window.htmlAudioElement = audio;
+        
+        audio.addEventListener('loadedmetadata', function() {
+            if(document.getElementById('audio-time-total')) {
+                document.getElementById('audio-time-total').innerText = window.formatTime(audio.duration);
+                document.getElementById('audio-time-current').innerText = "00:00";
+                document.getElementById('audio-slider').value = 0;
+            }
+            if(document.getElementById('audio-player')) document.getElementById('audio-player').classList.add('visible');
+            if(document.getElementById('play-pause-btn')) document.getElementById('play-pause-btn').innerHTML = window.icons.pause;
+            if(window.audioState.btnElement) window.audioState.btnElement.classList.add('active');
+            window.audioPlaying = true;
+        });
+        
+        audio.addEventListener('timeupdate', function() {
+            if(window.audioState && !window.audioState.isDragging && window.htmlAudioElement) {
+                let pct = (audio.currentTime / audio.duration) * 100;
+                if(document.getElementById('audio-slider')) {
+                    document.getElementById('audio-slider').value = pct;
+                }
+                if(document.getElementById('audio-time-current')) {
+                    document.getElementById('audio-time-current').innerText = window.formatTime(audio.currentTime);
+                }
+            }
+        });
+        
+        audio.addEventListener('ended', function() {
+            window.stopAudio();
+        });
+        
+        audio.play().catch(e => {
+            console.error("Audio playback failed", e);
+            fallbackSpeechWithBar(text);
+        });
+    } else {
+        fallbackSpeechWithBar(text);
+    }
 };
 
 window.togglePlayPause = function() {
     if(!window.audioState) return;
-    if('speechSynthesis' in window && window.speechSynthesis.speaking) {
+    if(window.htmlAudioElement) {
+        if(window.htmlAudioElement.paused) {
+            window.htmlAudioElement.play();
+            window.audioState.isPaused = false;
+            if(document.getElementById('play-pause-btn')) document.getElementById('play-pause-btn').innerHTML = window.icons.pause;
+        } else {
+            window.htmlAudioElement.pause();
+            window.audioState.isPaused = true;
+            if(document.getElementById('play-pause-btn')) document.getElementById('play-pause-btn').innerHTML = window.icons.play;
+        }
+    } else if('speechSynthesis' in window && window.speechSynthesis.speaking) {
         if(window.speechSynthesis.paused) {
             window.speechSynthesis.resume();
             window.audioState.isPaused = false;
@@ -583,19 +633,18 @@ window.togglePlayPause = function() {
 };
 
 window.stopAudio = function() {
+    if(window.htmlAudioElement) {
+        window.htmlAudioElement.pause();
+        window.htmlAudioElement = null;
+    }
     if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-    if (typeof window.audioState !== 'undefined' && window.audioState !== null) {
-        if (window.audioState.interval) {
-            clearInterval(window.audioState.interval);
-        }
+    if (window.audioState && window.audioState.interval) {
+        clearInterval(window.audioState.interval);
         window.audioState.interval = null;
-    } else {
-        window.audioState = {}; 
     }
     window.audioPlaying = false;
     window.currentUtterance = null;
-    const player = document.getElementById('audio-player');
-    if(player) player.classList.remove('visible');
+    if(document.getElementById('audio-player')) document.getElementById('audio-player').classList.remove('visible');
     const activeBtns = document.querySelectorAll('.story-audio-btn.active');
     activeBtns.forEach(btn => btn.classList.remove('active'));
 };
@@ -606,46 +655,29 @@ window.startAudioDrag = function() {
 
 window.stopAudioDrag = function(val) {
     if (window.audioState) window.audioState.isDragging = false;
-    window.seekToPercent(val / 100);
+    if(window.htmlAudioElement) {
+        let newTime = (val / 100) * window.htmlAudioElement.duration;
+        window.htmlAudioElement.currentTime = newTime;
+    }
 };
 
 window.handleSliderInput = function(val) {
     if (!window.audioState) return;
-    let seconds = (val / 100) * window.audioState.estimatedDuration;
-    if(document.getElementById('audio-time-current')) {
-        document.getElementById('audio-time-current').innerText = window.formatTime(seconds);
+    if(window.htmlAudioElement) {
+        let newTime = (val / 100) * window.htmlAudioElement.duration;
+        if(document.getElementById('audio-time-current')) {
+            document.getElementById('audio-time-current').innerText = window.formatTime(newTime);
+        }
     }
 };
 
 window.seekRelative = function(secondsOffset) {
     if(!window.audioPlaying || !window.audioState) return;
-    let newElapsed = window.audioState.elapsed + secondsOffset;
-    if(newElapsed < 0) newElapsed = 0;
-    if(newElapsed > window.audioState.estimatedDuration) newElapsed = window.audioState.estimatedDuration;
-    window.seekToPercent(newElapsed / window.audioState.estimatedDuration);
-};
-
-window.seekToPercent = function(pct) {
-    if(!window.audioState || !window.audioState.fullText) return;
-    
-    if (window.audioState.interval) {
-        clearInterval(window.audioState.interval);
-        window.audioState.interval = null;
-    }
-    
-    if ('speechSynthesis' in window) window.speechSynthesis.cancel(); 
-    
-    window.audioState.elapsed = window.audioState.estimatedDuration * pct;
-    let words = window.audioState.fullText.split(' ');
-    let wordIndex = Math.floor(words.length * pct);
-    
-    let remainingText = words.slice(wordIndex).join(' ').trim();
-    if(remainingText.length > 0) {
-        setTimeout(() => {
-            window.playAudioChunk(remainingText);
-        }, 50);
-    } else {
-        window.stopAudio();
+    if(window.htmlAudioElement) {
+        let newTime = window.htmlAudioElement.currentTime + secondsOffset;
+        if(newTime < 0) newTime = 0;
+        if(newTime > window.htmlAudioElement.duration) newTime = window.htmlAudioElement.duration;
+        window.htmlAudioElement.currentTime = newTime;
     }
 };
 
