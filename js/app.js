@@ -1096,8 +1096,8 @@ window.render = function() {
         } else if (window.articleViewMode === 'paragraph') {
             const paragraphs = window.articleParagraphs[isWeek9 ? 'week9' : 'week8'];
             htmlBlock += paragraphs.map((paraIndices, index) => {
-                const paraEnglish = paraIndices.map(idx => articleData[idx].e.replace(/, /g, ',<br>')).join("<br><br>");
-                const paraHebrew = paraIndices.map(idx => articleData[idx].h.replace(/, /g, ',<br>')).join("<br><br>");
+                const paraEnglish = paraIndices.map(idx => articleData[idx].e).join(" ");
+                const paraHebrew = paraIndices.map(idx => articleData[idx].h).join(" ");
                 const plainEnglish = paraIndices.map(idx => articleData[idx].e).join(" ");
                 const safeText = plainEnglish.replace(/'/g, "\\\'").replace(/"/g, "&quot;");
                 
@@ -1108,10 +1108,10 @@ window.render = function() {
                                 ${window.icons.volume}
                             </button>
                         </div>
-                        <div class="story-eng-text" style="display: block !important; text-align: left; direction: ltr; font-size: clamp(15px, 1.25rem, 22px); line-height: 1.6;">
+                        <div class="story-eng-text" style="display: block !important; text-align: left; direction: ltr; font-size: clamp(24px, 2.2rem, 36px); line-height: 1.6;">
                             ${window.highlightText(paraEnglish)}
                         </div>
-                        <div class="story-heb-text" dir="rtl" style="text-align: right; font-size: clamp(14px, 1.15rem, 20px); line-height: 1.6; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 15px; margin-top: 15px; padding-right: 0 !important;">
+                        <div class="story-heb-text" dir="rtl" style="text-align: right; font-size: clamp(22px, 2.0rem, 32px); line-height: 1.6; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 20px; margin-top: 20px; padding-right: 0 !important; color: var(--theme-light);">
                             ${paraHebrew}
                         </div>
                     </div>
@@ -1126,12 +1126,12 @@ window.render = function() {
             const paragraphs = window.articleParagraphs[isWeek9 ? 'week9' : 'week8'];
             const engParasHtml = paragraphs.map(paraIndices => {
                 const paraText = paraIndices.map(idx => articleData[idx].e).join(" ");
-                return `<p style="margin-bottom: 20px; text-align: left; direction: ltr; font-size: clamp(15px, 1.25rem, 22px); line-height: 1.6; font-family: Georgia, serif;">${window.highlightText(paraText)}</p>`;
+                return `<p style="margin-bottom: 25px; text-align: left; direction: ltr; font-size: clamp(24px, 2.2rem, 36px); line-height: 1.6; font-family: Georgia, serif;">${window.highlightText(paraText)}</p>`;
             }).join('');
 
             const hebParasHtml = paragraphs.map(paraIndices => {
                 const paraText = paraIndices.map(idx => articleData[idx].h).join(" ");
-                return `<p style="margin-bottom: 20px; text-align: right; direction: rtl; font-size: clamp(14px, 1.15rem, 20px); line-height: 1.6;">${paraText}</p>`;
+                return `<p style="margin-bottom: 25px; text-align: right; direction: rtl; font-size: clamp(22px, 2.0rem, 32px); line-height: 1.6; color: var(--theme-light);">${paraText}</p>`;
             }).join('');
 
             htmlBlock += `
