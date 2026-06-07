@@ -767,8 +767,8 @@ window.startQuiz = function() {
         targetWeek = window.currentWeek;
     }
     
-    if (targetWeek === 'week8') fullDB = unseenDB;
-    else if (targetWeek === 'week9') fullDB = ciaTriadDB;
+    if (targetWeek && targetWeek.includes('week8')) fullDB = unseenDB;
+    else if (targetWeek && targetWeek.includes('week9')) fullDB = ciaTriadDB;
     else fullDB = [...unseenDB, ...ciaTriadDB];
 
     let availableQuestions = fullDB.filter(q => q.diff === window.quizDifficulty || window.quizDifficulty === 'medium');
