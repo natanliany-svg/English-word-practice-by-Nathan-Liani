@@ -161,8 +161,8 @@
 
         .tags-row { display: flex; align-items: stretch; justify-content: center; gap: 1vw; flex-wrap: wrap;}
         .tag-box { font-size: clamp(14px, 2vh, 24px); font-weight: 900; padding: 0.6vh 2vw; border-radius: 1vh; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; min-width: 12vw; text-align: center; }
-        .tag-meaning { background: rgba(16, 185, 129, 0.15); color: var(--emerald-light); border: 1px solid rgba(16, 185, 129, 0.4); }
-        .tag-phonetic { background: rgba(34, 211, 238, 0.15); color: var(--cyan-light); border: 1px solid rgba(34, 211, 238, 0.4); white-space: nowrap !important; }
+        .tag-meaning { background: rgba(255, 255, 255, 0.05); color: var(--theme-light); border: 1px solid var(--theme-main); }
+        .tag-phonetic { background: rgba(255, 255, 255, 0.02); color: var(--theme-light); border: 1px dashed var(--theme-main); white-space: nowrap !important; opacity: 0.9; }
 
         .content-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2vw; flex-grow: 1; min-height: min-content; }
         @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; } }
@@ -1047,7 +1047,7 @@ body::-webkit-scrollbar-thumb, .flashcard::-webkit-scrollbar-thumb, .weeks-scrol
     display: block;
     position: fixed;
     top: 20px;
-    right: 20px;
+    left: 20px;
     z-index: 100;
     background: rgba(15, 23, 42, 0.8);
     border: 1px solid var(--theme-main);

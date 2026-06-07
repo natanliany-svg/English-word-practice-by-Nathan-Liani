@@ -1062,10 +1062,10 @@ window.render = function() {
                         <option value="1" ${window.speechRate === 1 ? 'selected' : ''}>רגיל (1.0x)</option>
                     </select>
                 </div>
-                <div class="settings-box" style="background: rgba(16, 185, 129, 0.2); border-color: var(--emerald-main); padding: 5px 10px; border-radius: 8px;">
-                    <button class="nav-btn ${window.articleViewMode === 'sentence' ? 'active-emerald' : ''}" onclick="window.toggleArticleView('sentence')" style="border:none; margin:0; padding: 4px 10px;">משפטים</button>
-                    <button class="nav-btn ${window.articleViewMode === 'paragraph' ? 'active-emerald' : ''}" onclick="window.toggleArticleView('paragraph')" style="border:none; margin:0; padding: 4px 10px;">פסקאות</button>
-                    <button class="nav-btn ${window.articleViewMode === 'article' ? 'active-emerald' : ''}" onclick="window.toggleArticleView('article')" style="border:none; margin:0; padding: 4px 10px;">מאמר שלם</button>
+                <div class="settings-box" style="background: rgba(255, 255, 255, 0.05); border-color: var(--theme-main); padding: 5px 10px; border-radius: 8px;">
+                    <button class="nav-btn ${window.articleViewMode === 'sentence' ? 'active-theme' : ''}" onclick="window.toggleArticleView('sentence')" style="border:none; margin:0; padding: 4px 10px;">משפטים</button>
+                    <button class="nav-btn ${window.articleViewMode === 'paragraph' ? 'active-theme' : ''}" onclick="window.toggleArticleView('paragraph')" style="border:none; margin:0; padding: 4px 10px;">פסקאות</button>
+                    <button class="nav-btn ${window.articleViewMode === 'article' ? 'active-theme' : ''}" onclick="window.toggleArticleView('article')" style="border:none; margin:0; padding: 4px 10px;">מאמר שלם</button>
                 </div>
             </div>
             <div class="story-container">
@@ -1341,22 +1341,22 @@ window.render = function() {
             quizHTML = `
                 <div class="center-stage" style="padding: 4vh 2vw; max-width: 600px; margin: auto; text-align: center; margin-top: 5vh;">
                     <div style="font-size: 4rem; margin-bottom: 2vh;">🧠</div>
-                    <h2 style="font-size: 2.5rem; color: var(--cyan-light); margin-bottom: 1.5vh;">מבחנים חכמים</h2>
+                    <h2 style="font-size: 2.5rem; color: var(--theme-light); margin-bottom: 1.5vh;">מבחנים חכמים</h2>
                     <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2vh;">תרגול שאלות הבנה. המבחן יבדוק הבנה אמיתית!</p>
                     
                     <div style="display: flex; justify-content: center; gap: 1vw; margin-bottom: 2vh; flex-wrap: wrap;">
-                        <button class="nav-btn ${window.quizTargetWeek === 'week8' ? 'active-emerald' : ''}" onclick="window.setQuizTargetWeek('week8')">שבוע 8 (OS)</button>
-                        <button class="nav-btn ${window.quizTargetWeek === 'week9' ? 'active-purple' : ''}" onclick="window.setQuizTargetWeek('week9')">שבוע 9 (CIA)</button>
-                        <button class="nav-btn ${window.quizTargetWeek === 'mix' ? 'active-cyan' : ''}" onclick="window.setQuizTargetWeek('mix')">מיקס (הכל)</button>
+                        <button class="nav-btn ${window.quizTargetWeek === 'week8' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week8')">שבוע 8 (OS)</button>
+                        <button class="nav-btn ${window.quizTargetWeek === 'week9' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week9')">שבוע 9 (CIA)</button>
+                        <button class="nav-btn ${window.quizTargetWeek === 'mix' ? 'active' : ''}" onclick="window.setQuizTargetWeek('mix')">מיקס (הכל)</button>
                     </div>
                     <div style="display: flex; justify-content: center; gap: 1vw; margin-bottom: 3vh; flex-wrap: wrap;">
-                        <button class="nav-btn ${window.quizDifficulty === 'easy' ? 'active-cyan' : ''}" onclick="window.setDifficulty('easy')">קל</button>
-                        <button class="nav-btn ${window.quizDifficulty === 'medium' ? 'active-cyan' : ''}" onclick="window.setDifficulty('medium')">בינוני</button>
-                        <button class="nav-btn ${window.quizDifficulty === 'hard' ? 'active-cyan' : ''}" onclick="window.setDifficulty('hard')">קשה</button>
+                        <button class="nav-btn ${window.quizDifficulty === 'easy' ? 'active' : ''}" onclick="window.setDifficulty('easy')">קל</button>
+                        <button class="nav-btn ${window.quizDifficulty === 'medium' ? 'active' : ''}" onclick="window.setDifficulty('medium')">בינוני</button>
+                        <button class="nav-btn ${window.quizDifficulty === 'hard' ? 'active' : ''}" onclick="window.setDifficulty('hard')">קשה</button>
                     </div>
 
-                    <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid var(--emerald-main); padding: 1.5vh; border-radius: 1vh; margin-bottom: 4vh; display: flex; justify-content: space-around;">
-                        <span style="color: var(--emerald-light); font-size: 1.2rem; font-weight: bold;">שיא אישי: ${window.highScore} 🏆</span>
+                    <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--theme-main); padding: 1.5vh; border-radius: 1vh; margin-bottom: 4vh; display: flex; justify-content: space-around;">
+                        <span style="color: var(--theme-light); font-size: 1.2rem; font-weight: bold;">שיא נוכחי: ${window.highScore} 🏆</span>
                     </div>
                     <div style="display: flex; gap: 1vw; justify-content: center;">
                         <button onclick="window.startQuiz()" class="control-btn" style="flex: 2; justify-content: center;">
@@ -1371,12 +1371,12 @@ window.render = function() {
         } else if (window.quizState === 'history') {
              quizHTML = `
                 <div class="center-stage" style="padding: 4vh 2vw; max-width: 600px; margin: auto; text-align: center; margin-top: 5vh; width: 100%;">
-                    <h2 style="font-size: 2.5rem; color: var(--cyan-light); margin-bottom: 3vh;">היסטוריית מבחנים 📊</h2>
+                    <h2 style="font-size: 2.5rem; color: var(--theme-light); margin-bottom: 3vh;">היסטוריית מבחנים 📊</h2>
                     ${window.quizHistory.length === 0 ? '<p style="color: var(--text-muted); font-size: 1.2rem;">אין עדיין מבחנים מוקלטים.</p>' : `
                         <div style="width: 100%; max-height: 40vh; overflow-y: auto; background: rgba(15,23,42,0.5); border-radius: 1vh; border: 1px solid var(--border); margin-bottom: 3vh;">
                             ${window.quizHistory.map((h, i) => `
                                 <div class="history-item">
-                                    <span style="color: ${h.score >= 180 ? 'var(--emerald-light)' : h.score >= 100 ? 'var(--cyan-light)' : '#fca5a5'}; font-weight:bold;">ציון: ${h.score}</span>
+                                    <span style="color: ${h.score >= 180 ? 'var(--theme-main)' : h.score >= 100 ? 'var(--theme-light)' : '#fca5a5'}; font-weight:bold;">ציון: ${h.score}</span>
                                     <span style="color: var(--text-muted); font-size: 1rem;">${h.date}</span>
                                 </div>
                             `).join('')}
@@ -1406,7 +1406,7 @@ window.render = function() {
                 <div style="max-width: 800px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; height: 100%;">
                     <div class="top-bar" style="margin-bottom: 2vh;">
                         <span style="color: var(--text-muted); font-size: 1.2rem; font-weight: bold;">שאלה ${window.currentQuizIndex + 1} / 23</span>
-                        <span style="color: var(--cyan-light); font-size: 1.2rem; font-weight: bold;">ניקוד: ${window.quizScore}</span>
+                        <span style="color: var(--theme-light); font-size: 1.2rem; font-weight: bold;">ניקוד: ${window.quizScore}</span>
                     </div>
                     <div class="flashcard" style="align-items: center; padding: 4vh 3vw; gap: 3vh; text-align: center;">
                         <h3 style="font-size: clamp(20px, 3vh, 40px); font-weight: 900; color: #fff; letter-spacing: 1px;" dir="ltr">${q.question}</h3>
@@ -1415,7 +1415,7 @@ window.render = function() {
                         </div>
                         <div style="min-height: 6vh; width: 100%; margin-top: 2vh; display: flex; justify-content: center; align-items: center;">
                             ${q.answered ? `
-                                <button onclick="window.nextQuizQuestion()" class="control-btn" style="width: 100%; max-width: 300px; justify-content: center; background: var(--cyan-main); border-color: var(--cyan-light);">
+                                <button onclick="window.nextQuizQuestion()" class="control-btn" style="width: 100%; max-width: 300px; justify-content: center; background: var(--theme-main); border-color: var(--theme-main);">
                                     ${window.currentQuizIndex === 22 ? 'לתוצאות המבחן' : 'שאלה הבאה'} ${window.icons.left_arrow}
                                 </button>
                             ` : ''}
@@ -1429,7 +1429,7 @@ window.render = function() {
                 <div class="center-stage" style="padding: 5vh 2vw; max-width: 600px; margin: auto; text-align: center; margin-top: 5vh;">
                     <div style="font-size: 5rem; margin-bottom: 2vh;">${window.quizScore >= 180 ? '🏆' : window.quizScore >= 100 ? '👍' : '💪'}</div>
                     <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 1vh;">סיום המבחן!</h2>
-                    <p style="font-size: 1.8rem; color: var(--cyan-light); font-weight: bold; margin-bottom: 2vh;">הציון שלך: ${window.quizScore} / 230</p>
+                    <p style="font-size: 1.8rem; color: var(--theme-light); font-weight: bold; margin-bottom: 2vh;">הציון שלך: ${window.quizScore} / 230</p>
                     ${isNewHigh ? `
                         <div style="background: rgba(253, 224, 71, 0.15); border: 1px solid #fde047; padding: 1.5vh; border-radius: 1vh; margin-bottom: 3vh;">
                             <span style="color: #fde047; font-size: 1.4rem; font-weight: bold;">🎉 שיא חדש!</span>
