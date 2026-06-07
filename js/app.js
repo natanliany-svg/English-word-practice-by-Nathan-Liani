@@ -503,6 +503,8 @@ window.playText = function(text, event) {
     if(hash) {
         let audio = new Audio('audio/' + hash + '.mp3');
         audio.playbackRate = window.speechRate || 1.0;
+        audio.addEventListener('loadedmetadata', function() { audio.playbackRate = window.speechRate || 1.0; });
+        audio.addEventListener('canplay', function() { audio.playbackRate = window.speechRate || 1.0; });
         window.htmlAudioElement = audio;
         audio.play().catch(e => {
             console.error("Audio playback failed", e);
@@ -578,6 +580,8 @@ window.playAudio = function(text, btnElement) {
     if(hash) {
         let audio = new Audio('audio/' + hash + '.mp3');
         audio.playbackRate = window.speechRate || 1.0;
+        audio.addEventListener('loadedmetadata', function() { audio.playbackRate = window.speechRate || 1.0; });
+        audio.addEventListener('canplay', function() { audio.playbackRate = window.speechRate || 1.0; });
         window.htmlAudioElement = audio;
         
         audio.addEventListener('loadedmetadata', function() {
