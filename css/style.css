@@ -1285,11 +1285,11 @@ body::-webkit-scrollbar-thumb, .flashcard::-webkit-scrollbar-thumb, .weeks-scrol
     }
     .main-layout-wrapper {
         width: 100%;
-        padding: 5px 5px 120px 5px !important;
+        padding: 80px 10px 120px 10px !important;
         min-height: auto;
     }
     .main-layout-wrapper.article-mode {
-        padding: 15px 15px 120px 15px !important;
+        padding: 80px 15px 120px 15px !important;
     }
     .app-sidebar {
         position: fixed;
