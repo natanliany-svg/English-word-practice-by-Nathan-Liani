@@ -87,7 +87,7 @@ window.articleParagraphs = {
         [23, 24, 25, 26],
         [27, 28, 29, 30],
         [31, 32, 33],
-        [34, 35, 36, 37, 38, 39]
+        [34, 35, 36, 37, 38]
     ]
 };
 
@@ -138,7 +138,22 @@ window.setWeek = function(week) {
             }
         }
     }
+    
+    if (week !== 'home' && window.innerWidth > 1024) {
+        window.collapseDesktopMenu();
+    }
+    
     window.render();
+};
+
+window.toggleDesktopMenu = function() {
+    document.getElementById('sidebar').classList.toggle('desktop-collapsed');
+    document.querySelector('.main-layout-wrapper').classList.toggle('expanded');
+};
+
+window.collapseDesktopMenu = function() {
+    document.getElementById('sidebar').classList.add('desktop-collapsed');
+    document.querySelector('.main-layout-wrapper').classList.add('expanded');
 };
 
 // --- Theme Controller ---
@@ -168,7 +183,8 @@ window.toggleSRSWord = function(wordKey, isKnown) {
     const item = window.srsState[wordKey];
     item.known = isKnown;
     if (isKnown) {
-        item.interval = item.interval * 2;
+        if (item.interval < 8) item.interval = 8;
+        else item.interval = item.interval * 2;
         if (item.interval > 64) item.interval = 64;
     } else {
         item.interval = 1;
@@ -276,6 +292,7 @@ window.startSpellingGame = function() {
     window.spellingState.currentIndex = 0;
     window.spellingState.score = 0;
     window.spellingState.cluesUsed = 0;
+    window.spellingState.currentWordHints = 0;
     window.spellingState.isPlaying = true;
     window.spellingState.wrongAttempts = 0;
     
@@ -290,10 +307,12 @@ window.checkSpelling = function() {
     const correctWord = window.spellingState.words[window.spellingState.currentIndex].word.trim().toLowerCase();
     
     if (typed === correctWord) {
-        window.spellingState.score += 10;
+        let pointsEarned = 10 - (window.spellingState.currentWordHints * 2);
+        if (pointsEarned < 0) pointsEarned = 0;
+        window.spellingState.score += pointsEarned;
         window.spellingState.wrongAttempts = 0;
         window.playAudio(correctWord);
-        alert("נכון מאוד! 🎉");
+        alert(pointsEarned > 0 ? "נכון מאוד! 🎉 +" + pointsEarned + " נקודות" : "נכון! 🎉 (ללא ניקוד עקב שימוש ברמזים)");
         window.nextSpellingWord();
     } else {
         window.spellingState.wrongAttempts++;
@@ -318,7 +337,7 @@ window.spellingHint = function() {
     if (nextLetterIdx < correctWord.length) {
         inputEl.value = correctWord.substring(0, nextLetterIdx + 1);
         window.spellingState.cluesUsed++;
-        if(window.spellingState.score > 0) window.spellingState.score -= 2;
+        window.spellingState.currentWordHints = (window.spellingState.currentWordHints || 0) + 1;
     }
 };
 
@@ -326,6 +345,7 @@ window.nextSpellingWord = function() {
     if (window.spellingState.currentIndex < window.spellingState.words.length - 1) {
         window.spellingState.currentIndex++;
         window.spellingState.wrongAttempts = 0;
+        window.spellingState.currentWordHints = 0;
         window.render();
     } else {
         window.spellingState.isPlaying = false;
@@ -445,12 +465,17 @@ window.changeRate = function(val) { window.speechRate = parseFloat(val); window.
 
 window.getSRSIndicator = function(word) {
     const wordKey = word.toLowerCase();
-    if (window.srsState[wordKey] && window.srsState[wordKey].known) {
-        const interval = window.srsState[wordKey].interval;
-        if (interval >= 8) {
-            return '<span class="srs-dot mastered" title="שולט" style="color: #10b981; margin-left: 6px; font-size: 14px; cursor: pointer;">●</span>';
-        } else {
-            return '<span class="srs-dot learning" title="בלמידה" style="color: #a855f7; margin-left: 6px; font-size: 14px; cursor: pointer;">●</span>';
+    const srsData = window.srsState[wordKey];
+    if (srsData) {
+        if (srsData.known === true) {
+            const interval = srsData.interval;
+            if (interval >= 8) {
+                return '<span class="srs-dot mastered" title="שולט" style="color: #10b981; text-shadow: 0 0 10px #10b981; margin-left: 6px; font-size: 14px; cursor: pointer;">●</span>';
+            } else {
+                return '<span class="srs-dot learning" title="בלמידה" style="color: #a855f7; margin-left: 6px; font-size: 14px; cursor: pointer;">●</span>';
+            }
+        } else if (srsData.known === false) {
+            return '<span class="srs-dot unknown" title="לתרגול" style="color: #ef4444; margin-left: 6px; font-size: 14px; cursor: pointer;">●</span>';
         }
     }
     return '<span class="srs-dot new" title="חדש" style="color: #22d3ee; margin-left: 6px; font-size: 14px; cursor: pointer;">●</span>';
@@ -906,7 +931,7 @@ window.render = function() {
         let homeHtml = `
             <div class="home-wrapper">
                 <div class="home-section-title" style="border:none; justify-content:center; text-align:center; margin-bottom: 15px;">
-                    <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--emerald-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">ברוכים הבאים למערכת הלמידה!</span>
+                    <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--emerald-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">דף הבית</span>
                 </div>
                 
                 <!-- 🎯 Weekly Focus Card -->
@@ -1425,9 +1450,10 @@ window.render = function() {
             <div class="search-wrapper">
                 <input type="text" class="search-input" value="${window.summarySearchQuery}" placeholder="חפש מילים באנגלית או פירוש בעברית..." oninput="window.filterSummary(this.value)">
             </div>
-            <div class="summary-toggles">
+            <div class="summary-toggles" style="flex-wrap: wrap;">
                 <button onclick="window.setSummaryMode('weeks')" class="sum-toggle ${window.summaryMode === 'weeks' ? 'active' : ''}">תצוגת שבועות</button>
                 <button onclick="window.setSummaryMode('compact')" class="sum-toggle ${window.summaryMode === 'compact' ? 'active' : ''}">ריכוז כלל המילים</button>
+                <button onclick="window.setSummaryMode('unknowns')" class="sum-toggle ${window.summaryMode === 'unknowns' ? 'active' : ''}" style="border-color: #ef4444; color: ${window.summaryMode === 'unknowns' ? '#fff' : '#ef4444'}; background: ${window.summaryMode === 'unknowns' ? '#ef4444' : 'rgba(30,41,59,0.8)'}; box-shadow: ${window.summaryMode === 'unknowns' ? '0 0 15px rgba(239,68,68,0.5)' : 'none'};">מילים לתרגול (לא ידעתי)</button>
             </div>
         `;
         if (window.summaryMode === 'weeks') {
@@ -1474,7 +1500,7 @@ window.render = function() {
                 }
             });
             summaryHtml += `</div>`;
-        } else {
+        } else if (window.summaryMode === 'compact') {
             summaryHtml += `<div class="compact-grid">`;
             Object.entries(window.vocabularyData).forEach(([dayKey, words]) => {
                 words.forEach((w, idx) => {
@@ -1483,6 +1509,25 @@ window.render = function() {
                     }
                 });
             });
+            summaryHtml += `</div>`;
+        } else if (window.summaryMode === 'unknowns') {
+            summaryHtml += `<div class="compact-grid">`;
+            let hasUnknowns = false;
+            Object.entries(window.vocabularyData).forEach(([dayKey, words]) => {
+                words.forEach((w, idx) => {
+                    const wordKey = w.word.toLowerCase();
+                    const srsItem = window.srsState[wordKey];
+                    if (srsItem && srsItem.known === false) {
+                        if (query === '' || w.word.toLowerCase().includes(query) || w.meaning.toLowerCase().includes(query)) {
+                            hasUnknowns = true;
+                            summaryHtml += `<div class="compact-item" style="border-color: rgba(239, 68, 68, 0.4); box-shadow: 0 0 10px rgba(239, 68, 68, 0.1);" onclick="window.goToWord('${dayKey}', ${idx})"><span class="compact-en" style="display: flex; align-items: center; justify-content: center; gap: 4px;">${window.getSRSIndicator(w.word)} ${w.word}</span><span class="compact-he">${w.meaning}</span></div>`;
+                        }
+                    }
+                });
+            });
+            if (!hasUnknowns && query === '') {
+                summaryHtml += `<div style="grid-column: 1 / -1; text-align: center; padding: 30px; color: var(--emerald-light); font-size: 1.2rem; background: rgba(16, 185, 129, 0.1); border-radius: 12px; border: 1px dashed var(--emerald-main);">כל הכבוד! אין מילים שסימנת כ-"לא יודע" כרגע. 🎉</div>`;
+            }
             summaryHtml += `</div>`;
         }
         app.innerHTML = `<div class="matrix-wrapper">${summaryHtml}</div>`;
