@@ -1981,38 +1981,56 @@ body::-webkit-scrollbar-thumb, .flashcard::-webkit-scrollbar-thumb, .weeks-scrol
 }
 
 
+
 /* --- SURGICAL MOBILE AUDIO PLAYER FIX --- */
 @media (max-width: 768px) {
     .audio-player-bar {
         width: 90% !important;
         bottom: 12px !important;
-        padding: 12px 15px !important;
+        padding: 15px 15px !important;
         border-radius: 20px !important;
-        background: linear-gradient(90deg, rgba(15, 23, 42, 0.7), rgba(30, 41, 59, 0.7)) !important;
-        backdrop-filter: blur(12px) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
+        background: linear-gradient(90deg, rgba(15, 23, 42, 0.75), rgba(30, 41, 59, 0.75)) !important;
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
         border: 1px solid rgba(168,85,247,0.3) !important;
         flex-direction: column !important; /* Stack rows */
-        gap: 10px !important;
+        gap: 15px !important;
     }
     
     .audio-controls-row {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
         width: 100% !important;
         justify-content: center !important;
+        align-items: center !important;
+        gap: 20px !important;
     }
     
     .audio-progress-container {
+        display: flex !important;
+        flex-direction: row !important;
         width: 100% !important;
         order: -1 !important; /* Move progress bar to the top */
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 10px !important;
     }
     
     .player-btn {
-        width: 40px !important;
-        height: 40px !important;
+        width: 45px !important;
+        height: 45px !important;
+        flex-shrink: 0 !important;
     }
     
     .player-btn.play-pause {
-        width: 50px !important;
-        height: 50px !important;
+        width: 55px !important;
+        height: 55px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .audio-time {
+        font-size: 11px !important;
+        min-width: 35px !important;
     }
 }
