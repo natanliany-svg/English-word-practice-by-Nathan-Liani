@@ -996,7 +996,7 @@ window.render = function() {
                     </div>
                     
                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%;">
-                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.goToWord('w9d1', 0)">
+                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.goToWord('w10d1', 0)">
                             📚 אוצר מילים
                         </button>
                         <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setWeek('week10')">
@@ -1840,7 +1840,7 @@ window.renderWeeklyFocusDashboard = function() {
                 <button class="home-card focus-glow" onclick="window.setWeek('week10')" style="border-radius: 12px; padding: 20px;">
                     <div class="home-card-icon" style="font-size: 32px;">🔐</div>
                     <div class="home-card-content" style="text-align: right;">
-                        <div class="home-card-title" style="font-size: 18px; color: #fff;">מאמר: The CIA Triad</div>
+                        <div class="home-card-title" style="font-size: 18px; color: #fff;">מאמר: HTTP to HTTPS</div>
                         <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">קריאה ותרגום אינטראקטיביים של מאמר אבטחת המידע הרשמי עם הקראה קולית.</div>
                     </div>
                 </button>
@@ -1849,7 +1849,7 @@ window.renderWeeklyFocusDashboard = function() {
                     <div class="home-card-icon" style="font-size: 32px;">🧠</div>
                     <div class="home-card-content" style="text-align: right;">
                         <div class="home-card-title" style="font-size: 18px; color: #fff;">מבחן שבוע 10</div>
-                        <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">מבחן הבנה ממוקד המורכב מ-10 שאלות מורכבות על עקרונות ה-CIA Triad.</div>
+                        <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">מבחן הבנה ממוקד המורכב מ-10 שאלות על פרוטוקול HTTPS ואבטחת רשת.</div>
                     </div>
                 </button>
             </div>
