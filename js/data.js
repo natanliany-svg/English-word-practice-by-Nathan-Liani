@@ -100,7 +100,11 @@ window.daysList = [
   { id: 'w9d1', week: 'week9vocab', title: 'יום 1', date: 'Week 9' },
   { id: 'w9d2', week: 'week9vocab', title: 'יום 2', date: 'Week 9' },
   { id: 'w9d3', week: 'week9vocab', title: 'יום 3', date: 'Week 9' },
-  { id: 'w9d4', week: 'week9vocab', title: 'יום 4', date: 'Week 9' }
+  { id: 'w9d4', week: 'week9vocab', title: 'יום 4', date: 'Week 9' },
+  { id: 'w10d1', week: 'week10vocab', title: 'יום 1', date: 'Week 10' },
+  { id: 'w10d2', week: 'week10vocab', title: 'יום 2', date: 'Week 10' },
+  { id: 'w10d3', week: 'week10vocab', title: 'יום 3', date: 'Week 10' },
+  { id: 'w10d4', week: 'week10vocab', title: 'יום 4', date: 'Week 10' }
 ];
 
 window.ciaTriadArticleData = [
