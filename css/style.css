@@ -1780,7 +1780,7 @@ body::-webkit-scrollbar-thumb, .flashcard::-webkit-scrollbar-thumb, .weeks-scrol
     background: rgba(255, 255, 255, 0.05);
     color: #fff;
 }
-.side-nav-btn.active-theme {
+.side-nav-btn.active-theme, .nav-btn.active-theme {
     background: var(--theme-glow) !important;
     color: var(--theme-light) !important;
     border-color: var(--theme-main) !important;

@@ -1127,13 +1127,10 @@ window.render = function() {
                     </select>
                 </div>
                 <div class="settings-box" style="background: rgba(255, 255, 255, 0.05); border-color: var(--theme-main); padding: 5px 10px; border-radius: 8px;">
+                    <button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.setWeek('home')">🏠 ראשי</button>
                     ${isWeek10 ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.goToWord('w10d1', 0)">📚 אוצר מילים</button>` : ''}
-${isWeek9 ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.goToWord('w9d1', 0)">📚 אוצר מילים</button>` : ''}
-${window.currentWeek === 'article' ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.setWeek('week8')">📚 אוצר מילים</button>` : ''}
-<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-left:10px; margin-right:10px;" onclick="window.setWeek('home')">🏠 ראשי</button>
-${isWeek10 ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.goToWord('w10d1', 0)">📚 אוצר מילים</button>` : ''}
-${isWeek9 ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.goToWord('w9d1', 0)">📚 אוצר מילים</button>` : ''}
-${window.currentWeek === 'article' ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.setWeek('week8')">📚 אוצר מילים</button>` : ''}
+                    ${isWeek9 ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.goToWord('w9d1', 0)">📚 אוצר מילים</button>` : ''}
+                    ${window.currentWeek === 'article' ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.setWeek('week8')">📚 אוצר מילים</button>` : ''}
 <button class="nav-btn ${window.articleViewMode === 'sentence' ? 'active-theme' : ''}" onclick="window.toggleArticleView('sentence')" style="border:none; margin:0; padding: 4px 10px;">משפטים</button>
                     <button class="nav-btn ${window.articleViewMode === 'paragraph' ? 'active-theme' : ''}" onclick="window.toggleArticleView('paragraph')" style="border:none; margin:0; padding: 4px 10px;">פסקאות</button>
                     <button class="nav-btn ${window.articleViewMode === 'article' ? 'active-theme' : ''}" onclick="window.toggleArticleView('article')" style="border:none; margin:0; padding: 4px 10px;">מאמר שלם</button>
@@ -1513,7 +1510,7 @@ ${window.currentWeek === 'article' ? `<button class="nav-btn" style="background:
                 </div>
             `;
         }
-        app.innerHTML = quizHTML;
+        app.innerHTML = `<div style="text-align: center; margin-bottom: 20px; width: 100%;"><button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; padding: 6px 12px; border-radius: 6px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;" onclick="window.setWeek('home')">🏠 ראשי</button></div>` + quizHTML;
 
     } else if (window.currentWeek === 'summary') {
         const query = (window.summarySearchQuery || '').toLowerCase();
