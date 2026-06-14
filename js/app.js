@@ -988,7 +988,7 @@ window.render = function() {
                         <div style="display: flex; align-items: center; gap: 10px;">
                             <span style="font-size: 24px;">🎯</span>
                             <div style="text-align: right;">
-                                <div style="font-size: 18px; font-weight: 900; color: #fff;">מיקוד שבועי: שבוע 9 (CIA Triad)</div>
+                                <div style="font-size: 18px; font-weight: 900; color: #fff;">מיקוד שבועי: שבוע 10 (HTTPS)</div>
                                 <div style="font-size: 13px; color: var(--text-muted); margin-top: 3px;">החומרים הכי רלוונטיים ומעודכנים לתרגול מהיר</div>
                             </div>
                         </div>
@@ -999,10 +999,10 @@ window.render = function() {
                         <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.goToWord('w9d1', 0)">
                             📚 אוצר מילים
                         </button>
-                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setWeek('week9')">
+                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setWeek('week10')">
                             🔐 קריאת מאמר
                         </button>
-                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setQuizTargetWeek('week9'); window.setWeek('quiz'); window.startQuiz();">
+                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setQuizTargetWeek('week10'); window.setWeek('quiz'); window.startQuiz();">
                             🧠 מבחן ממוקד
                         </button>
                     </div>
@@ -1784,7 +1784,7 @@ document.addEventListener('touchend', e => {
 
 window.renderWeeklyFocusDashboard = function() {
     let focusWordsHtml = '';
-    const focusWeek = 'week10vocab'; // Focus on Week 9 Vocabulary
+    const focusWeek = 'week10vocab'; // Focus on Week 10 Vocabulary
     const focusDays = window.daysList.filter(d => d.week === focusWeek);
     
     let daysGridHtml = '';
@@ -1821,7 +1821,7 @@ window.renderWeeklyFocusDashboard = function() {
     return `
         <div class="home-wrapper">
             <div class="home-section-title" style="border:none; justify-content:center; text-align:center; margin-bottom: 15px;">
-                <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--emerald-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">מיקוד שבועי: שבוע 9 🎯</span>
+                <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--emerald-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">מיקוד שבועי: שבוע 10 🎯</span>
             </div>
             
             <p style="text-align: center; color: var(--text-muted); font-size: 14px; max-width: 600px; margin: 0 auto 25px auto; line-height: 1.5;">
@@ -1837,7 +1837,7 @@ window.renderWeeklyFocusDashboard = function() {
             <!-- 📄 Article & 🧠 Quiz Row -->
             <h3 class="home-section-title">📄 קריאה ומבחנים</h3>
             <div class="home-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
-                <button class="home-card focus-glow" onclick="window.setWeek('week9')" style="border-radius: 12px; padding: 20px;">
+                <button class="home-card focus-glow" onclick="window.setWeek('week10')" style="border-radius: 12px; padding: 20px;">
                     <div class="home-card-icon" style="font-size: 32px;">🔐</div>
                     <div class="home-card-content" style="text-align: right;">
                         <div class="home-card-title" style="font-size: 18px; color: #fff;">מאמר: The CIA Triad</div>
@@ -1845,10 +1845,10 @@ window.renderWeeklyFocusDashboard = function() {
                     </div>
                 </button>
                 
-                <button class="home-card focus-glow" onclick="window.setQuizTargetWeek('week9'); window.setWeek('quiz'); window.startQuiz();" style="border-radius: 12px; padding: 20px;">
+                <button class="home-card focus-glow" onclick="window.setQuizTargetWeek('week10'); window.setWeek('quiz'); window.startQuiz();" style="border-radius: 12px; padding: 20px;">
                     <div class="home-card-icon" style="font-size: 32px;">🧠</div>
                     <div class="home-card-content" style="text-align: right;">
-                        <div class="home-card-title" style="font-size: 18px; color: #fff;">מבחן שבוע 9</div>
+                        <div class="home-card-title" style="font-size: 18px; color: #fff;">מבחן שבוע 10</div>
                         <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">מבחן הבנה ממוקד המורכב מ-10 שאלות מורכבות על עקרונות ה-CIA Triad.</div>
                     </div>
                 </button>
