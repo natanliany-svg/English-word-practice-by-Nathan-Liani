@@ -10,11 +10,16 @@
 
 <!-- Mobile Header -->
 <header class="mobile-header">
-    <button class="menu-toggle-btn" onclick="window.toggleMenu(true)" title="תפריט">
+    <button class="menu-toggle-btn" onclick="window.toggleMenu(true)" title="פתח תפריט">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px; height:24px;"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
     <h1 class="mobile-title">Day Fluency Sprint</h1>
-    <div style="width: 40px;"></div> <!-- placeholder to balance menu button -->
+    <button class="menu-toggle-btn" onclick="window.setWeek('home')" title="ראשי" style="margin-left: 0; margin-right: auto; color: var(--theme-light);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px; height:24px;">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+    </button>
 </header>
 
 <!-- Sidebar Overlay for mobile closing -->
@@ -33,7 +38,7 @@
         
         <div class="sidebar-nav">
             <div class="nav-section-label glowing-text">מיקוד שבועי 🎯</div>
-            <button class="side-nav-btn focus-glow-btn" id="side-btn-focus" onclick="window.setWeek('focus'); window.toggleMenu(false);">מיקוד: שבוע 9 🔐</button>
+            <button class="side-nav-btn focus-glow-btn" id="side-btn-focus" onclick="window.setWeek('focus'); window.toggleMenu(false);">מיקוד: שבוע 10 🔐</button>
             
             <div class="nav-section-label">ראשי</div>
             <button class="side-nav-btn" id="side-btn-home" onclick="window.setWeek('home'); window.toggleMenu(false);">ראשי 🏠</button>
@@ -98,7 +103,7 @@
 </div>
 
 <script src="js/audioMap.js?v=10"></script>
-<script>const CACHE_VERSION = 'v78';</script>
+<script>const CACHE_VERSION = 'v79';</script>
 <script src="js/data.js?v=78"></script>
 <script src="js/quizData.js?v=7"></script>
 <script src="js/app.js?v=78"></script>

@@ -982,7 +982,8 @@ window.render = function() {
     if (window.currentWeek === 'home') {
         let homeHtml = `
             <div class="home-wrapper">
-                <div class="home-section-title" style="border:none; justify-content:center; text-align:center; margin-bottom: 15px;">
+                <div style="text-align: center; margin-bottom: 20px;"><button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; padding: 8px 16px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;" onclick="window.setWeek('home')">🏠 ראשי</button></div>
+<div class="home-section-title" style="border:none; justify-content:center; text-align:center; margin-bottom: 15px;">
                     <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--emerald-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">דף הבית</span>
                 </div>
                 
@@ -1127,6 +1128,10 @@ window.render = function() {
                 </div>
                 <div class="settings-box" style="background: rgba(255, 255, 255, 0.05); border-color: var(--theme-main); padding: 5px 10px; border-radius: 8px;">
                     ${isWeek10 ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.goToWord('w10d1', 0)">📚 אוצר מילים</button>` : ''}
+${isWeek9 ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.goToWord('w9d1', 0)">📚 אוצר מילים</button>` : ''}
+${window.currentWeek === 'article' ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.setWeek('week8')">📚 אוצר מילים</button>` : ''}
+<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-left:10px; margin-right:10px;" onclick="window.setWeek('home')">🏠 ראשי</button>
+${isWeek10 ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.goToWord('w10d1', 0)">📚 אוצר מילים</button>` : ''}
 ${isWeek9 ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.goToWord('w9d1', 0)">📚 אוצר מילים</button>` : ''}
 ${window.currentWeek === 'article' ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.setWeek('week8')">📚 אוצר מילים</button>` : ''}
 <button class="nav-btn ${window.articleViewMode === 'sentence' ? 'active-theme' : ''}" onclick="window.toggleArticleView('sentence')" style="border:none; margin:0; padding: 4px 10px;">משפטים</button>
@@ -1667,6 +1672,7 @@ ${window.currentWeek === 'article' ? `<button class="nav-btn" style="background:
         app.innerHTML = `
             <div class="vocab-view-wrapper">
                 <div class="top-bar">
+                    <button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; padding: 6px 12px; border-radius: 6px; font-weight: bold; cursor: pointer;" onclick="window.setWeek('home')">🏠 ראשי</button>
                     <div class="settings-box">
                         ${window.icons.settings}
                         <select onchange="window.changeRate(this.value)">
@@ -1757,6 +1763,9 @@ ${window.currentWeek === 'article' ? `<button class="nav-btn" style="background:
                     ${window.currentWeek === 'week8' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('article')">📄 מאמר</button>` : ''}
 ${window.currentWeek === 'week9vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week9')">📄 מאמר</button>` : ''}
 ${window.currentWeek === 'week10vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week10')">📄 מאמר</button>` : ''}
+${window.currentWeek === 'week8' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('article')">📄 מאמר</button>` : ''}
+${window.currentWeek === 'week9vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week9')">📄 מאמר</button>` : ''}
+${window.currentWeek === 'week10vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week10')">📄 מאמר</button>` : ''}
 <button class="control-btn" onclick="window.prevWord()" ${isFirstWord ? 'disabled' : ''}>
                         הקודם ${window.icons.right_arrow}
                     </button>
@@ -1840,7 +1849,8 @@ window.renderWeeklyFocusDashboard = function() {
     
     return `
         <div class="home-wrapper">
-            <div class="home-section-title" style="border:none; justify-content:center; text-align:center; margin-bottom: 15px;">
+            <div style="text-align: center; margin-bottom: 20px;"><button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; padding: 8px 16px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;" onclick="window.setWeek('home')">🏠 ראשי</button></div>
+<div class="home-section-title" style="border:none; justify-content:center; text-align:center; margin-bottom: 15px;">
                 <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--emerald-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">מיקוד שבועי: שבוע 10 🎯</span>
             </div>
             
