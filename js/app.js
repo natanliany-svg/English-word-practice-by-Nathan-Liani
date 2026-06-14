@@ -88,6 +88,26 @@ window.articleParagraphs = {
         [27, 28, 29, 30],
         [31, 32, 33],
         [34, 35, 36, 37, 38]
+    ],
+    'week10': [
+        [0],
+        [1, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10],
+        [11, 12, 13, 14],
+        [15],
+        [16, 17, 18, 19],
+        [20, 21, 22, 23],
+        [24],
+        [25, 26],
+        [27],
+        [28, 29, 30],
+        [31],
+        [32, 33, 34],
+        [35],
+        [36, 37, 38],
+        [39],
+        [40, 41],
+        [42, 43, 44]
     ]
 };
 
@@ -123,6 +143,7 @@ window.setWeek = function(week) {
     else if (week === 'week7') window.currentDay = 'w7d1';
     else if (week === 'week8') window.currentDay = 'w8d1';
     else if (week === 'week9vocab') window.currentDay = 'w9d1';
+    else if (week === 'week10vocab') window.currentDay = 'w10d1';
     else window.currentDay = week; 
     window.wordIndex = 0;
     if (week !== 'quiz') window.quizState = 'start';
@@ -790,6 +811,7 @@ window.startQuiz = function() {
     
     if (targetWeek && targetWeek.includes('week8')) fullDB = window.unseenDB;
     else if (targetWeek && targetWeek.includes('week9')) fullDB = window.ciaTriadDB;
+    else if (targetWeek && targetWeek.includes('week10')) fullDB = window.week10DB;
     else fullDB = [...window.unseenDB, ...window.ciaTriadDB];
 
     let availableQuestions = fullDB.filter(q => q.diff === window.quizDifficulty || window.quizDifficulty === 'medium');
@@ -939,7 +961,7 @@ window.render = function() {
         activeBtn.classList.add('active-theme');
     }
 
-    if (window.currentWeek !== 'home' && window.currentWeek !== 'focus' && window.currentWeek !== 'summary' && window.currentWeek !== 'quiz' && window.currentWeek !== 'article' && window.currentWeek !== 'week9') {
+    if (window.currentWeek !== 'home' && window.currentWeek !== 'focus' && window.currentWeek !== 'summary' && window.currentWeek !== 'quiz' && window.currentWeek !== 'article' && window.currentWeek !== 'week9' && window.currentWeek !== 'week10') {
         subNavContainer.style.display = 'flex';
         const weekDays = window.daysList.filter(d => d.week === window.currentWeek);
         let subNavHtml = '';
@@ -1070,10 +1092,11 @@ window.render = function() {
             </div>
         `;
         app.innerHTML = homeHtml;
-    } else if (window.currentWeek === 'article' || window.currentWeek === 'week9') {
+    } else if (window.currentWeek === 'article' || window.currentWeek === 'week9' || window.currentWeek === 'week10') {
         const isWeek9 = window.currentWeek === 'week9';
-        const articleData = isWeek9 ? window.ciaTriadArticleData : window.unseenArticleData;
-        const title = isWeek9 ? "The CIA Triad in Information Security" : "Operating Systems: Unseen";
+        const isWeek10 = window.currentWeek === 'week10';
+        const articleData = isWeek10 ? window.httpsArticleData : (isWeek9 ? window.ciaTriadArticleData : window.unseenArticleData);
+        const title = isWeek10 ? "HTTP to HTTPS Transition" : (isWeek9 ? "The CIA Triad in Information Security" : "Operating Systems: Unseen");
         const subtitle = isWeek9 ? "עקרונות אבטחת מידע - בחר מצב תצוגה ולחץ על כרטיסייה לתרגום." : "מאמר המבחן הרשמי. בחר מצב תצוגה ולחץ על כרטיסייה לתרגום.";
         
         let htmlBlock = `
@@ -1096,7 +1119,7 @@ window.render = function() {
             </div>
             <div class="story-container">
                 <div class="story-header">
-                    <h2 class="story-title" style="color: ${isWeek9 ? 'var(--cyan-light)' : 'var(--purple-light)'}; text-shadow: 0 0 1.5vh ${isWeek9 ? 'rgba(34,211,238,0.5)' : 'rgba(168,85,247,0.5)'};">${title}</h2>
+                    <h2 class="story-title" style="color: ${isWeek10 ? 'var(--cyan-light)' : (isWeek9 ? 'var(--cyan-light)' : 'var(--purple-light)')}; text-shadow: 0 0 1.5vh ${isWeek10 ? 'rgba(34,211,238,0.5)' : (isWeek9 ? 'rgba(34,211,238,0.5)' : 'rgba(168,85,247,0.5)')};">${title}</h2>
                     <p class="story-subtitle">${subtitle}</p>
                 </div>
         `;
@@ -1120,7 +1143,7 @@ window.render = function() {
                 `;
             }).join('');
         } else if (window.articleViewMode === 'paragraph') {
-            const paragraphs = window.articleParagraphs[isWeek9 ? 'week9' : 'week8'];
+            const paragraphs = window.articleParagraphs[isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8')];
             htmlBlock += paragraphs.map((paraIndices, index) => {
                 const paraEnglish = paraIndices.map(idx => articleData[idx].e).join(" ");
                 const paraHebrew = paraIndices.map(idx => articleData[idx].h).join(" ");
@@ -1149,7 +1172,7 @@ window.render = function() {
             const fullHebrew = articleData.map(item => item.h).join(" ");
             const safeText = fullEnglish.replace(/'/g, "\\\'").replace(/"/g, "&quot;");
             
-            const paragraphs = window.articleParagraphs[isWeek9 ? 'week9' : 'week8'];
+            const paragraphs = window.articleParagraphs[isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8')];
             const engParasHtml = paragraphs.map(paraIndices => {
                 const paraText = paraIndices.map(idx => articleData[idx].e).join(" ");
                 return `<p style="margin-bottom: 25px; text-align: left; direction: ltr; font-size: clamp(24px, 2.2rem, 36px); line-height: 1.6; font-family: Georgia, serif;">${window.highlightText(paraText)}</p>`;
@@ -1180,7 +1203,7 @@ window.render = function() {
         htmlBlock += `
                 <div style="display:flex; justify-content:center; margin-top: 30px;">
                     <button class="control-btn" style="background: var(--theme-main); border:none; box-shadow: 0 1vh 2vh var(--theme-glow);" onclick="window.setWeek('quiz')">
-                        התחל מבחן ${isWeek9 ? 'שבוע 9' : 'Unseen'} 🧠
+                        התחל מבחן ${isWeek10 ? 'שבוע 10' : (isWeek9 ? 'שבוע 9' : 'Unseen')} 🧠
                     </button>
                 </div>
             </div>
@@ -1373,6 +1396,7 @@ window.render = function() {
                     <div style="display: flex; justify-content: center; gap: 1vw; margin-bottom: 2vh; flex-wrap: wrap;">
                         <button class="nav-btn ${window.quizTargetWeek === 'week8' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week8')">שבוע 8 (OS)</button>
                         <button class="nav-btn ${window.quizTargetWeek === 'week9' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week9')">שבוע 9 (CIA)</button>
+                        <button class="nav-btn ${window.quizTargetWeek === 'week10' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week10')">שבוע 10 (HTTPS)</button>
                         <button class="nav-btn ${window.quizTargetWeek === 'mix' ? 'active' : ''}" onclick="window.setQuizTargetWeek('mix')">מיקס (הכל)</button>
                     </div>
                     <div style="display: flex; justify-content: center; gap: 1vw; margin-bottom: 3vh; flex-wrap: wrap;">
@@ -1484,10 +1508,10 @@ window.render = function() {
         `;
         if (window.summaryMode === 'weeks') {
             summaryHtml += `<div class="weeks-scroll">`;
-            const weekNum = {'week1': '1.', 'week2': '2.', 'week3': '3.', 'week7': '4.', 'week8': '5.', 'week9vocab': '6.'};
-            const weekText = {'week1': 'שבוע 4', 'week2': 'שבוע 5', 'week3': 'שבוע 6', 'week7': 'שבוע 7', 'week8': 'שבוע 8', 'week9vocab': 'שבוע 9'};
+            const weekNum = {'week1': '1.', 'week2': '2.', 'week3': '3.', 'week7': '4.', 'week8': '5.', 'week9vocab': '6.', 'week10vocab': '7.'};
+            const weekText = {'week1': 'שבוע 4', 'week2': 'שבוע 5', 'week3': 'שבוע 6', 'week7': 'שבוע 7', 'week8': 'שבוע 8', 'week9vocab': 'שבוע 9', 'week10vocab': 'שבוע 10'};
             
-            ['week1', 'week2', 'week3', 'week7', 'week8', 'week9vocab'].forEach((week) => {
+            ['week1', 'week2', 'week3', 'week7', 'week8', 'week9vocab', 'week10vocab'].forEach((week) => {
                 // Filter words for this week
                 let matchedInWeek = 0;
                 let daySectionHtml = '';
@@ -1567,9 +1591,9 @@ window.render = function() {
         `;
         if (window.summaryMode === 'weeks') {
             summaryHtml += `<div class="weeks-scroll">`;
-            const weekNum = {'week1': '1.', 'week2': '2.', 'week3': '3.', 'week7': '4.', 'week8': '5.', 'week9vocab': '6.'};
-            const weekText = {'week1': 'שבוע 4', 'week2': 'שבוע 5', 'week3': 'שבוע 6', 'week7': 'שבוע 7', 'week8': 'שבוע 8', 'week9vocab': 'שבוע 9'};
-            ['week1', 'week2', 'week3', 'week7', 'week8', 'week9vocab'].forEach((week) => {
+            const weekNum = {'week1': '1.', 'week2': '2.', 'week3': '3.', 'week7': '4.', 'week8': '5.', 'week9vocab': '6.', 'week10vocab': '7.'};
+            const weekText = {'week1': 'שבוע 4', 'week2': 'שבוע 5', 'week3': 'שבוע 6', 'week7': 'שבוע 7', 'week8': 'שבוע 8', 'week9vocab': 'שבוע 9', 'week10vocab': 'שבוע 10'};
+            ['week1', 'week2', 'week3', 'week7', 'week8', 'week9vocab', 'week10vocab'].forEach((week) => {
                 summaryHtml += `
                     <div class="week-section">
                         <div class="week-title-container">
@@ -1760,7 +1784,7 @@ document.addEventListener('touchend', e => {
 
 window.renderWeeklyFocusDashboard = function() {
     let focusWordsHtml = '';
-    const focusWeek = 'week9vocab'; // Focus on Week 9 Vocabulary
+    const focusWeek = 'week10vocab'; // Focus on Week 9 Vocabulary
     const focusDays = window.daysList.filter(d => d.week === focusWeek);
     
     let daysGridHtml = '';
