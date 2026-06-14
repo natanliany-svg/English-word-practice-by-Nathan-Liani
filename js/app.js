@@ -955,7 +955,11 @@ window.render = function() {
         btn.classList.remove('active-theme');
     });
     
-    let activeBtnId = 'side-btn-' + window.currentWeek;
+    let activeWeek = window.currentWeek;
+    if (activeWeek === 'week10vocab' || activeWeek === 'week10') activeWeek = 'week10';
+    if (activeWeek === 'week9vocab' || activeWeek === 'week9') activeWeek = 'week9';
+    if (activeWeek === 'article' || activeWeek === 'week8') activeWeek = 'week8';
+    let activeBtnId = 'side-btn-' + activeWeek;
     const activeBtn = document.getElementById(activeBtnId);
     if (activeBtn) {
         activeBtn.classList.add('active-theme');
@@ -1052,21 +1056,21 @@ window.render = function() {
                     </div>
                     <div class="home-card-row">
                         <span class="home-card-number">5</span>
-                        <button class="home-card" onclick="window.setWeek('article')">
+                        <button class="home-card" onclick="window.setWeek('week8')">
                             <div class="home-card-icon">📄</div>
                             <div class="home-card-content">
                                 <div class="home-card-title">שבוע 8</div>
-                                <div class="home-card-desc">מאמר קריאה - Unseen בהקראה קולית.</div>
+                                <div class="home-card-desc">אוצר מילים ומאמר - מערכות הפעלה.</div>
                             </div>
                         </button>
                     </div>
                     <div class="home-card-row">
                         <span class="home-card-number">6</span>
-                        <button class="home-card" onclick="window.setWeek('week9')">
+                        <button class="home-card" onclick="window.goToWord('w9d1', 0)">
                             <div class="home-card-icon">🔐</div>
                             <div class="home-card-content">
                                 <div class="home-card-title">שבוע 9</div>
-                                <div class="home-card-desc">מאמר קריאה - CIA Triad אבטחת מידע.</div>
+                                <div class="home-card-desc">אוצר מילים ומאמר - משולש ה-CIA.</div>
                             </div>
                         </button>
                     </div>
@@ -1122,7 +1126,10 @@ window.render = function() {
                     </select>
                 </div>
                 <div class="settings-box" style="background: rgba(255, 255, 255, 0.05); border-color: var(--theme-main); padding: 5px 10px; border-radius: 8px;">
-                    <button class="nav-btn ${window.articleViewMode === 'sentence' ? 'active-theme' : ''}" onclick="window.toggleArticleView('sentence')" style="border:none; margin:0; padding: 4px 10px;">משפטים</button>
+                    ${isWeek10 ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.goToWord('w10d1', 0)">📚 אוצר מילים</button>` : ''}
+${isWeek9 ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.goToWord('w9d1', 0)">📚 אוצר מילים</button>` : ''}
+${window.currentWeek === 'article' ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.setWeek('week8')">📚 אוצר מילים</button>` : ''}
+<button class="nav-btn ${window.articleViewMode === 'sentence' ? 'active-theme' : ''}" onclick="window.toggleArticleView('sentence')" style="border:none; margin:0; padding: 4px 10px;">משפטים</button>
                     <button class="nav-btn ${window.articleViewMode === 'paragraph' ? 'active-theme' : ''}" onclick="window.toggleArticleView('paragraph')" style="border:none; margin:0; padding: 4px 10px;">פסקאות</button>
                     <button class="nav-btn ${window.articleViewMode === 'article' ? 'active-theme' : ''}" onclick="window.toggleArticleView('article')" style="border:none; margin:0; padding: 4px 10px;">מאמר שלם</button>
                 </div>
@@ -1747,7 +1754,10 @@ window.render = function() {
                     <button class="control-btn" onclick="window.nextWord()" ${isLastWord ? 'disabled' : ''}>
                         ${window.icons.left_arrow} הבא
                     </button>
-                    <button class="control-btn" onclick="window.prevWord()" ${isFirstWord ? 'disabled' : ''}>
+                    ${window.currentWeek === 'week8' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('article')">📄 מאמר</button>` : ''}
+${window.currentWeek === 'week9vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week9')">📄 מאמר</button>` : ''}
+${window.currentWeek === 'week10vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week10')">📄 מאמר</button>` : ''}
+<button class="control-btn" onclick="window.prevWord()" ${isFirstWord ? 'disabled' : ''}>
                         הקודם ${window.icons.right_arrow}
                     </button>
                 </div>
