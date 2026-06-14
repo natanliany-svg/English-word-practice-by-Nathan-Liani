@@ -1,0 +1,290 @@
+[
+    {
+        "type": "h1",
+        "hebrew": "תרגום_כותרת",
+        "sentences": [
+            {
+                "e": "The Transition from HTTP to HTTPS: Why Security Became Essential",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "p",
+        "hebrew": "תרגום_פסקה",
+        "sentences": [
+            {
+                "e": "In the early days of the internet, websites were mostly simple pages that shared information with visitors.",
+                "h": "תרגום"
+            },
+            {
+                "e": "People used the web to read news, search for information, and visit personal websites.",
+                "h": "תרגום"
+            },
+            {
+                "e": "During that time, most websites used HTTP (HyperText Transfer Protocol), a communication system that allowed browsers and servers to exchange information.",
+                "h": "תרגום"
+            },
+            {
+                "e": "HTTP was fast and simple, but it had one major weakness: it did not protect the data being transmitted.",
+                "h": "תרגום"
+            },
+            {
+                "e": "Anything sent through HTTP, including passwords, messages, or payment information, could potentially be seen by anyone intercepting the connection.",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "p",
+        "hebrew": "תרגום_פסקה",
+        "sentences": [
+            {
+                "e": "As the internet grew, people began using websites for much more important tasks.",
+                "h": "תרגום"
+            },
+            {
+                "e": "Online banking, shopping, social media, and email became part of everyday life.",
+                "h": "תרגום"
+            },
+            {
+                "e": "Suddenly, users were sending sensitive information across the internet all the time.",
+                "h": "תרגום"
+            },
+            {
+                "e": "Cybercriminals quickly realized that unsecured HTTP connections were an easy target.",
+                "h": "תרגום"
+            },
+            {
+                "e": "By using public Wi-Fi networks or malicious tools, attackers could intercept traffic and steal usernames, passwords, credit card numbers, and other private data.",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "p",
+        "hebrew": "תרגום_פסקה",
+        "sentences": [
+            {
+                "e": "This problem led to the rise of HTTPS (HyperText Transfer Protocol Secure).",
+                "h": "תרגום"
+            },
+            {
+                "e": "HTTPS is essentially HTTP combined with encryption through SSL/TLS technology.",
+                "h": "תרגום"
+            },
+            {
+                "e": "Encryption scrambles the data so that only the sender and the intended receiver can read it.",
+                "h": "תרגום"
+            },
+            {
+                "e": "Even if someone intercepts the connection, the information appears as meaningless code rather than readable text.",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "h2",
+        "hebrew": "תרגום_כותרת",
+        "sentences": [
+            {
+                "e": "A Small Story: The Coffee Shop Incident",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "p",
+        "hebrew": "תרגום_פסקה",
+        "sentences": [
+            {
+                "e": "Imagine a university student named Maya who often studied at a local coffee shop.",
+                "h": "תרגום"
+            },
+            {
+                "e": "One afternoon, she connected to the café's free Wi-Fi and logged into her online shopping account using a website that still used HTTP.",
+                "h": "תרגום"
+            },
+            {
+                "e": "A hacker sitting nearby was monitoring the network traffic.",
+                "h": "תרגום"
+            },
+            {
+                "e": "Because the connection was not encrypted, the hacker could see Maya's login information as it traveled across the network.",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "p",
+        "hebrew": "תרגום_פסקה",
+        "sentences": [
+            {
+                "e": "A few hours later, Maya received notifications about purchases she had never made.",
+                "h": "תרגום"
+            },
+            {
+                "e": "Her account had been stolen simply because the website did not use HTTPS.",
+                "h": "תרגום"
+            },
+            {
+                "e": "When she contacted customer support, they explained that the company was in the process of upgrading its website to HTTPS because incidents like this were becoming common.",
+                "h": "תרגום"
+            },
+            {
+                "e": "Maya's experience showed how dangerous unencrypted connections could be in real life.",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "h2",
+        "hebrew": "תרגום_כותרת",
+        "sentences": [
+            {
+                "e": "Why the Transition Was Necessary",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "p",
+        "hebrew": "תרגום_פסקה",
+        "sentences": [
+            {
+                "e": "The move from HTTP to HTTPS was not just a technical upgrade; it became a necessary step for protecting users and businesses.",
+                "h": "תרגום"
+            },
+            {
+                "e": "There are three main reasons why this transition was essential:",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "h2",
+        "hebrew": "תרגום_כותרת",
+        "sentences": [
+            {
+                "e": "1. Protecting Confidential Information",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "p",
+        "hebrew": "תרגום_פסקה",
+        "sentences": [
+            {
+                "e": "HTTPS encrypts data such as passwords, personal details, and payment information.",
+                "h": "תרגום"
+            },
+            {
+                "e": "This protects users from eavesdropping attacks, especially on public networks like cafés, airports, and hotels.",
+                "h": "תרגום"
+            },
+            {
+                "e": "Without encryption, sensitive information can be stolen in seconds.",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "h2",
+        "hebrew": "תרגום_כותרת",
+        "sentences": [
+            {
+                "e": "2. Ensuring Data Integrity",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "p",
+        "hebrew": "תרגום_פסקה",
+        "sentences": [
+            {
+                "e": "HTTPS also helps ensure that the information sent between a user and a website is not altered during transmission.",
+                "h": "תרגום"
+            },
+            {
+                "e": "Attackers can sometimes modify unencrypted HTTP traffic to inject malicious code, advertisements, or fake content.",
+                "h": "תרגום"
+            },
+            {
+                "e": "HTTPS prevents this by verifying that the data arrives exactly as it was sent.",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "h2",
+        "hebrew": "תרגום_כותרת",
+        "sentences": [
+            {
+                "e": "3. Building Trust and Authentication",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "p",
+        "hebrew": "תרגום_פסקה",
+        "sentences": [
+            {
+                "e": "When a website uses HTTPS, browsers display a padlock icon and verify the site's digital certificate.",
+                "h": "תרגום"
+            },
+            {
+                "e": "This helps users confirm that they are communicating with the real website and not a fake copy created by attackers.",
+                "h": "תרגום"
+            },
+            {
+                "e": "For businesses, HTTPS builds customer trust and shows that security is taken seriously.",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "h2",
+        "hebrew": "תרגום_כותרת",
+        "sentences": [
+            {
+                "e": "The Modern Internet",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "p",
+        "hebrew": "תרגום_פסקה",
+        "sentences": [
+            {
+                "e": "Today, HTTPS is considered the standard for all websites, not only banking or shopping sites.",
+                "h": "תרגום"
+            },
+            {
+                "e": "Modern browsers such as Google Chrome and Mozilla Firefox warn users when they visit HTTP websites, labeling them as \"Not Secure.\" Search engines also favor HTTPS websites in search rankings, encouraging companies to make the switch.",
+                "h": "תרגום"
+            }
+        ]
+    },
+    {
+        "type": "p",
+        "hebrew": "תרגום_פסקה",
+        "sentences": [
+            {
+                "e": "The transition was not always easy.",
+                "h": "תרגום"
+            },
+            {
+                "e": "Website owners had to obtain digital certificates, configure their servers, and sometimes update old systems.",
+                "h": "תרגום"
+            },
+            {
+                "e": "However, tools such as Let's Encrypt made free SSL certificates widely available, helping millions of websites adopt HTTPS.",
+                "h": "תרגום"
+            }
+        ]
+    }
+]

@@ -1,0 +1,362 @@
+[
+  {
+    "word": "Transition",
+    "phonetic": "טרנזישן",
+    "meaning": "מעבר",
+    "visual": "🔄",
+    "exp": "תהליך של שינוי ממצב אחד לאחר.",
+    "engEx": "The transition from HTTP to HTTPS was necessary.",
+    "hebEx": "המעבר מ-HTTP ל-HTTPS היה הכרחי."
+  },
+  {
+    "word": "Essential",
+    "phonetic": "אסנשל",
+    "meaning": "חיוני",
+    "visual": "❗",
+    "exp": "משהו הכרחי לחלוטין.",
+    "engEx": "Security became essential.",
+    "hebEx": "אבטחה הפכה לחיונית."
+  },
+  {
+    "word": "Information",
+    "phonetic": "אינפורמיישן",
+    "meaning": "מידע",
+    "visual": "ℹ️",
+    "exp": "נתונים או עובדות על משהו.",
+    "engEx": "They shared information with visitors.",
+    "hebEx": "הם שיתפו מידע עם מבקרים."
+  },
+  {
+    "word": "Protocol",
+    "phonetic": "פרוטוקול",
+    "meaning": "פרוטוקול",
+    "visual": "📜",
+    "exp": "אוסף חוקים המסדירים תקשורת בין מחשבים.",
+    "engEx": "HTTP is a transfer protocol.",
+    "hebEx": "HTTP הוא פרוטוקול העברה."
+  },
+  {
+    "word": "Communication",
+    "phonetic": "קומיוניקיישן",
+    "meaning": "תקשורת",
+    "visual": "💬",
+    "exp": "העברת מידע בין צדדים.",
+    "engEx": "It is a communication system.",
+    "hebEx": "זוהי מערכת תקשורת."
+  },
+  {
+    "word": "Browsers",
+    "phonetic": "בראוזרס",
+    "meaning": "דפדפנים",
+    "visual": "🌐",
+    "exp": "תוכנות המשמשות לגלישה באינטרנט.",
+    "engEx": "Browsers and servers exchange data.",
+    "hebEx": "דפדפנים ושרתים מחליפים נתונים."
+  },
+  {
+    "word": "Servers",
+    "phonetic": "סרברס",
+    "meaning": "שרתים",
+    "visual": "🖥️",
+    "exp": "מחשבים המספקים שירותים למחשבים אחרים ברשת.",
+    "engEx": "The servers hosted the website.",
+    "hebEx": "השרתים אירחו את האתר."
+  },
+  {
+    "word": "Exchange",
+    "phonetic": "אקסצ'יינג'",
+    "meaning": "החלפה",
+    "visual": "🔄",
+    "exp": "מסירה וקבלה של דברים (כמו נתונים).",
+    "engEx": "They exchange information quickly.",
+    "hebEx": "הם מחליפים מידע במהירות."
+  },
+  {
+    "word": "Weakness",
+    "phonetic": "וויקנס",
+    "meaning": "חולשה",
+    "visual": "📉",
+    "exp": "נקודת תורפה או חוסר חוזק.",
+    "engEx": "HTTP had one major weakness.",
+    "hebEx": "ל-HTTP הייתה חולשה מרכזית אחת."
+  },
+  {
+    "word": "Protect",
+    "phonetic": "פרוטקט",
+    "meaning": "להגן",
+    "visual": "🛡️",
+    "exp": "לשמור על משהו מפני פגיעה או סכנה.",
+    "engEx": "It did not protect the data.",
+    "hebEx": "זה לא הגן על הנתונים."
+  },
+  {
+    "word": "Transmitted",
+    "phonetic": "טרנסמיטד",
+    "meaning": "משודר / מועבר",
+    "visual": "📡",
+    "exp": "משהו שנשלח או הועבר ממקום למקום.",
+    "engEx": "Data is transmitted over the network.",
+    "hebEx": "הנתונים משודרים ברשת."
+  },
+  {
+    "word": "Passwords",
+    "phonetic": "פסוורדס",
+    "meaning": "סיסמאות",
+    "visual": "🔑",
+    "exp": "מילים או רצף תווים סודיים לאימות זהות.",
+    "engEx": "Never share your passwords.",
+    "hebEx": "לעולם אל תשתף את הסיסמאות שלך."
+  },
+  {
+    "word": "Intercepting",
+    "phonetic": "אינטרספטינג",
+    "meaning": "יירוט",
+    "visual": "🕵️",
+    "exp": "תפיסת מידע בדרכו ליעד.",
+    "engEx": "Anyone intercepting the connection could read it.",
+    "hebEx": "כל מי שמיירט את החיבור יכול לקרוא את זה."
+  },
+  {
+    "word": "Connection",
+    "phonetic": "קונקשן",
+    "meaning": "חיבור",
+    "visual": "🔗",
+    "exp": "קישור בין מחשבים או רשתות.",
+    "engEx": "The connection was secured.",
+    "hebEx": "החיבור היה מאובטח."
+  },
+  {
+    "word": "Sensitive",
+    "phonetic": "סנסיטיב",
+    "meaning": "רגיש",
+    "visual": "⚠️",
+    "exp": "מידע פרטי או סודי שיש להגן עליו.",
+    "engEx": "Users send sensitive information daily.",
+    "hebEx": "משתמשים שולחים מידע רגיש מדי יום."
+  },
+  {
+    "word": "Cybercriminals",
+    "phonetic": "סייבר-קרימינלס",
+    "meaning": "פושעי סייבר",
+    "visual": "🦹",
+    "exp": "אנשים המבצעים פשעים דרך האינטרנט.",
+    "engEx": "Cybercriminals steal private data.",
+    "hebEx": "פושעי סייבר גונבים נתונים פרטיים."
+  },
+  {
+    "word": "Unsecured",
+    "phonetic": "אנסיקיורד",
+    "meaning": "לא מאובטח",
+    "visual": "🔓",
+    "exp": "חסר הגנה או הצפנה.",
+    "engEx": "Unsecured connections are dangerous.",
+    "hebEx": "חיבורים לא מאובטחים הם מסוכנים."
+  },
+  {
+    "word": "Target",
+    "phonetic": "טרגט",
+    "meaning": "מטרה",
+    "visual": "🎯",
+    "exp": "יעד להתקפה או פעולה.",
+    "engEx": "HTTP connections were an easy target.",
+    "hebEx": "חיבורי HTTP היו מטרה קלה."
+  },
+  {
+    "word": "Malicious",
+    "phonetic": "מלישס",
+    "meaning": "זדוני",
+    "visual": "👿",
+    "exp": "בעל כוונות רעות או מזיקות.",
+    "engEx": "They used malicious tools to hack.",
+    "hebEx": "הם השתמשו בכלים זדוניים כדי לפרוץ."
+  },
+  {
+    "word": "Traffic",
+    "phonetic": "טראפיק",
+    "meaning": "תעבורה",
+    "visual": "🚦",
+    "exp": "זרימת הנתונים ברשת תקשורת.",
+    "engEx": "Attackers intercept network traffic.",
+    "hebEx": "תוקפים מיירטים תעבורת רשת."
+  },
+  {
+    "word": "Encryption",
+    "phonetic": "אנקריפשן",
+    "meaning": "הצפנה",
+    "visual": "🔐",
+    "exp": "קידוד נתונים כך שרק מורשים יוכלו לקרוא אותם.",
+    "engEx": "HTTPS uses encryption to protect data.",
+    "hebEx": "HTTPS משתמש בהצפנה כדי להגן על נתונים."
+  },
+  {
+    "word": "Scrambles",
+    "phonetic": "סקרמבלס",
+    "meaning": "מערבל",
+    "visual": "🌪️",
+    "exp": "ערבוב הנתונים לפורמט לא קריא.",
+    "engEx": "Encryption scrambles the data.",
+    "hebEx": "הצפנה מערבלת את הנתונים."
+  },
+  {
+    "word": "Intended",
+    "phonetic": "אינטנדד",
+    "meaning": "מיועד",
+    "visual": "✉️",
+    "exp": "האדם או היעד שאליו כוון המסר.",
+    "engEx": "Only the intended receiver can read it.",
+    "hebEx": "רק המקבל המיועד יכול לקרוא את זה."
+  },
+  {
+    "word": "Meaningless",
+    "phonetic": "מינינגלס",
+    "meaning": "חסר משמעות",
+    "visual": "🤷",
+    "exp": "משהו שאין לו מובן או ערך ברור.",
+    "engEx": "The intercepted code appears meaningless.",
+    "hebEx": "הקוד המיורט נראה חסר משמעות."
+  },
+  {
+    "word": "Incident",
+    "phonetic": "אינסידנט",
+    "meaning": "תקרית",
+    "visual": "🚨",
+    "exp": "אירוע, לרוב שלילי או בלתי צפוי.",
+    "engEx": "The coffee shop incident was unfortunate.",
+    "hebEx": "תקרית בית הקפה הייתה מצערת."
+  },
+  {
+    "word": "Hacker",
+    "phonetic": "האקר",
+    "meaning": "פצחן (האקר)",
+    "visual": "💻",
+    "exp": "אדם הפורץ למערכות מחשב.",
+    "engEx": "A hacker was monitoring the network.",
+    "hebEx": "האקר ניטר את הרשת."
+  },
+  {
+    "word": "Monitoring",
+    "phonetic": "מוניטורינג",
+    "meaning": "ניטור / מעקב",
+    "visual": "👁️",
+    "exp": "מעקב או השגחה על מערכת או תעבורה.",
+    "engEx": "They are monitoring the internet traffic.",
+    "hebEx": "הם מנטרים את תעבורת האינטרנט."
+  },
+  {
+    "word": "Upgrading",
+    "phonetic": "אפגריידינג",
+    "meaning": "שדרוג",
+    "visual": "⬆️",
+    "exp": "שיפור מערכת או מעבר לגרסה חדשה יותר.",
+    "engEx": "The company is upgrading to HTTPS.",
+    "hebEx": "החברה משדרגת ל-HTTPS."
+  },
+  {
+    "word": "Confidential",
+    "phonetic": "קונפידנשל",
+    "meaning": "סודי / חסוי",
+    "visual": "🤫",
+    "exp": "מידע שנועד להישאר פרטי.",
+    "engEx": "It protects confidential information.",
+    "hebEx": "זה מגן על מידע חסוי."
+  },
+  {
+    "word": "Eavesdropping",
+    "phonetic": "איבזדרופינג",
+    "meaning": "ציתות",
+    "visual": "👂",
+    "exp": "האזנה בסתר לשיחות או לתקשורת של אחרים.",
+    "engEx": "HTTPS prevents eavesdropping attacks.",
+    "hebEx": "HTTPS מונע מתקפות ציתות."
+  },
+  {
+    "word": "Integrity",
+    "phonetic": "אינטגריטי",
+    "meaning": "שלמות (נתונים) / אמינות",
+    "visual": "🛡️",
+    "exp": "הבטחה שהנתונים לא שונו בדרך.",
+    "engEx": "Ensuring data integrity is vital.",
+    "hebEx": "הבטחת שלמות הנתונים היא חיונית."
+  },
+  {
+    "word": "Altered",
+    "phonetic": "אלטרד",
+    "meaning": "שונה / עבר שינוי",
+    "visual": "✏️",
+    "exp": "שונה או עבר מודיפיקציה.",
+    "engEx": "The information was not altered.",
+    "hebEx": "המידע לא שונה."
+  },
+  {
+    "word": "Transmission",
+    "phonetic": "טרנסמישן",
+    "meaning": "שידור / העברה",
+    "visual": "📤",
+    "exp": "תהליך העברת הנתונים ברשת.",
+    "engEx": "Data can be stolen during transmission.",
+    "hebEx": "נתונים יכולים להיגנב במהלך השידור."
+  },
+  {
+    "word": "Inject",
+    "phonetic": "אינג'קט",
+    "meaning": "להזריק",
+    "visual": "💉",
+    "exp": "החדרת קוד או נתונים למערכת באופן זדוני.",
+    "engEx": "Attackers inject malicious code into the traffic.",
+    "hebEx": "תוקפים מזריקים קוד זדוני לתעבורה."
+  },
+  {
+    "word": "Verifying",
+    "phonetic": "וריפיינג",
+    "meaning": "אימות",
+    "visual": "✔️",
+    "exp": "בדיקה ואישור שמשהו הוא נכון ואמיתי.",
+    "engEx": "Verifying the digital certificate builds trust.",
+    "hebEx": "אימות התעודה הדיגיטלית בונה אמון."
+  },
+  {
+    "word": "Authentication",
+    "phonetic": "אותנטיקיישן",
+    "meaning": "אימות זהות",
+    "visual": "🛂",
+    "exp": "תהליך וידוא זהות של משתמש או מערכת.",
+    "engEx": "Authentication prevents fake copies of sites.",
+    "hebEx": "אימות מונע עותקים מזויפים של אתרים."
+  },
+  {
+    "word": "Certificate",
+    "phonetic": "סרטיפיקט",
+    "meaning": "תעודה (דיגיטלית)",
+    "visual": "📜",
+    "exp": "מסמך דיגיטלי המאשר את זהות האתר.",
+    "engEx": "The site has a valid SSL certificate.",
+    "hebEx": "לאתר יש תעודת SSL תקפה."
+  },
+  {
+    "word": "Standard",
+    "phonetic": "סטנדרט",
+    "meaning": "תקן / סטנדרט",
+    "visual": "📏",
+    "exp": "רמה או נורמה מקובלת.",
+    "engEx": "HTTPS is the modern standard.",
+    "hebEx": "HTTPS הוא התקן המודרני."
+  },
+  {
+    "word": "Configure",
+    "phonetic": "קונפיגר",
+    "meaning": "להגדיר / לקנפג",
+    "visual": "⚙️",
+    "exp": "הגדרת מערכת או תוכנה לפעולה.",
+    "engEx": "Owners had to configure their servers.",
+    "hebEx": "הבעלים נאלצו להגדיר את השרתים שלהם."
+  },
+  {
+    "word": "Adopt",
+    "phonetic": "אדופט",
+    "meaning": "לאמץ",
+    "visual": "🤝",
+    "exp": "קבלת שיטה או טכנולוגיה חדשה לשימוש.",
+    "engEx": "Millions of websites adopted HTTPS.",
+    "hebEx": "מיליוני אתרים אימצו את HTTPS."
+  }
+]

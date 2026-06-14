@@ -812,7 +812,7 @@ window.startQuiz = function() {
     if (targetWeek && targetWeek.includes('week8')) fullDB = window.unseenDB;
     else if (targetWeek && targetWeek.includes('week9')) fullDB = window.ciaTriadDB;
     else if (targetWeek && targetWeek.includes('week10')) fullDB = window.week10DB;
-    else fullDB = [...window.unseenDB, ...window.ciaTriadDB];
+    else fullDB = [...window.unseenDB, ...window.ciaTriadDB, ...window.week10DB];
 
     let availableQuestions = fullDB.filter(q => q.diff === window.quizDifficulty || window.quizDifficulty === 'medium');
     if (window.quizDifficulty === 'hard') availableQuestions = fullDB; 
@@ -1067,6 +1067,16 @@ window.render = function() {
                             <div class="home-card-content">
                                 <div class="home-card-title">שבוע 9</div>
                                 <div class="home-card-desc">מאמר קריאה - CIA Triad אבטחת מידע.</div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="home-card-row">
+                        <span class="home-card-number">7</span>
+                        <button class="home-card" onclick="window.setWeek('week10')">
+                            <div class="home-card-icon">🌐</div>
+                            <div class="home-card-content">
+                                <div class="home-card-title">שבוע 10</div>
+                                <div class="home-card-desc">מאמר קריאה - מעבר ל-HTTPS.</div>
                             </div>
                         </button>
                     </div>
