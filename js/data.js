@@ -150,1153 +150,229 @@ window.ciaTriadArticleData = [
 ];
 
 window.httpsArticleData = [
-    {
-        "type": "h1",
-        "hebrew": "המעבר מ-HTTP ל-HTTPS: מדוע האבטחה הפכה לחיונית",
-        "sentences": [
-            {
-                "e": "The Transition from HTTP to HTTPS: Why Security Became Essential",
-                "h": "המעבר מ-HTTP ל-HTTPS: מדוע האבטחה הפכה לחיונית"
-            }
-        ]
-    },
-    {
-        "type": "p",
-        "hebrew": "בימיו הראשונים של האינטרנט, אתרי אינטרנט היו לרוב דפים פשוטים ששיתפו מידע עם מבקרים. אנשים השתמשו ברשת כדי לקרוא חדשות, לחפש מידע ולבקר באתרי אינטרנט אישיים. במהלך אותה תקופה, רוב האתרים השתמשו ב-HTTP (פרוטוקול העברת תמליל-על), מערכת תקשורת שאפשרה לדפדפנים ושרתים להחליף מידע. HTTP היה מהיר ופשוט, אך הייתה לו חולשה מרכזית אחת: הוא לא הגן על הנתונים שהועברו. כל מה שנשלח דרך HTTP, כולל סיסמאות, הודעות או פרטי תשלום, יכול היה להיראות באופן פוטנציאלי על ידי כל מי שיירט את החיבור.",
-        "sentences": [
-            {
-                "e": "In the early days of the internet, websites were mostly simple pages that shared information with visitors.",
-                "h": "בימיו הראשונים של האינטרנט, אתרי אינטרנט היו לרוב דפים פשוטים ששיתפו מידע עם מבקרים."
-            },
-            {
-                "e": "People used the web to read news, search for information, and visit personal websites.",
-                "h": "אנשים השתמשו ברשת כדי לקרוא חדשות, לחפש מידע ולבקר באתרי אינטרנט אישיים."
-            },
-            {
-                "e": "During that time, most websites used HTTP (HyperText Transfer Protocol), a communication system that allowed browsers and servers to exchange information.",
-                "h": "במהלך אותה תקופה, רוב האתרים השתמשו ב-HTTP (פרוטוקול העברת תמליל-על), מערכת תקשורת שאפשרה לדפדפנים ושרתים להחליף מידע."
-            },
-            {
-                "e": "HTTP was fast and simple, but it had one major weakness: it did not protect the data being transmitted.",
-                "h": "HTTP היה מהיר ופשוט, אך הייתה לו חולשה מרכזית אחת: הוא לא הגן על הנתונים שהועברו."
-            },
-            {
-                "e": "Anything sent through HTTP, including passwords, messages, or payment information, could potentially be seen by anyone intercepting the connection.",
-                "h": "כל מה שנשלח דרך HTTP, כולל סיסמאות, הודעות או פרטי תשלום, יכול היה להיראות באופן פוטנציאלי על ידי כל מי שיירט את החיבור."
-            }
-        ]
-    },
-    {
-        "type": "p",
-        "hebrew": "ככל שהאינטרנט גדל, אנשים החלו להשתמש באתרים למשימות חשובות הרבה יותר. בנקאות מקוונת, קניות, רשתות חברתיות ודואר אלקטרוני הפכו לחלק מחיי היום יום. לפתע, משתמשים שלחו מידע רגיש ברחבי האינטרנט כל הזמן. פושעי סייבר הבינו במהירות שחיבורי HTTP לא מאובטחים הם מטרה קלה. באמצעות רשתות Wi-Fi ציבוריות או כלים זדוניים, תוקפים יכלו ליירט תעבורה ולגנוב שמות משתמש, סיסמאות, מספרי כרטיסי אשראי ונתונים פרטיים אחרים.",
-        "sentences": [
-            {
-                "e": "As the internet grew, people began using websites for much more important tasks.",
-                "h": "ככל שהאינטרנט גדל, אנשים החלו להשתמש באתרים למשימות חשובות הרבה יותר."
-            },
-            {
-                "e": "Online banking, shopping, social media, and email became part of everyday life.",
-                "h": "בנקאות מקוונת, קניות, רשתות חברתיות ודואר אלקטרוני הפכו לחלק מחיי היום יום."
-            },
-            {
-                "e": "Suddenly, users were sending sensitive information across the internet all the time.",
-                "h": "לפתע, משתמשים שלחו מידע רגיש ברחבי האינטרנט כל הזמן."
-            },
-            {
-                "e": "Cybercriminals quickly realized that unsecured HTTP connections were an easy target.",
-                "h": "פושעי סייבר הבינו במהירות שחיבורי HTTP לא מאובטחים הם מטרה קלה."
-            },
-            {
-                "e": "By using public Wi-Fi networks or malicious tools, attackers could intercept traffic and steal usernames, passwords, credit card numbers, and other private data.",
-                "h": "באמצעות רשתות Wi-Fi ציבוריות או כלים זדוניים, תוקפים יכלו ליירט תעבורה ולגנוב שמות משתמש, סיסמאות, מספרי כרטיסי אשראי ונתונים פרטיים אחרים."
-            }
-        ]
-    },
-    {
-        "type": "p",
-        "hebrew": "בעיה זו הובילה לעלייתו של HTTPS (פרוטוקול העברת תמליל-על מאובטח). HTTPS הוא למעשה HTTP המשולב עם הצפנה באמצעות טכנולוגיית SSL/TLS. ההצפנה מערבלת את הנתונים כך שרק השולח והנמען המיועד יוכלו לקרוא אותם. גם אם מישהו מיירט את החיבור, המידע מופיע כקוד חסר משמעות ולא כטקסט קריא.",
-        "sentences": [
-            {
-                "e": "This problem led to the rise of HTTPS (HyperText Transfer Protocol Secure).",
-                "h": "בעיה זו הובילה לעלייתו של HTTPS (פרוטוקול העברת תמליל-על מאובטח)."
-            },
-            {
-                "e": "HTTPS is essentially HTTP combined with encryption through SSL/TLS technology.",
-                "h": "HTTPS הוא למעשה HTTP המשולב עם הצפנה באמצעות טכנולוגיית SSL/TLS."
-            },
-            {
-                "e": "Encryption scrambles the data so that only the sender and the intended receiver can read it.",
-                "h": "ההצפנה מערבלת את הנתונים כך שרק השולח והנמען המיועד יוכלו לקרוא אותם."
-            },
-            {
-                "e": "Even if someone intercepts the connection, the information appears as meaningless code rather than readable text.",
-                "h": "גם אם מישהו מיירט את החיבור, המידע מופיע כקוד חסר משמעות ולא כטקסט קריא."
-            }
-        ]
-    },
-    {
-        "type": "h2",
-        "hebrew": "סיפור קטן: תקרית בית הקפה",
-        "sentences": [
-            {
-                "e": "A Small Story: The Coffee Shop Incident",
-                "h": "סיפור קטן: תקרית בית הקפה"
-            }
-        ]
-    },
-    {
-        "type": "p",
-        "hebrew": "תארו לעצמכם סטודנטית באוניברסיטה בשם מאיה שנהגה ללמוד לעתים קרובות בבית קפה מקומי. אחר צהריים אחד, היא התחברה ל-Wi-Fi החינמי של בית הקפה ונכנסה לחשבון הקניות המקוון שלה דרך אתר שעדיין השתמש ב-HTTP. האקר שישב בקרבת מקום ניטר את תעבורת הרשת. מכיוון שהחיבור לא היה מוצפן, ההאקר יכול היה לראות את פרטי ההתחברות של מאיה בעודם עוברים ברשת.",
-        "sentences": [
-            {
-                "e": "Imagine a university student named Maya who often studied at a local coffee shop.",
-                "h": "תארו לעצמכם סטודנטית באוניברסיטה בשם מאיה שנהגה ללמוד לעתים קרובות בבית קפה מקומי."
-            },
-            {
-                "e": "One afternoon, she connected to the café's free Wi-Fi and logged into her online shopping account using a website that still used HTTP.",
-                "h": "אחר צהריים אחד, היא התחברה ל-Wi-Fi החינמי של בית הקפה ונכנסה לחשבון הקניות המקוון שלה דרך אתר שעדיין השתמש ב-HTTP."
-            },
-            {
-                "e": "A hacker sitting nearby was monitoring the network traffic.",
-                "h": "האקר שישב בקרבת מקום ניטר את תעבורת הרשת."
-            },
-            {
-                "e": "Because the connection was not encrypted, the hacker could see Maya's login information as it traveled across the network.",
-                "h": "מכיוון שהחיבור לא היה מוצפן, ההאקר יכול היה לראות את פרטי ההתחברות של מאיה בעודם עוברים ברשת."
-            }
-        ]
-    },
-    {
-        "type": "p",
-        "hebrew": "כמה שעות לאחר מכן, מאיה קיבלה התראות על רכישות שהיא מעולם לא ביצעה. החשבון שלה נגנב פשוט כי האתר לא השתמש ב-HTTPS. כאשר יצרה קשר עם שירות הלקוחות, הם הסבירו שהחברה נמצאת בתהליך של שדרוג האתר שלה ל-HTTPS משום שתקריות כאלו הפכו לנפוצות. החוויה של מאיה הראתה עד כמה מסוכנים חיבורים לא מוצפנים יכולים להיות בחיים האמיתיים.",
-        "sentences": [
-            {
-                "e": "A few hours later, Maya received notifications about purchases she had never made.",
-                "h": "כמה שעות לאחר מכן, מאיה קיבלה התראות על רכישות שהיא מעולם לא ביצעה."
-            },
-            {
-                "e": "Her account had been stolen simply because the website did not use HTTPS.",
-                "h": "החשבון שלה נגנב פשוט כי האתר לא השתמש ב-HTTPS."
-            },
-            {
-                "e": "When she contacted customer support, they explained that the company was in the process of upgrading its website to HTTPS because incidents like this were becoming common.",
-                "h": "כאשר יצרה קשר עם שירות הלקוחות, הם הסבירו שהחברה נמצאת בתהליך של שדרוג האתר שלה ל-HTTPS משום שתקריות כאלו הפכו לנפוצות."
-            },
-            {
-                "e": "Maya's experience showed how dangerous unencrypted connections could be in real life.",
-                "h": "החוויה של מאיה הראתה עד כמה מסוכנים חיבורים לא מוצפנים יכולים להיות בחיים האמיתיים."
-            }
-        ]
-    },
-    {
-        "type": "h2",
-        "hebrew": "מדוע המעבר היה הכרחי",
-        "sentences": [
-            {
-                "e": "Why the Transition Was Necessary",
-                "h": "מדוע המעבר היה הכרחי"
-            }
-        ]
-    },
-    {
-        "type": "p",
-        "hebrew": "המעבר מ-HTTP ל-HTTPS לא היה רק שדרוג טכני; הוא הפך לצעד הכרחי להגנה על משתמשים ועסקים. ישנן שלוש סיבות עיקריות מדוע מעבר זה היה חיוני:",
-        "sentences": [
-            {
-                "e": "The move from HTTP to HTTPS was not just a technical upgrade; it became a necessary step for protecting users and businesses.",
-                "h": "המעבר מ-HTTP ל-HTTPS לא היה רק שדרוג טכני; הוא הפך לצעד הכרחי להגנה על משתמשים ועסקים."
-            },
-            {
-                "e": "There are three main reasons why this transition was essential:",
-                "h": "ישנן שלוש סיבות עיקריות מדוע מעבר זה היה חיוני:"
-            }
-        ]
-    },
-    {
-        "type": "h2",
-        "hebrew": "1. הגנה על מידע סודי",
-        "sentences": [
-            {
-                "e": "1. Protecting Confidential Information",
-                "h": "1. הגנה על מידע סודי"
-            }
-        ]
-    },
-    {
-        "type": "p",
-        "hebrew": "HTTPS מצפין נתונים כגון סיסמאות, פרטים אישיים ומידע על תשלומים. זה מגן על משתמשים מפני מתקפות ציתות, במיוחד ברשתות ציבוריות כמו בתי קפה, נמלי תעופה ובתי מלון. ללא הצפנה, מידע רגיש יכול להיגנב תוך שניות.",
-        "sentences": [
-            {
-                "e": "HTTPS encrypts data such as passwords, personal details, and payment information.",
-                "h": "HTTPS מצפין נתונים כגון סיסמאות, פרטים אישיים ומידע על תשלומים."
-            },
-            {
-                "e": "This protects users from eavesdropping attacks, especially on public networks like cafés, airports, and hotels.",
-                "h": "זה מגן על משתמשים מפני מתקפות ציתות, במיוחד ברשתות ציבוריות כמו בתי קפה, נמלי תעופה ובתי מלון."
-            },
-            {
-                "e": "Without encryption, sensitive information can be stolen in seconds.",
-                "h": "ללא הצפנה, מידע רגיש יכול להיגנב תוך שניות."
-            }
-        ]
-    },
-    {
-        "type": "h2",
-        "hebrew": "2. הבטחת שלמות הנתונים",
-        "sentences": [
-            {
-                "e": "2. Ensuring Data Integrity",
-                "h": "2. הבטחת שלמות הנתונים"
-            }
-        ]
-    },
-    {
-        "type": "p",
-        "hebrew": "HTTPS גם עוזר להבטיח שהמידע שנשלח בין משתמש לאתר לא ישונה במהלך ההעברה. תוקפים יכולים לעתים לשנות תעבורת HTTP לא מוצפנת כדי להזריק קוד זדוני, פרסומות או תוכן מזויף. HTTPS מונע זאת על ידי וידוא שהנתונים מגיעים בדיוק כפי שנשלחו.",
-        "sentences": [
-            {
-                "e": "HTTPS also helps ensure that the information sent between a user and a website is not altered during transmission.",
-                "h": "HTTPS גם עוזר להבטיח שהמידע שנשלח בין משתמש לאתר לא ישונה במהלך ההעברה."
-            },
-            {
-                "e": "Attackers can sometimes modify unencrypted HTTP traffic to inject malicious code, advertisements, or fake content.",
-                "h": "תוקפים יכולים לעתים לשנות תעבורת HTTP לא מוצפנת כדי להזריק קוד זדוני, פרסומות או תוכן מזויף."
-            },
-            {
-                "e": "HTTPS prevents this by verifying that the data arrives exactly as it was sent.",
-                "h": "HTTPS מונע זאת על ידי וידוא שהנתונים מגיעים בדיוק כפי שנשלחו."
-            }
-        ]
-    },
-    {
-        "type": "h2",
-        "hebrew": "3. בניית אמון ואימות",
-        "sentences": [
-            {
-                "e": "3. Building Trust and Authentication",
-                "h": "3. בניית אמון ואימות"
-            }
-        ]
-    },
-    {
-        "type": "p",
-        "hebrew": "כאשר אתר משתמש ב-HTTPS, דפדפנים מציגים סמל של מנעול ומאמתים את התעודה הדיגיטלית של האתר. זה עוזר למשתמשים לאשר שהם מתקשרים עם האתר האמיתי ולא עם עותק מזויף שנוצר על ידי תוקפים. עבור עסקים, HTTPS בונה את אמון הלקוחות ומראה שהאבטחה נלקחת ברצינות.",
-        "sentences": [
-            {
-                "e": "When a website uses HTTPS, browsers display a padlock icon and verify the site's digital certificate.",
-                "h": "כאשר אתר משתמש ב-HTTPS, דפדפנים מציגים סמל של מנעול ומאמתים את התעודה הדיגיטלית של האתר."
-            },
-            {
-                "e": "This helps users confirm that they are communicating with the real website and not a fake copy created by attackers.",
-                "h": "זה עוזר למשתמשים לאשר שהם מתקשרים עם האתר האמיתי ולא עם עותק מזויף שנוצר על ידי תוקפים."
-            },
-            {
-                "e": "For businesses, HTTPS builds customer trust and shows that security is taken seriously.",
-                "h": "עבור עסקים, HTTPS בונה את אמון הלקוחות ומראה שהאבטחה נלקחת ברצינות."
-            }
-        ]
-    },
-    {
-        "type": "h2",
-        "hebrew": "האינטרנט המודרני",
-        "sentences": [
-            {
-                "e": "The Modern Internet",
-                "h": "האינטרנט המודרני"
-            }
-        ]
-    },
-    {
-        "type": "p",
-        "hebrew": "כיום, HTTPS נחשב לתקן עבור כל אתרי האינטרנט, לא רק אתרי בנקאות או קניות. דפדפנים מודרניים כגון Google Chrome ו-Mozilla Firefox מזהירים משתמשים כאשר הם מבקרים באתרי HTTP, ומתייגים אותם כ-\"לא מאובטח\". מנועי חיפוש גם מעדיפים אתרי HTTPS בדירוגי החיפוש, מה שמעודד חברות לבצע את המעבר.",
-        "sentences": [
-            {
-                "e": "Today, HTTPS is considered the standard for all websites, not only banking or shopping sites.",
-                "h": "כיום, HTTPS נחשב לתקן עבור כל אתרי האינטרנט, לא רק אתרי בנקאות או קניות."
-            },
-            {
-                "e": "Modern browsers such as Google Chrome and Mozilla Firefox warn users when they visit HTTP websites, labeling them as \"Not Secure.\" Search engines also favor HTTPS websites in search rankings, encouraging companies to make the switch.",
-                "h": "דפדפנים מודרניים כגון Google Chrome ו-Mozilla Firefox מזהירים משתמשים כאשר הם מבקרים באתרי HTTP, ומתייגים אותם כ-\"לא מאובטח\". מנועי חיפוש גם מעדיפים אתרי HTTPS בדירוגי החיפוש, מה שמעודד חברות לבצע את המעבר."
-            }
-        ]
-    },
-    {
-        "type": "p",
-        "hebrew": "המעבר לא תמיד היה קל. בעלי אתרים נדרשו להשיג תעודות דיגיטליות, להגדיר את השרתים שלהם ולפעמים לעדכן מערכות ישנות. עם זאת, כלים כגון Let's Encrypt הפכו תעודות SSL חינמיות לזמינות באופן נרחב, ועזרו למיליוני אתרים לאמץ HTTPS.",
-        "sentences": [
-            {
-                "e": "The transition was not always easy.",
-                "h": "המעבר לא תמיד היה קל."
-            },
-            {
-                "e": "Website owners had to obtain digital certificates, configure their servers, and sometimes update old systems.",
-                "h": "בעלי אתרים נדרשו להשיג תעודות דיגיטליות, להגדיר את השרתים שלהם ולפעמים לעדכן מערכות ישנות."
-            },
-            {
-                "e": "However, tools such as Let's Encrypt made free SSL certificates widely available, helping millions of websites adopt HTTPS.",
-                "h": "עם זאת, כלים כגון Let's Encrypt הפכו תעודות SSL חינמיות לזמינות באופן נרחב, ועזרו למיליוני אתרים לאמץ HTTPS."
-            }
-        ]
-    }
-]
-;
-
-
-window.vocabularyData['w10d1'] = [
   {
-    "word": "Transition",
-    "phonetic": "טרנזישן",
-    "meaning": "מעבר",
-    "visual": "🔄",
-    "exp": "תהליך של שינוי ממצב אחד לאחר.",
-    "engEx": "The transition from HTTP to HTTPS was necessary.",
-    "hebEx": "המעבר מ-HTTP ל-HTTPS היה הכרחי."
+    "j": "1",
+    "e": "The Transition from HTTP to HTTPS: Why Security Became Essential",
+    "h": "המעבר מ-HTTP ל-HTTPS: מדוע האבטחה הפכה לחיונית"
   },
   {
-    "word": "Essential",
-    "phonetic": "אסנשל",
-    "meaning": "חיוני",
-    "visual": "❗",
-    "exp": "משהו הכרחי לחלוטין.",
-    "engEx": "Security became essential.",
-    "hebEx": "אבטחה הפכה לחיונית."
+    "j": "2",
+    "e": "In the early days of the internet, websites were mostly simple pages that shared information with visitors.",
+    "h": "בימיו הראשונים של האינטרנט, אתרי אינטרנט היו לרוב דפים פשוטים ששיתפו מידע עם מבקרים."
   },
   {
-    "word": "Information",
-    "phonetic": "אינפורמיישן",
-    "meaning": "מידע",
-    "visual": "ℹ️",
-    "exp": "נתונים או עובדות על משהו.",
-    "engEx": "They shared information with visitors.",
-    "hebEx": "הם שיתפו מידע עם מבקרים."
+    "j": "3",
+    "e": "People used the web to read news, search for information, and visit personal websites.",
+    "h": "אנשים השתמשו ברשת כדי לקרוא חדשות, לחפש מידע ולבקר באתרי אינטרנט אישיים."
   },
   {
-    "word": "Protocol",
-    "phonetic": "פרוטוקול",
-    "meaning": "פרוטוקול",
-    "visual": "📜",
-    "exp": "אוסף חוקים המסדירים תקשורת בין מחשבים.",
-    "engEx": "HTTP is a transfer protocol.",
-    "hebEx": "HTTP הוא פרוטוקול העברה."
+    "j": "4",
+    "e": "During that time, most websites used HTTP (HyperText Transfer Protocol), a communication system that allowed browsers and servers to exchange information.",
+    "h": "במהלך אותה תקופה, רוב האתרים השתמשו ב-HTTP (פרוטוקול העברת תמליל-על), מערכת תקשורת שאפשרה לדפדפנים ושרתים להחליף מידע."
   },
   {
-    "word": "Communication",
-    "phonetic": "קומיוניקיישן",
-    "meaning": "תקשורת",
-    "visual": "💬",
-    "exp": "העברת מידע בין צדדים.",
-    "engEx": "It is a communication system.",
-    "hebEx": "זוהי מערכת תקשורת."
+    "j": "5",
+    "e": "HTTP was fast and simple, but it had one major weakness: it did not protect the data being transmitted.",
+    "h": "HTTP היה מהיר ופשוט, אך הייתה לו חולשה מרכזית אחת: הוא לא הגן על הנתונים שהועברו."
   },
   {
-    "word": "Browsers",
-    "phonetic": "בראוזרס",
-    "meaning": "דפדפנים",
-    "visual": "🌐",
-    "exp": "תוכנות המשמשות לגלישה באינטרנט.",
-    "engEx": "Browsers and servers exchange data.",
-    "hebEx": "דפדפנים ושרתים מחליפים נתונים."
+    "j": "6",
+    "e": "Anything sent through HTTP, including passwords, messages, or payment information, could potentially be seen by anyone intercepting the connection.",
+    "h": "כל מה שנשלח דרך HTTP, כולל סיסמאות, הודעות או פרטי תשלום, יכול היה להיראות באופן פוטנציאלי על ידי כל מי שיירט את החיבור."
   },
   {
-    "word": "Servers",
-    "phonetic": "סרברס",
-    "meaning": "שרתים",
-    "visual": "🖥️",
-    "exp": "מחשבים המספקים שירותים למחשבים אחרים ברשת.",
-    "engEx": "The servers hosted the website.",
-    "hebEx": "השרתים אירחו את האתר."
+    "j": "7",
+    "e": "As the internet grew, people began using websites for much more important tasks.",
+    "h": "ככל שהאינטרנט גדל, אנשים החלו להשתמש באתרים למשימות חשובות הרבה יותר."
   },
   {
-    "word": "Exchange",
-    "phonetic": "אקסצ'יינג'",
-    "meaning": "החלפה",
-    "visual": "🔄",
-    "exp": "מסירה וקבלה של דברים (כמו נתונים).",
-    "engEx": "They exchange information quickly.",
-    "hebEx": "הם מחליפים מידע במהירות."
+    "j": "8",
+    "e": "Online banking, shopping, social media, and email became part of everyday life.",
+    "h": "בנקאות מקוונת, קניות, רשתות חברתיות ודואר אלקטרוני הפכו לחלק מחיי היום יום."
   },
   {
-    "word": "Weakness",
-    "phonetic": "וויקנס",
-    "meaning": "חולשה",
-    "visual": "📉",
-    "exp": "נקודת תורפה או חוסר חוזק.",
-    "engEx": "HTTP had one major weakness.",
-    "hebEx": "ל-HTTP הייתה חולשה מרכזית אחת."
+    "j": "9",
+    "e": "Suddenly, users were sending sensitive information across the internet all the time.",
+    "h": "לפתע, משתמשים שלחו מידע רגיש ברחבי האינטרנט כל הזמן."
   },
   {
-    "word": "Protect",
-    "phonetic": "פרוטקט",
-    "meaning": "להגן",
-    "visual": "🛡️",
-    "exp": "לשמור על משהו מפני פגיעה או סכנה.",
-    "engEx": "It did not protect the data.",
-    "hebEx": "זה לא הגן על הנתונים."
+    "j": "10",
+    "e": "Cybercriminals quickly realized that unsecured HTTP connections were an easy target.",
+    "h": "פושעי סייבר הבינו במהירות שחיבורי HTTP לא מאובטחים הם מטרה קלה."
+  },
+  {
+    "j": "11",
+    "e": "By using public Wi-Fi networks or malicious tools, attackers could intercept traffic and steal usernames, passwords, credit card numbers, and other private data.",
+    "h": "באמצעות רשתות Wi-Fi ציבוריות או כלים זדוניים, תוקפים יכלו ליירט תעבורה ולגנוב שמות משתמש, סיסמאות, מספרי כרטיסי אשראי ונתונים פרטיים אחרים."
+  },
+  {
+    "j": "12",
+    "e": "This problem led to the rise of HTTPS (HyperText Transfer Protocol Secure).",
+    "h": "בעיה זו הובילה לעלייתו של HTTPS (פרוטוקול העברת תמליל-על מאובטח)."
+  },
+  {
+    "j": "13",
+    "e": "HTTPS is essentially HTTP combined with encryption through SSL/TLS technology.",
+    "h": "HTTPS הוא למעשה HTTP המשולב עם הצפנה באמצעות טכנולוגיית SSL/TLS."
+  },
+  {
+    "j": "14",
+    "e": "Encryption scrambles the data so that only the sender and the intended receiver can read it.",
+    "h": "ההצפנה מערבלת את הנתונים כך שרק השולח והנמען המיועד יוכלו לקרוא אותם."
+  },
+  {
+    "j": "15",
+    "e": "Even if someone intercepts the connection, the information appears as meaningless code rather than readable text.",
+    "h": "גם אם מישהו מיירט את החיבור, המידע מופיע כקוד חסר משמעות ולא כטקסט קריא."
+  },
+  {
+    "j": "16",
+    "e": "A Small Story: The Coffee Shop Incident",
+    "h": "סיפור קטן: תקרית בית הקפה"
+  },
+  {
+    "j": "17",
+    "e": "Imagine a university student named Maya who often studied at a local coffee shop.",
+    "h": "תארו לעצמכם סטודנטית באוניברסיטה בשם מאיה שנהגה ללמוד לעתים קרובות בבית קפה מקומי."
+  },
+  {
+    "j": "18",
+    "e": "One afternoon, she connected to the café's free Wi-Fi and logged into her online shopping account using a website that still used HTTP.",
+    "h": "אחר צהריים אחד, היא התחברה ל-Wi-Fi החינמי של בית הקפה ונכנסה לחשבון הקניות המקוון שלה דרך אתר שעדיין השתמש ב-HTTP."
+  },
+  {
+    "j": "19",
+    "e": "A hacker sitting nearby was monitoring the network traffic.",
+    "h": "האקר שישב בקרבת מקום ניטר את תעבורת הרשת."
+  },
+  {
+    "j": "20",
+    "e": "Because the connection was not encrypted, the hacker could see Maya's login information as it traveled across the network.",
+    "h": "מכיוון שהחיבור לא היה מוצפן, ההאקר יכול היה לראות את פרטי ההתחברות של מאיה בעודם עוברים ברשת."
+  },
+  {
+    "j": "21",
+    "e": "A few hours later, Maya received notifications about purchases she had never made.",
+    "h": "כמה שעות לאחר מכן, מאיה קיבלה התראות על רכישות שהיא מעולם לא ביצעה."
+  },
+  {
+    "j": "22",
+    "e": "Her account had been stolen simply because the website did not use HTTPS.",
+    "h": "החשבון שלה נגנב פשוט כי האתר לא השתמש ב-HTTPS."
+  },
+  {
+    "j": "23",
+    "e": "When she contacted customer support, they explained that the company was in the process of upgrading its website to HTTPS because incidents like this were becoming common.",
+    "h": "כאשר יצרה קשר עם שירות הלקוחות, הם הסבירו שהחברה נמצאת בתהליך של שדרוג האתר שלה ל-HTTPS משום שתקריות כאלו הפכו לנפוצות."
+  },
+  {
+    "j": "24",
+    "e": "Maya's experience showed how dangerous unencrypted connections could be in real life.",
+    "h": "החוויה של מאיה הראתה עד כמה מסוכנים חיבורים לא מוצפנים יכולים להיות בחיים האמיתיים."
+  },
+  {
+    "j": "25",
+    "e": "Why the Transition Was Necessary",
+    "h": "מדוע המעבר היה הכרחי"
+  },
+  {
+    "j": "26",
+    "e": "The move from HTTP to HTTPS was not just a technical upgrade; it became a necessary step for protecting users and businesses.",
+    "h": "המעבר מ-HTTP ל-HTTPS לא היה רק שדרוג טכני; הוא הפך לצעד הכרחי להגנה על משתמשים ועסקים."
+  },
+  {
+    "j": "27",
+    "e": "There are three main reasons why this transition was essential:",
+    "h": "ישנן שלוש סיבות עיקריות מדוע מעבר זה היה חיוני:"
+  },
+  {
+    "j": "28",
+    "e": "1. Protecting Confidential Information",
+    "h": "1. הגנה על מידע סודי"
+  },
+  {
+    "j": "29",
+    "e": "HTTPS encrypts data such as passwords, personal details, and payment information.",
+    "h": "HTTPS מצפין נתונים כגון סיסמאות, פרטים אישיים ומידע על תשלומים."
+  },
+  {
+    "j": "30",
+    "e": "This protects users from eavesdropping attacks, especially on public networks like cafés, airports, and hotels.",
+    "h": "זה מגן על משתמשים מפני מתקפות ציתות, במיוחד ברשתות ציבוריות כמו בתי קפה, נמלי תעופה ובתי מלון."
+  },
+  {
+    "j": "31",
+    "e": "Without encryption, sensitive information can be stolen in seconds.",
+    "h": "ללא הצפנה, מידע רגיש יכול להיגנב תוך שניות."
+  },
+  {
+    "j": "32",
+    "e": "2. Ensuring Data Integrity",
+    "h": "2. הבטחת שלמות הנתונים"
+  },
+  {
+    "j": "33",
+    "e": "HTTPS also helps ensure that the information sent between a user and a website is not altered during transmission.",
+    "h": "HTTPS גם עוזר להבטיח שהמידע שנשלח בין משתמש לאתר לא ישונה במהלך ההעברה."
+  },
+  {
+    "j": "34",
+    "e": "Attackers can sometimes modify unencrypted HTTP traffic to inject malicious code, advertisements, or fake content.",
+    "h": "תוקפים יכולים לעתים לשנות תעבורת HTTP לא מוצפנת כדי להזריק קוד זדוני, פרסומות או תוכן מזויף."
+  },
+  {
+    "j": "35",
+    "e": "HTTPS prevents this by verifying that the data arrives exactly as it was sent.",
+    "h": "HTTPS מונע זאת על ידי וידוא שהנתונים מגיעים בדיוק כפי שנשלחו."
+  },
+  {
+    "j": "36",
+    "e": "3. Building Trust and Authentication",
+    "h": "3. בניית אמון ואימות"
+  },
+  {
+    "j": "37",
+    "e": "When a website uses HTTPS, browsers display a padlock icon and verify the site's digital certificate.",
+    "h": "כאשר אתר משתמש ב-HTTPS, דפדפנים מציגים סמל של מנעול ומאמתים את התעודה הדיגיטלית של האתר."
+  },
+  {
+    "j": "38",
+    "e": "This helps users confirm that they are communicating with the real website and not a fake copy created by attackers.",
+    "h": "זה עוזר למשתמשים לאשר שהם מתקשרים עם האתר האמיתי ולא עם עותק מזויף שנוצר על ידי תוקפים."
+  },
+  {
+    "j": "39",
+    "e": "For businesses, HTTPS builds customer trust and shows that security is taken seriously.",
+    "h": "עבור עסקים, HTTPS בונה את אמון הלקוחות ומראה שהאבטחה נלקחת ברצינות."
+  },
+  {
+    "j": "40",
+    "e": "The Modern Internet",
+    "h": "האינטרנט המודרני"
+  },
+  {
+    "j": "41",
+    "e": "Today, HTTPS is considered the standard for all websites, not only banking or shopping sites.",
+    "h": "כיום, HTTPS נחשב לתקן עבור כל אתרי האינטרנט, לא רק אתרי בנקאות או קניות."
+  },
+  {
+    "j": "42",
+    "e": "Modern browsers such as Google Chrome and Mozilla Firefox warn users when they visit HTTP websites, labeling them as \"Not Secure.\" Search engines also favor HTTPS websites in search rankings, encouraging companies to make the switch.",
+    "h": "דפדפנים מודרניים כגון Google Chrome ו-Mozilla Firefox מזהירים משתמשים כאשר הם מבקרים באתרי HTTP, ומתייגים אותם כ-\"לא מאובטח\". מנועי חיפוש גם מעדיפים אתרי HTTPS בדירוגי החיפוש, מה שמעודד חברות לבצע את המעבר."
+  },
+  {
+    "j": "43",
+    "e": "The transition was not always easy.",
+    "h": "המעבר לא תמיד היה קל."
+  },
+  {
+    "j": "44",
+    "e": "Website owners had to obtain digital certificates, configure their servers, and sometimes update old systems.",
+    "h": "בעלי אתרים נדרשו להשיג תעודות דיגיטליות, להגדיר את השרתים שלהם ולפעמים לעדכן מערכות ישנות."
+  },
+  {
+    "j": "45",
+    "e": "However, tools such as Let's Encrypt made free SSL certificates widely available, helping millions of websites adopt HTTPS.",
+    "h": "עם זאת, כלים כגון Let's Encrypt הפכו תעודות SSL חינמיות לזמינות באופן נרחב, ועזרו למיליוני אתרים לאמץ HTTPS."
   }
 ];
-window.vocabularyData['w10d2'] = [
-  {
-    "word": "Transmitted",
-    "phonetic": "טרנסמיטד",
-    "meaning": "משודר / מועבר",
-    "visual": "📡",
-    "exp": "משהו שנשלח או הועבר ממקום למקום.",
-    "engEx": "Data is transmitted over the network.",
-    "hebEx": "הנתונים משודרים ברשת."
-  },
-  {
-    "word": "Passwords",
-    "phonetic": "פסוורדס",
-    "meaning": "סיסמאות",
-    "visual": "🔑",
-    "exp": "מילים או רצף תווים סודיים לאימות זהות.",
-    "engEx": "Never share your passwords.",
-    "hebEx": "לעולם אל תשתף את הסיסמאות שלך."
-  },
-  {
-    "word": "Intercepting",
-    "phonetic": "אינטרספטינג",
-    "meaning": "יירוט",
-    "visual": "🕵️",
-    "exp": "תפיסת מידע בדרכו ליעד.",
-    "engEx": "Anyone intercepting the connection could read it.",
-    "hebEx": "כל מי שמיירט את החיבור יכול לקרוא את זה."
-  },
-  {
-    "word": "Connection",
-    "phonetic": "קונקשן",
-    "meaning": "חיבור",
-    "visual": "🔗",
-    "exp": "קישור בין מחשבים או רשתות.",
-    "engEx": "The connection was secured.",
-    "hebEx": "החיבור היה מאובטח."
-  },
-  {
-    "word": "Sensitive",
-    "phonetic": "סנסיטיב",
-    "meaning": "רגיש",
-    "visual": "⚠️",
-    "exp": "מידע פרטי או סודי שיש להגן עליו.",
-    "engEx": "Users send sensitive information daily.",
-    "hebEx": "משתמשים שולחים מידע רגיש מדי יום."
-  },
-  {
-    "word": "Cybercriminals",
-    "phonetic": "סייבר-קרימינלס",
-    "meaning": "פושעי סייבר",
-    "visual": "🦹",
-    "exp": "אנשים המבצעים פשעים דרך האינטרנט.",
-    "engEx": "Cybercriminals steal private data.",
-    "hebEx": "פושעי סייבר גונבים נתונים פרטיים."
-  },
-  {
-    "word": "Unsecured",
-    "phonetic": "אנסיקיורד",
-    "meaning": "לא מאובטח",
-    "visual": "🔓",
-    "exp": "חסר הגנה או הצפנה.",
-    "engEx": "Unsecured connections are dangerous.",
-    "hebEx": "חיבורים לא מאובטחים הם מסוכנים."
-  },
-  {
-    "word": "Target",
-    "phonetic": "טרגט",
-    "meaning": "מטרה",
-    "visual": "🎯",
-    "exp": "יעד להתקפה או פעולה.",
-    "engEx": "HTTP connections were an easy target.",
-    "hebEx": "חיבורי HTTP היו מטרה קלה."
-  },
-  {
-    "word": "Malicious",
-    "phonetic": "מלישס",
-    "meaning": "זדוני",
-    "visual": "👿",
-    "exp": "בעל כוונות רעות או מזיקות.",
-    "engEx": "They used malicious tools to hack.",
-    "hebEx": "הם השתמשו בכלים זדוניים כדי לפרוץ."
-  },
-  {
-    "word": "Traffic",
-    "phonetic": "טראפיק",
-    "meaning": "תעבורה",
-    "visual": "🚦",
-    "exp": "זרימת הנתונים ברשת תקשורת.",
-    "engEx": "Attackers intercept network traffic.",
-    "hebEx": "תוקפים מיירטים תעבורת רשת."
-  }
-];
-window.vocabularyData['w10d3'] = [
-  {
-    "word": "Encryption",
-    "phonetic": "אנקריפשן",
-    "meaning": "הצפנה",
-    "visual": "🔐",
-    "exp": "קידוד נתונים כך שרק מורשים יוכלו לקרוא אותם.",
-    "engEx": "HTTPS uses encryption to protect data.",
-    "hebEx": "HTTPS משתמש בהצפנה כדי להגן על נתונים."
-  },
-  {
-    "word": "Scrambles",
-    "phonetic": "סקרמבלס",
-    "meaning": "מערבל",
-    "visual": "🌪️",
-    "exp": "ערבוב הנתונים לפורמט לא קריא.",
-    "engEx": "Encryption scrambles the data.",
-    "hebEx": "הצפנה מערבלת את הנתונים."
-  },
-  {
-    "word": "Intended",
-    "phonetic": "אינטנדד",
-    "meaning": "מיועד",
-    "visual": "✉️",
-    "exp": "האדם או היעד שאליו כוון המסר.",
-    "engEx": "Only the intended receiver can read it.",
-    "hebEx": "רק המקבל המיועד יכול לקרוא את זה."
-  },
-  {
-    "word": "Meaningless",
-    "phonetic": "מינינגלס",
-    "meaning": "חסר משמעות",
-    "visual": "🤷",
-    "exp": "משהו שאין לו מובן או ערך ברור.",
-    "engEx": "The intercepted code appears meaningless.",
-    "hebEx": "הקוד המיורט נראה חסר משמעות."
-  },
-  {
-    "word": "Incident",
-    "phonetic": "אינסידנט",
-    "meaning": "תקרית",
-    "visual": "🚨",
-    "exp": "אירוע, לרוב שלילי או בלתי צפוי.",
-    "engEx": "The coffee shop incident was unfortunate.",
-    "hebEx": "תקרית בית הקפה הייתה מצערת."
-  },
-  {
-    "word": "Hacker",
-    "phonetic": "האקר",
-    "meaning": "פצחן (האקר)",
-    "visual": "💻",
-    "exp": "אדם הפורץ למערכות מחשב.",
-    "engEx": "A hacker was monitoring the network.",
-    "hebEx": "האקר ניטר את הרשת."
-  },
-  {
-    "word": "Monitoring",
-    "phonetic": "מוניטורינג",
-    "meaning": "ניטור / מעקב",
-    "visual": "👁️",
-    "exp": "מעקב או השגחה על מערכת או תעבורה.",
-    "engEx": "They are monitoring the internet traffic.",
-    "hebEx": "הם מנטרים את תעבורת האינטרנט."
-  },
-  {
-    "word": "Upgrading",
-    "phonetic": "אפגריידינג",
-    "meaning": "שדרוג",
-    "visual": "⬆️",
-    "exp": "שיפור מערכת או מעבר לגרסה חדשה יותר.",
-    "engEx": "The company is upgrading to HTTPS.",
-    "hebEx": "החברה משדרגת ל-HTTPS."
-  },
-  {
-    "word": "Confidential",
-    "phonetic": "קונפידנשל",
-    "meaning": "סודי / חסוי",
-    "visual": "🤫",
-    "exp": "מידע שנועד להישאר פרטי.",
-    "engEx": "It protects confidential information.",
-    "hebEx": "זה מגן על מידע חסוי."
-  },
-  {
-    "word": "Eavesdropping",
-    "phonetic": "איבזדרופינג",
-    "meaning": "ציתות",
-    "visual": "👂",
-    "exp": "האזנה בסתר לשיחות או לתקשורת של אחרים.",
-    "engEx": "HTTPS prevents eavesdropping attacks.",
-    "hebEx": "HTTPS מונע מתקפות ציתות."
-  }
-];
-window.vocabularyData['w10d4'] = [
-  {
-    "word": "Integrity",
-    "phonetic": "אינטגריטי",
-    "meaning": "שלמות (נתונים) / אמינות",
-    "visual": "🛡️",
-    "exp": "הבטחה שהנתונים לא שונו בדרך.",
-    "engEx": "Ensuring data integrity is vital.",
-    "hebEx": "הבטחת שלמות הנתונים היא חיונית."
-  },
-  {
-    "word": "Altered",
-    "phonetic": "אלטרד",
-    "meaning": "שונה / עבר שינוי",
-    "visual": "✏️",
-    "exp": "שונה או עבר מודיפיקציה.",
-    "engEx": "The information was not altered.",
-    "hebEx": "המידע לא שונה."
-  },
-  {
-    "word": "Transmission",
-    "phonetic": "טרנסמישן",
-    "meaning": "שידור / העברה",
-    "visual": "📤",
-    "exp": "תהליך העברת הנתונים ברשת.",
-    "engEx": "Data can be stolen during transmission.",
-    "hebEx": "נתונים יכולים להיגנב במהלך השידור."
-  },
-  {
-    "word": "Inject",
-    "phonetic": "אינג'קט",
-    "meaning": "להזריק",
-    "visual": "💉",
-    "exp": "החדרת קוד או נתונים למערכת באופן זדוני.",
-    "engEx": "Attackers inject malicious code into the traffic.",
-    "hebEx": "תוקפים מזריקים קוד זדוני לתעבורה."
-  },
-  {
-    "word": "Verifying",
-    "phonetic": "וריפיינג",
-    "meaning": "אימות",
-    "visual": "✔️",
-    "exp": "בדיקה ואישור שמשהו הוא נכון ואמיתי.",
-    "engEx": "Verifying the digital certificate builds trust.",
-    "hebEx": "אימות התעודה הדיגיטלית בונה אמון."
-  },
-  {
-    "word": "Authentication",
-    "phonetic": "אותנטיקיישן",
-    "meaning": "אימות זהות",
-    "visual": "🛂",
-    "exp": "תהליך וידוא זהות של משתמש או מערכת.",
-    "engEx": "Authentication prevents fake copies of sites.",
-    "hebEx": "אימות מונע עותקים מזויפים של אתרים."
-  },
-  {
-    "word": "Certificate",
-    "phonetic": "סרטיפיקט",
-    "meaning": "תעודה (דיגיטלית)",
-    "visual": "📜",
-    "exp": "מסמך דיגיטלי המאשר את זהות האתר.",
-    "engEx": "The site has a valid SSL certificate.",
-    "hebEx": "לאתר יש תעודת SSL תקפה."
-  },
-  {
-    "word": "Standard",
-    "phonetic": "סטנדרט",
-    "meaning": "תקן / סטנדרט",
-    "visual": "📏",
-    "exp": "רמה או נורמה מקובלת.",
-    "engEx": "HTTPS is the modern standard.",
-    "hebEx": "HTTPS הוא התקן המודרני."
-  },
-  {
-    "word": "Configure",
-    "phonetic": "קונפיגר",
-    "meaning": "להגדיר / לקנפג",
-    "visual": "⚙️",
-    "exp": "הגדרת מערכת או תוכנה לפעולה.",
-    "engEx": "Owners had to configure their servers.",
-    "hebEx": "הבעלים נאלצו להגדיר את השרתים שלהם."
-  },
-  {
-    "word": "Adopt",
-    "phonetic": "אדופט",
-    "meaning": "לאמץ",
-    "visual": "🤝",
-    "exp": "קבלת שיטה או טכנולוגיה חדשה לשימוש.",
-    "engEx": "Millions of websites adopted HTTPS.",
-    "hebEx": "מיליוני אתרים אימצו את HTTPS."
-  }
-];
-
-
-window.week10DB = [
-    {
-        "q": "What does HTTP stand for?",
-        "options": ["HyperText Transfer Protocol", "HyperText Transmission Process", "HyperLink Transfer Protocol", "HyperText Transfer Program"],
-        "ans": 0,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "In the early days of the internet, what were websites mostly used for?",
-        "options": ["Online banking", "Simple pages sharing information", "Video streaming", "Secure messaging"],
-        "ans": 1,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "What was the major weakness of HTTP?",
-        "options": ["It was too slow", "It cost too much money", "It did not protect transmitted data", "It could only send text"],
-        "ans": 2,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "What could happen to passwords sent through HTTP?",
-        "options": ["They were automatically deleted", "Anyone intercepting the connection could see them", "They were encrypted by default", "They were blocked by the browser"],
-        "ans": 1,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "What does HTTPS stand for?",
-        "options": ["HyperText Transfer Protocol Standard", "HyperText Transfer Protocol Secure", "HyperLink Transfer Protocol Secure", "HyperText Transmission Process Secure"],
-        "ans": 1,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "What technology does HTTPS combine with HTTP?",
-        "options": ["VPN technology", "SSL/TLS technology", "Wi-Fi technology", "HTML technology"],
-        "ans": 1,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "What does encryption do to the data in HTTPS?",
-        "options": ["Deletes it after reading", "Scrambles it into meaningless code", "Translates it into different languages", "Makes it visible to everyone"],
-        "ans": 1,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "In the story, where was Maya studying?",
-        "options": ["At a library", "At a local coffee shop", "At her university dorm", "At an airport"],
-        "ans": 1,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "Why could the hacker see Maya's login information?",
-        "options": ["Because she shouted her password", "Because her computer had a virus", "Because the website still used HTTP", "Because the café gave the hacker her password"],
-        "ans": 2,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "What happened to Maya's account?",
-        "options": ["It was temporarily locked", "It was stolen and unauthorized purchases were made", "It was upgraded to premium", "It was deleted by the company"],
-        "ans": 1,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "What is the first main reason mentioned for the transition to HTTPS?",
-        "options": ["Making websites load faster", "Protecting Confidential Information", "Lowering internet costs", "Improving website design"],
-        "ans": 1,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "What kind of data does HTTPS encrypt?",
-        "options": ["Only passwords", "Only credit card numbers", "Passwords, personal details, and payment information", "Only email addresses"],
-        "ans": 2,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "Which places are specifically mentioned as having risky public networks?",
-        "options": ["Cafés, airports, and hotels", "Schools, libraries, and parks", "Offices, homes, and gyms", "Hospitals, museums, and banks"],
-        "ans": 0,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "What is the second main reason for the transition to HTTPS?",
-        "options": ["Ensuring Data Integrity", "Increasing website traffic", "Stopping computer viruses", "Creating better advertisements"],
-        "ans": 0,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "What does data integrity ensure?",
-        "options": ["That data is sent at maximum speed", "That information is not altered during transmission", "That data is compressed", "That data is backed up automatically"],
-        "ans": 1,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "What is the third main reason for the transition to HTTPS?",
-        "options": ["Reducing server costs", "Building Trust and Authentication", "Improving video quality", "Blocking spam emails"],
-        "ans": 1,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "What icon do browsers display when a website uses HTTPS?",
-        "options": ["A key icon", "A shield icon", "A padlock icon", "A green checkmark"],
-        "ans": 2,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "What label do modern browsers give to HTTP websites?",
-        "options": ["\"Dangerous\"", "\"Not Secure\"", "\"Warning\"", "\"Unsafe\""],
-        "ans": 1,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "Which modern browsers are mentioned in the text?",
-        "options": ["Safari and Edge", "Google Chrome and Mozilla Firefox", "Opera and Brave", "Internet Explorer and Safari"],
-        "ans": 1,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "Do search engines favor HTTP or HTTPS websites?",
-        "options": ["They favor HTTP websites", "They favor HTTPS websites", "They treat both equally", "They only favor HTTP for news sites"],
-        "ans": 1,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "What did website owners have to obtain to use HTTPS?",
-        "options": ["A new domain name", "Digital certificates", "A faster server", "A specific web browser"],
-        "ans": 1,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "What is Let's Encrypt?",
-        "options": ["An antivirus software", "A tool that provides free SSL certificates", "A secure web browser", "A new search engine"],
-        "ans": 1,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "Why did cybercriminals target HTTP connections?",
-        "options": ["Because unsecured connections were an easy target", "Because they contained more viruses", "Because HTTP websites were richer", "Because HTTP was invisible to search engines"],
-        "ans": 0,
-        "diff": "easy",
-        "week": "week10"
-    },
-    {
-        "q": "Why did HTTP work well for early websites?",
-        "options": ["Because websites were mostly simple pages sharing public information", "Because cybercriminals didn't exist yet", "Because early computers couldn't run encryption", "Because everyone used private networks"],
-        "ans": 0,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "How did the growth of the internet change the need for security?",
-        "options": ["More people started building websites", "People began sending sensitive information like banking and shopping details", "Internet speeds became too fast for HTTP", "Computers became more expensive"],
-        "ans": 1,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "How do cybercriminals commonly intercept HTTP traffic according to the text?",
-        "options": ["By guessing passwords", "By physically stealing computers", "By using public Wi-Fi networks or malicious tools", "By creating fake social media accounts"],
-        "ans": 2,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "What happens if someone intercepts an HTTPS connection?",
-        "options": ["Their computer freezes", "The connection drops immediately", "The information appears as meaningless code", "They can read everything clearly"],
-        "ans": 2,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "What specific activity was Maya doing when her data was stolen?",
-        "options": ["Checking her email", "Logging into her online shopping account", "Reading a news article", "Watching a video"],
-        "ans": 1,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "Why didn't Maya realize her data was stolen immediately?",
-        "options": ["The hacker blocked her notifications", "She only found out a few hours later when receiving notifications about purchases", "She didn't check her phone for days", "Her bank hid the transactions"],
-        "ans": 1,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "What was the company's response when Maya contacted customer support?",
-        "options": ["They refunded her money instantly", "They blamed her for using public Wi-Fi", "They explained they were upgrading to HTTPS because such incidents were common", "They told her to change her password"],
-        "ans": 2,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "What is an 'eavesdropping attack' as described in the text?",
-        "options": ["Listening to someone's phone calls", "Stealing sensitive information on public networks without encryption", "Hacking into a bank's main server", "Sending spam emails to users"],
-        "ans": 1,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "How could attackers modify unencrypted HTTP traffic?",
-        "options": ["By destroying the user's computer", "To inject malicious code, advertisements, or fake content", "By slowing down the internet connection", "To delete the website from the internet"],
-        "ans": 1,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "How does HTTPS prevent data modification during transmission?",
-        "options": ["By blocking all ads", "By limiting the size of the data sent", "By verifying that the data arrives exactly as it was sent", "By scanning the data with antivirus software"],
-        "ans": 2,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "What does a website's digital certificate help users confirm?",
-        "options": ["That the website is fast", "That they are communicating with the real website, not a fake copy", "That the website is free to use", "That the website has no advertisements"],
-        "ans": 1,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "How does HTTPS benefit businesses according to the text?",
-        "options": ["It reduces server maintenance costs", "It allows them to show more ads", "It builds customer trust and shows security is taken seriously", "It makes their website load instantly"],
-        "ans": 2,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "Why is HTTPS considered the standard today?",
-        "options": ["Because HTTP is no longer supported by any browser", "Because it is used for all websites, not just banking or shopping sites", "Because it is required by international law", "Because it makes the internet faster"],
-        "ans": 1,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "How do search engines encourage companies to switch to HTTPS?",
-        "options": ["By paying them money", "By deleting HTTP websites", "By favoring HTTPS websites in search rankings", "By blocking users from HTTP websites"],
-        "ans": 2,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "What was one of the difficulties website owners faced when transitioning to HTTPS?",
-        "options": ["They had to write new content for their site", "They had to configure their servers and sometimes update old systems", "They had to buy entirely new computers", "They had to change their domain names"],
-        "ans": 1,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "How did Let's Encrypt help millions of websites adopt HTTPS?",
-        "options": ["By building free websites for them", "By making SSL certificates freely available", "By providing free hosting services", "By writing code for web developers"],
-        "ans": 1,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "What was the fundamental difference between HTTP and HTTPS regarding eavesdropping?",
-        "options": ["HTTP sends data in readable text, while HTTPS encrypts it", "HTTP blocks eavesdropping, while HTTPS encourages it", "HTTP only works on home Wi-Fi, HTTPS works anywhere", "There is no difference regarding eavesdropping"],
-        "ans": 0,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "What is the purpose of the padlock icon in the browser?",
-        "options": ["To lock the screen so nobody else can use it", "To visually indicate that the website uses a secure HTTPS connection", "To show that the website is a banking site", "To save the website's password"],
-        "ans": 1,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "What happens to sensitive information on public Wi-Fi without encryption?",
-        "options": ["It gets sent back to the user", "It takes longer to reach its destination", "It can be stolen in seconds", "It is automatically converted to HTTPS"],
-        "ans": 2,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "Why did online banking and shopping increase the risk for users?",
-        "options": ["Because those sites were built poorly", "Because these tasks require transmitting highly sensitive personal and financial data", "Because those sites attract the most traffic", "Because banking sites are usually on HTTP"],
-        "ans": 1,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "How does encryption protect both the sender and intended receiver?",
-        "options": ["It ensures only they can read the scrambled data", "It hides their IP addresses completely", "It makes their devices invisible on the network", "It stops hackers from connecting to the Wi-Fi"],
-        "ans": 0,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "In Maya's story, how did the hacker gain access to her data?",
-        "options": ["By looking over her shoulder", "By monitoring the unencrypted network traffic at the café", "By hacking her personal laptop", "By sending her a phishing email"],
-        "ans": 1,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "What kind of sites does the text suggest now use HTTPS?",
-        "options": ["Only e-commerce websites", "All modern websites, as it is considered the standard", "Only government and banking websites", "Only websites that require a login"],
-        "ans": 1,
-        "diff": "medium",
-        "week": "week10"
-    },
-    {
-        "q": "Which of the following best describes the core vulnerability of HTTP as presented in the text?",
-        "options": ["It frequently crashes when handling large amounts of data", "Data is transmitted as plain text, allowing any interceptor to read it", "It requires users to manually encrypt their own data", "It is incompatible with modern mobile devices"],
-        "ans": 1,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "What is the primary function of SSL/TLS technology in the context of HTTPS?",
-        "options": ["To speed up the connection between the user and the server", "To block unauthorized users from accessing the website", "To scramble transmitted data into meaningless code for anyone other than the sender and receiver", "To permanently store passwords securely on the server"],
-        "ans": 2,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "Based on the text, what might happen if a website does NOT ensure data integrity?",
-        "options": ["The website will automatically shut down", "Attackers might inject fake content or malicious code into the website's traffic", "Users will not be able to connect to the public Wi-Fi", "The server will reject all incoming connections"],
-        "ans": 1,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "What dual purpose does a digital certificate serve according to the text?",
-        "options": ["It improves site design and speeds up loading times", "It stops phishing emails and removes viruses", "It enables encryption and authenticates the website's true identity", "It blocks ads and prevents pop-ups"],
-        "ans": 2,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "What does the browser's 'Not Secure' warning specifically target?",
-        "options": ["Websites with a history of malware", "Websites that still rely on HTTP for data transmission", "Websites that have expired domain names", "Websites that ask for too many permissions"],
-        "ans": 1,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "According to Maya's story, what was the root cause of her account compromise?",
-        "options": ["Her password was too weak", "The shopping website's failure to implement HTTPS, coupled with her use of public Wi-Fi", "She left her laptop unattended", "She clicked on a malicious advertisement"],
-        "ans": 1,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "Which sequence correctly represents the historical progression described in the text?",
-        "options": ["Rise of HTTPS -> Free SSL certificates -> Cyberattacks on Wi-Fi -> Sensitive data online -> Simple HTTP pages", "Cyberattacks on Wi-Fi -> Simple HTTP pages -> Rise of HTTPS -> Sensitive data online -> Free SSL certificates", "Simple HTTP pages -> Sensitive data online -> Cyberattacks on Wi-Fi -> Rise of HTTPS -> Free SSL certificates", "Free SSL certificates -> Simple HTTP pages -> Sensitive data online -> Cyberattacks on Wi-Fi -> Rise of HTTPS"],
-        "ans": 2,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "How does the text differentiate between protecting confidential information and ensuring data integrity?",
-        "options": ["Confidentiality prevents reading; integrity prevents modification", "Confidentiality speeds up traffic; integrity encrypts traffic", "Confidentiality uses HTTP; integrity uses HTTPS", "Confidentiality is for businesses; integrity is for users"],
-        "ans": 0,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "If a hacker intercepts an HTTPS connection, what exactly do they see?",
-        "options": ["The user's plaintext password", "Meaningless code that cannot be easily decrypted into readable text", "A 'Not Secure' warning", "The website's digital certificate only"],
-        "ans": 1,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "Which of the following is NOT listed as a reason the transition to HTTPS was essential?",
-        "options": ["Protecting Confidential Information", "Ensuring Data Integrity", "Building Trust and Authentication", "Increasing the speed of web browsing and data transfer"],
-        "ans": 3,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "In the context of the article, why are cafés, airports, and hotels mentioned together?",
-        "options": ["They are the only places that provide internet access", "They represent environments where public Wi-Fi makes eavesdropping attacks particularly easy", "They are places where websites load the fastest", "They are locations that block HTTPS traffic entirely"],
-        "ans": 1,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "What role do search engines play in the HTTP to HTTPS transition?",
-        "options": ["They provide the free SSL certificates", "They penalize users who visit HTTP sites", "They act as an incentive mechanism by boosting the search rankings of HTTPS sites", "They build the firewalls required for HTTPS"],
-        "ans": 2,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "Why did the shopping company in the story say they were upgrading to HTTPS?",
-        "options": ["Because Google Chrome forced them to", "Because it was cheaper than maintaining HTTP", "Because incidents of data theft on their HTTP site were becoming common", "Because Maya threatened to sue them"],
-        "ans": 2,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "What makes Let's Encrypt a significant development in the modern internet?",
-        "options": ["It created the HTTPS protocol", "It removed the financial barrier to obtaining digital certificates, accelerating HTTPS adoption", "It replaced Google Chrome as the standard browser", "It allowed users to encrypt their own public Wi-Fi"],
-        "ans": 1,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "What can be inferred about the visibility of HTTPS to the average user?",
-        "options": ["It operates entirely in the background with no visual indicators", "Users can identify it through visual cues like a padlock icon or the absence of a 'Not Secure' warning", "Users must manually check the website's code to confirm it is secure", "It is only visible if the user installs special software"],
-        "ans": 1,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "Which of the following best summarizes the change in the *scope* of HTTPS usage over time?",
-        "options": ["It transitioned from being exclusively for high-risk sites to a universal standard for all websites", "It started as a universal standard but is now only used for banking", "It was initially used by search engines but is now used by users", "It replaced public Wi-Fi networks entirely"],
-        "ans": 0,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "What specific mechanism allows HTTPS to verify that data wasn't altered in transit?",
-        "options": ["By sending the data multiple times and comparing it", "The text attributes this to verifying that data arrives exactly as sent, a feature of Data Integrity", "By blocking all incoming traffic while data is sent", "By tracking the hacker's IP address"],
-        "ans": 1,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "How does HTTPS combat the specific threat of 'fake copies created by attackers'?",
-        "options": ["By deleting the fake copies from the internet", "By verifying the site's digital certificate to authenticate its identity", "By warning the attacker", "By sending an alert to the user's email"],
-        "ans": 1,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "Before the widespread use of sensitive web tasks, why wasn't HTTP's lack of encryption considered a major crisis?",
-        "options": ["Because hackers didn't know how to intercept data", "Because early web traffic primarily consisted of non-sensitive, public information", "Because public Wi-Fi was highly secure", "Because computers were too slow to be hacked"],
-        "ans": 1,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "What implies that the transition to HTTPS was a technical burden for some?",
-        "options": ["The need to configure servers, update old systems, and originally acquire digital certificates", "The requirement to buy entirely new computers", "The fact that users had to learn how to encrypt data", "The need to stop using public Wi-Fi completely"],
-        "ans": 0,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "According to the text, why were cybercriminals drawn to public Wi-Fi networks?",
-        "options": ["Because they were the only places with internet access", "Because they provided an easy environment to intercept unencrypted HTTP traffic", "Because people left their laptops unattended", "Because public Wi-Fi routers had easy-to-guess passwords"],
-        "ans": 1,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "What was the ultimate consequence of Maya's unencrypted connection?",
-        "options": ["Her laptop was infected with a virus", "She faced unauthorized purchases and had to contact customer support to resolve the stolen account", "She could never use the café's Wi-Fi again", "She had to buy a new phone"],
-        "ans": 1,
-        "diff": "hard",
-        "week": "week10"
-    },
-    {
-        "q": "Which sentence best encapsulates the overarching theme of the article?",
-        "options": ["Cybercriminals are everywhere, and public Wi-Fi should never be used.", "The evolution of the internet necessitated a shift from fast but vulnerable HTTP to the secure, encrypted standard of HTTPS to protect users and build trust.", "Search engines forced companies to adopt HTTPS against their will.", "HTTPS makes the internet slower but is required for online banking."],
-        "ans": 1,
-        "diff": "hard",
-        "week": "week10"
-    }
-]
-;
-
-window.httpsArticleData = [{"type": "h1", "hebrew": "המעבר מ-HTTP ל-HTTPS: מדוע האבטחה הפכה לחיונית", "sentences": [{"e": "The Transition from HTTP to HTTPS: Why Security Became Essential", "h": "המעבר מ-HTTP ל-HTTPS: מדוע האבטחה הפכה לחיונית"}]}, {"type": "p", "hebrew": "בימיו הראשונים של האינטרנט, אתרי אינטרנט היו לרוב דפים פשוטים ששיתפו מידע עם מבקרים. אנשים השתמשו ברשת כדי לקרוא חדשות, לחפש מידע ולבקר באתרי אינטרנט אישיים. במהלך אותה תקופה, רוב האתרים השתמשו ב-HTTP (פרוטוקול העברת תמליל-על), מערכת תקשורת שאפשרה לדפדפנים ושרתים להחליף מידע. HTTP היה מהיר ופשוט, אך הייתה לו חולשה מרכזית אחת: הוא לא הגן על הנתונים שהועברו. כל מה שנשלח דרך HTTP, כולל סיסמאות, הודעות או פרטי תשלום, יכול היה להיראות באופן פוטנציאלי על ידי כל מי שיירט את החיבור.", "sentences": [{"e": "In the early days of the internet, websites were mostly simple pages that shared information with visitors.", "h": "בימיו הראשונים של האינטרנט, אתרי אינטרנט היו לרוב דפים פשוטים ששיתפו מידע עם מבקרים."}, {"e": "People used the web to read news, search for information, and visit personal websites.", "h": "אנשים השתמשו ברשת כדי לקרוא חדשות, לחפש מידע ולבקר באתרי אינטרנט אישיים."}, {"e": "During that time, most websites used HTTP (HyperText Transfer Protocol), a communication system that allowed browsers and servers to exchange information.", "h": "במהלך אותה תקופה, רוב האתרים השתמשו ב-HTTP (פרוטוקול העברת תמליל-על), מערכת תקשורת שאפשרה לדפדפנים ושרתים להחליף מידע."}, {"e": "HTTP was fast and simple, but it had one major weakness: it did not protect the data being transmitted.", "h": "HTTP היה מהיר ופשוט, אך הייתה לו חולשה מרכזית אחת: הוא לא הגן על הנתונים שהועברו."}, {"e": "Anything sent through HTTP, including passwords, messages, or payment information, could potentially be seen by anyone intercepting the connection.", "h": "כל מה שנשלח דרך HTTP, כולל סיסמאות, הודעות או פרטי תשלום, יכול היה להיראות באופן פוטנציאלי על ידי כל מי שיירט את החיבור."}]}, {"type": "p", "hebrew": "ככל שהאינטרנט גדל, אנשים החלו להשתמש באתרים למשימות חשובות הרבה יותר. בנקאות מקוונת, קניות, רשתות חברתיות ודואר אלקטרוני הפכו לחלק מחיי היום יום. לפתע, משתמשים שלחו מידע רגיש ברחבי האינטרנט כל הזמן. פושעי סייבר הבינו במהירות שחיבורי HTTP לא מאובטחים הם מטרה קלה. באמצעות רשתות Wi-Fi ציבוריות או כלים זדוניים, תוקפים יכלו ליירט תעבורה ולגנוב שמות משתמש, סיסמאות, מספרי כרטיסי אשראי ונתונים פרטיים אחרים.", "sentences": [{"e": "As the internet grew, people began using websites for much more important tasks.", "h": "ככל שהאינטרנט גדל, אנשים החלו להשתמש באתרים למשימות חשובות הרבה יותר."}, {"e": "Online banking, shopping, social media, and email became part of everyday life.", "h": "בנקאות מקוונת, קניות, רשתות חברתיות ודואר אלקטרוני הפכו לחלק מחיי היום יום."}, {"e": "Suddenly, users were sending sensitive information across the internet all the time.", "h": "לפתע, משתמשים שלחו מידע רגיש ברחבי האינטרנט כל הזמן."}, {"e": "Cybercriminals quickly realized that unsecured HTTP connections were an easy target.", "h": "פושעי סייבר הבינו במהירות שחיבורי HTTP לא מאובטחים הם מטרה קלה."}, {"e": "By using public Wi-Fi networks or malicious tools, attackers could intercept traffic and steal usernames, passwords, credit card numbers, and other private data.", "h": "באמצעות רשתות Wi-Fi ציבוריות או כלים זדוניים, תוקפים יכלו ליירט תעבורה ולגנוב שמות משתמש, סיסמאות, מספרי כרטיסי אשראי ונתונים פרטיים אחרים."}]}, {"type": "p", "hebrew": "בעיה זו הובילה לעלייתו של HTTPS (פרוטוקול העברת תמליל-על מאובטח). HTTPS הוא למעשה HTTP המשולב עם הצפנה באמצעות טכנולוגיית SSL/TLS. ההצפנה מערבלת את הנתונים כך שרק השולח והנמען המיועד יוכלו לקרוא אותם. גם אם מישהו מיירט את החיבור, המידע מופיע כקוד חסר משמעות ולא כטקסט קריא.", "sentences": [{"e": "This problem led to the rise of HTTPS (HyperText Transfer Protocol Secure).", "h": "בעיה זו הובילה לעלייתו של HTTPS (פרוטוקול העברת תמליל-על מאובטח)."}, {"e": "HTTPS is essentially HTTP combined with encryption through SSL/TLS technology.", "h": "HTTPS הוא למעשה HTTP המשולב עם הצפנה באמצעות טכנולוגיית SSL/TLS."}, {"e": "Encryption scrambles the data so that only the sender and the intended receiver can read it.", "h": "ההצפנה מערבלת את הנתונים כך שרק השולח והנמען המיועד יוכלו לקרוא אותם."}, {"e": "Even if someone intercepts the connection, the information appears as meaningless code rather than readable text.", "h": "גם אם מישהו מיירט את החיבור, המידע מופיע כקוד חסר משמעות ולא כטקסט קריא."}]}, {"type": "h2", "hebrew": "סיפור קטן: תקרית בית הקפה", "sentences": [{"e": "A Small Story: The Coffee Shop Incident", "h": "סיפור קטן: תקרית בית הקפה"}]}, {"type": "p", "hebrew": "תארו לעצמכם סטודנטית באוניברסיטה בשם מאיה שנהגה ללמוד לעתים קרובות בבית קפה מקומי. אחר צהריים אחד, היא התחברה ל-Wi-Fi החינמי של בית הקפה ונכנסה לחשבון הקניות המקוון שלה דרך אתר שעדיין השתמש ב-HTTP. האקר שישב בקרבת מקום ניטר את תעבורת הרשת. מכיוון שהחיבור לא היה מוצפן, ההאקר יכול היה לראות את פרטי ההתחברות של מאיה בעודם עוברים ברשת.", "sentences": [{"e": "Imagine a university student named Maya who often studied at a local coffee shop.", "h": "תארו לעצמכם סטודנטית באוניברסיטה בשם מאיה שנהגה ללמוד לעתים קרובות בבית קפה מקומי."}, {"e": "One afternoon, she connected to the café's free Wi-Fi and logged into her online shopping account using a website that still used HTTP.", "h": "אחר צהריים אחד, היא התחברה ל-Wi-Fi החינמי של בית הקפה ונכנסה לחשבון הקניות המקוון שלה דרך אתר שעדיין השתמש ב-HTTP."}, {"e": "A hacker sitting nearby was monitoring the network traffic.", "h": "האקר שישב בקרבת מקום ניטר את תעבורת הרשת."}, {"e": "Because the connection was not encrypted, the hacker could see Maya's login information as it traveled across the network.", "h": "מכיוון שהחיבור לא היה מוצפן, ההאקר יכול היה לראות את פרטי ההתחברות של מאיה בעודם עוברים ברשת."}]}, {"type": "p", "hebrew": "כמה שעות לאחר מכן, מאיה קיבלה התראות על רכישות שהיא מעולם לא ביצעה. החשבון שלה נגנב פשוט כי האתר לא השתמש ב-HTTPS. כאשר יצרה קשר עם שירות הלקוחות, הם הסבירו שהחברה נמצאת בתהליך של שדרוג האתר שלה ל-HTTPS משום שתקריות כאלו הפכו לנפוצות. החוויה של מאיה הראתה עד כמה מסוכנים חיבורים לא מוצפנים יכולים להיות בחיים האמיתיים.", "sentences": [{"e": "A few hours later, Maya received notifications about purchases she had never made.", "h": "כמה שעות לאחר מכן, מאיה קיבלה התראות על רכישות שהיא מעולם לא ביצעה."}, {"e": "Her account had been stolen simply because the website did not use HTTPS.", "h": "החשבון שלה נגנב פשוט כי האתר לא השתמש ב-HTTPS."}, {"e": "When she contacted customer support, they explained that the company was in the process of upgrading its website to HTTPS because incidents like this were becoming common.", "h": "כאשר יצרה קשר עם שירות הלקוחות, הם הסבירו שהחברה נמצאת בתהליך של שדרוג האתר שלה ל-HTTPS משום שתקריות כאלו הפכו לנפוצות."}, {"e": "Maya's experience showed how dangerous unencrypted connections could be in real life.", "h": "החוויה של מאיה הראתה עד כמה מסוכנים חיבורים לא מוצפנים יכולים להיות בחיים האמיתיים."}]}, {"type": "h2", "hebrew": "מדוע המעבר היה הכרחי", "sentences": [{"e": "Why the Transition Was Necessary", "h": "מדוע המעבר היה הכרחי"}]}, {"type": "p", "hebrew": "המעבר מ-HTTP ל-HTTPS לא היה רק שדרוג טכני; הוא הפך לצעד הכרחי להגנה על משתמשים ועסקים. ישנן שלוש סיבות עיקריות מדוע מעבר זה היה חיוני:", "sentences": [{"e": "The move from HTTP to HTTPS was not just a technical upgrade; it became a necessary step for protecting users and businesses.", "h": "המעבר מ-HTTP ל-HTTPS לא היה רק שדרוג טכני; הוא הפך לצעד הכרחי להגנה על משתמשים ועסקים."}, {"e": "There are three main reasons why this transition was essential:", "h": "ישנן שלוש סיבות עיקריות מדוע מעבר זה היה חיוני:"}]}, {"type": "h2", "hebrew": "1. הגנה על מידע סודי", "sentences": [{"e": "1. Protecting Confidential Information", "h": "1. הגנה על מידע סודי"}]}, {"type": "p", "hebrew": "HTTPS מצפין נתונים כגון סיסמאות, פרטים אישיים ומידע על תשלומים. זה מגן על משתמשים מפני מתקפות ציתות, במיוחד ברשתות ציבוריות כמו בתי קפה, נמלי תעופה ובתי מלון. ללא הצפנה, מידע רגיש יכול להיגנב תוך שניות.", "sentences": [{"e": "HTTPS encrypts data such as passwords, personal details, and payment information.", "h": "HTTPS מצפין נתונים כגון סיסמאות, פרטים אישיים ומידע על תשלומים."}, {"e": "This protects users from eavesdropping attacks, especially on public networks like cafés, airports, and hotels.", "h": "זה מגן על משתמשים מפני מתקפות ציתות, במיוחד ברשתות ציבוריות כמו בתי קפה, נמלי תעופה ובתי מלון."}, {"e": "Without encryption, sensitive information can be stolen in seconds.", "h": "ללא הצפנה, מידע רגיש יכול להיגנב תוך שניות."}]}, {"type": "h2", "hebrew": "2. הבטחת שלמות הנתונים", "sentences": [{"e": "2. Ensuring Data Integrity", "h": "2. הבטחת שלמות הנתונים"}]}, {"type": "p", "hebrew": "HTTPS גם עוזר להבטיח שהמידע שנשלח בין משתמש לאתר לא ישונה במהלך ההעברה. תוקפים יכולים לעתים לשנות תעבורת HTTP לא מוצפנת כדי להזריק קוד זדוני, פרסומות או תוכן מזויף. HTTPS מונע זאת על ידי וידוא שהנתונים מגיעים בדיוק כפי שנשלחו.", "sentences": [{"e": "HTTPS also helps ensure that the information sent between a user and a website is not altered during transmission.", "h": "HTTPS גם עוזר להבטיח שהמידע שנשלח בין משתמש לאתר לא ישונה במהלך ההעברה."}, {"e": "Attackers can sometimes modify unencrypted HTTP traffic to inject malicious code, advertisements, or fake content.", "h": "תוקפים יכולים לעתים לשנות תעבורת HTTP לא מוצפנת כדי להזריק קוד זדוני, פרסומות או תוכן מזויף."}, {"e": "HTTPS prevents this by verifying that the data arrives exactly as it was sent.", "h": "HTTPS מונע זאת על ידי וידוא שהנתונים מגיעים בדיוק כפי שנשלחו."}]}, {"type": "h2", "hebrew": "3. בניית אמון ואימות", "sentences": [{"e": "3. Building Trust and Authentication", "h": "3. בניית אמון ואימות"}]}, {"type": "p", "hebrew": "כאשר אתר משתמש ב-HTTPS, דפדפנים מציגים סמל של מנעול ומאמתים את התעודה הדיגיטלית של האתר. זה עוזר למשתמשים לאשר שהם מתקשרים עם האתר האמיתי ולא עם עותק מזויף שנוצר על ידי תוקפים. עבור עסקים, HTTPS בונה את אמון הלקוחות ומראה שהאבטחה נלקחת ברצינות.", "sentences": [{"e": "When a website uses HTTPS, browsers display a padlock icon and verify the site's digital certificate.", "h": "כאשר אתר משתמש ב-HTTPS, דפדפנים מציגים סמל של מנעול ומאמתים את התעודה הדיגיטלית של האתר."}, {"e": "This helps users confirm that they are communicating with the real website and not a fake copy created by attackers.", "h": "זה עוזר למשתמשים לאשר שהם מתקשרים עם האתר האמיתי ולא עם עותק מזויף שנוצר על ידי תוקפים."}, {"e": "For businesses, HTTPS builds customer trust and shows that security is taken seriously.", "h": "עבור עסקים, HTTPS בונה את אמון הלקוחות ומראה שהאבטחה נלקחת ברצינות."}]}, {"type": "h2", "hebrew": "האינטרנט המודרני", "sentences": [{"e": "The Modern Internet", "h": "האינטרנט המודרני"}]}, {"type": "p", "hebrew": "כיום, HTTPS נחשב לתקן עבור כל אתרי האינטרנט, לא רק אתרי בנקאות או קניות. דפדפנים מודרניים כגון Google Chrome ו-Mozilla Firefox מזהירים משתמשים כאשר הם מבקרים באתרי HTTP, ומתייגים אותם כ-\"לא מאובטח\". מנועי חיפוש גם מעדיפים אתרי HTTPS בדירוגי החיפוש, מה שמעודד חברות לבצע את המעבר.", "sentences": [{"e": "Today, HTTPS is considered the standard for all websites, not only banking or shopping sites.", "h": "כיום, HTTPS נחשב לתקן עבור כל אתרי האינטרנט, לא רק אתרי בנקאות או קניות."}, {"e": "Modern browsers such as Google Chrome and Mozilla Firefox warn users when they visit HTTP websites, labeling them as \"Not Secure.\" Search engines also favor HTTPS websites in search rankings, encouraging companies to make the switch.", "h": "דפדפנים מודרניים כגון Google Chrome ו-Mozilla Firefox מזהירים משתמשים כאשר הם מבקרים באתרי HTTP, ומתייגים אותם כ-\"לא מאובטח\". מנועי חיפוש גם מעדיפים אתרי HTTPS בדירוגי החיפוש, מה שמעודד חברות לבצע את המעבר."}]}, {"type": "p", "hebrew": "המעבר לא תמיד היה קל. בעלי אתרים נדרשו להשיג תעודות דיגיטליות, להגדיר את השרתים שלהם ולפעמים לעדכן מערכות ישנות. עם זאת, כלים כגון Let's Encrypt הפכו תעודות SSL חינמיות לזמינות באופן נרחב, ועזרו למיליוני אתרים לאמץ HTTPS.", "sentences": [{"e": "The transition was not always easy.", "h": "המעבר לא תמיד היה קל."}, {"e": "Website owners had to obtain digital certificates, configure their servers, and sometimes update old systems.", "h": "בעלי אתרים נדרשו להשיג תעודות דיגיטליות, להגדיר את השרתים שלהם ולפעמים לעדכן מערכות ישנות."}, {"e": "However, tools such as Let's Encrypt made free SSL certificates widely available, helping millions of websites adopt HTTPS.", "h": "עם זאת, כלים כגון Let's Encrypt הפכו תעודות SSL חינמיות לזמינות באופן נרחב, ועזרו למיליוני אתרים לאמץ HTTPS."}]}];
