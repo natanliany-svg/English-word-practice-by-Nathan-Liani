@@ -144,6 +144,7 @@ window.setWeek = function(week) {
     else if (week === 'week8') window.currentDay = 'w8d1';
     else if (week === 'week9vocab') window.currentDay = 'w9d1';
     else if (week === 'week10vocab') window.currentDay = 'w10d1';
+    else if (week === 'week11vocab') window.currentDay = 'w11d1';
     else window.currentDay = week; 
     window.wordIndex = 0;
     if (week !== 'quiz') window.quizState = 'start';
@@ -1085,6 +1086,16 @@ window.render = function() {
                             </div>
                         </button>
                     </div>
+                    <div class="home-card-row">
+                        <span class="home-card-number">8</span>
+                        <button class="home-card" onclick="window.setWeek('week11')">
+                            <div class="home-card-icon">💻</div>
+                            <div class="home-card-content">
+                                <div class="home-card-title">שבוע 11</div>
+                                <div class="home-card-desc">אוצר מילים ומאמר - C# ו-JavaScript.</div>
+                            </div>
+                        </button>
+                    </div>
                 </div>
 
                 <h3 class="home-section-title">תרגול ומבחנים</h3>
@@ -1100,18 +1111,19 @@ window.render = function() {
                         <div class="home-card-icon">🗂️</div>
                         <div class="home-card-content">
                             <div class="home-card-title">סיכום לפי מילים</div>
-                            <div class="home-card-desc">כל 240 המילים במקום אחד, מוכנות לחזרה.</div>
+                            <div class="home-card-desc">כל 280 המילים במקום אחד, מוכנות לחזרה.</div>
                         </div>
                     </button>
                 </div>
             </div>
         `;
         app.innerHTML = homeHtml;
-    } else if (window.currentWeek === 'article' || window.currentWeek === 'week9' || window.currentWeek === 'week10') {
+    } else if (window.currentWeek === 'article' || window.currentWeek === 'week9' || window.currentWeek === 'week10' || window.currentWeek === 'week11') {
         const isWeek9 = window.currentWeek === 'week9';
         const isWeek10 = window.currentWeek === 'week10';
-        const articleData = isWeek10 ? window.httpsArticleData : (isWeek9 ? window.ciaTriadArticleData : window.unseenArticleData);
-        const title = isWeek10 ? "HTTP to HTTPS Transition" : (isWeek9 ? "The CIA Triad in Information Security" : "Operating Systems: Unseen");
+        const isWeek11 = window.currentWeek === 'week11';
+        const articleData = isWeek11 ? window.csharpJsArticleData : (isWeek10 ? window.httpsArticleData : (isWeek9 ? window.ciaTriadArticleData : window.unseenArticleData));
+        const title = isWeek11 ? "C# and JavaScript: Compiled vs Interpreted" : (isWeek10 ? "HTTP to HTTPS Transition" : (isWeek9 ? "The CIA Triad in Information Security" : "Operating Systems: Unseen"));
         const subtitle = isWeek9 ? "עקרונות אבטחת מידע - בחר מצב תצוגה ולחץ על כרטיסייה לתרגום." : "מאמר המבחן הרשמי. בחר מצב תצוגה ולחץ על כרטיסייה לתרגום.";
         
         let htmlBlock = `
@@ -1128,6 +1140,7 @@ window.render = function() {
                 </div>
                 <div class="settings-box" style="background: rgba(255, 255, 255, 0.05); border-color: var(--theme-main); padding: 5px 10px; border-radius: 8px;">
                     <button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.setWeek('home')">🏠 ראשי</button>
+                    ${isWeek11 ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.goToWord('w11d1', 0)">📚 אוצר מילים</button>` : ''}
                     ${isWeek10 ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.goToWord('w10d1', 0)">📚 אוצר מילים</button>` : ''}
                     ${isWeek9 ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.goToWord('w9d1', 0)">📚 אוצר מילים</button>` : ''}
                     ${window.currentWeek === 'article' ? `<button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; margin-right:10px;" onclick="window.setWeek('week8')">📚 אוצר מילים</button>` : ''}
@@ -1416,6 +1429,7 @@ window.render = function() {
                         <button class="nav-btn ${window.quizTargetWeek === 'week8' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week8')">שבוע 8 (OS)</button>
                         <button class="nav-btn ${window.quizTargetWeek === 'week9' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week9')">שבוע 9 (CIA)</button>
                         <button class="nav-btn ${window.quizTargetWeek === 'week10' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week10')">שבוע 10 (HTTPS)</button>
+                        <button class="nav-btn ${window.quizTargetWeek === 'week11' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week11')">שבוע 11 (C#/JS)</button>
                         <button class="nav-btn ${window.quizTargetWeek === 'mix' ? 'active' : ''}" onclick="window.setQuizTargetWeek('mix')">מיקס (הכל)</button>
                     </div>
                     <div style="display: flex; justify-content: center; gap: 1vw; margin-bottom: 3vh; flex-wrap: wrap;">
@@ -1527,7 +1541,7 @@ window.render = function() {
         `;
         if (window.summaryMode === 'weeks') {
             summaryHtml += `<div class="weeks-scroll">`;
-            const weekNum = {'week1': '1.', 'week2': '2.', 'week3': '3.', 'week7': '4.', 'week8': '5.', 'week9vocab': '6.', 'week10vocab': '7.'};
+            const weekNum = {'week1': '1.', 'week2': '2.', 'week3': '3.', 'week7': '4.', 'week8': '5.', 'week9vocab': '6.', 'week10vocab': '7.', 'week11vocab': '8.'};
             const weekText = {'week1': 'שבוע 4', 'week2': 'שבוע 5', 'week3': 'שבוע 6', 'week7': 'שבוע 7', 'week8': 'שבוע 8', 'week9vocab': 'שבוע 9', 'week10vocab': 'שבוע 10'};
             
             ['week1', 'week2', 'week3', 'week7', 'week8', 'week9vocab', 'week10vocab'].forEach((week) => {
@@ -1610,7 +1624,7 @@ window.render = function() {
         `;
         if (window.summaryMode === 'weeks') {
             summaryHtml += `<div class="weeks-scroll">`;
-            const weekNum = {'week1': '1.', 'week2': '2.', 'week3': '3.', 'week7': '4.', 'week8': '5.', 'week9vocab': '6.', 'week10vocab': '7.'};
+            const weekNum = {'week1': '1.', 'week2': '2.', 'week3': '3.', 'week7': '4.', 'week8': '5.', 'week9vocab': '6.', 'week10vocab': '7.', 'week11vocab': '8.'};
             const weekText = {'week1': 'שבוע 4', 'week2': 'שבוע 5', 'week3': 'שבוע 6', 'week7': 'שבוע 7', 'week8': 'שבוע 8', 'week9vocab': 'שבוע 9', 'week10vocab': 'שבוע 10'};
             ['week1', 'week2', 'week3', 'week7', 'week8', 'week9vocab', 'week10vocab'].forEach((week) => {
                 summaryHtml += `
@@ -1760,6 +1774,7 @@ window.render = function() {
                     ${window.currentWeek === 'week8' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('article')">📄 מאמר</button>` : ''}
 ${window.currentWeek === 'week9vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week9')">📄 מאמר</button>` : ''}
 ${window.currentWeek === 'week10vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week10')">📄 מאמר</button>` : ''}
+${window.currentWeek === 'week11vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week11')">📄 מאמר</button>` : ''}
 ${window.currentWeek === 'week8' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('article')">📄 מאמר</button>` : ''}
 ${window.currentWeek === 'week9vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week9')">📄 מאמר</button>` : ''}
 ${window.currentWeek === 'week10vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week10')">📄 מאמר</button>` : ''}
@@ -1810,7 +1825,7 @@ document.addEventListener('touchend', e => {
 
 window.renderWeeklyFocusDashboard = function() {
     let focusWordsHtml = '';
-    const focusWeek = 'week10vocab'; // Focus on Week 10 Vocabulary
+    const focusWeek = 'week11vocab'; // Focus on Week 11 Vocabulary
     const focusDays = window.daysList.filter(d => d.week === focusWeek);
     
     let daysGridHtml = '';
@@ -1848,11 +1863,11 @@ window.renderWeeklyFocusDashboard = function() {
         <div class="home-wrapper">
             <div style="text-align: center; margin-bottom: 20px;"><button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; padding: 8px 16px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;" onclick="window.setWeek('home')">🏠 ראשי</button></div>
 <div class="home-section-title" style="border:none; justify-content:center; text-align:center; margin-bottom: 15px;">
-                <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--emerald-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">מיקוד שבועי: שבוע 10 🎯</span>
+                <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--emerald-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">מיקוד שבועי: שבוע 11 🎯</span>
             </div>
             
             <p style="text-align: center; color: var(--text-muted); font-size: 14px; max-width: 600px; margin: 0 auto 25px auto; line-height: 1.5;">
-                חומר הלימוד הרלוונטי והמעודכן ביותר לשבוע האחרון: עקרונות אבטחת מידע (CIA Triad).
+                חומר הלימוד הרלוונטי והמעודכן ביותר לשבוע האחרון: שפות קומפילציה ואינטרפרטציה (C# ו-JavaScript).
             </p>
             
             <!-- 📚 Week 9 Vocab Section -->
@@ -1864,19 +1879,19 @@ window.renderWeeklyFocusDashboard = function() {
             <!-- 📄 Article & 🧠 Quiz Row -->
             <h3 class="home-section-title">📄 קריאה ומבחנים</h3>
             <div class="home-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
-                <button class="home-card focus-glow" onclick="window.setWeek('week10')" style="border-radius: 12px; padding: 20px;">
-                    <div class="home-card-icon" style="font-size: 32px;">🔐</div>
+                <button class="home-card focus-glow" onclick="window.setWeek('week11')" style="border-radius: 12px; padding: 20px;">
+                    <div class="home-card-icon" style="font-size: 32px;">💻</div>
                     <div class="home-card-content" style="text-align: right;">
-                        <div class="home-card-title" style="font-size: 18px; color: #fff;">מאמר: HTTP to HTTPS</div>
-                        <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">קריאה ותרגום אינטראקטיביים של מאמר אבטחת המידע הרשמי עם הקראה קולית.</div>
+                        <div class="home-card-title" style="font-size: 18px; color: #fff;">מאמר: C# and JavaScript</div>
+                        <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">קריאה ותרגום אינטראקטיביים של מאמר על שפות קומפילציה ואינטרפרטציה עם הקראה קולית.</div>
                     </div>
                 </button>
                 
-                <button class="home-card focus-glow" onclick="window.setQuizTargetWeek('week10'); window.setWeek('quiz'); window.startQuiz();" style="border-radius: 12px; padding: 20px;">
+                <button class="home-card focus-glow" onclick="window.setQuizTargetWeek('week11'); window.setWeek('quiz'); window.startQuiz();" style="border-radius: 12px; padding: 20px;">
                     <div class="home-card-icon" style="font-size: 32px;">🧠</div>
                     <div class="home-card-content" style="text-align: right;">
-                        <div class="home-card-title" style="font-size: 18px; color: #fff;">מבחן שבוע 10</div>
-                        <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">מבחן הבנה ממוקד המורכב מ-10 שאלות על פרוטוקול HTTPS ואבטחת רשת.</div>
+                        <div class="home-card-title" style="font-size: 18px; color: #fff;">מבחן שבוע 11</div>
+                        <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">מבחן הבנה ממוקד על שפות תכנות C# ו-JavaScript.</div>
                     </div>
                 </button>
             </div>
