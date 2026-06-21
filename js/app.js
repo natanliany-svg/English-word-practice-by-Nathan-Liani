@@ -994,7 +994,7 @@ window.render = function() {
                         <div style="display: flex; align-items: center; gap: 10px;">
                             <span style="font-size: 24px;">🎯</span>
                             <div style="text-align: right;">
-                                <div style="font-size: 18px; font-weight: 900; color: #fff;">מיקוד שבועי: שבוע 10 (HTTPS)</div>
+                                <div style="font-size: 18px; font-weight: 900; color: #fff;">מיקוד שבועי: שבוע 11 (C# vs JS)</div>
                                 <div style="font-size: 13px; color: var(--text-muted); margin-top: 3px;">החומרים הכי רלוונטיים ומעודכנים לתרגול מהיר</div>
                             </div>
                         </div>
@@ -1428,7 +1428,7 @@ window.render = function() {
                     <div style="display: flex; justify-content: center; gap: 1vw; margin-bottom: 2vh; flex-wrap: wrap;">
                         <button class="nav-btn ${window.quizTargetWeek === 'week8' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week8')">שבוע 8 (OS)</button>
                         <button class="nav-btn ${window.quizTargetWeek === 'week9' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week9')">שבוע 9 (CIA)</button>
-                        <button class="nav-btn ${window.quizTargetWeek === 'week10' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week10')">שבוע 10 (HTTPS)</button>
+                        <button class="nav-btn ${window.quizTargetWeek === 'week10' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week10')">שבוע 11 (C# vs JS)</button>
                         <button class="nav-btn ${window.quizTargetWeek === 'week11' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week11')">שבוע 11 (C#/JS)</button>
                         <button class="nav-btn ${window.quizTargetWeek === 'mix' ? 'active' : ''}" onclick="window.setQuizTargetWeek('mix')">מיקס (הכל)</button>
                     </div>
