@@ -1002,13 +1002,13 @@ window.render = function() {
                     </div>
                     
                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%;">
-                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.goToWord('w10d1', 0)">
+                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.goToWord('w11d1', 0)">
                             📚 אוצר מילים
                         </button>
-                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setWeek('week10')">
-                            🔐 קריאת מאמר
+                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setWeek('week11')">
+                            💻 קריאת מאמר
                         </button>
-                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setQuizTargetWeek('week10'); window.setWeek('quiz'); window.startQuiz();">
+                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setQuizTargetWeek('week11'); window.setWeek('quiz'); window.startQuiz();">
                             🧠 מבחן ממוקד
                         </button>
                     </div>
