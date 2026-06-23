@@ -985,7 +985,7 @@ window.render = function() {
             <div class="home-wrapper">
                 <div style="text-align: center; margin-bottom: 20px;"><button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; padding: 8px 16px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;" onclick="window.setWeek('home')">🏠 ראשי</button></div>
 <div class="home-section-title" style="border:none; justify-content:center; text-align:center; margin-bottom: 15px;">
-                    <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--emerald-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">דף הבית</span>
+                    <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--theme-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">דף הבית</span>
                 </div>
                 
                 <!-- 🎯 Weekly Focus Card -->
@@ -1257,7 +1257,7 @@ window.render = function() {
                         <button class="audio-btn" style="margin: 0 auto; width: 60px; height: 60px;" onclick="window.playAudio('${currentWordObj.word.replace(/'/g, "\\'")}')" title="שמע שוב">
                             ${window.icons.volume}
                         </button>
-                        <div style="font-size: 24px; color: var(--emerald-light); font-weight: bold; margin: 10px 0;">${currentWordObj.meaning}</div>
+                        <div style="font-size: 24px; color: var(--theme-light); font-weight: bold; margin: 10px 0;">${currentWordObj.meaning}</div>
                         <div class="spelling-box">
                             <input type="text" id="spelling-input-field" class="spelling-input" placeholder="הקלד באנגלית כאן..." autofocus autocomplete="off" onkeydown="if(event.key==='Enter') window.checkSpelling()">
                             <div style="display:flex; gap:10px; width:100%; max-width:400px; margin-top:10px;">
@@ -1372,7 +1372,7 @@ window.render = function() {
                         <h3 style="color:var(--theme-light); font-size:18px; margin-bottom:15px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:5px;">חלוקת מילים (חזרה מרווחת) 🔁</h3>
                         <div style="display:flex; flex-direction:column; gap:10px; font-size:15px;">
                             <div style="display:flex; justify-content:space-between;">
-                                <span style="color:var(--emerald-light);">● שולט ומאסטר (Mastered)</span>
+                                <span style="color:var(--theme-light);">● שולט ומאסטר (Mastered)</span>
                                 <strong>${masteredCount} מילים</strong>
                             </div>
                             <div style="display:flex; justify-content:space-between;">
@@ -1384,7 +1384,7 @@ window.render = function() {
                                 <strong>${unlearnedCount} מילים</strong>
                             </div>
                             <div style="margin-top:10px; height:10px; border-radius:5px; background:rgba(255,255,255,0.1); display:flex; overflow:hidden;">
-                                <div style="background:var(--emerald-main); width:${(masteredCount/totalWordsCount)*100}%;"></div>
+                                <div style="background:var(--theme-main); width:${(masteredCount/totalWordsCount)*100}%;"></div>
                                 <div style="background:var(--purple-main); width:${(learningCount/totalWordsCount)*100}%;"></div>
                             </div>
                         </div>
@@ -1609,7 +1609,7 @@ window.render = function() {
                 });
             });
             if (!hasUnknowns && query === '') {
-                summaryHtml += `<div style="grid-column: 1 / -1; text-align: center; padding: 30px; color: var(--emerald-light); font-size: 1.2rem; background: rgba(16, 185, 129, 0.1); border-radius: 12px; border: 1px dashed var(--emerald-main);">כל הכבוד! אין מילים שסימנת כ-"לא יודע" כרגע. 🎉</div>`;
+                summaryHtml += `<div style="grid-column: 1 / -1; text-align: center; padding: 30px; color: var(--theme-light); font-size: 1.2rem; background: var(--glow-1); border-radius: 12px; border: 1px dashed var(--theme-main);">כל הכבוד! אין מילים שסימנת כ-"לא יודע" כרגע. 🎉</div>`;
             }
             summaryHtml += `</div>`;
         }
@@ -1736,7 +1736,7 @@ window.render = function() {
                             </div>
 
                             <div class="example-box">
-                                <div class="section-title emerald" style="margin-bottom: 1.5vh;">
+                                <div class="section-title" style="margin-bottom: 1.5vh;">
                                     ${window.icons.book} דוגמה פרקטית
                                 </div>
                                 <div class="example-eng-row">
@@ -1771,13 +1771,13 @@ window.render = function() {
                     <button class="control-btn" onclick="window.nextWord()" ${isLastWord ? 'disabled' : ''}>
                         ${window.icons.left_arrow} הבא
                     </button>
-                    ${window.currentWeek === 'week8' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('article')">📄 מאמר</button>` : ''}
-${window.currentWeek === 'week9vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week9')">📄 מאמר</button>` : ''}
-${window.currentWeek === 'week10vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week10')">📄 מאמר</button>` : ''}
-${window.currentWeek === 'week11vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week11')">📄 מאמר</button>` : ''}
-${window.currentWeek === 'week8' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('article')">📄 מאמר</button>` : ''}
-${window.currentWeek === 'week9vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week9')">📄 מאמר</button>` : ''}
-${window.currentWeek === 'week10vocab' ? `<button class="control-btn" style="background:var(--emerald-dark); border-color:var(--emerald-main); color:#fff;" onclick="window.setWeek('week10')">📄 מאמר</button>` : ''}
+                    ${window.currentWeek === 'week8' ? `<button class="control-btn" style="background:transparent; border-color:var(--theme-main); color:#fff;" onclick="window.setWeek('article')">📄 מאמר</button>` : ''}
+${window.currentWeek === 'week9vocab' ? `<button class="control-btn" style="background:transparent; border-color:var(--theme-main); color:#fff;" onclick="window.setWeek('week9')">📄 מאמר</button>` : ''}
+${window.currentWeek === 'week10vocab' ? `<button class="control-btn" style="background:transparent; border-color:var(--theme-main); color:#fff;" onclick="window.setWeek('week10')">📄 מאמר</button>` : ''}
+${window.currentWeek === 'week11vocab' ? `<button class="control-btn" style="background:transparent; border-color:var(--theme-main); color:#fff;" onclick="window.setWeek('week11')">📄 מאמר</button>` : ''}
+${window.currentWeek === 'week8' ? `<button class="control-btn" style="background:transparent; border-color:var(--theme-main); color:#fff;" onclick="window.setWeek('article')">📄 מאמר</button>` : ''}
+${window.currentWeek === 'week9vocab' ? `<button class="control-btn" style="background:transparent; border-color:var(--theme-main); color:#fff;" onclick="window.setWeek('week9')">📄 מאמר</button>` : ''}
+${window.currentWeek === 'week10vocab' ? `<button class="control-btn" style="background:transparent; border-color:var(--theme-main); color:#fff;" onclick="window.setWeek('week10')">📄 מאמר</button>` : ''}
 <button class="control-btn" onclick="window.prevWord()" ${isFirstWord ? 'disabled' : ''}>
                         הקודם ${window.icons.right_arrow}
                     </button>
@@ -1863,7 +1863,7 @@ window.renderWeeklyFocusDashboard = function() {
         <div class="home-wrapper">
             <div style="text-align: center; margin-bottom: 20px;"><button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; padding: 8px 16px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;" onclick="window.setWeek('home')">🏠 ראשי</button></div>
 <div class="home-section-title" style="border:none; justify-content:center; text-align:center; margin-bottom: 15px;">
-                <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--emerald-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">מיקוד שבועי: שבוע 11 🎯</span>
+                <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--theme-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">מיקוד שבועי: שבוע 11 🎯</span>
             </div>
             
             <p style="text-align: center; color: var(--text-muted); font-size: 14px; max-width: 600px; margin: 0 auto 25px auto; line-height: 1.5;">

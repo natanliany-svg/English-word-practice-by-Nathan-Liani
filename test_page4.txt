@@ -1,0 +1,13 @@
+Performance Considerations 
+Compilation has long been associated with higher performance.​
+Because compiled code is translated before execution, the processor can execute instructions 
+more directly.​
+Interpreted code, on the other hand, traditionally required continuous translation while running, 
+introducing additional overhead.​
+Modern runtime environments have reduced this gap considerably. Just-In-Time compilation 
+allows both C# and JavaScript to benefit from runtime optimization.​
+Nevertheless, C# generally performs more extensive analysis before execution begins, while 
+JavaScript engines often make optimization decisions dynamically as the program runs.​
+This illustrates how the traditional distinction between compiled and interpreted languages has 
+become increasingly blurred. 
+ 
