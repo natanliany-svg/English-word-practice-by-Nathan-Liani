@@ -1441,16 +1441,16 @@ window.render = function() {
                     <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2vh;">תרגול שאלות הבנה. המבחן יבדוק הבנה אמיתית!</p>
                     
                     <div style="display: flex; justify-content: center; gap: 1vw; margin-bottom: 2vh; flex-wrap: wrap;">
-                        <button class="nav-btn ${window.quizTargetWeek === 'week8' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week8')">שבוע 8 (OS)</button>
-                        <button class="nav-btn ${window.quizTargetWeek === 'week9' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week9')">שבוע 9 (CIA)</button>
-                        <button class="nav-btn ${window.quizTargetWeek === 'week10' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week10')">שבוע 11 (C# vs JS)</button>
-                        <button class="nav-btn ${window.quizTargetWeek === 'week11' ? 'active' : ''}" onclick="window.setQuizTargetWeek('week11')">שבוע 11 (C#/JS)</button>
-                        <button class="nav-btn ${window.quizTargetWeek === 'mix' ? 'active' : ''}" onclick="window.setQuizTargetWeek('mix')">מיקס (הכל)</button>
+                        <button class="nav-btn ${window.quizTargetWeek === 'week8' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('week8')">שבוע 8 (OS)</button>
+                        <button class="nav-btn ${window.quizTargetWeek === 'week9' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('week9')">שבוע 9 (CIA)</button>
+                        <button class="nav-btn ${window.quizTargetWeek === 'week10' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('week10')">שבוע 10 (HTTPS)</button>
+                        <button class="nav-btn ${window.quizTargetWeek === 'week11' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('week11')">שבוע 11 (C#/JS)</button>
+                        <button class="nav-btn ${window.quizTargetWeek === 'mix' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('mix')">מיקס (הכל)</button>
                     </div>
                     <div style="display: flex; justify-content: center; gap: 1vw; margin-bottom: 3vh; flex-wrap: wrap;">
-                        <button class="nav-btn ${window.quizDifficulty === 'easy' ? 'active' : ''}" onclick="window.setDifficulty('easy')">קל</button>
-                        <button class="nav-btn ${window.quizDifficulty === 'medium' ? 'active' : ''}" onclick="window.setDifficulty('medium')">בינוני</button>
-                        <button class="nav-btn ${window.quizDifficulty === 'hard' ? 'active' : ''}" onclick="window.setDifficulty('hard')">קשה</button>
+                        <button class="nav-btn ${window.quizDifficulty === 'easy' ? 'active-theme' : ''}" onclick="window.setDifficulty('easy')">קל</button>
+                        <button class="nav-btn ${window.quizDifficulty === 'medium' ? 'active-theme' : ''}" onclick="window.setDifficulty('medium')">בינוני</button>
+                        <button class="nav-btn ${window.quizDifficulty === 'hard' ? 'active-theme' : ''}" onclick="window.setDifficulty('hard')">קשה</button>
                     </div>
 
                     <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--theme-main); padding: 1.5vh; border-radius: 1vh; margin-bottom: 4vh; display: flex; justify-content: space-around;">

@@ -284,7 +284,7 @@
 
 
 
-        .flashcard { 
+        .flashcard { animation: fadeInCard 0.4s ease-out forwards; 
 
             background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.15); border-radius: 2vh; 
 
@@ -2034,3 +2034,6 @@ body::-webkit-scrollbar-thumb, .flashcard::-webkit-scrollbar-thumb, .weeks-scrol
         min-width: 35px !important;
     }
 }
+
+
+@keyframes fadeInCard { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
