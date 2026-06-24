@@ -2048,12 +2048,20 @@ body { overflow: hidden !important; height: 100vh !important; }
     flex-direction: column !important;
     padding-bottom: 110px !important; /* Space for audio player */
 }
+#content-area {
+    flex-grow: 1 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 0 !important;
+}
 .home-wrapper {
     flex-grow: 1 !important;
     overflow: hidden !important;
     display: flex !important;
     flex-direction: column !important;
     padding-bottom: 10px !important;
+    min-height: 0 !important;
 }
 .flashcard, .story-container, .home-list {
     flex-grow: 1 !important;
