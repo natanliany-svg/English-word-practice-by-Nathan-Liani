@@ -81,21 +81,29 @@
     
     <!-- Audio Player Bar -->
     <div id="audio-player" class="audio-player-bar">
-        <div class="audio-controls-row">
-            <button class="player-btn stop" onclick="window.stopAudio()" title="עצור לחלוטין">
-                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="6" y="6" width="12" height="12"/></svg>
+        <div class="audio-controls-row notranslate" dir="ltr" translate="no" style="justify-content: center; gap: 15px;">
+            <button id="speed-btn" class="player-btn" onclick="window.cycleSpeed()" title="מהירות הקראה" style="font-size: 14px; font-weight: bold; width: 40px; height: 40px; padding: 0;">
+                1x
             </button>
-            <button class="player-btn" onclick="window.seekRelative(-5)" title="5 שניות אחורה">
-                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11V9a4 4 0 0 1 4-4h14M8 1l-5 4 5 4"/><text x="12" y="18" font-size="8" font-family="sans-serif" stroke="none" fill="currentColor">5s</text></svg>
+            <button class="player-btn" onclick="window.seekRelative(-5)" title="5 שניות אחורה" style="width: 45px; height: 45px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                    <path d="M3 3v5h5"/>
+                    <text x="12" y="16" font-size="8" font-family="sans-serif" stroke="none" fill="currentColor" text-anchor="middle">5</text>
+                </svg>
             </button>
-            <button id="play-pause-btn" class="player-btn play-pause" onclick="window.togglePlayPause()" title="נגן / השהה">
+            <button id="play-pause-btn" class="player-btn play-pause" onclick="window.togglePlayPause()" title="נגן / השהה" style="width: 55px; height: 55px;">
                 <svg width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </button>
-            <button class="player-btn" onclick="window.seekRelative(5)" title="5 שניות קדימה">
-                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11V9a4 4 0 0 0-4-4H3M16 1l5 4-5 4"/><text x="12" y="18" font-size="8" font-family="sans-serif" stroke="none" fill="currentColor">5s</text></svg>
+            <button class="player-btn" onclick="window.seekRelative(5)" title="5 שניות קדימה" style="width: 45px; height: 45px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12a9 9 0 1 1-9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+                    <path d="M21 3v5h-5"/>
+                    <text x="12" y="16" font-size="8" font-family="sans-serif" stroke="none" fill="currentColor" text-anchor="middle">5</text>
+                </svg>
             </button>
-            <button id="speed-btn" class="player-btn" onclick="window.cycleSpeed()" title="מהירות הקראה" style="font-size: 14px; font-weight: bold; width: 40px; padding: 0;">
-                1x
+            <button class="player-btn stop" onclick="window.stopAudio()" title="עצור לחלוטין" style="width: 40px; height: 40px;">
+                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="6" y="6" width="12" height="12"/></svg>
             </button>
         </div>
         <div class="audio-progress-container" dir="ltr">
