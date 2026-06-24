@@ -2037,3 +2037,28 @@ body::-webkit-scrollbar-thumb, .flashcard::-webkit-scrollbar-thumb, .weeks-scrol
 
 
 @keyframes fadeInCard { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+
+/* --- STRICT FLEX LAYOUT (NO CLIPPING/JUMPING) --- */
+body { overflow: hidden !important; height: 100vh !important; }
+.main-layout-wrapper {
+    height: 100vh !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding-bottom: 110px !important; /* Space for audio player */
+}
+.home-wrapper {
+    flex-grow: 1 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding-bottom: 10px !important;
+}
+.flashcard, .story-container, .home-list {
+    flex-grow: 1 !important;
+    overflow-y: auto !important;
+    min-height: 0 !important;
+    margin-bottom: 10px !important;
+}
+.srs-btn-row, .controls-container { flex-shrink: 0 !important; margin-top: auto !important; }

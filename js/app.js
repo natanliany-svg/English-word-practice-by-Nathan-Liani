@@ -1937,3 +1937,17 @@ window.initThemeDots = function() {
 // Initialize theme dots and views
 setTimeout(window.initThemeDots, 50);
 window.render();
+
+// Keyboard navigation for Next/Prev word
+document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'ArrowLeft') {
+        if (typeof window.nextWord === 'function' && window.currentWeek && window.currentWeek.includes('week') && !window.currentWeek.includes('quiz')) {
+            window.nextWord();
+        }
+    } else if (e.key === 'ArrowRight') {
+        if (typeof window.prevWord === 'function' && window.currentWeek && window.currentWeek.includes('week') && !window.currentWeek.includes('quiz')) {
+            window.prevWord();
+        }
+    }
+});
