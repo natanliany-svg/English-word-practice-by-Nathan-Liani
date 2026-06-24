@@ -2039,34 +2039,24 @@ body::-webkit-scrollbar-thumb, .flashcard::-webkit-scrollbar-thumb, .weeks-scrol
 @keyframes fadeInCard { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 
-/* --- STRICT FLEX LAYOUT (NO CLIPPING/JUMPING) --- */
-body { overflow: hidden !important; height: 100vh !important; }
-.main-layout-wrapper {
-    height: 100vh !important;
-    overflow: hidden !important;
-    display: flex !important;
-    flex-direction: column !important;
-    padding-bottom: 110px !important; /* Space for audio player */
+
+
+
+/* --- VOCAB CARD FIXED SIZE --- */
+.vocab-card {
+    height: 55vh;
+    min-height: 400px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
 }
-#content-area {
-    flex-grow: 1 !important;
-    overflow: hidden !important;
-    display: flex !important;
-    flex-direction: column !important;
-    min-height: 0 !important;
+.vocab-card .center-stage {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
-.home-wrapper {
-    flex-grow: 1 !important;
-    overflow: hidden !important;
-    display: flex !important;
-    flex-direction: column !important;
-    padding-bottom: 10px !important;
-    min-height: 0 !important;
+.vocab-card .example-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 0 !important;
 }
-.flashcard, .story-container, .home-list {
-    flex-grow: 1 !important;
-    overflow-y: auto !important;
-    min-height: 0 !important;
-    margin-bottom: 10px !important;
-}
-.srs-btn-row, .controls-container { flex-shrink: 0 !important; margin-top: auto !important; }

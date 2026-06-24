@@ -1728,7 +1728,7 @@ window.render = function() {
                     </div>
                 </div>
 
-                <div class="flashcard">
+                <div class="flashcard vocab-card">
                     <div class="center-stage">
                         <div class="word-main-row" style="display: flex; align-items: center; justify-content: space-between; width: 100%; direction: ltr; position: relative;">
                             <div style="display: flex; gap: 10px; min-width: 90px; justify-content: flex-start; z-index: 10;">
