@@ -89,6 +89,7 @@ window.articleParagraphs = {
         [31, 32, 33],
         [34, 35, 36, 37, 38]
     ],
+    'week11': [[0],[1,2,3,4,5],[6,7,8,9],[10,11,12,13],[14,15,16,17,18,19],[20,21,22,23,24,25],[26,27,28,29,30],[31,32,33,34],[35,36,37,38,39],[40,41,42,43,44],[45,46,47,48,49,50],[51,52,53,54],[55,56,57,58,59],[60,61,62,63],[64,65,66,67]],
     'week10': [
         [0],
         [1, 2, 3, 4, 5],
@@ -484,6 +485,16 @@ window.setDay = function(dayId) { window.stopAudio(); window.currentDay = dayId;
 window.setSummaryMode = function(mode) { window.summaryMode = mode; window.render(); };
 window.goToWord = function(dayId, index) { window.stopAudio(); window.currentDay = dayId; window.currentWeek = window.daysList.find(d => d.id === dayId).week; window.wordIndex = index; window.render(); };
 window.changeRate = function(val) { window.speechRate = parseFloat(val); if(window.htmlAudioElement) window.htmlAudioElement.playbackRate = window.speechRate; window.render(); };
+window.cycleSpeed = function() {
+    const speeds = [0.85, 1.0, 1.2, 1.5, 2.0];
+    let idx = speeds.indexOf(window.speechRate);
+    if(idx === -1) idx = 1;
+    let nextIdx = (idx + 1) % speeds.length;
+    window.speechRate = speeds[nextIdx];
+    if(window.htmlAudioElement) window.htmlAudioElement.playbackRate = window.speechRate;
+    if(document.getElementById('speed-btn')) document.getElementById('speed-btn').innerText = window.speechRate + 'x';
+    window.render();
+};
 
 window.getSRSIndicator = function(word) {
     const wordKey = word.toLowerCase();
@@ -614,6 +625,7 @@ window.playAudio = function(text, btnElement) {
             }
             if(document.getElementById('audio-player')) document.getElementById('audio-player').classList.add('visible');
             if(document.getElementById('play-pause-btn')) document.getElementById('play-pause-btn').innerHTML = window.icons.pause;
+            if(document.getElementById('speed-btn')) document.getElementById('speed-btn').innerText = window.speechRate + 'x';
             if(window.audioState.btnElement) window.audioState.btnElement.classList.add('active');
             window.audioPlaying = true;
         });
@@ -1136,6 +1148,9 @@ window.render = function() {
                         <option value="0.6" ${window.speechRate === 0.6 ? 'selected' : ''}>איטי (0.6x)</option>
                         <option value="0.85" ${window.speechRate === 0.85 ? 'selected' : ''}>רגיל-איטי (0.85x)</option>
                         <option value="1" ${window.speechRate === 1 ? 'selected' : ''}>רגיל (1.0x)</option>
+                        <option value="1.2" ${window.speechRate === 1.2 ? 'selected' : ''}>מהיר (1.2x)</option>
+                        <option value="1.5" ${window.speechRate === 1.5 ? 'selected' : ''}>מהיר מאוד (1.5x)</option>
+                        <option value="2.0" ${window.speechRate === 2.0 ? 'selected' : ''}>מטוס (2.0x)</option>
                     </select>
                 </div>
                 <div class="settings-box" style="background: rgba(255, 255, 255, 0.05); border-color: var(--theme-main); padding: 5px 10px; border-radius: 8px;">
@@ -1175,7 +1190,7 @@ window.render = function() {
                 `;
             }).join('');
         } else if (window.articleViewMode === 'paragraph') {
-            const paragraphs = window.articleParagraphs[isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8')];
+            const paragraphs = window.articleParagraphs[isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8'))];
             htmlBlock += paragraphs.map((paraIndices, index) => {
                 const paraEnglish = paraIndices.map(idx => articleData[idx].e).join(" ");
                 const paraHebrew = paraIndices.map(idx => articleData[idx].h).join(" ");
@@ -1204,7 +1219,7 @@ window.render = function() {
             const fullHebrew = articleData.map(item => item.h).join(" ");
             const safeText = fullEnglish.replace(/'/g, "\\\'").replace(/"/g, "&quot;");
             
-            const paragraphs = window.articleParagraphs[isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8')];
+            const paragraphs = window.articleParagraphs[isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8'))];
             const engParasHtml = paragraphs.map(paraIndices => {
                 const paraText = paraIndices.map(idx => articleData[idx].e).join(" ");
                 return `<p style="margin-bottom: 25px; text-align: left; direction: ltr; font-size: clamp(24px, 2.2rem, 36px); line-height: 1.6; font-family: Georgia, serif;">${window.highlightText(paraText)}</p>`;
@@ -1487,8 +1502,15 @@ window.render = function() {
 
             quizHTML = `
                 <div style="max-width: 800px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; height: 100%;">
-                    <div class="top-bar" style="margin-bottom: 2vh;">
-                        <span style="color: var(--text-muted); font-size: 1.2rem; font-weight: bold;">שאלה ${window.currentQuizIndex + 1} / 23</span>
+                    <div class="top-bar" style="margin-bottom: 2vh; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 5px;">
+                            <span style="color: var(--text-muted); font-size: 1.2rem; font-weight: bold;">שאלה ${window.currentQuizIndex + 1} / 23</span>
+                            ${(() => {
+                                const dMap = { 'easy': 'קל', 'medium': 'בינוני', 'hard': 'קשה' };
+                                const wMap = { 'week8': 'שבוע 8', 'week9': 'שבוע 9', 'week10': 'שבוע 10', 'week11': 'שבוע 11', 'mix': 'כל השבועות' };
+                                return `<span style="background: rgba(255,255,255,0.1); padding: 4px 12px; border-radius: 12px; font-size: 0.9rem; color: var(--theme-light); border: 1px solid var(--theme-main); box-shadow: 0 0 10px var(--glow-1);">${wMap[window.quizTargetWeek] || 'מעורב'} • רמה: ${dMap[window.quizDifficulty] || 'מעורב'}</span>`;
+                            })()}
+                        </div>
                         <span style="color: var(--theme-light); font-size: 1.2rem; font-weight: bold;">ניקוד: ${window.quizScore}</span>
                     </div>
                     <div class="flashcard" style="align-items: center; padding: 4vh 3vw; gap: 3vh; text-align: center;">
@@ -1692,6 +1714,9 @@ window.render = function() {
                             <option value="0.6" ${window.speechRate === 0.6 ? 'selected' : ''}>איטי (0.6x)</option>
                             <option value="0.85" ${window.speechRate === 0.85 ? 'selected' : ''}>רגיל-איטי (0.85x)</option>
                             <option value="1" ${window.speechRate === 1 ? 'selected' : ''}>רגיל (1.0x)</option>
+                            <option value="1.2" ${window.speechRate === 1.2 ? 'selected' : ''}>מהיר (1.2x)</option>
+                            <option value="1.5" ${window.speechRate === 1.5 ? 'selected' : ''}>מהיר מאוד (1.5x)</option>
+                            <option value="2.0" ${window.speechRate === 2.0 ? 'selected' : ''}>מטוס (2.0x)</option>
                         </select>
                     </div>
                     <div style="display:flex; align-items:center; gap:8px;">

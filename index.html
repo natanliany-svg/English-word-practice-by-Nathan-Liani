@@ -82,17 +82,20 @@
     <!-- Audio Player Bar -->
     <div id="audio-player" class="audio-player-bar">
         <div class="audio-controls-row">
-            <button class="player-btn stop" onclick="window.stopAudio()" title="עצור">
+            <button class="player-btn stop" onclick="window.stopAudio()" title="עצור לחלוטין">
                 <svg width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="6" y="6" width="12" height="12"/></svg>
             </button>
             <button class="player-btn" onclick="window.seekRelative(-5)" title="5 שניות אחורה">
-                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 17l-5-5 5-5M18 17l-5-5 5-5"/></svg>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11V9a4 4 0 0 1 4-4h14M8 1l-5 4 5 4"/><text x="12" y="18" font-size="8" font-family="sans-serif" stroke="none" fill="currentColor">5s</text></svg>
             </button>
             <button id="play-pause-btn" class="player-btn play-pause" onclick="window.togglePlayPause()" title="נגן / השהה">
                 <svg width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </button>
             <button class="player-btn" onclick="window.seekRelative(5)" title="5 שניות קדימה">
-                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 17l5-5-5-5M6 17l5-5-5-5"/></svg>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11V9a4 4 0 0 0-4-4H3M16 1l5 4-5 4"/><text x="12" y="18" font-size="8" font-family="sans-serif" stroke="none" fill="currentColor">5s</text></svg>
+            </button>
+            <button id="speed-btn" class="player-btn" onclick="window.cycleSpeed()" title="מהירות הקראה" style="font-size: 14px; font-weight: bold; width: 40px; padding: 0;">
+                1x
             </button>
         </div>
         <div class="audio-progress-container" dir="ltr">
