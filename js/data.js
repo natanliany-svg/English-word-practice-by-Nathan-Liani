@@ -154,7 +154,11 @@ window.daysList = [
   { id: 'w11d1', week: 'week11vocab', title: 'יום 1', date: 'Week 11' },
   { id: 'w11d2', week: 'week11vocab', title: 'יום 2', date: 'Week 11' },
   { id: 'w11d3', week: 'week11vocab', title: 'יום 3', date: 'Week 11' },
-  { id: 'w11d4', week: 'week11vocab', title: 'יום 4', date: 'Week 11' }
+    { id: 'w11d4', week: 'week11vocab', title: 'יום 4', date: 'Week 11' },
+  { id: 'w12d1', week: 'week12vocab', title: 'יום 1', date: 'Week 12' },
+  { id: 'w12d2', week: 'week12vocab', title: 'יום 2', date: 'Week 12' },
+  { id: 'w12d3', week: 'week12vocab', title: 'יום 3', date: 'Week 12' },
+  { id: 'w12d4', week: 'week12vocab', title: 'יום 4', date: 'Week 12' }
 ];
 
 window.ciaTriadArticleData = [
@@ -498,3 +502,71 @@ window.csharpJsArticleData = [
   {"j":"58","e":"Nevertheless, C# generally performs more extensive analysis before execution begins, while JavaScript engines often make optimization decisions dynamically as the program runs.","h":"אף על פי כן, C# בדרך כלל מבצעת ניתוח מקיף יותר לפני תחילת הביצוע, בעוד שמנועי JavaScript מקבלים לעיתים קרובות החלטות אופטימיזציה באופן דינמי בזמן ריצת התוכנית."},
   {"j":"59","e":"This illustrates how the traditional distinction between compiled and interpreted languages has become increasingly blurred.","h":"זה ממחיש כיצד ההבחנה המסורתית בין שפות מהודרות למפורשות הפכה למטושטשת יותר ויותר."}
 ];
+
+
+window.binaryArticleData = [
+  {j:"🔢", e:"The Binary Counting", h:"הספירה הבינארית"},
+  {j:"🌍", e:"Today, almost every digital device in the world—from smartphones and laptops to satellites and medical equipment—relies on the binary number system.", h:"כיום, כמעט כל מכשיר דיגיטלי בעולם — מסמארטפונים ומחשבים ניידים ועד לוויינים וציוד רפואי — מסתמך על מערכת המספרים הבינארית."},
+  {j:"🔗", e:"Although binary uses only two symbols, 0 and 1, it has become the foundation of modern computing and communication technologies.", h:"למרות שהשיטה הבינארית משתמשת רק בשני סמלים, 0 ו-1, היא הפכה לבסיס של טכנולוגיות מחשוב ותקשורת מודרניות."},
+  {j:"🕰️", e:"The idea of representing numbers using only two digits is much older than computers.", h:"הרעיון של ייצוג מספרים באמצעות שתי ספרות בלבד הוא עתיק הרבה יותר ממחשבים."},
+  {j:"📜", e:"Ancient civilizations, including some Chinese and Indian scholars, explored concepts similar to binary.", h:"תרבויות עתיקות, כולל כמה מלומדים סינים והודים, חקרו מושגים דומים לבינאריות."},
+  {j:"👨‍🔬", e:"However, the modern binary system was formally described in 1703 by the German mathematician and philosopher Gottfried Wilhelm Leibniz.", h:"עם זאת, המערכת הבינארית המודרנית תוארה רשמית בשנת 1703 על ידי המתמטיקאי והפילוסוף הגרמני גוטפריד וילהלם לייבניץ."},
+  {j:"📖", e:"In his work Explication de l'Arithmétique Binaire, Leibniz demonstrated how any number could be represented using only 0 and 1.", h:"בעבודתו 'הסבר האריתמטיקה הבינארית', לייבניץ הדגים כיצד ניתן לייצג כל מספר באמצעות 0 ו-1 בלבד."},
+  {j:"✨", e:"He was fascinated by the simplicity of the system and even connected it to philosophical ideas about creation from nothing, where 0 represented nothingness and 1 represented existence.", h:"הוא היה מוקסם מהפשטות של המערכת ואף קישר אותה לרעיונות פילוסופיים על בריאה יש מאין, כאשר 0 ייצג את האין ו-1 ייצג את היש."},
+  {j:"🧐", e:"At first, binary was mainly a mathematical curiosity.", h:"בתחילה, הבינאריות הייתה בעיקר סקרנות מתמטית."},
+  {j:"🚀", e:"The real breakthrough came more than two centuries later.", h:"פריצת הדרך האמיתית הגיעה יותר ממאתיים שנה לאחר מכן."},
+  {j:"⚡", e:"During the 1930s, American engineer and mathematician Claude Shannon discovered that binary numbers could be perfectly matched with electrical circuits.", h:"במהלך שנות ה-30, המהנדס והמתמטיקאי האמריקאי קלוד שאנון גילה שניתן להתאים באופן מושלם מספרים בינאריים למעגלים חשמליים."},
+  {j:"🎛️", e:"A switch can be either OFF or ON, a wire can have low voltage or high voltage, and a transistor can block or allow electrical current.", h:"מתג יכול להיות כבוי או דלוק, לחוט יכול להיות מתח נמוך או מתח גבוה, וטרנזיסטור יכול לחסום או לאפשר זרם חשמלי."},
+  {j:"💻", e:"These two stable states made binary an ideal choice for electronic devices.", h:"שני המצבים היציבים הללו הפכו את השיטה הבינארית לבחירה אידיאלית עבור מכשירים אלקטרוניים."},
+  {j:"🤔", e:"Many people wonder that 0 means OFF and 1 means ON.", h:"אנשים רבים חושבים ש-0 אומר כבוי ו-1 אומר דלוק."},
+  {j:"🧑‍🤝‍🧑", e:"In reality, this was not a universal rule created by a single person.", h:"במציאות, זה לא היה כלל אוניברסלי שנוצר על ידי אדם אחד."},
+  {j:"🛠️", e:"Engineers needed symbols to represent two different states, and the numbers 0 and 1 were the simplest choice.", h:"מהנדסים היו זקוקים לסמלים כדי לייצג שני מצבים שונים, והמספרים 0 ו-1 היו הבחירה הפשוטה ביותר."},
+  {j:"📡", e:"Generally, 0 represents the absence of a signal, while 1 represents the presence of a signal.", h:"באופן כללי, 0 מייצג היעדר אות, בעוד ש-1 מייצג נוכחות של אות."},
+  {j:"🔄", e:"However, in some electronic systems the actual voltage values may be reversed, meaning a low voltage can represent 1 and a high voltage can represent 0.", h:"עם זאת, במערכות אלקטרוניות מסוימות ערכי המתח בפועל עשויים להיות הפוכים, כלומר מתח נמוך יכול לייצג 1 ומתח גבוה יכול לייצג 0."},
+  {j:"🎯", e:"What matters is that there are two clearly distinguishable states.", h:"מה שחשוב הוא שיש שני מצבים הניתנים להבחנה ברורה."},
+  {j:"🔋", e:"In many digital circuits, a logical 0 is represented by a low voltage (close to 0 volts) and a logical 1 is represented by a higher voltage.", h:"במעגלים דיגיטליים רבים, 0 לוגי מיוצג על ידי מתח נמוך (קרוב ל-0 וולט) ו-1 לוגי מיוצג על ידי מתח גבוה יותר."},
+  {j:"⚙️", e:"However, the exact voltage values depend on the specific technology being used.", h:"עם זאת, ערכי המתח המדויקים תלויים בטכנולוגיה הספציפית בה משתמשים."},
+  {j:"🔌", e:"For example, older TTL circuits often treated voltages below about 0.8 volts as 0 and voltages above about 2 volts as 1, while modern CMOS circuits may operate with supply voltages of 3.3 volts, 1.8 volts, or even lower.", h:"לדוגמה, מעגלי TTL ישנים התייחסו לעיתים קרובות למתחים מתחת לכ-0.8 וולט כ-0 ולמתחים מעל לכ-2 וולט כ-1, בעוד שמעגלי CMOS מודרניים עשויים לפעול עם מתחי אספקה של 3.3 וולט, 1.8 וולט או אפילו פחות."},
+  {j:"🔀", e:"Some systems may even reverse these assignments using active-low logic.", h:"מערכות מסוימות עשויות אפילו להפוך את ההקצאות הללו באמצעות לוגיקה שלילית (active-low)."},
+  {j:"⚖️", e:"Therefore, the important factor is not the exact voltage value itself but the existence of two stable and distinguishable electrical states.", h:"לכן, הגורם החשוב אינו ערך המתח המדויק עצמו אלא קיומם של שני מצבים חשמליים יציבים וניתנים להבחנה."},
+  {j:"💡", e:"It is also important to distinguish between voltage and electric current.", h:"חשוב גם להבחין בין מתח לזרם חשמלי."},
+  {j:"🌊", e:"Voltage is the electrical potential difference that \"pushes\" electrons through a circuit, while current is the actual flow of electrons.", h:"מתח הוא הפרש הפוטנציאלים החשמלי ש\"דוחף\" אלקטרונים דרך מעגל, בעוד שזרם הוא הזרימה בפועל של האלקטרונים."},
+  {j:"🚰", e:"A common analogy is water flowing through a pipe: voltage is similar to the water pressure, and current is similar to the amount of water flowing.", h:"אנלוגיה נפוצה היא מים הזורמים בצינור: המתח דומה ללחץ המים, והזרם דומה לכמות המים הזורמים."},
+  {j:"🏢", e:"The electrical power supplied by utility companies to homes and businesses provides both voltage and current.", h:"ההספק החשמלי שמסופק על ידי חברות החשמל לבתים ועסקים מספק גם מתח וגם זרם."},
+  {j:"🏠", e:"For example, household outlets receive a fixed voltage, while the amount of current depends on how much electricity a device consumes.", h:"לדוגמה, שקעים ביתיים מקבלים מתח קבוע, בעוד שכמות הזרם תלויה בכמה חשמל המכשיר צורך."},
+  {j:"🖥️", e:"Inside computers and other digital devices, electronic circuits use carefully controlled voltages and currents to represent and process binary information.", h:"בתוך מחשבים ומכשירים דיגיטליים אחרים, מעגלים אלקטרוניים משתמשים במתחים וזרמים מבוקרים בקפידה כדי לייצג ולעבד מידע בינארי."},
+  {j:"🛡️", e:"One reason binary became so important is reliability.", h:"סיבה אחת לכך שהשיטה הבינארית הפכה לכל כך חשובה היא אמינות."},
+  {j:"🧩", e:"Electronic components are never perfect.", h:"רכיבים אלקטרוניים אינם מושלמים לעולם."},
+  {j:"🌡️", e:"Small fluctuations in voltage can occur because of heat, interference, or manufacturing differences.", h:"תנודות קטנות במתח יכולות להתרחש בגלל חום, הפרעות או הבדלי ייצור."},
+  {j:"📉", e:"If computers used ten different voltage levels to represent the decimal digits 0 through 9 directly, it would be much harder to determine which value was intended.", h:"אם מחשבים היו משתמשים בעשר רמות מתח שונות כדי לייצג ישירות את הספרות העשרוניות 0 עד 9, היה הרבה יותר קשה לקבוע לאיזה ערך התכוונו."},
+  {j:"✅", e:"With only two states, devices can easily distinguish between them, reducing errors and increasing reliability.", h:"עם שני מצבים בלבד, מכשירים יכולים להבחין ביניהם בקלות, מה שמפחית שגיאות ומגדיל את האמינות."},
+  {j:"🧱", e:"Binary numbers also made possible the development of logic gates, one of the most important building blocks of modern computers.", h:"מספרים בינאריים גם אפשרו את הפיתוח של שערים לוגיים, אחד מאבני הבניין החשובות ביותר של מחשבים מודרניים."},
+  {j:"🧠", e:"Logic gates are tiny electronic circuits that perform simple decisions based on binary inputs.", h:"שערים לוגיים הם מעגלים אלקטרוניים זעירים המבצעים החלטות פשוטות המבוססות על קלטים בינאריים."},
+  {j:"🚦", e:"They operate using only 0s and 1s and follow the rules of Boolean logic.", h:"הם פועלים באמצעות 0 ו-1 בלבד ועוקבים אחר הכללים של הלוגיקה הבוליאנית."},
+  {j:"✖️", e:"For example, an AND gate produces an output of 1 only when both inputs are 1.", h:"לדוגמה, שער AND מפיק פלט של 1 רק כאשר שני הקלטים הם 1."},
+  {j:"➕", e:"An OR gate produces 1 when at least one input is 1.", h:"שער OR מפיק 1 כאשר לפחות קלט אחד הוא 1."},
+  {j:"🔂", e:"A NOT gate reverses the input, turning 1 into 0 and 0 into 1.", h:"שער NOT הופך את הקלט, והופך 1 ל-0 ו-0 ל-1."},
+  {j:"🏗️", e:"By combining these simple gates, engineers can build circuits capable of performing arithmetic operations, making decisions, storing information, and controlling complex systems.", h:"על ידי שילוב השערים הפשוטים הללו, מהנדסים יכולים לבנות מעגלים המסוגלים לבצע פעולות אריתמטיות, לקבל החלטות, לאחסן מידע ולשלוט במערכות מורכבות."},
+  {j:"🔬", e:"The invention of the transistor in the mid-twentieth century allowed millions and later billions of logic gates to be placed inside a single processor.", h:"המצאת הטרנזיסטור באמצע המאה העשרים אפשרה למקם מיליוני, ומאוחר יותר מיליארדי, שערים לוגיים בתוך מעבד בודד."},
+  {j:"⏱️", e:"Every calculation performed by a computer—from adding two numbers to displaying a webpage—ultimately consists of enormous numbers of logic-gate operations happening every second.", h:"כל חישוב המבוצע על ידי מחשב — מחיבור שני מספרים ועד להצגת דף אינטרנט — מורכב בסופו של דבר ממספר עצום של פעולות שערים לוגיים המתרחשות בכל שנייה."},
+  {j:"🕸️", e:"In fact, a modern processor may contain billions of transistors acting as switches that continuously process binary data through interconnected logic gates.", h:"למעשה, מעבד מודרני עשוי להכיל מיליארדי טרנזיסטורים הפועלים כמתגים, המעבדים ללא הרף נתונים בינאריים דרך שערים לוגיים המחוברים ביניהם."},
+  {j:"🤝", e:"An interesting historical connection is that the principles behind logic gates are closely related to Boolean algebra, developed by the English mathematician and philosopher George Boole in the nineteenth century.", h:"קשר היסטורי מעניין הוא שהעקרונות מאחורי שערים לוגיים קשורים קשר הדוק לאלגברה בוליאנית, שפותחה על ידי המתמטיקאי והפילוסוף האנגלי ג'ורג' בול במאה התשע-עשרה."},
+  {j:"📏", e:"Boole created a mathematical system based on true and false values, long before electronic computers existed.", h:"בול יצר מערכת מתמטית המבוססת על ערכי אמת ושקר, הרבה לפני שמחשבים אלקטרוניים היו קיימים."},
+  {j:"🌉", e:"Decades later, Claude Shannon showed that Boolean algebra could be implemented using electrical circuits, laying the foundation for modern digital electronics.", h:"עשרות שנים לאחר מכן, קלוד שאנון הראה שניתן ליישם אלגברה בוליאנית באמצעות מעגלים חשמליים, ובכך הניח את היסודות לאלקטרוניקה הדיגיטלית המודרנית."},
+  {j:"🗣️", e:"Another interesting story about binary involves early computer engineers.", h:"סיפור מעניין נוסף על הבינאריות קשור למהנדסי המחשבים הראשונים."},
+  {j:"📻", e:"When they were building the first electronic computers in the 1940s and 1950s, they discovered that vacuum tubes and later transistors naturally worked best with two stable states.", h:"כאשר הם בנו את המחשבים האלקטרוניים הראשונים בשנות ה-40 וה-50 של המאה ה-20, הם גילו ששפופרות ריק (ואקום) ומאוחר יותר טרנזיסטורים פעלו בצורה הטבעית הטובה ביותר עם שני מצבים יציבים."},
+  {j:"🔑", e:"This meant that a mathematical idea proposed centuries earlier by Leibniz and the logical principles developed by George Boole turned out to be exactly what electronic technology needed.", h:"המשמעות הייתה שרעיון מתמטי שהוצע מאות שנים קודם לכן על ידי לייבניץ והעקרונות הלוגיים שפותחו על ידי ג'ורג' בול התגלו בדיוק כדבר שהטכנולוגיה האלקטרונית הייתה צריכה."},
+  {j:"🌐", e:"What seemed like abstract theories became the language and logic of the digital age.", h:"מה שנראה כמו תיאוריות מופשטות הפך לשפה וללוגיקה של העידן הדיגיטלי."},
+  {j:"🎵", e:"Today, every letter, image, song, and video stored on a computer is ultimately represented as long sequences of 0s and 1s.", h:"כיום, כל אות, תמונה, שיר וסרטון המאוחסנים במחשב מיוצגים בסופו של דבר כרצפים ארוכים של 0 ו-1."},
+  {j:"🔠", e:"For example, the letter \"A\" is stored as the binary value 01000001 in the ASCII encoding system.", h:"לדוגמה, האות \"A\" מאוחסנת כערך הבינארי 01000001 במערכת הקידוד ASCII."},
+  {j:"📱", e:"Even the text you are reading right now is represented internally as binary data and processed through countless logic gates inside a computer's processor.", h:"אפילו הטקסט שאתם קוראים ממש עכשיו מיוצג באופן פנימי כנתונים בינאריים ומעובד דרך אינספור שערים לוגיים בתוך המעבד של המחשב."},
+  {j:"🏁", e:"In conclusion, binary numbers are essential because they provide a simple, reliable, and efficient way for electronic devices to process information.", h:"לסיכום, מספרים בינאריים הם חיוניים מכיוון שהם מספקים דרך פשוטה, אמינה ויעילה עבור מכשירים אלקטרוניים לעבד מידע."},
+  {j:"🏛️", e:"Developed mathematically by Leibniz, strengthened by the logical work of George Boole, and connected to electronic circuits by Claude Shannon, the binary system transformed from a theoretical concept into the foundation of modern computing.", h:"המערכת הבינארית שפותחה מתמטית על ידי לייבניץ, חוזקה על ידי העבודה הלוגית של ג'ורג' בול וחוברה למעגלים חשמליים על ידי קלוד שאנון, הפכה ממושג תיאורטי לבסיס של המחשוב המודרני."},
+  {j:"💾", e:"Together with logic gates, binary numbers enable computers to perform calculations, store information, and execute programs.", h:"יחד עם שערים לוגיים, מספרים בינאריים מאפשרים למחשבים לבצע חישובים, לאחסן מידע ולהריץ תוכניות."},
+  {j:"🌌", e:"Without binary numbers and logic gates, the digital world as we know it would not exist.", h:"ללא מספרים בינאריים ושערים לוגיים, העולם הדיגיטלי כפי שאנו מכירים אותו לא היה קיים."}
+];
+
+window.binaryArticleSummary = {
+  e: "The binary number system, relying solely on the digits 0 and 1, is the fundamental language of all modern computing devices. Though ancient in its origins, it was formalized in the 18th century by Gottfried Wilhelm Leibniz. Later, Claude Shannon connected binary logic to electrical circuits, where 0 and 1 represent stable OFF and ON states. This simplicity allows electronic components to process information with high reliability, avoiding errors caused by voltage fluctuations. Combined with Boolean logic, binary numbers enable logic gates and processors to perform complex calculations. Ultimately, everything stored and processed on computers today depends on this simple, powerful system.",
+  h: "מערכת המספרים הבינארית, המסתמכת אך ורק על הספרות 0 ו-1, היא השפה הבסיסית של כל מכשירי המחשוב המודרניים. למרות שמקורותיה עתיקים, היא נוסחה באופן רשמי במאה ה-18 על ידי גוטפריד וילהלם לייבניץ. מאוחר יותר, קלוד שאנון קישר את הלוגיקה הבינארית למעגלים חשמליים, שבהם 0 ו-1 מייצגים מצבים יציבים של כבוי ופועל. פשטות זו מאפשרת לרכיבים אלקטרוניים לעבד מידע באמינות גבוהה, ולמנוע שגיאות הנגרמות מתנודות מתח. יחד עם לוגיקה בוליאנית, המספרים הבינאריים מאפשרים לשערים לוגיים ומעבדים לבצע חישובים מורכבים. בסופו של דבר, כל מה שמאוחסן ומעובד כיום במחשבים תלוי במערכת הפשוטה והעוצמתית הזו."
+};

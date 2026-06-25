@@ -3102,4 +3102,810 @@ window.week10DB = [{"q": "What does HTTP stand for?", "options": ["HyperText Tra
         "diff": "hard",
         "week": "week11"
     }
+,
+
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What do logic gates use to operate?",
+    options: ["0s and 1s", "Decimal numbers", "Analog signals", "Text files"],
+    a: 0,
+    exp: "שערים לוגיים פועלים רק בעזרת הספרות הבינאריות 0 ו-1."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What does an AND gate do?",
+    options: ["Reverses the input", "Produces 1 when at least one input is 1", "Produces 1 only when both inputs are 1", "Always produces 0"],
+    a: 2,
+    exp: "שער AND נותן פלט של 1 רק אם כל הקלטים שלו הם 1."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What does an OR gate do?",
+    options: ["Reverses the input", "Produces 1 when at least one input is 1", "Produces 1 only when both inputs are 1", "Always produces 0"],
+    a: 1,
+    exp: "שער OR נותן פלט של 1 אם לפחות אחד מהקלטים שלו הוא 1."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What does a NOT gate do?",
+    options: ["Adds two inputs", "Produces 1 when at least one input is 1", "Produces 1 only when both inputs are 1", "Reverses the input"],
+    a: 3,
+    exp: "שער NOT הופך את הקלט, כלומר מחליף בין 0 ל-1 ולהפך."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What are logic gates fundamentally based on?",
+    options: ["Quantum mechanics", "Boolean logic", "Decimal arithmetic", "Analog circuits"],
+    a: 1,
+    exp: "שערים לוגיים מבוססים באופן יסודי על הלוגיקה הבוליאנית (Boolean logic)."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What electronic component allowed logic gates to be placed by the billions inside processors?",
+    options: ["Vacuum tube", "Transistor", "Capacitor", "Resistor"],
+    a: 1,
+    exp: "המצאת הטרנזיסטור אפשרה לדחוס מיליארדי שערים לוגיים לתוך מעבד יחיד."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "Who developed the mathematical system of true and false values known as Boolean algebra?",
+    options: ["Claude Shannon", "George Boole", "Gottfried Wilhelm Leibniz", "Alan Turing"],
+    a: 1,
+    exp: "ג'ורג' בול (George Boole) פיתח את האלגברה הבוליאנית המבוססת על ערכי אמת ושקר."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "In what century did George Boole develop his mathematical system?",
+    options: ["17th century", "18th century", "19th century", "20th century"],
+    a: 2,
+    exp: "הוא פיתח את המערכת שלו במאה ה-19, הרבה לפני המצאת המחשבים האלקטרוניים."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "How did George Boole's algebra connect to modern computers?",
+    options: ["He built the first computer", "Claude Shannon showed it could be implemented using electrical circuits", "Leibniz proved it mathematically", "It was discovered by ancient civilizations"],
+    a: 1,
+    exp: "קלוד שאנון הראה שניתן ליישם את האלגברה של בול באמצעות מעגלים חשמליים."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "What is the primary role of logic gates within a modern processor?",
+    options: ["To store large videos", "To continuously process binary data", "To supply voltage to the screen", "To reduce the physical heat of the device"],
+    a: 1,
+    exp: "התפקיד העיקרי של שערים לוגיים הוא לעבד נתונים בינאריים באופן רציף."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Which gate would you use if you needed an output of 0 when the input is 1?",
+    options: ["AND gate", "OR gate", "NOT gate", "NAND gate"],
+    a: 2,
+    exp: "שער NOT תמיד הופך את הקלט (0 ל-1, ו-1 ל-0)."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Why are transistors crucial for modern computing?",
+    options: ["They produce electricity", "They act as switches to build logic gates on a microscopic scale", "They store data permanently without power", "They translate human languages into binary"],
+    a: 1,
+    exp: "טרנזיסטורים משמשים כמתגים זעירים שמאפשרים לבנות שערים לוגיים בקנה מידה עצום."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "If you have an OR gate with inputs 0 and 0, what is the output?",
+    options: ["0", "1", "It crashes", "Depends on the voltage"],
+    a: 0,
+    exp: "בשער OR, רק אם לפחות אחד מהקלטים הוא 1 התוצאה היא 1. אם שניהם 0, הפלט הוא 0."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Which logic gate performs a decision that requires all its input conditions to be met?",
+    options: ["AND gate", "NOT gate", "OR gate", "XOR gate"],
+    a: 0,
+    exp: "שער AND דורש שכל הקלטים יהיו 1 כדי להפיק פלט 1."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "Which mathematician formally described the modern binary system in 1703?",
+    options: ["Claude Shannon", "George Boole", "Gottfried Wilhelm Leibniz", "Alan Turing"],
+    a: 2,
+    exp: "גוטפריד וילהלם לייבניץ (Leibniz) הוא מי שתיאר באופן רשמי את המערכת הבינארית המודרנית."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What nationality was Gottfried Wilhelm Leibniz?",
+    options: ["American", "English", "French", "German"],
+    a: 3,
+    exp: "לייבניץ היה מתמטיקאי ופילוסוף גרמני."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "Who discovered that binary numbers could be matched with electrical circuits?",
+    options: ["Gottfried Wilhelm Leibniz", "George Boole", "Claude Shannon", "Albert Einstein"],
+    a: 2,
+    exp: "המהנדס האמריקאי קלוד שאנון (Claude Shannon) גילה את ההתאמה בין מספרים בינאריים למעגלים חשמליים."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "In Leibniz's philosophical view, what did the numbers 0 and 1 represent?",
+    options: ["0 meant nothingness, 1 meant existence", "0 meant water, 1 meant fire", "0 meant cold, 1 meant hot", "0 meant dark, 1 meant light"],
+    a: 0,
+    exp: "לייבניץ קישר את השיטה הבינארית לרעיון הפילוסופי של יצירה מאין: 0 מייצג את הכלום (nothingness) ו-1 את הקיום (existence)."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "When did Claude Shannon make his breakthrough regarding binary and electrical circuits?",
+    options: ["1700s", "1830s", "1930s", "1990s"],
+    a: 2,
+    exp: "שאנון עשה את פריצת הדרך שלו במהלך שנות ה-30 של המאה ה-20 (1930s)."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What were the main electronic components used in the first electronic computers in the 1940s and 1950s?",
+    options: ["Microchips", "Vacuum tubes and transistors", "Mechanical gears", "Silicon wafers"],
+    a: 1,
+    exp: "המחשבים הראשונים השתמשו בשפופרות ריק (vacuum tubes) ומאוחר יותר בטרנזיסטורים."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "What was the name of Leibniz's work describing the binary system?",
+    options: ["The Binary Method", "Explication de l'Arithmétique Binaire", "Boolean Algebra", "Digital Foundations"],
+    a: 1,
+    exp: "חיבורו של לייבניץ בנושא נקרא \"Explication de l'Arithmétique Binaire\"."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "What mathematical idea turned out to be exactly what electronic technology needed?",
+    options: ["Calculus", "The binary system and Boolean principles", "Geometry", "Trigonometry"],
+    a: 1,
+    exp: "השיטה הבינארית של לייבניץ והלוגיקה של בול, המבוססות על שני מצבים יציבים, התאימו בדיוק לצרכי הטכנולוגיה האלקטרונית."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Did ancient civilizations explore concepts similar to binary?",
+    options: ["No, it was completely unknown before Leibniz", "Yes, including some Chinese and Indian scholars", "Only the Greeks explored it", "Only the Egyptians explored it"],
+    a: 1,
+    exp: "חוקרים מסין והודו העתיקה חקרו רעיונות דומים למערכת הבינארית זמן רב לפני המחשב."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Why was binary originally considered mainly a mathematical curiosity before the 20th century?",
+    options: ["Because nobody understood it", "Because it was kept secret", "Because electronic technology to utilize it had not yet been invented", "Because it was illegal"],
+    a: 2,
+    exp: "השיטה הבינארית נחשבה קוריוז מכיוון שלא הייתה אז טכנולוגיה מתאימה (כמו מעגלים אלקטרוניים) כדי להשתמש בה."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "How did the discovery of the transistor change the physical implementation of Boolean algebra?",
+    options: ["It allowed millions of logic gates on a single processor", "It made circuits larger", "It replaced wires with water pipes", "It required decimal digits instead of binary"],
+    a: 0,
+    exp: "המצאת הטרנזיסטור החליפה רכיבים גדולים והדליקה את האפשרות לדחוס מיליוני (ואחר כך מיליארדי) שערים לוגיים למעבד יחיד."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Which two historical figures laid the mathematical and logical foundations used by modern computers centuries before they existed?",
+    options: ["Turing and von Neumann", "Leibniz and Boole", "Einstein and Newton", "Shannon and Shockley"],
+    a: 1,
+    exp: "לייבניץ (שגילה את השיטה הבינארית) ובול (שפיתח את האלגברה הלוגית) הניחו את היסודות זמן רב לפני המחשבים."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What does the number 0 generally represent in a digital circuit?",
+    options: ["High voltage", "Absence of a signal / low voltage", "Maximum current", "Error state"],
+    a: 1,
+    exp: "בדרך כלל 0 מסמל היעדר אות או מתח נמוך במעגל דיגיטלי."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What does the number 1 generally represent?",
+    options: ["Low voltage", "Absence of a signal", "Presence of a signal / high voltage", "A broken circuit"],
+    a: 2,
+    exp: "1 מייצג בדרך כלל את נוכחותו של אות חשמלי או מתח גבוה במעגל."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "In the water pipe analogy, what does voltage represent?",
+    options: ["The size of the pipe", "The water pressure", "The amount of water flowing", "The temperature of the water"],
+    a: 1,
+    exp: "באנלוגיה לצינור מים, המתח החשמלי משול ללחץ המים (water pressure)."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "In the water pipe analogy, what does current represent?",
+    options: ["The size of the pipe", "The water pressure", "The amount of water flowing", "The speed of light"],
+    a: 2,
+    exp: "זרם חשמלי משול לכמות המים שזורמת בצינור (amount of water flowing)."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "Is it a universal rule that 1 always means high voltage and 0 means low voltage?",
+    options: ["Yes, it is true for all systems", "No, some systems use active-low logic", "Yes, established by Leibniz", "No, because 1 means zero current"],
+    a: 1,
+    exp: "זה לא חוק אוניברסלי. במערכות מסוימות (כמו active-low logic), מתח נמוך דווקא מסמל 1 ומתח גבוה מסמל 0."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What is voltage fundamentally?",
+    options: ["The flow of electrons", "Electrical potential difference that pushes electrons", "The heat generated by the circuit", "The number of transistors"],
+    a: 1,
+    exp: "מתח הוא הפרש הפוטנציאלים ש\"דוחף\" את האלקטרונים לעבור דרך המעגל החשמלי."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What is electric current fundamentally?",
+    options: ["The push of the battery", "The actual flow of electrons", "The resistance in the wire", "The logical state 0"],
+    a: 1,
+    exp: "זרם הוא תנועתם של האלקטרונים בפועל בתוך המעגל."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What happens if a computer component experiences a small interference in a binary system?",
+    options: ["It crashes immediately", "It changes a 1 to a 5", "It usually continues to work reliably because the two states are easily distinguishable", "It catches fire"],
+    a: 2,
+    exp: "מכיוון שיש רק שני מצבים ברורים (0 ו-1), המערכת יכולה לספוג שינויי מתח קלים ולהמשיך לעבוד בצורה אמינה."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Why do older TTL circuits treat voltages below ~0.8V as 0 and above ~2V as 1?",
+    options: ["To make the computer faster", "To save electricity", "To ensure clearly distinguishable states despite fluctuations", "Because they couldn't produce 3V"],
+    a: 2,
+    exp: "הטווחים הללו מבטיחים שגם אם יש תנודות קלות במתח (fluctuations), המחשב יוכל להבחין בבירור בין 0 ל-1."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "What are typical supply voltages for modern CMOS circuits?",
+    options: ["110V and 220V", "3.3V, 1.8V, or lower", "12V and 24V", "1000V"],
+    a: 1,
+    exp: "מעגלי CMOS מודרניים פועלים לעיתים קרובות במתחים של 3.3 וולט, 1.8 וולט או אפילו פחות."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "What is the term for a logic system where low voltage represents 1 and high voltage represents 0?",
+    options: ["Active-low logic", "Active-high logic", "Reverse binary", "Negative current"],
+    a: 0,
+    exp: "מערכת כזו נקראת active-low logic (לוגיקה של פעיל-נמוך)."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "How does a household outlet relate to voltage and current?",
+    options: ["It provides fixed current and depends on device voltage", "It provides a fixed voltage, while current depends on device consumption", "It provides neither", "It provides random amounts of both"],
+    a: 1,
+    exp: "שקע ביתי מספק מתח קבוע (למשל 220V), אך כמות הזרם נקבעת על ידי צריכת החשמל של המכשיר המחובר אליו."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Why is the exact voltage value less important than having two stable states?",
+    options: ["Because voltage doesn't matter in electronics", "Because different technologies use different voltage thresholds for 0 and 1", "Because current is the only thing that matters", "Because computers are analog"],
+    a: 1,
+    exp: "הערך המדויק לא חשוב כמו ההפרדה, שכן טכנולוגיות שונות (TTL, CMOS) משתמשות ברמות מתח שונות עבור 0 ו-1."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "How many symbols does the binary number system use?",
+    options: ["Ten", "Eight", "Two", "Sixteen"],
+    a: 2,
+    exp: "השיטה הבינארית מבוססת על שני סמלים בלבד: 0 ו-1."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "How is the letter 'A' stored in the ASCII encoding system?",
+    options: ["As the number 1", "As the binary value 01000001", "As a high voltage", "As a sound wave"],
+    a: 1,
+    exp: "האות 'A' נשמרת במערכת הקידוד ASCII באמצעות הרצף הבינארי 01000001."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What kinds of data are ultimately stored as binary inside a computer?",
+    options: ["Only text", "Only numbers", "Every letter, image, song, and video", "Only system files"],
+    a: 2,
+    exp: "כל סוג של נתון דיגיטלי – טקסט, תמונה, שיר או וידאו – מאוחסן לבסוף כרצף של אפסים ואחדות."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "Why don't computers use ten different voltage levels for the digits 0-9?",
+    options: ["Because it would be harder to distinguish values, reducing reliability", "Because ten levels are too expensive", "Because the math is too hard", "Because computers can't count to ten"],
+    a: 0,
+    exp: "שימוש ב-10 רמות מתח שונות היה מקשה מאוד על המחשב להבדיל ביניהן בשל שינויי מתח קלים, מה שהיה פוגע באמינות המערכת."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What causes small fluctuations in voltage in electronic components?",
+    options: ["Heat, interference, or manufacturing differences", "Software bugs", "Typing too fast", "Screen brightness"],
+    a: 0,
+    exp: "שינויי טמפרטורה, הפרעות (interference) והבדלים בייצור גורמים לתנודות קלות במתח הרכיבים."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "Why is binary considered highly reliable for electronic devices?",
+    options: ["Because it is fast", "Because it only requires distinguishing between two clearly different states", "Because it is older", "Because it uses ten digits"],
+    a: 1,
+    exp: "האמינות נובעת מכך שהמערכת צריכה להבדיל רק בין שני מצבים מובחנים (לדוגמה מתח נמוך לעומת גבוה)."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What must an engineer ensure when designing a digital circuit regarding the states 0 and 1?",
+    options: ["That they are clearly distinguishable states", "That they use equal voltage", "That they never change", "That they run on batteries"],
+    a: 0,
+    exp: "הדבר החשוב ביותר הוא ששני המצבים החשמליים (0 ו-1) יהיו יציבים וקלים להבחנה זה מזה."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "How does the use of binary rather than decimal directly improve the reliability of digital circuits?",
+    options: ["It increases processing speed", "It makes identifying intended values resilient to minor voltage fluctuations", "It lowers electricity cost", "It reduces the size of logic gates"],
+    a: 1,
+    exp: "השימוש בבינארי במקום בעשרוני מקטין משמעותית את הסיכוי לשגיאה שנגרמת משינוי קל במתח, והופך את זיהוי הערך לחסין יותר."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "What defines the binary value of an item in digital storage?",
+    options: ["The size of the hard drive", "Long sequences of 0s and 1s", "The color of the text", "The language used"],
+    a: 1,
+    exp: "כל פריט המאוחסן בדיגיטל מיוצג באופן בלעדי על ידי סדרות ארוכות של 0 ו-1."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Without binary numbers, would modern digital communication be possible?",
+    options: ["Yes, using letters", "Yes, using smoke signals", "No, it is the foundation of modern computing and communication", "Yes, using analog computers"],
+    a: 2,
+    exp: "ללא מספרים בינאריים, העולם הדיגיטלי ותקשורת המחשבים המודרנית כפי שאנו מכירים אותה לא היו קיימים."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "What fundamental characteristic makes a switch or transistor ideal for binary representation?",
+    options: ["It is cheap", "It has two stable states, like ON and OFF", "It is made of silicon", "It can process decimal math"],
+    a: 1,
+    exp: "מתג או טרנזיסטור מושלמים לייצוג בינארי מכיוון שהם יכולים להימצא באופן טבעי בשני מצבים יציבים: פועל (ON) או כבוי (OFF)."
+  }
+
+,
+
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What do logic gates use to operate?",
+    options: ["0s and 1s", "Decimal numbers", "Analog signals", "Text files"],
+    a: 0,
+    exp: "שערים לוגיים פועלים רק בעזרת הספרות הבינאריות 0 ו-1."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What does an AND gate do?",
+    options: ["Reverses the input", "Produces 1 when at least one input is 1", "Produces 1 only when both inputs are 1", "Always produces 0"],
+    a: 2,
+    exp: "שער AND נותן פלט של 1 רק אם כל הקלטים שלו הם 1."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What does an OR gate do?",
+    options: ["Reverses the input", "Produces 1 when at least one input is 1", "Produces 1 only when both inputs are 1", "Always produces 0"],
+    a: 1,
+    exp: "שער OR נותן פלט של 1 אם לפחות אחד מהקלטים שלו הוא 1."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What does a NOT gate do?",
+    options: ["Adds two inputs", "Produces 1 when at least one input is 1", "Produces 1 only when both inputs are 1", "Reverses the input"],
+    a: 3,
+    exp: "שער NOT הופך את הקלט, כלומר מחליף בין 0 ל-1 ולהפך."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What are logic gates fundamentally based on?",
+    options: ["Quantum mechanics", "Boolean logic", "Decimal arithmetic", "Analog circuits"],
+    a: 1,
+    exp: "שערים לוגיים מבוססים באופן יסודי על הלוגיקה הבוליאנית (Boolean logic)."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What electronic component allowed logic gates to be placed by the billions inside processors?",
+    options: ["Vacuum tube", "Transistor", "Capacitor", "Resistor"],
+    a: 1,
+    exp: "המצאת הטרנזיסטור אפשרה לדחוס מיליארדי שערים לוגיים לתוך מעבד יחיד."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "Who developed the mathematical system of true and false values known as Boolean algebra?",
+    options: ["Claude Shannon", "George Boole", "Gottfried Wilhelm Leibniz", "Alan Turing"],
+    a: 1,
+    exp: "ג'ורג' בול (George Boole) פיתח את האלגברה הבוליאנית המבוססת על ערכי אמת ושקר."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "In what century did George Boole develop his mathematical system?",
+    options: ["17th century", "18th century", "19th century", "20th century"],
+    a: 2,
+    exp: "הוא פיתח את המערכת שלו במאה ה-19, הרבה לפני המצאת המחשבים האלקטרוניים."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "How did George Boole's algebra connect to modern computers?",
+    options: ["He built the first computer", "Claude Shannon showed it could be implemented using electrical circuits", "Leibniz proved it mathematically", "It was discovered by ancient civilizations"],
+    a: 1,
+    exp: "קלוד שאנון הראה שניתן ליישם את האלגברה של בול באמצעות מעגלים חשמליים."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "What is the primary role of logic gates within a modern processor?",
+    options: ["To store large videos", "To continuously process binary data", "To supply voltage to the screen", "To reduce the physical heat of the device"],
+    a: 1,
+    exp: "התפקיד העיקרי של שערים לוגיים הוא לעבד נתונים בינאריים באופן רציף."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Which gate would you use if you needed an output of 0 when the input is 1?",
+    options: ["AND gate", "OR gate", "NOT gate", "NAND gate"],
+    a: 2,
+    exp: "שער NOT תמיד הופך את הקלט (0 ל-1, ו-1 ל-0)."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Why are transistors crucial for modern computing?",
+    options: ["They produce electricity", "They act as switches to build logic gates on a microscopic scale", "They store data permanently without power", "They translate human languages into binary"],
+    a: 1,
+    exp: "טרנזיסטורים משמשים כמתגים זעירים שמאפשרים לבנות שערים לוגיים בקנה מידה עצום."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "If you have an OR gate with inputs 0 and 0, what is the output?",
+    options: ["0", "1", "It crashes", "Depends on the voltage"],
+    a: 0,
+    exp: "בשער OR, רק אם לפחות אחד מהקלטים הוא 1 התוצאה היא 1. אם שניהם 0, הפלט הוא 0."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Which logic gate performs a decision that requires all its input conditions to be met?",
+    options: ["AND gate", "NOT gate", "OR gate", "XOR gate"],
+    a: 0,
+    exp: "שער AND דורש שכל הקלטים יהיו 1 כדי להפיק פלט 1."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "Which mathematician formally described the modern binary system in 1703?",
+    options: ["Claude Shannon", "George Boole", "Gottfried Wilhelm Leibniz", "Alan Turing"],
+    a: 2,
+    exp: "גוטפריד וילהלם לייבניץ (Leibniz) הוא מי שתיאר באופן רשמי את המערכת הבינארית המודרנית."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What nationality was Gottfried Wilhelm Leibniz?",
+    options: ["American", "English", "French", "German"],
+    a: 3,
+    exp: "לייבניץ היה מתמטיקאי ופילוסוף גרמני."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "Who discovered that binary numbers could be matched with electrical circuits?",
+    options: ["Gottfried Wilhelm Leibniz", "George Boole", "Claude Shannon", "Albert Einstein"],
+    a: 2,
+    exp: "המהנדס האמריקאי קלוד שאנון (Claude Shannon) גילה את ההתאמה בין מספרים בינאריים למעגלים חשמליים."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "In Leibniz's philosophical view, what did the numbers 0 and 1 represent?",
+    options: ["0 meant nothingness, 1 meant existence", "0 meant water, 1 meant fire", "0 meant cold, 1 meant hot", "0 meant dark, 1 meant light"],
+    a: 0,
+    exp: "לייבניץ קישר את השיטה הבינארית לרעיון הפילוסופי של יצירה מאין: 0 מייצג את הכלום (nothingness) ו-1 את הקיום (existence)."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "When did Claude Shannon make his breakthrough regarding binary and electrical circuits?",
+    options: ["1700s", "1830s", "1930s", "1990s"],
+    a: 2,
+    exp: "שאנון עשה את פריצת הדרך שלו במהלך שנות ה-30 של המאה ה-20 (1930s)."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What were the main electronic components used in the first electronic computers in the 1940s and 1950s?",
+    options: ["Microchips", "Vacuum tubes and transistors", "Mechanical gears", "Silicon wafers"],
+    a: 1,
+    exp: "המחשבים הראשונים השתמשו בשפופרות ריק (vacuum tubes) ומאוחר יותר בטרנזיסטורים."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "What was the name of Leibniz's work describing the binary system?",
+    options: ["The Binary Method", "Explication de l'Arithmétique Binaire", "Boolean Algebra", "Digital Foundations"],
+    a: 1,
+    exp: "חיבורו של לייבניץ בנושא נקרא \"Explication de l'Arithmétique Binaire\"."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "What mathematical idea turned out to be exactly what electronic technology needed?",
+    options: ["Calculus", "The binary system and Boolean principles", "Geometry", "Trigonometry"],
+    a: 1,
+    exp: "השיטה הבינארית של לייבניץ והלוגיקה של בול, המבוססות על שני מצבים יציבים, התאימו בדיוק לצרכי הטכנולוגיה האלקטרונית."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Did ancient civilizations explore concepts similar to binary?",
+    options: ["No, it was completely unknown before Leibniz", "Yes, including some Chinese and Indian scholars", "Only the Greeks explored it", "Only the Egyptians explored it"],
+    a: 1,
+    exp: "חוקרים מסין והודו העתיקה חקרו רעיונות דומים למערכת הבינארית זמן רב לפני המחשב."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Why was binary originally considered mainly a mathematical curiosity before the 20th century?",
+    options: ["Because nobody understood it", "Because it was kept secret", "Because electronic technology to utilize it had not yet been invented", "Because it was illegal"],
+    a: 2,
+    exp: "השיטה הבינארית נחשבה קוריוז מכיוון שלא הייתה אז טכנולוגיה מתאימה (כמו מעגלים אלקטרוניים) כדי להשתמש בה."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "How did the discovery of the transistor change the physical implementation of Boolean algebra?",
+    options: ["It allowed millions of logic gates on a single processor", "It made circuits larger", "It replaced wires with water pipes", "It required decimal digits instead of binary"],
+    a: 0,
+    exp: "המצאת הטרנזיסטור החליפה רכיבים גדולים והדליקה את האפשרות לדחוס מיליוני (ואחר כך מיליארדי) שערים לוגיים למעבד יחיד."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Which two historical figures laid the mathematical and logical foundations used by modern computers centuries before they existed?",
+    options: ["Turing and von Neumann", "Leibniz and Boole", "Einstein and Newton", "Shannon and Shockley"],
+    a: 1,
+    exp: "לייבניץ (שגילה את השיטה הבינארית) ובול (שפיתח את האלגברה הלוגית) הניחו את היסודות זמן רב לפני המחשבים."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What does the number 0 generally represent in a digital circuit?",
+    options: ["High voltage", "Absence of a signal / low voltage", "Maximum current", "Error state"],
+    a: 1,
+    exp: "בדרך כלל 0 מסמל היעדר אות או מתח נמוך במעגל דיגיטלי."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What does the number 1 generally represent?",
+    options: ["Low voltage", "Absence of a signal", "Presence of a signal / high voltage", "A broken circuit"],
+    a: 2,
+    exp: "1 מייצג בדרך כלל את נוכחותו של אות חשמלי או מתח גבוה במעגל."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "In the water pipe analogy, what does voltage represent?",
+    options: ["The size of the pipe", "The water pressure", "The amount of water flowing", "The temperature of the water"],
+    a: 1,
+    exp: "באנלוגיה לצינור מים, המתח החשמלי משול ללחץ המים (water pressure)."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "In the water pipe analogy, what does current represent?",
+    options: ["The size of the pipe", "The water pressure", "The amount of water flowing", "The speed of light"],
+    a: 2,
+    exp: "זרם חשמלי משול לכמות המים שזורמת בצינור (amount of water flowing)."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "Is it a universal rule that 1 always means high voltage and 0 means low voltage?",
+    options: ["Yes, it is true for all systems", "No, some systems use active-low logic", "Yes, established by Leibniz", "No, because 1 means zero current"],
+    a: 1,
+    exp: "זה לא חוק אוניברסלי. במערכות מסוימות (כמו active-low logic), מתח נמוך דווקא מסמל 1 ומתח גבוה מסמל 0."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What is voltage fundamentally?",
+    options: ["The flow of electrons", "Electrical potential difference that pushes electrons", "The heat generated by the circuit", "The number of transistors"],
+    a: 1,
+    exp: "מתח הוא הפרש הפוטנציאלים ש\"דוחף\" את האלקטרונים לעבור דרך המעגל החשמלי."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What is electric current fundamentally?",
+    options: ["The push of the battery", "The actual flow of electrons", "The resistance in the wire", "The logical state 0"],
+    a: 1,
+    exp: "זרם הוא תנועתם של האלקטרונים בפועל בתוך המעגל."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What happens if a computer component experiences a small interference in a binary system?",
+    options: ["It crashes immediately", "It changes a 1 to a 5", "It usually continues to work reliably because the two states are easily distinguishable", "It catches fire"],
+    a: 2,
+    exp: "מכיוון שיש רק שני מצבים ברורים (0 ו-1), המערכת יכולה לספוג שינויי מתח קלים ולהמשיך לעבוד בצורה אמינה."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Why do older TTL circuits treat voltages below ~0.8V as 0 and above ~2V as 1?",
+    options: ["To make the computer faster", "To save electricity", "To ensure clearly distinguishable states despite fluctuations", "Because they couldn't produce 3V"],
+    a: 2,
+    exp: "הטווחים הללו מבטיחים שגם אם יש תנודות קלות במתח (fluctuations), המחשב יוכל להבחין בבירור בין 0 ל-1."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "What are typical supply voltages for modern CMOS circuits?",
+    options: ["110V and 220V", "3.3V, 1.8V, or lower", "12V and 24V", "1000V"],
+    a: 1,
+    exp: "מעגלי CMOS מודרניים פועלים לעיתים קרובות במתחים של 3.3 וולט, 1.8 וולט או אפילו פחות."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "What is the term for a logic system where low voltage represents 1 and high voltage represents 0?",
+    options: ["Active-low logic", "Active-high logic", "Reverse binary", "Negative current"],
+    a: 0,
+    exp: "מערכת כזו נקראת active-low logic (לוגיקה של פעיל-נמוך)."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "How does a household outlet relate to voltage and current?",
+    options: ["It provides fixed current and depends on device voltage", "It provides a fixed voltage, while current depends on device consumption", "It provides neither", "It provides random amounts of both"],
+    a: 1,
+    exp: "שקע ביתי מספק מתח קבוע (למשל 220V), אך כמות הזרם נקבעת על ידי צריכת החשמל של המכשיר המחובר אליו."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Why is the exact voltage value less important than having two stable states?",
+    options: ["Because voltage doesn't matter in electronics", "Because different technologies use different voltage thresholds for 0 and 1", "Because current is the only thing that matters", "Because computers are analog"],
+    a: 1,
+    exp: "הערך המדויק לא חשוב כמו ההפרדה, שכן טכנולוגיות שונות (TTL, CMOS) משתמשות ברמות מתח שונות עבור 0 ו-1."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "How many symbols does the binary number system use?",
+    options: ["Ten", "Eight", "Two", "Sixteen"],
+    a: 2,
+    exp: "השיטה הבינארית מבוססת על שני סמלים בלבד: 0 ו-1."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "How is the letter 'A' stored in the ASCII encoding system?",
+    options: ["As the number 1", "As the binary value 01000001", "As a high voltage", "As a sound wave"],
+    a: 1,
+    exp: "האות 'A' נשמרת במערכת הקידוד ASCII באמצעות הרצף הבינארי 01000001."
+  },
+  {
+    week: "week12",
+    diff: "easy",
+    q: "What kinds of data are ultimately stored as binary inside a computer?",
+    options: ["Only text", "Only numbers", "Every letter, image, song, and video", "Only system files"],
+    a: 2,
+    exp: "כל סוג של נתון דיגיטלי – טקסט, תמונה, שיר או וידאו – מאוחסן לבסוף כרצף של אפסים ואחדות."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "Why don't computers use ten different voltage levels for the digits 0-9?",
+    options: ["Because it would be harder to distinguish values, reducing reliability", "Because ten levels are too expensive", "Because the math is too hard", "Because computers can't count to ten"],
+    a: 0,
+    exp: "שימוש ב-10 רמות מתח שונות היה מקשה מאוד על המחשב להבדיל ביניהן בשל שינויי מתח קלים, מה שהיה פוגע באמינות המערכת."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What causes small fluctuations in voltage in electronic components?",
+    options: ["Heat, interference, or manufacturing differences", "Software bugs", "Typing too fast", "Screen brightness"],
+    a: 0,
+    exp: "שינויי טמפרטורה, הפרעות (interference) והבדלים בייצור גורמים לתנודות קלות במתח הרכיבים."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "Why is binary considered highly reliable for electronic devices?",
+    options: ["Because it is fast", "Because it only requires distinguishing between two clearly different states", "Because it is older", "Because it uses ten digits"],
+    a: 1,
+    exp: "האמינות נובעת מכך שהמערכת צריכה להבדיל רק בין שני מצבים מובחנים (לדוגמה מתח נמוך לעומת גבוה)."
+  },
+  {
+    week: "week12",
+    diff: "medium",
+    q: "What must an engineer ensure when designing a digital circuit regarding the states 0 and 1?",
+    options: ["That they are clearly distinguishable states", "That they use equal voltage", "That they never change", "That they run on batteries"],
+    a: 0,
+    exp: "הדבר החשוב ביותר הוא ששני המצבים החשמליים (0 ו-1) יהיו יציבים וקלים להבחנה זה מזה."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "How does the use of binary rather than decimal directly improve the reliability of digital circuits?",
+    options: ["It increases processing speed", "It makes identifying intended values resilient to minor voltage fluctuations", "It lowers electricity cost", "It reduces the size of logic gates"],
+    a: 1,
+    exp: "השימוש בבינארי במקום בעשרוני מקטין משמעותית את הסיכוי לשגיאה שנגרמת משינוי קל במתח, והופך את זיהוי הערך לחסין יותר."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "What defines the binary value of an item in digital storage?",
+    options: ["The size of the hard drive", "Long sequences of 0s and 1s", "The color of the text", "The language used"],
+    a: 1,
+    exp: "כל פריט המאוחסן בדיגיטל מיוצג באופן בלעדי על ידי סדרות ארוכות של 0 ו-1."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "Without binary numbers, would modern digital communication be possible?",
+    options: ["Yes, using letters", "Yes, using smoke signals", "No, it is the foundation of modern computing and communication", "Yes, using analog computers"],
+    a: 2,
+    exp: "ללא מספרים בינאריים, העולם הדיגיטלי ותקשורת המחשבים המודרנית כפי שאנו מכירים אותה לא היו קיימים."
+  },
+  {
+    week: "week12",
+    diff: "hard",
+    q: "What fundamental characteristic makes a switch or transistor ideal for binary representation?",
+    options: ["It is cheap", "It has two stable states, like ON and OFF", "It is made of silicon", "It can process decimal math"],
+    a: 1,
+    exp: "מתג או טרנזיסטור מושלמים לייצוג בינארי מכיוון שהם יכולים להימצא באופן טבעי בשני מצבים יציבים: פועל (ON) או כבוי (OFF)."
+  }
+
 ];
