@@ -1147,7 +1147,6 @@ window.render = function() {
         const isWeek10 = window.currentWeek === 'week10';
         const isWeek11 = window.currentWeek === 'week11';
         const isWeek12 = window.currentWeek === 'week12';
-        const isWeek12 = window.currentWeek === 'week12';
         const articleData = isWeek12 ? window.binaryArticleData : (isWeek11 ? window.csharpJsArticleData : (isWeek10 ? window.httpsArticleData : (isWeek9 ? window.ciaTriadArticleData : window.unseenArticleData)));
         const title = isWeek12 ? "The Binary Counting" : (isWeek11 ? "C# and JavaScript: Compiled vs Interpreted" : (isWeek10 ? "HTTP to HTTPS Transition" : (isWeek9 ? "The CIA Triad in Information Security" : "Operating Systems: Unseen")));
         const subtitle = isWeek9 ? "עקרונות אבטחת מידע - בחר מצב תצוגה ולחץ על כרטיסייה לתרגום." : "מאמר המבחן הרשמי. בחר מצב תצוגה ולחץ על כרטיסייה לתרגום.";
