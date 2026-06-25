@@ -29,17 +29,24 @@ for (let key of articleKeys) {
     }
 }
 
+
+const summaryKeys = Object.keys(window).filter(k => k.endsWith('ArticleSummary'));
+for (let key of summaryKeys) {
+    if (window[key] && window[key].e) {
+        allStrings.add(window[key].e);
+    }
+}
+
 const dbKeys = Object.keys(window).filter(k => k.endsWith('DB'));
 for (let key of dbKeys) {
     const arr = window[key];
     if (Array.isArray(arr)) {
         for (let item of arr) {
-            if (item.q) allStrings.add(item.q);
+            if (item.q) allStrings.add(item.q.split('|')[0]);
             if (item.options) {
                 for (let opt of item.options) {
-                    if (!/[\u0590-\u05FF]/.test(opt)) {
-                        allStrings.add(opt); 
-                    }
+                    let engOpt = opt.split('|')[0];
+                    allStrings.add(engOpt); 
                 }
             }
         }

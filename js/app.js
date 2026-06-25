@@ -827,7 +827,9 @@ window.startQuiz = function() {
     if (targetWeek && targetWeek.includes('week8')) fullDB = window.unseenDB;
     else if (targetWeek && targetWeek.includes('week9')) fullDB = window.ciaTriadDB;
     else if (targetWeek && targetWeek.includes('week10')) fullDB = window.week10DB;
-    else fullDB = [...window.unseenDB, ...window.ciaTriadDB, ...window.week10DB];
+    else if (targetWeek && targetWeek.includes('week11')) fullDB = window.week11DB || [];
+    else if (targetWeek && targetWeek.includes('week12')) fullDB = window.week12DB || [];
+    else fullDB = [...(window.unseenDB||[]), ...(window.ciaTriadDB||[]), ...(window.week10DB||[]), ...(window.week11DB||[]), ...(window.week12DB||[])];
 
     let availableQuestions = fullDB.filter(q => q.diff === window.quizDifficulty || window.quizDifficulty === 'medium');
     if (window.quizDifficulty === 'hard') availableQuestions = fullDB; 
@@ -843,7 +845,15 @@ window.startQuiz = function() {
 
     window.quizState = 'playing';
     window.currentQuizIndex = 0;
+    window.quizExpandedOption = null;
+    window.quizExpandedQuestion = false;
     window.quizScore = 0;
+    window.render();
+};
+
+window.expandQuizOption = function(index) {
+    if (window.quizQuestions[window.currentQuizIndex].answered) return;
+    window.quizExpandedOption = window.quizExpandedOption === index ? null : index;
     window.render();
 };
 
@@ -853,12 +863,16 @@ window.handleAnswer = function(index) {
     q.answered = true;
     q.selectedOption = index;
     if (index === q.correctIndex) { window.quizScore += 10; }
+    window.quizExpandedOption = null;
+    window.quizExpandedQuestion = false;
     window.render();
 };
 
 window.nextQuizQuestion = function() {
     if (window.currentQuizIndex < window.quizQuestions.length - 1) { 
-        window.currentQuizIndex++; 
+        window.currentQuizIndex++;
+        window.quizExpandedOption = null;
+        window.quizExpandedQuestion = false; 
     } else {
         window.quizState = 'end';
         const now = new Date();
@@ -1008,7 +1022,7 @@ window.render = function() {
                         <div style="display: flex; align-items: center; gap: 10px;">
                             <span style="font-size: 24px;">🎯</span>
                             <div style="text-align: right;">
-                                <div style="font-size: 18px; font-weight: 900; color: #fff;">מיקוד שבועי: שבוע 11 (C# vs JS)</div>
+                                <div style="font-size: 18px; font-weight: 900; color: #fff;">מיקוד שבועי: שבוע 12 (The Binary Counting)</div>
                                 <div style="font-size: 13px; color: var(--text-muted); margin-top: 3px;">החומרים הכי רלוונטיים ומעודכנים לתרגול מהיר</div>
                             </div>
                         </div>
@@ -1227,6 +1241,28 @@ window.render = function() {
                     </div>
                 `;
             }).join('');
+                } else if (window.articleViewMode === 'summary') {
+            const sumObj = isWeek12 ? window.binaryArticleSummary : (isWeek11 ? window.csharpJsArticleSummary : (isWeek10 ? window.httpsArticleSummary : (isWeek9 ? window.ciaTriadArticleSummary : window.unseenArticleSummary)));
+            if (sumObj) {
+                const safeText = sumObj.e.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                htmlBlock += `
+                    <div class="story-card" style="padding: 30px;">
+                        <div style="display:flex; justify-content:center; margin-bottom: 20px;">
+                            <button class="story-audio-btn" style="width: 70px; height: 70px;" onclick="event.stopPropagation(); window.playAudio('${safeText}', this)" title="השמע סיכום">
+                                ${window.icons.volume}
+                            </button>
+                        </div>
+                        <div class="story-eng-text" style="display: block !important; text-align: left; direction: ltr; font-size: clamp(24px, 2.2rem, 36px); line-height: 1.6; font-family: Georgia, serif;">
+                            ${window.highlightText(sumObj.e)}
+                        </div>
+                        <div class="story-heb-text" dir="rtl" style="border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 20px; margin-top: 20px; padding-right: 0 !important; text-align: right; font-size: clamp(22px, 2.0rem, 32px); line-height: 1.6; color: var(--theme-light);">
+                            ${sumObj.h}
+                        </div>
+                    </div>
+                `;
+            } else {
+                htmlBlock += `<div style="color:var(--theme-light); font-size: 20px; text-align:center;">אין סיכום זמין לשבוע זה.</div>`;
+            }
         } else {
             // Whole Article mode
             const fullEnglish = articleData.map(item => item.e).join(" ");
@@ -1506,14 +1542,40 @@ window.render = function() {
             `;
         } else if (window.quizState === 'playing') {
             let q = window.quizQuestions[window.currentQuizIndex];
+            
+            // Extract translations
+            let qParts = q.question.split('|');
+            let qEng = qParts[0];
+            let qHeb = qParts.length > 1 ? qParts[1] : '';
+            
             let buttonsHTML = q.options.map((opt, i) => {
-                let btnClass = "quiz-opt-btn";
+                let parts = opt.split('|');
+                let engOpt = parts[0];
+                let hebOpt = parts.length > 1 ? parts[1] : '';
+                
+                let btnClass = "quiz-opt-box";
                 if (q.answered) {
                     if (i === q.correctIndex) btnClass += " correct";
                     else if (i === q.selectedOption) btnClass += " wrong";
                     else btnClass += " disabled";
                 }
-                return '<button class="' + btnClass + '" onclick="window.handleAnswer(' + i + ')" ' + (q.answered ? 'disabled' : '') + '>' + opt + '</button>';
+                
+                let isExpanded = window.quizExpandedOption === i;
+                
+                return `
+                    <div class="${btnClass}">
+                        <div class="opt-main-row" style="display:flex; justify-content:space-between; align-items:center; width:100%; gap: 10px;">
+                            <button class="audio-btn" style="min-width: 40px; min-height: 40px;" onclick="event.stopPropagation(); window.playAudio('${engOpt.replace(/'/g, "\'")}')" title="שמע">${window.icons.volume}</button>
+                            <div class="opt-text" style="flex-grow:1; text-align:left; font-size:18px; cursor:pointer;" onclick="window.expandQuizOption(${i})">${engOpt}</div>
+                        </div>
+                        ${isExpanded || q.answered ? `
+                            <div class="opt-expanded-row" style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px; display:flex; flex-direction:column; gap: 10px;">
+                                ${hebOpt ? `<div style="color:var(--theme-light); font-size: 16px; text-align:right;" dir="rtl">${hebOpt}</div>` : ''}
+                                ${!q.answered ? `<button onclick="window.handleAnswer(${i})" class="control-btn" style="width:100%; justify-content:center; background:var(--theme-main); border:none;">בחר תשובה זו ✅</button>` : ''}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
             }).join('');
 
             quizHTML = `
@@ -1523,21 +1585,28 @@ window.render = function() {
                             <span style="color: var(--text-muted); font-size: 1.2rem; font-weight: bold;">שאלה ${window.currentQuizIndex + 1} / 23</span>
                             ${(() => {
                                 const dMap = { 'easy': 'קל', 'medium': 'בינוני', 'hard': 'קשה' };
-                                const wMap = { 'week8': 'שבוע 8', 'week9': 'שבוע 9', 'week10': 'שבוע 10', 'week11': 'שבוע 11', 'mix': 'כל השבועות' };
+                                const wMap = { 'week8': 'שבוע 8', 'week9': 'שבוע 9', 'week10': 'שבוע 10', 'week11': 'שבוע 11', 'week12': 'שבוע 12', 'mix': 'כל השבועות' };
                                 return `<span style="background: rgba(255,255,255,0.1); padding: 4px 12px; border-radius: 12px; font-size: 0.9rem; color: var(--theme-light); border: 1px solid var(--theme-main); box-shadow: 0 0 10px var(--glow-1);">${wMap[window.quizTargetWeek] || 'מעורב'} • רמה: ${dMap[window.quizDifficulty] || 'מעורב'}</span>`;
                             })()}
                         </div>
                         <span style="color: var(--theme-light); font-size: 1.2rem; font-weight: bold;">ניקוד: ${window.quizScore}</span>
                     </div>
-                    <div class="flashcard" style="align-items: center; padding: 4vh 3vw; gap: 3vh; text-align: center;">
-                        <h3 style="font-size: clamp(20px, 3vh, 40px); font-weight: 900; color: #fff; letter-spacing: 1px;" dir="ltr">${q.question}</h3>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5vh; width: 100%; margin-top: 2vh;">
+                    <div class="flashcard" style="align-items: stretch; padding: 4vh 3vw; gap: 3vh; text-align: center;">
+                        <div class="quiz-question-box" style="display:flex; flex-direction:column; gap:15px; align-items:center; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                            <div style="display:flex; align-items:center; justify-content:center; gap: 15px; width: 100%;">
+                                <h3 style="font-size: clamp(20px, 3vh, 32px); font-weight: 900; color: #fff; letter-spacing: 1px; margin:0;" dir="ltr">${qEng}</h3>
+                                <button class="audio-btn" style="min-width: 50px; min-height: 50px;" onclick="window.playAudio('${qEng.replace(/'/g, "\'")}')" title="שמע">${window.icons.volume}</button>
+                            </div>
+                            <button class="control-btn" style="background:transparent; border-color:var(--theme-main); color:var(--theme-light); font-size:14px; padding:4px 10px;" onclick="window.quizExpandedQuestion = !window.quizExpandedQuestion; window.render();">תרגום לשאלה 🌐</button>
+                            ${window.quizExpandedQuestion && qHeb ? `<div style="color:var(--theme-light); font-size: 18px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 15px; width:100%; text-align:center;" dir="rtl">${qHeb}</div>` : ''}
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 1.5vh; width: 100%; margin-top: 1vh;">
                             ${buttonsHTML}
                         </div>
                         <div style="min-height: 6vh; width: 100%; margin-top: 2vh; display: flex; justify-content: center; align-items: center;">
                             ${q.answered ? `
                                 <button onclick="window.nextQuizQuestion()" class="control-btn" style="width: 100%; max-width: 300px; justify-content: center; background: var(--theme-main); border-color: var(--theme-main);">
-                                    ${window.currentQuizIndex === 22 ? 'לתוצאות המבחן' : 'שאלה הבאה'} ${window.icons.left_arrow}
+                                    ${window.currentQuizIndex >= window.quizQuestions.length - 1 ? 'לתוצאות המבחן' : 'שאלה הבאה'} ${window.icons.left_arrow}
                                 </button>
                             ` : ''}
                         </div>

@@ -3909,3 +3909,208 @@ window.week10DB = [{"q": "What does HTTP stand for?", "options": ["HyperText Tra
   }
 
 ];
+
+window.week12DB = [
+
+    {
+        q: "What symbols are used in the binary number system?|אילו סמלים משמשים במערכת המספרים הבינארית?",
+        options: [
+            "0 and 1|0 ו-1",
+            "1 and 2|1 ו-2",
+            "0 to 9|0 עד 9",
+            "A and B|A ו-B"
+        ],
+        ans: 0
+    },
+    {
+        q: "Who formally described the modern binary system in 1703?|מי תיאר באופן רשמי את המערכת הבינארית המודרנית בשנת 1703?",
+        options: [
+            "George Boole|ג'ורג' בול",
+            "Gottfried Wilhelm Leibniz|גוטפריד וילהלם לייבניץ",
+            "Claude Shannon|קלוד שאנון",
+            "Albert Einstein|אלברט איינשטיין"
+        ],
+        ans: 1
+    },
+    {
+        q: "What did Leibniz connect the numbers 0 and 1 to?|למה לייבניץ קישר את המספרים 0 ו-1?",
+        options: [
+            "True and False|אמת ושקר",
+            "Nothingness and Existence|כלום וקיום",
+            "High and Low voltage|מתח גבוה ונמוך",
+            "Positive and Negative charges|מטענים חיוביים ושליליים"
+        ],
+        ans: 1
+    },
+    {
+        q: "What did Claude Shannon discover in the 1930s?|מה גילה קלוד שאנון בשנות ה-30?",
+        options: [
+            "How to create logic gates from vacuum tubes|כיצד ליצור שערים לוגיים משפופרות ריק",
+            "The ASCII encoding system|את מערכת הקידוד ASCII",
+            "That binary numbers could be matched with electrical circuits|שמספרים בינאריים יכולים להיות מותאמים למעגלים חשמליים",
+            "The invention of the transistor|את המצאת הטרנזיסטור"
+        ],
+        ans: 2
+    },
+    {
+        q: "In most digital systems, what does the number 0 generally represent?|ברוב המערכות הדיגיטליות, מה המספר 0 מייצג בדרך כלל?",
+        options: [
+            "High voltage|מתח גבוה",
+            "Presence of a signal|נוכחות של אות",
+            "Absence of a signal|היעדר אות",
+            "A full electrical flow|זרימה חשמלית מלאה"
+        ],
+        ans: 2
+    },
+    {
+        q: "Is it a universal rule that 0 means OFF and 1 means ON?|האם זהו כלל אוניברסלי ש-0 פירושו כבוי ו-1 פירושו דלוק?",
+        options: [
+            "Yes, it applies to all devices|כן, זה חל על כל המכשירים",
+            "No, some systems may reverse these assignments|לא, מערכות מסוימות עשויות להפוך את ההקצאות האלה",
+            "Yes, because Leibniz defined it this way|כן, כי לייבניץ הגדיר זאת כך",
+            "No, they always mean the opposite|לא, הם תמיד אומרים את ההפך"
+        ],
+        ans: 1
+    },
+    {
+        q: "What determines the exact voltage values for logical 0 and 1 in a circuit?|מה קובע את ערכי המתח המדויקים עבור 0 ו-1 לוגיים במעגל?",
+        options: [
+            "The specific technology being used|הטכנולוגיה הספציפית בשימוש",
+            "The amount of current|כמות הזרם",
+            "The ASCII code|קוד ה-ASCII",
+            "The size of the transistor|גודל הטרנזיסטור"
+        ],
+        ans: 0
+    },
+    {
+        q: "What is the main difference between voltage and current?|מה ההבדל העיקרי בין מתח לזרם?",
+        options: [
+            "Voltage is the flow, current is the pressure|מתח הוא הזרימה, זרם הוא הלחץ",
+            "Voltage is the electrical potential difference, current is the flow of electrons|מתח הוא הפרש הפוטנציאל החשמלי, זרם הוא זרימת אלקטרונים",
+            "Voltage is only found in computers, current in homes|מתח נמצא רק במחשבים, זרם בבתים",
+            "Voltage uses binary numbers, current uses decimal numbers|מתח משתמש במספרים בינאריים, זרם משתמש במספרים עשרוניים"
+        ],
+        ans: 1
+    },
+    {
+        q: "Why is the binary system more reliable for electronic components than a decimal system?|מדוע המערכת הבינארית אמינה יותר עבור רכיבים אלקטרוניים מאשר מערכת עשרונית?",
+        options: [
+            "It is faster to process|זה מהיר יותר לעיבוד",
+            "It uses less electrical power|זה משתמש בפחות כוח חשמלי",
+            "With only two states, devices can more easily distinguish between them despite fluctuations|עם שני מצבים בלבד, מכשירים יכולים להבחין ביניהם בקלות למרות תנודות",
+            "Decimal systems cannot represent the letter \"A\"|מערכות עשרוניות אינן יכולות לייצג את האות \"A\""
+        ],
+        ans: 2
+    },
+    {
+        q: "What do logic gates do?|מה עושים שערים לוגיים?",
+        options: [
+            "Generate electricity for the computer|מייצרים חשמל למחשב",
+            "Perform simple decisions based on binary inputs|מבצעים החלטות פשוטות המבוססות על קלטים בינאריים",
+            "Cool down the processor|מקררים את המעבד",
+            "Store large amounts of physical data|מאחסנים כמויות גדולות של נתונים פיזיים"
+        ],
+        ans: 1
+    },
+    {
+        q: "Which logic gate produces an output of 1 only when both inputs are 1?|איזה שער לוגי מפיק פלט של 1 רק כאשר שני הקלטים הם 1?",
+        options: [
+            "OR gate|שער OR",
+            "NOT gate|שער NOT",
+            "AND gate|שער AND",
+            "XOR gate|שער XOR"
+        ],
+        ans: 2
+    },
+    {
+        q: "What is the function of a NOT gate?|מהי הפונקציה של שער NOT?",
+        options: [
+            "It produces 1 when at least one input is 1|הוא מפיק 1 כאשר לפחות קלט אחד הוא 1",
+            "It reverses the input, turning 1 into 0 and 0 into 1|הוא הופך את הקלט, הופך 1 ל-0 ו-0 ל-1",
+            "It blocks all electrical current|הוא חוסם את כל הזרם החשמלי",
+            "It multiplies two binary numbers|הוא מכפיל שני מספרים בינאריים"
+        ],
+        ans: 1
+    },
+    {
+        q: "What invention in the mid-twentieth century allowed millions of logic gates inside a processor?|איזו המצאה באמצע המאה העשרים אפשרה מיליוני שערים לוגיים בתוך מעבד?",
+        options: [
+            "The vacuum tube|שפופרת הריק",
+            "The telegraph|הטלגרף",
+            "The transistor|הטרנזיסטור",
+            "The lightbulb|נורת החשמל"
+        ],
+        ans: 2
+    },
+    {
+        q: "Who developed Boolean algebra in the nineteenth century?|מי פיתח את האלגברה הבוליאנית במאה התשע-עשרה?",
+        options: [
+            "Claude Shannon|קלוד שאנון",
+            "Gottfried Wilhelm Leibniz|גוטפריד וילהלם לייבניץ",
+            "George Boole|ג'ורג' בול",
+            "Alan Turing|אלן טיורינג"
+        ],
+        ans: 2
+    },
+    {
+        q: "How is the letter \"A\" stored in the ASCII encoding system?|כיצד מאוחסנת האות \"A\" במערכת הקידוד ASCII?",
+        options: [
+            "10101010|10101010",
+            "01000001|01000001",
+            "11110000|11110000",
+            "00001111|00001111"
+        ],
+        ans: 1
+    },
+    {
+        q: "What analogy is commonly used to describe voltage and current?|איזו אנלוגיה נפוצה משמשת לתיאור מתח וזרם?",
+        options: [
+            "Cars driving on a highway|מכוניות נוסעות על כביש מהיר",
+            "Water flowing through a pipe|מים זורמים דרך צינור",
+            "Wind blowing through trees|רוח נושבת דרך עצים",
+            "Sound waves traveling in the air|גלי קול נעים באוויר"
+        ],
+        ans: 1
+    },
+    {
+        q: "What was the original purpose of Leibniz's binary system when he first described it?|מה הייתה המטרה המקורית של המערכת הבינארית של לייבניץ כשהוא תיאר אותה לראשונה?",
+        options: [
+            "To build electronic computers|לבנות מחשבים אלקטרוניים",
+            "To encrypt secret messages|להצפין הודעות סודיות",
+            "It was mainly a mathematical curiosity and philosophical idea|זו הייתה בעיקר סקרנות מתמטית ורעיון פילוסופי",
+            "To calculate taxes efficiently|לחשב מסים ביעילות"
+        ],
+        ans: 2
+    },
+    {
+        q: "Which two early electronic components naturally worked best with two stable states?|אילו שני רכיבים אלקטרוניים מוקדמים פעלו באופן טבעי בצורה הטובה ביותר עם שני מצבים יציבים?",
+        options: [
+            "Resistors and capacitors|נגדים וקבלים",
+            "Vacuum tubes and transistors|שפופרות ריק וטרנזיסטורים",
+            "Microchips and hard drives|שבבים וכוננים קשיחים",
+            "Batteries and generators|סוללות וגנרטורים"
+        ],
+        ans: 1
+    },
+    {
+        q: "In active-low logic, how are 0 and 1 represented?|בלוגיקת active-low (פעיל נמוך), כיצד מיוצגים 0 ו-1?",
+        options: [
+            "Logical 1 is low voltage, logical 0 is high voltage|1 לוגי הוא מתח נמוך, 0 לוגי הוא מתח גבוה",
+            "Both are represented by alternating current|שניהם מיוצגים על ידי זרם חילופין",
+            "Logical 1 is high voltage, logical 0 is low voltage|1 לוגי הוא מתח גבוה, 0 לוגי הוא מתח נמוך",
+            "Voltage does not matter, only current is measured|למתח אין משמעות, רק זרם נמדד"
+        ],
+        ans: 0
+    },
+    {
+        q: "What does a modern processor contain that continuously processes binary data?|מה מכיל מעבד מודרני המעבד נתונים בינאריים ברציפות?",
+        options: [
+            "Billions of mechanical switches|מיליארדי מתגים מכניים",
+            "Billions of transistors acting as switches|מיליארדי טרנזיסטורים הפועלים כמתגים",
+            "Thousands of vacuum tubes|אלפי שפופרות ריק",
+            "Hundred logic gates|מאה שערים לוגיים"
+        ],
+        ans: 1
+    }
+
+];
