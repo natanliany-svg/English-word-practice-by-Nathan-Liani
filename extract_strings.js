@@ -53,6 +53,28 @@ for (let key of dbKeys) {
     }
 }
 
+
+// Add paragraph strings
+if (window.articleParagraphs) {
+    for (let weekKey in window.articleParagraphs) {
+        let dataKey = '';
+        if (weekKey === 'week12') dataKey = 'binaryArticleData';
+        else if (weekKey === 'week11') dataKey = 'csharpJsArticleData';
+        else if (weekKey === 'week10') dataKey = 'httpsArticleData';
+        else if (weekKey === 'week9') dataKey = 'ciaTriadArticleData';
+        else if (weekKey === 'week8') dataKey = 'unseenArticleData';
+        
+        const arr = window[dataKey];
+        if (arr) {
+            const paragraphs = window.articleParagraphs[weekKey];
+            for (let paraIndices of paragraphs) {
+                const paraEnglish = paraIndices.map(idx => arr[idx].e).join(" ");
+                allStrings.add(paraEnglish);
+            }
+        }
+    }
+}
+
 let audioMap = {};
 if (fs.existsSync('js/audioMap.js')) {
     const mapContent = fs.readFileSync('js/audioMap.js', 'utf8');

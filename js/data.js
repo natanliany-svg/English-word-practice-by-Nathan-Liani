@@ -570,3 +570,85 @@ window.binaryArticleSummary = {
     e: "The binary system, using only 0s and 1s, is the fundamental language of all digital devices. Originating from historical figures like Gottfried Wilhelm Leibniz and George Boole, it allows computers to process complex data through simple electrical states. Claude Shannon later proved how electrical switches could execute these logical operations, forming the basis of modern circuits. Today, billions of microscopic transistors rely on binary logic to store and compute everything in the digital age. Understanding binary is essential to grasping how our modern world operates.",
     h: "המערכת הבינארית, המשתמשת רק ב-0 וב-1, היא שפת הבסיס של כל המכשירים הדיגיטליים. היא פותחה על ידי דמויות היסטוריות כמו גוטפריד לייבניץ וג'ורג' בול, ומאפשרת למחשבים לעבד נתונים מורכבים באמצעות מצבים חשמליים פשוטים. קלוד שאנון הוכיח כיצד מתגים חשמליים יכולים לבצע פעולות לוגיות אלו, מה שהיווה את הבסיס למעגלים מודרניים. כיום, מיליארדי טרנזיסטורים מסתמכים על לוגיקה בינארית כדי לחשב הכל. הבנת הבינארית חיונית להבנת האופן שבו העולם המודרני פועל."
 };
+
+window.csharpJsArticleSummary = {
+    e: "Programming languages are generally divided into compiled and interpreted languages, each with distinct advantages. C# is a compiled language that translates code into machine language before execution, offering high performance and early error detection. JavaScript is an interpreted language executed directly by the browser line-by-line, providing flexibility and rapid development. While C# is ideal for robust enterprise applications, JavaScript excels in creating dynamic and interactive web experiences. Understanding both paradigms allows developers to choose the right tool for their software projects.",
+    h: "שפות תכנות נחלקות בדרך כלל לשפות מהודרות (Compiled) ושפות מפורשות (Interpreted), שלכל אחת יתרונות ברורים. C# היא שפה מהודרת המתרגמת את הקוד לשפת מכונה לפני ההרצה, מה שמעניק ביצועים גבוהים ואיתור שגיאות מוקדם. JavaScript היא שפה מפורשת המורצת ישירות על ידי הדפדפן שורה אחר שורה, ומספקת גמישות ופיתוח מהיר. בעוד ש-C# אידיאלית לאפליקציות ארגוניות חזקות, JavaScript מצטיינת ביצירת חוויות רשת דינמיות ואינטראקטיביות. הבנת שתי הגישות מאפשרת למפתחים לבחור את הכלי הנכון לפרויקטים שלהם."
+};
+
+window.httpsArticleSummary = {
+    e: "The transition from HTTP to HTTPS is a crucial step in securing modern web communications. HTTP transmits data in plain text, making it vulnerable to interception and tampering by malicious actors. HTTPS solves this by using encryption protocols like TLS, ensuring that data traveling between the user and the server remains confidential. It also provides authentication, verifying the identity of the website to prevent impersonation attacks. Today, HTTPS is the standard for almost all websites, protecting sensitive user information across the internet.",
+    h: "המעבר מ-HTTP ל-HTTPS הוא צעד קריטי באבטחת תקשורת מודרנית ברשת. HTTP מעביר נתונים בטקסט גלוי, מה שהופך אותם לפגיעים ליירוט ושינוי על ידי גורמים זדוניים. HTTPS פותר זאת על ידי שימוש בפרוטוקולי הצפנה כמו TLS, המבטיחים שהנתונים העוברים בין המשתמש לשרת יישארו חסויים. הוא גם מספק אימות, המוודא את זהות האתר כדי למנוע מתקפות התחזות. כיום, HTTPS הוא התקן כמעט לכל האתרים, המגן על מידע רגיש של משתמשים ברחבי האינטרנט."
+};
+
+window.ciaTriadArticleSummary = {
+    e: "The CIA Triad is a fundamental model in information security consisting of Confidentiality, Integrity, and Availability. Confidentiality ensures that sensitive information is accessed only by authorized individuals, often using encryption and passwords. Integrity guarantees that data remains accurate and unaltered during storage and transmission. Availability ensures that systems and data are reliably accessible to authorized users when needed. Together, these three pillars form the core framework for designing secure systems and protecting digital assets.",
+    h: "משולש ה-CIA הוא מודל בסיסי באבטחת מידע המורכב מסודיות (Confidentiality), שלמות (Integrity) וזמינות (Availability). סודיות מבטיחה שמידע רגיש נגיש רק לאנשים מורשים, לרוב בעזרת הצפנה וסיסמאות. שלמות מבטיחה שהנתונים נשארים מדויקים וללא שינוי במהלך אחסון והעברה. זמינות מבטיחה שמערכות ונתונים נגישים באופן אמין למשתמשים מורשים בעת הצורך. יחד, שלושת עמודי התווך הללו מהווים את המסגרת המרכזית לתכנון מערכות מאובטחות והגנה על נכסים דיגיטליים."
+};
+
+window.unseenArticleSummary = {
+    e: "An Operating System is the essential software that manages hardware resources and provides a platform for running applications. It acts as an invisible bridge between the user and the computer's physical components. Key functions include managing memory, controlling input and output devices, and scheduling processes. Without an operating system, every application would need to write its own code to interact with the hardware. From smartphones to supercomputers, operating systems are the unseen force powering modern computing.",
+    h: "מערכת הפעלה היא התוכנה החיונית המנהלת משאבי חומרה ומספקת פלטפורמה להרצת אפליקציות. היא פועלת כגשר בלתי נראה בין המשתמש לרכיבים הפיזיים של המחשב. תפקידיה העיקריים כוללים ניהול זיכרון, שליטה בהתקני קלט ופלט, ותזמון תהליכים. ללא מערכת הפעלה, כל אפליקציה הייתה צריכה לכתוב קוד משלה כדי לתקשר עם החומרה. מסמארטפונים ועד מחשבי-על, מערכות הפעלה הן הכוח הנסתר המניע את המחשוב המודרני."
+};
+
+
+window.articleParagraphs = {
+    'week8': [
+        [0, 1, 2],
+        [3, 4, 5, 6, 7],
+        [8, 9, 10, 11, 12, 13],
+        [14, 15, 16, 17],
+        [18, 19, 20, 21],
+        [22, 23, 24, 25],
+        [26, 27, 28],
+        [29, 30, 31],
+        [32, 33, 34]
+    ],
+    'week9': [
+        [0, 1, 2, 3],
+        [4, 5, 6, 7],
+        [8, 9, 10, 11, 12, 13, 14],
+        [15, 16, 17],
+        [18, 19, 20, 21, 22],
+        [23, 24, 25, 26],
+        [27, 28, 29, 30],
+        [31, 32, 33],
+        [34, 35, 36, 37, 38]
+    ],
+    'week11': [[0],[1,2,3,4,5],[6,7,8,9],[10,11,12,13],[14,15,16,17,18,19],[20,21,22,23,24,25],[26,27,28,29,30],[31,32,33,34],[35,36,37,38,39],[40,41,42,43,44],[45,46,47,48,49,50],[51,52,53,54],[55,56,57,58,59],[60,61,62,63],[64,65,66,67]],
+    'week10': [
+        [0],
+        [1, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10],
+        [11, 12, 13, 14],
+        [15],
+        [16, 17, 18, 19],
+        [20, 21, 22, 23],
+        [24],
+        [25, 26],
+        [27],
+        [28, 29, 30],
+        [31],
+        [32, 33, 34],
+        [35],
+        [36, 37, 38],
+        [39],
+        [40, 41],
+        [42, 43, 44]
+    ],
+    'week12': [
+        [0, 1, 2],
+        [3, 4, 5, 6, 7],
+        [8, 9, 10, 11, 12],
+        [13, 14, 15, 16],
+        [17, 18, 19, 20, 21, 22],
+        [23, 24, 25, 26, 27],
+        [28, 29, 30],
+        [31, 32, 33, 34],
+        [35, 36, 37, 38, 39],
+        [40, 41, 42, 43, 44],
+        [45, 46, 47, 48, 49, 50, 51],
+        [52, 53, 54, 55],
+        [56, 57, 58]
+    ]
+};

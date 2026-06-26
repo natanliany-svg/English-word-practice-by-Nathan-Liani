@@ -64,6 +64,12 @@ window.matchState = {
 // --- Search Filter State ---
 window.summarySearchQuery = '';
 
+window.summaryExpanded = false;
+window.toggleSummary = function() {
+    window.summaryExpanded = !window.summaryExpanded;
+    window.render();
+};
+
 
 
 window.articleParagraphs = {
@@ -109,6 +115,21 @@ window.articleParagraphs = {
         [39],
         [40, 41],
         [42, 43, 44]
+    ],
+    'week12': [
+        [0, 1, 2],
+        [3, 4, 5, 6, 7],
+        [8, 9, 10, 11, 12],
+        [13, 14, 15, 16],
+        [17, 18, 19, 20, 21, 22],
+        [23, 24, 25, 26, 27],
+        [28, 29, 30],
+        [31, 32, 33, 34],
+        [35, 36, 37, 38, 39],
+        [40, 41, 42, 43, 44],
+        [45, 46, 47, 48, 49, 50, 51],
+        [52, 53, 54, 55],
+        [56, 57, 58]
     ]
 };
 
@@ -1030,7 +1051,7 @@ window.render = function() {
                     </div>
                     
                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%;">
-                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.goToWord('w11d1', 0)">
+                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.goToWord('w12d1', 0)">
                             📚 אוצר מילים
                         </button>
                         <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setWeek('week12')">
@@ -1116,7 +1137,7 @@ window.render = function() {
                     </div>
                     <div class="home-card-row">
                         <span class="home-card-number">8</span>
-                        <button class="home-card" onclick="window.setWeek('week12')">
+                        <button class="home-card" onclick="window.setWeek('week11')">
                             <div class="home-card-icon">💻</div>
                             <div class="home-card-content">
                                 <div class="home-card-title">שבוע 11</div>
@@ -1218,7 +1239,7 @@ window.render = function() {
                 `;
             }).join('');
         } else if (window.articleViewMode === 'paragraph') {
-            const paragraphs = window.articleParagraphs[isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8'))];
+            const paragraphs = window.articleParagraphs[isWeek12 ? 'week12' : (isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8')))];
             htmlBlock += paragraphs.map((paraIndices, index) => {
                 const paraEnglish = paraIndices.map(idx => articleData[idx].e).join(" ");
                 const paraHebrew = paraIndices.map(idx => articleData[idx].h).join(" ");
@@ -1246,7 +1267,7 @@ window.render = function() {
             if (sumObj) {
                 const safeText = sumObj.e.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                 htmlBlock += `
-                    <div class="story-card" style="padding: 30px;">
+                    <div class="story-card" style="padding: 30px; cursor: pointer;" onclick="window.toggleSummary()">
                         <div style="display:flex; justify-content:center; margin-bottom: 20px;">
                             <button class="story-audio-btn" style="width: 70px; height: 70px;" onclick="event.stopPropagation(); window.playAudio('${safeText}', this)" title="השמע סיכום">
                                 ${window.icons.volume}
@@ -1255,7 +1276,10 @@ window.render = function() {
                         <div class="story-eng-text" style="display: block !important; text-align: left; direction: ltr; font-size: clamp(24px, 2.2rem, 36px); line-height: 1.6; font-family: Georgia, serif;">
                             ${window.highlightText(sumObj.e)}
                         </div>
-                        <div class="story-heb-text" dir="rtl" style="border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 20px; margin-top: 20px; padding-right: 0 !important; text-align: right; font-size: clamp(22px, 2.0rem, 32px); line-height: 1.6; color: var(--theme-light);">
+                        <div style="text-align: center; margin-top: 15px; font-size: 14px; color: rgba(255,255,255,0.4);">
+                            ${window.summaryExpanded ? '▲ הסתר תרגום' : '▼ לחץ לתרגום'}
+                        </div>
+                        <div class="story-heb-text" dir="rtl" style="display: ${window.summaryExpanded ? 'block' : 'none'}; border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 20px; margin-top: 20px; padding-right: 0 !important; text-align: right; font-size: clamp(22px, 2.0rem, 32px); line-height: 1.6; color: var(--theme-light);">
                             ${sumObj.h}
                         </div>
                     </div>
@@ -1264,37 +1288,27 @@ window.render = function() {
                 htmlBlock += `<div style="color:var(--theme-light); font-size: 20px; text-align:center;">אין סיכום זמין לשבוע זה.</div>`;
             }
         } else {
-            // Whole Article mode
-            const fullEnglish = articleData.map(item => item.e).join(" ");
-            const fullHebrew = articleData.map(item => item.h).join(" ");
-            const safeText = fullEnglish.replace(/'/g, "\\\'").replace(/"/g, "&quot;");
-            
-            const paragraphs = window.articleParagraphs[isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8'))];
-            const engParasHtml = paragraphs.map(paraIndices => {
-                const paraText = paraIndices.map(idx => articleData[idx].e).join(" ");
-                return `<p style="margin-bottom: 25px; text-align: left; direction: ltr; font-size: clamp(24px, 2.2rem, 36px); line-height: 1.6; font-family: Georgia, serif;">${window.highlightText(paraText)}</p>`;
+            // Whole Article mode - per-paragraph audio
+            const paragraphs = window.articleParagraphs[isWeek12 ? 'week12' : (isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8')))];
+            htmlBlock += paragraphs.map((paraIndices, pIdx) => {
+                const paraEnglish = paraIndices.map(idx => articleData[idx].e).join(" ");
+                const paraHebrew = paraIndices.map(idx => articleData[idx].h).join(" ");
+                const safeParaText = paraEnglish.replace(/'/g, "\\\'").replace(/"/g, "&quot;");
+                return `
+                    <div class="story-card" style="cursor: pointer; padding: 30px;" onclick="this.classList.toggle('expanded')">
+                        <div style="display:flex; justify-content:center; margin-bottom: 15px;">
+                            <button class="story-audio-btn" style="width: 50px; height: 50px;" onclick="event.stopPropagation(); window.playAudio('${safeParaText}', this)" title="השמע פסקא ${pIdx + 1}">
+                                ${window.icons.volume}
+                            </button>
+                        </div>
+                        <div class="story-eng-text" style="display: block !important; text-align: left; direction: ltr; font-size: clamp(24px, 2.2rem, 36px); line-height: 1.6; font-family: Georgia, serif;">
+                            ${window.highlightText(paraEnglish)}
+                        </div>
+                        <div class="story-heb-text" dir="rtl" style="border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 20px; margin-top: 20px; padding-right: 0 !important; text-align: right; font-size: clamp(22px, 2.0rem, 32px); line-height: 1.6; color: var(--theme-light);">
+                            ${paraHebrew}
+                        </div>
+                    </div>`;
             }).join('');
-
-            const hebParasHtml = paragraphs.map(paraIndices => {
-                const paraText = paraIndices.map(idx => articleData[idx].h).join(" ");
-                return `<p style="margin-bottom: 25px; text-align: right; direction: rtl; font-size: clamp(22px, 2.0rem, 32px); line-height: 1.6; color: var(--theme-light);">${paraText}</p>`;
-            }).join('');
-
-            htmlBlock += `
-                <div class="story-card" style="cursor: pointer; padding: 30px;" onclick="this.classList.toggle('expanded')">
-                    <div style="display:flex; justify-content:center; margin-bottom: 20px;">
-                        <button class="story-audio-btn" style="width: 70px; height: 70px;" onclick="event.stopPropagation(); window.playAudio('${safeText}', this)" title="השמע הכל">
-                            ${window.icons.volume}
-                        </button>
-                    </div>
-                    <div class="story-eng-text" style="display: block !important;">
-                        ${engParasHtml}
-                    </div>
-                    <div class="story-heb-text" dir="rtl" style="border-top: 2px dashed rgba(255,255,255,0.2); padding-top: 20px; margin-top: 20px; padding-right: 0 !important;">
-                        ${hebParasHtml}
-                    </div>
-                </div>
-            `;
         }
         
         htmlBlock += `
