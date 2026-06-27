@@ -1287,28 +1287,35 @@ window.render = function() {
             } else {
                 htmlBlock += `<div style="color:var(--theme-light); font-size: 20px; text-align:center;">אין סיכום זמין לשבוע זה.</div>`;
             }
-        } else {
-            // Whole Article mode - per-paragraph audio
+                } else {
+            // Whole Article mode - single card, flowing text, inline audio
             const paragraphs = window.articleParagraphs[isWeek12 ? 'week12' : (isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8')))];
+            
+            htmlBlock += `<div class="story-card" style="padding: 40px; cursor: pointer;" onclick="this.classList.toggle('expanded')">`;
+            
             htmlBlock += paragraphs.map((paraIndices, pIdx) => {
                 const paraEnglish = paraIndices.map(idx => articleData[idx].e).join(" ");
                 const paraHebrew = paraIndices.map(idx => articleData[idx].h).join(" ");
                 const safeParaText = paraEnglish.replace(/'/g, "\\\'").replace(/"/g, "&quot;");
+                
                 return `
-                    <div class="story-card" style="cursor: pointer; padding: 30px;" onclick="this.classList.toggle('expanded')">
-                        <div style="display:flex; justify-content:center; margin-bottom: 15px;">
-                            <button class="story-audio-btn" style="width: 50px; height: 50px;" onclick="event.stopPropagation(); window.playAudio('${safeParaText}', this)" title="השמע פסקא ${pIdx + 1}">
+                    <div style="margin-bottom: 30px;">
+                        <div style="display:flex; align-items: flex-start; gap: 15px; margin-bottom: 10px;">
+                            <button class="story-audio-btn" style="width: 40px; height: 40px; flex-shrink: 0; margin-top: 5px;" onclick="event.stopPropagation(); window.playAudio('${safeParaText}', this)" title="🔊 פסקא ${pIdx + 1}">
                                 ${window.icons.volume}
                             </button>
+                            <div class="story-eng-text" style="display: block !important; text-align: left; direction: ltr; font-size: clamp(22px, 2.0rem, 32px); line-height: 1.8; font-family: Georgia, serif; margin: 0;">
+                                ${window.highlightText(paraEnglish)}
+                            </div>
                         </div>
-                        <div class="story-eng-text" style="display: block !important; text-align: left; direction: ltr; font-size: clamp(24px, 2.2rem, 36px); line-height: 1.6; font-family: Georgia, serif;">
-                            ${window.highlightText(paraEnglish)}
-                        </div>
-                        <div class="story-heb-text" dir="rtl" style="border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 20px; margin-top: 20px; padding-right: 0 !important; text-align: right; font-size: clamp(22px, 2.0rem, 32px); line-height: 1.6; color: var(--theme-light);">
+                        <div class="story-heb-text" dir="rtl" style="text-align: right; font-size: clamp(20px, 1.8rem, 28px); line-height: 1.6; color: var(--theme-light); margin-right: 55px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.1);">
                             ${paraHebrew}
                         </div>
-                    </div>`;
+                    </div>
+                `;
             }).join('');
+            
+            htmlBlock += `</div>`;
         }
         
         htmlBlock += `

@@ -35,13 +35,11 @@ window.vocabularyData = {
   w9d1:[{word:"Confidentiality",phonetic:"קוֹנְפִידֶנְשִׁיאַלִיטִי",meaning:"סוֹדִיּוּת",visual:"🤫",exp:"עיקרון האבטחה שמבטיח שמידע נגיש רק למורשים.",engEx:"Confidentiality means information should only be accessible to authorized people.",hebEx:"סודיות פירושה שמידע צריך להיות נגיש רק לאנשים מורשים."},{word:"Integrity",phonetic:"אִינְטֶגְרִיטִי",meaning:"שְׁלֵמוּת",visual:"✅",exp:"עיקרון המבטיח שמידע נשאר מדויק ואמין ללא שינוי לא מורשה.",engEx:"Integrity refers to the accuracy and reliability of information.",hebEx:"שלמות מתייחסת לדיוק ואמינות המידע."},{word:"Availability",phonetic:"אַוֵויְלַבִּילִיטִי",meaning:"זְמִינוּת",visual:"🟢",exp:"עיקרון המבטיח שמידע נגיש למשתמשים מורשים בכל עת.",engEx:"Information is only useful if authorized users can access it when they need it.",hebEx:"מידע מועיל רק אם משתמשים מורשים יכולים לגשת אליו כשהם זקוקים לו."},{word:"Triad",phonetic:"טְרַאיֶיאַד",meaning:"שְׁלִישִׁיָּה / מְשׁוּלָּשׁ",visual:"🔺",exp:"קבוצה של שלושה דברים הקשורים זה בזה.",engEx:"The CIA Triad consists of Confidentiality, Integrity, and Availability.",hebEx:"משולש ה-CIA מורכב מסודיות, שלמות וזמינות."},{word:"Cybersecurity",phonetic:"סַייְבֶּרְסֶקְיוּרִיטִי",meaning:"אַבְטַחַת סַייְבֶּר",visual:"🛡️",exp:"התחום העוסק בהגנה על מערכות מחשב ומידע מפני איומים.",engEx:"Cybersecurity professionals rely on the CIA Triad model.",hebEx:"אנשי אבטחת סייבר מסתמכים על מודל משולש ה-CIA."},{word:"Framework",phonetic:"פְרֵיְימְוּוֶרְק",meaning:"מִסְגֶּרֶת",visual:"🏗️",exp:"מבנה בסיסי שמשמש כתשתית לעבודה או לתכנון.",engEx:"The CIA Triad is a framework that helps organizations secure their information.",hebEx:"משולש ה-CIA הוא מסגרת שעוזרת לארגונים לאבטח את המידע שלהם."},{word:"Sensitive",phonetic:"סֶנְסִיטִיב",meaning:"רָגִישׁ",visual:"⚠️",exp:"מידע שדורש הגנה מיוחדת בגלל אופיו הפרטי או החשוב.",engEx:"Encryption helps protect sensitive data from unauthorized access.",hebEx:"הצפנה עוזרת להגן על נתונים רגישים מפני גישה לא מורשית."},{word:"Unauthorized",phonetic:"אַנְאוֹתוֹרַאיְזְד",meaning:"לֹא מוּרְשֶׁה",visual:"🚫",exp:"ללא הרשאה או אישור חוקי לבצע פעולה.",engEx:"Passwords prevent unauthorized users from viewing data.",hebEx:"סיסמאות מונעות ממשתמשים לא מורשים לצפות בנתונים."},{word:"Breach",phonetic:"בְּרִיצ'",meaning:"פְּרִיצָה / הֲפָרָה",visual:"💥",exp:"חדירה לא מורשית למערכת או הפרת כללי אבטחה.",engEx:"A security breach can expose confidential customer data.",hebEx:"פריצת אבטחה יכולה לחשוף נתוני לקוחות סודיים."},{word:"Phishing",phonetic:"פִישִׁינְג",meaning:"דִּיּוּג",visual:"🎣",exp:"מתקפת הונאה בה שולחים הודעות מזויפות כדי לגנוב מידע.",engEx:"The email was actually part of a phishing attack.",hebEx:"האימייל היה למעשה חלק ממתקפת פישינג (דיוג)."}],
   w9d2:[{word:"Ransomware",phonetic:"רַנְסוֹמְוֶוֶר",meaning:"תּוֹכְנַת כּוֹפֶר",visual:"💸",exp:"תוכנה זדונית שנועלת קבצים ודורשת כופר כדי לשחררם.",engEx:"The attacker launched ransomware that encrypted many files.",hebEx:"התוקף הפעיל תוכנת כופר שהצפינה קבצים רבים."},{word:"Encryption",phonetic:"אֶנְקְרִיפְּשֶׁן",meaning:"הַצְפָּנָה",visual:"🔒",exp:"תהליך המרת מידע לקוד סודי כדי להגן עליו.",engEx:"Companies use encryption to prevent unauthorized users from viewing data.",hebEx:"חברות משתמשות בהצפנה כדי למנוע ממשתמשים לא מורשים לצפות בנתונים."},{word:"Signature",phonetic:"סִיגְנֶצֶ'ר",meaning:"חֲתִימָה",visual:"✍️",exp:"חתימה דיגיטלית המאמתת את מקור המידע ושלמותו.",engEx:"Organizations use digital signatures to ensure data integrity.",hebEx:"ארגונים משתמשים בחתימות דיגיטליות כדי להבטיח את שלמות הנתונים."},{word:"Audit",phonetic:"אוֹדִיט",meaning:"בִּיקוֹרֶת",visual:"📋",exp:"בדיקה שיטתית ומקיפה של מערכת, חשבונות או תהליכים.",engEx:"Audit logs help organizations track changes to important data.",hebEx:"יומני ביקורת עוזרים לארגונים לעקוב אחר שינויים בנתונים חשובים."},{word:"Hash",phonetic:"הַאשׁ",meaning:"גִּיבּוּב",visual:"#️⃣",exp:"פונקציה שממירה מידע לקוד ייחודי קבוע לצורך אימות.",engEx:"Hash functions are used to verify data integrity.",hebEx:"פונקציות גיבוב משמשות לאימות שלמות הנתונים."},{word:"Legitimate",phonetic:"לְגִיטִימֵייט",meaning:"לְגִיטִימִי / חוּקִי",visual:"✔️",exp:"דבר שהוא חוקי, תקין ומוכר על ידי הרשויות.",engEx:"Since the email seemed legitimate, Daniel clicked the link.",hebEx:"מכיוון שהאימייל נראה לגיטימי, דניאל לחץ על הקישור."},{word:"Employee",phonetic:"אֶמְפְּלוֹיִי",meaning:"עוֹבֵד",visual:"👨‍💼",exp:"אדם שעובד עבור חברה או ארגון תמורת שכר.",engEx:"An employee named Daniel received a suspicious email.",hebEx:"עובד בשם דניאל קיבל אימייל חשוד."},{word:"Suspicious",phonetic:"סַסְפִּישֶׁס",meaning:"חֲשׁוּד",visual:"🧐",exp:"דבר שמעורר חשד או תחושה שמשהו לא בסדר.",engEx:"Employees should report any suspicious emails to the IT department.",hebEx:"עובדים צריכים לדווח על כל אימייל חשוד למחלקת ה-IT."},{word:"Compromise",phonetic:"קוֹמְפְּרוֹמַאיְז",meaning:"לִפְגּוֹעַ / פְּשָׁרָה",visual:"⚠️",exp:"בהקשר אבטחה: פגיעה במערכת או חשיפת מידע. בהקשר כללי: הסכמה הדדית.",engEx:"If confidentiality has been compromised, sensitive data may be exposed.",hebEx:"אם הסודיות נפגעה, נתונים רגישים עלולים להיחשף."},{word:"Altered",phonetic:"אוֹלְטֶרְד",meaning:"שׁוּנָּה",visual:"✏️",exp:"משהו שעבר שינוי, לעיתים ללא הרשאה.",engEx:"Several customer records were altered without authorization.",hebEx:"מספר רשומות לקוחות שונו ללא הרשאה."}],
   w9d3:[{word:"Reliable",phonetic:"רִילַאיְיַבֶּל",meaning:"אָמִין",visual:"🤝",exp:"דבר שאפשר לסמוך עליו שיפעל כנדרש.",engEx:"The data was no longer reliable after it was altered.",hebEx:"הנתונים כבר לא היו אמינים לאחר שהשתנו."},{word:"Accurate",phonetic:"אַקְיוּרֶייט",meaning:"מְדוּיָק",visual:"🎯",exp:"נכון ומדויק, ללא שגיאות.",engEx:"Integrity ensures that information remains accurate and unchanged.",hebEx:"שלמות מבטיחה שמידע נשאר מדויק וללא שינוי."},{word:"Essential",phonetic:"אֶסֶנְשָׁל",meaning:"חִיּוּנִי",visual:"❗",exp:"דבר שהכרחי ולא ניתן להסתדר בלעדיו.",engEx:"Backups are essential for maintaining data availability.",hebEx:"גיבויים הם חיוניים לשמירה על זמינות הנתונים."},{word:"Backup",phonetic:"בַּאקְאַפּ",meaning:"גִּיבּוּי",visual:"💾",exp:"עותק שמור של נתונים למקרה של אובדן או תקלה.",engEx:"DataSafe had recently created secure backups of its data.",hebEx:"DataSafe יצרה לאחרונה גיבויים מאובטחים של הנתונים שלה."},{word:"Resume",phonetic:"רִיזְיוּם",meaning:"לַחֲדֹשׁ / לְהַמְשִׁיךְ",visual:"▶️",exp:"לחזור ולהמשיך פעילות שנעצרה.",engEx:"The company was able to resume normal operations within a short time.",hebEx:"החברה הצליחה לחדש פעילות רגילה תוך זמן קצר."},{word:"Awareness",phonetic:"אַוֶוֶרְנֶס",meaning:"מוּדָעוּת",visual:"👁️",exp:"ידיעה והבנה של נושא או מצב מסוים.",engEx:"Protecting information is also about human awareness.",hebEx:"הגנה על מידע היא גם עניין של מודעות אנושית."},{word:"Responsible",phonetic:"רֶסְפּוֹנְסִיבֶּל",meaning:"אַחְרַאי",visual:"🧑‍💼",exp:"אדם שחייב בדין וחשבון ושעליו מוטלת חובה.",engEx:"Protecting information is about responsible security practices.",hebEx:"הגנה על מידע נוגעת לשיטות אבטחה אחראיות."},{word:"Demonstrate",phonetic:"דֶמוֹנְסְטְרֵייט",meaning:"לְהַדְגִּים",visual:"📊",exp:"להראות או להוכיח משהו בצורה ברורה.",engEx:"The story demonstrates how a phishing email can affect all three CIA elements.",hebEx:"הסיפור מדגים כיצד אימייל פישינג יכול להשפיע על שלושת אלמנטי ה-CIA."},{word:"Affect",phonetic:"אַפֶקְט",meaning:"לְהַשְׁפִּיעַ",visual:"📡",exp:"לגרום לשינוי או להשפיע על משהו.",engEx:"A single phishing email can affect all three elements of the CIA Triad.",hebEx:"אימייל פישינג יחיד יכול להשפיע על כל שלושת אלמנטי משולש ה-CIA."},{word:"Exposed",phonetic:"אֶקְסְפּוֹזְד",meaning:"נֶחְשַׂף",visual:"🔦",exp:"מידע שנגלה לציבור או לגורמים לא מורשים.",engEx:"Confidential information was exposed during the security breach.",hebEx:"מידע סודי נחשף במהלך פריצת האבטחה."}],
-  w9d4:[{word:"Critical",phonetic:"קְרִיטִיקַל",meaning:"קְרִיטִי",visual:"🚨",exp:"חשוב ביותר, עד כדי כך שכישלון יגרום לנזק חמור.",engEx:"Critical systems became unavailable after the ransomware attack.",hebEx:"מערכות קריטיות הפכו ללא זמינות לאחר מתקפת הכופר."},{word:"Incident",phonetic:"אִינְסִידֶנְט",meaning:"תַּקְרִית",visual:"📍",exp:"אירוע חריג, לרוב שלילי, שדורש תגובה.",engEx:"The incident became an important lesson for both management and employees.",hebEx:"התקרית הפכה לשיעור חשוב הן להנהלה והן לעובדים."},{word:"Valuable",phonetic:"וַאלְיוּאַבֶּל",meaning:"יָקָר עֵרֶךְ",visual:"💎",exp:"בעל ערך רב, כספי או רוחני.",engEx:"Information is one of the most valuable resources for businesses.",hebEx:"מידע הוא אחד המשאבים יקרי הערך ביותר עבור עסקים."},{word:"Asset",phonetic:"אַסֶט",meaning:"נֶכֶס",visual:"🏆",exp:"משאב בעל ערך השייך לאדם או לארגון.",engEx:"Organizations must protect their most valuable digital assets.",hebEx:"ארגונים חייבים להגן על הנכסים הדיגיטליים היקרים ביותר שלהם."},{word:"Credentials",phonetic:"קְרֶדֶנְשַׁלְס",meaning:"פְּרָטֵי הִתְחַבְּרוּת",visual:"🪪",exp:"פרטי זיהוי כמו שם משתמש וסיסמה המשמשים להתחברות למערכת.",engEx:"Daniel entered his login credentials on the fake website.",hebEx:"דניאל הזין את פרטי ההתחברות שלו באתר המזויף."},{word:"Restore",phonetic:"רִיסְטוֹר",meaning:"לְשַׁחְזֵר",visual:"🔄",exp:"להחזיר משהו למצבו הקודם, כמו שחזור קבצים.",engEx:"The IT team worked to restore the systems and recover the files.",hebEx:"צוות ה-IT עבד לשחזר את המערכות ולשחזר את הקבצים."},{word:"Recover",phonetic:"רִיקַאבֶר",meaning:"לְהִתְאוֹשֵׁשׁ / לְשַׁחְזֵר",visual:"🛠️",exp:"לחזור לתפקוד תקין אחרי אירוע שלילי.",engEx:"The team worked to recover the affected files.",hebEx:"הצוות עבד לשחזר את הקבצים שנפגעו."},{word:"Disruptive",phonetic:"דִיסְרַפְּטִיב",meaning:"מַשְׁבִּשׁ",visual:"💢",exp:"דבר שגורם להפרעה משמעותית בפעילות רגילה.",engEx:"Downtime can be expensive and disruptive for businesses.",hebEx:"זמן השבתה יכול להיות יקר ומשבש עבור עסקים."},{word:"Measures",phonetic:"מֶזֶ'רְס",meaning:"אֶמְצָעִים",visual:"📏",exp:"פעולות או כלים שננקטים כדי להשיג מטרה או להגן.",engEx:"Confidentiality can be lost when security measures are bypassed.",hebEx:"סודיות יכולה ללכת לאיבוד כאשר עוקפים אמצעי אבטחה."},{word:"Practice",phonetic:"פְּרַקְטִיס",meaning:"תַּרְגוּל / נוֹהָג",visual:"🔁",exp:"פעולה חוזרת ללמידה, או שיטה מקובלת.",engEx:"Responsible security practices protect organizations from attacks.",hebEx:"נוהלי אבטחה אחראיים מגנים על ארגונים מפני מתקפות."}]
-,
-    w10d1:[{"word": "Transition","phonetic": "טרנזישן","meaning": "מעבר","visual": "🔄","exp": "תהליך של שינוי ממצב אחד לאחר.","engEx": "The transition from HTTP to HTTPS was necessary.","hebEx": "המעבר מ-HTTP ל-HTTPS היה הכרחי."},{"word": "Essential","phonetic": "אסנשל","meaning": "חיוני","visual": "❗","exp": "משהו הכרחי לחלוטין.","engEx": "Security became essential.","hebEx": "אבטחה הפכה לחיונית."},{"word": "Information","phonetic": "אינפורמיישן","meaning": "מידע","visual": "ℹ️","exp": "נתונים או עובדות על משהו.","engEx": "They shared information with visitors.","hebEx": "הם שיתפו מידע עם מבקרים."},{"word": "Protocol","phonetic": "פרוטוקול","meaning": "פרוטוקול","visual": "📜","exp": "אוסף חוקים המסדירים תקשורת בין מחשבים.","engEx": "HTTP is a transfer protocol.","hebEx": "HTTP הוא פרוטוקול העברה."},{"word": "Communication","phonetic": "קומיוניקיישן","meaning": "תקשורת","visual": "💬","exp": "העברת מידע בין צדדים.","engEx": "It is a communication system.","hebEx": "זוהי מערכת תקשורת."},{"word": "Browsers","phonetic": "בראוזרס","meaning": "דפדפנים","visual": "🌐","exp": "תוכנות המשמשות לגלישה באינטרנט.","engEx": "Browsers and servers exchange data.","hebEx": "דפדפנים ושרתים מחליפים נתונים."},{"word": "Servers","phonetic": "סרברס","meaning": "שרתים","visual": "🖥️","exp": "מחשבים המספקים שירותים למחשבים אחרים ברשת.","engEx": "The servers hosted the website.","hebEx": "השרתים אירחו את האתר."},{"word": "Exchange","phonetic": "אקסצ'יינג'","meaning": "החלפה","visual": "🔄","exp": "מסירה וקבלה של דברים (כמו נתונים).","engEx": "They exchange information quickly.","hebEx": "הם מחליפים מידע במהירות."},{"word": "Weakness","phonetic": "וויקנס","meaning": "חולשה","visual": "📉","exp": "נקודת תורפה או חוסר חוזק.","engEx": "HTTP had one major weakness.","hebEx": "ל-HTTP הייתה חולשה מרכזית אחת."},{"word": "Protect","phonetic": "פרוטקט","meaning": "להגן","visual": "🛡️","exp": "לשמור על משהו מפני פגיעה או סכנה.","engEx": "It did not protect the data.","hebEx": "זה לא הגן על הנתונים."}],
-    w10d2:[{"word": "Transmitted","phonetic": "טרנסמיטד","meaning": "משודר / מועבר","visual": "📡","exp": "משהו שנשלח או הועבר ממקום למקום.","engEx": "Data is transmitted over the network.","hebEx": "הנתונים משודרים ברשת."},{"word": "Passwords","phonetic": "פסוורדס","meaning": "סיסמאות","visual": "🔑","exp": "מילים או רצף תווים סודיים לאימות זהות.","engEx": "Never share your passwords.","hebEx": "לעולם אל תשתף את הסיסמאות שלך."},{"word": "Intercepting","phonetic": "אינטרספטינג","meaning": "יירוט","visual": "🕵️","exp": "תפיסת מידע בדרכו ליעד.","engEx": "Anyone intercepting the connection could read it.","hebEx": "כל מי שמיירט את החיבור יכול לקרוא את זה."},{"word": "Connection","phonetic": "קונקשן","meaning": "חיבור","visual": "🔗","exp": "קישור בין מחשבים או רשתות.","engEx": "The connection was secured.","hebEx": "החיבור היה מאובטח."},{"word": "Sensitive","phonetic": "סנסיטיב","meaning": "רגיש","visual": "⚠️","exp": "מידע פרטי או סודי שיש להגן עליו.","engEx": "Users send sensitive information daily.","hebEx": "משתמשים שולחים מידע רגיש מדי יום."},{"word": "Cybercriminals","phonetic": "סייבר-קרימינלס","meaning": "פושעי סייבר","visual": "🦹","exp": "אנשים המבצעים פשעים דרך האינטרנט.","engEx": "Cybercriminals steal private data.","hebEx": "פושעי סייבר גונבים נתונים פרטיים."},{"word": "Unsecured","phonetic": "אנסיקיורד","meaning": "לא מאובטח","visual": "🔓","exp": "חסר הגנה או הצפנה.","engEx": "Unsecured connections are dangerous.","hebEx": "חיבורים לא מאובטחים הם מסוכנים."},{"word": "Target","phonetic": "טרגט","meaning": "מטרה","visual": "🎯","exp": "יעד להתקפה או פעולה.","engEx": "HTTP connections were an easy target.","hebEx": "חיבורי HTTP היו מטרה קלה."},{"word": "Malicious","phonetic": "מלישס","meaning": "זדוני","visual": "👿","exp": "בעל כוונות רעות או מזיקות.","engEx": "They used malicious tools to hack.","hebEx": "הם השתמשו בכלים זדוניים כדי לפרוץ."},{"word": "Traffic","phonetic": "טראפיק","meaning": "תעבורה","visual": "🚦","exp": "זרימת הנתונים ברשת תקשורת.","engEx": "Attackers intercept network traffic.","hebEx": "תוקפים מיירטים תעבורת רשת."}],
-    w10d3:[{"word": "Encryption","phonetic": "אנקריפשן","meaning": "הצפנה","visual": "🔐","exp": "קידוד נתונים כך שרק מורשים יוכלו לקרוא אותם.","engEx": "HTTPS uses encryption to protect data.","hebEx": "HTTPS משתמש בהצפנה כדי להגן על נתונים."},{"word": "Scrambles","phonetic": "סקרמבלס","meaning": "מערבל","visual": "🌪️","exp": "ערבוב הנתונים לפורמט לא קריא.","engEx": "Encryption scrambles the data.","hebEx": "הצפנה מערבלת את הנתונים."},{"word": "Intended","phonetic": "אינטנדד","meaning": "מיועד","visual": "✉️","exp": "האדם או היעד שאליו כוון המסר.","engEx": "Only the intended receiver can read it.","hebEx": "רק המקבל המיועד יכול לקרוא את זה."},{"word": "Meaningless","phonetic": "מינינגלס","meaning": "חסר משמעות","visual": "🤷","exp": "משהו שאין לו מובן או ערך ברור.","engEx": "The intercepted code appears meaningless.","hebEx": "הקוד המיורט נראה חסר משמעות."},{"word": "Incident","phonetic": "אינסידנט","meaning": "תקרית","visual": "🚨","exp": "אירוע, לרוב שלילי או בלתי צפוי.","engEx": "The coffee shop incident was unfortunate.","hebEx": "תקרית בית הקפה הייתה מצערת."},{"word": "Hacker","phonetic": "האקר","meaning": "פצחן (האקר)","visual": "💻","exp": "אדם הפורץ למערכות מחשב.","engEx": "A hacker was monitoring the network.","hebEx": "האקר ניטר את הרשת."},{"word": "Monitoring","phonetic": "מוניטורינג","meaning": "ניטור / מעקב","visual": "👁️","exp": "מעקב או השגחה על מערכת או תעבורה.","engEx": "They are monitoring the internet traffic.","hebEx": "הם מנטרים את תעבורת האינטרנט."},{"word": "Upgrading","phonetic": "אפגריידינג","meaning": "שדרוג","visual": "⬆️","exp": "שיפור מערכת או מעבר לגרסה חדשה יותר.","engEx": "The company is upgrading to HTTPS.","hebEx": "החברה משדרגת ל-HTTPS."},{"word": "Confidential","phonetic": "קונפידנשל","meaning": "סודי / חסוי","visual": "🤫","exp": "מידע שנועד להישאר פרטי.","engEx": "It protects confidential information.","hebEx": "זה מגן על מידע חסוי."},{"word": "Eavesdropping","phonetic": "איבזדרופינג","meaning": "ציתות","visual": "👂","exp": "האזנה בסתר לשיחות או לתקשורת של אחרים.","engEx": "HTTPS prevents eavesdropping attacks.","hebEx": "HTTPS מונע מתקפות ציתות."}],
-    w10d4:[{"word": "Integrity","phonetic": "אינטגריטי","meaning": "שלמות (נתונים) / אמינות","visual": "🛡️","exp": "הבטחה שהנתונים לא שונו בדרך.","engEx": "Ensuring data integrity is vital.","hebEx": "הבטחת שלמות הנתונים היא חיונית."},{"word": "Altered","phonetic": "אלטרד","meaning": "שונה / עבר שינוי","visual": "✏️","exp": "שונה או עבר מודיפיקציה.","engEx": "The information was not altered.","hebEx": "המידע לא שונה."},{"word": "Transmission","phonetic": "טרנסמישן","meaning": "שידור / העברה","visual": "📤","exp": "תהליך העברת הנתונים ברשת.","engEx": "Data can be stolen during transmission.","hebEx": "נתונים יכולים להיגנב במהלך השידור."},{"word": "Inject","phonetic": "אינג'קט","meaning": "להזריק","visual": "💉","exp": "החדרת קוד או נתונים למערכת באופן זדוני.","engEx": "Attackers inject malicious code into the traffic.","hebEx": "תוקפים מזריקים קוד זדוני לתעבורה."},{"word": "Verifying","phonetic": "וריפיינג","meaning": "אימות","visual": "✔️","exp": "בדיקה ואישור שמשהו הוא נכון ואמיתי.","engEx": "Verifying the digital certificate builds trust.","hebEx": "אימות התעודה הדיגיטלית בונה אמון."},{"word": "Authentication","phonetic": "אותנטיקיישן","meaning": "אימות זהות","visual": "🛂","exp": "תהליך וידוא זהות של משתמש או מערכת.","engEx": "Authentication prevents fake copies of sites.","hebEx": "אימות מונע עותקים מזויפים של אתרים."},{"word": "Certificate","phonetic": "סרטיפיקט","meaning": "תעודה (דיגיטלית)","visual": "📜","exp": "מסמך דיגיטלי המאשר את זהות האתר.","engEx": "The site has a valid SSL certificate.","hebEx": "לאתר יש תעודת SSL תקפה."},{"word": "Standard","phonetic": "סטנדרט","meaning": "תקן / סטנדרט","visual": "📏","exp": "רמה או נורמה מקובלת.","engEx": "HTTPS is the modern standard.","hebEx": "HTTPS הוא התקן המודרני."},{"word": "Configure","phonetic": "קונפיגר","meaning": "להגדיר / לקנפג","visual": "⚙️","exp": "הגדרת מערכת או תוכנה לפעולה.","engEx": "Owners had to configure their servers.","hebEx": "הבעלים נאלצו להגדיר את השרתים שלהם."},{"word": "Adopt","phonetic": "אדופט","meaning": "לאמץ","visual": "🤝","exp": "קבלת שיטה או טכנולוגיה חדשה לשימוש.","engEx": "Millions of websites adopted HTTPS.","hebEx": "מיליוני אתרים אימצו את HTTPS."}]
-,
+  w9d4:[{word:"Critical",phonetic:"קְרִיטִיקַל",meaning:"קְרִיטִי",visual:"🚨",exp:"חשוב ביותר, עד כדי כך שכישלון יגרום לנזק חמור.",engEx:"Critical systems became unavailable after the ransomware attack.",hebEx:"מערכות קריטיות הפכו ללא זמינות לאחר מתקפת הכופר."},{word:"Incident",phonetic:"אִינְסִידֶנְט",meaning:"תַּקְרִית",visual:"📍",exp:"אירוע חריג, לרוב שלילי, שדורש תגובה.",engEx:"The incident became an important lesson for both management and employees.",hebEx:"התקרית הפכה לשיעור חשוב הן להנהלה והן לעובדים."},{word:"Valuable",phonetic:"וַאלְיוּאַבֶּל",meaning:"יָקָר עֵרֶךְ",visual:"💎",exp:"בעל ערך רב, כספי או רוחני.",engEx:"Information is one of the most valuable resources for businesses.",hebEx:"מידע הוא אחד המשאבים יקרי הערך ביותר עבור עסקים."},{word:"Asset",phonetic:"אַסֶט",meaning:"נֶכֶס",visual:"🏆",exp:"משאב בעל ערך השייך לאדם או לארגון.",engEx:"Organizations must protect their most valuable digital assets.",hebEx:"ארגונים חייבים להגן על הנכסים הדיגיטליים היקרים ביותר שלהם."},{word:"Credentials",phonetic:"קְרֶדֶנְשַׁלְס",meaning:"פְּרָטֵי הִתְחַבְּרוּת",visual:"🪪",exp:"פרטי זיהוי כמו שם משתמש וסיסמה המשמשים להתחברות למערכת.",engEx:"Daniel entered his login credentials on the fake website.",hebEx:"דניאל הזין את פרטי ההתחברות שלו באתר המזויף."},{word:"Restore",phonetic:"רִיסְטוֹר",meaning:"לְשַׁחְזֵר",visual:"🔄",exp:"להחזיר משהו למצבו הקודם, כמו שחזור קבצים.",engEx:"The IT team worked to restore the systems and recover the files.",hebEx:"צוות ה-IT עבד לשחזר את המערכות ולשחזר את הקבצים."},{word:"Recover",phonetic:"רִיקַאבֶר",meaning:"לְהִתְאוֹשֵׁשׁ / לְשַׁחְזֵר",visual:"🛠️",exp:"לחזור לתפקוד תקין אחרי אירוע שלילי.",engEx:"The team worked to recover the affected files.",hebEx:"הצוות עבד לשחזר את הקבצים שנפגעו."},{word:"Disruptive",phonetic:"דִיסְרַפְּטִיב",meaning:"מַשְׁבִּשׁ",visual:"💢",exp:"דבר שגורם להפרעה משמעותית בפעילות רגילה.",engEx:"Downtime can be expensive and disruptive for businesses.",hebEx:"זמן השבתה יכול להיות יקר ומשבש עבור עסקים."},{word:"Measures",phonetic:"מֶזֶ'רְס",meaning:"אֶמְצָעִים",visual:"📏",exp:"פעולות או כלים שננקטים כדי להשיג מטרה או להגן.",engEx:"Confidentiality can be lost when security measures are bypassed.",hebEx:"סודיות יכולה ללכת לאיבוד כאשר עוקפים אמצעי אבטחה."},{word:"Practice",phonetic:"פְּרַקְטִיס",meaning:"תַּרְגוּל / נוֹהָג",visual:"🔁",exp:"פעולה חוזרת ללמידה, או שיטה מקובלת.",engEx:"Responsible security practices protect organizations from attacks.",hebEx:"נוהלי אבטחה אחראיים מגנים על ארגונים מפני מתקפות."}],
+    w10d1:[{word:"Transition",phonetic:"טרנזישן",meaning:"מעבר",visual:"🔄",exp:"תהליך של שינוי ממצב אחד לאחר.",engEx:"The transition from HTTP to HTTPS was necessary.",hebEx:"המעבר מ-HTTP ל-HTTPS היה הכרחי."},{word:"Essential",phonetic:"אסנשל",meaning:"חיוני",visual:"❗",exp:"משהו הכרחי לחלוטין.",engEx:"Security became essential.",hebEx:"אבטחה הפכה לחיונית."},{word:"Information",phonetic:"אינפורמיישן",meaning:"מידע",visual:"ℹ️",exp:"נתונים או עובדות על משהו.",engEx:"They shared information with visitors.",hebEx:"הם שיתפו מידע עם מבקרים."},{word:"Protocol",phonetic:"פרוטוקול",meaning:"פרוטוקול",visual:"📜",exp:"אוסף חוקים המסדירים תקשורת בין מחשבים.",engEx:"HTTP is a transfer protocol.",hebEx:"HTTP הוא פרוטוקול העברה."},{word:"Communication",phonetic:"קומיוניקיישן",meaning:"תקשורת",visual:"💬",exp:"העברת מידע בין צדדים.",engEx:"It is a communication system.",hebEx:"זוהי מערכת תקשורת."},{word:"Browsers",phonetic:"בראוזרס",meaning:"דפדפנים",visual:"🌐",exp:"תוכנות המשמשות לגלישה באינטרנט.",engEx:"Browsers and servers exchange data.",hebEx:"דפדפנים ושרתים מחליפים נתונים."},{word:"Servers",phonetic:"סרברס",meaning:"שרתים",visual:"🖥️",exp:"מחשבים המספקים שירותים למחשבים אחרים ברשת.",engEx:"The servers hosted the website.",hebEx:"השרתים אירחו את האתר."},{word:"Exchange",phonetic:"אקסצ'יינג'",meaning:"החלפה",visual:"🔄",exp:"מסירה וקבלה של דברים (כמו נתונים).",engEx:"They exchange information quickly.",hebEx:"הם מחליפים מידע במהירות."},{word:"Weakness",phonetic:"וויקנס",meaning:"חולשה",visual:"📉",exp:"נקודת תורפה או חוסר חוזק.",engEx:"HTTP had one major weakness.",hebEx:"ל-HTTP הייתה חולשה מרכזית אחת."},{word:"Protect",phonetic:"פרוטקט",meaning:"להגן",visual:"🛡️",exp:"לשמור על משהו מפני פגיעה או סכנה.",engEx:"It did not protect the data.",hebEx:"זה לא הגן על הנתונים."}],
+    w10d2:[{word:"Transmitted",phonetic:"טרנסמיטד",meaning:"משודר / מועבר",visual:"📡",exp:"משהו שנשלח או הועבר ממקום למקום.",engEx:"Data is transmitted over the network.",hebEx:"הנתונים משודרים ברשת."},{word:"Passwords",phonetic:"פסוורדס",meaning:"סיסמאות",visual:"🔑",exp:"מילים או רצף תווים סודיים לאימות זהות.",engEx:"Never share your passwords.",hebEx:"לעולם אל תשתף את הסיסמאות שלך."},{word:"Intercepting",phonetic:"אינטרספטינג",meaning:"יירוט",visual:"🕵️",exp:"תפיסת מידע בדרכו ליעד.",engEx:"Anyone intercepting the connection could read it.",hebEx:"כל מי שמיירט את החיבור יכול לקרוא את זה."},{word:"Connection",phonetic:"קונקשן",meaning:"חיבור",visual:"🔗",exp:"קישור בין מחשבים או רשתות.",engEx:"The connection was secured.",hebEx:"החיבור היה מאובטח."},{word:"Sensitive",phonetic:"סנסיטיב",meaning:"רגיש",visual:"⚠️",exp:"מידע פרטי או סודי שיש להגן עליו.",engEx:"Users send sensitive information daily.",hebEx:"משתמשים שולחים מידע רגיש מדי יום."},{word:"Cybercriminals",phonetic:"סייבר-קרימינלס",meaning:"פושעי סייבר",visual:"🦹",exp:"אנשים המבצעים פשעים דרך האינטרנט.",engEx:"Cybercriminals steal private data.",hebEx:"פושעי סייבר גונבים נתונים פרטיים."},{word:"Unsecured",phonetic:"אנסיקיורד",meaning:"לא מאובטח",visual:"🔓",exp:"חסר הגנה או הצפנה.",engEx:"Unsecured connections are dangerous.",hebEx:"חיבורים לא מאובטחים הם מסוכנים."},{word:"Target",phonetic:"טרגט",meaning:"מטרה",visual:"🎯",exp:"יעד להתקפה או פעולה.",engEx:"HTTP connections were an easy target.",hebEx:"חיבורי HTTP היו מטרה קלה."},{word:"Malicious",phonetic:"מלישס",meaning:"זדוני",visual:"👿",exp:"בעל כוונות רעות או מזיקות.",engEx:"They used malicious tools to hack.",hebEx:"הם השתמשו בכלים זדוניים כדי לפרוץ."},{word:"Traffic",phonetic:"טראפיק",meaning:"תעבורה",visual:"🚦",exp:"זרימת הנתונים ברשת תקשורת.",engEx:"Attackers intercept network traffic.",hebEx:"תוקפים מיירטים תעבורת רשת."}],
+    w10d3:[{word:"Encryption",phonetic:"אנקריפשן",meaning:"הצפנה",visual:"🔐",exp:"קידוד נתונים כך שרק מורשים יוכלו לקרוא אותם.",engEx:"HTTPS uses encryption to protect data.",hebEx:"HTTPS משתמש בהצפנה כדי להגן על נתונים."},{word:"Scrambles",phonetic:"סקרמבלס",meaning:"מערבל",visual:"🌪️",exp:"ערבוב הנתונים לפורמט לא קריא.",engEx:"Encryption scrambles the data.",hebEx:"הצפנה מערבלת את הנתונים."},{word:"Intended",phonetic:"אינטנדד",meaning:"מיועד",visual:"✉️",exp:"האדם או היעד שאליו כוון המסר.",engEx:"Only the intended receiver can read it.",hebEx:"רק המקבל המיועד יכול לקרוא את זה."},{word:"Meaningless",phonetic:"מינינגלס",meaning:"חסר משמעות",visual:"🤷",exp:"משהו שאין לו מובן או ערך ברור.",engEx:"The intercepted code appears meaningless.",hebEx:"הקוד המיורט נראה חסר משמעות."},{word:"Incident",phonetic:"אינסידנט",meaning:"תקרית",visual:"🚨",exp:"אירוע, לרוב שלילי או בלתי צפוי.",engEx:"The coffee shop incident was unfortunate.",hebEx:"תקרית בית הקפה הייתה מצערת."},{word:"Hacker",phonetic:"האקר",meaning:"פצחן (האקר)",visual:"💻",exp:"אדם הפורץ למערכות מחשב.",engEx:"A hacker was monitoring the network.",hebEx:"האקר ניטר את הרשת."},{word:"Monitoring",phonetic:"מוניטורינג",meaning:"ניטור / מעקב",visual:"👁️",exp:"מעקב או השגחה על מערכת או תעבורה.",engEx:"They are monitoring the internet traffic.",hebEx:"הם מנטרים את תעבורת האינטרנט."},{word:"Upgrading",phonetic:"אפגריידינג",meaning:"שדרוג",visual:"⬆️",exp:"שיפור מערכת או מעבר לגרסה חדשה יותר.",engEx:"The company is upgrading to HTTPS.",hebEx:"החברה משדרגת ל-HTTPS."},{word:"Confidential",phonetic:"קונפידנשל",meaning:"סודי / חסוי",visual:"🤫",exp:"מידע שנועד להישאר פרטי.",engEx:"It protects confidential information.",hebEx:"זה מגן על מידע חסוי."},{word:"Eavesdropping",phonetic:"איבזדרופינג",meaning:"ציתות",visual:"👂",exp:"האזנה בסתר לשיחות או לתקשורת של אחרים.",engEx:"HTTPS prevents eavesdropping attacks.",hebEx:"HTTPS מונע מתקפות ציתות."}],
+    w10d4:[{word:"Integrity",phonetic:"אינטגריטי",meaning:"שלמות (נתונים) / אמינות",visual:"🛡️",exp:"הבטחה שהנתונים לא שונו בדרך.",engEx:"Ensuring data integrity is vital.",hebEx:"הבטחת שלמות הנתונים היא חיונית."},{word:"Altered",phonetic:"אלטרד",meaning:"שונה / עבר שינוי",visual:"✏️",exp:"שונה או עבר מודיפיקציה.",engEx:"The information was not altered.",hebEx:"המידע לא שונה."},{word:"Transmission",phonetic:"טרנסמישן",meaning:"שידור / העברה",visual:"📤",exp:"תהליך העברת הנתונים ברשת.",engEx:"Data can be stolen during transmission.",hebEx:"נתונים יכולים להיגנב במהלך השידור."},{word:"Inject",phonetic:"אינג'קט",meaning:"להזריק",visual:"💉",exp:"החדרת קוד או נתונים למערכת באופן זדוני.",engEx:"Attackers inject malicious code into the traffic.",hebEx:"תוקפים מזריקים קוד זדוני לתעבורה."},{word:"Verifying",phonetic:"וריפיינג",meaning:"אימות",visual:"✔️",exp:"בדיקה ואישור שמשהו הוא נכון ואמיתי.",engEx:"Verifying the digital certificate builds trust.",hebEx:"אימות התעודה הדיגיטלית בונה אמון."},{word:"Authentication",phonetic:"אותנטיקיישן",meaning:"אימות זהות",visual:"🛂",exp:"תהליך וידוא זהות של משתמש או מערכת.",engEx:"Authentication prevents fake copies of sites.",hebEx:"אימות מונע עותקים מזויפים של אתרים."},{word:"Certificate",phonetic:"סרטיפיקט",meaning:"תעודה (דיגיטלית)",visual:"📜",exp:"מסמך דיגיטלי המאשר את זהות האתר.",engEx:"The site has a valid SSL certificate.",hebEx:"לאתר יש תעודת SSL תקפה."},{word:"Standard",phonetic:"סטנדרט",meaning:"תקן / סטנדרט",visual:"📏",exp:"רמה או נורמה מקובלת.",engEx:"HTTPS is the modern standard.",hebEx:"HTTPS הוא התקן המודרני."},{word:"Configure",phonetic:"קונפיגר",meaning:"להגדיר / לקנפג",visual:"⚙️",exp:"הגדרת מערכת או תוכנה לפעולה.",engEx:"Owners had to configure their servers.",hebEx:"הבעלים נאלצו להגדיר את השרתים שלהם."},{word:"Adopt",phonetic:"אדופט",meaning:"לאמץ",visual:"🤝",exp:"קבלת שיטה או טכנולוגיה חדשה לשימוש.",engEx:"Millions of websites adopted HTTPS.",hebEx:"מיליוני אתרים אימצו את HTTPS."}],
   w11d1:[{word:"Compilation",phonetic:"קומפִּילֵיישְׁן",meaning:"הידור, קומפילציה",visual:"⚙️",exp:"תהליך שבו קוד מקור מתורגם לשפת מכונה או לייצוג ביניים לפני שהתוכנית רצה. בשפות כמו C#, הקומפילציה מאפשרת לזהות שגיאות מוקדם ולייצר קוד מהיר יותר.",engEx:"The compilation process in C# converts source code into Intermediate Language before execution.",hebEx:"תהליך ההידור ב-C# ממיר קוד מקור לשפת ביניים לפני הרצה."},
     {word:"Interpretation",phonetic:"אִינטֶרפְּרֵיטֵיישְׁן",meaning:"פירוש, אינטרפרטציה",visual:"📖",exp:"מודל ביצוע שבו התוכנית נקראת ומבוצעת שורה אחר שורה בזמן אמת, בלי שלב הידור מקדים. JavaScript השתמשה במודל הזה בשנותיה הראשונות.",engEx:"JavaScript historically followed a pure interpretation model in early web browsers.",hebEx:"JavaScript היסטורית פעלה לפי מודל פירוש טהור בדפדפנים המוקדמים."},
     {word:"Source Code",phonetic:"סוֹרס קוֹד",meaning:"קוד מקור",visual:"📝",exp:"הקוד שהמתכנת כותב בשפת תכנות קריאה לאדם. המחשב לא יכול להריץ אותו ישירות — הוא חייב לעבור תרגום לפני הביצוע.",engEx:"When a programmer writes code, the source code must first be translated into machine instructions.",hebEx:"כשמתכנת כותב קוד, קוד המקור חייב קודם להיות מתורגם להוראות מכונה."},
@@ -82,6 +80,375 @@ window.vocabularyData = {
     {word:"Web",phonetic:"ווב",meaning:"רשת (האינטרנט)",visual:"🕸️",exp:"רשת האינטרנט העולמית, המשמשת כפלטפורמה המרכזית עבור אפליקציות ואתרים, שבה טכנולוגיות כמו JavaScript פועלות.",engEx:"JavaScript was created to add interactivity to web pages.",hebEx:"JavaScript נוצרה כדי להוסיף אינטראקטיביות לעמודי אינטרנט."},
     {word:"Server",phonetic:"סרבר",meaning:"שרת",visual:"🖥️",exp:"מחשב או תוכנה המספקים שירותים, נתונים או משאבים למחשבים אחרים ('לקוחות') ברשת. C# משמש רבות לפיתוח בצד השרת.",engEx:"The database is hosted on a secure web server.",hebEx:"מסד הנתונים מתארח על שרת רשת מאובטח."},
     {word:"Deployment",phonetic:"דיפלוימנט",meaning:"פריסה, הטמעה",visual:"🚀",exp:"השלב שבו התוכנה או האפליקציה מועברת מסביבת הפיתוח לסביבת הייצור (production), כדי שתהיה זמינה למשתמשים.",engEx:"The team prepared the web application for a successful deployment.",hebEx:"הצוות הכין את אפליקציית הרשת לקראת פריסה מוצלחת."}]
+,
+  w12d1: [
+    {
+      word: "Binary",
+      phonetic: "בינארי (bi-na-ri)",
+      meaning: "בינארי (מבוסס על שתיים)",
+      visual: "0️⃣1️⃣",
+      exp: "שיטת ספירה המשתמשת בשני סמלים בלבד, לרוב 0 ו-1.",
+      engEx: "Computers use the binary system to store data.",
+      hebEx: "מחשבים משתמשים בשיטה הבינארית כדי לאחסן נתונים."
+    },
+    {
+      word: "Represent",
+      phonetic: "ריפרזנט (rep-re-zent)",
+      meaning: "לייצג",
+      visual: "🎭",
+      exp: "להיות סמל או סימן למשהו אחר.",
+      engEx: "The number 1 represents an ON state.",
+      hebEx: "המספר 1 מייצג מצב פועל."
+    },
+    {
+      word: "Digit",
+      phonetic: "דיג'יט (di-jit)",
+      meaning: "ספרה",
+      visual: "🔢",
+      exp: "כל אחד מהסמלים המשמשים לכתיבת מספרים.",
+      engEx: "The binary system uses only two digits.",
+      hebEx: "השיטה הבינארית משתמשת בשתי ספרות בלבד."
+    },
+    {
+      word: "Symbol",
+      phonetic: "סימבול (sim-bol)",
+      meaning: "סמל",
+      visual: "⚜️",
+      exp: "סימן, ציור או אות המייצגים מושג, רעיון או חפץ.",
+      engEx: "The heart is a symbol of love.",
+      hebEx: "הלב הוא סמל לאהבה."
+    },
+    {
+      word: "System",
+      phonetic: "סיסטם (sis-tem)",
+      meaning: "מערכת, שיטה",
+      visual: "⚙️",
+      exp: "אוסף של חלקים או חוקים הפועלים יחד למטרה מסוימת.",
+      engEx: "We need a reliable system for calculating taxes.",
+      hebEx: "אנו צריכים מערכת אמינה לחישוב מסים."
+    },
+    {
+      word: "Century",
+      phonetic: "סנצ'ורי (sen-chu-ri)",
+      meaning: "מאה (100 שנים)",
+      visual: "💯",
+      exp: "תקופת זמן של מאה שנים.",
+      engEx: "The telephone was invented in the 19th century.",
+      hebEx: "הטלפון הומצא במאה ה-19."
+    },
+    {
+      word: "Curiosity",
+      phonetic: "קיוריאוסיטי (kyu-ri-o-si-ti)",
+      meaning: "סקרנות",
+      visual: "🤔",
+      exp: "רצון עז לדעת או ללמוד משהו.",
+      engEx: "His curiosity led him to read many books.",
+      hebEx: "הסקרנות שלו הובילה אותו לקרוא ספרים רבים."
+    },
+    {
+      word: "Breakthrough",
+      phonetic: "ברייקת'רו (breik-thru)",
+      meaning: "פריצת דרך",
+      visual: "🚀",
+      exp: "התקדמות חשובה ופתאומית, גילוי משמעותי.",
+      engEx: "The discovery of penicillin was a major medical breakthrough.",
+      hebEx: "גילוי הפניצילין היה פריצת דרך רפואית גדולה."
+    },
+    {
+      word: "Combine",
+      phonetic: "קומביין (kom-bain)",
+      meaning: "לשלב, לחבר",
+      visual: "🔗",
+      exp: "לחבר שני דברים או יותר ליצירת דבר אחד.",
+      engEx: "You can combine these simple parts to build a machine.",
+      hebEx: "אתה יכול לשלב את החלקים הפשוטים האלה כדי לבנות מכונה."
+    },
+    {
+      word: "Process",
+      phonetic: "פרוסס (pro-ses)",
+      meaning: "לעבד (גם: תהליך)",
+      visual: "🔄",
+      exp: "לבצע סדרת פעולות על נתונים או חומרים כדי לקבל תוצאה.",
+      engEx: "The computer can process huge amounts of data quickly.",
+      hebEx: "המחשב יכול לעבד כמויות עצומות של נתונים במהירות."
+    }
+  ],
+  w12d2: [
+    {
+      word: "Voltage",
+      phonetic: "וולטג' (vol-tij)",
+      meaning: "מתח חשמלי",
+      visual: "⚡",
+      exp: "ההפרש בפוטנציאל החשמלי שדוחף את האלקטרונים.",
+      engEx: "The battery supplies a voltage of 1.5 volts.",
+      hebEx: "הסוללה מספקת מתח של 1.5 וולט."
+    },
+    {
+      word: "Current",
+      phonetic: "קארנט (kur-ent)",
+      meaning: "זרם",
+      visual: "🌊",
+      exp: "תנועה או זרימה, למשל של אלקטרונים (זרם חשמלי).",
+      engEx: "The electrical current flows through the wire.",
+      hebEx: "הזרם החשמלי זורם דרך החוט."
+    },
+    {
+      word: "Circuit",
+      phonetic: "סירקוט (ser-kit)",
+      meaning: "מעגל (חשמלי)",
+      visual: "🔌",
+      exp: "מסלול סגור דרכו יכול לעבור זרם חשמלי.",
+      engEx: "If you break the circuit, the light will turn off.",
+      hebEx: "אם תשבור את המעגל, האור יכבה."
+    },
+    {
+      word: "Absence",
+      phonetic: "אבסנס (ab-sens)",
+      meaning: "היעדרות, חוסר",
+      visual: "🕳️",
+      exp: "מצב שבו משהו או מישהו אינו נמצא.",
+      engEx: "Zero often represents the absence of a signal.",
+      hebEx: "אפס מייצג לעיתים קרובות היעדרות של אות."
+    },
+    {
+      word: "Presence",
+      phonetic: "פרזנס (prez-ens)",
+      meaning: "נוכחות",
+      visual: "📍",
+      exp: "מצב שבו משהו או מישהו נמצא במקום מסוים.",
+      engEx: "The alarm detects the presence of smoke.",
+      hebEx: "האזעקה מזהה נוכחות של עשן."
+    },
+    {
+      word: "Fluctuation",
+      phonetic: "פלקצ'ואיישן (fluk-chu-ey-shun)",
+      meaning: "תנודה, שינוי לא יציב",
+      visual: "📈",
+      exp: "שינוי תכוף ברמה או בערך, עליות וירידות.",
+      engEx: "Small fluctuations in voltage can cause errors.",
+      hebEx: "תנודות קטנות במתח יכולות לגרום לשגיאות."
+    },
+    {
+      word: "Interference",
+      phonetic: "אינטרפירנס (in-ter-feer-ens)",
+      meaning: "הפרעה",
+      visual: "📻",
+      exp: "מצב שבו משהו מפריע לפעולה התקינה של דבר אחר.",
+      engEx: "The radio signal was lost due to electrical interference.",
+      hebEx: "אות הרדיו אבד עקב הפרעה חשמלית."
+    },
+    {
+      word: "Reliable",
+      phonetic: "רילאיבל (ri-lai-a-bl)",
+      meaning: "אמין",
+      visual: "🛡️",
+      exp: "שאפשר לסמוך עליו שיעבוד כראוי או שיגיד את האמת.",
+      engEx: "We need a reliable car for the long trip.",
+      hebEx: "אנחנו צריכים מכונית אמינה לטיול הארוך."
+    },
+    {
+      word: "Analogy",
+      phonetic: "אנלוג'י (a-nal-o-ji)",
+      meaning: "אנלוגיה, הקבלה",
+      visual: "⚖️",
+      exp: "השוואה בין שני דברים שונים כדי להסביר רעיון משותף.",
+      engEx: "He used the analogy of a water pipe to explain electricity.",
+      hebEx: "הוא השתמש בהקבלה של צינור מים כדי להסביר חשמל."
+    },
+    {
+      word: "Flow",
+      phonetic: "פלואו (flo)",
+      meaning: "זרימה, לזרום",
+      visual: "〰️",
+      exp: "תנועה חלקה ורציפה של חומר (כמו מים או חשמל).",
+      engEx: "The water flows down the river.",
+      hebEx: "המים זורמים במורד הנהר."
+    }
+  ],
+  w12d3: [
+    {
+      word: "Gate",
+      phonetic: "גייט",
+      meaning: "שער (לוגי)",
+      visual: "🚪",
+      exp: "מעגל חשמלי שמבצע פעולה לוגית פשוטה.",
+      engEx: "An AND gate produces an output of 1 only when both inputs are 1.",
+      hebEx: "שער AND מפיק פלט של 1 רק כאשר שני הקלטים הם 1."
+    },
+    {
+      word: "Transistor",
+      phonetic: "טרנזיסטור",
+      meaning: "טרנזיסטור",
+      visual: "📻",
+      exp: "רכיב שמשמש כמתג ויכול לאפשר או לחסום זרם חשמלי.",
+      engEx: "A modern processor may contain billions of transistors acting as switches.",
+      hebEx: "מעבד מודרני עשוי להכיל מיליארדי טרנזיסטורים הפועלים כמתגים."
+    },
+    {
+      word: "State",
+      phonetic: "סטייט",
+      meaning: "מצב",
+      visual: "🚦",
+      exp: "צורה מסוימת או אופן שבו משהו נמצא בזמן נתון (כמו דלוק או כבוי).",
+      engEx: "These two stable states made binary an ideal choice for electronic devices.",
+      hebEx: "שני המצבים היציבים האלה הפכו את הבינארי לבחירה אידיאלית עבור מכשירים אלקטרוניים."
+    },
+    {
+      word: "Distinguish",
+      phonetic: "דיסטינגוויש",
+      meaning: "להבחין",
+      visual: "🔍",
+      exp: "היכולת לשים לב להבדל בין שני דברים או יותר.",
+      engEx: "With only two states, devices can easily distinguish between them.",
+      hebEx: "עם שני מצבים בלבד, מכשירים יכולים בקלות להבחין ביניהם."
+    },
+    {
+      word: "Switch",
+      phonetic: "סוויץ'",
+      meaning: "מתג",
+      visual: "🎚️",
+      exp: "רכיב המאפשר להפעיל או לכבות זרימת חשמל.",
+      engEx: "A switch can be either OFF or ON.",
+      hebEx: "מתג יכול להיות כבוי או דלוק."
+    },
+    {
+      word: "Voltage",
+      phonetic: "וולטג'",
+      meaning: "מתח חשמלי",
+      visual: "⚡",
+      exp: "הכוח שדוחף את האלקטרונים במעגל חשמלי.",
+      engEx: "Voltage is the electrical potential difference that pushes electrons.",
+      hebEx: "מתח הוא הפרש הפוטנציאל החשמלי שדוחף אלקטרונים."
+    },
+    {
+      word: "Current",
+      phonetic: "קארנט",
+      meaning: "זרם חשמלי",
+      visual: "🌊",
+      exp: "הזרימה בפועל של חלקיקים חשמליים (אלקטרונים) במעגל.",
+      engEx: "Current is the actual flow of electrons through a circuit.",
+      hebEx: "זרם הוא הזרימה בפועל של אלקטרונים דרך מעגל חשמלי."
+    },
+    {
+      word: "Circuit",
+      phonetic: "סירקיט",
+      meaning: "מעגל חשמלי",
+      visual: "🔌",
+      exp: "מסלול סגור דרכו יכול לעבור זרם חשמלי.",
+      engEx: "Claude Shannon discovered that binary numbers matched with electrical circuits.",
+      hebEx: "קלוד שאנון גילה שמספרים בינאריים תואמים למעגלים חשמליים."
+    },
+    {
+      word: "Input",
+      phonetic: "אינפוט",
+      meaning: "קלט",
+      visual: "📥",
+      exp: "מידע או אות שנכנס למערכת כדי לעבור עיבוד.",
+      engEx: "Logic gates perform simple decisions based on binary inputs.",
+      hebEx: "שערים לוגיים מבצעים החלטות פשוטות המבוססות על קלטים בינאריים."
+    },
+    {
+      word: "Output",
+      phonetic: "אאוטפוט",
+      meaning: "פלט",
+      visual: "📤",
+      exp: "התוצאה או המידע שיוצא מהמערכת לאחר העיבוד.",
+      engEx: "An OR gate produces an output of 1 when at least one input is 1.",
+      hebEx: "שער OR מפיק פלט של 1 כאשר לפחות קלט אחד הוא 1."
+    }
+  ],
+  w12d4: [
+    {
+      word: "Reliability",
+      phonetic: "רילייביליטי",
+      meaning: "אמינות",
+      visual: "🛡️",
+      exp: "המידה שבה אפשר לסמוך על מערכת שתפעל כראוי וללא תקלות.",
+      engEx: "One reason binary became so important is reliability.",
+      hebEx: "סיבה אחת שהבינארי הפך לכל כך חשוב היא אמינות."
+    },
+    {
+      word: "Theoretical",
+      phonetic: "תיאורטיקל",
+      meaning: "תאורטי",
+      visual: "📐",
+      exp: "קשור לתיאוריה ולרעיונות, להבדיל משימוש מעשי.",
+      engEx: "The binary system transformed from a theoretical concept into modern computing.",
+      hebEx: "המערכת הבינארית הפכה ממושג תאורטי למחשוב מודרני."
+    },
+    {
+      word: "Encode",
+      phonetic: "אינקוד",
+      meaning: "לקודד",
+      visual: "🔡",
+      exp: "להמיר מידע (כמו טקסט) לפורמט אחר כדי שמחשב יוכל לאחסן אותו.",
+      engEx: "We can encode text into binary data so the computer can process it.",
+      hebEx: "אנחנו יכולים לקודד טקסט לנתונים בינאריים כדי שהמחשב יוכל לעבד אותו."
+    },
+    {
+      word: "Fluctuation",
+      phonetic: "פלאקצ'ואיישן",
+      meaning: "תנודה",
+      visual: "📈",
+      exp: "שינויים קטנים או חוסר יציבות בערכים (למשל במתח חשמלי).",
+      engEx: "Small fluctuations in voltage can occur because of heat.",
+      hebEx: "תנודות קטנות במתח עלולות להתרחש בגלל חום."
+    },
+    {
+      word: "Foundation",
+      phonetic: "פאונדיישן",
+      meaning: "בסיס, יסוד",
+      visual: "🏗️",
+      exp: "הרעיון או המבנה הבסיסי שעליו נבנה משהו גדול יותר.",
+      engEx: "Boolean algebra laid the foundation for modern digital electronics.",
+      hebEx: "האלגברה הבוליאנית הניחה את הבסיס לאלקטרוניקה דיגיטלית מודרנית."
+    },
+    {
+      word: "Curiosity",
+      phonetic: "קיוריאוסיטי",
+      meaning: "סקרנות",
+      visual: "🧐",
+      exp: "רצון עז לדעת או ללמוד משהו חדש.",
+      engEx: "At first, binary was mainly a mathematical curiosity.",
+      hebEx: "בהתחלה, הבינארי היה בעיקר סקרנות מתמטית."
+    },
+    {
+      word: "Breakthrough",
+      phonetic: "ברייקת'רו",
+      meaning: "פריצת דרך",
+      visual: "🚀",
+      exp: "גילוי או התקדמות משמעותית שמשנים את פני הדברים.",
+      engEx: "The real breakthrough came more than two centuries later.",
+      hebEx: "פריצת הדרך האמיתית הגיעה יותר ממאתיים שנה מאוחר יותר."
+    },
+    {
+      word: "Interference",
+      phonetic: "אינטרפירנס",
+      meaning: "הפרעה / התערבות",
+      visual: "📻",
+      exp: "משהו שפוגע או משבש פעולה תקינה של מערכת או אות חלש.",
+      engEx: "Fluctuations can occur because of heat or interference.",
+      hebEx: "תנודות יכולות לקרות בגלל חום או הפרעה."
+    },
+    {
+      word: "Execute",
+      phonetic: "אקזקיוט",
+      meaning: "לבצע / להוציא לפועל",
+      visual: "▶️",
+      exp: "להריץ תוכנית במחשב או לממש פקודה.",
+      engEx: "Binary numbers enable computers to execute programs.",
+      hebEx: "מספרים בינאריים מאפשרים למחשבים לבצע תוכניות."
+    },
+    {
+      word: "Transform",
+      phonetic: "טרנספורם",
+      meaning: "לשנות צורה / להתמיר",
+      visual: "🦋",
+      exp: "לשנות משהו בצורה משמעותית למשהו חדש או שונה.",
+      engEx: "The binary system transformed from a mathematical idea into a practical technology.",
+      hebEx: "המערכת הבינארית השתנתה מרעיון מתמטי לטכנולוגיה מעשית."
+    }
+  ]
 };
 
 window.unseenArticleData = [
