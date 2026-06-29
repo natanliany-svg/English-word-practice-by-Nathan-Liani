@@ -95,7 +95,7 @@ window.articleParagraphs = {
         [31, 32, 33],
         [34, 35, 36, 37, 38]
     ],
-    'week11': [[0],[1,2,3,4,5],[6,7,8,9],[10,11,12,13],[14,15,16,17,18,19],[20,21,22,23,24,25],[26,27,28,29,30],[31,32,33,34],[35,36,37,38,39],[40,41,42,43,44],[45,46,47,48,49,50],[51,52,53,54],[55,56,57,58,59],[60,61,62,63],[64,65,66,67]],
+    'week11': [[0],[1],[2,3,4,5],[6,7,8,9],[10],[11,12,13],[14],[15,16,17,18,19],[20],[21,22,23,24,25],[26],[27,28,29,30],[31],[32,33,34],[35],[36,37,38,39],[40],[41,42,43,44],[45,46,47,48,49,50],[51],[52,53,54],[55,56,57,58,59],[60],[61,62,63],[64,65,66,67]],
     'week10': [
         [0],
         [1, 2, 3, 4, 5],
@@ -117,7 +117,8 @@ window.articleParagraphs = {
         [42, 43, 44]
     ],
     'week12': [
-        [0, 1, 2],
+        [0],
+        [1, 2],
         [3, 4, 5, 6, 7],
         [8, 9, 10, 11, 12],
         [13, 14, 15, 16],
@@ -1241,6 +1242,23 @@ window.render = function() {
         } else if (window.articleViewMode === 'paragraph') {
             const paragraphs = window.articleParagraphs[isWeek12 ? 'week12' : (isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8')))];
             htmlBlock += paragraphs.map((paraIndices, index) => {
+                const isHeaderParagraph = paraIndices.length === 1 && articleData[paraIndices[0]].isHeader;
+                if (isHeaderParagraph) {
+                    const headerItem = articleData[paraIndices[0]];
+                    const safeText = headerItem.e.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                    return `
+                        <div id="article-paragraph-card-${index}" class="story-card header-card" style="background: transparent; border: none; box-shadow: none; margin-top: 40px; margin-bottom: 20px; padding: 10px; cursor: default;">
+                            <div style="display:flex; justify-content:center; margin-bottom: 15px;">
+                                <button class="story-audio-btn" style="width: 45px; height: 45px; background: rgba(0,0,0,0.3);" onclick="event.stopPropagation(); window.playAudio('${safeText}', this)" title="השמע כותרת">
+                                    ${window.icons.volume}
+                                </button>
+                            </div>
+                            <h2 class="article-section-title" style="color: var(--theme-light); font-size: clamp(28px, 2.8rem, 44px); text-align: center; margin: 0; padding-bottom: 10px; border-bottom: 2px solid var(--theme-main);">${headerItem.e}</h2>
+                            <h3 style="color: rgba(255,255,255,0.6); font-size: clamp(20px, 1.8rem, 28px); text-align: center; margin-top: 10px; direction: rtl; font-weight: normal;">${headerItem.h}</h3>
+                        </div>
+                    `;
+                }
+
                 const paraEnglish = paraIndices.map(idx => articleData[idx].e).join(" ");
                 const paraHebrew = paraIndices.map(idx => articleData[idx].h).join(" ");
                 const plainEnglish = paraIndices.map(idx => articleData[idx].e).join(" ");
@@ -1294,6 +1312,23 @@ window.render = function() {
             htmlBlock += `<div class="story-card" style="padding: 40px; cursor: pointer;" onclick="this.classList.toggle('expanded')">`;
             
             htmlBlock += paragraphs.map((paraIndices, pIdx) => {
+                const isHeaderParagraph = paraIndices.length === 1 && articleData[paraIndices[0]].isHeader;
+                if (isHeaderParagraph) {
+                    const headerItem = articleData[paraIndices[0]];
+                    const safeText = headerItem.e.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                    return `
+                        <div style="margin-top: 50px; margin-bottom: 30px; text-align: center; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 30px;">
+                            <div style="display:flex; justify-content:center; align-items: center; gap: 10px; flex-direction: column;">
+                                <h2 class="article-section-title" style="color: var(--theme-light); font-size: clamp(26px, 2.4rem, 38px); margin: 0; padding-bottom: 5px; display: inline-block;">${headerItem.e}</h2>
+                                <h3 style="color: rgba(255,255,255,0.6); font-size: clamp(18px, 1.6rem, 26px); margin: 0; direction: rtl; font-weight: normal;">${headerItem.h}</h3>
+                                <button class="story-audio-btn" style="width: 35px; height: 35px; margin-top: 15px; background: rgba(0,0,0,0.2);" onclick="event.stopPropagation(); window.playAudio('${safeText}', this)" title="השמע כותרת">
+                                    ${window.icons.volume}
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }
+
                 const paraEnglish = paraIndices.map(idx => articleData[idx].e).join(" ");
                 const paraHebrew = paraIndices.map(idx => articleData[idx].h).join(" ");
                 const safeParaText = paraEnglish.replace(/'/g, "\\\'").replace(/"/g, "&quot;");

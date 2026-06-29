@@ -1,0 +1,59 @@
+0: {j:"🔢", e:"The Binary Counting", h:"הספירה הבינארית"},
+1:   {j:"🌍", e:"Today, almost every digital device in the world
+2:   {j:"🔗", e:"Although binary uses only two symbols, 0 and 1,
+3:   {j:"🕰️", e:"The idea of representing numbers using only tw
+4:   {j:"📜", e:"Ancient civilizations, including some Chinese a
+5:   {j:"👨‍🔬", e:"However, the modern binary system was formall
+6:   {j:"📖", e:"In his work Explication de l'Arithmétique Binai
+7:   {j:"✨", e:"He was fascinated by the simplicity of the syst
+8:   {j:"🧐", e:"At first, binary was mainly a mathematical curi
+9:   {j:"🚀", e:"The real breakthrough came more than two centur
+10:   {j:"⚡", e:"During the 1930s, American engineer and mathema
+11:   {j:"🎛️", e:"A switch can be either OFF or ON, a wire can h
+12:   {j:"💻", e:"These two stable states made binary an ideal ch
+13:   {j:"🤔", e:"Many people wonder that 0 means OFF and 1 means
+14:   {j:"🧑‍🤝‍🧑", e:"In reality, this was not a universal rule c
+15:   {j:"🛠️", e:"Engineers needed symbols to represent two diff
+16:   {j:"📡", e:"Generally, 0 represents the absence of a signal
+17:   {j:"🔄", e:"However, in some electronic systems the actual 
+18:   {j:"🎯", e:"What matters is that there are two clearly dist
+19:   {j:"🔋", e:"In many digital circuits, a logical 0 is repres
+20:   {j:"⚙️", e:"However, the exact voltage values depend on th
+21:   {j:"🔌", e:"For example, older TTL circuits often treated v
+22:   {j:"🔀", e:"Some systems may even reverse these assignments
+23:   {j:"⚖️", e:"Therefore, the important factor is not the exa
+24:   {j:"💡", e:"It is also important to distinguish between vol
+25:   {j:"🌊", e:"Voltage is the electrical potential difference 
+26:   {j:"🚰", e:"A common analogy is water flowing through a pip
+27:   {j:"🏢", e:"The electrical power supplied by utility compan
+28:   {j:"🏠", e:"For example, household outlets receive a fixed 
+29:   {j:"🖥️", e:"Inside computers and other digital devices, el
+30:   {j:"🛡️", e:"One reason binary became so important is relia
+31:   {j:"🧩", e:"Electronic components are never perfect.", h:"ר
+32:   {j:"🌡️", e:"Small fluctuations in voltage can occur becaus
+33:   {j:"📉", e:"If computers used ten different voltage levels 
+34:   {j:"✅", e:"With only two states, devices can easily distin
+35:   {j:"🧱", e:"Binary numbers also made possible the developme
+36:   {j:"🧠", e:"Logic gates are tiny electronic circuits that p
+37:   {j:"🚦", e:"They operate using only 0s and 1s and follow th
+38:   {j:"✖️", e:"For example, an AND gate produces an output of
+39:   {j:"➕", e:"An OR gate produces 1 when at least one input i
+40:   {j:"🔂", e:"A NOT gate reverses the input, turning 1 into 0
+41:   {j:"🏗️", e:"By combining these simple gates, engineers can
+42:   {j:"🔬", e:"The invention of the transistor in the mid-twen
+43:   {j:"⏱️", e:"Every calculation performed by a computer—from
+44:   {j:"🕸️", e:"In fact, a modern processor may contain billio
+45:   {j:"🤝", e:"An interesting historical connection is that th
+46:   {j:"📏", e:"Boole created a mathematical system based on tr
+47:   {j:"🌉", e:"Decades later, Claude Shannon showed that Boole
+48:   {j:"🗣️", e:"Another interesting story about binary involve
+49:   {j:"📻", e:"When they were building the first electronic co
+50:   {j:"🔑", e:"This meant that a mathematical idea proposed ce
+51:   {j:"🌐", e:"What seemed like abstract theories became the l
+52:   {j:"🎵", e:"Today, every letter, image, song, and video sto
+53:   {j:"🔠", e:"For example, the letter \"A\" is stored as the 
+54:   {j:"📱", e:"Even the text you are reading right now is repr
+55:   {j:"🏁", e:"In conclusion, binary numbers are essential bec
+56:   {j:"🏛️", e:"Developed mathematically by Leibniz, strengthe
+57:   {j:"💾", e:"Together with logic gates, binary numbers enabl
+58:   {j:"🌌", e:"Without binary numbers and logic gates, the dig
