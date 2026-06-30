@@ -1,0 +1,120 @@
+  w12d1: [
+    {
+      word: "Binary",
+      phonetic: "בינארי (bi-na-ri)",
+      meaning: "בינארי (מבוסס על שתיים)",
+      visual: "0️⃣1️⃣",
+      exp: "שיטת ספירה המשתמשת בשני סמלים בלבד, לרוב 0 ו-1.",
+      engEx: "Computers use the binary system to store data.",
+      hebEx: "מחשבים משתמשים בשיטה הבינארית כדי לאחסן נתונים."
+    },
+    {
+      word: "Represent",
+      phonetic: "ריפרזנט (rep-re-zent)",
+      meaning: "לייצג",
+      visual: "🎭",
+      exp: "להיות סמל או סימן למשהו אחר.",
+      engEx: "The number 1 represents an ON state.",
+      hebEx: "המספר 1 מייצג מצב פועל."
+    },
+    {
+      word: "Digit",
+      phonetic: "דיג'יט (di-jit)",
+      meaning: "ספרה",
+      visual: "🔢",
+      exp: "כל אחד מהסמלים המשמשים לכתיבת מספרים.",
+      engEx: "The binary system uses only two digits.",
+      hebEx: "השיטה הבינארית משתמשת בשתי ספרות בלבד."
+    },
+    {
+      word: "Symbol",
+      phonetic: "סימבול (sim-bol)",
+      meaning: "סמל",
+      visual: "⚜️",
+      exp: "סימן, ציור או אות המייצגים מושג, רעיון או חפץ.",
+      engEx: "The heart is a symbol of love.",
+      hebEx: "הלב הוא סמל לאהבה."
+    },
+    {
+      word: "System",
+      phonetic: "סיסטם (sis-tem)",
+      meaning: "מערכת, שיטה",
+      visual: "⚙️",
+      exp: "אוסף של חלקים או חוקים הפועלים יחד למטרה מסוימת.",
+      engEx: "We need a reliable system for calculating taxes.",
+      hebEx: "אנו צריכים מערכת אמינה לחישוב מסים."
+    },
+    {
+      word: "Century",
+      phonetic: "סנצ'ורי (sen-chu-ri)",
+      meaning: "מאה (100 שנים)",
+      visual: "💯",
+      exp: "תקופת זמן של מאה שנים.",
+      engEx: "The telephone was invented in the 19th century.",
+      hebEx: "הטלפון הומצא במאה ה-19."
+    },
+    {
+      word: "Curiosity",
+      phonetic: "קיוריאוסיטי (kyu-ri-o-si-ti)",
+      meaning: "סקרנות",
+      visual: "🤔",
+      exp: "רצון עז לדעת או ללמוד משהו.",
+      engEx: "His curiosity led him to read many books.",
+      hebEx: "הסקרנות שלו הובילה אותו לקרוא ספרים רבים."
+    },
+    {
+      word: "Breakthrough",
+      phonetic: "ברייקת'רו (breik-thru)",
+      meaning: "פריצת דרך",
+      visual: "🚀",
+      exp: "התקדמות חשובה ופתאומית, גילוי משמעותי.",
+      engEx: "The discovery of penicillin was a major medical breakthrough.",
+      hebEx: "גילוי הפניצילין היה פריצת דרך רפואית גדולה."
+    },
+    {
+      word: "Combine",
+      phonetic: "קומביין (kom-bain)",
+      meaning: "לשלב, לחבר",
+      visual: "🔗",
+      exp: "לחבר שני דברים או יותר ליצירת דבר אחד.",
+      engEx: "You can combine these simple parts to build a machine.",
+      hebEx: "אתה יכול לשלב את החלקים הפשוטים האלה כדי לבנות מכונה."
+    },
+    {
+      word: "Process",
+      phonetic: "פרוסס (pro-ses)",
+      meaning: "לעבד (גם: תהליך)",
+      visual: "🔄",
+      exp: "לבצע סדרת פעולות על נתונים או חומרים כדי לקבל תוצאה.",
+      engEx: "The computer can process huge amounts of data quickly.",
+      hebEx: "המחשב יכול לעבד כמויות עצומות של נתונים במהירות."
+    }
+  ],
+  w12d2: [
+    {
+      word: "Voltage",
+      phonetic: "וולטג' (vol-tij)",
+      meaning: "מתח חשמלי",
+      visual: "⚡",
+      exp: "ההפרש בפוטנציאל החשמלי שדוחף את האלקטרונים.",
+      engEx: "The battery supplies a voltage of 1.5 volts.",
+      hebEx: "הסוללה מספקת מתח של 1.5 וולט."
+    },
+    {
+      word: "Current",
+      phonetic: "קארנט (kur-ent)",
+      meaning: "זרם",
+      visual: "🌊",
+      exp: "תנועה או זרימה, למשל של אלקטרונים (זרם חשמלי).",
+      engEx: "The electrical current flows through the wire.",
+      hebEx: "הזרם החשמלי זורם דרך החוט."
+    },
+    {
+      word: "Circuit",
+      phonetic: "סירקוט (ser-kit)",
+      meaning: "מעגל (חשמלי)",
+      visual: "🔌",
+      exp: "מסלול סגור דרכו יכול לעבור זרם חשמלי.",
+      engEx: "If you break the circuit, the light will turn off.",
+      hebEx: "אם תשבור את המעגל, האור יכבה."
+    },

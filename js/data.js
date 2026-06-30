@@ -84,8 +84,8 @@ window.vocabularyData = {
   w12d1: [
     {
       word: "Binary",
-      phonetic: "בינארי (bi-na-ri)",
-      meaning: "בינארי (מבוסס על שתיים)",
+      phonetic: "בִּינָארִי (bi-na-ri)",
+      meaning: "בִּינָארִי (מְבוּסָּס עַל שְׁתַּיִם)",
       visual: "0️⃣1️⃣",
       exp: "שיטת ספירה המשתמשת בשני סמלים בלבד, לרוב 0 ו-1.",
       engEx: "Computers use the binary system to store data.",
@@ -93,8 +93,8 @@ window.vocabularyData = {
     },
     {
       word: "Represent",
-      phonetic: "ריפרזנט (rep-re-zent)",
-      meaning: "לייצג",
+      phonetic: "רִיפְּרֶזֶנְט (rep-re-zent)",
+      meaning: "לְיַצֵּג",
       visual: "🎭",
       exp: "להיות סמל או סימן למשהו אחר.",
       engEx: "The number 1 represents an ON state.",
@@ -102,8 +102,8 @@ window.vocabularyData = {
     },
     {
       word: "Digit",
-      phonetic: "דיג'יט (di-jit)",
-      meaning: "ספרה",
+      phonetic: "דִּיגִ'יט (di-jit)",
+      meaning: "סִפְרָה",
       visual: "🔢",
       exp: "כל אחד מהסמלים המשמשים לכתיבת מספרים.",
       engEx: "The binary system uses only two digits.",
@@ -111,8 +111,8 @@ window.vocabularyData = {
     },
     {
       word: "Symbol",
-      phonetic: "סימבול (sim-bol)",
-      meaning: "סמל",
+      phonetic: "סִימְבּוֹל (sim-bol)",
+      meaning: "סֵמֶל",
       visual: "⚜️",
       exp: "סימן, ציור או אות המייצגים מושג, רעיון או חפץ.",
       engEx: "The heart is a symbol of love.",
@@ -120,8 +120,8 @@ window.vocabularyData = {
     },
     {
       word: "System",
-      phonetic: "סיסטם (sis-tem)",
-      meaning: "מערכת, שיטה",
+      phonetic: "סִיסְטֶם (sis-tem)",
+      meaning: "מַעֲרֶכֶת, שִׁיטָה",
       visual: "⚙️",
       exp: "אוסף של חלקים או חוקים הפועלים יחד למטרה מסוימת.",
       engEx: "We need a reliable system for calculating taxes.",
@@ -129,8 +129,8 @@ window.vocabularyData = {
     },
     {
       word: "Century",
-      phonetic: "סנצ'ורי (sen-chu-ri)",
-      meaning: "מאה (100 שנים)",
+      phonetic: "סֶנְצ'וּרִי (sen-chu-ri)",
+      meaning: "מֵאָה (100 שָׁנִים)",
       visual: "💯",
       exp: "תקופת זמן של מאה שנים.",
       engEx: "The telephone was invented in the 19th century.",
@@ -138,8 +138,8 @@ window.vocabularyData = {
     },
     {
       word: "Curiosity",
-      phonetic: "קיוריאוסיטי (kyu-ri-o-si-ti)",
-      meaning: "סקרנות",
+      phonetic: "קְיוּרִיאוֹסִיטִי (kyu-ri-o-si-ti)",
+      meaning: "סַקְרָנוּת",
       visual: "🤔",
       exp: "רצון עז לדעת או ללמוד משהו.",
       engEx: "His curiosity led him to read many books.",
@@ -147,8 +147,8 @@ window.vocabularyData = {
     },
     {
       word: "Breakthrough",
-      phonetic: "ברייקת'רו (breik-thru)",
-      meaning: "פריצת דרך",
+      phonetic: "בְּרֵיְקְת'רוּ (breik-thru)",
+      meaning: "פְּרִיצַת דֶּרֶךְ",
       visual: "🚀",
       exp: "התקדמות חשובה ופתאומית, גילוי משמעותי.",
       engEx: "The discovery of penicillin was a major medical breakthrough.",
@@ -156,8 +156,8 @@ window.vocabularyData = {
     },
     {
       word: "Combine",
-      phonetic: "קומביין (kom-bain)",
-      meaning: "לשלב, לחבר",
+      phonetic: "קוֹמְבַּיִן (kom-bain)",
+      meaning: "לְשַׁלֵּב, לְחַבֵּר",
       visual: "🔗",
       exp: "לחבר שני דברים או יותר ליצירת דבר אחד.",
       engEx: "You can combine these simple parts to build a machine.",
@@ -165,8 +165,8 @@ window.vocabularyData = {
     },
     {
       word: "Process",
-      phonetic: "פרוסס (pro-ses)",
-      meaning: "לעבד (גם: תהליך)",
+      phonetic: "פְּרוֹסֶס (pro-ses)",
+      meaning: "לְעַבֵּד (גַּם: תַּהֲלִיךְ)",
       visual: "🔄",
       exp: "לבצע סדרת פעולות על נתונים או חומרים כדי לקבל תוצאה.",
       engEx: "The computer can process huge amounts of data quickly.",
@@ -176,8 +176,8 @@ window.vocabularyData = {
   w12d2: [
     {
       word: "Voltage",
-      phonetic: "וולטג' (vol-tij)",
-      meaning: "מתח חשמלי",
+      phonetic: "ווֹלְטֶג' (vol-tij)",
+      meaning: "מֶתַח חַשְׁמַלִּי",
       visual: "⚡",
       exp: "ההפרש בפוטנציאל החשמלי שדוחף את האלקטרונים.",
       engEx: "The battery supplies a voltage of 1.5 volts.",
@@ -185,8 +185,8 @@ window.vocabularyData = {
     },
     {
       word: "Current",
-      phonetic: "קארנט (kur-ent)",
-      meaning: "זרם",
+      phonetic: "קָארֶנְט (kur-ent)",
+      meaning: "זֶרֶם",
       visual: "🌊",
       exp: "תנועה או זרימה, למשל של אלקטרונים (זרם חשמלי).",
       engEx: "The electrical current flows through the wire.",
@@ -194,8 +194,8 @@ window.vocabularyData = {
     },
     {
       word: "Circuit",
-      phonetic: "סירקוט (ser-kit)",
-      meaning: "מעגל (חשמלי)",
+      phonetic: "סִירְקוּט (ser-kit)",
+      meaning: "מַעְגָּל (חַשְׁמַלִּי)",
       visual: "🔌",
       exp: "מסלול סגור דרכו יכול לעבור זרם חשמלי.",
       engEx: "If you break the circuit, the light will turn off.",
