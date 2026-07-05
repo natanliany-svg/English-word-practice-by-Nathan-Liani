@@ -1243,7 +1243,7 @@ window.render = function() {
                 `;
             }).join('');
         } else if (window.articleViewMode === 'paragraph') {
-            const paragraphs = window.articleParagraphs[isWeek13 ? 'week13' : (isWeek12 ? 'week12' : (isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8')))];
+            const paragraphs = window.articleParagraphs[isWeek13 ? 'week13' : (isWeek12 ? 'week12' : (isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8'))))];
             htmlBlock += paragraphs.map((paraIndices, index) => {
                 const isHeaderParagraph = paraIndices.length === 1 && articleData[paraIndices[0]].isHeader;
                 if (isHeaderParagraph) {
@@ -1310,7 +1310,7 @@ window.render = function() {
             }
                 } else {
             // Whole Article mode - single card, flowing text, single audio
-            const paragraphs = window.articleParagraphs[isWeek13 ? 'week13' : (isWeek12 ? 'week12' : (isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8')))];
+            const paragraphs = window.articleParagraphs[isWeek13 ? 'week13' : (isWeek12 ? 'week12' : (isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8'))))];
             
             let engHTML = '';
             let hebHTML = '';
