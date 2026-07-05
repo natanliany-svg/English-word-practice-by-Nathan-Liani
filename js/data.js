@@ -357,6 +357,374 @@ window.vocabularyData = {
       hebEx: "שער OR מפיק פלט של 1 כאשר לפחות קלט אחד הוא 1."
     }
   ],
+    w13d1: [
+    {
+      word: "Pitch",
+      phonetic: "פִּיץ'",
+      meaning: "גּוֹבַהּ צְלִיל",
+      visual: "🎵",
+      exp: "התכונה של צליל שקובעת אם הוא נשמע גבוה או נמוך, נקבעת על ידי התדר שלו.",
+      engEx: "Every musical note has a specific frequency that determines its pitch.",
+      hebEx: "לכל תו מוזיקלי יש תדר ספציפי שקובע את גובה הצליל שלו."
+    },
+    {
+      word: "Frequency",
+      phonetic: "פְרִיקְוֶנְסִי",
+      meaning: "תֶּדֶר, תְּדִירוּת",
+      visual: "〰️",
+      exp: "מספר הפעמים שגל או רטט מתרחש בשנייה אחת, נמדד בהרץ (Hz).",
+      engEx: "The frequency of the vocal fold vibrations is measured in Hertz.",
+      hebEx: "תדר הרעידות של מיתרי הקול נמדד בהרץ."
+    },
+    {
+      word: "Vibration",
+      phonetic: "וַיְבְּרֵיְשֶׁן",
+      meaning: "רֶטֶט, תְּנוּדָה",
+      visual: "📳",
+      exp: "תנועה מהירה וחוזרת קדימה ואחורה, כמו של מיתרי הקול או מיתר של גיטרה.",
+      engEx: "The brain transforms physical vibrations into the experience we call music.",
+      hebEx: "המוח הופך רטט פיזי לחוויה שאנחנו קוראים לה מוזיקה."
+    },
+    {
+      word: "Larynx",
+      phonetic: "לָארִינְקְס",
+      meaning: "תֵּיבַת קוֹל, גָּרוֹן",
+      visual: "🗣️",
+      exp: "האיבר בגרון שמכיל את מיתרי הקול ומפיק את הצליל הבסיסי.",
+      engEx: "Everything starts in the larynx, also known as the voice box.",
+      hebEx: "הכל מתחיל בתיבת הקול, הידועה גם כקופסת הקול."
+    },
+    {
+      word: "Tissue",
+      phonetic: "טִישׁוּ",
+      meaning: "רִקְמָה",
+      visual: "🧬",
+      exp: "קבוצה של תאים דומים שיוצרים חלק מהגוף (כמו שריר, עור או מיתרי קול).",
+      engEx: "Inside the larynx are two flexible bands of tissue called vocal folds.",
+      hebEx: "בתוך תיבת הקול ישנן שתי רצועות רקמה גמישות הנקראות מיתרי הקול."
+    },
+    {
+      word: "Tension",
+      phonetic: "טֶנְשֶׁן",
+      meaning: "מֶתַח, מְתִיחוּת",
+      visual: "🪢",
+      exp: "המצב של להיות מתוח או הדוק. במיתרי הקול זה משפיע על גובה הצליל.",
+      engEx: "The brain adjusts the tension of the vocal folds with remarkable precision.",
+      hebEx: "המוח מתאים את המתח של מיתרי הקול בדיוק יוצא דופן."
+    },
+    {
+      word: "Precision",
+      phonetic: "פְּרִיסִיזֶ'ן",
+      meaning: "דִּיּוּק",
+      visual: "🎯",
+      exp: "האיכות של להיות מדויק לחלוטין וללא שגיאות.",
+      engEx: "A professional singer can control their voice with remarkable precision.",
+      hebEx: "זמר מקצועי יכול לשלוט בקולו בדיוק יוצא דופן."
+    },
+    {
+      word: "Elasticity",
+      phonetic: "אֵלַסְטִיסִיטִי",
+      meaning: "גְּמִישׁוּת, אֶלַסְטִיּוּת",
+      visual: "🪀",
+      exp: "היכולת של חומר לחזור לצורתו המקורית לאחר שנמתח או נדחס.",
+      engEx: "Immediately afterward, their natural elasticity pulls them back together.",
+      hebEx: "מיד לאחר מכן, הגמישות הטבעית שלהם מושכת אותם חזרה יחד."
+    },
+    {
+      word: "Pressure",
+      phonetic: "פְּרֶשֶׁר",
+      meaning: "לַחַץ",
+      visual: "🎈",
+      exp: "הכוח המופעל על שטח מסוים, כמו אוויר שדוחף מלמטה כדי לפתוח את מיתרי הקול.",
+      engEx: "The vocal folds close together while air pressure builds beneath them.",
+      hebEx: "מיתרי הקול נסגרים יחד בזמן שלחץ אוויר נבנה תחתיהם."
+    },
+    {
+      word: "Exceptional",
+      phonetic: "אֶקְסֶפְּשׁוֹנַל",
+      meaning: "יוֹצֵא דֹּפֶן, חָרִיג",
+      visual: "🌟",
+      exp: "משהו בלתי רגיל, מצוין או נדיר מאוד (כמו זמרת שיכולה להגיע לתדרים גבוהים במיוחד).",
+      engEx: "Exceptional sopranos can reach notes of approximately 1,246 Hz.",
+      hebEx: "זמרות סופרן יוצאות דופן יכולות להגיע לצלילים של כ-1,246 הרץ."
+    }
+  ],
+  w13d2: [
+    {
+      word: "Burst",
+      phonetic: "בֶּרְסְט",
+      meaning: "פֶּרֶץ, הִתְפָּרְצוּת",
+      visual: "💥",
+      exp: "שחרור פתאומי ומהיר של משהו, כמו אוויר שפורץ החוצה ממיתרי הקול.",
+      engEx: "Each time the vocal folds open, they push a small burst of air outward.",
+      hebEx: "בכל פעם שמיתרי הקול נפתחים, הם דוחפים פרץ קטן של אוויר החוצה."
+    },
+    {
+      word: "Compress",
+      phonetic: "קוֹמְפְּרֶס",
+      meaning: "לִדְחֹס",
+      visual: "🗜️",
+      exp: "ללחוץ משהו יחד למקום קטן יותר. בגלי קול, זה יוצר אזור של לחץ גבוה.",
+      engEx: "This creates alternating areas of compressed and expanded air molecules.",
+      hebEx: "זה יוצר אזורים מתחלפים של מולקולות אוויר דחוסות ומורחבות."
+    },
+    {
+      word: "Expand",
+      phonetic: "אֶקְסְפֶּנְד",
+      meaning: "לְהַרְחִיב, לְהִתְרַחֵב",
+      visual: "↔️",
+      exp: "לגדול בנפח או להתפשט על פני שטח גדול יותר.",
+      engEx: "Sound waves consist of areas where the air molecules expand and compress.",
+      hebEx: "גלי קול מורכבים מאזורים שבהם מולקולות האוויר מתרחבות ונדחסות."
+    },
+    {
+      word: "Amplitude",
+      phonetic: "אָמְפְּלִיטְיוּד",
+      meaning: "מִשְׂרַעַת, אַמְפְּלִיטוּדָה",
+      visual: "📏",
+      exp: "הגודל או הגובה של גל. בקול, המשרעת קובעת את עוצמת הקול (Loudness).",
+      engEx: "More air creates larger sound waves with greater amplitude, making the sound louder.",
+      hebEx: "יותר אוויר יוצר גלי קול גדולים יותר עם משרעת גדולה יותר, מה שהופך את הקול לחזק יותר."
+    },
+    {
+      word: "Sustain",
+      phonetic: "סַסְטֵיְן",
+      meaning: "לְהַחְזִיק (צְלִיל), לְשַׁמֵּר",
+      visual: "⏳",
+      exp: "להמשיך או להחזיק משהו לאורך זמן מבלי שייפסק.",
+      engEx: "A singer may sustain a note for several seconds without changing its pitch.",
+      hebEx: "זמר עשוי להחזיק תו למשך מספר שניות מבלי לשנות את גובה הצליל שלו."
+    },
+    {
+      word: "Constant",
+      phonetic: "קוֹנְסְטַנְט",
+      meaning: "קָבוּעַ",
+      visual: "➖",
+      exp: "משהו שנשאר אותו דבר ולא משתנה לאורך זמן.",
+      engEx: "During this time, the vibration frequency stays constant.",
+      hebEx: "במהלך הזמן הזה, תדר הרטט נשאר קבוע."
+    },
+    {
+      word: "Octave",
+      phonetic: "אוֹקְטָבָה",
+      meaning: "אוֹקְטָבָה (מִרְוָח מוּזִיקָלִי)",
+      visual: "🎹",
+      exp: "מרווח מוזיקלי שבו התדר של התו הגבוה הוא בדיוק כפול מהתדר של התו הנמוך.",
+      engEx: "Moving one octave higher makes the frequency exactly twice as high.",
+      hebEx: "מעבר אוקטבה אחת למעלה הופך את התדר לגבוה פי שניים בדיוק."
+    },
+    {
+      word: "Recognize",
+      phonetic: "רֶקוֹגְנַיְז",
+      meaning: "לְזַהוֹת",
+      visual: "💡",
+      exp: "לדעת מה משהו או מישהו מכיוון שראית או שמעת אותו בעבר.",
+      engEx: "Our ears recognize both notes as the same musical note, just in different octaves.",
+      hebEx: "האוזניים שלנו מזהות את שני התווים כאותו תו מוזיקלי, פשוט באוקטבות שונות."
+    },
+    {
+      word: "Range",
+      phonetic: "רֵיְנְג'",
+      meaning: "טְוָח",
+      visual: "📏",
+      exp: "המרחק בין הגבול העליון לתחתון. למשל, הטווח הקולי של זמר (מהנמוך לגבוה ביותר).",
+      engEx: "Notes across different vocal ranges still sound closely related.",
+      hebEx: "תווים על פני טווחי קול שונים עדיין נשמעים קשורים זה לזה."
+    },
+    {
+      word: "Determine",
+      phonetic: "דִיטֶרְמִין",
+      meaning: "לִקְבֹּעַ, לְהַחְלִיט",
+      visual: "⚖️",
+      exp: "לשלוט או להשפיע באופן ישיר על התוצאה של משהו.",
+      engEx: "The frequency of the vibrations determines how close together the waves are.",
+      hebEx: "תדר הרעידות קובע עד כמה הגלים קרובים זה לזה."
+    }
+  ],
+  w13d3: [
+    {
+      word: "Detect",
+      phonetic: "דִיטֶקְט",
+      meaning: "לְזַהוֹת, לְהַבְחִין",
+      visual: "🔎",
+      exp: "למצוא או להבחין במשהו שקשה לראות או לשמוע. האוזן מזהה גלי קול.",
+      engEx: "Stage 3 explains how the ear detects sound waves from the air.",
+      hebEx: "שלב 3 מסביר כיצד האוזן מזהה גלי קול מהאוויר."
+    },
+    {
+      word: "Spiral",
+      phonetic: "סְפַּיְרַל",
+      meaning: "סְפִּירָלָה, לוּלְיָן",
+      visual: "🌀",
+      exp: "צורה שמתעקלת בסיבובים ההולכים וקטנים או גדלים, כמו קונכייה של חילזון.",
+      engEx: "The cochlea is a spiral-shaped organ located inside the inner ear.",
+      hebEx: "שבלול האוזן הוא איבר בצורת ספירלה הממוקם בתוך האוזן הפנימית."
+    },
+    {
+      word: "Fluid",
+      phonetic: "פְלוּאִיד",
+      meaning: "נוֹזֵל",
+      visual: "💧",
+      exp: "חומר שיכול לזרום ולשנות צורה, כמו מים. שבלול האוזן מלא בנוזל.",
+      engEx: "The cochlea is filled with fluid and contains thousands of hair cells.",
+      hebEx: "שבלול האוזן מלא בנוזל ומכיל אלפי תאי שערה."
+    },
+    {
+      word: "Microscopic",
+      phonetic: "מַיְקְרוֹסְקוֹפִּיק",
+      meaning: "מִיקְרוֹסְקוֹפִּי, זָעִיר",
+      visual: "🔬",
+      exp: "כל כך קטן שאי אפשר לראותו בעין רגילה, אלא רק בעזרת מיקרוסקופ.",
+      engEx: "These microscopic hair cells act like a precise biological keyboard.",
+      hebEx: "תאי השערה המיקרוסקופיים האלה פועלים כמו מקלדת ביולוגית מדויקת."
+    },
+    {
+      word: "Sensory",
+      phonetic: "סֶנְסוֹרִי",
+      meaning: "תְּחוּשָׁתִי, חִישָׁתִי",
+      visual: "🖐️",
+      exp: "קשור לחושים הפיזיים (ראייה, שמיעה, מגע, טעם וריח).",
+      engEx: "Tiny sensory cells respond to different frequencies of sound.",
+      hebEx: "תאים תחושתיים זעירים מגיבים לתדרים שונים של קול."
+    },
+    {
+      word: "Stimulate",
+      phonetic: "סְטִימְיוּלֵיְט",
+      meaning: "לְגָרוֹת, לְעוֹרֵר",
+      visual: "⚡",
+      exp: "לגרום לפעולה או לתגובה בחלק כלשהו בגוף או במערכת.",
+      engEx: "High-frequency sounds travel farther inside and stimulate the shorter hair cells.",
+      hebEx: "צלילים בתדר גבוה מטיילים רחוק יותר פנימה ומגרים את תאי השערה הקצרים יותר."
+    },
+    {
+      word: "Stiff",
+      phonetic: "סְטִיף",
+      meaning: "נוּקְשֶׁה",
+      visual: "📏",
+      exp: "קשיח ולא מתכופף בקלות. התאים שמזהים תדרים גבוהים הם קצרים ונוקשים יותר.",
+      engEx: "The shorter, stiffer hair cells are located deeper within the cochlea.",
+      hebEx: "תאי השערה הקצרים והנוקשים יותר ממוקמים עמוק יותר בתוך שבלול האוזן."
+    },
+    {
+      word: "Convert",
+      phonetic: "קוֹנְוֶרְט",
+      meaning: "לְהָמִיר",
+      visual: "🔄",
+      exp: "לשנות משהו מצורה אחת לצורה אחרת (למשל תנועה פיזית לאותות חשמליים).",
+      engEx: "When these cells move, they convert mechanical motion into electrical signals.",
+      hebEx: "כאשר התאים האלה זזים, הם ממירים תנועה מכנית לאותות חשמליים."
+    },
+    {
+      word: "Mechanical",
+      phonetic: "מֶקָנִיקַל",
+      meaning: "מֶכָנִי",
+      visual: "⚙️",
+      exp: "קשור לתנועה פיזית או למכונות. גלי הקול יוצרים תנועה מכנית באוזן.",
+      engEx: "The ear transforms mechanical vibrations into information the brain can understand.",
+      hebEx: "האוזן הופכת רעידות מכניות למידע שהמוח יכול להבין."
+    },
+    {
+      word: "Nerve",
+      phonetic: "נֶרְב",
+      meaning: "עָצָב",
+      visual: "🧠",
+      exp: "סיבים המעבירים אותות בין המוח לבין חלקי הגוף השונים.",
+      engEx: "The electrical signals travel through the auditory nerve to the brain.",
+      hebEx: "האותות החשמליים נוסעים דרך עצב השמיעה אל המוח."
+    }
+  ],
+  w13d4: [
+    {
+      word: "Perceive",
+      phonetic: "פֶּרְסִיו",
+      meaning: "לִקְלֹט (בַּחוּשִׁים), לְהַבְחִין",
+      visual: "👁️",
+      exp: "לשים לב או להיות מודע למשהו בעזרת החושים, או להבין אותו בצורה מסוימת.",
+      engEx: "The article explains how humans perceive pitch.",
+      hebEx: "המאמר מסביר כיצד בני אדם קולטים גובה צליל."
+    },
+    {
+      word: "Interpret",
+      phonetic: "אִינְטֶרְפְּרֶט",
+      meaning: "לְפָרֵשׁ",
+      visual: "🧩",
+      exp: "להבין את המשמעות של מידע מסוים. המוח שלנו מפרש תדרים כצלילים.",
+      engEx: "The human brain does not interpret pitch in a simple linear way.",
+      hebEx: "המוח האנושי אינו מפרש גובה צליל בדרך ליניארית פשוטה."
+    },
+    {
+      word: "Linear",
+      phonetic: "לִינִיאָר",
+      meaning: "לִינֵאָרִי, קַוִּי",
+      visual: "📈",
+      exp: "מתקדם בצורה ישרה וקבועה צעד אחר צעד. השמיעה שלנו לא עובדת באופן ליניארי אלא יחסית.",
+      engEx: "A linear increase means adding the same amount every time.",
+      hebEx: "עלייה ליניארית משמעותה הוספת אותה כמות בכל פעם."
+    },
+    {
+      word: "Logarithmic",
+      phonetic: "לוֹגָרִיתְמִיק",
+      meaning: "לוֹגָרִיתְמִי",
+      visual: "📉",
+      exp: "דפוס המבוסס על מכפלות. בשמיעה שלנו, עלייה באוקטבה מתקבלת כשהתדר מוכפל, לא כשמוסיפים לו כמות קבועה.",
+      engEx: "Our hearing follows a logarithmic pattern rather than a direct scale.",
+      hebEx: "השמיעה שלנו עוקבת אחר תבנית לוגריתמית ולא סולם ישיר."
+    },
+    {
+      word: "Scale",
+      phonetic: "סְקֵיְל",
+      meaning: "סֻלָּם (מוּזִיקָלִי אוֹ מִדָּה)",
+      visual: "⚖️",
+      exp: "סדרה של תווים מוזיקליים, או מערכת למדידה והשוואה.",
+      engEx: "This explains why the musical scale is organized into octaves.",
+      hebEx: "זה מסביר מדוע הסולם המוזיקלי מאורגן לאוקטבות."
+    },
+    {
+      word: "Factor",
+      phonetic: "פַקְטוֹר",
+      meaning: "גוֹרֵם, מְקַדֵּם (בְּמַכְפֵּלָה)",
+      visual: "✖️",
+      exp: "במתמטיקה, מספר שבו מכפילים מספר אחר ('פי שתיים' = פקטור של 2).",
+      engEx: "Frequencies that differ by a factor of two sound naturally related.",
+      hebEx: "תדרים ששונים בפקטור של שניים נשמעים קשורים באופן טבעי."
+    },
+    {
+      word: "Delicate",
+      phonetic: "דֶלִיקֵיְט",
+      meaning: "עָדִין, שַׁבְרִירִי",
+      visual: "🌸",
+      exp: "משהו שיכול להישבר או להיפגע בקלות רבה (כמו תאי השערה באוזן).",
+      engEx: "As people age, the delicate hair cells gradually wear out.",
+      hebEx: "ככל שאנשים מתבגרים, תאי השערה העדינים נשחקים בהדרגה."
+    },
+    {
+      word: "Gradually",
+      phonetic: "גְרָג'וּאָלִי",
+      meaning: "בְּהַדְרָגָה",
+      visual: "⏳",
+      exp: "קורה לאט לאט ולאורך זמן, שלב אחר שלב.",
+      engEx: "Our ability to detect high frequencies gradually decreases over the years.",
+      hebEx: "היכולת שלנו לזהות תדרים גבוהים פוחתת בהדרגה לאורך השנים."
+    },
+    {
+      word: "Wear out",
+      phonetic: "וֶר אַאוּט",
+      meaning: "לְהִשָּׁחֵק, לִבְלוֹת",
+      visual: "🏚️",
+      exp: "להפוך לישן ופגום כתוצאה משימוש רב או לאורך זמן.",
+      engEx: "If parts in a machine wear out, they must be replaced.",
+      hebEx: "אם חלקים במכונה נשחקים, יש להחליף אותם."
+    },
+    {
+      word: "Regenerate",
+      phonetic: "רִיגֶ'נֶרֵיְט",
+      meaning: "לְהִתְחַדֵּשׁ, לְהִשְׁתַּקֵּם",
+      visual: "🌱",
+      exp: "לגדול מחדש או לרפא את עצמו אחרי פגיעה.",
+      engEx: "Unfortunately, the sensory cells in our ears cannot regenerate.",
+      hebEx: "לרוע המזל, התאים התחושתיים באוזנינו לא יכולים להתחדש."
+    }
+  ],
   w12d4: [
     {
       word: "Reliability",
@@ -1019,3 +1387,74 @@ window.articleParagraphs = {
         [56, 57, 58]
     ]
 };
+
+window.musicalNoteArticleData = [
+    {j:"🎵",e:"The Musical Note: Understanding the Connection Between Hertz and Pitch",h:"התו המוזיקלי: הבנת הקשר בין הרץ לגובה צליל",isHeader:true},
+    {j:"1",e:"Did you know there is a direct connection between Hertz (Hz) and musical pitch?",h:"האם ידעתם שיש קשר ישיר בין הרץ (Hz) לגובה צליל מוזיקלי?"},
+    {j:"2",e:"Have you ever wondered why one singer sounds deep and powerful while another can reach incredibly high notes?",h:"האם אי פעם תהיתם מדוע זמר אחד נשמע עמוק ועוצמתי בעוד אחר יכול להגיע לצלילים גבוהים להפליא?"},
+    {j:"3",e:"Every musical note has a specific frequency measured in Hertz (Hz), and this frequency determines whether we hear the sound as low or high.",h:"לכל תו מוזיקלי יש תדר ספציפי הנמדד בהרץ (Hz), והתדר הזה קובע אם אנו שומעים את הצליל כנמוך או כגבוה."},
+    {j:"4",e:"Understanding this connection helps explain not only how singers produce different notes, but also how our ears and brain recognize music.",h:"הבנת הקשר הזה עוזרת להסביר לא רק כיצד זמרים מפיקים תווים שונים, אלא גם כיצד האוזניים והמוח שלנו מזהים מוזיקה."},
+    {j:"5",e:"The journey of a musical note begins inside the human body, continues through the air as a sound wave, and finally ends inside the listener's ear, where the brain transforms physical vibrations into the experience we call music.",h:"המסע של תו מוזיקלי מתחיל בתוך גוף האדם, ממשיך דרך האוויר כגל קול, ולבסוף מסתיים בתוך אוזנו של המאזין, שם המוח הופך רעידות פיזיות לחוויה שאנו קוראים לה מוזיקה."},
+
+    {j:"🗣️",e:"Stage 1 – Producing the Sound in the Larynx",h:"שלב 1 - הפקת הצליל בתיבת הקול",isHeader:true},
+    {j:"6",e:"Everything starts in the larynx, also known as the voice box.",h:"הכל מתחיל בתיבת הקול, הידועה גם כקופסת הקול."},
+    {j:"7",e:"Inside the larynx are two flexible bands of tissue called the vocal folds (or vocal cords).",h:"בתוך תיבת הקול נמצאות שתי רצועות רקמה גמישות הנקראות מיתרי הקול."},
+    {j:"8",e:"These folds are responsible for creating the basic sound of the human voice.",h:"מיתרים אלו אחראים ליצירת הצליל הבסיסי של הקול האנושי."},
+    {j:"9",e:"Before a singer produces a note, the brain decides which pitch should be sung.",h:"לפני שזמר מפיק תו, המוח מחליט איזה גובה צליל צריך לשיר."},
+    {j:"10",e:"It sends signals to the muscles surrounding the vocal folds, adjusting their tension with remarkable precision.",h:"הוא שולח אותות לשרירים המקיפים את מיתרי הקול, ומתאים את המתח שלהם בדיוק יוצא דופן."},
+    {j:"11",e:"If the singer wants to perform a low note, the vocal folds remain relatively relaxed.",h:"אם הזמר רוצה לבצע תו נמוך, מיתרי הקול נשארים רפויים יחסית."},
+    {j:"12",e:"If a high note is required, they become much tighter and thinner.",h:"אם נדרש תו גבוה, הם הופכים הרבה יותר מתוחים ודקים."},
+    {j:"13",e:"The vocal folds close together while air pressure builds beneath them.",h:"מיתרי הקול נסגרים יחד בזמן שלחץ אוויר נבנה תחתיהם."},
+    {j:"14",e:"As the lungs push air upward, the pressure eventually becomes strong enough to force the folds apart.",h:"כאשר הריאות דוחפות אוויר כלפי מעלה, הלחץ בסופו של דבר הופך לחזק מספיק כדי לאלץ את המיתרים להיפתח."},
+    {j:"15",e:"Immediately afterward, their natural elasticity pulls them back together.",h:"מיד לאחר מכן, הגמישות הטבעית שלהם מושכת אותם חזרה יחד."},
+    {j:"16",e:"This opening and closing cycle repeats extremely quickly.",h:"מחזור הפתיחה והסגירה הזה חוזר על עצמו במהירות קיצונית."},
+    {j:"17",e:"The number of times the vocal folds vibrate each second is called the frequency, and it is measured in Hertz (Hz).",h:"מספר הפעמים שמיתרי הקול רוטטים בכל שנייה נקרא התדר, והוא נמדד בהרץ (Hz)."},
+    {j:"18",e:"For example, a low male note may vibrate around 100 Hz, meaning the vocal folds open and close about one hundred times every second.",h:"לדוגמה, תו גברי נמוך עשוי לרטוט סביב 100 הרץ, מה שאומר שמיתרי הקול נפתחים ונסגרים כמאה פעמים בכל שנייה."},
+    {j:"19",e:"A very high note, such as those produced by exceptional sopranos or male sopranists, can reach approximately 1,246 Hz, meaning the vocal folds vibrate more than one thousand times every second.",h:"תו גבוה מאוד, כמו אלו שמופקים על ידי זמרות סופרן יוצאות דופן או סופרניסטים גברים, יכול להגיע לכ-1,246 הרץ, מה שאומר שמיתרי הקול רוטטים יותר מאלף פעמים בכל שנייה."},
+    {j:"20",e:"This vibration speed determines the musical pitch. Faster vibrations create higher notes, while slower vibrations create lower notes.",h:"מהירות הרטט הזו קובעת את גובה הצליל המוזיקלי. רעידות מהירות יותר יוצרות תווים גבוהים יותר, בעוד רעידות איטיות יותר יוצרות תווים נמוכים יותר."},
+
+    {j:"🌬️",e:"Stage 2 – The Sound Wave Travels Through the Air",h:"שלב 2 - גל הקול מטייל דרך האוויר",isHeader:true},
+    {j:"21",e:"Each time the vocal folds open, they push a small burst of air outward.",h:"בכל פעם שמיתרי הקול נפתחים, הם דוחפים פרץ אוויר קטן כלפי חוץ."},
+    {j:"22",e:"This creates alternating areas of compressed and expanded air molecules.",h:"זה יוצר אזורים מתחלפים של מולקולות אוויר דחוסות ומורחבות."},
+    {j:"23",e:"These moving pressure changes form what we call a sound wave.",h:"שינויי הלחץ הנעים הללו יוצרים את מה שאנו מכנים גל קול."},
+    {j:"24",e:"The frequency of the vocal fold vibrations determines how close together these waves are.",h:"תדר הרעידות של מיתרי הקול קובע עד כמה הגלים האלה קרובים זה לזה."},
+    {j:"25",e:"When the frequency is low, the waves are spread farther apart. When the frequency is high, the waves are packed much closer together.",h:"כאשר התדר נמוך, הגלים פרוסים רחוק יותר זה מזה. כאשר התדר גבוה, הגלים ארוזים קרוב הרבה יותר זה לזה."},
+    {j:"26",e:"It is important to understand that pitch and loudness are not the same thing.",h:"חשוב להבין שגובה צליל ועוצמה אינם אותו הדבר."},
+    {j:"27",e:"The singer controls loudness mainly by pushing more or less air from the lungs.",h:"הזמר שולט בעוצמת הקול בעיקר על ידי דחיפת יותר או פחות אוויר מהריאות."},
+    {j:"28",e:"More air creates larger sound waves with greater amplitude, making the sound louder.",h:"יותר אוויר יוצר גלי קול גדולים יותר עם משרעת גדולה יותר, מה שהופך את הקול לחזק יותר."},
+    {j:"29",e:"However, the distance between the waves does not change, so the musical note itself remains exactly the same.",h:"עם זאת, המרחק בין הגלים אינו משתנה, כך שהתו המוזיקלי עצמו נשאר בדיוק אותו הדבר."},
+    {j:"30",e:"A singer may also sustain a note for one second or several seconds.",h:"זמר עשוי גם להחזיק תו למשך שנייה אחת או מספר שניות."},
+    {j:"31",e:"During this time, the vibration frequency stays constant.",h:"במהלך זמן זה, תדר הרטט נשאר קבוע."},
+    {j:"32",e:"The only difference is that more vibration cycles occur because the note lasts longer.",h:"ההבדל היחיד הוא שיותר מחזורי רטט מתרחשים מכיוון שהתו נמשך זמן רב יותר."},
+
+    {j:"🎹",e:"Musical Notes and Octaves",h:"תווים מוזיקליים ואוקטבות",isHeader:true},
+    {j:"33",e:"Musicians organize sounds into notes such as C, D, E, F, G, A, and B, which repeat in different octaves.",h:"מוזיקאים מארגנים צלילים לתווים כגון C, D, E, F, G, A ו-B, שחוזרים על עצמם באוקטבות שונות."},
+    {j:"34",e:"One of the most important rules in music is that every time a note moves one octave higher, its frequency becomes exactly twice as high.",h:"אחד הכללים החשובים ביותר במוזיקה הוא שבכל פעם שתו עולה באוקטבה אחת גבוה יותר, התדר שלו הופך גבוה פי שניים בדיוק."},
+    {j:"35",e:"Likewise, moving one octave lower cuts the frequency in half.",h:"באופן דומה, ירידה באוקטבה אחת חותכת את התדר בחצי."},
+    {j:"36",e:"For example, if a singer performs a C note and then sings the next C one octave higher, the higher note vibrates twice as fast.",h:"לדוגמה, אם זמר מבצע תו C ואז שר את ה-C הבא אוקטבה אחת גבוה יותר, התו הגבוה יותר רוטט מהר פי שניים."},
+    {j:"37",e:"Although the frequencies are different, our ears recognize both notes as the same musical note because they belong to different octaves.",h:"למרות שהתדרים שונים, האוזניים שלנו מזהות את שני התווים כאותו תו מוזיקלי מכיוון שהם שייכים לאוקטבות שונות."},
+    {j:"38",e:"This mathematical relationship between octaves is one of the foundations of music and explains why notes across different vocal ranges still sound closely related.",h:"היחס המתמטי הזה בין אוקטבות הוא אחד מיסודות המוזיקה ומסביר מדוע תווים על פני טווחי קול שונים עדיין נשמעים קשורים זה לזה."},
+
+    {j:"👂",e:"Stage 3 – How the Ear Detects Sound",h:"שלב 3 - כיצד האוזן מזהה קול",isHeader:true},
+    {j:"39",e:"After traveling through the air, the sound waves enter the outer ear and eventually reach the cochlea, a spiral-shaped organ inside the inner ear.",h:"לאחר שהם מטיילים דרך האוויר, גלי הקול נכנסים לאוזן החיצונית ובסופו של דבר מגיעים לשבלול, איבר בצורת ספירלה בתוך האוזן הפנימית."},
+    {j:"40",e:"The cochlea is filled with fluid and contains thousands of microscopic hair cells.",h:"שבלול האוזן מלא בנוזל ומכיל אלפי תאי שערה מיקרוסקופיים."},
+    {j:"41",e:"These tiny sensory cells act like an incredibly precise biological keyboard.",h:"תאי החישה הזעירים האלה פועלים כמו מקלדת ביולוגית מדויקת להפליא."},
+    {j:"42",e:"Low-frequency sounds mainly activate the longer, more flexible hair cells located near the entrance of the cochlea.",h:"צלילים בתדר נמוך מפעילים בעיקר את תאי השערה הארוכים והגמישים יותר הממוקמים ליד הכניסה לשבלול."},
+    {j:"43",e:"High-frequency sounds travel farther inside and stimulate the shorter, stiffer hair cells deeper within the cochlea.",h:"צלילים בתדר גבוה מטיילים רחוק יותר פנימה ומגרים את תאי השערה הקצרים והנוקשים יותר עמוק בתוך השבלול."},
+    {j:"44",e:"When these hair cells move, they convert mechanical motion into electrical signals.",h:"כאשר תאי שערה אלו זזים, הם ממירים תנועה מכנית לאותות חשמליים."},
+    {j:"45",e:"These signals travel through the auditory nerve to the brain.",h:"אותות אלו נוסעים דרך עצב השמיעה אל המוח."},
+    {j:"46",e:"Instead of directly measuring the frequency itself, the brain determines which region of the cochlea has been activated.",h:"במקום למדוד ישירות את התדר עצמו, המוח קובע איזה אזור בשבלול הופעל."},
+    {j:"47",e:"From this information, it identifies the pitch that we hear.",h:"ממידע זה, הוא מזהה את גובה הצליל שאנו שומעים."},
+
+    {j:"🧠",e:"How Humans Perceive Pitch",h:"כיצד בני אדם קולטים גובה צליל",isHeader:true},
+    {j:"48",e:"Interestingly, the human brain does not interpret pitch in a simple linear way.",h:"באופן מעניין, המוח האנושי אינו מפרש גובה צליל בדרך ליניארית פשוטה."},
+    {j:"49",e:"Instead, our hearing follows a logarithmic pattern.",h:"במקום זאת, השמיעה שלנו עוקבת אחר תבנית לוגריתמית."},
+    {j:"50",e:"This means that doubling the frequency does not sound like \"twice as high.\" Rather, it sounds like one octave higher.",h:"המשמעות היא שהכפלת התדר לא נשמעת כמו \"גבוה פי שניים\". אלא, זה נשמע כמו אוקטבה אחת גבוה יותר."},
+    {j:"51",e:"This logarithmic perception explains why the musical scale is organized into octaves and why frequencies that differ by a factor of two sound naturally related.",h:"תפיסה לוגריתמית זו מסבירה מדוע הסולם המוזיקלי מאורגן לאוקטבות ומדוע תדרים ששונים בפקטור של שניים נשמעים קשורים באופן טבעי."},
+
+    {j:"⚠️",e:"The Limits of Human Hearing",h:"גבולות השמיעה האנושית",isHeader:true},
+    {j:"52",e:"Human hearing also changes throughout life.",h:"השמיעה האנושית גם משתנה לאורך החיים."},
+    {j:"53",e:"Young children can often hear extremely high frequencies that many adults cannot detect.",h:"ילדים צעירים יכולים לרוב לשמוע תדרים גבוהים במיוחד שמבוגרים רבים אינם יכולים לזהות."},
+    {j:"54",e:"As people age, the delicate hair cells responsible for detecting very high frequencies gradually wear out and cannot regenerate.",h:"ככל שאנשים מתבגרים, תאי השערה העדינים האחראים על זיהוי תדרים גבוהים מאוד נשחקים בהדרגה ולא יכולים להתחדש."},
+    {j:"55",e:"As a result, many adults cannot hear the highest frequencies at all, even though children may hear them clearly.",h:"כתוצאה מכך, מבוגרים רבים לא יכולים לשמוע את התדרים הגבוהים ביותר כלל, למרות שילדים עשויים לשמוע אותם בבירור."}
+];
