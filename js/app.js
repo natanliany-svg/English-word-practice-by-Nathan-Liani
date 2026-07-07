@@ -1058,9 +1058,9 @@ window.render = function() {
                         <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.goToWord('w13d1', 0)">
                             📚 אוצר מילים
                         </button>
-                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setWeek('week12')">
-                            💻 קריאת מאמר
-                        </button>
+                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setWeek('week13')">
+                              💻 קריאת מאמר
+                          </button>
                         <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setQuizTargetWeek('week13'); window.setWeek('quiz'); window.startQuiz();">
                             🧠 מבחן ממוקד
                         </button>
