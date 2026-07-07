@@ -4114,3 +4114,107 @@ window.week12DB = [
     }
 
 ];
+
+
+window.week13DB = [
+    {
+        q: "What is the relationship between Hertz (Hz) and musical pitch?|מהו הקשר בין הרץ (Hz) לגובה צליל מוזיקלי?",
+        options: [
+            "Frequency determines the pitch|התדר קובע את גובה הצליל",
+            "Amplitude determines the pitch|המשרעת קובעת את גובה הצליל",
+            "Pitch determines the loudness|גובה הצליל קובע את עוצמת השמע",
+            "Hertz is a measure of loudness|הרץ הוא מידה של עוצמת קול"
+        ],
+        ans: 0
+    },
+    {
+        q: "Where does a musical note begin inside the human body?|היכן מתחיל תו מוזיקלי בתוך גוף האדם?",
+        options: [
+            "The lungs|בריאות",
+            "The larynx|בתיבת הקול",
+            "The cochlea|בשבלול האוזן",
+            "The brain|במוח"
+        ],
+        ans: 1
+    },
+    {
+        q: "What are the vocal folds made of?|ממה עשויים מיתרי הקול?",
+        options: [
+            "Bands of muscle|רצועות שריר",
+            "Flexible bands of tissue|רצועות רקמה גמישות",
+            "Cartilage|סחוס",
+            "Bones|עצמות"
+        ],
+        ans: 1
+    },
+    {
+        q: "How does a singer control the loudness of a note?|כיצד זמר שולט בעוצמת הקול של תו?",
+        options: [
+            "By pushing more or less air|על ידי דחיפת יותר או פחות אוויר",
+            "By changing the frequency|על ידי שינוי התדר",
+            "By vibrating the vocal folds faster|על ידי הרעדת מיתרי הקול מהר יותר",
+            "By singing a higher note|על ידי שירת תו גבוה יותר"
+        ],
+        ans: 0
+    },
+    {
+        q: "What happens when a note moves one octave higher?|מה קורה כאשר תו עולה באוקטבה אחת?",
+        options: [
+            "Its frequency becomes twice as high|התדר שלו הופך להיות גבוה פי שניים",
+            "Its frequency is cut in half|התדר שלו נחתך בחצי",
+            "It gets twice as loud|הוא נהיה חזק פי שניים",
+            "It sounds like a completely different note|הוא נשמע כמו תו שונה לחלוטין"
+        ],
+        ans: 0
+    },
+    {
+        q: "What is the shape of the cochlea?|מהי צורת שבלול האוזן?",
+        options: [
+            "A straight tube|צינור ישר",
+            "A spiral-shaped organ|איבר בצורת ספירלה",
+            "A flat surface|משטח שטוח",
+            "A sphere|כדור"
+        ],
+        ans: 1
+    },
+    {
+        q: "What do the hair cells in the cochlea do?|מה עושים תאי השערה בשבלול האוזן?",
+        options: [
+            "Convert mechanical motion into electrical signals|ממירים תנועה מכנית לאותות חשמליים",
+            "Produce sound waves|מפיקים גלי קול",
+            "Control the vocal folds|שולטים במיתרי הקול",
+            "Measure loudness directly|מודדים עוצמת קול ישירות"
+        ],
+        ans: 0
+    },
+    {
+        q: "How does the human brain interpret pitch?|כיצד המוח האנושי מפרש גובה צליל?",
+        options: [
+            "In a linear way|בדרך ליניארית",
+            "In a logarithmic pattern|בתבנית לוגריתמית",
+            "As exactly the same frequency|כתדר זהה בדיוק",
+            "By guessing the frequency|על ידי ניחוש התדר"
+        ],
+        ans: 1
+    },
+    {
+        q: "Why do many adults lose the ability to hear extremely high frequencies?|מדוע מבוגרים רבים מאבדים את היכולת לשמוע תדרים גבוהים מאוד?",
+        options: [
+            "The brain forgets how to hear them|המוח שוכח איך לשמוע אותם",
+            "The delicate hair cells wear out and cannot regenerate|תאי השערה העדינים נשחקים ולא יכולים להתחדש",
+            "The eardrum becomes too thick|עור התוף הופך לעבה מדי",
+            "They listen to loud music|הם מאזינים למוזיקה חזקה"
+        ],
+        ans: 1
+    },
+    {
+        q: "What is the unit used to measure frequency?|מהי היחידה המשמשת למדידת תדר?",
+        options: [
+            "Decibels (dB)|דציבלים",
+            "Hertz (Hz)|הרץ",
+            "Watts (W)|וואט",
+            "Meters (m)|מטרים"
+        ],
+        ans: 1
+    }
+];
