@@ -1,0 +1,111 @@
+FOUND AT LINE 1043
+1038: <div style="text-align: center; margin-bottom: 20px;"><button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; padding: 8px 16px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;" onclick="window.setWeek('home')">🏠 ראשי</button></div>
+1039: <div class="home-section-title" style="border:none; justify-content:center; text-align:center; margin-bottom: 15px;">
+1040: <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--theme-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">דף הבית</span>
+1041: </div>
+1042: 
+1043: <!-- 🎯 Weekly Focus Card -->
+1044: <div class="home-card focus-glow" style="background: rgba(15, 23, 42, 0.45); border: 1px solid var(--theme-main); box-shadow: 0 0 15px var(--theme-glow); margin-bottom: 25px; flex-direction: column; align-items: stretch; gap: 15px; border-radius: 15px; padding: 20px;">
+1045: <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+1046: <div style="display: flex; align-items: center; gap: 10px;">
+1047: <span style="font-size: 24px;">🎯</span>
+1048: <div style="text-align: right;">
+1049: <div style="font-size: 18px; font-weight: 900; color: #fff;">מיקוד שבועי: שבוע 13 (Musical Note: Hertz and Pitch)</div>
+1050: <div style="font-size: 13px; color: var(--text-muted); margin-top: 3px;">החומרים הכי רלוונטיים ומעודכנים לתרגול מהיר</div>
+1051: </div>
+1052: </div>
+1053: <span class="srs-badge srs-mastered" style="margin: 0; background: var(--theme-main); color: #fff; animation: pulseGlow 1.5s infinite alternate; font-size: 12px; padding: 4px 8px; border-radius: 4px; box-shadow: 0 0 8px var(--theme-glow);">מיקוד 🎯</span>
+1054: </div>
+1055: 
+1056: <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%;">
+1057: <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.goToWord('w13d1', 0)">
+1058: 📚 אוצר מילים
+1059: </button>
+1060: <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setWeek('week13')">
+1061: 💻 קריאת מאמר
+1062: </button>
+1063: <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setQuizTargetWeek('week13'); window.setWeek('quiz'); window.startQuiz();">
+1064: 🧠 מבחן ממוקד
+1065: </button>
+1066: </div>
+1067: </div>
+1068: 
+1069: <h3 class="home-section-title">שלבי הלימוד</h3>
+1070: <div class="home-list">
+1071: <div class="home-card-row">
+1072: <span class="home-card-number">1</span>
+----------------------------------------
+FOUND AT LINE 1049
+1044: <div class="home-card focus-glow" style="background: rgba(15, 23, 42, 0.45); border: 1px solid var(--theme-main); box-shadow: 0 0 15px var(--theme-glow); margin-bottom: 25px; flex-direction: column; align-items: stretch; gap: 15px; border-radius: 15px; padding: 20px;">
+1045: <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+1046: <div style="display: flex; align-items: center; gap: 10px;">
+1047: <span style="font-size: 24px;">🎯</span>
+1048: <div style="text-align: right;">
+1049: <div style="font-size: 18px; font-weight: 900; color: #fff;">מיקוד שבועי: שבוע 13 (Musical Note: Hertz and Pitch)</div>
+1050: <div style="font-size: 13px; color: var(--text-muted); margin-top: 3px;">החומרים הכי רלוונטיים ומעודכנים לתרגול מהיר</div>
+1051: </div>
+1052: </div>
+1053: <span class="srs-badge srs-mastered" style="margin: 0; background: var(--theme-main); color: #fff; animation: pulseGlow 1.5s infinite alternate; font-size: 12px; padding: 4px 8px; border-radius: 4px; box-shadow: 0 0 8px var(--theme-glow);">מיקוד 🎯</span>
+1054: </div>
+1055: 
+1056: <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%;">
+1057: <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.goToWord('w13d1', 0)">
+1058: 📚 אוצר מילים
+1059: </button>
+1060: <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setWeek('week13')">
+1061: 💻 קריאת מאמר
+1062: </button>
+1063: <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setQuizTargetWeek('week13'); window.setWeek('quiz'); window.startQuiz();">
+1064: 🧠 מבחן ממוקד
+1065: </button>
+1066: </div>
+1067: </div>
+1068: 
+1069: <h3 class="home-section-title">שלבי הלימוד</h3>
+1070: <div class="home-list">
+1071: <div class="home-card-row">
+1072: <span class="home-card-number">1</span>
+1073: <button class="home-card" onclick="window.setWeek('week1')">
+1074: <div class="home-card-icon">📖</div>
+1075: <div class="home-card-content">
+1076: <div class="home-card-title">שבוע 4</div>
+1077: <div class="home-card-desc">אוצר מילים ויסודות. בסיס חזק להמשך הדרך.</div>
+1078: </div>
+----------------------------------------
+FOUND AT LINE 2038
+2033: 
+2034: return `
+2035: <div class="home-wrapper">
+2036: <div style="text-align: center; margin-bottom: 20px;"><button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; padding: 8px 16px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;" onclick="window.setWeek('home')">🏠 ראשי</button></div>
+2037: <div class="home-section-title" style="border:none; justify-content:center; text-align:center; margin-bottom: 15px;">
+2038: <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--theme-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">מיקוד שבועי: שבוע 13 🎵</span>
+2039: </div>
+2040: 
+2041: <p style="text-align: center; color: var(--text-muted); font-size: 14px; max-width: 600px; margin: 0 auto 25px auto; line-height: 1.5;">
+2042: חומר הלימוד הרלוונטי והמעודכן ביותר לשבוע האחרון: המערכת הבינארית, שערים לוגיים וייצוג דיגיטלי.
+2043: </p>
+2044: 
+2045: <!-- 📚 Week 9 Vocab Section -->
+2046: <h3 class="home-section-title" style="margin-top: 15px;">📚 אוצר מילים שבועי (40 מילים)</h3>
+2047: <div class="days-grid" style="margin-bottom: 30px;">
+2048: ${daysGridHtml}
+2049: </div>
+2050: 
+2051: <!-- 📄 Article & 🧠 Quiz Row -->
+2052: <h3 class="home-section-title">📄 קריאה ומבחנים</h3>
+2053: <div class="home-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+2054: <button class="home-card focus-glow" onclick="window.setWeek('week13')" style="border-radius: 12px; padding: 20px;">
+2055: <div class="home-card-icon" style="font-size: 32px;">📑</div>
+2056: <div class="home-card-content" style="text-align: right;">
+2057: <div class="home-card-title" style="font-size: 18px; color: #fff;">מאמר: Musical Note (Hertz and Pitch)</div>
+2058: <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">קריאת מאמר מעניין עם תרגום לעברית על אופן הפקת צלילים ותווים מוזיקליים, תדרים וגלי קול.</div>
+2059: </div>
+2060: </button>
+2061: 
+2062: <button class="home-card focus-glow" onclick="window.setQuizTargetWeek('week13'); window.setWeek('quiz'); window.startQuiz();" style="border-radius: 12px; padding: 20px;">
+2063: <div class="home-card-icon" style="font-size: 32px;">🧠</div>
+2064: <div class="home-card-content" style="text-align: right;">
+2065: <div class="home-card-title" style="font-size: 18px; color: #fff;">מבחן שבוע 12</div>
+2066: <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">מבחן הבנה ממוקד על שערים לוגיים והמערכת הבינארית.</div>
+2067: </div>
+----------------------------------------

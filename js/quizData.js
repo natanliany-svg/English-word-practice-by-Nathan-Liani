@@ -3920,7 +3920,8 @@ window.week12DB = [
             "0 to 9|0 עד 9",
             "A and B|A ו-B"
         ],
-        ans: 0
+        diff: "medium",
+ans: 0
     },
     {
         q: "Who formally described the modern binary system in 1703?|מי תיאר באופן רשמי את המערכת הבינארית המודרנית בשנת 1703?",
@@ -3930,7 +3931,8 @@ window.week12DB = [
             "Claude Shannon|קלוד שאנון",
             "Albert Einstein|אלברט איינשטיין"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     },
     {
         q: "What did Leibniz connect the numbers 0 and 1 to?|למה לייבניץ קישר את המספרים 0 ו-1?",
@@ -3940,7 +3942,8 @@ window.week12DB = [
             "High and Low voltage|מתח גבוה ונמוך",
             "Positive and Negative charges|מטענים חיוביים ושליליים"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     },
     {
         q: "What did Claude Shannon discover in the 1930s?|מה גילה קלוד שאנון בשנות ה-30?",
@@ -3950,7 +3953,8 @@ window.week12DB = [
             "That binary numbers could be matched with electrical circuits|שמספרים בינאריים יכולים להיות מותאמים למעגלים חשמליים",
             "The invention of the transistor|את המצאת הטרנזיסטור"
         ],
-        ans: 2
+        diff: "medium",
+ans: 2
     },
     {
         q: "In most digital systems, what does the number 0 generally represent?|ברוב המערכות הדיגיטליות, מה המספר 0 מייצג בדרך כלל?",
@@ -3960,7 +3964,8 @@ window.week12DB = [
             "Absence of a signal|היעדר אות",
             "A full electrical flow|זרימה חשמלית מלאה"
         ],
-        ans: 2
+        diff: "medium",
+ans: 2
     },
     {
         q: "Is it a universal rule that 0 means OFF and 1 means ON?|האם זהו כלל אוניברסלי ש-0 פירושו כבוי ו-1 פירושו דלוק?",
@@ -3970,7 +3975,8 @@ window.week12DB = [
             "Yes, because Leibniz defined it this way|כן, כי לייבניץ הגדיר זאת כך",
             "No, they always mean the opposite|לא, הם תמיד אומרים את ההפך"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     },
     {
         q: "What determines the exact voltage values for logical 0 and 1 in a circuit?|מה קובע את ערכי המתח המדויקים עבור 0 ו-1 לוגיים במעגל?",
@@ -3980,7 +3986,8 @@ window.week12DB = [
             "The ASCII code|קוד ה-ASCII",
             "The size of the transistor|גודל הטרנזיסטור"
         ],
-        ans: 0
+        diff: "medium",
+ans: 0
     },
     {
         q: "What is the main difference between voltage and current?|מה ההבדל העיקרי בין מתח לזרם?",
@@ -3990,7 +3997,8 @@ window.week12DB = [
             "Voltage is only found in computers, current in homes|מתח נמצא רק במחשבים, זרם בבתים",
             "Voltage uses binary numbers, current uses decimal numbers|מתח משתמש במספרים בינאריים, זרם משתמש במספרים עשרוניים"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     },
     {
         q: "Why is the binary system more reliable for electronic components than a decimal system?|מדוע המערכת הבינארית אמינה יותר עבור רכיבים אלקטרוניים מאשר מערכת עשרונית?",
@@ -4000,7 +4008,8 @@ window.week12DB = [
             "With only two states, devices can more easily distinguish between them despite fluctuations|עם שני מצבים בלבד, מכשירים יכולים להבחין ביניהם בקלות למרות תנודות",
             "Decimal systems cannot represent the letter \"A\"|מערכות עשרוניות אינן יכולות לייצג את האות \"A\""
         ],
-        ans: 2
+        diff: "medium",
+ans: 2
     },
     {
         q: "What do logic gates do?|מה עושים שערים לוגיים?",
@@ -4010,7 +4019,8 @@ window.week12DB = [
             "Cool down the processor|מקררים את המעבד",
             "Store large amounts of physical data|מאחסנים כמויות גדולות של נתונים פיזיים"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     },
     {
         q: "Which logic gate produces an output of 1 only when both inputs are 1?|איזה שער לוגי מפיק פלט של 1 רק כאשר שני הקלטים הם 1?",
@@ -4020,7 +4030,8 @@ window.week12DB = [
             "AND gate|שער AND",
             "XOR gate|שער XOR"
         ],
-        ans: 2
+        diff: "medium",
+ans: 2
     },
     {
         q: "What is the function of a NOT gate?|מהי הפונקציה של שער NOT?",
@@ -4030,7 +4041,8 @@ window.week12DB = [
             "It blocks all electrical current|הוא חוסם את כל הזרם החשמלי",
             "It multiplies two binary numbers|הוא מכפיל שני מספרים בינאריים"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     },
     {
         q: "What invention in the mid-twentieth century allowed millions of logic gates inside a processor?|איזו המצאה באמצע המאה העשרים אפשרה מיליוני שערים לוגיים בתוך מעבד?",
@@ -4040,7 +4052,8 @@ window.week12DB = [
             "The transistor|הטרנזיסטור",
             "The lightbulb|נורת החשמל"
         ],
-        ans: 2
+        diff: "medium",
+ans: 2
     },
     {
         q: "Who developed Boolean algebra in the nineteenth century?|מי פיתח את האלגברה הבוליאנית במאה התשע-עשרה?",
@@ -4050,7 +4063,8 @@ window.week12DB = [
             "George Boole|ג'ורג' בול",
             "Alan Turing|אלן טיורינג"
         ],
-        ans: 2
+        diff: "medium",
+ans: 2
     },
     {
         q: "How is the letter \"A\" stored in the ASCII encoding system?|כיצד מאוחסנת האות \"A\" במערכת הקידוד ASCII?",
@@ -4060,7 +4074,8 @@ window.week12DB = [
             "11110000|11110000",
             "00001111|00001111"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     },
     {
         q: "What analogy is commonly used to describe voltage and current?|איזו אנלוגיה נפוצה משמשת לתיאור מתח וזרם?",
@@ -4070,7 +4085,8 @@ window.week12DB = [
             "Wind blowing through trees|רוח נושבת דרך עצים",
             "Sound waves traveling in the air|גלי קול נעים באוויר"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     },
     {
         q: "What was the original purpose of Leibniz's binary system when he first described it?|מה הייתה המטרה המקורית של המערכת הבינארית של לייבניץ כשהוא תיאר אותה לראשונה?",
@@ -4080,7 +4096,8 @@ window.week12DB = [
             "It was mainly a mathematical curiosity and philosophical idea|זו הייתה בעיקר סקרנות מתמטית ורעיון פילוסופי",
             "To calculate taxes efficiently|לחשב מסים ביעילות"
         ],
-        ans: 2
+        diff: "medium",
+ans: 2
     },
     {
         q: "Which two early electronic components naturally worked best with two stable states?|אילו שני רכיבים אלקטרוניים מוקדמים פעלו באופן טבעי בצורה הטובה ביותר עם שני מצבים יציבים?",
@@ -4090,7 +4107,8 @@ window.week12DB = [
             "Microchips and hard drives|שבבים וכוננים קשיחים",
             "Batteries and generators|סוללות וגנרטורים"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     },
     {
         q: "In active-low logic, how are 0 and 1 represented?|בלוגיקת active-low (פעיל נמוך), כיצד מיוצגים 0 ו-1?",
@@ -4100,7 +4118,8 @@ window.week12DB = [
             "Logical 1 is high voltage, logical 0 is low voltage|1 לוגי הוא מתח גבוה, 0 לוגי הוא מתח נמוך",
             "Voltage does not matter, only current is measured|למתח אין משמעות, רק זרם נמדד"
         ],
-        ans: 0
+        diff: "medium",
+ans: 0
     },
     {
         q: "What does a modern processor contain that continuously processes binary data?|מה מכיל מעבד מודרני המעבד נתונים בינאריים ברציפות?",
@@ -4110,7 +4129,8 @@ window.week12DB = [
             "Thousands of vacuum tubes|אלפי שפופרות ריק",
             "Hundred logic gates|מאה שערים לוגיים"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     }
 
 ];
@@ -4125,7 +4145,8 @@ window.week13DB = [
             "Pitch determines the loudness|גובה הצליל קובע את עוצמת השמע",
             "Hertz is a measure of loudness|הרץ הוא מידה של עוצמת קול"
         ],
-        ans: 0
+        diff: "medium",
+ans: 0
     },
     {
         q: "Where does a musical note begin inside the human body?|היכן מתחיל תו מוזיקלי בתוך גוף האדם?",
@@ -4135,7 +4156,8 @@ window.week13DB = [
             "The cochlea|בשבלול האוזן",
             "The brain|במוח"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     },
     {
         q: "What are the vocal folds made of?|ממה עשויים מיתרי הקול?",
@@ -4145,7 +4167,8 @@ window.week13DB = [
             "Cartilage|סחוס",
             "Bones|עצמות"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     },
     {
         q: "How does a singer control the loudness of a note?|כיצד זמר שולט בעוצמת הקול של תו?",
@@ -4155,7 +4178,8 @@ window.week13DB = [
             "By vibrating the vocal folds faster|על ידי הרעדת מיתרי הקול מהר יותר",
             "By singing a higher note|על ידי שירת תו גבוה יותר"
         ],
-        ans: 0
+        diff: "medium",
+ans: 0
     },
     {
         q: "What happens when a note moves one octave higher?|מה קורה כאשר תו עולה באוקטבה אחת?",
@@ -4165,7 +4189,8 @@ window.week13DB = [
             "It gets twice as loud|הוא נהיה חזק פי שניים",
             "It sounds like a completely different note|הוא נשמע כמו תו שונה לחלוטין"
         ],
-        ans: 0
+        diff: "medium",
+ans: 0
     },
     {
         q: "What is the shape of the cochlea?|מהי צורת שבלול האוזן?",
@@ -4175,7 +4200,8 @@ window.week13DB = [
             "A flat surface|משטח שטוח",
             "A sphere|כדור"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     },
     {
         q: "What do the hair cells in the cochlea do?|מה עושים תאי השערה בשבלול האוזן?",
@@ -4185,7 +4211,8 @@ window.week13DB = [
             "Control the vocal folds|שולטים במיתרי הקול",
             "Measure loudness directly|מודדים עוצמת קול ישירות"
         ],
-        ans: 0
+        diff: "medium",
+ans: 0
     },
     {
         q: "How does the human brain interpret pitch?|כיצד המוח האנושי מפרש גובה צליל?",
@@ -4195,7 +4222,8 @@ window.week13DB = [
             "As exactly the same frequency|כתדר זהה בדיוק",
             "By guessing the frequency|על ידי ניחוש התדר"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     },
     {
         q: "Why do many adults lose the ability to hear extremely high frequencies?|מדוע מבוגרים רבים מאבדים את היכולת לשמוע תדרים גבוהים מאוד?",
@@ -4205,7 +4233,8 @@ window.week13DB = [
             "The eardrum becomes too thick|עור התוף הופך לעבה מדי",
             "They listen to loud music|הם מאזינים למוזיקה חזקה"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     },
     {
         q: "What is the unit used to measure frequency?|מהי היחידה המשמשת למדידת תדר?",
@@ -4215,6 +4244,30 @@ window.week13DB = [
             "Watts (W)|וואט",
             "Meters (m)|מטרים"
         ],
-        ans: 1
+        diff: "medium",
+ans: 1
     }
+];
+
+window.week16DB = [
+    { q: "What does CPR stand for?|מה הפירוש של CPR?", options: ["Cardiopulmonary resuscitation|החייאה לבבית-ריאתית", "Central pulse restoration|שחזור דופק מרכזי", "Cardio pressure relief|הקלה בלחץ לבבי", "Critical patient rescue|חילוץ חולה קריטי"], ans: 0 },
+    { q: "What is the main goal of CPR?|מהי המטרה העיקרית של החייאה?", options: ["To maintain blood circulation and deliver oxygen|לשמור על זרימת דם ולספק חמצן", "To wake the person up|להעיר את האדם", "To clear the airway|לפנות את נתיב האוויר", "To treat a fever|לטפל בחום"], ans: 0 },
+    { q: "Which organs are especially vital to receive oxygen during cardiac arrest?|אילו איברים חיוניים במיוחד לקבלת חמצן במהלך דום לב?", options: ["Brain and heart|מוח ולב", "Lungs and stomach|ריאות וקיבה", "Liver and kidneys|כבד וכליות", "Skin and bones|עור ועצמות"], ans: 0 },
+    { q: "What are the two essential actions of modern CPR?|מהן שתי הפעולות החיוניות של החייאה מודרנית?", options: ["Chest compressions and rescue breaths|לחיצות חזה והנשמות", "Abdominal thrusts and back blows|לחיצות בטן וטפיחות גב", "Checking pulse and calling 911|בדיקת דופק וקריאה ל-911", "Giving water and elevating legs|מתן מים והרמת רגליים"], ans: 0 },
+    { q: "Before starting CPR, what is the first thing a rescuer should do?|לפני תחילת ההחייאה, מהו הדבר הראשון שעל המציל לעשות?", options: ["Ensure the scene is safe|לוודא שהזירה בטוחה", "Give rescue breaths|לתת הנשמות", "Check the pulse|לבדוק דופק", "Call the person's family|להתקשר למשפחת האדם"], ans: 0 },
+    { q: "How can you check if an adult responds?|כיצד ניתן לבדוק אם מבוגר מגיב?", options: ["Speaking loudly and tapping shoulders|דיבור בקול רם וטפיחה על הכתפיים", "Slapping their face|סטירה על פניהם", "Pouring water on them|שפיכת מים עליהם", "Checking their pockets|בדיקת כיסיהם"], ans: 0 },
+    { q: "Where should hands be placed for adult chest compressions?|היכן יש להניח את הידיים עבור לחיצות חזה במבוגרים?", options: ["In the center of the chest|במרכז החזה", "On the stomach|על הבטן", "On the neck|על הצוואר", "On the left side of the chest|בצד השמאלי של החזה"], ans: 0 },
+    { q: "What is the recommended rate for chest compressions?|מהו הקצב המומלץ ללחיצות חזה?", options: ["100-120 per minute|100-120 בדקה", "60-80 per minute|60-80 בדקה", "150-180 per minute|150-180 בדקה", "30-50 per minute|30-50 בדקה"], ans: 0 },
+    { q: "What is the recommended compression depth for adults?|מהו עומק הלחיצה המומלץ למבוגרים?", options: ["5-6 centimeters|5-6 סנטימטרים", "1-2 centimeters|1-2 סנטימטרים", "8-10 centimeters|8-10 סנטימטרים", "10-12 centimeters|10-12 סנטימטרים"], ans: 0 },
+    { q: "What is the ratio of compressions to rescue breaths for adults?|מהו היחס בין לחיצות להנשמות אצל מבוגרים?", options: ["30 compressions to 2 breaths|30 לחיצות ל-2 הנשמות", "15 compressions to 2 breaths|15 לחיצות ל-2 הנשמות", "50 compressions to 1 breath|50 לחיצות להנשמה 1", "10 compressions to 5 breaths|10 לחיצות ל-5 הנשמות"], ans: 0 },
+    { q: "Why is CPR slightly different for children?|מדוע החייאה שונה מעט עבור ילדים?", options: ["Their cardiac arrests are usually related to breathing problems|דום הלב שלהם קשור לרוב לבעיות נשימה", "They have stronger hearts|יש להם לבבות חזקים יותר", "They require deeper compressions|הם דורשים לחיצות עמוקות יותר", "They do not need rescue breaths|הם אינם זקוקים להנשמות"], ans: 0 },
+    { q: "What is the recommended compression depth for children?|מהו עומק הלחיצה המומלץ לילדים?", options: ["About one-third of the chest's depth|כשליש מעומק החזה", "5-6 centimeters|5-6 סנטימטרים", "1 centimeter|סנטימטר 1", "Half of the chest's depth|חצי מעומק החזה"], ans: 0 },
+    { q: "What is the universal choking sign?|מהו סימן החנק האוניברסלי?", options: ["Holding the throat with both hands|החזקת הגרון בשתי ידיים", "Waving arms in the air|נפנוף זרועות באוויר", "Pointing to the stomach|הצבעה על הבטן", "Screaming loudly|צרחות חזקות"], ans: 0 },
+    { q: "If a choking person can cough forcefully, what should you do?|אם אדם נחנק יכול להשתעל בחוזקה, מה עליך לעשות?", options: ["Encourage them to continue coughing|לעודד אותם להמשיך להשתעל", "Perform abdominal thrusts immediately|לבצע לחיצות בטן מיד", "Give them water to drink|לתת להם לשתות מים", "Slap them on the back|לטפוח להם על הגב"], ans: 0 },
+    { q: "What is the recommended choking treatment for adults and children over one year?|מהו הטיפול המומלץ בחנק למבוגרים ולילדים מעל גיל שנה?", options: ["Back blows followed by abdominal thrusts|טפיחות גב ולאחריהן לחיצות בטן", "Chest compressions only|לחיצות חזה בלבד", "Rescue breaths only|הנשמות בלבד", "Elevating the legs|הרמת הרגליים"], ans: 0 },
+    { q: "Why must abdominal thrusts not be used on infants under one year?|מדוע אין להשתמש בלחיצות בטן על תינוקות מתחת לגיל שנה?", options: ["They may cause serious injury|הן עלולות לגרום לפציעה חמורה", "They are ineffective|הן אינן יעילות", "Infants don't choke|תינוקות לא נחנקים", "They cause crying|הן גורמות לבכי"], ans: 0 },
+    { q: "What is the alternative choking treatment for infants?|מהו הטיפול החלופי בחנק עבור תינוקות?", options: ["Alternating back blows and chest thrusts|החלפה בין טפיחות גב ולחיצות חזה", "Hanging them upside down|תלייתם הפוך", "Pinching their nose|צביטת האף שלהם", "Giving them milk|מתן חלב"], ans: 0 },
+    { q: "What should you do if a choking victim becomes unconscious?|מה עליך לעשות אם קורבן חנק מאבד את הכרתו?", options: ["Contact emergency services and start CPR without delay|ליצור קשר עם שירותי חירום ולהתחיל החייאה ללא דיחוי", "Wait for them to wake up|לחכות שיתעוררו", "Perform abdominal thrusts|לבצע לחיצות בטן", "Give them water|לתת להם מים"], ans: 0 },
+    { q: "Why should you never perform a blind finger sweep?|מדוע לעולם אין לבצע גריפת אצבע עיוורת?", options: ["It may push the object deeper into the airway|זה עלול לדחוף את החפץ עמוק יותר לנתיב האוויר", "It can bite your finger|זה יכול לנשוך את האצבע שלך", "It causes vomiting|זה גורם להקאות", "It is illegal|זה לא חוקי"], ans: 0 },
+    { q: "What allows participants to practice CPR techniques realistically?|מה מאפשר למשתתפים לתרגל טכניקות החייאה בצורה מציאותית?", options: ["Training mannequins|בובות אימון", "Watching videos|צפייה בסרטונים", "Reading books|קריאת ספרים", "Listening to lectures|הקשבה להרצאות"], ans: 0 }
 ];

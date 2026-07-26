@@ -1,0 +1,14 @@
+1049: <div style="font-size: 18px; font-weight: 900; color: #fff;">מיקוד שבועי: שבוע 13 (Musical Note: Hertz and Pitch)</div>
+1060: <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setWeek('week13')">
+1061: 💻 קריאת מאמר
+1153: <button class="home-card" onclick="window.setWeek('week12')">
+1168: <div class="home-card-title">מבחן חכם</div>
+1190: const title = isWeek13 ? "The Musical Note: Hertz and Pitch" : (isWeek12 ? "The Binary Counting" : (isWeek11 ? "C# and JavaScript: Compiled vs Interpreted" : (isWeek10 ? "HTTP to HTTPS Transition" : (isWeek9 ? "The CIA Triad in Information Security" : "Operating Systems: Unseen"))));
+1559: <button class="nav-btn ${window.quizTargetWeek === 'week13' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('week13')">שבוע 13 (Musical Note)</button>
+1561: <button class="nav-btn ${window.quizTargetWeek === 'week13' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('week13')">שבוע 13 (Musical Note)</button>
+1946: ${window.currentWeek === 'week8' ? `<button class="control-btn" style="background:transparent; border-color:var(--theme-main); color:#fff;" onclick="window.setWeek('article')">📄 מאמר</button>` : ''}
+1949: ${window.currentWeek === 'week11vocab' ? `<button class="control-btn" style="background:transparent; border-color:var(--theme-main); color:#fff;" onclick="window.setWeek('week12')">📄 מאמר</button>` : ''}
+1950: ${window.currentWeek === 'week8' ? `<button class="control-btn" style="background:transparent; border-color:var(--theme-main); color:#fff;" onclick="window.setWeek('article')">📄 מאמר</button>` : ''}
+2054: <button class="home-card focus-glow" onclick="window.setWeek('week13')" style="border-radius: 12px; padding: 20px;">
+2057: <div class="home-card-title" style="font-size: 18px; color: #fff;">מאמר: Musical Note (Hertz and Pitch)</div>
+2058: <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">קריאת מאמר מעניין עם תרגום לעברית על אופן הפקת צלילים ותווים מוזיקליים, תדרים וגלי קול.</div>

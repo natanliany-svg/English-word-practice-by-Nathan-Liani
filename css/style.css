@@ -2050,9 +2050,8 @@ body::-webkit-scrollbar-thumb, .flashcard::-webkit-scrollbar-thumb, .weeks-scrol
 
 /* --- VOCAB CARD FIXED SIZE --- */
 .vocab-card {
-    height: 65vh;
-    min-height: 400px;
-    max-height: 700px;
+    height: auto;
+    min-height: 65vh;
     display: flex;
     flex-direction: column;
 }

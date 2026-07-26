@@ -132,6 +132,9 @@ window.articleParagraphs = {
         [52, 53, 54, 55],
         [56, 57, 58]
     ],
+    'week16': [
+        'w16d1', 'w16d2', 'w16d3', 'w16d4', 'w16d5'
+    ],
     'week13': [
         [0],
         [1, 2, 3, 4, 5],
@@ -187,8 +190,10 @@ window.setWeek = function(week) {
     else if (week === 'week10vocab') window.currentDay = 'w10d1';
     else if (week === 'week11vocab') window.currentDay = 'w11d1';
     else if (week === 'week12vocab') window.currentDay = 'w12d1';
+    else if (week === 'week16vocab') window.currentDay = 'w16d1';
     else if (week === 'week13vocab') window.currentDay = 'w13d1';
     else if (week === 'week12vocab') window.currentDay = 'w12d1';
+    else if (week === 'week16vocab') window.currentDay = 'w16d1';
     else if (week === 'week13vocab') window.currentDay = 'w13d1';
     else window.currentDay = week; 
     window.wordIndex = 0;
@@ -871,8 +876,9 @@ window.startQuiz = function() {
     else if (targetWeek && targetWeek.includes('week10')) fullDB = window.week10DB;
     else if (targetWeek && targetWeek.includes('week11')) fullDB = window.week11DB || [];
     else if (targetWeek && targetWeek.includes('week12')) fullDB = window.week12DB || [];
+    else if (targetWeek && targetWeek.includes('week16')) fullDB = window.week16DB || [];
     else if (targetWeek && targetWeek.includes('week13')) fullDB = window.week13DB || [];
-    else fullDB = [...(window.unseenDB||[]), ...(window.ciaTriadDB||[]), ...(window.week10DB||[]), ...(window.week11DB||[]), ...(window.week12DB||[]), ...(window.week13DB||[])];
+    else fullDB = [...(window.unseenDB||[]), ...(window.ciaTriadDB||[]), ...(window.week10DB||[]), ...(window.week11DB||[]), ...(window.week12DB||[]), ...(window.week13DB||[]), ...(window.week16DB||[])];
 
     let availableQuestions = fullDB.filter(q => q.diff === window.quizDifficulty || window.quizDifficulty === 'medium');
     if (window.quizDifficulty === 'hard') availableQuestions = fullDB; 
@@ -1065,7 +1071,7 @@ window.render = function() {
                         <div style="display: flex; align-items: center; gap: 10px;">
                             <span style="font-size: 24px;">🎯</span>
                             <div style="text-align: right;">
-                                <div style="font-size: 18px; font-weight: 900; color: #fff;">מיקוד שבועי: שבוע 13 (Musical Note: Hertz and Pitch)</div>
+                                <div style="font-size: 18px; font-weight: 900; color: #fff;">מיקוד שבועי: שבוע 16 (Musical Note: Hertz and Pitch)</div>
                                 <div style="font-size: 13px; color: var(--text-muted); margin-top: 3px;">החומרים הכי רלוונטיים ומעודכנים לתרגול מהיר</div>
                             </div>
                         </div>
@@ -1076,10 +1082,10 @@ window.render = function() {
                         <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.goToWord('w13d1', 0)">
                             📚 אוצר מילים
                         </button>
-                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setWeek('week13')">
+                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setWeek('week16')">
                               💻 קריאת מאמר
                           </button>
-                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setQuizTargetWeek('week13'); window.setWeek('quiz'); window.startQuiz();">
+                        <button class="control-btn" style="justify-content: center; padding: 10px; font-size: 13px; cursor: pointer;" onclick="window.setQuizTargetWeek('week16'); window.setWeek('quiz'); window.startQuiz();">
                             🧠 מבחן ממוקד
                         </button>
                     </div>
@@ -1199,14 +1205,15 @@ window.render = function() {
             </div>
         `;
         app.innerHTML = homeHtml;
-    } else if (window.currentWeek === 'article' || window.currentWeek === 'week9' || window.currentWeek === 'week10' || window.currentWeek === 'week11' || window.currentWeek === 'week12' || window.currentWeek === 'week13') {
+    } else if (window.currentWeek === 'article' || window.currentWeek === 'week9' || window.currentWeek === 'week10' || window.currentWeek === 'week11' || window.currentWeek === 'week12' || window.currentWeek === 'week13' || window.currentWeek === 'week16') {
         const isWeek9 = window.currentWeek === 'week9';
         const isWeek10 = window.currentWeek === 'week10';
         const isWeek11 = window.currentWeek === 'week11';
         const isWeek12 = window.currentWeek === 'week12';
+        const isWeek16 = window.currentWeek === 'week16';
         const isWeek13 = window.currentWeek === 'week13';
-        const articleData = isWeek13 ? window.musicalNoteArticleData : (isWeek12 ? window.binaryArticleData : (isWeek11 ? window.csharpJsArticleData : (isWeek10 ? window.httpsArticleData : (isWeek9 ? window.ciaTriadArticleData : window.unseenArticleData))));
-        const title = isWeek13 ? "The Musical Note: Hertz and Pitch" : (isWeek12 ? "The Binary Counting" : (isWeek11 ? "C# and JavaScript: Compiled vs Interpreted" : (isWeek10 ? "HTTP to HTTPS Transition" : (isWeek9 ? "The CIA Triad in Information Security" : "Operating Systems: Unseen"))));
+        const articleData = isWeek16 ? window.week16ArticleData : (isWeek13 ? window.musicalNoteArticleData : (isWeek12 ? window.binaryArticleData : (isWeek11 ? window.csharpJsArticleData : (isWeek10 ? window.httpsArticleData : (isWeek9 ? window.ciaTriadArticleData : window.unseenArticleData)))));
+        const title = isWeek16 ? "CPR in Adults and Children" : (isWeek13 ? "The Musical Note: Hertz and Pitch" : (isWeek12 ? "The Binary Counting" : (isWeek11 ? "C# and JavaScript: Compiled vs Interpreted" : (isWeek10 ? "HTTP to HTTPS Transition" : (isWeek9 ? "The CIA Triad in Information Security" : "Operating Systems: Unseen")))));
         const subtitle = isWeek9 ? "עקרונות אבטחת מידע - בחר מצב תצוגה ולחץ על כרטיסייה לתרגום." : "מאמר המבחן הרשמי. בחר מצב תצוגה ולחץ על כרטיסייה לתרגום.";
         
         let htmlBlock = `
@@ -1262,7 +1269,7 @@ window.render = function() {
                 `;
             }).join('');
         } else if (window.articleViewMode === 'paragraph') {
-            const paragraphs = window.articleParagraphs[isWeek13 ? 'week13' : (isWeek12 ? 'week12' : (isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8'))))];
+            const paragraphs = window.articleParagraphs[isWeek16 ? 'week16' : (isWeek13 ? 'week13' : (isWeek12 ? 'week12' : (isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8')))))];
             htmlBlock += paragraphs.map((paraIndices, index) => {
                 const isHeaderParagraph = paraIndices.length === 1 && articleData[paraIndices[0]].isHeader;
                 if (isHeaderParagraph) {
@@ -1303,7 +1310,7 @@ window.render = function() {
                 `;
             }).join('');
                 } else if (window.articleViewMode === 'summary') {
-            const sumObj = isWeek13 ? window.musicalNoteArticleSummary : (isWeek12 ? window.binaryArticleSummary : (isWeek11 ? window.csharpJsArticleSummary : (isWeek10 ? window.httpsArticleSummary : (isWeek9 ? window.ciaTriadArticleSummary : window.unseenArticleSummary))));
+            const sumObj = isWeek16 ? window.week16ArticleSummary : (isWeek13 ? window.musicalNoteArticleSummary : (isWeek12 ? window.binaryArticleSummary : (isWeek11 ? window.csharpJsArticleSummary : (isWeek10 ? window.httpsArticleSummary : (isWeek9 ? window.ciaTriadArticleSummary : window.unseenArticleSummary)))));
             if (sumObj) {
                 const safeText = sumObj.e.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                 htmlBlock += `
@@ -1329,7 +1336,7 @@ window.render = function() {
             }
                 } else {
             // Whole Article mode - single card, flowing text, single audio
-            const paragraphs = window.articleParagraphs[isWeek13 ? 'week13' : (isWeek12 ? 'week12' : (isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8'))))];
+            const paragraphs = window.articleParagraphs[isWeek16 ? 'week16' : (isWeek13 ? 'week13' : (isWeek12 ? 'week12' : (isWeek11 ? 'week11' : (isWeek10 ? 'week10' : (isWeek9 ? 'week9' : 'week8')))))];
             
             let engHTML = '';
             let hebHTML = '';
@@ -1575,9 +1582,9 @@ window.render = function() {
                         <button class="nav-btn ${window.quizTargetWeek === 'week10' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('week10')">שבוע 10 (HTTPS)</button>
                         <button class="nav-btn ${window.quizTargetWeek === 'week11' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('week11')">שבוע 11 (C#/JS)</button>
                         <button class="nav-btn ${window.quizTargetWeek === 'week12' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('week12')">שבוע 12 (Binary)</button>
-                        <button class="nav-btn ${window.quizTargetWeek === 'week13' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('week13')">שבוע 13 (Musical Note)</button>
+                        <button class="nav-btn ${window.quizTargetWeek === 'week13' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('week16')">שבוע 13 (Musical Note)</button>
                         <button class="nav-btn ${window.quizTargetWeek === 'week12' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('week12')">שבוע 12 (Binary)</button>
-                        <button class="nav-btn ${window.quizTargetWeek === 'week13' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('week13')">שבוע 13 (Musical Note)</button>
+                        <button class="nav-btn ${window.quizTargetWeek === 'week13' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('week16')">שבוע 13 (Musical Note)</button>
                         <button class="nav-btn ${window.quizTargetWeek === 'mix' ? 'active-theme' : ''}" onclick="window.setQuizTargetWeek('mix')">מיקס (הכל)</button>
                     </div>
                     <div style="display: flex; justify-content: center; gap: 1vw; margin-bottom: 3vh; flex-wrap: wrap;">
@@ -1729,10 +1736,10 @@ window.render = function() {
         `;
         if (window.summaryMode === 'weeks') {
             summaryHtml += `<div class="weeks-scroll">`;
-            const weekNum = {'week1': '1.', 'week2': '2.', 'week3': '3.', 'week7': '4.', 'week8': '5.', 'week9vocab': '6.', 'week10vocab': '7.', 'week11vocab': '8.', 'week12vocab': '9.', 'week13vocab': '10.'};
-            const weekText = {'week1': 'שבוע 4', 'week2': 'שבוע 5', 'week3': 'שבוע 6', 'week7': 'שבוע 7', 'week8': 'שבוע 8', 'week9vocab': 'שבוע 9', 'week10vocab': 'שבוע 10', 'week11vocab': 'שבוע 11', 'week12vocab': 'שבוע 12', 'week13vocab': 'שבוע 13'};
+            const weekNum = {'week1': '1.', 'week2': '2.', 'week3': '3.', 'week7': '4.', 'week8': '5.', 'week9vocab': '6.', 'week10vocab': '7.', 'week11vocab': '8.', 'week12vocab': '9.', 'week13vocab': '10.', 'week16vocab': '11.'};
+            const weekText = {'week1': 'שבוע 4', 'week2': 'שבוע 5', 'week3': 'שבוע 6', 'week7': 'שבוע 7', 'week8': 'שבוע 8', 'week9vocab': 'שבוע 9', 'week10vocab': 'שבוע 10', 'week11vocab': 'שבוע 11', 'week12vocab': 'שבוע 12', 'week13vocab': 'שבוע 13', 'week16vocab': 'שבוע 16'};
             
-            ['week1', 'week2', 'week3', 'week7', 'week8', 'week9vocab', 'week10vocab', 'week11vocab', 'week12vocab', 'week13vocab'].forEach((week) => {
+            ['week1', 'week2', 'week3', 'week7', 'week8', 'week9vocab', 'week10vocab', 'week11vocab', 'week12vocab', 'week13vocab', 'week16vocab'].forEach((week) => {
                 // Filter words for this week
                 let matchedInWeek = 0;
                 let daySectionHtml = '';
@@ -1812,9 +1819,9 @@ window.render = function() {
         `;
         if (window.summaryMode === 'weeks') {
             summaryHtml += `<div class="weeks-scroll">`;
-            const weekNum = {'week1': '1.', 'week2': '2.', 'week3': '3.', 'week7': '4.', 'week8': '5.', 'week9vocab': '6.', 'week10vocab': '7.', 'week11vocab': '8.', 'week12vocab': '9.', 'week13vocab': '10.'};
-            const weekText = {'week1': 'שבוע 4', 'week2': 'שבוע 5', 'week3': 'שבוע 6', 'week7': 'שבוע 7', 'week8': 'שבוע 8', 'week9vocab': 'שבוע 9', 'week10vocab': 'שבוע 10', 'week11vocab': 'שבוע 11', 'week12vocab': 'שבוע 12', 'week13vocab': 'שבוע 13'};
-            ['week1', 'week2', 'week3', 'week7', 'week8', 'week9vocab', 'week10vocab', 'week11vocab', 'week12vocab', 'week13vocab'].forEach((week) => {
+            const weekNum = {'week1': '1.', 'week2': '2.', 'week3': '3.', 'week7': '4.', 'week8': '5.', 'week9vocab': '6.', 'week10vocab': '7.', 'week11vocab': '8.', 'week12vocab': '9.', 'week13vocab': '10.', 'week16vocab': '11.'};
+            const weekText = {'week1': 'שבוע 4', 'week2': 'שבוע 5', 'week3': 'שבוע 6', 'week7': 'שבוע 7', 'week8': 'שבוע 8', 'week9vocab': 'שבוע 9', 'week10vocab': 'שבוע 10', 'week11vocab': 'שבוע 11', 'week12vocab': 'שבוע 12', 'week13vocab': 'שבוע 13', 'week16vocab': 'שבוע 16'};
+            ['week1', 'week2', 'week3', 'week7', 'week8', 'week9vocab', 'week10vocab', 'week11vocab', 'week12vocab', 'week13vocab', 'week16vocab'].forEach((week) => {
                 summaryHtml += `
                     <div class="week-section">
                         <div class="week-title-container">
@@ -2016,7 +2023,7 @@ document.addEventListener('touchend', e => {
 
 window.renderWeeklyFocusDashboard = function() {
     let focusWordsHtml = '';
-    const focusWeek = 'week13vocab'; // Focus on Week 13 Vocabulary
+    const focusWeek = 'week16vocab'; // Focus on Week 13 Vocabulary
     const focusDays = window.daysList.filter(d => d.week === focusWeek);
     
     let daysGridHtml = '';
@@ -2054,14 +2061,14 @@ window.renderWeeklyFocusDashboard = function() {
         <div class="home-wrapper">
             <div style="text-align: center; margin-bottom: 20px;"><button class="nav-btn" style="background:var(--theme-main); color:#fff; border:none; padding: 8px 16px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;" onclick="window.setWeek('home')">🏠 ראשי</button></div>
 <div class="home-section-title" style="border:none; justify-content:center; text-align:center; margin-bottom: 15px;">
-                <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--theme-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">מיקוד שבועי: שבוע 13 🎵</span>
+                <span style="font-size: clamp(28px, 4vh, 50px); font-weight: 900; background: linear-gradient(to right, var(--theme-light), var(--theme-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">מיקוד שבועי: שבוע 16 🎵</span>
             </div>
             
             <p style="text-align: center; color: var(--text-muted); font-size: 14px; max-width: 600px; margin: 0 auto 25px auto; line-height: 1.5;">
-                חומר הלימוד הרלוונטי והמעודכן ביותר לשבוע האחרון: המערכת הבינארית, שערים לוגיים וייצוג דיגיטלי.
+                חומר הלימוד הרלוונטי והמעודכן ביותר לשבוע האחרון: תדרים, גלי קול, והאופן בו המחשב מפיק צלילים.
             </p>
             
-            <!-- 📚 Week 9 Vocab Section -->
+            <!-- 📚 Week 13 Vocab Section -->
             <h3 class="home-section-title" style="margin-top: 15px;">📚 אוצר מילים שבועי (40 מילים)</h3>
             <div class="days-grid" style="margin-bottom: 30px;">
                 ${daysGridHtml}
@@ -2070,19 +2077,19 @@ window.renderWeeklyFocusDashboard = function() {
             <!-- 📄 Article & 🧠 Quiz Row -->
             <h3 class="home-section-title">📄 קריאה ומבחנים</h3>
             <div class="home-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
-                <button class="home-card focus-glow" onclick="window.setWeek('week13')" style="border-radius: 12px; padding: 20px;">
+                <button class="home-card focus-glow" onclick="window.setWeek('week16')" style="border-radius: 12px; padding: 20px;">
                     <div class="home-card-icon" style="font-size: 32px;">📑</div>
                     <div class="home-card-content" style="text-align: right;">
-                        <div class="home-card-title" style="font-size: 18px; color: #fff;">מאמר: Musical Note (Hertz and Pitch)</div>
+                        <div class="home-card-title" style="font-size: 18px; color: #fff;">מאמר: CPR in Adults and Children</div>
                         <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">קריאת מאמר מעניין עם תרגום לעברית על אופן הפקת צלילים ותווים מוזיקליים, תדרים וגלי קול.</div>
                     </div>
                 </button>
                 
-                <button class="home-card focus-glow" onclick="window.setQuizTargetWeek('week13'); window.setWeek('quiz'); window.startQuiz();" style="border-radius: 12px; padding: 20px;">
+                <button class="home-card focus-glow" onclick="window.setQuizTargetWeek('week16'); window.setWeek('quiz'); window.startQuiz();" style="border-radius: 12px; padding: 20px;">
                     <div class="home-card-icon" style="font-size: 32px;">🧠</div>
                     <div class="home-card-content" style="text-align: right;">
-                        <div class="home-card-title" style="font-size: 18px; color: #fff;">מבחן שבוע 12</div>
-                        <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">מבחן הבנה ממוקד על שערים לוגיים והמערכת הבינארית.</div>
+                        <div class="home-card-title" style="font-size: 18px; color: #fff;">מבחן שבוע 13</div>
+                        <div class="home-card-desc" style="font-size: 12px; margin-top: 5px;">מבחן הבנה ממוקד על תדרים, גלי קול והפקה דיגיטלית של צליל.</div>
                     </div>
                 </button>
             </div>

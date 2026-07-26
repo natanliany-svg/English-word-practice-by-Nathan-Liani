@@ -1,0 +1,929 @@
+w11d1:[{word:"Compilation",phonetic:"קומפִּילֵיישְׁן",meaning:"הידור, קומפילציה",visual:"⚙️",exp:"תהליך שבו קוד מקור מתורגם לשפת מכונה או לייצוג ביניים לפני שהתוכנית רצה. בשפות כמו C#, הקומפילציה מאפשרת לזהות שגיאות מוקדם ולייצר קוד מהיר יותר.",engEx:"The compilation process in C# converts source code into Intermediate Language before execution.",hebEx:"תהליך ההידור ב-C# ממיר קוד מקור לשפת ביניים לפני הרצה."},
+    {word:"Interpretation",phonetic:"אִינטֶרפְּרֵיטֵיישְׁן",meaning:"פירוש, אינטרפרטציה",visual:"📖",exp:"מודל ביצוע שבו התוכנית נקראת ומבוצעת שורה אחר שורה בזמן אמת, בלי שלב הידור מקדים. JavaScript השתמשה במודל הזה בשנותיה הראשונות.",engEx:"JavaScript historically followed a pure interpretation model in early web browsers.",hebEx:"JavaScript היסטורית פעלה לפי מודל פירוש טהור בדפדפנים המוקדמים."},
+    {word:"Source Code",phonetic:"סוֹרס קוֹד",meaning:"קוד מקור",visual:"📝",exp:"הקוד שהמתכנת כותב בשפת תכנות קריאה לאדם. המחשב לא יכול להריץ אותו ישירות — הוא חייב לעבור תרגום לפני הביצוע.",engEx:"When a programmer writes code, the source code must first be translated into machine instructions.",hebEx:"כשמתכנת כותב קוד, קוד המקור חייב קודם להיות מתורגם להוראות מכונה."},
+    {word:"Execution",phonetic:"אֶקסֵקְיוּשְׁן",meaning:"ביצוע, הרצה",visual:"▶️",exp:"השלב שבו התוכנית רצה בפועל על המחשב. הביצוע יכול להתרחש אחרי הידור מלא או תוך כדי פירוש, תלוי בשפה ובסביבה.",engEx:"The compiler performs extensive analysis of the code before execution begins.",hebEx:"המהדר מבצע ניתוח מקיף של הקוד לפני שהביצוע מתחיל."},
+    {word:"Compiler",phonetic:"קוֹמפַּיְילֶר",meaning:"מהדר, קומפיילר",visual:"🔨",exp:"תוכנה שמתרגמת קוד מקור שלם לצורה אחרת (כמו קוד מכונה או שפת ביניים) לפני ההרצה. המהדר בודק תחביר, סוגי נתונים ושגיאות מבניות.",engEx:"Running a compiler is the second step in the traditional compilation process.",hebEx:"הרצת מהדר היא הצעד השני בתהליך ההידור המסורתי."},
+    {word:"Interpreter",phonetic:"אִינטֶרפְּרֶטֶר",meaning:"מפרש",visual:"🔄",exp:"תוכנה שקוראת קוד מקור ומבצעת את ההוראות ישירות בזמן ריצה, שורה אחר שורה, בלי לייצר קובץ הרצה נפרד. מאפשר גמישות ובדיקה מהירה של שינויים.",engEx:"Instead of compiling the entire program beforehand, an interpreter reads and executes instructions during runtime.",hebEx:"במקום להדר את כל התוכנית מראש, מפרש קורא ומבצע הוראות בזמן ריצה."},
+    {word:"Translate",phonetic:"טְרָנסְלֵייט",meaning:"לתרגם",visual:"🔀",exp:"בהקשר תכנותי, לתרגם פירושו להמיר קוד מקור משפה אחת לצורה אחרת שהמחשב יכול להבין ולהריץ, כמו שפת מכונה או bytecode.",engEx:"The source code must first be translated into machine instructions before the computer can process it.",hebEx:"קוד המקור חייב קודם להיות מתורגם להוראות מכונה לפני שהמחשב יכול לעבד אותו."},
+    {word:"Lightweight",phonetic:"לַייטְוֵייט",meaning:"קל משקל",visual:"🪶",exp:"מתאר משהו פשוט, יעיל וללא עומס מיותר. JavaScript תוכננה כשפת סקריפט קלת משקל שיכולה לרוץ ישירות בתוך דף אינטרנט.",engEx:"Browsers needed a lightweight scripting language that could run directly inside a web page.",hebEx:"דפדפנים היו צריכים שפת סקריפט קלת משקל שתוכל לרוץ ישירות בתוך דף אינטרנט."},
+    {word:"Interactivity",phonetic:"אִינטֶרָאקְטִיבִיטִי",meaning:"אינטראקטיביות",visual:"👆",exp:"היכולת של ממשק או דף אינטרנט להגיב לפעולות המשתמש בזמן אמת — כמו לחיצות, הקלדה וגלילה — במקום להציג תוכן סטטי בלבד.",engEx:"JavaScript was designed to provide immediate interactivity on web pages.",hebEx:"JavaScript תוכננה לספק אינטראקטיביות מיידית בדפי אינטרנט."},
+    {word:"Executable",phonetic:"אֶקסֵקְיוּטָבְּל",meaning:"קובץ הרצה, בר-ביצוע",visual:"📦",exp:"קובץ שמכיל הוראות מוכנות להרצה על ידי המחשב. בתהליך ההידור המסורתי, המהדר מייצר קובץ הרצה שניתן להפעיל ישירות.",engEx:"The compiler generates executable code that can be run on the target machine.",hebEx:"המהדר מייצר קוד בר-ביצוע שניתן להריץ על מכונת היעד."}],
+
+w11d2:[{word:"Runtime",phonetic:"רָאנְטַיְים",meaning:"זמן ריצה, סביבת הרצה",visual:"🏃",exp:"התקופה שבה התוכנית רצה בפועל, או הסביבה שמריצה את הקוד. ב-.NET, ה-Runtime אחראי על תרגום קוד ביניים לשפת מכונה באמצעות JIT.",engEx:"When the program starts running, the .NET runtime uses a JIT compiler to translate IL into native machine code.",hebEx:"כשהתוכנית מתחילה לרוץ, סביבת ההרצה של .NET משתמשת במהדר JIT כדי לתרגם IL לקוד מכונה מקומי."},
+    {word:"Performance",phonetic:"פֶּרפוֹרמָנס",meaning:"ביצועים",visual:"📊",exp:"מדד ליעילות ולמהירות שבה תוכנית פועלת. שפות מהודרות נחשבו באופן מסורתי למהירות יותר, אך טכנולוגיות מודרניות צמצמו את הפער.",engEx:"Compilation has long been associated with higher performance compared to interpretation.",hebEx:"הידור נקשר מזה זמן רב לביצועים גבוהים יותר בהשוואה לפירוש."},
+    {word:"Optimization",phonetic:"אוֹפְּטִימִיזֵיישְׁן",meaning:"אופטימיזציה, מיטוב",visual:"🚀",exp:"תהליך שיפור הקוד כדי שירוץ מהר יותר או ישתמש בפחות משאבים. מהדרי JIT מודרניים מבצעים אופטימיזציה בזמן ריצה הן ב-C# והן ב-JavaScript.",engEx:"JIT compilation allows both C# and JavaScript to benefit from runtime optimization.",hebEx:"הידור JIT מאפשר גם ל-C# וגם ל-JavaScript ליהנות ממיטוב בזמן ריצה."},
+    {word:"Error Detection",phonetic:"אֶרוֹר דִּיטֶקְשְׁן",meaning:"גילוי שגיאות",visual:"🔍",exp:"תהליך זיהוי בעיות ושגיאות בקוד. ב-C# גילוי שגיאות מתרחש בעיקר בזמן הידור, לפני שהתוכנית רצה. ב-JavaScript היסטורית, בדיקות רבות נדחו לזמן ריצה.",engEx:"C# performs extensive error detection during compilation, catching problems before the program runs.",hebEx:"C# מבצעת גילוי שגיאות נרחב בזמן הידור, ותופסת בעיות לפני שהתוכנית רצה."},
+    {word:"Type Checking",phonetic:"טַיְיפּ צֵ׳קִינְג",meaning:"בדיקת טיפוסים",visual:"✅",exp:"תהליך אימות שבו הקומפיילר בודק שכל משתנה וביטוי משתמשים בסוג הנתונים הנכון. ב-C# זה קורה בזמן הידור ומונע שגיאות רבות מראש.",engEx:"C# was designed with strong type checking to ensure reliability in large software systems.",hebEx:"C# תוכננה עם בדיקת טיפוסים חזקה כדי להבטיח אמינות במערכות תוכנה גדולות."},
+    {word:"Intermediate",phonetic:"אִינטֶרמִידִיאֶט",meaning:"ביניים",visual:"🔗",exp:"שלב או ייצוג שנמצא בין קוד המקור לקוד המכונה הסופי. ב-C#, המהדר מייצר Intermediate Language — שפת ביניים שה-JIT ממיר אחר כך לקוד מקומי.",engEx:"The C# compiler produces an intermediate representation called Intermediate Language.",hebEx:"מהדר C# מייצר ייצוג ביניים שנקרא שפת ביניים."},
+    {word:"Sophisticated",phonetic:"סוֹפִיסְטִיקֵייטֶד",meaning:"מתוחכם",visual:"🧠",exp:"מתקדם, מורכב ומפותח. מילה שמתארת מערכת או תהליך שכולל רמות רבות של מורכבות ותכנון — כמו תהליך ההידור הדו-שלבי של C#.",engEx:"The compilation process of C# is more sophisticated than the traditional model.",hebEx:"תהליך ההידור של C# מתוחכם יותר מהמודל המסורתי."},
+    {word:"Reliability",phonetic:"רִילַייאָבִּילִיטִי",meaning:"אמינות",visual:"🛡️",exp:"המידה שבה מערכת או תוכנה פועלת באופן עקבי ונכון לאורך זמן. הידור מקדים ובדיקת טיפוסים חזקה תורמים לאמינות גבוהה יותר.",engEx:"Compiled programs often achieve high performance and reliability thanks to early analysis.",hebEx:"תוכניות מהודרות משיגות לעיתים קרובות ביצועים ואמינות גבוהים הודות לניתוח מוקדם."},
+    {word:"Validate",phonetic:"וָאלִידֵייט",meaning:"לאמת, לתקף",visual:"🔐",exp:"לבדוק שמשהו תקין ועומד בכללים הנדרשים. בתכנות, המהדר מאמת סוגי נתונים, תחביר והפניות כדי לוודא שהקוד תקין לפני ההרצה.",engEx:"The compiler validates data types and identifies many programming errors before execution.",hebEx:"המהדר מאמת סוגי נתונים ומזהה שגיאות תכנות רבות לפני הביצוע."},
+    {word:"Mismatch",phonetic:"מִיסְמָאצ׳",meaning:"אי-התאמה",visual:"❌",exp:"מצב שבו שני דברים לא תואמים זה לזה. בתכנות, type mismatch מתרחש כשמנסים להשתמש בסוג נתונים שגוי — למשל להכניס מחרוזת למשתנה מספרי.",engEx:"During compilation, the C# compiler detects type mismatches and invalid references.",hebEx:"במהלך ההידור, מהדר C# מזהה אי-התאמות טיפוסים והפניות לא תקינות."}],
+
+w11d3:[{word:"Validate",phonetic:"ואלידייט",meaning:"לאמת, לתקף",visual:"✅",exp:"בפיתוח תוכנה, התהליך של בדיקה שנתונים או קוד עומדים בתנאים מסוימים, כמו ולידציה של קלט מהמשתמש או ולידציה של טיפוסי נתונים.",engEx:"The compiler will validate the data types before running the program.",hebEx:"המהדר יאמת את טיפוסי הנתונים לפני הפעלת התוכנה."},
+    {word:"Type",phonetic:"טייפ",meaning:"סוג, טיפוס (נתונים)",visual:"🔠",exp:"בשפות תכנות, טיפוס נתונים מגדיר איזה סוג של ערך משתנה יכול להחזיק (למשל מספר, טקסט או אובייקט).",engEx:"C# is a statically typed language where every variable has a specific type.",hebEx:"C# היא שפה בעלת טיפוסיות סטטית שבה לכל משתנה יש טיפוס ספציפי."},
+    {word:"Mismatch",phonetic:"מיס-מאץ'",meaning:"חוסר התאמה",visual:"⚠️",exp:"מצב שבו שני דברים אינם תואמים. בתכנות, מתייחס לרוב לשגיאה שבה מנסים להעביר טיפוס נתונים אחד לתוך טיפוס אחר שאינו תואם לו.",engEx:"The compiler reported a type mismatch error when I assigned a string to an integer.",hebEx:"המהדר דיווח על שגיאת חוסר התאמה בטיפוסים כשהשמתי מחרוזת לתוך מספר שלם."},
+    {word:"Invalid",phonetic:"אינווליד",meaning:"לא חוקי, פסול",visual:"❌",exp:"מתאר נתון, קוד או מצב שאינם עומדים בחוקים או בתנאים הנדרשים ולכן לא יכולים להתקבל על ידי המערכת.",engEx:"The program crashed because it tried to access an invalid memory address.",hebEx:"התוכנית קרסה משום שהיא ניסתה לגשת לכתובת זיכרון לא חוקית."},
+    {word:"Reference",phonetic:"רפרנס",meaning:"הפניה, התייחסות",visual:"🔗",exp:"במדעי המחשב, הפניה היא ערך המאפשר לתוכנית לגשת בעקיפין לנתון מסוים בזיכרון במקום להעתיק את הנתון עצמו.",engEx:"If an object contains an invalid reference, the program will throw an exception.",hebEx:"אם אובייקט מכיל הפניה לא חוקית, התוכנית תזרוק חריגה."},
+    {word:"Object",phonetic:"אובג'קט",meaning:"אובייקט, עצם",visual:"📦",exp:"בתכנות מונחה עצמים, אובייקט הוא מופע של מחלקה המכיל נתונים (תכונות) וקוד (פעולות).",engEx:"In C#, almost everything you interact with is an object.",hebEx:"ב-C#, כמעט כל דבר שאתה בא איתו במגע הוא אובייקט."},
+    {word:"Oriented",phonetic:"אוריינטד",meaning:"מוכוון, מונחה",visual:"🧭",exp:"מתאר גישה או פרדיגמה שמתמקדת בנושא מסוים. למשל, תכנות 'מונחה עצמים' מתמקד ביצירת אובייקטים והאינטראקציה ביניהם.",engEx:"C# is an object-oriented programming language designed for modern development.",hebEx:"C# היא שפת תכנות מונחית עצמים שעוצבה עבור פיתוח מודרני."},
+    {word:"Mistake",phonetic:"מיסטייק",meaning:"טעות, שגיאה",visual:"🤦",exp:"טעות בקוד שיכולה לגרום לתוכנית להתנהג בצורה לא צפויה. לעומת שגיאות מערכת, מדובר לרוב בטעות אנוש של המתכנת.",engEx:"The developer made a simple syntax mistake that broke the build.",hebEx:"המפתח עשה טעות תחביר פשוטה ששברה את הבנייה."},
+    {word:"Catch",phonetic:"קאץ'",meaning:"לתפוס, לאתר (שגיאות)",visual:"🪤",exp:"בתכנות, המונח משמש לרוב בהקשר של איתור שגיאות, בין אם בזמן הידור או 'תפיסת' שגיאות בזמן ריצה כדי למנוע את קריסת התוכנית.",engEx:"The strict compiler helps us catch errors before the code is executed.",hebEx:"המהדר הנוקשה עוזר לנו לאתר שגיאות לפני שהקוד מופעל."},
+    {word:"Delay",phonetic:"דיליי",meaning:"לעכב, לדחות, השהיה",visual:"⏳",exp:"השהיה או דחייה של פעולה. בשפות מפורשות, בדיקת השגיאות לרוב נדחית עד לזמן הריצה עצמו.",engEx:"JavaScript delays many checks until runtime, which can cause unexpected errors.",hebEx:"JavaScript דוחה בדיקות רבות עד לזמן הריצה, מה שיכול לגרום לשגיאות לא צפויות."}],
+
+w11d4:[{word:"Browser",phonetic:"בראוזר",meaning:"דפדפן",visual:"🌐",exp:"תוכנה המאפשרת גישה, ניווט והצגה של אתרי אינטרנט. הדפדפן הוא זה שמריץ את קוד ה-JavaScript בצד הלקוח.",engEx:"The code runs directly inside the web browser to provide interactivity.",hebEx:"הקוד רץ ישירות בתוך דפדפן הרשת כדי לספק אינטראקטיביות."},
+    {word:"Scripting",phonetic:"סקריפטינג",meaning:"כתיבת תסריטים, שפת תסריט",visual:"📜",exp:"סוג של שפת תכנות, שלרוב מפורשת ולא מהודרת, שנועדה לבצע משימות מהירות ולשלוט בתוכנות קיימות, כמו עמודי אינטרנט.",engEx:"JavaScript was originally designed as a lightweight scripting language.",hebEx:"JavaScript עוצבה במקור כשפת סקריפטים קלת-משקל."},
+    {word:"Engine",phonetic:"אנג'ין",meaning:"מנוע",visual:"⚙️",exp:"רכיב תוכנה מרכזי המניע מערכת. בהקשר של JavaScript, המנוע (כמו V8) הוא זה שמפרש ומריץ את הקוד בדפדפן.",engEx:"Modern JavaScript engines use complex optimization techniques to run code faster.",hebEx:"מנועי JavaScript מודרניים משתמשים בטכניקות אופטימיזציה מורכבות כדי להריץ קוד מהר יותר."},
+    {word:"Bytecode",phonetic:"בייט-קוד",meaning:"קוד ביניים (בייטקוד)",visual:"🔢",exp:"קוד ביניים, קרוב לשפת מכונה, שנוצר לאחר הידור ראשוני. זהו פורמט יעיל יותר לקריאה על ידי מפרש או מהדר JIT.",engEx:"The source code is first compiled into bytecode before being executed.",hebEx:"קוד המקור קודם כל מהודר לקוד ביניים לפני שהוא מבוצע."},
+    {word:"Hybrid",phonetic:"הייבריד",meaning:"היברידי, משולב",visual:"🧬",exp:"מערכת המשלבת שתי גישות או יותר. בתכנות, שפות מודרניות רבות משלבות הידור מראש עם פירוש בזמן אמת כמודל היברידי.",engEx:"Many programming languages now use a hybrid execution model for better performance.",hebEx:"שפות תכנות רבות כיום משתמשות במודל ריצה משולב עבור ביצועים טובים יותר."},
+    {word:"Native",phonetic:"נייטיב",meaning:"טבעי, מקומי, נטיבי",visual:"💻",exp:"בתכנות, קוד 'נטיבי' הוא קוד בשפת מכונה שנוצר במיוחד כדי לרוץ ישירות על מעבד ומערכת הפעלה מסוימים ללא צורך בתיווך.",engEx:"The compiler translates the code into native machine code for the target processor.",hebEx:"המהדר מתרגם את הקוד לשפת מכונה טבעית עבור המעבד המיועד."},
+    {word:"Machine",phonetic:"מאשין",meaning:"מכונה, מחשב",visual:"🤖",exp:"בהקשר של תכנות, מתייחס למחשב עצמו או לרמה הנמוכה ביותר של הקוד ('שפת מכונה') שהחומרה מסוגלת להבין ישירות.",engEx:"A compiler generates code that the underlying machine can understand.",hebEx:"מהדר מייצר קוד שהמכונה שמתחתיו יכולה להבין."},
+    {word:"Web",phonetic:"ווב",meaning:"רשת (האינטרנט)",visual:"🕸️",exp:"רשת האינטרנט העולמית, המשמשת כפלטפורמה המרכזית עבור אפליקציות ואתרים, שבה טכנולוגיות כמו JavaScript פועלות.",engEx:"JavaScript was created to add interactivity to web pages.",hebEx:"JavaScript נוצרה כדי להוסיף אינטראקטיביות לעמודי אינטרנט."},
+    {word:"Server",phonetic:"סרבר",meaning:"שרת",visual:"🖥️",exp:"מחשב או תוכנה המספקים שירותים, נתונים או משאבים למחשבים אחרים ('לקוחות') ברשת. C# משמש רבות לפיתוח בצד השרת.",engEx:"The database is hosted on a secure web server.",hebEx:"מסד הנתונים מתארח על שרת רשת מאובטח."},
+    {word:"Deployment",phonetic:"דיפלוימנט",meaning:"פריסה, הטמעה",visual:"🚀",exp:"השלב שבו התוכנה או האפליקציה מועברת מסביבת הפיתוח לסביבת הייצור (production), כדי שתהיה זמינה למשתמשים.",engEx:"The team prepared the web application for a successful deployment.",hebEx:"הצוות הכין את אפליקציית הרשת לקראת פריסה מוצלחת."}]
+,
+
+w12d1: [
+    {
+      word: "Binary",
+      phonetic: "בִּינָארִי",
+      meaning: "בִּינָארִי (מְבוּסָּס עַל שְׁתַּיִם)",
+      visual: "0️⃣1️⃣",
+      exp: "שיטת ספירה המשתמשת בשני סמלים בלבד, לרוב 0 ו-1.",
+      engEx: "Computers use the binary system to store data.",
+      hebEx: "מחשבים משתמשים בשיטה הבינארית כדי לאחסן נתונים."
+    },
+    {
+      word: "Represent",
+      phonetic: "רִיפְּרֶזֶנְט",
+      meaning: "לְיַצֵּג",
+      visual: "🎭",
+      exp: "להיות סמל או סימן למשהו אחר.",
+      engEx: "The number 1 represents an ON state.",
+      hebEx: "המספר 1 מייצג מצב פועל."
+    },
+    {
+      word: "Digit",
+      phonetic: "דִּיגִ'יט",
+      meaning: "סִפְרָה",
+      visual: "🔢",
+      exp: "כל אחד מהסמלים המשמשים לכתיבת מספרים.",
+      engEx: "The binary system uses only two digits.",
+      hebEx: "השיטה הבינארית משתמשת בשתי ספרות בלבד."
+    },
+    {
+      word: "Symbol",
+      phonetic: "סִימְבּוֹל",
+      meaning: "סֵמֶל",
+      visual: "⚜️",
+      exp: "סימן, ציור או אות המייצגים מושג, רעיון או חפץ.",
+      engEx: "The heart is a symbol of love.",
+      hebEx: "הלב הוא סמל לאהבה."
+    },
+    {
+      word: "System",
+      phonetic: "סִיסְטֶם",
+      meaning: "מַעֲרֶכֶת, שִׁיטָה",
+      visual: "⚙️",
+      exp: "אוסף של חלקים או חוקים הפועלים יחד למטרה מסוימת.",
+      engEx: "We need a reliable system for calculating taxes.",
+      hebEx: "אנו צריכים מערכת אמינה לחישוב מסים."
+    },
+    {
+      word: "Century",
+      phonetic: "סֶנְצ'וּרִי",
+      meaning: "מֵאָה (100 שָׁנִים)",
+      visual: "💯",
+      exp: "תקופת זמן של מאה שנים.",
+      engEx: "The telephone was invented in the 19th century.",
+      hebEx: "הטלפון הומצא במאה ה-19."
+    },
+    {
+      word: "Curiosity",
+      phonetic: "קְיוּרִיאוֹסִיטִי",
+      meaning: "סַקְרָנוּת",
+      visual: "🤔",
+      exp: "רצון עז לדעת או ללמוד משהו.",
+      engEx: "His curiosity led him to read many books.",
+      hebEx: "הסקרנות שלו הובילה אותו לקרוא ספרים רבים."
+    },
+    {
+      word: "Breakthrough",
+      phonetic: "בְּרֵיְקְת'רוּ",
+      meaning: "פְּרִיצַת דֶּרֶךְ",
+      visual: "🚀",
+      exp: "התקדמות חשובה ופתאומית, גילוי משמעותי.",
+      engEx: "The discovery of penicillin was a major medical breakthrough.",
+      hebEx: "גילוי הפניצילין היה פריצת דרך רפואית גדולה."
+    },
+    {
+      word: "Combine",
+      phonetic: "קוֹמְבַּיִן",
+      meaning: "לְשַׁלֵּב, לְחַבֵּר",
+      visual: "🔗",
+      exp: "לחבר שני דברים או יותר ליצירת דבר אחד.",
+      engEx: "You can combine these simple parts to build a machine.",
+      hebEx: "אתה יכול לשלב את החלקים הפשוטים האלה כדי לבנות מכונה."
+    },
+    {
+      word: "Process",
+      phonetic: "פְּרוֹסֶס",
+      meaning: "לְעַבֵּד (גַּם: תַּהֲלִיךְ)",
+      visual: "🔄",
+      exp: "לבצע סדרת פעולות על נתונים או חומרים כדי לקבל תוצאה.",
+      engEx: "The computer can process huge amounts of data quickly.",
+      hebEx: "המחשב יכול לעבד כמויות עצומות של נתונים במהירות."
+    }
+  ],
+
+w12d2: [
+    {
+      word: "Voltage",
+      phonetic: "ווֹלְטֶג'",
+      meaning: "מֶתַח חַשְׁמַלִּי",
+      visual: "⚡",
+      exp: "ההפרש בפוטנציאל החשמלי שדוחף את האלקטרונים.",
+      engEx: "The battery supplies a voltage of 1.5 volts.",
+      hebEx: "הסוללה מספקת מתח של 1.5 וולט."
+    },
+    {
+      word: "Current",
+      phonetic: "קָארֶנְט",
+      meaning: "זֶרֶם",
+      visual: "🌊",
+      exp: "תנועה או זרימה, למשל של אלקטרונים (זרם חשמלי).",
+      engEx: "The electrical current flows through the wire.",
+      hebEx: "הזרם החשמלי זורם דרך החוט."
+    },
+    {
+      word: "Circuit",
+      phonetic: "סִירְקוּט",
+      meaning: "מַעְגָּל (חַשְׁמַלִּי)",
+      visual: "🔌",
+      exp: "מסלול סגור דרכו יכול לעבור זרם חשמלי.",
+      engEx: "If you break the circuit, the light will turn off.",
+      hebEx: "אם תשבור את המעגל, האור יכבה."
+    },
+    {
+      word: "Absence",
+      phonetic: "אבסנס",
+      meaning: "היעדרות, חוסר",
+      visual: "🕳️",
+      exp: "מצב שבו משהו או מישהו אינו נמצא.",
+      engEx: "Zero often represents the absence of a signal.",
+      hebEx: "אפס מייצג לעיתים קרובות היעדרות של אות."
+    },
+    {
+      word: "Presence",
+      phonetic: "פרזנס",
+      meaning: "נוכחות",
+      visual: "📍",
+      exp: "מצב שבו משהו או מישהו נמצא במקום מסוים.",
+      engEx: "The alarm detects the presence of smoke.",
+      hebEx: "האזעקה מזהה נוכחות של עשן."
+    },
+    {
+      word: "Fluctuation",
+      phonetic: "פלקצ'ואיישן",
+      meaning: "תנודה, שינוי לא יציב",
+      visual: "📈",
+      exp: "שינוי תכוף ברמה או בערך, עליות וירידות.",
+      engEx: "Small fluctuations in voltage can cause errors.",
+      hebEx: "תנודות קטנות במתח יכולות לגרום לשגיאות."
+    },
+    {
+      word: "Interference",
+      phonetic: "אינטרפירנס",
+      meaning: "הפרעה",
+      visual: "📻",
+      exp: "מצב שבו משהו מפריע לפעולה התקינה של דבר אחר.",
+      engEx: "The radio signal was lost due to electrical interference.",
+      hebEx: "אות הרדיו אבד עקב הפרעה חשמלית."
+    },
+    {
+      word: "Reliable",
+      phonetic: "רילאיבל",
+      meaning: "אמין",
+      visual: "🛡️",
+      exp: "שאפשר לסמוך עליו שיעבוד כראוי או שיגיד את האמת.",
+      engEx: "We need a reliable car for the long trip.",
+      hebEx: "אנחנו צריכים מכונית אמינה לטיול הארוך."
+    },
+    {
+      word: "Analogy",
+      phonetic: "אנלוג'י",
+      meaning: "אנלוגיה, הקבלה",
+      visual: "⚖️",
+      exp: "השוואה בין שני דברים שונים כדי להסביר רעיון משותף.",
+      engEx: "He used the analogy of a water pipe to explain electricity.",
+      hebEx: "הוא השתמש בהקבלה של צינור מים כדי להסביר חשמל."
+    },
+    {
+      word: "Flow",
+      phonetic: "פלואו",
+      meaning: "זרימה, לזרום",
+      visual: "〰️",
+      exp: "תנועה חלקה ורציפה של חומר (כמו מים או חשמל).",
+      engEx: "The water flows down the river.",
+      hebEx: "המים זורמים במורד הנהר."
+    }
+  ],
+
+w12d3: [
+    {
+      word: "Gate",
+      phonetic: "גייט",
+      meaning: "שער (לוגי)",
+      visual: "🚪",
+      exp: "מעגל חשמלי שמבצע פעולה לוגית פשוטה.",
+      engEx: "An AND gate produces an output of 1 only when both inputs are 1.",
+      hebEx: "שער AND מפיק פלט של 1 רק כאשר שני הקלטים הם 1."
+    },
+    {
+      word: "Transistor",
+      phonetic: "טרנזיסטור",
+      meaning: "טרנזיסטור",
+      visual: "📻",
+      exp: "רכיב שמשמש כמתג ויכול לאפשר או לחסום זרם חשמלי.",
+      engEx: "A modern processor may contain billions of transistors acting as switches.",
+      hebEx: "מעבד מודרני עשוי להכיל מיליארדי טרנזיסטורים הפועלים כמתגים."
+    },
+    {
+      word: "State",
+      phonetic: "סטייט",
+      meaning: "מצב",
+      visual: "🚦",
+      exp: "צורה מסוימת או אופן שבו משהו נמצא בזמן נתון (כמו דלוק או כבוי).",
+      engEx: "These two stable states made binary an ideal choice for electronic devices.",
+      hebEx: "שני המצבים היציבים האלה הפכו את הבינארי לבחירה אידיאלית עבור מכשירים אלקטרוניים."
+    },
+    {
+      word: "Distinguish",
+      phonetic: "דיסטינגוויש",
+      meaning: "להבחין",
+      visual: "🔍",
+      exp: "היכולת לשים לב להבדל בין שני דברים או יותר.",
+      engEx: "With only two states, devices can easily distinguish between them.",
+      hebEx: "עם שני מצבים בלבד, מכשירים יכולים בקלות להבחין ביניהם."
+    },
+    {
+      word: "Switch",
+      phonetic: "סוויץ'",
+      meaning: "מתג",
+      visual: "🎚️",
+      exp: "רכיב המאפשר להפעיל או לכבות זרימת חשמל.",
+      engEx: "A switch can be either OFF or ON.",
+      hebEx: "מתג יכול להיות כבוי או דלוק."
+    },
+    {
+      word: "Voltage",
+      phonetic: "וולטג'",
+      meaning: "מתח חשמלי",
+      visual: "⚡",
+      exp: "הכוח שדוחף את האלקטרונים במעגל חשמלי.",
+      engEx: "Voltage is the electrical potential difference that pushes electrons.",
+      hebEx: "מתח הוא הפרש הפוטנציאל החשמלי שדוחף אלקטרונים."
+    },
+    {
+      word: "Current",
+      phonetic: "קארנט",
+      meaning: "זרם חשמלי",
+      visual: "🌊",
+      exp: "הזרימה בפועל של חלקיקים חשמליים (אלקטרונים) במעגל.",
+      engEx: "Current is the actual flow of electrons through a circuit.",
+      hebEx: "זרם הוא הזרימה בפועל של אלקטרונים דרך מעגל חשמלי."
+    },
+    {
+      word: "Circuit",
+      phonetic: "סירקיט",
+      meaning: "מעגל חשמלי",
+      visual: "🔌",
+      exp: "מסלול סגור דרכו יכול לעבור זרם חשמלי.",
+      engEx: "Claude Shannon discovered that binary numbers matched with electrical circuits.",
+      hebEx: "קלוד שאנון גילה שמספרים בינאריים תואמים למעגלים חשמליים."
+    },
+    {
+      word: "Input",
+      phonetic: "אינפוט",
+      meaning: "קלט",
+      visual: "📥",
+      exp: "מידע או אות שנכנס למערכת כדי לעבור עיבוד.",
+      engEx: "Logic gates perform simple decisions based on binary inputs.",
+      hebEx: "שערים לוגיים מבצעים החלטות פשוטות המבוססות על קלטים בינאריים."
+    },
+    {
+      word: "Output",
+      phonetic: "אאוטפוט",
+      meaning: "פלט",
+      visual: "📤",
+      exp: "התוצאה או המידע שיוצא מהמערכת לאחר העיבוד.",
+      engEx: "An OR gate produces an output of 1 when at least one input is 1.",
+      hebEx: "שער OR מפיק פלט של 1 כאשר לפחות קלט אחד הוא 1."
+    }
+  ],
+
+w12d4: [
+    {
+      word: "Reliability",
+      phonetic: "רילייביליטי",
+      meaning: "אמינות",
+      visual: "🛡️",
+      exp: "המידה שבה אפשר לסמוך על מערכת שתפעל כראוי וללא תקלות.",
+      engEx: "One reason binary became so important is reliability.",
+      hebEx: "סיבה אחת שהבינארי הפך לכל כך חשוב היא אמינות."
+    },
+    {
+      word: "Theoretical",
+      phonetic: "תיאורטיקל",
+      meaning: "תאורטי",
+      visual: "📐",
+      exp: "קשור לתיאוריה ולרעיונות, להבדיל משימוש מעשי.",
+      engEx: "The binary system transformed from a theoretical concept into modern computing.",
+      hebEx: "המערכת הבינארית הפכה ממושג תאורטי למחשוב מודרני."
+    },
+    {
+      word: "Encode",
+      phonetic: "אינקוד",
+      meaning: "לקודד",
+      visual: "🔡",
+      exp: "להמיר מידע (כמו טקסט) לפורמט אחר כדי שמחשב יוכל לאחסן אותו.",
+      engEx: "We can encode text into binary data so the computer can process it.",
+      hebEx: "אנחנו יכולים לקודד טקסט לנתונים בינאריים כדי שהמחשב יוכל לעבד אותו."
+    },
+    {
+      word: "Fluctuation",
+      phonetic: "פלאקצ'ואיישן",
+      meaning: "תנודה",
+      visual: "📈",
+      exp: "שינויים קטנים או חוסר יציבות בערכים (למשל במתח חשמלי).",
+      engEx: "Small fluctuations in voltage can occur because of heat.",
+      hebEx: "תנודות קטנות במתח עלולות להתרחש בגלל חום."
+    },
+    {
+      word: "Foundation",
+      phonetic: "פאונדיישן",
+      meaning: "בסיס, יסוד",
+      visual: "🏗️",
+      exp: "הרעיון או המבנה הבסיסי שעליו נבנה משהו גדול יותר.",
+      engEx: "Boolean algebra laid the foundation for modern digital electronics.",
+      hebEx: "האלגברה הבוליאנית הניחה את הבסיס לאלקטרוניקה דיגיטלית מודרנית."
+    },
+    {
+      word: "Curiosity",
+      phonetic: "קיוריאוסיטי",
+      meaning: "סקרנות",
+      visual: "🧐",
+      exp: "רצון עז לדעת או ללמוד משהו חדש.",
+      engEx: "At first, binary was mainly a mathematical curiosity.",
+      hebEx: "בהתחלה, הבינארי היה בעיקר סקרנות מתמטית."
+    },
+    {
+      word: "Breakthrough",
+      phonetic: "ברייקת'רו",
+      meaning: "פריצת דרך",
+      visual: "🚀",
+      exp: "גילוי או התקדמות משמעותית שמשנים את פני הדברים.",
+      engEx: "The real breakthrough came more than two centuries later.",
+      hebEx: "פריצת הדרך האמיתית הגיעה יותר ממאתיים שנה מאוחר יותר."
+    },
+    {
+      word: "Interference",
+      phonetic: "אינטרפירנס",
+      meaning: "הפרעה / התערבות",
+      visual: "📻",
+      exp: "משהו שפוגע או משבש פעולה תקינה של מערכת או אות חלש.",
+      engEx: "Fluctuations can occur because of heat or interference.",
+      hebEx: "תנודות יכולות לקרות בגלל חום או הפרעה."
+    },
+    {
+      word: "Execute",
+      phonetic: "אקזקיוט",
+      meaning: "לבצע / להוציא לפועל",
+      visual: "▶️",
+      exp: "להריץ תוכנית במחשב או לממש פקודה.",
+      engEx: "Binary numbers enable computers to execute programs.",
+      hebEx: "מספרים בינאריים מאפשרים למחשבים לבצע תוכניות."
+    },
+    {
+      word: "Transform",
+      phonetic: "טרנספורם",
+      meaning: "לשנות צורה / להתמיר",
+      visual: "🦋",
+      exp: "לשנות משהו בצורה משמעותית למשהו חדש או שונה.",
+      engEx: "The binary system transformed from a mathematical idea into a practical technology.",
+      hebEx: "המערכת הבינארית השתנתה מרעיון מתמטי לטכנולוגיה מעשית."
+    }
+  ]
+};
+
+window.unseenArticleData = [
+    {j:"🖥️",e:"Most people use computers, smartphones, and tablets every day without thinking about the software that makes them work.",h:"רוב האנשים משתמשים במחשבים, סמארטפונים וטאבלטים מדי יום מבלי לחשוב על התוכנה שגורמת להם לעבוד."},
+    {j:"🌐",e:"Whether someone is browsing the internet, playing a game, or writing a document, there is a complex system working behind the scenes to coordinate all of these activities.",h:"בין אם מישהו גולש באינטרנט, משחק משחק או כותב מסמך, ישנה מערכת מורכבת שפועלת מאחורי הקלעים כדי לתאם את כל הפעילויות הללו."},
+    {j:"⚙️",e:"This system is called the Operating System (OS), and it serves as the bridge between the user, the applications, and the computer's hardware.",h:"מערכת זו נקראת מערכת הפעלה (OS), והיא משמשת כגשר בין המשתמש, היישומים והחומרה של המחשב."},
+    {j:"📜",e:"A famous story in the history of operating systems involves the development of Unix in the late 1960s and early 1970s.",h:"סיפור מפורסם בתולדות מערכות ההפעלה כולל את הפיתוח של Unix בסוף שנות ה-60 ותחילת שנות ה-70."},
+    {j:"⏳",e:"At the time, computers were extremely expensive and difficult to use.",h:"באותה תקופה, מחשבים היו יקרים במיוחד וקשים לשימוש."},
+    {j:"👨‍🔬",e:"Researchers at Bell Labs, including Ken Thompson and Dennis Ritchie, wanted to create an operating system that would be simple, efficient, and portable.",h:"חוקרים במעבדות בל, כולל קן תומפסון ודניס ריצ'י, רצו ליצור מערכת הפעלה שתהיה פשוטה, יעילה וניידת."},
+    {j:"💡",e:"Their work led to the creation of Unix, which later became one of the most influential operating systems in computing history.",h:"עבודתם הובילה ליצירת יוניקס, שלימים הפכה לאחת ממערכות ההפעלה המשפיעות ביותר בהיסטוריית המחשוב."},
+    {j:"💻",e:"Many modern systems, including Linux and macOS, are based on ideas that originated in Unix.",h:"מערכות מודרניות רבות, כולל לינוקס ו-macOS, מבוססות על רעיונות שמקורם ביוניקס."},
+    {j:"🔄",e:"One of the primary responsibilities of an operating system is process management.",h:"אחת מתחומי האחריות העיקריים של מערכת הפעלה היא ניהול תהליכים."},
+    {j:"▶️",e:"A process is a program that is currently being executed.",h:"תהליך הוא תוכנית שמתבצעת כעת."},
+    {j:"📈",e:"Modern computers often run dozens or even hundreds of processes simultaneously.",h:"מחשבים מודרניים מריצים לרוב עשרות או אפילו מאות תהליכים בו-זמנית."},
+    {j:"🎧",e:"For example, while a user is listening to music, browsing the web, and downloading a file, the operating system must decide how much processor time each process receives.",h:"לדוגמה, בזמן שמשתמש מאזין למוזיקה, גולש באינטרנט ומוריד קובץ, מערכת ההפעלה חייבת להחליט כמה זמן מעבד מקבל כל תהליך."},
+    {j:"📅",e:"This activity is known as scheduling.",h:"פעילות זו ידועה כתזמון."},
+    {j:"⚖️",e:"The scheduler ensures that all programs run smoothly and that no single process monopolizes the CPU.",h:"המתזמן מבטיח שכל התוכניות יפעלו בצורה חלקה וששום תהליך בודד לא יעשה מונופול על המעבד."},
+    {j:"🧠",e:"Another important function is memory management.",h:"פונקציה חשובה נוספת היא ניהול זיכרון."},
+    {j:"💾",e:"Computers have a limited amount of RAM (Random Access Memory), and the operating system must allocate this memory efficiently.",h:"למחשבים יש כמות מוגבלת של RAM (זיכרון גישה אקראית), ומערכת ההפעלה חייבת להקצות את הזיכרון הזה ביעילות."},
+    {j:"📊",e:"When several applications are running at the same time, the OS keeps track of which parts of memory belong to which process.",h:"כאשר מספר יישומים פועלים בו זמנית, מערכת ההפעלה עוקבת אילו חלקי זיכרון שייכים לאיזה תהליך."},
+    {j:"☁️",e:"Modern operating systems also use virtual memory, a technique that allows programs to use more memory than is physically available by temporarily storing data on a storage device.",h:"מערכות הפעלה מודרניות משתמשות גם בזיכרון וירטואלי, טכניקה המאפשרת לתוכניות להשתמש ביותר זיכרון ממה שזמין פיזית על ידי אחסון זמני של נתונים במכשיר אחסון."},
+    {j:"📁",e:"The operating system is also responsible for file management.",h:"מערכת ההפעלה אחראית גם על ניהול הקבצים."},
+    {j:"📄",e:"Every document, image, video, and application is stored as a file.",h:"כל מסמך, תמונה, וידאו ואפליקציה נשמרים כקובץ."},
+    {j:"🗂️",e:"The OS organizes these files into directories or folders and provides users with tools to create, delete, move, and modify them.",h:"מערכת ההפעלה מארגנת קבצים אלו לספריות או תיקיות ומספקת למשתמשים כלים ליצור, למחוק, להזיז ולשנות אותם."},
+    {j:"🛑",e:"Without a file system, managing information on a computer would be nearly impossible.",h:"ללא מערכת קבצים, ניהול מידע על מחשב יהיה כמעט בלתי אפשרי."},
+    {j:"🖨️",e:"Another key concept is device management. Computers contain many hardware components such as keyboards, printers, monitors, and storage devices.",h:"מושג מפתח נוסף הוא ניהול התקנים. מחשבים מכילים רכיבי חומרה רבים כגון מקלדות, מדפסות, צגים ומכשירי אחסון."},
+    {j:"🔌",e:"The operating system communicates with these devices through special software called device drivers.",h:"מערכת ההפעלה מתקשרת עם מכשירים אלו באמצעות תוכנה מיוחדת הנקראת מנהלי התקנים (דרייברים)."},
+    {j:"📡",e:"Drivers allow the operating system to send instructions to hardware and receive information from it.",h:"דרייברים מאפשרים למערכת ההפעלה לשלוח הוראות לחומרה ולקבל ממנה מידע."},
+    {j:"🤝",e:"Thanks to drivers, users can connect new devices and begin using them without understanding their internal design.",h:"הודות לדרייברים, משתמשים יכולים לחבר מכשירים חדשים ולהתחיל להשתמש בהם מבלי להבין את העיצוב הפנימי שלהם."},
+    {j:"🛡️",e:"Security has become one of the most important aspects of modern operating systems.",h:"אבטחה הפכה לאחד ההיבטים החשובים ביותר של מערכות הפעלה מודרניות."},
+    {j:"🔑",e:"Features such as user authentication, access control, and encryption help protect sensitive information from unauthorized access.",h:"תכונות כגון אימות משתמש, בקרת גישה והצפנה עוזרות להגן על מידע רגיש מפני גישה לא מורשית."},
+    {j:"⚔️",e:"As cyberattacks become more sophisticated, operating systems continuously evolve to provide stronger security mechanisms and better protection against malicious software.",h:"ככל שהתקפות סייבר הופכות למתוחכמות יותר, מערכות ההפעלה מתפתחות ללא הרף כדי לספק מנגנוני אבטחה חזקים יותר והגנה טובה יותר מפני תוכנות זדוניות."},
+    {j:"📱",e:"The rise of smartphones introduced another chapter in the story of operating systems.",h:"עלייתם של הסמארטפונים הציגה פרק נוסף בסיפורן של מערכות ההפעלה."},
+    {j:"🔋",e:"Mobile operating systems such as Android and iOS were designed to operate on devices with limited power consumption while supporting touch-screen interfaces.",h:"מערכות הפעלה ניידות כגון אנדרואיד ו-iOS נועדו לפעול במכשירים בעלי צריכת חשמל מוגבלת תוך תמיכה בממשקי מסך מגע."},
+    {j:"🌍",e:"Today, billions of people interact with these systems daily, making operating systems more important than ever before.",h:"כיום, מיליארדי אנשים מקיימים אינטראקציה עם המערכות הללו מדי יום, מה שהופך את מערכות ההפעלה לחשובות מאי פעם."},
+    {j:"🏗️",e:"In conclusion, operating systems are the foundation of modern computing.",h:"לסיכום, מערכות הפעלה הן הבסיס למחשוב מודרני."},
+    {j:"🧩",e:"They manage processes, memory, files, devices, and security while allowing users to interact with hardware in a simple and efficient way.",h:"הם מנהלים תהליכים, זיכרון, קבצים, התקנים ואבטחה תוך שהם מאפשרים למשתמשים לקיים אינטראקציה עם החומרה בצורה פשוטה ויעילה."},
+    {j:"🚀",e:"From the creation of Unix to the operating systems running today's smartphones and cloud servers, the evolution of operating systems has played a crucial role in shaping the digital world we know today.",h:"מיצירת יוניקס ועד למערכות ההפעלה המריצות את הסמארטפונים ושרתי הענן של היום, לאבולוציה של מערכות ההפעלה היה תפקיד מכריע בעיצוב העולם הדיגיטלי שאנו מכירים כיום."}
+];
+
+window.daysList = [
+  { id: 'w1d1', week: 'week1', title: 'יום ראשון', date: '26/04/2026' },
+  { id: 'w1d2', week: 'week1', title: 'יום שני', date: '27/04/2026' },
+  { id: 'w1d3', week: 'week1', title: 'יום שלישי', date: '28/04/2026' },
+  { id: 'w1d4', week: 'week1', title: 'יום רביעי', date: '29/04/2026' },
+  { id: 'w2d1', week: 'week2', title: 'יום ראשון', date: '03/05/2026' },
+  { id: 'w2d2', week: 'week2', title: 'יום שני', date: '04/05/2026' },
+  { id: 'w2d3', week: 'week2', title: 'יום שלישי', date: '05/05/2026' },
+  { id: 'w2d4', week: 'week2', title: 'יום רביעי', date: '06/05/2026' },
+  { id: 'w3d1', week: 'week3', title: 'יום ראשון', date: '10/05/2026' },
+  { id: 'w3d2', week: 'week3', title: 'יום שני', date: '11/05/2026' },
+  { id: 'w3d3', week: 'week3', title: 'יום שלישי', date: '12/05/2026' },
+  { id: 'w3d4', week: 'week3', title: 'יום רביעי', date: '13/05/2026' },
+  { id: 'w7d1', week: 'week7', title: 'יום ראשון', date: '24/05/2026' },
+  { id: 'w7d2', week: 'week7', title: 'יום שני', date: '25/05/2026' },
+  { id: 'w7d3', week: 'week7', title: 'יום שלישי', date: '26/05/2026' },
+  { id: 'w7d4', week: 'week7', title: 'יום רביעי', date: '27/05/2026' },
+  { id: 'w8d1', week: 'week8', title: 'יום 1', date: 'Week 8' },
+  { id: 'w8d2', week: 'week8', title: 'יום 2', date: 'Week 8' },
+  { id: 'w8d3', week: 'week8', title: 'יום 3', date: 'Week 8' },
+  { id: 'w8d4', week: 'week8', title: 'יום 4', date: 'Week 8' },
+  { id: 'w9d1', week: 'week9vocab', title: 'יום 1', date: 'Week 9' },
+  { id: 'w9d2', week: 'week9vocab', title: 'יום 2', date: 'Week 9' },
+  { id: 'w9d3', week: 'week9vocab', title: 'יום 3', date: 'Week 9' },
+  { id: 'w9d4', week: 'week9vocab', title: 'יום 4', date: 'Week 9' },
+  { id: 'w10d1', week: 'week10vocab', title: 'יום 1', date: 'Week 10' },
+  { id: 'w10d2', week: 'week10vocab', title: 'יום 2', date: 'Week 10' },
+  { id: 'w10d3', week: 'week10vocab', title: 'יום 3', date: 'Week 10' },
+  { id: 'w10d4', week: 'week10vocab', title: 'יום 4', date: 'Week 10' },
+  { id: 'w11d1', week: 'week11vocab', title: 'יום 1', date: 'Week 11' },
+  { id: 'w11d2', week: 'week11vocab', title: 'יום 2', date: 'Week 11' },
+  { id: 'w11d3', week: 'week11vocab', title: 'יום 3', date: 'Week 11' },
+    { id: 'w11d4', week: 'week11vocab', title: 'יום 4', date: 'Week 11' },
+  { id: 'w12d1', week: 'week12vocab', title: 'יום 1', date: 'Week 12' },
+  { id: 'w12d2', week: 'week12vocab', title: 'יום 2', date: 'Week 12' },
+  { id: 'w12d3', week: 'week12vocab', title: 'יום 3', date: 'Week 12' },
+  { id: 'w12d4', week: 'week12vocab', title: 'יום 4', date: 'Week 12' }
+];
+
+window.ciaTriadArticleData = [
+    {j:"🌍",e:"In today's digital world, information is one of the most valuable resources for individuals, businesses, and governments.",h:"בעולם הדיגיטלי של ימינו, מידע הוא אחד המשאבים יקרי הערך ביותר עבור אנשים, עסקים וממשלות."},
+    {j:"💾",e:"Every day, organizations store large amounts of data, including customer details, financial records, medical information, and business plans.",h:"מדי יום, ארגונים מאחסנים כמויות גדולות של נתונים, כולל פרטי לקוחות, רישומים פיננסיים, מידע רפואי ותוכניות עסקיות."},
+    {j:"🛡️",e:"Protecting this information is a major responsibility, and cybersecurity professionals often rely on a model known as the CIA Triad.",h:"הגנה על מידע זה היא אחריות גדולה, ואנשי אבטחת סייבר מסתמכים לעתים קרובות על מודל הידוע בשם משולש ה-CIA."},
+    {j:"🔤",e:"The letters CIA stand for Confidentiality, Integrity, and Availability, three principles that help organizations secure their information and systems.",h:"האותיות CIA מייצגות סודיות, שלמות וזמינות, שלושה עקרונות שעוזרים לארגונים לאבטח את המידע והמערכות שלהם."},
+    {j:"🤫",e:"Confidentiality means that information should only be accessible to people who are authorized to see it.",h:"סודיות פירושה שמידע צריך להיות נגיש רק לאנשים המורשים לראות אותו."},
+    {j:"🔐",e:"Companies use passwords, encryption, and access controls to prevent unauthorized users from viewing sensitive data.",h:"חברות משתמשות בסיסמאות, הצפנה ובקרות גישה כדי למנוע ממשתמשים לא מורשים לצפות בנתונים רגישים."},
+    {j:"🏢",e:"For example, employees in a company may have access to the information necessary for their jobs, while confidential financial reports are restricted to managers and executives.",h:"לדוגמה, לעובדים בחברה עשויה להיות גישה למידע הדרוש לעבודתם, בעוד שדוחות כספיים סודיים מוגבלים למנהלים ובכירים."},
+    {j:"🔓",e:"If an attacker gains access to information that should remain private, confidentiality has been compromised.",h:"אם תוקף מקבל גישה למידע שאמור להישאר פרטי, הסודיות נפגעה."},
+    {j:"📖",e:"A good example of the importance of confidentiality can be seen in the experience of a small company called DataSafe.",h:"דוגמה טובה לחשיבות הסודיות ניתן לראות בניסיון של חברה קטנה בשם DataSafe."},
+    {j:"✉️",e:"One Monday morning, an employee named Daniel received an email that appeared to come from the company's IT department.",h:"בוקר יום שני אחד, עובד בשם דניאל קיבל אימייל שנראה כאילו הגיע ממחלקת ה-IT של החברה."},
+    {j:"⚠️",e:"The message looked professional and warned employees that they needed to update their passwords immediately.",h:"ההודעה נראתה מקצועית והזהירה את העובדים שהם צריכים לעדכן את הסיסמאות שלהם מיד."},
+    {j:"🔗",e:"Since the email seemed legitimate, Daniel clicked the link and entered his login credentials.",h:"מכיוון שהאימייל נראה לגיטימי, דניאל לחץ על הקישור והזין את פרטי ההתחברות שלו."},
+    {j:"🎣",e:"The problem was that the email was actually part of a phishing attack.",h:"הבעיה הייתה שהאימייל למעשה היה חלק ממתקפת פישינג (דיוג)."},
+    {j:"⏱️",e:"Within minutes, a cybercriminal had access to Daniel's account and could view confidential customer documents stored on the company's servers.",h:"תוך דקות, לפושע סייבר הייתה גישה לחשבון של דניאל והוא יכול היה לראות מסמכי לקוחות סודיים המאוחסנים בשרתי החברה."},
+    {j:"🚨",e:"Information that was supposed to remain private was suddenly exposed, demonstrating how easily confidentiality can be lost when security measures are bypassed.",h:"מידע שהיה אמור להישאר פרטי נחשף לפתע, מה שמוכיח באיזו קלות סודיות יכולה ללכת לאיבוד כאשר עוקפים את אמצעי האבטחה."},
+    {j:"✅",e:"Another important principle is Integrity, which refers to the accuracy and reliability of information.",h:"עיקרון חשוב נוסף הוא שלמות, המתייחס לדיוק ואמינות המידע."},
+    {j:"🔒",e:"Data should remain correct and unchanged unless an authorized person makes a legitimate modification.",h:"הנתונים צריכים להישאר נכונים וללא שינוי אלא אם אדם מורשה מבצע שינוי לגיטימי."},
+    {j:"⚙️",e:"Organizations use technologies such as digital signatures, audit logs, and hash functions to help ensure data integrity.",h:"ארגונים משתמשים בטכנולוגיות כגון חתימות דיגיטליות, יומני ביקורת ופונקציות גיבוב כדי לעזור להבטיח את שלמות הנתונים."},
+    {j:"🕵️",e:"After gaining access to DataSafe's systems, the attacker did more than simply read files.",h:"לאחר שקיבל גישה למערכות של DataSafe, התוקף עשה יותר מסתם קריאת קבצים."},
+    {j:"✏️",e:"Several customer records were altered, and important information was changed without authorization.",h:"מספר רשומות לקוחות שונו, ומידע חשוב שונה ללא הרשאה."},
+    {j:"🔍",e:"When employees later reviewed the documents, they discovered incorrect account numbers and modified customer details.",h:"כאשר העובדים סקרו מאוחר יותר את המסמכים, הם גילו מספרי חשבונות שגויים ופרטי לקוחות שהשתנו."},
+    {j:"❌",e:"Although the files were still available, they could no longer be trusted.",h:"למרות שהקבצים עדיין היו זמינים, כבר לא ניתן היה לסמוך עליהם."},
+    {j:"📉",e:"This situation illustrates a violation of integrity because the data had been altered in a way that made it inaccurate and unreliable.",h:"מצב זה ממחיש פגיעה בשלמות מכיוון שהנתונים שונו באופן שהפך אותם ללא מדויקים ולא אמינים."},
+    {j:"⚡",e:"The third component of the CIA Triad is Availability.",h:"המרכיב השלישי במשולש ה-CIA הוא זמינות."},
+    {j:"🟢",e:"Information is only useful if authorized users can access it when they need it.",h:"מידע מועיל רק אם משתמשים מורשים יכולים לגשת אליו כשהם זקוקים לו."},
+    {j:"🏢",e:"Businesses rely on their systems every day, so downtime can be expensive and disruptive.",h:"עסקים מסתמכים על המערכות שלהם מדי יום, כך שזמן השבתה יכול להיות יקר ומשבש."},
+    {j:"🔄",e:"To maintain availability, organizations invest in backups, redundant systems, and disaster recovery plans.",h:"כדי לשמור על זמינות, ארגונים משקיעים בגיבויים, מערכות יתירות ותוכניות התאוששות מאסון."},
+    {j:"💸",e:"Before leaving the compromised network, the attacker launched ransomware that encrypted many of DataSafe's files.",h:"לפני שעזב את הרשת שנפרצה, התוקף הפעיל תוכנת כופר שהצפינה רבים מהקבצים של DataSafe."},
+    {j:"🚫",e:"Employees arriving at work the next morning were unable to open documents or access important systems.",h:"עובדים שהגיעו לעבודה למחרת בבוקר לא הצליחו לפתוח מסמכים או לגשת למערכות חשובות."},
+    {j:"🛑",e:"Customer requests could not be processed, and normal business operations came to a halt.",h:"לא ניתן היה לעבד בקשות של לקוחות, והפעילות העסקית הרגילה נעצרה."},
+    {j:"⏸️",e:"Even though the information still existed, it was temporarily inaccessible, meaning availability had been compromised.",h:"למרות שהמידע עדיין היה קיים, הוא לא היה נגיש באופן זמני, כלומר הזמינות נפגעה."},
+    {j:"☁️",e:"Fortunately, DataSafe had recently created secure backups of its data.",h:"למרבה המזל, DataSafe יצרה לאחרונה גיבויים מאובטחים לנתונים שלה."},
+    {j:"🛠️",e:"The IT team worked throughout the day to restore the systems and recover the affected files.",h:"צוות ה-IT פעל לאורך כל היום לשחזור המערכות ולשחזור הקבצים שנפגעו."},
+    {j:"⏱️",e:"Within a short time, the company was able to resume normal operations.",h:"תוך זמן קצר, החברה הצליחה לחזור לפעילות רגילה."},
+    {j:"🎓",e:"The incident became an important lesson for both management and employees.",h:"התקרית הפכה לשיעור חשוב הן עבור ההנהלה והן עבור העובדים."},
+    {j:"🧠",e:"It showed that protecting information is not only about technology but also about human awareness and responsible security practices.",h:"היא הראתה שהגנה על מידע היא לא רק עניין של טכנולוגיה אלא גם של מודעות אנושית ושיטות אבטחה אחראיות."},
+    {j:"📊",e:"The story of DataSafe demonstrates how a single phishing email can affect all three elements of the CIA Triad.",h:"הסיפור של DataSafe מדגים כיצד דוא'ל פישינג יחיד יכול להשפיע על כל שלושת האלמנטים של משולש ה-CIA."},
+    {j:"💥",e:"Confidential information was exposed, important records were altered, and critical systems became unavailable.",h:"מידע סודי נחשף, רשומות חשובות שונו ומערכות קריטיות הפכו ללא זמינות."},
+    {j:"🏆",e:"For this reason, confidentiality, integrity, and availability remain the foundation of information security and continue to guide organizations in protecting their most valuable digital assets.",h:"מסיבה זו, סודיות, שלמות וזמינות נותרו הבסיס לאבטחת מידע וממשיכות להנחות ארגונים בהגנה על הנכסים הדיגיטליים היקרים ביותר שלהם."}
+];
+
+window.httpsArticleData = [
+  {
+    "j": "1",
+    "e": "The Transition from HTTP to HTTPS: Why Security Became Essential",
+    "h": "המעבר מ-HTTP ל-HTTPS: מדוע האבטחה הפכה לחיונית"
+  },
+  {
+    "j": "2",
+    "e": "In the early days of the internet, websites were mostly simple pages that shared information with visitors.",
+    "h": "בימיו הראשונים של האינטרנט, אתרי אינטרנט היו לרוב דפים פשוטים ששיתפו מידע עם מבקרים."
+  },
+  {
+    "j": "3",
+    "e": "People used the web to read news, search for information, and visit personal websites.",
+    "h": "אנשים השתמשו ברשת כדי לקרוא חדשות, לחפש מידע ולבקר באתרי אינטרנט אישיים."
+  },
+  {
+    "j": "4",
+    "e": "During that time, most websites used HTTP (HyperText Transfer Protocol), a communication system that allowed browsers and servers to exchange information.",
+    "h": "במהלך אותה תקופה, רוב האתרים השתמשו ב-HTTP (פרוטוקול העברת תמליל-על), מערכת תקשורת שאפשרה לדפדפנים ושרתים להחליף מידע."
+  },
+  {
+    "j": "5",
+    "e": "HTTP was fast and simple, but it had one major weakness: it did not protect the data being transmitted.",
+    "h": "HTTP היה מהיר ופשוט, אך הייתה לו חולשה מרכזית אחת: הוא לא הגן על הנתונים שהועברו."
+  },
+  {
+    "j": "6",
+    "e": "Anything sent through HTTP, including passwords, messages, or payment information, could potentially be seen by anyone intercepting the connection.",
+    "h": "כל מה שנשלח דרך HTTP, כולל סיסמאות, הודעות או פרטי תשלום, יכול היה להיראות באופן פוטנציאלי על ידי כל מי שיירט את החיבור."
+  },
+  {
+    "j": "7",
+    "e": "As the internet grew, people began using websites for much more important tasks.",
+    "h": "ככל שהאינטרנט גדל, אנשים החלו להשתמש באתרים למשימות חשובות הרבה יותר."
+  },
+  {
+    "j": "8",
+    "e": "Online banking, shopping, social media, and email became part of everyday life.",
+    "h": "בנקאות מקוונת, קניות, רשתות חברתיות ודואר אלקטרוני הפכו לחלק מחיי היום יום."
+  },
+  {
+    "j": "9",
+    "e": "Suddenly, users were sending sensitive information across the internet all the time.",
+    "h": "לפתע, משתמשים שלחו מידע רגיש ברחבי האינטרנט כל הזמן."
+  },
+  {
+    "j": "10",
+    "e": "Cybercriminals quickly realized that unsecured HTTP connections were an easy target.",
+    "h": "פושעי סייבר הבינו במהירות שחיבורי HTTP לא מאובטחים הם מטרה קלה."
+  },
+  {
+    "j": "11",
+    "e": "By using public Wi-Fi networks or malicious tools, attackers could intercept traffic and steal usernames, passwords, credit card numbers, and other private data.",
+    "h": "באמצעות רשתות Wi-Fi ציבוריות או כלים זדוניים, תוקפים יכלו ליירט תעבורה ולגנוב שמות משתמש, סיסמאות, מספרי כרטיסי אשראי ונתונים פרטיים אחרים."
+  },
+  {
+    "j": "12",
+    "e": "This problem led to the rise of HTTPS (HyperText Transfer Protocol Secure).",
+    "h": "בעיה זו הובילה לעלייתו של HTTPS (פרוטוקול העברת תמליל-על מאובטח)."
+  },
+  {
+    "j": "13",
+    "e": "HTTPS is essentially HTTP combined with encryption through SSL/TLS technology.",
+    "h": "HTTPS הוא למעשה HTTP המשולב עם הצפנה באמצעות טכנולוגיית SSL/TLS."
+  },
+  {
+    "j": "14",
+    "e": "Encryption scrambles the data so that only the sender and the intended receiver can read it.",
+    "h": "ההצפנה מערבלת את הנתונים כך שרק השולח והנמען המיועד יוכלו לקרוא אותם."
+  },
+  {
+    "j": "15",
+    "e": "Even if someone intercepts the connection, the information appears as meaningless code rather than readable text.",
+    "h": "גם אם מישהו מיירט את החיבור, המידע מופיע כקוד חסר משמעות ולא כטקסט קריא."
+  },
+  {
+    "j": "16",
+    "e": "A Small Story: The Coffee Shop Incident",
+    "h": "סיפור קטן: תקרית בית הקפה"
+  },
+  {
+    "j": "17",
+    "e": "Imagine a university student named Maya who often studied at a local coffee shop.",
+    "h": "תארו לעצמכם סטודנטית באוניברסיטה בשם מאיה שנהגה ללמוד לעתים קרובות בבית קפה מקומי."
+  },
+  {
+    "j": "18",
+    "e": "One afternoon, she connected to the café's free Wi-Fi and logged into her online shopping account using a website that still used HTTP.",
+    "h": "אחר צהריים אחד, היא התחברה ל-Wi-Fi החינמי של בית הקפה ונכנסה לחשבון הקניות המקוון שלה דרך אתר שעדיין השתמש ב-HTTP."
+  },
+  {
+    "j": "19",
+    "e": "A hacker sitting nearby was monitoring the network traffic.",
+    "h": "האקר שישב בקרבת מקום ניטר את תעבורת הרשת."
+  },
+  {
+    "j": "20",
+    "e": "Because the connection was not encrypted, the hacker could see Maya's login information as it traveled across the network.",
+    "h": "מכיוון שהחיבור לא היה מוצפן, ההאקר יכול היה לראות את פרטי ההתחברות של מאיה בעודם עוברים ברשת."
+  },
+  {
+    "j": "21",
+    "e": "A few hours later, Maya received notifications about purchases she had never made.",
+    "h": "כמה שעות לאחר מכן, מאיה קיבלה התראות על רכישות שהיא מעולם לא ביצעה."
+  },
+  {
+    "j": "22",
+    "e": "Her account had been stolen simply because the website did not use HTTPS.",
+    "h": "החשבון שלה נגנב פשוט כי האתר לא השתמש ב-HTTPS."
+  },
+  {
+    "j": "23",
+    "e": "When she contacted customer support, they explained that the company was in the process of upgrading its website to HTTPS because incidents like this were becoming common.",
+    "h": "כאשר יצרה קשר עם שירות הלקוחות, הם הסבירו שהחברה נמצאת בתהליך של שדרוג האתר שלה ל-HTTPS משום שתקריות כאלו הפכו לנפוצות."
+  },
+  {
+    "j": "24",
+    "e": "Maya's experience showed how dangerous unencrypted connections could be in real life.",
+    "h": "החוויה של מאיה הראתה עד כמה מסוכנים חיבורים לא מוצפנים יכולים להיות בחיים האמיתיים."
+  },
+  {
+    "j": "25",
+    "e": "Why the Transition Was Necessary",
+    "h": "מדוע המעבר היה הכרחי"
+  },
+  {
+    "j": "26",
+    "e": "The move from HTTP to HTTPS was not just a technical upgrade; it became a necessary step for protecting users and businesses.",
+    "h": "המעבר מ-HTTP ל-HTTPS לא היה רק שדרוג טכני; הוא הפך לצעד הכרחי להגנה על משתמשים ועסקים."
+  },
+  {
+    "j": "27",
+    "e": "There are three main reasons why this transition was essential:",
+    "h": "ישנן שלוש סיבות עיקריות מדוע מעבר זה היה חיוני:"
+  },
+  {
+    "j": "28",
+    "e": "1. Protecting Confidential Information",
+    "h": "1. הגנה על מידע סודי"
+  },
+  {
+    "j": "29",
+    "e": "HTTPS encrypts data such as passwords, personal details, and payment information.",
+    "h": "HTTPS מצפין נתונים כגון סיסמאות, פרטים אישיים ומידע על תשלומים."
+  },
+  {
+    "j": "30",
+    "e": "This protects users from eavesdropping attacks, especially on public networks like cafés, airports, and hotels.",
+    "h": "זה מגן על משתמשים מפני מתקפות ציתות, במיוחד ברשתות ציבוריות כמו בתי קפה, נמלי תעופה ובתי מלון."
+  },
+  {
+    "j": "31",
+    "e": "Without encryption, sensitive information can be stolen in seconds.",
+    "h": "ללא הצפנה, מידע רגיש יכול להיגנב תוך שניות."
+  },
+  {
+    "j": "32",
+    "e": "2. Ensuring Data Integrity",
+    "h": "2. הבטחת שלמות הנתונים"
+  },
+  {
+    "j": "33",
+    "e": "HTTPS also helps ensure that the information sent between a user and a website is not altered during transmission.",
+    "h": "HTTPS גם עוזר להבטיח שהמידע שנשלח בין משתמש לאתר לא ישונה במהלך ההעברה."
+  },
+  {
+    "j": "34",
+    "e": "Attackers can sometimes modify unencrypted HTTP traffic to inject malicious code, advertisements, or fake content.",
+    "h": "תוקפים יכולים לעתים לשנות תעבורת HTTP לא מוצפנת כדי להזריק קוד זדוני, פרסומות או תוכן מזויף."
+  },
+  {
+    "j": "35",
+    "e": "HTTPS prevents this by verifying that the data arrives exactly as it was sent.",
+    "h": "HTTPS מונע זאת על ידי וידוא שהנתונים מגיעים בדיוק כפי שנשלחו."
+  },
+  {
+    "j": "36",
+    "e": "3. Building Trust and Authentication",
+    "h": "3. בניית אמון ואימות"
+  },
+  {
+    "j": "37",
+    "e": "When a website uses HTTPS, browsers display a padlock icon and verify the site's digital certificate.",
+    "h": "כאשר אתר משתמש ב-HTTPS, דפדפנים מציגים סמל של מנעול ומאמתים את התעודה הדיגיטלית של האתר."
+  },
+  {
+    "j": "38",
+    "e": "This helps users confirm that they are communicating with the real website and not a fake copy created by attackers.",
+    "h": "זה עוזר למשתמשים לאשר שהם מתקשרים עם האתר האמיתי ולא עם עותק מזויף שנוצר על ידי תוקפים."
+  },
+  {
+    "j": "39",
+    "e": "For businesses, HTTPS builds customer trust and shows that security is taken seriously.",
+    "h": "עבור עסקים, HTTPS בונה את אמון הלקוחות ומראה שהאבטחה נלקחת ברצינות."
+  },
+  {
+    "j": "40",
+    "e": "The Modern Internet",
+    "h": "האינטרנט המודרני"
+  },
+  {
+    "j": "41",
+    "e": "Today, HTTPS is considered the standard for all websites, not only banking or shopping sites.",
+    "h": "כיום, HTTPS נחשב לתקן עבור כל אתרי האינטרנט, לא רק אתרי בנקאות או קניות."
+  },
+  {
+    "j": "42",
+    "e": "Modern browsers such as Google Chrome and Mozilla Firefox warn users when they visit HTTP websites, labeling them as \"Not Secure.\" Search engines also favor HTTPS websites in search rankings, encouraging companies to make the switch.",
+    "h": "דפדפנים מודרניים כגון Google Chrome ו-Mozilla Firefox מזהירים משתמשים כאשר הם מבקרים באתרי HTTP, ומתייגים אותם כ-\"לא מאובטח\". מנועי חיפוש גם מעדיפים אתרי HTTPS בדירוגי החיפוש, מה שמעודד חברות לבצע את המעבר."
+  },
+  {
+    "j": "43",
+    "e": "The transition was not always easy.",
+    "h": "המעבר לא תמיד היה קל."
+  },
+  {
+    "j": "44",
+    "e": "Website owners had to obtain digital certificates, configure their servers, and sometimes update old systems.",
+    "h": "בעלי אתרים נדרשו להשיג תעודות דיגיטליות, להגדיר את השרתים שלהם ולפעמים לעדכן מערכות ישנות."
+  },
+  {
+    "j": "45",
+    "e": "However, tools such as Let's Encrypt made free SSL certificates widely available, helping millions of websites adopt HTTPS.",
+    "h": "עם זאת, כלים כגון Let's Encrypt הפכו תעודות SSL חינמיות לזמינות באופן נרחב, ועזרו למיליוני אתרים לאמץ HTTPS."
+  }
+];
+
+
+window.csharpJsArticleData = [
+  {"j":"📖","e":"C# and JavaScript: Understanding Compiled and Interpreted Languages","h":"C# ו-JavaScript: הבנת שפות מהודרות ומפורשות", "isHeader": true},
+  {"j":"🕰️","e":"A Brief Historical Background","h":"רקע היסטורי קצר", "isHeader": true},
+  {"j":"1","e":"JavaScript was created in 1995 by Brendan Eich during the early growth of the World Wide Web.","h":"JavaScript נוצרה בשנת 1995 על ידי ברנדן אייך במהלך הצמיחה המוקדמת של ה-World Wide Web."},
+  {"j":"2","e":"At the time, websites were mostly static pages containing text and images.","h":"באותה תקופה, אתרי אינטרנט היו לרוב דפים סטטיים שהכילו טקסט ותמונות."},
+  {"j":"3","e":"Browsers needed a lightweight scripting language that could run directly inside a web page and provide immediate interactivity.","h":"דפדפנים היו זקוקים לשפת סקריפטים קלילה שתוכל לרוץ ישירות בתוך דף אינטרנט ולספק אינטראקטיביות מיידית."},
+  {"j":"4","e":"JavaScript was designed to fulfill this need, allowing developers to respond to user actions without communicating with a server for every operation.","h":"JavaScript תוכננה כדי לענות על צורך זה, ולאפשר למפתחים להגיב לפעולות משתמש מבלי לתקשר עם שרת עבור כל פעולה."},
+  {"j":"5","e":"C# was introduced several years later, in 2000, by Microsoft as part of the .NET initiative.","h":"C# הוצגה מספר שנים מאוחר יותר, בשנת 2000, על ידי מיקרוסופט כחלק מיוזמת .NET."},
+  {"j":"6","e":"The language was designed to be modern, object-oriented, and suitable for large software systems.","h":"השפה תוכננה להיות מודרנית, מונחית עצמים ומתאימה למערכות תוכנה גדולות."},
+  {"j":"7","e":"Its creators wanted a language that combined productivity, reliability, and strong type checking while benefiting from the growing capabilities of managed runtime environments.","h":"יוצריה רצו שפה שתשלב פרודוקטיביות, אמינות ובדיקת טיפוסים חזקה, תוך כדי הפקת תועלת מהיכולות הגדלות של סביבות ריצה מנוהלות."},
+  {"j":"8","e":"Although both languages emerged during the rapid expansion of the Internet era, they were built with different execution models in mind, leading to important distinctions in how programs are processed and executed.","h":"למרות ששתי השפות צמחו במהלך ההתרחבות המהירה של עידן האינטרנט, הן נבנו מתוך מחשבה על מודלי ביצוע שונים, מה שהוביל להבדלים חשובים באופן שבו תוכניות מעובדות ומבוצעות."},
+  {"j":"🚀","e":"The Journey from Source Code to Execution","h":"המסע מקוד המקור לביצוע", "isHeader": true},
+  {"j":"9","e":"When a programmer writes code, the computer cannot understand it directly.","h":"כאשר מתכנת כותב קוד, המחשב אינו יכול להבין אותו ישירות."},
+  {"j":"10","e":"The source code must first be translated into machine instructions.","h":"יש לתרגם תחילה את קוד המקור להוראות מכונה."},
+  {"j":"11","e":"There are traditionally two approaches to this translation process:","h":"באופן מסורתי ישנן שתי גישות לתהליך תרגום זה:"},
+  {"j":"⚙️","e":"Compilation","h":"הידור (Compilation)", "isHeader": true},
+  {"j":"12","e":"In a compiled language, the source code is translated into another form before the program is executed.","h":"בשפה מהודרת, קוד המקור מתורגם לצורה אחרת לפני שהתוכנית מבוצעת."},
+  {"j":"13","e":"The process typically follows these stages: 1. Writing the source code. 2. Running a compiler. 3. Generating executable code. 4. Executing the resulting program.","h":"התהליך עוקב בדרך כלל אחר השלבים הבאים: 1. כתיבת קוד המקור. 2. הפעלת מהדר. 3. יצירת קוד בר-ביצוע. 4. ביצוע התוכנית המתקבלת."},
+  {"j":"14","e":"The compiler performs extensive analysis of the code before execution begins.","h":"המהדר מבצע ניתוח מקיף של הקוד לפני תחילת הביצוע."},
+  {"j":"15","e":"It checks syntax, validates data types, identifies many programming errors, and generates optimized output.","h":"הוא בודק תחביר, מאמת סוגי נתונים, מזהה שגיאות תכנות רבות ומייצר פלט אופטימלי."},
+  {"j":"16","e":"Because much of the analysis occurs before the program runs, compiled programs often achieve high performance and reliability.","h":"מכיוון שחלק גדול מהניתוח מתרחש לפני שהתוכנית רצה, תוכניות מהודרות משיגות לעיתים קרובות ביצועים ואמינות גבוהים."},
+  {"j":"🔍","e":"Interpretation","h":"פירוש (Interpretation)", "isHeader": true},
+  {"j":"17","e":"An interpreted language follows a different model.","h":"שפה מפורשת פועלת לפי מודל שונה."},
+  {"j":"18","e":"Instead of translating the entire program beforehand, an interpreter reads the source code and executes instructions during runtime.","h":"במקום לתרגם את התוכנית כולה מראש, מפרש (interpreter) קורא את קוד המקור ומבצע את ההוראות בזמן ריצה."},
+  {"j":"19","e":"The process usually looks like this: 1. Writing the source code. 2. Launching the interpreter. 3. Reading and executing instructions.","h":"התהליך נראה בדרך כלל כך: 1. כתיבת קוד המקור. 2. הפעלת המפרש. 3. קריאה וביצוע של ההוראות."},
+  {"j":"20","e":"This approach provides flexibility because changes can be tested immediately without a separate compilation step.","h":"גישה זו מספקת גמישות מכיוון שניתן לבדוק שינויים באופן מיידי ללא שלב הידור נפרד."},
+  {"j":"21","e":"However, because translation occurs during execution, interpreted programs have traditionally been slower than compiled programs.","h":"עם זאת, מכיוון שהתרגום מתרחש במהלך הביצוע, תוכניות מפורשות היו באופן מסורתי איטיות יותר מתוכניות מהודרות."},
+  {"j":"🏗️","e":"C# and the Compilation Process","h":"C# ותהליך ההידור", "isHeader": true},
+  {"j":"22","e":"C# is often described as a compiled language, but its compilation process is more sophisticated than the traditional model used by older languages.","h":"C# מתוארת לעיתים קרובות כשפה מהודרת, אך תהליך ההידור שלה מתוחכם יותר מהמודל המסורתי המשמש שפות ישנות יותר."},
+  {"j":"23","e":"When a C# program is compiled, the compiler does not immediately generate machine code.","h":"כאשר תוכנית C# מהודרת, המהדר אינו מייצר קוד מכונה באופן מיידי."},
+  {"j":"24","e":"Instead, it produces an intermediate representation called Intermediate Language (IL).","h":"במקום זאת, הוא מייצר ייצוג ביניים הנקרא שפת ביניים (IL)."},
+  {"j":"25","e":"This creates a two-stage execution process:","h":"זה יוצר תהליך ביצוע דו-שלבי:"},
+  {"j":"26","e":"Stage 1: Compilation","h":"שלב 1: הידור", "isHeader": true},
+  {"j":"27","e":"The C# compiler analyzes the source code and converts it into IL.","h":"מהדר ה-C# מנתח את קוד המקור וממיר אותו ל-IL."},
+  {"j":"28","e":"During this stage, many potential errors are detected, including: Syntax mistakes, Type mismatches, Invalid references, Structural problems within the code.","h":"במהלך שלב זה, מתגלות שגיאות פוטנציאליות רבות, כולל: טעויות תחביר, אי-התאמות של סוגי נתונים, הפניות לא חוקיות, ובעיות מבניות בתוך הקוד."},
+  {"j":"29","e":"The result is a portable assembly rather than a platform-specific executable.","h":"התוצאה היא הרכבה ניידת (portable assembly) ולא קובץ הפעלה ספציפי לפלטפורמה."},
+  {"j":"30","e":"Stage 2: Just-In-Time Compilation","h":"שלב 2: הידור בדיוק בזמן (Just-In-Time Compilation)", "isHeader": true},
+  {"j":"31","e":"When the program starts running, the .NET runtime uses a Just-In-Time (JIT) compiler to translate the IL into native machine code.","h":"כאשר התוכנית מתחילה לרוץ, סביבת הריצה של .NET משתמשת במהדר Just-In-Time (JIT) כדי לתרגם את ה-IL לקוד מכונה טבעי."},
+  {"j":"32","e":"This means that C# code experiences both compilation and runtime optimization.","h":"משמעות הדבר היא שקוד C# עובר גם הידור וגם אופטימיזציה בזמן ריצה."},
+  {"j":"33","e":"The JIT compiler can analyze the current hardware environment and generate machine instructions optimized for that specific system.","h":"מהדר ה-JIT יכול לנתח את סביבת החומרה הנוכחית וליצור הוראות מכונה מותאמות לאותה מערכת ספציפית."},
+  {"j":"34","e":"As a result, C# combines many advantages of traditional compilation with the flexibility of a managed runtime environment.","h":"כתוצאה מכך, C# משלבת יתרונות רבים של הידור מסורתי עם הגמישות של סביבת ריצה מנוהלת."},
+  {"j":"🌐","e":"JavaScript and Interpretation","h":"JavaScript ופירוש", "isHeader": true},
+  {"j":"35","e":"JavaScript historically followed a pure interpretation model.","h":"מבחינה היסטורית, JavaScript פעלה לפי מודל של פירוש טהור."},
+  {"j":"36","e":"Early web browsers would read JavaScript source code line by line and execute instructions as they appeared.","h":"דפדפני אינטרנט מוקדמים היו קוראים את קוד המקור של JavaScript שורה אחר שורה ומבצעים את ההוראות כפי שהופיעו."},
+  {"j":"37","e":"This allowed developers to modify code and immediately see the results without any compilation step.","h":"זה איפשר למפתחים לשנות קוד ולראות מיד את התוצאות ללא כל שלב הידור."},
+  {"j":"38","e":"For many years, this behavior defined JavaScript as a classic interpreted language.","h":"במשך שנים רבות, התנהגות זו הגדירה את JavaScript כשפה מפורשת קלאסית."},
+  {"j":"39","e":"However, modern JavaScript engines have become significantly more advanced.","h":"עם זאת, מנועי JavaScript מודרניים הפכו למתקדמים הרבה יותר."},
+  {"j":"40","e":"Today's browsers use sophisticated execution engines that often include: Parsing, Optimization, Bytecode generation, Just-In-Time compilation.","h":"דפדפנים של ימינו משתמשים במנועי ביצוע מתוחכמים שלעיתים קרובות כוללים: ניתוח, אופטימיזציה, יצירת Bytecode, והידור Just-In-Time."},
+  {"j":"41","e":"Rather than interpreting every instruction repeatedly, modern engines analyze frequently executed sections of code and compile them into optimized machine code.","h":"במקום לפרש כל הוראה שוב ושוב, מנועים מודרניים מנתחים קטעי קוד המבוצעים בתדירות גבוהה ומהדרים אותם לקוד מכונה אופטימלי."},
+  {"j":"42","e":"This process dramatically improves performance.","h":"תהליך זה משפר את הביצועים באופן דרמטי."},
+  {"j":"43","e":"As a result, modern JavaScript is no longer purely interpreted.","h":"כתוצאה מכך, JavaScript מודרנית כבר אינה מפורשת באופן טהור."},
+  {"j":"44","e":"It uses a hybrid execution model that combines interpretation with dynamic compilation techniques.","h":"היא משתמשת במודל ביצוע היברידי המשלב פירוש עם טכניקות הידור דינמיות."},
+  {"j":"🛡️","e":"Advantages of Early Error Detection","h":"היתרונות של גילוי שגיאות מוקדם", "isHeader": true},
+  {"j":"45","e":"One significant difference between C# and JavaScript has traditionally been the stage at which errors are discovered.","h":"הבדל משמעותי אחד בין C# ל-JavaScript היה באופן מסורתי השלב שבו מתגלות שגיאות."},
+  {"j":"46","e":"Because C# performs extensive compilation before execution, many problems are detected before the application runs.","h":"מכיוון ש-C# מבצעת הידור מקיף לפני הביצוע, בעיות רבות מתגלות לפני שהיישום רץ."},
+  {"j":"47","e":"For example, assigning a text value to a variable intended for numerical data will typically generate a compilation error.","h":"לדוגמה, הקצאת ערך טקסט למשתנה המיועד לנתונים מספריים תייצר בדרך כלל שגיאת הידור."},
+  {"j":"48","e":"In contrast, JavaScript historically delayed many checks until runtime.","h":"לעומת זאת, מבחינה היסטורית JavaScript דחתה בדיקות רבות עד לזמן הריצה."},
+  {"j":"49","e":"Some errors would only appear when a specific section of code was executed.","h":"שגיאות מסוימות היו מופיעות רק כאשר קטע קוד ספציפי היה מבוצע."},
+  {"j":"50","e":"This distinction influenced how developers approached testing and debugging.","h":"הבחנה זו השפיעה על האופן שבו מפתחים ניגשו לבדיקות וניפוי שגיאות."},
+  {"j":"51","e":"Compilation acted as an additional verification stage, helping programmers identify mistakes earlier in the development process.","h":"ההידור פעל כשלב אימות נוסף, שעזר למתכנתים לזהות טעויות מוקדם יותר בתהליך הפיתוח."},
+  {"j":"52","e":"Although modern JavaScript development tools provide improved static analysis, the language still maintains a more dynamic nature than C#.","h":"למרות שכלי פיתוח מודרניים של JavaScript מספקים ניתוח סטטי משופר, השפה עדיין שומרת על אופי דינמי יותר מ-C#."},
+  {"j":"⏱️","e":"Performance Considerations","h":"שיקולי ביצועים", "isHeader": true},
+  {"j":"53","e":"Compilation has long been associated with higher performance.","h":"הידור נקשר זמן רב לביצועים גבוהים יותר."},
+  {"j":"54","e":"Because compiled code is translated before execution, the processor can execute instructions more directly.","h":"מכיוון שקוד מהודר מתורגם לפני הביצוע, המעבד יכול לבצע הוראות באופן ישיר יותר."},
+  {"j":"55","e":"Interpreted code, on the other hand, traditionally required continuous translation while running, introducing additional overhead.","h":"קוד מפורש, לעומת זאת, דרש באופן מסורתי תרגום מתמשך בזמן הריצה, מה שהוסיף תקורה (overhead) נוספת."},
+  {"j":"56","e":"Modern runtime environments have reduced this gap considerably.","h":"סביבות ריצה מודרניות צמצמו את הפער הזה במידה ניכרת."},
+  {"j":"57","e":"Just-In-Time compilation allows both C# and JavaScript to benefit from runtime optimization.","h":"הידור Just-In-Time מאפשר גם ל-C# וגם ל-JavaScript להפיק תועלת מאופטימיזציה בזמן ריצה."},
+  {"j":"58","e":"Nevertheless, C# generally performs more extensive analysis before execution begins, while JavaScript engines often make optimization decisions dynamically as the program runs.","h":"אף על פי כן, C# בדרך כלל מבצעת ניתוח מקיף יותר לפני תחילת הביצוע, בעוד שמנועי JavaScript מקבלים לעיתים קרובות החלטות אופטימיזציה באופן דינמי בזמן ריצת התוכנית."},
+  {"j":"59","e":"This illustrates how the traditional distinction between compiled and interpreted languages has become increasingly blurred.","h":"זה ממחיש כיצד ההבחנה המסורתית בין שפות מהודרות למפורשות הפכה למטושטשת יותר ויותר."}
+];
+
+
+window.binaryArticleData = [
+  {j:"🔢", e:"The Binary Counting", h:"הספירה הבינארית", isHeader: true},
+  {j:"🌍", e:"Today, almost every digital device in the world—from smartphones and laptops to satellites and medical equipment—relies on the binary number system.", h:"כיום, כמעט כל מכשיר דיגיטלי בעולם — מסמארטפונים ומחשבים ניידים ועד לוויינים וציוד רפואי — מסתמך על מערכת המספרים הבינארית."},
+  {j:"🔗", e:"Although binary uses only two symbols, 0 and 1, it has become the foundation of modern computing and communication technologies.", h:"למרות שהשיטה הבינארית משתמשת רק בשני סמלים, 0 ו-1, היא הפכה לבסיס של טכנולוגיות מחשוב ותקשורת מודרניות."},
+  {j:"🕰️", e:"The idea of representing numbers using only two digits is much older than computers.", h:"הרעיון של ייצוג מספרים באמצעות שתי ספרות בלבד הוא עתיק הרבה יותר ממחשבים."},
+  {j:"📜", e:"Ancient civilizations, including some Chinese and Indian scholars, explored concepts similar to binary.", h:"תרבויות עתיקות, כולל כמה מלומדים סינים והודים, חקרו מושגים דומים לבינאריות."},
+  {j:"👨‍🔬", e:"However, the modern binary system was formally described in 1703 by the German mathematician and philosopher Gottfried Wilhelm Leibniz.", h:"עם זאת, המערכת הבינארית המודרנית תוארה רשמית בשנת 1703 על ידי המתמטיקאי והפילוסוף הגרמני גוטפריד וילהלם לייבניץ."},
+  {j:"📖", e:"In his work Explication de l'Arithmétique Binaire, Leibniz demonstrated how any number could be represented using only 0 and 1.", h:"בעבודתו 'הסבר האריתמטיקה הבינארית', לייבניץ הדגים כיצד ניתן לייצג כל מספר באמצעות 0 ו-1 בלבד."},
+  {j:"✨", e:"He was fascinated by the simplicity of the system and even connected it to philosophical ideas about creation from nothing, where 0 represented nothingness and 1 represented existence.", h:"הוא היה מוקסם מהפשטות של המערכת ואף קישר אותה לרעיונות פילוסופיים על בריאה יש מאין, כאשר 0 ייצג את האין ו-1 ייצג את היש."},
+  {j:"🧐", e:"At first, binary was mainly a mathematical curiosity.", h:"בתחילה, הבינאריות הייתה בעיקר סקרנות מתמטית."},
+  {j:"🚀", e:"The real breakthrough came more than two centuries later.", h:"פריצת הדרך האמיתית הגיעה יותר ממאתיים שנה לאחר מכן."},
+  {j:"⚡", e:"During the 1930s, American engineer and mathematician Claude Shannon discovered that binary numbers could be perfectly matched with electrical circuits.", h:"במהלך שנות ה-30, המהנדס והמתמטיקאי האמריקאי קלוד שאנון גילה שניתן להתאים באופן מושלם מספרים בינאריים למעגלים חשמליים."},
+  {j:"🎛️", e:"A switch can be either OFF or ON, a wire can have low voltage or high voltage, and a transistor can block or allow electrical current.", h:"מתג יכול להיות כבוי או דלוק, לחוט יכול להיות מתח נמוך או מתח גבוה, וטרנזיסטור יכול לחסום או לאפשר זרם חשמלי."},
+  {j:"💻", e:"These two stable states made binary an ideal choice for electronic devices.", h:"שני המצבים היציבים הללו הפכו את השיטה הבינארית לבחירה אידיאלית עבור מכשירים אלקטרוניים."},
+  {j:"🤔", e:"Many people wonder that 0 means OFF and 1 means ON.", h:"אנשים רבים חושבים ש-0 אומר כבוי ו-1 אומר דלוק."},
+  {j:"🧑‍🤝‍🧑", e:"In reality, this was not a universal rule created by a single person.", h:"במציאות, זה לא היה כלל אוניברסלי שנוצר על ידי אדם אחד."},
+  {j:"🛠️", e:"Engineers needed symbols to represent two different states, and the numbers 0 and 1 were the simplest choice.", h:"מהנדסים היו זקוקים לסמלים כדי לייצג שני מצבים שונים, והמספרים 0 ו-1 היו הבחירה הפשוטה ביותר."},
+  {j:"📡", e:"Generally, 0 represents the absence of a signal, while 1 represents the presence of a signal.", h:"באופן כללי, 0 מייצג היעדר אות, בעוד ש-1 מייצג נוכחות של אות."},
+  {j:"🔄", e:"However, in some electronic systems the actual voltage values may be reversed, meaning a low voltage can represent 1 and a high voltage can represent 0.", h:"עם זאת, במערכות אלקטרוניות מסוימות ערכי המתח בפועל עשויים להיות הפוכים, כלומר מתח נמוך יכול לייצג 1 ומתח גבוה יכול לייצג 0."},
+  {j:"🎯", e:"What matters is that there are two clearly distinguishable states.", h:"מה שחשוב הוא שיש שני מצבים הניתנים להבחנה ברורה."},
+  {j:"🔋", e:"In many digital circuits, a logical 0 is represented by a low voltage (close to 0 volts) and a logical 1 is represented by a higher voltage.", h:"במעגלים דיגיטליים רבים, 0 לוגי מיוצג על ידי מתח נמוך (קרוב ל-0 וולט) ו-1 לוגי מיוצג על ידי מתח גבוה יותר."},
+  {j:"⚙️", e:"However, the exact voltage values depend on the specific technology being used.", h:"עם זאת, ערכי המתח המדויקים תלויים בטכנולוגיה הספציפית בה משתמשים."},
+  {j:"🔌", e:"For example, older TTL circuits often treated voltages below about 0.8 volts as 0 and voltages above about 2 volts as 1, while modern CMOS circuits may operate with supply voltages of 3.3 volts, 1.8 volts, or even lower.", h:"לדוגמה, מעגלי TTL ישנים התייחסו לעיתים קרובות למתחים מתחת לכ-0.8 וולט כ-0 ולמתחים מעל לכ-2 וולט כ-1, בעוד שמעגלי CMOS מודרניים עשויים לפעול עם מתחי אספקה של 3.3 וולט, 1.8 וולט או אפילו פחות."},
+  {j:"🔀", e:"Some systems may even reverse these assignments using active-low logic.", h:"מערכות מסוימות עשויות אפילו להפוך את ההקצאות הללו באמצעות לוגיקה שלילית (active-low)."},
+  {j:"⚖️", e:"Therefore, the important factor is not the exact voltage value itself but the existence of two stable and distinguishable electrical states.", h:"לכן, הגורם החשוב אינו ערך המתח המדויק עצמו אלא קיומם של שני מצבים חשמליים יציבים וניתנים להבחנה."},
+  {j:"💡", e:"It is also important to distinguish between voltage and electric current.", h:"חשוב גם להבחין בין מתח לזרם חשמלי."},
+  {j:"🌊", e:"Voltage is the electrical potential difference that \"pushes\" electrons through a circuit, while current is the actual flow of electrons.", h:"מתח הוא הפרש הפוטנציאלים החשמלי ש\"דוחף\" אלקטרונים דרך מעגל, בעוד שזרם הוא הזרימה בפועל של האלקטרונים."},
+  {j:"🚰", e:"A common analogy is water flowing through a pipe: voltage is similar to the water pressure, and current is similar to the amount of water flowing.", h:"אנלוגיה נפוצה היא מים הזורמים בצינור: המתח דומה ללחץ המים, והזרם דומה לכמות המים הזורמים."},
+  {j:"🏢", e:"The electrical power supplied by utility companies to homes and businesses provides both voltage and current.", h:"ההספק החשמלי שמסופק על ידי חברות החשמל לבתים ועסקים מספק גם מתח וגם זרם."},
+  {j:"🏠", e:"For example, household outlets receive a fixed voltage, while the amount of current depends on how much electricity a device consumes.", h:"לדוגמה, שקעים ביתיים מקבלים מתח קבוע, בעוד שכמות הזרם תלויה בכמה חשמל המכשיר צורך."},
+  {j:"🖥️", e:"Inside computers and other digital devices, electronic circuits use carefully controlled voltages and currents to represent and process binary information.", h:"בתוך מחשבים ומכשירים דיגיטליים אחרים, מעגלים אלקטרוניים משתמשים במתחים וזרמים מבוקרים בקפידה כדי לייצג ולעבד מידע בינארי."},
+  {j:"🛡️", e:"One reason binary became so important is reliability.", h:"סיבה אחת לכך שהשיטה הבינארית הפכה לכל כך חשובה היא אמינות."},
+  {j:"🧩", e:"Electronic components are never perfect.", h:"רכיבים אלקטרוניים אינם מושלמים לעולם."},
+  {j:"🌡️", e:"Small fluctuations in voltage can occur because of heat, interference, or manufacturing differences.", h:"תנודות קטנות במתח יכולות להתרחש בגלל חום, הפרעות או הבדלי ייצור."},
+  {j:"📉", e:"If computers used ten different voltage levels to represent the decimal digits 0 through 9 directly, it would be much harder to determine which value was intended.", h:"אם מחשבים היו משתמשים בעשר רמות מתח שונות כדי לייצג ישירות את הספרות העשרוניות 0 עד 9, היה הרבה יותר קשה לקבוע לאיזה ערך התכוונו."},
+  {j:"✅", e:"With only two states, devices can easily distinguish between them, reducing errors and increasing reliability.", h:"עם שני מצבים בלבד, מכשירים יכולים להבחין ביניהם בקלות, מה שמפחית שגיאות ומגדיל את האמינות."},
+  {j:"🧱", e:"Binary numbers also made possible the development of logic gates, one of the most important building blocks of modern computers.", h:"מספרים בינאריים גם אפשרו את הפיתוח של שערים לוגיים, אחד מאבני הבניין החשובות ביותר של מחשבים מודרניים."},
+  {j:"🧠", e:"Logic gates are tiny electronic circuits that perform simple decisions based on binary inputs.", h:"שערים לוגיים הם מעגלים אלקטרוניים זעירים המבצעים החלטות פשוטות המבוססות על קלטים בינאריים."},
+  {j:"🚦", e:"They operate using only 0s and 1s and follow the rules of Boolean logic.", h:"הם פועלים באמצעות 0 ו-1 בלבד ועוקבים אחר הכללים של הלוגיקה הבוליאנית."},
+  {j:"✖️", e:"For example, an AND gate produces an output of 1 only when both inputs are 1.", h:"לדוגמה, שער AND מפיק פלט של 1 רק כאשר שני הקלטים הם 1."},
+  {j:"➕", e:"An OR gate produces 1 when at least one input is 1.", h:"שער OR מפיק 1 כאשר לפחות קלט אחד הוא 1."},
+  {j:"🔂", e:"A NOT gate reverses the input, turning 1 into 0 and 0 into 1.", h:"שער NOT הופך את הקלט, והופך 1 ל-0 ו-0 ל-1."},
+  {j:"🏗️", e:"By combining these simple gates, engineers can build circuits capable of performing arithmetic operations, making decisions, storing information, and controlling complex systems.", h:"על ידי שילוב השערים הפשוטים הללו, מהנדסים יכולים לבנות מעגלים המסוגלים לבצע פעולות אריתמטיות, לקבל החלטות, לאחסן מידע ולשלוט במערכות מורכבות."},
+  {j:"🔬", e:"The invention of the transistor in the mid-twentieth century allowed millions and later billions of logic gates to be placed inside a single processor.", h:"המצאת הטרנזיסטור באמצע המאה העשרים אפשרה למקם מיליוני, ומאוחר יותר מיליארדי, שערים לוגיים בתוך מעבד בודד."},
+  {j:"⏱️", e:"Every calculation performed by a computer—from adding two numbers to displaying a webpage—ultimately consists of enormous numbers of logic-gate operations happening every second.", h:"כל חישוב המבוצע על ידי מחשב — מחיבור שני מספרים ועד להצגת דף אינטרנט — מורכב בסופו של דבר ממספר עצום של פעולות שערים לוגיים המתרחשות בכל שנייה."},
+  {j:"🕸️", e:"In fact, a modern processor may contain billions of transistors acting as switches that continuously process binary data through interconnected logic gates.", h:"למעשה, מעבד מודרני עשוי להכיל מיליארדי טרנזיסטורים הפועלים כמתגים, המעבדים ללא הרף נתונים בינאריים דרך שערים לוגיים המחוברים ביניהם."},
+  {j:"🤝", e:"An interesting historical connection is that the principles behind logic gates are closely related to Boolean algebra, developed by the English mathematician and philosopher George Boole in the nineteenth century.", h:"קשר היסטורי מעניין הוא שהעקרונות מאחורי שערים לוגיים קשורים קשר הדוק לאלגברה בוליאנית, שפותחה על ידי המתמטיקאי והפילוסוף האנגלי ג'ורג' בול במאה התשע-עשרה."},
+  {j:"📏", e:"Boole created a mathematical system based on true and false values, long before electronic computers existed.", h:"בול יצר מערכת מתמטית המבוססת על ערכי אמת ושקר, הרבה לפני שמחשבים אלקטרוניים היו קיימים."},
+  {j:"🌉", e:"Decades later, Claude Shannon showed that Boolean algebra could be implemented using electrical circuits, laying the foundation for modern digital electronics.", h:"עשרות שנים לאחר מכן, קלוד שאנון הראה שניתן ליישם אלגברה בוליאנית באמצעות מעגלים חשמליים, ובכך הניח את היסודות לאלקטרוניקה הדיגיטלית המודרנית."},
+  {j:"🗣️", e:"Another interesting story about binary involves early computer engineers.", h:"סיפור מעניין נוסף על הבינאריות קשור למהנדסי המחשבים הראשונים."},
+  {j:"📻", e:"When they were building the first electronic computers in the 1940s and 1950s, they discovered that vacuum tubes and later transistors naturally worked best with two stable states.", h:"כאשר הם בנו את המחשבים האלקטרוניים הראשונים בשנות ה-40 וה-50 של המאה ה-20, הם גילו ששפופרות ריק (ואקום) ומאוחר יותר טרנזיסטורים פעלו בצורה הטבעית הטובה ביותר עם שני מצבים יציבים."},
+  {j:"🔑", e:"This meant that a mathematical idea proposed centuries earlier by Leibniz and the logical principles developed by George Boole turned out to be exactly what electronic technology needed.", h:"המשמעות הייתה שרעיון מתמטי שהוצע מאות שנים קודם לכן על ידי לייבניץ והעקרונות הלוגיים שפותחו על ידי ג'ורג' בול התגלו בדיוק כדבר שהטכנולוגיה האלקטרונית הייתה צריכה."},
+  {j:"🌐", e:"What seemed like abstract theories became the language and logic of the digital age.", h:"מה שנראה כמו תיאוריות מופשטות הפך לשפה וללוגיקה של העידן הדיגיטלי."},
+  {j:"🎵", e:"Today, every letter, image, song, and video stored on a computer is ultimately represented as long sequences of 0s and 1s.", h:"כיום, כל אות, תמונה, שיר וסרטון המאוחסנים במחשב מיוצגים בסופו של דבר כרצפים ארוכים של 0 ו-1."},
+  {j:"🔠", e:"For example, the letter \"A\" is stored as the binary value 01000001 in the ASCII encoding system.", h:"לדוגמה, האות \"A\" מאוחסנת כערך הבינארי 01000001 במערכת הקידוד ASCII."},
+  {j:"📱", e:"Even the text you are reading right now is represented internally as binary data and processed through countless logic gates inside a computer's processor.", h:"אפילו הטקסט שאתם קוראים ממש עכשיו מיוצג באופן פנימי כנתונים בינאריים ומעובד דרך אינספור שערים לוגיים בתוך המעבד של המחשב."},
+  {j:"🏁", e:"In conclusion, binary numbers are essential because they provide a simple, reliable, and efficient way for electronic devices to process information.", h:"לסיכום, מספרים בינאריים הם חיוניים מכיוון שהם מספקים דרך פשוטה, אמינה ויעילה עבור מכשירים אלקטרוניים לעבד מידע."},
+  {j:"🏛️", e:"Developed mathematically by Leibniz, strengthened by the logical work of George Boole, and connected to electronic circuits by Claude Shannon, the binary system transformed from a theoretical concept into the foundation of modern computing.", h:"המערכת הבינארית שפותחה מתמטית על ידי לייבניץ, חוזקה על ידי העבודה הלוגית של ג'ורג' בול וחוברה למעגלים חשמליים על ידי קלוד שאנון, הפכה ממושג תיאורטי לבסיס של המחשוב המודרני."},
+  {j:"💾", e:"Together with logic gates, binary numbers enable computers to perform calculations, store information, and execute programs.", h:"יחד עם שערים לוגיים, מספרים בינאריים מאפשרים למחשבים לבצע חישובים, לאחסן מידע ולהריץ תוכניות."},
+  {j:"🌌", e:"Without binary numbers and logic gates, the digital world as we know it would not exist.", h:"ללא מספרים בינאריים ושערים לוגיים, העולם הדיגיטלי כפי שאנו מכירים אותו לא היה קיים."}
+];
+
+window.binaryArticleSummary = {
+    e: "The binary system, using only 0s and 1s, is the fundamental language of all digital devices. Originating from historical figures like Gottfried Wilhelm Leibniz and George Boole, it allows computers to process complex data through simple electrical states. Claude Shannon later proved how electrical switches could execute these logical operations, forming the basis of modern circuits. Today, billions of microscopic transistors rely on binary logic to store and compute everything in the digital age. Understanding binary is essential to grasping how our modern world operates.",
+    h: "המערכת הבינארית, המשתמשת רק ב-0 וב-1, היא שפת הבסיס של כל המכשירים הדיגיטליים. היא פותחה על ידי דמויות היסטוריות כמו גוטפריד לייבניץ וג'ורג' בול, ומאפשרת למחשבים לעבד נתונים מורכבים באמצעות מצבים חשמליים פשוטים. קלוד שאנון הוכיח כיצד מתגים חשמליים יכולים לבצע פעולות לוגיות אלו, מה שהיווה את הבסיס למעגלים מודרניים. כיום, מיליארדי טרנזיסטורים מסתמכים על לוגיקה בינארית כדי לחשב הכל. הבנת הבינארית חיונית להבנת האופן שבו העולם המודרני פועל."
+};
+
+window.csharpJsArticleSummary = {
+    e: "Programming languages are generally divided into compiled and interpreted languages, each with distinct advantages. C# is a compiled language that translates code into machine language before execution, offering high performance and early error detection. JavaScript is an interpreted language executed directly by the browser line-by-line, providing flexibility and rapid development. While C# is ideal for robust enterprise applications, JavaScript excels in creating dynamic and interactive web experiences. Understanding both paradigms allows developers to choose the right tool for their software projects.",
+    h: "שפות תכנות נחלקות בדרך כלל לשפות מהודרות (Compiled) ושפות מפורשות (Interpreted), שלכל אחת יתרונות ברורים. C# היא שפה מהודרת המתרגמת את הקוד לשפת מכונה לפני ההרצה, מה שמעניק ביצועים גבוהים ואיתור שגיאות מוקדם. JavaScript היא שפה מפורשת המורצת ישירות על ידי הדפדפן שורה אחר שורה, ומספקת גמישות ופיתוח מהיר. בעוד ש-C# אידיאלית לאפליקציות ארגוניות חזקות, JavaScript מצטיינת ביצירת חוויות רשת דינמיות ואינטראקטיביות. הבנת שתי הגישות מאפשרת למפתחים לבחור את הכלי הנכון לפרויקטים שלהם."
+};
+
+window.httpsArticleSummary = {
+    e: "The transition from HTTP to HTTPS is a crucial step in securing modern web communications. HTTP transmits data in plain text, making it vulnerable to interception and tampering by malicious actors. HTTPS solves this by using encryption protocols like TLS, ensuring that data traveling between the user and the server remains confidential. It also provides authentication, verifying the identity of the website to prevent impersonation attacks. Today, HTTPS is the standard for almost all websites, protecting sensitive user information across the internet.",
+    h: "המעבר מ-HTTP ל-HTTPS הוא צעד קריטי באבטחת תקשורת מודרנית ברשת. HTTP מעביר נתונים בטקסט גלוי, מה שהופך אותם לפגיעים ליירוט ושינוי על ידי גורמים זדוניים. HTTPS פותר זאת על ידי שימוש בפרוטוקולי הצפנה כמו TLS, המבטיחים שהנתונים העוברים בין המשתמש לשרת יישארו חסויים. הוא גם מספק אימות, המוודא את זהות האתר כדי למנוע מתקפות התחזות. כיום, HTTPS הוא התקן כמעט לכל האתרים, המגן על מידע רגיש של משתמשים ברחבי האינטרנט."
+};
+
+window.ciaTriadArticleSummary = {
+    e: "The CIA Triad is a fundamental model in information security consisting of Confidentiality, Integrity, and Availability. Confidentiality ensures that sensitive information is accessed only by authorized individuals, often using encryption and passwords. Integrity guarantees that data remains accurate and unaltered during storage and transmission. Availability ensures that systems and data are reliably accessible to authorized users when needed. Together, these three pillars form the core framework for designing secure systems and protecting digital assets.",
+    h: "משולש ה-CIA הוא מודל בסיסי באבטחת מידע המורכב מסודיות (Confidentiality), שלמות (Integrity) וזמינות (Availability). סודיות מבטיחה שמידע רגיש נגיש רק לאנשים מורשים, לרוב בעזרת הצפנה וסיסמאות. שלמות מבטיחה שהנתונים נשארים מדויקים וללא שינוי במהלך אחסון והעברה. זמינות מבטיחה שמערכות ונתונים נגישים באופן אמין למשתמשים מורשים בעת הצורך. יחד, שלושת עמודי התווך הללו מהווים את המסגרת המרכזית לתכנון מערכות מאובטחות והגנה על נכסים דיגיטליים."
+};
+
+window.unseenArticleSummary = {
+    e: "An Operating System is the essential software that manages hardware resources and provides a platform for running applications. It acts as an invisible bridge between the user and the computer's physical components. Key functions include managing memory, controlling input and output devices, and scheduling processes. Without an operating system, every application would need to write its own code to interact with the hardware. From smartphones to supercomputers, operating systems are the unseen force powering modern computing.",
+    h: "מערכת הפעלה היא התוכנה החיונית המנהלת משאבי חומרה ומספקת פלטפורמה להרצת אפליקציות. היא פועלת כגשר בלתי נראה בין המשתמש לרכיבים הפיזיים של המחשב. תפקידיה העיקריים כוללים ניהול זיכרון, שליטה בהתקני קלט ופלט, ותזמון תהליכים. ללא מערכת הפעלה, כל אפליקציה הייתה צריכה לכתוב קוד משלה כדי לתקשר עם החומרה. מסמארטפונים ועד מחשבי-על, מערכות הפעלה הן הכוח הנסתר המניע את המחשוב המודרני."
+};
+
+
+window.articleParagraphs = {
+    'week8': [
+        [0, 1, 2],

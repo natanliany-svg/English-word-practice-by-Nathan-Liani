@@ -857,6 +857,98 @@ window.unseenArticleData = [
     {j:"🚀",e:"From the creation of Unix to the operating systems running today's smartphones and cloud servers, the evolution of operating systems has played a crucial role in shaping the digital world we know today.",h:"מיצירת יוניקס ועד למערכות ההפעלה המריצות את הסמארטפונים ושרתי הענן של היום, לאבולוציה של מערכות ההפעלה היה תפקיד מכריע בעיצוב העולם הדיגיטלי שאנו מכירים כיום."}
 ];
 
+window.week16ArticleData = [
+    { e: "CPR in Adults and Children and Treatment of Choking", h: "החייאה במבוגרים ובילדים וטיפול בחנק", isHeader: true },
+    { e: "Every year, thousands of lives are saved because ordinary people know how to perform cardiopulmonary resuscitation (CPR) and how to help someone who is choking.", h: "מדי שנה, אלפי חיים ניצלים כי אנשים רגילים יודעים כיצד לבצע החייאה לבבית-ריאתית (CPR) וכיצד לעזור למישהו שנחנק.", isHeader: false },
+    { e: "Cardiac arrest can happen suddenly to adults or children, and without immediate action, the brain begins to suffer permanent damage within only a few minutes.", h: "דום לב יכול לקרות לפתע למבוגרים או לילדים, וללא פעולה מיידית, המוח מתחיל לסבול מנזק תמידי תוך דקות ספורות.", isHeader: false },
+    { e: "Learning the basic principles of CPR and choking treatment allows bystanders to provide lifesaving assistance until professional medical personnel arrive.", h: "למידת העקרונות הבסיסיים של החייאה וטיפול בחנק מאפשרת לעוברי אורח לספק סיוע מציל חיים עד להגעת צוות רפואי מקצועי.", isHeader: false },
+    { e: "What Is CPR?", h: "מהי החייאה?", isHeader: true },
+    { e: "Cardiopulmonary resuscitation, commonly known as CPR, is an emergency procedure used when a person's heart has stopped beating effectively or when they are no longer breathing normally.", h: "החייאה לבבית-ריאתית, הידועה בכינוי CPR, היא הליך חירום המשמש כאשר ליבו של אדם הפסיק לפעום ביעילות או כאשר אינו נושם כרגיל.", isHeader: false },
+    { e: "The goal of CPR is to maintain blood circulation and deliver oxygen to vital organs, especially the brain and heart, until advanced medical treatment becomes available.", h: "מטרת ההחייאה היא לשמור על מחזור הדם ולספק חמצן לאיברים חיוניים, במיוחד למוח וללב, עד שטיפול רפואי מתקדם יהיה זמין.", isHeader: false },
+    { e: "Modern CPR combines two essential actions: Chest compressions to keep blood circulating, and Rescue breaths, when appropriate, to provide oxygen.", h: "החייאה מודרנית משלבת שתי פעולות חיוניות: לחיצות חזה כדי לשמור על זרימת הדם, והנשמות, כאשר מתאים, כדי לספק חמצן.", isHeader: false },
+    { e: "Studies have shown that immediate CPR can significantly increase a person's chance of survival after cardiac arrest.", h: "מחקרים הראו שהחייאה מיידית יכולה להגדיל משמעותית את סיכויי ההישרדות של אדם לאחר דום לב.", isHeader: false },
+    { e: "CPR for Adults", h: "החייאה למבוגרים", isHeader: true },
+    { e: "Before beginning CPR, the rescuer should first ensure that the scene is safe.", h: "לפני תחילת ההחייאה, על המציל לוודא תחילה שהזירה בטוחה.", isHeader: false },
+    { e: "The next step is to check whether the person responds by speaking loudly and gently tapping the shoulders.", h: "השלב הבא הוא לבדוק האם האדם מגיב על ידי דיבור בקול רם וטפיחה קלה על הכתפיים.", isHeader: false },
+    { e: "If there is no response and the person is not breathing normally, emergency medical services should be called immediately.", h: "אם אין תגובה והאדם אינו נושם כרגיל, יש להזעיק מיד את שירותי רפואת החירום.", isHeader: false },
+    { e: "Chest compressions are performed by placing both hands in the center of the chest.", h: "לחיצות חזה מתבצעות על ידי הנחת שתי הידיים במרכז החזה.", isHeader: false },
+    { e: "The rescuer should push hard and fast at a rate of about 100-120 compressions per minute, allowing the chest to return to its normal position after each compression.", h: "על המציל לדחוף חזק ומהר בקצב של כ-100 עד 120 לחיצות בדקה, ולתת לחזה לחזור למצבו הרגיל לאחר כל לחיצה.", isHeader: false },
+    { e: "The recommended compression depth for adults is approximately 5-6 centimeters.", h: "עומק הלחיצה המומלץ למבוגרים הוא כ-5 עד 6 סנטימטרים.", isHeader: false },
+    { e: "If the rescuer is trained and willing, rescue breaths may be given after every 30 chest compressions, using a ratio of 30 compressions followed by 2 breaths.", h: "אם המציל מיומן ומוכן לכך, ניתן לתת הנשמות לאחר כל 30 לחיצות חזה, תוך שימוש ביחס של 30 לחיצות ואחריהן 2 הנשמות.", isHeader: false },
+    { e: "CPR should continue until professional help arrives or the person begins to breathe normally.", h: "יש להמשיך בהחייאה עד שהעזרה המקצועית מגיעה או עד שהאדם מתחיל לנשום כרגיל.", isHeader: false },
+    { e: "CPR for Children", h: "החייאה לילדים", isHeader: true },
+    { e: "The basic principles of CPR are similar for children, but there are important differences because a child's body is smaller and the most common causes of cardiac arrest are often related to breathing problems rather than heart disease.", h: "העקרונות הבסיסיים של החייאה דומים אצל ילדים, אך ישנם הבדלים חשובים מכיוון שגופו של ילד קטן יותר והגורמים הנפוצים ביותר לדום לב קשורים לעיתים קרובות לבעיות נשימה ולא למחלות לב.", isHeader: false },
+    { e: "Chest compressions should be performed at the same rate of 100-120 compressions per minute, but the compression depth should be about one-third of the chest's depth.", h: "יש לבצע לחיצות חזה באותו קצב של 100-120 לחיצות בדקה, אך עומק הלחיצה צריך להיות כשליש מעומק החזה.", isHeader: false },
+    { e: "For most children, one or two hands may be used depending on the child's size and the rescuer's strength.", h: "עבור רוב הילדים, ניתן להשתמש ביד אחת או שתיים בהתאם לגודל הילד ולחוזקו של המציל.", isHeader: false },
+    { e: "Because breathing problems are more common in children, rescue breaths are especially important when the rescuer has received CPR training.", h: "מכיוון שבעיות נשימה שכיחות יותר אצל ילדים, הנשמות חשובות במיוחד כאשר המציל עבר הכשרת החייאה.", isHeader: false },
+    { e: "Choking Caused by a Foreign Object", h: "חנק כתוצאה מעצם זר", isHeader: true },
+    { e: "Choking occurs when food or another object blocks the airway, preventing air from reaching the lungs.", h: "חנק מתרחש כאשר אוכל או חפץ אחר חוסם את נתיב האוויר, ומונע מאוויר להגיע לריאות.", isHeader: false },
+    { e: "A person who is choking may suddenly be unable to speak, cough, or breathe.", h: "אדם שנחנק עשוי לפתע לא להיות מסוגל לדבר, להשתעל או לנשום.", isHeader: false },
+    { e: "They may hold their throat with both hands, a well-known sign called the universal choking sign.", h: "הם עשויים להחזיק את גרונם בשתי ידיהם, סימן מוכר הנקרא סימן החנק האוניברסלי.", isHeader: false },
+    { e: "If the person can cough forcefully, they should be encouraged to continue coughing, as this is often the best way to remove the obstruction.", h: "אם האדם מסוגל להשתעל בחוזקה, יש לעודד אותו להמשיך להשתעל, שכן זו לרוב הדרך הטובה ביותר להסיר את החסימה.", isHeader: false },
+    { e: "If the airway becomes completely blocked and the person cannot breathe or speak, immediate action is required.", h: "אם נתיב האוויר נחסם לחלוטין והאדם אינו יכול לנשום או לדבר, נדרשת פעולה מיידית.", isHeader: false },
+    { e: "For adults and children over one year of age, the recommended treatment is a series of firm back blows followed, if necessary, by abdominal thrusts.", h: "למבוגרים ולילדים מעל גיל שנה, הטיפול המומלץ הוא סדרה של טפיחות חזקות על הגב ואחריהן, במידת הצורך, לחיצות בטן.", isHeader: false },
+    { e: "These actions help create pressure inside the airway that may force the object out.", h: "פעולות אלו עוזרות ליצור לחץ בתוך נתיב האוויר שעשוי לדחוף את החפץ החוצה.", isHeader: false },
+    { e: "For infants under one year of age, abdominal thrusts must not be used because they may cause serious injury.", h: "עבור תינוקות מתחת לגיל שנה, אסור להשתמש בלחיצות בטן מכיוון שהן עלולות לגרום לפציעה חמורה.", isHeader: false },
+    { e: "Instead, rescuers alternate between back blows and chest thrusts until the object is removed or the infant becomes unresponsive.", h: "במקום זאת, מצילים מחליפים בין טפיחות גב ולחיצות חזה עד שהחפץ מוסר או עד שהתינוק מאבד את הכרתו.", isHeader: false },
+    { e: "When Choking Leads to Unconsciousness", h: "כאשר חנק מוביל לחוסר הכרה", isHeader: true },
+    { e: "If a choking victim becomes unconscious, emergency medical services should be contacted immediately.", h: "אם קורבן חנק מאבד את הכרתו, יש ליצור קשר עם שירותי רפואת החירום באופן מיידי.", isHeader: false },
+    { e: "CPR should then be started without delay.", h: "לאחר מכן יש להתחיל בהחייאה ללא דיחוי.", isHeader: false },
+    { e: "During CPR, the rescuer should look for any visible object in the mouth before giving rescue breaths, but should never perform a blind finger sweep because this may push the object deeper into the airway.", h: "במהלך ההחייאה, על המציל לחפש כל חפץ גלוי בפה לפני מתן הנשמות, אך לעולם אין לבצע גריפת אצבע עיוורת מכיוון שזה עלול לדחוף את החפץ עמוק יותר אל תוך נתיב האוויר.", isHeader: false },
+    { e: "The Importance of Training", h: "החשיבות של הכשרה", isHeader: true },
+    { e: "Although reading about CPR and choking treatment provides useful knowledge, practical training is essential.", h: "למרות שקריאה על החייאה וטיפול בחנק מספקת ידע שימושי, הכשרה מעשית היא חיונית.", isHeader: false },
+    { e: "CPR courses allow participants to practice chest compressions, rescue breaths, and choking techniques using realistic training mannequins.", h: "קורסי החייאה מאפשרים למשתתפים לתרגל לחיצות חזה, הנשמות וטכניקות חנק באמצעות בובות אימון מציאותיות.", isHeader: false },
+    { e: "Medical organizations around the world recommend regular refresher training because guidelines may change as new scientific evidence becomes available.", h: "ארגוני רפואה ברחבי העולם ממליצים על רענון הכשרה קבוע מכיוון שההנחיות עשויות להשתנות ככל שראיות מדעיות חדשות זמינות.", isHeader: false },
+    { e: "Knowing how to recognize cardiac arrest, perform CPR, and respond to choking can make the difference between life and death.", h: "לדעת כיצד לזהות דום לב, לבצע החייאה ולהגיב לחנק יכולה לעשות את ההבדל בין חיים למוות.", isHeader: false },
+    { e: "Even simple actions taken by a bystander during the first few minutes of an emergency can greatly improve the chances of survival until professional medical help arrives.", h: "אפילו פעולות פשוטות שננקטות על ידי עובר אורח במהלך הדקות הראשונות של מקרה חירום יכולות לשפר מאוד את סיכויי ההישרדות עד שהעזרה הרפואית המקצועית תגיע.", isHeader: false }
+];
+
+window.week16ArticleSummary = { e: "CPR and choking treatment can save lives. CPR involves chest compressions and rescue breaths to maintain oxygen flow during cardiac arrest. Techniques differ slightly for adults and children. For choking, back blows and abdominal thrusts are used, except for infants. If unconscious, CPR is initiated immediately. Practical training is essential.", h: "החייאה וטיפול בחנק יכולים להציל חיים. החייאה כוללת לחיצות חזה והנשמות לשמירת זרימת חמצן בעת דום לב. הטכניקות שונות מעט בין מבוגרים לילדים. בחנק משתמשים בטפיחות גב ולחיצות בטן, פרט לתינוקות. במקרה של אובדן הכרה יש להתחיל מיד בהחייאה. הכשרה מעשית היא קריטית." };
+
+window.vocabularyData['week16vocab'] = [
+    { eng: "ordinary", heb: "רגיל / שגרתי", ph: "OR-din-air-ee" },
+    { eng: "perform", heb: "לבצע", ph: "per-FORM" },
+    { eng: "cardiopulmonary", heb: "לבבי-ריאתי", ph: "CAR-dee-o-PULL-mo-nair-ee" },
+    { eng: "resuscitation", heb: "החייאה", ph: "re-sus-i-TAY-shun" },
+    { eng: "choking", heb: "חנק / נחנק", ph: "CHO-king" },
+    { eng: "cardiac", heb: "של הלב / לבבי", ph: "CAR-dee-ak" },
+    { eng: "arrest", heb: "דום / מעצר", ph: "uh-REST" },
+    { eng: "suddenly", heb: "לפתע", ph: "SUD-en-lee" },
+    { eng: "immediate", heb: "מיידי", ph: "ih-MEE-dee-it" },
+    { eng: "permanent", heb: "תמידי / קבוע", ph: "PER-ma-nent" },
+    { eng: "damage", heb: "נזק", ph: "DAM-ij" },
+    { eng: "principles", heb: "עקרונות", ph: "PRIN-si-puls" },
+    { eng: "bystanders", heb: "עוברי אורח / עומדים מהצד", ph: "BY-stan-ders" },
+    { eng: "assistance", heb: "סיוע / עזרה", ph: "uh-SIS-tens" },
+    { eng: "personnel", heb: "צוות / סגל", ph: "per-so-NEL" },
+    { eng: "arrive", heb: "להגיע", ph: "uh-RIVE" },
+    { eng: "procedure", heb: "הליך / פרוצדורה", ph: "pro-SEE-jur" },
+    { eng: "effectively", heb: "ביעילות", ph: "ef-FEC-tiv-lee" },
+    { eng: "maintain", heb: "לשמור על / לתחזק", ph: "main-TANE" },
+    { eng: "circulation", heb: "מחזור / זרימה", ph: "sir-cue-LAY-shun" },
+    { eng: "oxygen", heb: "חמצן", ph: "OK-si-jen" },
+    { eng: "vital", heb: "חיוני", ph: "VY-tul" },
+    { eng: "organs", heb: "איברים", ph: "OR-guns" },
+    { eng: "advanced", heb: "מתקדם", ph: "ad-VANST" },
+    { eng: "compressions", heb: "לחיצות / דחיסות", ph: "com-PRESH-uns" },
+    { eng: "rescue", heb: "הצלה / חילוץ", ph: "RES-cue" },
+    { eng: "breaths", heb: "נשימות / הנשמות", ph: "breths" },
+    { eng: "appropriate", heb: "מתאים / הולם", ph: "uh-PRO-pree-it" },
+    { eng: "survival", heb: "הישרדות", ph: "ser-VY-vul" },
+    { eng: "ensure", heb: "לוודא / להבטיח", ph: "en-SHURE" },
+    { eng: "scene", heb: "זירה / סצנה", ph: "seen" },
+    { eng: "responds", heb: "מגיב", ph: "re-SPONDS" },
+    { eng: "tapping", heb: "טופח / מקיש", ph: "TAP-ing" },
+    { eng: "shoulders", heb: "כתפיים", ph: "SHOLE-ders" },
+    { eng: "emergency", heb: "חירום", ph: "ih-MER-jen-see" },
+    { eng: "depth", heb: "עומק", ph: "depth" },
+    { eng: "approximately", heb: "בערך / בקירוב", ph: "uh-PROX-ih-met-lee" },
+    { eng: "ratio", heb: "יחס", ph: "RAY-shee-o" },
+    { eng: "airway", heb: "נתיב אוויר", ph: "AIR-way" },
+    { eng: "obstruction", heb: "חסימה / מכשול", ph: "ub-STRUK-shun" }
+];
+
+
 window.daysList = [
   { id: 'w1d1', week: 'week1', title: 'יום ראשון', date: '26/04/2026' },
   { id: 'w1d2', week: 'week1', title: 'יום שני', date: '27/04/2026' },
@@ -1458,3 +1550,9 @@ window.musicalNoteArticleData = [
     {j:"54",e:"As people age, the delicate hair cells responsible for detecting very high frequencies gradually wear out and cannot regenerate.",h:"ככל שאנשים מתבגרים, תאי השערה העדינים האחראים על זיהוי תדרים גבוהים מאוד נשחקים בהדרגה ולא יכולים להתחדש."},
     {j:"55",e:"As a result, many adults cannot hear the highest frequencies at all, even though children may hear them clearly.",h:"כתוצאה מכך, מבוגרים רבים לא יכולים לשמוע את התדרים הגבוהים ביותר כלל, למרות שילדים עשויים לשמוע אותם בבירור."}
 ];
+
+
+window.musicalNoteArticleSummary = {
+    e: "Sound is created by vibrations traveling through the air as waves. These waves are measured by their frequency in Hertz (Hz), which determines the pitch we hear. Faster vibrations create higher-pitched sounds, while slower vibrations create lower-pitched sounds. Musical notes, like the famous 'A4' at 440 Hz, are simply standardized frequencies that musicians agree upon. Understanding the science behind sound helps us appreciate how instruments work and how complex melodies are constructed.",
+    h: "צליל נוצר על ידי רעידות הנעות באוויר כגלים. גלים אלו נמדדים לפי התדר שלהם בהרץ (Hz), מה שקובע את גובה הצליל שאנו שומעים. רעידות מהירות יוצרות צלילים גבוהים יותר, בעוד רעידות איטיות יוצרות צלילים נמוכים. תווים מוזיקליים, כמו 'A4' המפורסם ב-440 הרץ, הם פשוט תדרים סטנדרטיים שמוזיקאים מסכימים עליהם. הבנת המדע שמאחורי הצליל עוזרת לנו להעריך כיצד כלים עובדים וכיצד מנגינות מורכבות נבנות."
+};
