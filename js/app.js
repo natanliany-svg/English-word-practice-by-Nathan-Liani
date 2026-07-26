@@ -1071,7 +1071,7 @@ window.render = function() {
                         <div style="display: flex; align-items: center; gap: 10px;">
                             <span style="font-size: 24px;">🎯</span>
                             <div style="text-align: right;">
-                                <div style="font-size: 18px; font-weight: 900; color: #fff;">מיקוד שבועי: שבוע 16 (Musical Note: Hertz and Pitch)</div>
+                                <div style="font-size: 18px; font-weight: 900; color: #fff;">מיקוד שבועי: שבוע 16 (CPR in Adults and Children)</div>
                                 <div style="font-size: 13px; color: var(--text-muted); margin-top: 3px;">החומרים הכי רלוונטיים ומעודכנים לתרגול מהיר</div>
                             </div>
                         </div>
