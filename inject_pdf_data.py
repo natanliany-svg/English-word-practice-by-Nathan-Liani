@@ -95,46 +95,59 @@ article_heb = [
 ]
 
 is_header = [True, False, False, False, True, False, False, False, False, True, False, False, False, False, False, False, False, False, True, False, False, False, False, True, False, False, False, False, False, False, False, False, False, True, False, False, False, True, False, False, False, False, False]
-# Group into paragraphs properly
-new_paragraphs = []
-current_para = []
-for idx, is_h in enumerate(is_header):
-    if is_h:
-        if current_para:
-            new_paragraphs.append(current_para)
-            current_para = []
-        new_paragraphs.append([idx])
-    else:
-        current_para.append(idx)
-        if len(current_para) >= 4 and idx + 1 < len(is_header) and not is_header[idx + 1]:
-            new_paragraphs.append(current_para)
-            current_para = []
-if current_para:
-    new_paragraphs.append(current_para)
+paragraphs = [[0], [1,2,3], [4], [5,6,7,8], [9], [10,11,12], [13,14,15], [16,17], [18], [19,20,21,22], [23], [24,25,26,27,28], [29,30], [31,32], [33], [34,35,36], [37], [38,39,40], [41,42]]
+
+summary_eng = "CPR and choking treatment can save lives. CPR involves chest compressions and rescue breaths to maintain oxygen flow during cardiac arrest. Techniques differ slightly for adults and children. For choking, back blows and abdominal thrusts are used, except for infants. If unconscious, CPR is initiated immediately. Practical training is essential."
+summary_heb = "החייאה וטיפול בחנק יכולים להציל חיים. החייאה כוללת לחיצות חזה והנשמות לשמירת זרימת חמצן בעת דום לב. הטכניקות שונות מעט בין מבוגרים לילדים. בחנק משתמשים בטפיחות גב ולחיצות בטן, פרט לתינוקות. במקרה של אובדן הכרה יש להתחיל מיד בהחייאה. הכשרה מעשית היא קריטית."
+
+vocab = [
+    {"en": "ordinary", "he": "רגיל / שגרתי", "ph": "OR-din-air-ee"},
+    {"en": "perform", "he": "לבצע", "ph": "per-FORM"},
+    {"en": "cardiopulmonary", "he": "לבבי-ריאתי", "ph": "CAR-dee-o-PULL-mo-nair-ee"},
+    {"en": "resuscitation", "he": "החייאה", "ph": "re-sus-i-TAY-shun"},
+    {"en": "choking", "he": "חנק / נחנק", "ph": "CHO-king"},
+    {"en": "cardiac", "he": "של הלב / לבבי", "ph": "CAR-dee-ak"},
+    {"en": "arrest", "he": "דום / מעצר", "ph": "uh-REST"},
+    {"en": "suddenly", "he": "לפתע", "ph": "SUD-en-lee"},
+    {"en": "immediate", "he": "מיידי", "ph": "ih-MEE-dee-it"},
+    {"en": "permanent", "he": "תמידי / קבוע", "ph": "PER-ma-nent"},
+    {"en": "damage", "he": "נזק", "ph": "DAM-ij"},
+    {"en": "principles", "he": "עקרונות", "ph": "PRIN-si-puls"},
+    {"en": "bystanders", "he": "עוברי אורח / עומדים מהצד", "ph": "BY-stan-ders"},
+    {"en": "assistance", "he": "סיוע / עזרה", "ph": "uh-SIS-tens"},
+    {"en": "personnel", "he": "צוות / סגל", "ph": "per-so-NEL"},
+    {"en": "arrive", "he": "להגיע", "ph": "uh-RIVE"},
+    {"en": "procedure", "he": "הליך / פרוצדורה", "ph": "pro-SEE-jur"},
+    {"en": "effectively", "he": "ביעילות", "ph": "ef-FEC-tiv-lee"},
+    {"en": "maintain", "he": "לשמור על / לתחזק", "ph": "main-TANE"},
+    {"en": "circulation", "he": "מחזור / זרימה", "ph": "sir-cue-LAY-shun"},
+    {"en": "oxygen", "he": "חמצן", "ph": "OK-si-jen"},
+    {"en": "vital", "he": "חיוני", "ph": "VY-tul"},
+    {"en": "organs", "he": "איברים", "ph": "OR-guns"},
+    {"en": "advanced", "he": "מתקדם", "ph": "ad-VANST"},
+    {"en": "compressions", "he": "לחיצות / דחיסות", "ph": "com-PRESH-uns"},
+    {"en": "rescue", "he": "הצלה / חילוץ", "ph": "RES-cue"},
+    {"en": "breaths", "he": "נשימות / הנשמות", "ph": "breths"},
+    {"en": "appropriate", "he": "מתאים / הולם", "ph": "uh-PRO-pree-it"},
+    {"en": "survival", "he": "הישרדות", "ph": "ser-VY-vul"},
+    {"en": "ensure", "he": "לוודא / להבטיח", "ph": "en-SHURE"},
+    {"en": "scene", "he": "זירה / סצנה", "ph": "seen"},
+    {"en": "responds", "he": "מגיב", "ph": "re-SPONDS"},
+    {"en": "tapping", "he": "טופח / מקיש", "ph": "TAP-ing"},
+    {"en": "shoulders", "he": "כתפיים", "ph": "SHOLE-ders"},
+    {"en": "emergency", "he": "חירום", "ph": "ih-MER-jen-see"},
+    {"en": "depth", "he": "עומק", "ph": "depth"},
+    {"en": "approximately", "he": "בערך / בקירוב", "ph": "uh-PROX-ih-met-lee"},
+    {"en": "ratio", "he": "יחס", "ph": "RAY-shee-o"},
+    {"en": "airway", "he": "נתיב אוויר", "ph": "AIR-way"},
+    {"en": "obstruction", "he": "חסימה / מכשול", "ph": "ub-STRUK-shun"}
+]
 
 # Write to data.js
 data_js = codecs.open('js/data.js', 'r', 'utf-8').read()
-
-# Build article data with j index
-article_js_lines = []
-sentence_count = 1
-for e, h, c in zip(article_eng, article_heb, is_header):
-    if c:
-        j_val = "??"
-    else:
-        j_val = str(sentence_count)
-        sentence_count += 1
-    article_js_lines.append(f"    {{ e: \"{e}\", h: \"{h}\", isHeader: {'true' if c else 'false'}, j: \"{j_val}\" }}")
-
-article_obj = "window.week16ArticleData = [\n" + ",\n".join(article_js_lines) + "\n];\n"
+article_obj = "window.week16ArticleData = [\n" + ",\n".join([f"    {{ e: \"{e}\", h: \"{h}\", isHeader: {'true' if c else 'false'} }}" for e, h, c in zip(article_eng, article_heb, is_header)]) + "\n];\n"
 summary_obj = f"window.week16ArticleSummary = {{ e: \"{summary_eng}\", h: \"{summary_heb}\" }};\n"
 vocab_obj = "window.vocabularyData['week16vocab'] = [\n" + ",\n".join([f"    {{ en: \"{v['en']}\", he: \"{v['he']}\", ph: \"{v['ph']}\" }}" for v in vocab]) + "\n];\n"
-
-# Add paragraphs
-para_str = f"    'week16': {new_paragraphs},"
-para_match = re.search(r"window\.articleParagraphs = \{", data_js)
-if para_match:
-    data_js = data_js[:para_match.end()] + "\n" + para_str + data_js[para_match.end():]
 
 # Inject right before window.daysList = [
 inject_data = article_obj + "\n" + summary_obj + "\n" + vocab_obj + "\n\nwindow.daysList = ["
@@ -144,4 +157,3 @@ data_js = data_js.replace("window.daysList = [", inject_data)
 week16_days = ",\n    { id: 'w16d1', week: 'week16vocab', desc: 'CPR Basics' },\n    { id: 'w16d2', week: 'week16vocab', desc: 'Heart and Oxygen' },\n    { id: 'w16d3', week: 'week16vocab', desc: 'Adults CPR' },\n    { id: 'w16d4', week: 'week16vocab', desc: 'Children CPR' },\n    { id: 'w16d5', week: 'week16vocab', desc: 'Choking Treatment' }"
 data_js = data_js.replace("desc: 'Musical Frequencies' }", "desc: 'Musical Frequencies' }" + week16_days)
 codecs.open('js/data.js', 'w', 'utf-8').write(data_js)
-
