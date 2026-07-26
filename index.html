@@ -38,7 +38,7 @@
         
         <div class="sidebar-nav">
             <div class="nav-section-label glowing-text">מיקוד שבועי 🎯</div>
-            <button class="side-nav-btn focus-glow-btn" id="side-btn-focus" onclick="window.setWeek('focus'); window.toggleMenu(false);">מיקוד: שבוע 13 🎵</button>
+            <button class="side-nav-btn focus-glow-btn" id="side-btn-focus" onclick="window.setWeek('focus'); window.toggleMenu(false);">מיקוד: שבוע 16 🚑</button>
             
             <div class="nav-section-label">ראשי</div>
             <button class="side-nav-btn" id="side-btn-home" onclick="window.setWeek('home'); window.toggleMenu(false);">ראשי 🏠</button>
@@ -54,6 +54,69 @@
             <button class="side-nav-btn" id="side-btn-week11" onclick="window.goToWord('w11d1', 0); window.toggleMenu(false);"><small>8.</small> שבוע 11 💻</button>
             <button class="side-nav-btn" id="side-btn-week12" onclick="window.goToWord('w12d1', 0); window.toggleMenu(false);"><small>9.</small> שבוע 12 🔢</button>
             <button class="side-nav-btn" id="side-btn-week13" onclick="window.goToWord('w13d1', 0); window.toggleMenu(false);"><small>10.</small> שבוע 13 🎵</button>
+            <button class="side-nav-btn" id="side-btn-week16" onclick="window.goToWord('w16d1', 0); window.toggleMenu(false);"><small>11.</small> שבוע 16 🚑</button>
+            
+            <div class="nav-section-label">כלים ותרגול</div>
+            <button class="side-nav-btn" id="side-btn-quiz" onclick="window.setWeek('quiz'); window.toggleMenu(false);">מבחנים 🧠</button>
+            <button class="side-nav-btn" id="side-btn-games" onclick="window.setWeek('games'); window.toggleMenu(false);">משחקים 🎮</button>
+            <button class="side-nav-btn" id="side-btn-stats" onclick="window.setWeek('stats'); window.toggleMenu(false);">ביצועים 📊</button>
+            <button class="side-nav-btn" id="side-btn-summary" onclick="window.setWeek('summary'); window.toggleMenu(false);">סיכום 🗂️</button>
+        </div>
+        
+        <div class="sidebar-footer">
+            <div class="theme-select-box">
+                <span class="theme-dot cyan" onclick="window.changeTheme('cyan')" title="Cyberpunk Cyan"></span>
+                <span class="theme-dot purple" onclick="window.changeTheme('purple')" title="Royal Purple"></span>
+                <span class="theme-dot emerald" onclick="window.changeTheme('emerald')" title="Forest Emerald"></span>
+                <span class="theme-dot orange" onclick="window.changeTheme('orange')" title="Sunset Orange"></span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-layout-wrapper">
+        <button id="desktop-menu-toggle" class="desktop-menu-toggle" onclick="window.toggleDesktopMenu()" title="הסתר/הצג תפריט צד">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px; height:24px;"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="sub-nav" id="sub-nav-container"></div>
+        <main id="content-area"></main>
+    </div>
+    
+    <!-- Audio Player Bar -->
+    <div id="audio-player" class="audio-player-bar">
+        <div class="audio-controls-row notranslate" dir="ltr" translate="no" style="justify-content: center; gap: 15px;">
+            <button id="speed-btn" class="player-btn" onclick="window.cycleSpeed()" title="מהירות הקראה" style="font-size: 14px; font-weight: bold; width: 40px; height: 40px; padding: 0;">
+                1x
+            </button>
+            <button class="player-btn" onclick="window.seekRelative(-5)" title="5 שניות אחורה" style="width: 45px; height: 45px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                    <path d="M3 3v5h5"/>
+                    <text x="12" y="16" font-size="8" font-family="sans-serif" stroke="none" fill="currentColor" text-anchor="middle">5</text>
+                </svg>
+            </button>
+            <button id="play-pause-btn" class="player-btn play-pause" onclick="window.togglePlayPause()" title="נגן / השהה" style="width: 55px; height: 55px;">
+                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </button>
+            <button class="player-btn" onclick="window.seekRelative(5)" title="5 שניות קדימה" style="width: 45px; height: 45px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12a9 9 0 1 1-9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+                    <path d="M21 3v5h-5"/>
+                    <text x="12" y="16" font-size="8" font-family="sans-serif" stroke="none" fill="currentColor" text-anchor="middle">5</text>
+                </svg>
+            </button>
+            <button class="player-btn stop" onclick="window.stopAudio()" title="עצור לחלוטין" style="width: 40px; height: 40px;">
+                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="6" y="6" width="12" height="12"/></svg>
+            </button>
+        </div>
+        <div class="audio-progress-container" dir="ltr">
+            <span id="audio-time-current" class="audio-time">00:00</span>
+            <input type="range" id="audio-slider" class="audio-slider" min="0" max="100" value="0" onmousedown="window.startAudioDrag()" ontouchstart="window.startAudioDrag()" oninput="window.handleSliderInput(this.value)" onmouseup="window.stopAudioDrag(this.value)" ontouchend="window.stopAudioDrag(this.value)">
+            <span id="audio-time-total" class="audio-time">00:00</span>
+        </div>
+    </div>
+
+            <button class="side-nav-btn" id="side-btn-week16" onclick="window.goToWord('w16d1', 0); window.toggleMenu(false);"><small>11.</small> שבוע 16 🚑</button>
             
             <div class="nav-section-label">כלים ותרגול</div>
             <button class="side-nav-btn" id="side-btn-quiz" onclick="window.setWeek('quiz'); window.toggleMenu(false);">מבחנים 🧠</button>
@@ -119,9 +182,9 @@
 
 <script src="js/audioMap.js?v=15"></script>
 <script>const CACHE_VERSION = 'v90';</script>
-<script src="js/data.js?v=98"></script>
-<script src="js/quizData.js?v=98"></script>
-<script src="js/app.js?v=98"></script>
+<script src="js/data.js?v=99"></script>
+<script src="js/quizData.js?v=99"></script>
+<script src="js/app.js?v=99"></script>
 
 <div class="footer-credit">נוצר ע''י 'נתן ליאני' באמצעות סיעתא דשמייא גדולה 🙌</div>
 </body>
